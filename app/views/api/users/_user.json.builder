@@ -1,0 +1,1 @@
+json.extract! user, :id, :username, :guild_name, :guild_description
