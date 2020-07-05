@@ -3,13 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
- .full-page {
-   display: flex;
+ body {
    background-image: asset-data-url("temp-background.jpg");
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
-   min-height: 100%;
-   /* background-color:black; */
+   background-repeat: no-repeat;
+   background-color: grey;
  }
