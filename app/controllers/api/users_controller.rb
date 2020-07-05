@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
-   def show
+
+  def show
     @user = User.find_by(params[:id])
   end
 
