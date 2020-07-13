@@ -1,0 +1,38 @@
+@import '../variables.scss';
+
+.feed-post {
+  width: 300px;
+  min-height: 300px;
+  background-image: asset-data-url("scroll.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.quest-title {
+  font-family: fantasy;
+}
+
+.quest-body {
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5 0 auto;
+}
+
+.quest-text {
+  max-width: 200px;
+  text-align: center;
+  font-style: oblique;
+}
+
+.quest-image {
+  width: 50%;
+  height: auto;
+}

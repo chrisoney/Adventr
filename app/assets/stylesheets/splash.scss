@@ -1,0 +1,154 @@
+@import './variables.scss';
+
+.splash {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
+	height: 100vh;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+	background-size: cover;
+}
+
+.splash-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	transform: translate(0%, -15%);
+	animation: fade 1.2s, slide 0.5s;
+}
+
+@keyframes fade{
+	from{
+		opacity: 0;
+	} 
+	to{
+		opacity: 1;
+	}
+}
+
+@keyframes slide{
+	from{
+		transform: translateY(-20px);
+	} 
+	to{
+		transform: translateY(-45px);
+	}
+}
+
+.app-name {
+	color: white;
+	font-size: 60px;
+	margin: 0;
+	font-family: fantasy;
+}
+
+.welcome-text {
+	display:flex;
+	flex-direction: column;
+	color: white;
+	text-align: center;
+	font-family: fantasy;
+	font-size: 16px;
+	margin-bottom: 10px;
+
+	p {
+		margin: 5px;
+	}
+}
+
+.signup, .login {
+	width: 300px;
+	height: 45px;
+	padding: 8px 0px;
+	margin-bottom: 10px;
+	font-family: $splash-font;
+	font-size: 16px;
+	border-radius: 3px;
+	border: none;
+}
+
+.signup {
+	background-color: $dark-green;
+	color: white;	
+}
+
+.login {
+	background-color: white;
+	font-weight: bold;
+}
+
+.demo-user {
+	background-color: $sky-blue;
+	color: white;
+	border-radius: 3px;
+	border: none;
+	width: 300px;
+	height: 45px;
+	padding: 8px 0px;
+	font-family: $splash-font;
+	font-size: 16px;
+}
+
+.errors{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgba($color: black, $alpha: .5);
+	font-family: $splash-font;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+	width: 280px;
+	height: 25px;
+	padding: 10px;
+	margin-bottom: 10px;
+	animation: error-message 0.4s;
+}
+
+@keyframes error-message {
+	from {
+		height: 0px;
+	}
+	to {
+		height: 25px;
+	}
+}
+
+#username,#password,#email {
+	width: 280px;
+	padding: 10px;
+	height: 24px;
+	border: none;
+	border-radius: 3px;
+	font-family: $splash-font;
+	font-size: 16px;
+}
+
+#email {
+	border-radius: 0px;
+}
+
+#username {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+#password {
+	margin-bottom: 10px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+#email::placeholder,#username::placeholder,#password::placeholder{
+	color: light-grey;
+	font-family: $splash-font;
+	font-size: 16px;
+}

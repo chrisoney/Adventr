@@ -1,25 +1,36 @@
-import React from 'react'
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect, Route, withRouter } from 'react-router-dom';
 
-const mapStateToProps = state => {
-  return { loggedIn: Boolean(state.session.id) };
-};
+const msp = (state) => ({
+  loggedIn: Boolean(state.session.currentUser)
+});
 
-const Auth = ({ component: Component, path, loggedIn, exact }) => (
+const Auth = ({ loggedIn, path, component: Component }) => (
   <Route
     path={path}
-    exact={exact}
-    render={props =>
-      !loggedIn ? <Component {...props} /> : <Redirect to="/" />
-    }
+    render={(props) =>
+      loggedIn ? <Redirect to="/dashboard" /> : <Component {...props} />}
   />
 );
 
-
-export const AuthRoute = withRouter(
-  connect(
-    mapStateToProps,
-    null
-  )(Auth)
+const Protected = ({ loggedIn, path, component: Component }) => (
+  <Route
+    path={path}
+    render={(props) =>
+      loggedIn ? <Component {...props} /> : <Redirect to="/" />}
+  />
 );
+
+const Splash = ({ component: Component, path, loggedIn }) => (
+  <Route
+    exact path={path}
+    render={props => (
+      loggedIn ? <Redirect to="/dashboard" /> : <Component {...props} />
+    )}
+  />
+);
+
+export const AuthRoute = withRouter(connect(msp)(Auth));
+export const ProtectedRoute = withRouter(connect(msp)(Protected));
+export const SplashRoute = withRouter(connect(msp)(Splash));

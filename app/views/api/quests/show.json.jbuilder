@@ -1,0 +1,1 @@
+json.partial! 'quest', quest: @quest

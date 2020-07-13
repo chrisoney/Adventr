@@ -1,0 +1,89 @@
+@import 'variables';
+
+#modal-background {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.7);
+   z-index: 10;
+ }
+
+ #modal {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+ .close-x {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   cursor: pointer;
+ }
+
+ .close-x:hover {
+   color: grey;
+ }
+
+.modal-content {
+  position: relative;
+  z-index: 5;
+  background-color: #fefefe;
+  margin: 5px auto;
+  border: 1px solid green;
+  border-radius: 15px;
+  padding: 10px;
+  height: 140%;
+  width: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+.session-input {
+  width: 200px;
+  height: 25px;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+.session-button {
+  width: 200px;
+  margin: 5px;
+  padding: 5px 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.session-button-holder{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
