@@ -29,6 +29,7 @@
     "npm": "6.4.1"
   },
   "scripts": {
+    "start": "node adventr_entry.jsx",
     "postinstall": "webpack"
   },
   "keywords": [],
