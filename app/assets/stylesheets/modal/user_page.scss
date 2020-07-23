@@ -1,0 +1,51 @@
+.user-page-background {
+  display: grid;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  grid-template-columns: 1fr 450px;
+  background-color: black;
+  z-index: 15;
+  overflow-y: auto;
+}
+
+.user-page-container{
+  background: asset-data-url("spellbook.jpg") fixed;
+  background-size: cover;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: white;
+  width: 450px;
+  animation: slide-right 0.5s ease;
+}
+
+@keyframes slide-right {
+  from{
+      min: 0%;
+      margin-left: 450px;
+  }
+  to{
+      width: 100%;
+      margin-left: 0px;
+  }
+}
+
+
+.user-page-top{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  img{
+      height: 96px;
+      width: 96px;
+      background-color: black;
+      border-radius: 5px;
+      object-fit: cover;
+  }
+}

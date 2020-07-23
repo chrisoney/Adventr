@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import UserPage from './user_page'
+import UserMenu from './user_menu'
 
 
 class Modal extends React.Component {
@@ -13,17 +15,28 @@ class Modal extends React.Component {
     if (!modal) {
       return null;
     }
-
+    let background;
+		let container;
     let component;
 
     switch (modal) {
+      case 'usermenu':
+				component = <UserMenu />;
+				background = 'user-menu-background';
+				container = 'user-menu-container';
+				break;
+      case 'userpage':
+				component = <UserPage authorId={event.target.id}/>;
+				background = 'user-page-background';
+				container = 'user-page-container';
+				break;
       default:
         return null;
     }
 
     return (
-      <div className="modal-background">
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className={background} onClick={closeModal}>
+        <div className={container} onClick={(e) => e.stopPropagation()}>
           {component}
         </div>
       </div>

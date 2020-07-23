@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavbarDropdown from './navbar_dropdown';
+import { openModal } from '../../actions/modal_actions';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -58,7 +59,10 @@ class Navbar extends React.Component {
       navbar = (
         <div className="navbar-container">
           <div className="left-side">
-            <NavbarDropdown logout={this.props.logout}/>
+          <button 
+            className="user-menu-button fas fa-bars"
+            onClick={() => this.props.openModal("usermenu")}
+          ></button>
           </div>
           <div className="middle">
             <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
@@ -72,9 +76,6 @@ class Navbar extends React.Component {
     return (
       <div className="navbar">
         {navbarBorder}
-        {/* <div className="left-side">
-          <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
-        </div> */}
         {navbar}
         {otherButton}
         {loginNav}

@@ -20,10 +20,6 @@
 
 .nav-border {
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	// background: asset-data-url("stone3.jpg") center fixed;
-
 }
 
 .other-button {
@@ -71,7 +67,7 @@
 	width: 40px;
 	height: 30px;
 	position: relative;
-	font-size: 14px;
+	font-size: 20px;
 	background-image: asset-data-url("parallel-lines.png");
 	filter: invert(100%);
 	outline: none;

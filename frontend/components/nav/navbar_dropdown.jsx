@@ -19,10 +19,9 @@ class NavDropdown extends React.Component {
       <button
         onBlur={() => this.toggleDropdown()}
         onFocus={() => this.toggleDropdown()}
-        tabIndex="0"
         className="user-info-button"
       >
-          <img className="dropdown-button" src="https://mastery.s3-us-west-1.amazonaws.com/parallel-lines.png" />
+          <div className="dropdown-button fas fa-bars"></div>
           {
           this.state.open && (
             <div className="dropdown-container">

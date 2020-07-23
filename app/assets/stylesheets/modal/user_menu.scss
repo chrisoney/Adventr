@@ -1,0 +1,49 @@
+.user-menu-background {
+  display: grid;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  grid-template-columns: 450px 1fr;
+  // background-color: black;
+  z-index: 15;
+  overflow-y: auto;
+}
+
+.user-menu-container{
+  position:absolute;
+  top: 40px;
+  bottom: 0;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-color: white;
+  width: 450px;
+  animation: slide-left 0.5s ease;
+}
+
+@keyframes slide-left {
+  from{
+      left: -450px;
+  }
+  to{
+      left: 0;
+  }
+}
+
+.user-menu-top{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  img{
+      height: 50px;
+      width: 50px;
+      background-color: black;
+      border-radius: 5px;
+      object-fit: cover;
+  }
+}

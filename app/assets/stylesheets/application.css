@@ -18,3 +18,4 @@
 @import './splash.scss';
 @import './nav/navbar.scss';
 @import './dashboard/dashboard.scss';
+@import './modal/user_page.scss'

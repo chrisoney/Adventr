@@ -1,4 +1,5 @@
 import React from 'react';
+import HeartAnimation from './heart_animation'
 
 class Quest extends React.Component {
 
@@ -6,32 +7,209 @@ class Quest extends React.Component {
     super(props);
     this.state = {
       author: null || this.props.author,
+      liked: false || this.props.liked,
+      followed: false || this.props.followed,
     }
+
+    this.toggleFollowed = this.toggleFollowed.bind(this);
+    this.toggleLiked = this.toggleLiked.bind(this);
   }
 
   componentDidMount() {
-
+    if (!this.props.author) {
+      this.props.fetchUser(this.props.authorId);
+    }
   }
-  render() {
-    const { currentUser, quest, authorId } = this.props;
-    let { author } = this.state;
-    let image = (<></>);
-    if (quest.quest_type === 'image'){
-      image = (<img className="quest-image" src={`${quest.content_url}`} />)
+
+  componentDidUpdate(prevState){
+    if (this.props.author && !prevState.author){
+			this.setState({ author: this.props.author })
+    }
+    
+    if (this.props.followed !== prevState.followed){
+      this.setState({ followed: this.props.followed });
     }
 
+		if (this.props.liked !== prevState.liked){
+			this.setState({ liked: this.props.liked });
+		}
+  }
+
+  toggleLiked(){
+		const quest = this.props.quest;
+		
+		if (this.state.liked){
+			this.props.unlikeQuest(quest.id);
+			} else {
+			this.props.likeQuest(quest.id);
+		}
+	}
+
+	toggleFollowed(){
+		const quest = this.props.quest;
+		
+		if (this.state.followed){
+			this.props.unfollowUser(quest.authorId);
+			} else {
+			this.props.followUser(quest.authorId);
+		}
+	}
+
+  render() {
+    const { currentUser, quest, authorId, openModal, loc } = this.props;
+    let { author } = this.state;
+
+    let followUser;
+		let likedClass;
+    let heartAnimation;
+    
+    let questHeader;
+		let questFooter;
+
     if (!author) author = "";
+    if (this.state.followed) {
+			followUser = (<div onClick={this.toggleFollowed} className="unfollow-button follow-toggle-button">Unfollow</div>)
+    } 
+    else {
+			followUser = (<div onClick={this.toggleFollowed} className="follow-button follow-toggle-button">Follow</div>)
+		};
+
+    if (this.state.liked) {
+      likedClass = "liked-heart fas fa-heart";
+      heartAnimation = (<HeartAnimation class={"regular-heart fas fa-heart"} />);
+    } 
+    else {
+      likedClass ="unliked-heart far fa-heart";
+      heartAnimation = (<HeartAnimation class={"broken-heart fas fa-heart-broken"} />);
+    }
+    
+    if (authorId === currentUser.id){
+			questHeader = (
+        <span onClick={()=>this.props.openModal("userpage")} id={this.props.authorId}>
+          {author.username}
+        </span>
+      );
+			questFooter = (
+        <div className="quest-footer">
+          <div className="quest-footer-left"></div>
+          <div className="quest-footer-right">
+            <div className="quest-buttons">
+              <button 
+                className="edit fas fa-edit"
+                onClick={() => this.props.history.push("/quests/".concat(quest.id).concat("/edit"))}
+              ></button>
+              <button 
+                className="trash fas fa-trash"
+                onClick={()=>openModal("delete-confirmation")}
+                id={quest.id}
+              ></button>
+            </div>
+          </div>
+        </div>);
+    } 
+    else {
+			questHeader = (
+      <>
+        <span onClick={()=>this.props.openModal("userpage")} id={this.props.authorId}>
+          {author.username}
+        </span>
+        {followUser}
+      </>
+      );
+			questFooter = (
+        <div className="quest-footer">
+					<div className="quest-footer-left">
+						<span>Notes</span>
+					</div>
+          <div className="quest-footer-right">
+            <div className="quest-buttons">
+              <button className="reply fas fa-reply"></button>
+              <button className="reblog fas fa-retweet"></button>
+              <button 
+              className={`like ${likedClass}`}
+              onClick={this.toggleLiked}></button>
+              {heartAnimation}
+            </div>
+					</div>
+        </div>
+        );
+    }
+    let isQuote = (quest.quest_type==="quote") ? ('\"') : source=null;
+		let source = (quest.quest_type==="quote") ? ('\u2014') : isQuote = null;
+    
+    let titleSection=null;
+		if (quest.title !== ""){
+			titleSection = (
+        <div className="title">
+          {isQuote}{quest.title}{isQuote}
+        </div>
+      );
+    }
+
+    let imageSection = null;
+		if (quest.imageUrls && quest.quest_type==="image"){
+			imageSection = quest.imageUrls.map((imageUrl, idx)=>{
+				return (<img 
+									key={idx} 
+									className="image-video" 
+									src={imageUrl}
+									onClick={()=>this.props.openModal("pop-out")} />
+								)
+      })
+    }
+		
+
+		let videoSection = null;
+		if (quest.imageUrls && quest.quest_type==="video"){
+			videoSection = quest.imageUrls.map((imageUrl, idx)=>{
+        return (
+          <div key={idx} >
+            <video 	
+						src={imageUrl}
+						className="image-video" 
+						controls />
+          </div>
+        )
+      })
+    }
+      
+    let audioSection = null;
+    if (quest.imageUrls && quest.quest_type==="audio"){
+      audioSection = quest.imageUrls.map((imageUrl, idx)=>{
+        return (
+          <div key={idx} className="audio">
+            <audio 	
+            src={imageUrl}
+            controls />
+          </div>
+        )
+      })
+    }
+
+		let textSection = null;
+		if (quest.text !== ""){
+      textSection = (<div className="text">{source}{quest.text}</div>);
+    }
+		
+		let avatar = window.avatar;
+		if (author && author.avatar !== "default") {avatar = author.avatar};
+
     return (
-      <div className = "feed-post">
-        <div className="quest-header">
-        <p className="quest-author">{author}</p>
-        <p className="quest-title">{quest.title}</p>
-        </div>
-        <div className="quest-body">
-          <p className="quest-text">{quest.text}</p>
-          {image}
-        </div>
-      </div>
+      <div key={quest.id} className={`quest-container-${loc}`}>
+				<img className={`avatar-${loc}`}
+				src={avatar}
+				onClick={()=>this.props.openModal("userpage")} 
+				id={this.props.authorId}></img>
+				<div className="quest">
+					<div className ="quest-header">{questHeader}</div>
+					{titleSection}
+					{imageSection}
+					{audioSection}
+					{videoSection}
+					{textSection}
+					<div className ="quest-footer-container">{questFooter}</div>
+				</div>
+			</div>
     )
   }
 }

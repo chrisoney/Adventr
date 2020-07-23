@@ -22,7 +22,7 @@ class Api::QuestsController < ApplicationController
   end
 
   def update
-    @quest = Post.find(params[:id])
+    @quest = Quest.find(params[:id])
     
     if (@quest && @quest.update(quest_params))
       render :show

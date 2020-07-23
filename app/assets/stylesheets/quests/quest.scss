@@ -1,38 +1,190 @@
 @import '../variables.scss';
 
-.feed-post {
-  width: 300px;
-  min-height: 300px;
-  background-image: asset-data-url("scroll.png");
-  background-size: 300px;
-  background-repeat: no-repeat;
-  padding-top: 60px;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-
+.quest-container-dash {
+	display: grid;
+	grid-template-columns: 85px 540px;
+	padding: 0.5rem;
 }
 
-.quest-title {
-  font-family: fantasy;
+.quest-container-userpage {
+	display: flex;
+	padding: 0.5rem;
+	justify-content: center;
 }
 
-.quest-body {
-  height: 100%;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 0.5 0 auto;
+.avatar-dash {
+	grid-column: 1, 2;
+	height: 64px;
+	width: 64px;
+	border-radius: 5px;
+	position: sticky;
+	top: 70px;
+	object-fit: cover;
 }
 
-.quest-text {
-  max-width: 200px;
-  text-align: center;
-  font-style: oblique;
+.avatar-dash:hover{
+	cursor: pointer;
 }
 
-.quest-image {
-  width: 50%;
-  height: auto;
+.avatar-userpage {
+	display: none;
+}
+
+.quest {
+	width: 90%;
+	grid-column: 2, 3;
+	display: grid;
+	grid-template-rows: 30px 1fr;
+	background-color: white;
+	border-radius: 7px;
+}
+
+.quest-header {
+	margin: 0 0 0 0;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	display: flex;
+	align-items: center;
+  background-color: $dark-green;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+	span {
+		font-size: 13px;
+		color: white;
+		justify-content: center;
+		font-weight: bold;
+	}
+}
+.quest-header span:hover{
+	cursor: pointer;
+}
+
+.title {
+	font-size: 36px;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.text {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.audio{
+	display: flex;
+	justify-content: space-evenly;
+	font-size: 36px;
+	padding: 10px 0px;
+	// font-weight: bold;
+	background-color: rgba(30, 0, 60, .25);
+}
+.audio audio:focus{
+    outline: none;
+}
+.image-video {
+	width: 100%;
+	height: auto;
+}
+
+.quest-footer {
+  background-color: $dark-green;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+  padding-left: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.quest-footer-left {
+	display: flex;
+	justify-content: start;
+	span{
+		font-size: 13px;
+		color: gray;
+	}
+}
+.quest-footer-right {
+	display: flex;
+	justify-content: flex-end;
+	button {
+		height: 24px;
+		width: 24px;
+		background: transparent;
+		font-size: 18px;
+		border: none;
+	}
+}
+.quest-buttons{
+    width: 100px;
+    display: flex;
+		justify-content: space-around;
+		position: relative;
+		
+}
+
+.reply, .reblog, .like, .trash, .edit{
+	background:none;
+	border:none;
+	width: 24px;
+	height: 24px;
+	color: white;
+}
+.reply:hover, .reblog:hover, .like:hover {
+	cursor: pointer;
+}
+
+.liked-heart{
+	color: red;
+}
+
+.reply:focus, .reblog:focus, .like:focus {
+	outline: none;
+}
+
+.regular-heart, .broken-heart{
+	position: absolute;
+	font-size: 24px;
+	right: 0px;
+	opacity: 0;
+	animation: float-up 1s ease;
+	pointer-events: none;
+}
+
+.regular-heart {
+	color: red;
+}
+
+@keyframes float-up {
+	from{
+		opacity: 1;
+		transform: translateY(0px);
+		display: block;
+	}
+	to{
+		opacity: 0;
+		transform: translateY(-50px);
+		display: none;
+	}
+}
+
+.follow-toggle-button{
+	margin-left: 15px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.follow-toggle-button:hover{
+	cursor: pointer;
+}
+.unfollow-button{
+	color: gray;
+}
+
+.follow-button{
+	color: rgb(0, 182, 182);
 }

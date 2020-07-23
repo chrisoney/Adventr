@@ -8,12 +8,20 @@ class DashBoard extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllQuests();
+    this.props.fetchAllFollows();
+    this.props.fetchAllLikes();
   }
+
+  componentDidUpdate(prevProps){
+		if (this.props.quests.length !== prevProps.quests.length){
+			this.props.fetchAllQuests();
+		}
+	}
 
   render() {
     const { quests } = this.props;
     let questList = quests.map((quest, idx) => (
-      <QuestContainer key={idx} quest={quest} />
+      <QuestContainer key={idx} quest={quest} loc={"dash"} />
     ))
     return (
       <div className="dashboard-container">
