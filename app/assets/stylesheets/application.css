@@ -14,8 +14,8 @@
  *= require_self
  */
 
-@import './reset.scss';
-@import './splash.scss';
-@import './nav/navbar.scss';
-@import './dashboard/dashboard.scss';
-@import './modal/user_page.scss'
+@import 'reset.scss';
+@import 'splash.scss';
+@import 'nav/navbar.scss';
+@import 'dashboard/dashboard.scss';
+@import 'modal/user_page.scss'
