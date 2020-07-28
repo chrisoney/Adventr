@@ -1,0 +1,31 @@
+.quest-create-container {
+  display: flex;
+  background-color: #222222;
+  align-items: center;
+}
+
+.text-container, .image-container, .quote-container, .audio-container, .video-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+
+.image-button {
+  color: #FF492F;
+}
+.quote-button {
+  color: #FF8A01;
+}
+.audio-button {
+  color: #7C5DFF;
+}
+.video-button {
+  color: #FF62CE;
+}
+
+
+

@@ -1,5 +1,6 @@
 import React from "react";
 import QuestContainer from '../quests/quest_container'
+import NewQuestCreate from '../quests/new_quest_create'
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class DashBoard extends React.Component {
             <h1 className="dash-title">Dashboard</h1>
             <p className="dash-welcome">Welcome back to Adventr!</p>
           </div>
+          <NewQuestCreate />
           { questList }
         </div>
       </div>

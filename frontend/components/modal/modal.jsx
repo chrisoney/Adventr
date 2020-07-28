@@ -3,23 +3,34 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import UserPage from './user_page'
 import UserMenu from './user_menu'
+import NewQuestContainer from './new_quest_container'
 
 
 class Modal extends React.Component {
 
 
-
   render() {
-    const { modal, openModal, closeModal } = this.props;
-
+    const { modal, closeModal } = this.props;
     if (!modal) {
       return null;
     }
     let background;
 		let container;
     let component;
+    let formType;
+
+    if (modal.slice(0, 4) === 'new-') { formType = modal.slice(4) }
 
     switch (modal) {
+      case 'new-text':
+      case 'new-image':
+      case 'new-quote':
+      case 'new-audio':
+      case 'new-video':
+        component = <NewQuestContainer type={formType} />;
+				background = 'new-quest-background';
+				container = 'new-quest-container';
+				break;
       case 'usermenu':
 				component = <UserMenu />;
 				background = 'user-menu-background';
@@ -33,7 +44,6 @@ class Modal extends React.Component {
       default:
         return null;
     }
-
     return (
       <div className={background} onClick={closeModal}>
         <div className={container} onClick={(e) => e.stopPropagation()}>

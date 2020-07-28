@@ -46,9 +46,9 @@
 	padding-right: 20px;
 	display: flex;
 	align-items: center;
-  background-color: $dark-green;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  background-color: #222222;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 	span {
 		font-size: 13px;
 		color: white;
@@ -76,30 +76,14 @@
 	padding-right: 20px;
 }
 
-.audio{
-	display: flex;
-	justify-content: space-evenly;
-	font-size: 36px;
-	padding: 10px 0px;
-	// font-weight: bold;
-	background-color: rgba(30, 0, 60, .25);
-}
-.audio audio:focus{
-    outline: none;
-}
-.image-video {
-	width: 100%;
-	height: auto;
-}
-
 .quest-footer {
-  background-color: $dark-green;
+  background-color: #222222;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
   padding-left: 20px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 .quest-footer-left {
 	display: flex;
