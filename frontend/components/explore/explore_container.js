@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Dashboard from "./dashboard";
+import Explore from "./explore";
 import { openModal } from "../../actions/modal_actions";
 import { fetchAllQuests } from "../../actions/quest_actions"
 import { fetchAllFollows } from '../../actions/follow_actions';
@@ -7,9 +7,7 @@ import { fetchAllLikes } from '../../actions/like_actions';
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.session.currentUser,
-    quests: Object.values(state.entities.quests),
-    follows: Object.values(state.entities.follows),
+    quests: Object.values(state.entities.quests)
   };
 };
 
@@ -20,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllLikes: () => dispatch(fetchAllLikes())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Explore);

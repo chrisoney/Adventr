@@ -5,8 +5,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-  // grid-template-columns: 450px 1fr;
-  // background-color: black;
   z-index: 15;
   overflow-y: auto;
 }
@@ -15,8 +13,6 @@
   position:absolute;
   top: 40px;
   bottom: 0;
-  // grid-column-start: 1;
-  // grid-column-end: 2;
   background-color: black;
   width: 450px;
   animation: slide-left 0.5s ease;
@@ -47,3 +43,9 @@
       object-fit: cover;
   }
 }
+
+.user-menu-top-buttons {
+  display:flex;
+  flex-direction: column;
+}
+

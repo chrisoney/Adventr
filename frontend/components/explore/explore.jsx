@@ -2,7 +2,7 @@ import React from "react";
 import QuestContainer from '../quests/quest_container'
 import NewQuestCreate from '../quests/new_quest_create'
 
-class DashBoard extends React.Component {
+class Explore extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -20,17 +20,10 @@ class DashBoard extends React.Component {
 	}
 
   render() {
-    const { quests, follows, currentUser } = this.props;
-
-    let questList = [];
-    quests.forEach((quest, idx) => {
-      follows.forEach((follow) => {
-        if (follow.user_id === quest.user_id && follow.follower_id === currentUser.id){
-          questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />)
-        }
-      })
-    })
-    console.log(questList);
+    const { quests } = this.props;
+    let questList = quests.map((quest, idx) => (
+      <QuestContainer key={idx} quest={quest} loc={"dash"}/>
+    ))
     return (
       <div className="dashboard-container">
         <div className="dashboard">
@@ -46,4 +39,4 @@ class DashBoard extends React.Component {
   }
 }
 
-export default DashBoard;
+export default Explore;
