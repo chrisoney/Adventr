@@ -59,6 +59,8 @@
 	margin-right: 40px;
 	grid-column: 6/8;
 	z-index: 1;
+	color: white;
+	font-size: 20px;
 }
 
 .dropdown-button {
@@ -132,5 +134,12 @@
 	background: transparent;
 	border: none;
 	outline: none;
+}
 
+.user-menu-button {
+	background: transparent;
+	border: none;
+	outline: none;
+	color:white;
+	font-size: 20px;
 }

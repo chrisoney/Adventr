@@ -8,6 +8,7 @@ import DashboardContainer from './dashboard/dashboard_container';
 import NavbarContainer from './nav/navbar_container';
 import Modal from './modal/modal';
 import ExploreContainer from './explore/explore_container';
+import About from './about/about'
 
 const App = () => (
   <div className="app">
@@ -19,6 +20,7 @@ const App = () => (
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <ProtectedRoute path="/dashboard" component={DashboardContainer} />
     <ProtectedRoute path="/explore" component={ExploreContainer} />
+    <ProtectedRoute path="/about" component={About} />
   </div>
 );
 

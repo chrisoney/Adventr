@@ -16,7 +16,7 @@ class UserMenu extends React.Component{
     }
 
     render() {
-      const { currentUser } = this.props;
+      const { currentUser, closeModal } = this.props;
       return (
         <>
           <div className="user-menu-top">
@@ -24,15 +24,25 @@ class UserMenu extends React.Component{
               <div className="user-menu-username">{currentUser.username}</div>
           </div>
           <div className="user-menu-top-buttons">
-            <button
-              className="logout-button"
-              onClick={this.logoutUser}
-            >Logout</button>
-            <button
-              className="quest-create-button"
-            >Create A Quest</button>
-            <Link to='/dashboard' className="link">Dashboard</Link>
-            <Link to='/explore' className="link">Explore</Link>
+            <div className="menu-container">
+              <span className="fas fa-sign-out-alt"></span>
+              <button
+                className="link"
+                onClick={this.logoutUser}
+              >Logout</button>
+            </div>
+            <div className="menu-container" onClick={closeModal}>
+              <span className="fas fa-home"></span>
+              <Link to='/dashboard' className="link">Dashboard</Link>
+            </div>
+            <div className="menu-container" onClick={closeModal}>
+              <span className="fas fa-compass"></span>
+              <Link to='/explore' className="link">Explore</Link>
+            </div>
+            <div className="menu-container" onClick={closeModal}>
+              <span className="fas fa-question-circle"></span>
+              <Link to='/about' className="link">About</Link>
+            </div>
           </div>
         </>
       )

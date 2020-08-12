@@ -38,12 +38,8 @@ class NewQuestCreate extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-
-}
-
 const mapDispatchToProps = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal)),
 })
   
-export default connect(mapStateToProps, mapDispatchToProps)(NewQuestCreate);
+export default connect(null, mapDispatchToProps)(NewQuestCreate);

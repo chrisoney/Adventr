@@ -32,7 +32,7 @@ class Modal extends React.Component {
 				container = 'new-quest-container';
 				break;
       case 'usermenu':
-				component = <UserMenu />;
+				component = <UserMenu closeModal={closeModal}/>;
 				background = 'user-menu-background';
 				container = 'user-menu-container';
 				break;

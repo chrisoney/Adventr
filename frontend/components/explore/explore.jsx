@@ -24,11 +24,12 @@ class Explore extends React.Component {
     let questList = quests.map((quest, idx) => (
       <QuestContainer key={idx} quest={quest} loc={"dash"}/>
     ))
+    questList = questList.reverse();
     return (
       <div className="dashboard-container">
         <div className="dashboard">
           <div className="dashboard-header">
-            <h1 className="dash-title">Dashboard</h1>
+            <h1 className="dash-title">Explore</h1>
             <p className="dash-welcome">Welcome back to Adventr!</p>
           </div>
           <NewQuestCreate />

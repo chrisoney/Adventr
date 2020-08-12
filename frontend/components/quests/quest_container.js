@@ -5,6 +5,7 @@ import { fetchUser } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
 import { likeQuest, unlikeQuest } from '../../actions/like_actions';
 import { followUser, unfollowUser } from '../../actions/follow_actions';
+import { deleteQuest } from '../../actions/quest_actions'
 
 const mapStateToProps = (state, ownProps) => {
   let liked = false;
@@ -29,10 +30,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: (userId) => dispatch(fetchUser(userId)),
   openModal: (modal) => dispatch(openModal(modal)),
-  likeQuest: (questId)=>dispatch(likeQuest(questId)),
-  unlikeQuest: (questId)=>dispatch(unlikeQuest(questId)),
-  followUser: (userId)=>dispatch(followUser(userId)),
-  unfollowUser: (userId)=>dispatch(unfollowUser(userId)),
+  likeQuest: (questId) => dispatch(likeQuest(questId)),
+  unlikeQuest: (questId) => dispatch(unlikeQuest(questId)),
+  followUser: (userId) => dispatch(followUser(userId)),
+  unfollowUser: (userId) => dispatch(unfollowUser(userId)),
+  deleteQuest: (questId) => dispatch(deleteQuest(questId))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Quest));

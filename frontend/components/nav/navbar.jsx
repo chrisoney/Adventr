@@ -68,7 +68,7 @@ class Navbar extends React.Component {
             <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
           </div>
           <div className="right-side">
-            <img className="search-icon" src="https://mastery.s3-us-west-1.amazonaws.com/magnifying-glass.png" />
+            <Link to='/about' className="link"><span className="fas fa-question-circle"></span></Link>
           </div>
         </div>
       )

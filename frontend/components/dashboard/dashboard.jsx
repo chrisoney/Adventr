@@ -25,12 +25,12 @@ class DashBoard extends React.Component {
     let questList = [];
     quests.forEach((quest, idx) => {
       follows.forEach((follow) => {
-        if (follow.user_id === quest.user_id && follow.follower_id === currentUser.id){
+        if ((follow.user_id === quest.user_id && follow.follower_id === currentUser.id) || quest.user_id === currentUser.id){
           questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />)
         }
       })
     })
-    console.log(questList);
+    questList = questList.reverse();
     return (
       <div className="dashboard-container">
         <div className="dashboard">

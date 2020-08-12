@@ -11,7 +11,7 @@
 
 .user-menu-container{
   position:absolute;
-  top: 40px;
+  top: 0;
   bottom: 0;
   background-color: black;
   width: 450px;
@@ -47,5 +47,22 @@
 .user-menu-top-buttons {
   display:flex;
   flex-direction: column;
+}
+
+.menu-container {
+  color: white;
+  padding: 10px 5px;
+  margin: 0px 10px;
+}
+
+.link {
+  font-family: fantasy;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  padding: 0px 10px;
 }
 

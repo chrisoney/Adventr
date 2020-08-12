@@ -1,5 +1,6 @@
 import React from 'react';
 import HeartAnimation from './heart_animation'
+import { deleteQuest } from '../../util/quest_api_utils';
 
 class Quest extends React.Component {
 
@@ -56,7 +57,7 @@ class Quest extends React.Component {
 	}
 
   render() {
-    const { currentUser, quest, authorId, openModal, loc } = this.props;
+    const { currentUser, quest, authorId, deleteQuest, loc } = this.props;
     let { author } = this.state;
 
     let followUser;
@@ -94,13 +95,13 @@ class Quest extends React.Component {
           <div className="quest-footer-left"></div>
           <div className="quest-footer-right">
             <div className="quest-buttons">
-              <button 
+              {/* <button 
                 className="edit fas fa-edit"
                 onClick={() => this.props.history.push("/quests/".concat(quest.id).concat("/edit"))}
-              ></button>
+              ></button> */}
               <button 
                 className="trash fas fa-trash"
-                onClick={()=>openModal("delete-confirmation")}
+                onClick={()=> deleteQuest(quest.id)}
                 id={quest.id}
               ></button>
             </div>
@@ -119,7 +120,7 @@ class Quest extends React.Component {
 			questFooter = (
         <div className="quest-footer">
 					<div className="quest-footer-left">
-						<span>Notes</span>
+						{/* <span>Notes</span> */}
 					</div>
           <div className="quest-footer-right">
             <div className="quest-buttons">

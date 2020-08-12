@@ -31,6 +31,7 @@
 }
 
 .quest {
+	background: asset-data-url("paper.jpg") no-repeat center;
 	width: 90%;
 	grid-column: 2, 3;
 	display: grid;
@@ -65,6 +66,9 @@
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
+	margin-top: 10px;
+	text-align: center;
+	font-family: fantasy;
 }
 
 .text {
@@ -74,6 +78,7 @@
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
+	font-family: fantasy;
 }
 
 .quest-footer {
@@ -107,9 +112,11 @@
 .quest-buttons{
     width: 100px;
     display: flex;
-		justify-content: space-around;
+		justify-content: flex-end;
 		position: relative;
-		
+		button {
+			margin-left: 10px;
+		}
 }
 
 .reply, .reblog, .like, .trash, .edit{
@@ -171,4 +178,25 @@
 
 .follow-button{
 	color: rgb(0, 182, 182);
+}
+
+.image-video {
+	width: 100%;
+	height: auto;
+}
+
+.audio {
+	display: flex;
+	justify-content: center;
+}
+
+.quest-create-container{
+	width: 450px;
+	display: flex;
+	justify-content: space-around;
+	border-radius: 5px;
+	button{
+		background: transparent;
+		border: none;
+	}
 }
