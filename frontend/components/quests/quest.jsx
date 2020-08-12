@@ -8,7 +8,8 @@ class Quest extends React.Component {
     super(props);
     this.state = {
       author: null || this.props.author,
-      liked: false || this.props.liked,
+      liked: this.props.liked,
+      visible: false,
       followed: false || this.props.followed,
     }
 
@@ -37,18 +38,18 @@ class Quest extends React.Component {
   }
 
   toggleLiked(){
-		const quest = this.props.quest;
-		
+    const quest = this.props.quest;
 		if (this.state.liked){
-			this.props.unlikeQuest(quest.id);
-			} else {
-			this.props.likeQuest(quest.id);
+      this.props.unlikeQuest(quest.id);
+		} else {
+      this.props.likeQuest(quest.id);
 		}
+    this.setState({liked: !this.state.liked});
+    this.setState({visible: true});
 	}
 
 	toggleFollowed(){
 		const quest = this.props.quest;
-		
 		if (this.state.followed){
 			this.props.unfollowUser(quest.authorId);
 			} else {
@@ -59,7 +60,7 @@ class Quest extends React.Component {
   render() {
     const { currentUser, quest, authorId, deleteQuest, loc } = this.props;
     let { author } = this.state;
-
+    let visibility = this.state.visible;
     let followUser;
 		let likedClass;
     let heartAnimation;
@@ -77,11 +78,13 @@ class Quest extends React.Component {
 
     if (this.state.liked) {
       likedClass = "liked-heart fas fa-heart";
-      heartAnimation = (<HeartAnimation class={"regular-heart fas fa-heart"} />);
+      heartAnimation = (<HeartAnimation visible={visibility} class={"regular-heart fas fa-heart"} />);
+      visibility = false;
     } 
     else {
       likedClass ="unliked-heart far fa-heart";
-      heartAnimation = (<HeartAnimation class={"broken-heart fas fa-heart-broken"} />);
+      heartAnimation = (<HeartAnimation visible={visibility} class={"broken-heart fas fa-heart-broken"} />);
+      visibility = false;
     }
     
     if (authorId === currentUser.id){

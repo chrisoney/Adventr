@@ -1,4 +1,5 @@
 .quest-create-container {
+  min-height: 70px;
   display: flex;
   background-color: #222222;
   align-items: center;
@@ -27,5 +28,24 @@
   color: #FF62CE;
 }
 
+.text-button, .image-button, .quote-button, .audio-button, .video-button {
+  font-size: 24px;
+  margin-bottom: 3px;
+}
 
+.text-container:hover > .text-button, 
+.image-container:hover > .image-button, 
+.quote-container:hover > .quote-button, 
+.audio-container:hover > .audio-button, 
+.video-container:hover > .video-button{
+  animation: bounce-up 1s;
+}
 
+@keyframes bounce-up {
+	from{
+		transform: translateY(0px);
+	}
+	to{
+		transform: translateY(-10px);
+	}
+}

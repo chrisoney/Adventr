@@ -296,7 +296,7 @@ class NewQuestForm extends React.Component {
 
 		return (
 			<>
-				<img className="avatar" src={window.avatar} />
+				{/* <img className="avatar-dash" src={currentUser.avatar} /> */}
 				<div className="quest-form-box quest-box">
 					<div className="quest-form-top-block">{currentUser.username}</div>
 					{formBlock}
