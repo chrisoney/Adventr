@@ -26,7 +26,8 @@ class DashBoard extends React.Component {
     quests.forEach((quest, idx) => {
       follows.forEach((follow) => {
         if ((follow.user_id === quest.user_id && follow.follower_id === currentUser.id) || quest.user_id === currentUser.id){
-          questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />)
+          questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />);
+          break;
         }
       })
     })
