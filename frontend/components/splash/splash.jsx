@@ -8,10 +8,10 @@ class Splash extends React.Component {
         <div className="splash">
           <div className="splash-content">
             <p className="app-name">adventr</p>
-            <p className="welcome-text">
+            <div className="welcome-text">
               <p>Come for the adventures.</p>
               <p>Stay for the magic items.</p>
-            </p>
+            </div>
             <Link to="/signup">
               <button className="signup">Get Started</button>
             </Link>
