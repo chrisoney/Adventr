@@ -27,6 +27,8 @@ Adventr is a content-focused blog site inspired by tumblr, but with a tabletop f
 * Pages to discover new quests created by other users
 * Ways to follow users and like quests to more easily access that content and show you enjoy it!
 
+
+<img src="./app/assets/images/gifs/new-quest-create.gif" width=800 height=auto>
 -------------------------------------------
 
 ### Technologies
