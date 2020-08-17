@@ -4,4 +4,4 @@
 
 -------------------------------------------
 
-![Splash](splash.png)
+![Splash](./app/assets/images/gifs/splash.png)
