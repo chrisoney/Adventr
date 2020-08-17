@@ -4,4 +4,4 @@
 
 -------------------------------------------
 
-![](./app/assets/images/gifs/splash.png width=200 height=400)
+<img src="./app/assets/images/gifs/splash.png" width=200 height=400>
