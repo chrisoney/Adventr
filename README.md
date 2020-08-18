@@ -29,6 +29,41 @@ Adventr is a content-focused blog site inspired by tumblr, but with a tabletop f
 
 
 <img src="./app/assets/images/gifs/new-quest-create.gif" width=800 height=auto>
+
+```
+switch (modal) {
+    case 'new-text':
+    case 'new-image':
+    case 'new-quote':
+    case 'new-audio':
+    case 'new-video':
+      component = <NewQuestContainer type={formType} />;
+      background = 'new-quest-background';
+      container = 'new-quest-container';
+      break;
+    case 'usermenu':
+      component = <UserMenu closeModal={closeModal}/>;
+      background = 'user-menu-background';
+      container = 'user-menu-container';
+      break;
+    case 'userpage':
+      component = <UserPage authorId={event.target.id}/>;
+      background = 'user-page-background';
+      container = 'user-page-container';
+      break;
+    default:
+      return null;
+  }
+  return (
+    <div className={background} onClick={closeModal}>
+      <div className={container} onClick={(e) => e.stopPropagation()}>
+        {component}
+      </div>
+    </div>)
+```
+The modal system uses a switch statement to ensure DRY code for both different types of post creation and different types of modal in general
+
+
 -------------------------------------------
 
 ### Technologies
