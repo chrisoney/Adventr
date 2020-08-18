@@ -5,7 +5,7 @@
 -------------------------------------------
 
 # Adventr
-<img src="./app/assets/images/gifs/splash.png" width=800 height=auto>
+<img src="./app/assets/images/gifs/log-in.gif" width=800 height=auto>
 
 -------------------------------------------
 
