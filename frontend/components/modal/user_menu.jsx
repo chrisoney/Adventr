@@ -15,6 +15,22 @@ class UserMenu extends React.Component{
       this.props.closeModal();
     }
 
+    handleUpload(e) {
+      let url;
+      
+      let uploadedImage = e.currentTarget.file;
+      
+      let file = uploadedImage;
+      let fileReader = new FileReader();
+  
+      fileReader.onloadend = () => {
+        url = fileReader.result;
+      }
+      console.log(url);
+
+      if (file) fileReader.readAsDataURL(file);
+    }
+
     render() {
       const { currentUser, closeModal } = this.props;
       return (
