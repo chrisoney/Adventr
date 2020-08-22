@@ -48,9 +48,8 @@ class NewQuestForm extends React.Component {
         that.setState({
           imageFiles: fileArr,
           imageUrls: urlArr
-        })
-      }
-
+				})
+			}
 			if (file) fileReader.readAsDataURL(file);
 		}
 

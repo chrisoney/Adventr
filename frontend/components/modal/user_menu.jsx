@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 class UserMenu extends React.Component{
     constructor(props) {
         super(props);
+        this.state = { currentUser: this.props.currentUser }
         this.logoutUser = this.logoutUser.bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
     }
 
     logoutUser() {
@@ -16,19 +18,20 @@ class UserMenu extends React.Component{
     }
 
     handleUpload(e) {
+      let that = this;
       let url;
       
-      let uploadedImage = e.currentTarget.file;
+      let uploadedImages = e.currentTarget.files;
       
-      let file = uploadedImage;
+      let file = uploadedImages[0];
       let fileReader = new FileReader();
   
       fileReader.onloadend = () => {
         url = fileReader.result;
+        that.state.currentUser.avatar = url;
       }
-      console.log(url);
-
       if (file) fileReader.readAsDataURL(file);
+      debugger
     }
 
     render() {
@@ -36,7 +39,15 @@ class UserMenu extends React.Component{
       return (
         <>
           <div className="user-menu-top">
-              <img src={currentUser.avatar}/>
+              <label className="user-menu-avatar">
+                <img src={currentUser.avatar}/>
+                {/* <input
+                  type="file"
+                  accept="image/*"
+                  id="upload-box"
+                  onChange={this.handleUpload}
+                /> */}
+              </label>
               <div className="user-menu-username">{currentUser.username}</div>
           </div>
           <div className="user-menu-top-buttons">
