@@ -37,7 +37,9 @@
 }
 
 .nav-logo {
-	margin-right: 20px;
+	position: absolute;
+	top: 2;
+	right: 49%;
 	font-weight: bold;
 	font-size: 32px;
 	color: white;
@@ -75,6 +77,8 @@
 .dropdown-button:hover, .logout-button:hover {
 	cursor: pointer;
 }
+
+
 .dropdown-top:hover, .dropdown-container:hover{
 	cursor: auto;
 }
@@ -140,4 +144,8 @@
 	outline: none;
 	color:white;
 	font-size: 20px;
+}
+
+.user-menu-button:hover {
+	cursor:pointer;
 }

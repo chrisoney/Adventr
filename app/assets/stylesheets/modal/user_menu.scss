@@ -57,6 +57,10 @@
   margin: 0px 10px;
 }
 
+.menu-container:hover, .link:hover {
+  cursor:pointer;
+}
+
 .link {
   font-family: fantasy;
   text-decoration: none;
@@ -67,4 +71,6 @@
   font-size: 20px;
   padding: 0px 10px;
 }
+
+  
 
