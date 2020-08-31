@@ -89,7 +89,7 @@ class Quest extends React.Component {
     
     if (authorId === currentUser.id){
 			questHeader = (
-        <span onClick={()=>this.props.openModal("userpage")} id={this.props.authorId}>
+        <span className="quest-author" onClick={()=>this.props.openModal("userpage")} id={this.props.authorId}>
           {author.username}
         </span>
       );
