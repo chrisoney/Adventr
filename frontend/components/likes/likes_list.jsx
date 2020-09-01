@@ -21,7 +21,8 @@ class LikesList extends React.Component {
 
   render() {
     const { quests, likes, currentUser } = this.props;
-
+    console.log(likes)
+    console.log(currentUser)
     let questList = [];
     quests.forEach((quest, idx) => {
       for (let i = 0; i < likes.length; i++){
