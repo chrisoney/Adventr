@@ -67,6 +67,10 @@ class UserMenu extends React.Component{
               <Link to='/explore' className="link">Explore</Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
+              <span className="fas fa-heart"></span>
+              <Link to='/likes' className="link">Explore</Link>
+            </div>
+            <div className="menu-container" onClick={closeModal}>
               <span className="fas fa-question-circle"></span>
               <Link to='/about' className="link">About</Link>
             </div>
