@@ -126,7 +126,7 @@
 	height: 24px;
 	color: white;
 }
-.reply:hover, .reblog:hover, .like:hover {
+.reply:hover, .reblog:hover, .like:hover, .trash:hover, .edit:hover {
 	cursor: pointer;
 }
 
@@ -226,4 +226,10 @@
 
 .quest-author:hover {
 	cursor: pointer;
+}
+
+
+// audio
+.audio {
+	margin-bottom: 10px;
 }

@@ -64,7 +64,7 @@ class Quest extends React.Component {
     let followUser;
 		let likedClass;
     let heartAnimation;
-    
+  
     let questHeader;
 		let questFooter;
 
@@ -183,6 +183,7 @@ class Quest extends React.Component {
         return (
           <div key={idx} className="audio">
             <audio 	
+            className="audio-controls"
             src={imageUrl}
             controls />
           </div>

@@ -62,7 +62,18 @@
 	.quest-create {
 		background-color: rgb(54, 54, 206);
 	}
+	.quest-close:hover, .quest-create:hover {
+		cursor: pointer;
+	}
 }
+
+.quest-create:disabled {
+	background-color: grey;
+	:hover {
+		cursor: no-drop;
+	}
+}
+
 
 input[type="file"]{
 	display: none;
@@ -78,4 +89,8 @@ input[type="file"]{
 	border-top: dashed 1px grey;
 	border-bottom: dashed 1px grey;
 	background-color: #F2F2F2;
+}
+
+.camera-icon-text-container:hover {
+	cursor: pointer;
 }
