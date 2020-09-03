@@ -31,8 +31,8 @@
   },
   "scripts": {
     "start": "node adventr_entry.jsx",
-    "postinstall": "webpack",
-    "dev": "webpack --watch --mode=development"
+    "dev": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
