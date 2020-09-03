@@ -52,3 +52,11 @@
 		transform: translateY(-10px);
 	}
 }
+
+.text-container:hover, 
+.image-container:hover, 
+.quote-container:hover, 
+.audio-container:hover, 
+.video-container:hover {
+  cursor: pointer;
+}
