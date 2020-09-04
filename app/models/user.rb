@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  attr_reader :password
+
   validates :username, presence: true
   validates :session_token, presence: true
   validates :email, presence: true
@@ -37,15 +40,13 @@ class User < ApplicationRecord
   
   after_initialize :ensure_session_token
 
-  attr_reader :password
-
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64(16)
-    self.save!
+    self.save
     self.session_token
   end
 

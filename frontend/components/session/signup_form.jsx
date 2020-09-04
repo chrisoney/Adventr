@@ -22,7 +22,7 @@ class SignupForm extends React.Component {
     
     this.props
       .login(demo)
-      .then(() => this.props.history.push("/explore"));
+      .then(() => this.props.history.push("/dashboard"));
   }
 
   componentDidMount() {
