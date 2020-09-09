@@ -39,16 +39,14 @@ class LoginForm extends React.Component {
       password: "hunter12",
     };
 
+    debugger
+
     this.props
       .login(demo)
-      // .then(() => this.props.history.push("/dashboard"));
-  }
+      .then(() => this.props.history.push("/dashboard"))
 
-  // demoLogin(e){
-  //   this.setState({username: "fake-user",
-  //                  password: "hunter12"}),() => this.props.login(this.state).then(()=> this.props.history.push('/dashboard'));
-  //   console.log(this.state);
-  // }
+    debugger
+  }
 
   componentDidMount() {
     this.props.clearSessionErrors();

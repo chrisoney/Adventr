@@ -7,7 +7,11 @@ import { Link } from 'react-router-dom';
 class UserMenu extends React.Component{
     constructor(props) {
         super(props);
-        this.state = { currentUser: this.props.currentUser }
+        this.state = { currentUser: this.props.currentUser,
+                      imageUrls: null,
+                      imageFiles: null, };
+        this.reference = React.createRef();
+
         this.logoutUser = this.logoutUser.bind(this);
         this.handleUpload = this.handleUpload.bind(this);
     }
@@ -19,19 +23,31 @@ class UserMenu extends React.Component{
 
     handleUpload(e) {
       let that = this;
-      let url;
+      let fileArr = [];
+      let urlArr = [];
+      
+      if (this.state.imageFiles !== null){
+        fileArr = fileArr.concat(this.state.imageFiles);
+        let imageUrlArr = urlArr.concat(this.state.imageUrls);
+      }
       
       let uploadedImages = e.currentTarget.files;
       
-      let file = uploadedImages[0];
-      let fileReader = new FileReader();
-  
-      fileReader.onloadend = () => {
-        url = fileReader.result;
-        that.state.currentUser.avatar = url;
+      for (let i = 0; i < uploadedImages.length; i++){
+        let file = uploadedImages[i];
+        let fileReader = new FileReader();
+    
+        fileReader.onloadend = () => {
+          fileArr = fileArr.concat(file);
+          urlArr = urlArr.concat(fileReader.result);
+          that.setState({
+            imageFiles: fileArr,
+            imageUrls: urlArr
+          })
+        }
+        if (file) fileReader.readAsDataURL(file);
       }
-      if (file) fileReader.readAsDataURL(file);
-      debugger
+  
     }
 
     render() {
@@ -41,12 +57,12 @@ class UserMenu extends React.Component{
           <div className="user-menu-top">
               <label className="user-menu-avatar">
                 <img src={currentUser.avatar}/>
-                {/* <input
+                <input
                   type="file"
                   accept="image/*"
                   id="upload-box"
                   onChange={this.handleUpload}
-                /> */}
+                />
               </label>
               <div className="user-menu-username">{currentUser.username}</div>
           </div>

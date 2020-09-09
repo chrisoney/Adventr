@@ -4,13 +4,11 @@ export const signup = user => {
     url: '/api/users',
     method: 'POST',
     data: { user },
-    success: (data) => {
-      location.reload();
-    }
   })
 };
 
 export const login = user => {
+  debugger
   return $.ajax({
     url: '/api/session',
     method: 'POST',
