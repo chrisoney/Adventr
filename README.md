@@ -1,6 +1,6 @@
 ### Live website
 
-[Click here](https://adventr-app.herokuapp.com/#/) to check out Adventr!
+[Click here](https://adventr-app.herokuapp.com/?#/) to check out Adventr!
 
 -------------------------------------------
 

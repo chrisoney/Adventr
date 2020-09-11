@@ -15,8 +15,8 @@ const App = () => (
   <div className="app">
     <Modal />
     <Route path="/" component={NavbarContainer} />
-    <SplashRoute path="/" component={Splash} />
-    <SplashRoute path="/register" component={Splash} />
+    <Route exact path="/" component={Splash} />
+    {/* <SplashRoute path="/register" component={Splash} /> */}
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <ProtectedRoute path="/dashboard" component={DashboardContainer} />
