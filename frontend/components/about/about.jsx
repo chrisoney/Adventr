@@ -17,6 +17,27 @@ class About extends React.Component {
             ></img>
             <div className="quest">
               <div className="quest-header"><span>Chris Oney</span></div>
+              <div className="title">Portfolio</div>
+              <div className="about-body">
+                <a href="www.chrisoney.com">Check out my portfolio site!</a>
+              </div>
+              <div className="quest-footer">
+                <div className="quest-footer-left"></div>
+                <div className="quest-footer-right">
+                  <div className="quest-buttons">
+                    <a href="www.chrisoney.com"><span className="about-icon fas fa-smile"></span></a>
+                  </div>
+                </div>
+              </div>
+				    </div>
+			    </div>
+          {/* LinkedIn */}
+          <div className="quest-container-dash">
+            <img className="avatar-dash"
+                 src="https://adventr-dev.s3-us-west-1.amazonaws.com/face.jpg"
+            ></img>
+            <div className="quest">
+              <div className="quest-header"><span>Chris Oney</span></div>
               <div className="title">LinkedIn</div>
               <div className="about-body">
                 <a href="https://www.linkedin.com/in/christopher-oney-317b84132/">Check out my LinkedIn profile!</a>

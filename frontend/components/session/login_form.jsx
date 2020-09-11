@@ -39,13 +39,11 @@ class LoginForm extends React.Component {
       password: "hunter12",
     };
 
-    debugger
 
     this.props
       .login(demo)
       .then(() => this.props.history.push("/dashboard"))
 
-    debugger
   }
 
   componentDidMount() {

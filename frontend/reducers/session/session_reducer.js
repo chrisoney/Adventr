@@ -8,7 +8,6 @@ const _nullSession = {
 };
 
 const sessionReducer = (prevState = _nullSession, action) => {
-  debugger
   Object.freeze(prevState);
   let newState = {};
   switch (action.type) {
