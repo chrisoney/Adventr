@@ -19,7 +19,7 @@ class About extends React.Component {
               <div className="quest-header"><span>Chris Oney</span></div>
               <div className="title">Portfolio</div>
               <div className="about-body">
-                <a href="https://www.chrisoney.com">Check out my portfolio site!</a>
+                <a href="http://www.chrisoney.com">Check out my portfolio site!</a>
               </div>
               <div className="quest-footer">
                 <div className="quest-footer-left"></div>
