@@ -5,6 +5,7 @@
 -------------------------------------------
 
 # Adventr
+<meta property='og:image' content='./app/assets/images/preview.jpg'/>
 <img src="./app/assets/images/gifs/log-in.gif" width=800 height=auto>
 
 -------------------------------------------
