@@ -13,7 +13,8 @@ class SignupForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
-  demoLogin() {
+  demoLogin(e) {
+    e.preventDefault();
     const demo = {
       username: "fake-user",
       email: "fakeuser@fake.com",

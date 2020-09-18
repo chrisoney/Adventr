@@ -32,7 +32,8 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push("/dashboard"));
   }
 
-  demoLogin() {
+  demoLogin(e) {
+    e.preventDefault();
     const demo = {
       username: "fake-user",
       email: "fakeuser@fake.com",
