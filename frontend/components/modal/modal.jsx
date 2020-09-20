@@ -4,6 +4,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import UserPage from './user_page'
 import UserMenu from './user_menu'
 import NewQuestContainer from './new_quest_container'
+import AvatarContainer from './avatar_container'
 
 
 class Modal extends React.Component {
@@ -30,7 +31,12 @@ class Modal extends React.Component {
         component = <NewQuestContainer type={formType} />;
 				background = 'new-quest-background';
 				container = 'new-quest-container';
-				break;
+        break;
+      case 'avatar':
+        component = <AvatarContainer />;
+				background = 'new-avatar-background';
+				container = 'new-avatar-container';
+        break;
       case 'usermenu':
 				component = <UserMenu closeModal={closeModal}/>;
 				background = 'user-menu-background';
