@@ -3,12 +3,9 @@ import React from 'react';
 class AvatarUpload extends React.Component {
   constructor(props){
     super(props);
-    const { type, currentUser } = this.props;
+    const { currentUser } = this.props;
 		this.state = {
 			currentUser_id: currentUser.id,
-			type: type,
-			title: '',
-			text: '',
 			imageUrls: null,
 			imageFiles: null,
 			errors: null,
@@ -76,56 +73,14 @@ class AvatarUpload extends React.Component {
   
   handleSubmit(e) {
 		
-		if (this.state.allowSubmit) {
-
-      e.preventDefault();
-      this.setState({ allowSubmit: false });
-      const formData = new FormData();
-			let imageFiles = this.state.imageFiles;
-
-      formData.append('quest[title]', this.state.title);
-			if (imageFiles) {
-				imageFiles.forEach((image, idx)=>{
-					formData.append('quest[images][]', imageFiles[idx]);
-				})
-			}
-			formData.append('quest[text]', this.state.text);
-			formData.append('quest[quest_type]', this.state.type);
-			
-			this.props.createQuest(formData)
-        .then (
-          this.props.closeModal() 
-        );
-		}
+		
 	}
   
 
 
   render() {
-		const { closeModal, currentUser, type } = this.props;
-		const { title, text, imageFiles } = this.state;
-		let placeholderText;
-
-		switch (type) {
-			case "text":
-				placeholderText = "Your text here";
-				break;
-			case "image":
-				placeholderText = "Add a caption";
-				break;
-			case "quote":
-				placeholderText = " - Source";
-				break;
-			case "audio":
-				placeholderText = "Add a description";
-				break;
-			case "video":
-				placeholderText = "Add a caption"
-				break;
-			default:
-				placeholderText = "";
-				break;
-		}
+		const { closeModal, currentUser } = this.props;
+		const { imageFiles } = this.state;
 
 			const titleSection=(
 			<input 
