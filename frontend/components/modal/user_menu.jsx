@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../../actions/session_actions'
-import { closeModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import { Link } from 'react-router-dom';
 
 class UserMenu extends React.Component{
     constructor(props) {
         super(props);
         this.state = { currentUser: this.props.currentUser,
-                      imageUrls: null,
-                      imageFiles: null, };
+                      imageUrl: null,
+                      imageFile: null, };
         this.reference = React.createRef();
 
         this.logoutUser = this.logoutUser.bind(this);
@@ -21,34 +21,7 @@ class UserMenu extends React.Component{
       this.props.closeModal();
     }
 
-    handleUpload(e) {
-      let that = this;
-      let fileArr = [];
-      let urlArr = [];
-      
-      if (this.state.imageFiles !== null){
-        fileArr = fileArr.concat(this.state.imageFiles);
-        let imageUrlArr = urlArr.concat(this.state.imageUrls);
-      }
-      
-      let uploadedImages = e.currentTarget.files;
-      
-      for (let i = 0; i < uploadedImages.length; i++){
-        let file = uploadedImages[i];
-        let fileReader = new FileReader();
     
-        fileReader.onloadend = () => {
-          fileArr = fileArr.concat(file);
-          urlArr = urlArr.concat(fileReader.result);
-          that.setState({
-            imageFiles: fileArr,
-            imageUrls: urlArr
-          })
-        }
-        if (file) fileReader.readAsDataURL(file);
-      }
-  
-    }
 
     render() {
       const { currentUser, closeModal } = this.props;
@@ -57,12 +30,6 @@ class UserMenu extends React.Component{
           <div className="user-menu-top">
               <label className="user-menu-avatar">
                 <img src={currentUser.avatar}/>
-                <input
-                  type="file"
-                  accept="image/*"
-                  id="upload-box"
-                  onChange={this.handleUpload}
-                />
               </label>
               <div className="user-menu-username">{currentUser.username}</div>
           </div>
@@ -105,6 +72,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logout()),
+    openModal: () => dispatch(openModal()),
     closeModal: () => dispatch(closeModal()),
 })
     

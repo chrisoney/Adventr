@@ -19,6 +19,15 @@ end
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if (@user && @user.update(user_params))
+      render :show
+    else
+      render :show
+    end
+  end
+
   def show
     @user = User.find(params[:id])
     if @user
@@ -31,6 +40,6 @@ end
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email)
+    params.require(:user).permit(:username, :password, :email, :avatar)
   end
 end

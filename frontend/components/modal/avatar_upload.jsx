@@ -6,8 +6,8 @@ class AvatarUpload extends React.Component {
     const { currentUser } = this.props;
 		this.state = {
 			currentUser_id: currentUser.id,
-			imageUrls: null,
-			imageFiles: null,
+			imageUrl: null,
+			imageFile: null,
 			errors: null,
 			allowSubmit: true
 		};
@@ -24,30 +24,15 @@ class AvatarUpload extends React.Component {
   }
 
   handleUpload(e) {
-		let that = this;
-		let fileArr = [];
-    let urlArr = [];
-    
-		if (this.state.imageFiles !== null){
-			fileArr = fileArr.concat(this.state.imageFiles);
-			imageUrlArr = urlArr.concat(this.state.imageUrls);
-    }
-    
-    let uploadedImages = e.currentTarget.files;
-    
-		for (let i = 0; i < uploadedImages.length; i++){
-			let file = uploadedImages[i];
-			let fileReader = new FileReader();
-	
-			fileReader.onloadend = () => {
-        fileArr = fileArr.concat(file);
-        urlArr = urlArr.concat(fileReader.result);
-        that.setState({
-          imageFiles: fileArr,
-          imageUrls: urlArr
-				})
-			}
-			if (file) fileReader.readAsDataURL(file);
+		const reader = new FileReader();
+		const file = e.currentTarget.files[0];
+		reader.onloadend = () =>
+			this.setState({ imageUrl: reader.result, imageFile: file });
+
+		if (file) {
+			reader.readAsDataURL(file);
+		} else {
+			this.setState({ imageUrl: "", imageFile: null });
 		}
 
   }
@@ -65,14 +50,25 @@ class AvatarUpload extends React.Component {
 		if (imageFiles && imageFiles.length===0) imageFiles = null;
 
 		this.setState({
-			imageUrls: imageUrls,
-			imageFiles: imageFiles
+			imageUrl: imageUrl,
+			imageFile: imageFile
 		})
 
   }
   
   handleSubmit(e) {
-		
+		e.preventDefault();
+		const formData = new FormData();
+		if (this.state.photoFile) {
+			formData.append('post[photo]', this.state.photoFile);
+		}
+		$.ajax({
+			url: '/api/posts',
+			method: 'POST',
+			data: formData,
+			contentType: false,
+			processData: false
+		});
 		
 	}
   
@@ -128,7 +124,7 @@ class AvatarUpload extends React.Component {
 				{/* <img className="avatar-dash" src={currentUser.avatar} /> */}
 				<div className="quest-form-box quest-box">
 					<div className="quest-form-top-block">{currentUser.username}</div>
-					{formBlock}
+					{imageUploadSection}
 					<div className="quest-form-bottom-block">
 						<button className="quest-close" onClick={closeModal}>Close</button>
 						<button disabled={disabled} className="quest-create" onClick={this.handleSubmit}>

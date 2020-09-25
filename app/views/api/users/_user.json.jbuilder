@@ -22,8 +22,8 @@ json.authored_quests do
   json.array! authored_quests
 end
 
-if user.profile_pictures.attached?
-  json.imageUrls user.profile_pictures.map {|image| url_for(image) }
-  json.imageFiles user.profile_pictures.map {|image| (image.blob_id) }
-  json.imageFiles2 user.profile_pictures.map {|image| (image) }
+if user.profile_picture.attached?
+  json.imageUrl = url_for(user.profile_picture)
+  json.imageFile = user.profile_picture.blob_id
+  json.imageFile2 = user.profile_picture
 end
