@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_one_attached :profile_picture
 
   has_many :quests
   has_many :likes

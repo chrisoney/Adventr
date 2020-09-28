@@ -21,9 +21,3 @@ json.authored_quests do
   end
   json.array! authored_quests
 end
-
-if user.profile_picture.attached?
-  json.imageUrl = url_for(user.profile_picture)
-  json.imageFile = user.profile_picture.blob_id
-  json.imageFile2 = user.profile_picture
-end
