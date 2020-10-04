@@ -37,7 +37,8 @@ class Quest extends React.Component {
 		}
   }
 
-  toggleLiked(){
+  toggleLiked(e){
+    e.preventDefault();
     const quest = this.props.quest;
 		if (this.state.liked){
       this.props.unlikeQuest(quest.id);
@@ -46,6 +47,9 @@ class Quest extends React.Component {
 		}
     this.setState({liked: !this.state.liked});
     this.setState({visible: true});
+    setTimeout(() => {
+      this.setState({visible: false});
+    }, 500);
 	}
 
 	toggleFollowed(){
@@ -131,7 +135,7 @@ class Quest extends React.Component {
               <button className="reblog fas fa-retweet"></button>
               <button 
               className={`like ${likedClass}`}
-              onClick={this.toggleLiked}></button>
+              onClick={(e)=>this.toggleLiked(e)}></button>
               {heartAnimation}
             </div>
 					</div>
@@ -157,7 +161,7 @@ class Quest extends React.Component {
 									key={idx} 
 									className="image-video" 
 									src={imageUrl}
-									onClick={()=>this.props.openModal("pop-out")} />
+									/>
 								)
       })
     }

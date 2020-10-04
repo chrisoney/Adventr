@@ -6,7 +6,9 @@ class HeartAnimation extends React.Component {
   }
 
   render(){
-    const display = this.props.visible ? (<div className={this.props.class}></div>) : null;
+    let isVis = false;
+    isVis = this.props.visible;
+    const display = isVis ? (<div className={this.props.class}></div>) : null;
     return (
       <>
         {display}

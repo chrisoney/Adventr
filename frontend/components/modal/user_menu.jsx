@@ -13,7 +13,7 @@ class UserMenu extends React.Component{
         this.reference = React.createRef();
 
         this.logoutUser = this.logoutUser.bind(this);
-        this.handleUpload = this.handleUpload.bind(this);
+        // this.handleUpload = this.handleUpload.bind(this);
     }
 
     logoutUser() {
