@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 class Splash extends React.Component {
   constructor(props) {
     super(props);
-
-    this.sidebarClick = this.sidebarClick.bind(this);
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
-  sidebarClick(e) {
-    e.preventDefault();
+  handleScroll(e, id) {
     const circles = document.getElementsByClassName('fa-circle');
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
@@ -18,19 +16,18 @@ class Splash extends React.Component {
     }
     e.target.classList.remove('far');
     e.target.classList.add('fas');
+
+    $('html, body').animate({
+        scrollTop: $( '#' + id ).offset().top
+    }, 500);        
   }
+  
   render() {
     return (
-      <>
+      <div className="splash-container">
         <div className="sidebar">
-          <span
-            className="fas fa-circle"
-            onClick={(e) => this.sidebarClick(e)}
-          ></span>
-          <span
-            className="far fa-circle"
-            onClick={(e) => this.sidebarClick(e)}
-          ></span>
+          <span className="fas fa-circle" onClick={(e) => this.handleScroll(e, 'splash-1')}></span>
+          <span className="far fa-circle" onClick={(e) => this.handleScroll(e, 'splash-2')}></span>
           <span
             className="far fa-circle"
             onClick={(e) => this.sidebarClick(e)}
@@ -49,7 +46,7 @@ class Splash extends React.Component {
           ></span>
         </div>
         <div className="full-page">
-          <div className="splash">
+          <div className="splash" id="splash-1">
             <div className="splash-content">
               <p className="app-name">adventr</p>
               <div className="welcome-text">
@@ -68,7 +65,10 @@ class Splash extends React.Component {
         <div className="bottom-section">
           <div className="bottom-text">What is Adventr?</div>
         </div>
-      </>
+        <div className="full-page" id="splash-2">
+          <div className="splash-2"></div>
+        </div>
+      </div>
     );
   }
 }
