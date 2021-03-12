@@ -10,20 +10,43 @@ class Splash extends React.Component {
 
   sidebarClick(e) {
     e.preventDefault();
-    document.querySelectorAll('fa-circle').forEach((circle) => {
-      circle.classList.remove('fas').add('far');
-    });
-    e.target.classList.remove('far').add('fas');
+    const circles = document.getElementsByClassName('fa-circle');
+    for (let i = 0; i < circles.length; i++) {
+      const circle = circles[i];
+      circle.classList.remove('fas');
+      circle.classList.add('far');
+    }
+    e.target.classList.remove('far');
+    e.target.classList.add('fas');
   }
   render() {
     return (
       <>
         <div className="sidebar">
-          <span className="fas fa-circle"></span>
-          <span className="far fa-circle"></span>
-          <span className="far fa-circle"></span>
-          <span className="far fa-circle"></span>
-          <span className="far fa-circle"></span>
+          <span
+            className="fas fa-circle"
+            onClick={(e) => this.sidebarClick(e)}
+          ></span>
+          <span
+            className="far fa-circle"
+            onClick={(e) => this.sidebarClick(e)}
+          ></span>
+          <span
+            className="far fa-circle"
+            onClick={(e) => this.sidebarClick(e)}
+          ></span>
+          <span
+            className="far fa-circle"
+            onClick={(e) => this.sidebarClick(e)}
+          ></span>
+          <span
+            className="far fa-circle"
+            onClick={(e) => this.sidebarClick(e)}
+          ></span>
+          <span
+            className="far fa-circle"
+            onClick={(e) => this.sidebarClick(e)}
+          ></span>
         </div>
         <div className="full-page">
           <div className="splash">
