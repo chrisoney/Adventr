@@ -1,5 +1,21 @@
 @import './variables.scss';
 
+.sidebar {
+	position: fixed;
+	left: 5%;
+	top: 40%;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	font-size: 0.5rem;
+	// background-color: red;
+	color: white;
+}
+
+.fa-circle {
+	margin: 0.25rem;
+}
+
 .splash {
 	top: 0;
 	bottom: 0;
