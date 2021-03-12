@@ -65,6 +65,9 @@ class Splash extends React.Component {
             </div>
           </div>
         </div>
+        <div className="bottom-section">
+          <div className="bottom-text">What is Adventr?</div>
+        </div>
       </>
     );
   }

@@ -8,14 +8,34 @@
 	display: flex;
 	flex-direction: column;
 	font-size: 0.5rem;
-	// background-color: red;
 	color: white;
 	cursor: pointer;
+
+	.fa-circle {
+		margin: 0.25rem;
+	}
 }
 
-.fa-circle {
-	margin: 0.25rem;
+.bottom-section {
+	position: fixed;
+	bottom: 0;
+	z-index: 1;
+	width: 100vw;
+	height: 5vh;
+	background-color: $dark-green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	.bottom-text {
+		color: white;
+		font-weight: 50px;
+		font-family: $splash-font;
+		font-size: 0.75rem;
+	}
 }
+
 
 .splash {
 	top: 0;
@@ -88,6 +108,7 @@
 	font-size: 16px;
 	border-radius: 3px;
 	border: none;
+	cursor: pointer;
 }
 
 .signup {
