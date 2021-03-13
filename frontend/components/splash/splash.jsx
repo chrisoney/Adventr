@@ -106,6 +106,8 @@ class Splash extends React.Component {
         <div className="splash" id="splash-2">
           <div className="splash-2-content">
             <div className="logo">a</div>
+            <img src="/assets/sword.svg" className="filter sword-1" />
+
             <div className="splash-2-text">
               <span className="splash-2-prompt">
                 Adventuring is hard, but we made it easy.

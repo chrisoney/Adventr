@@ -108,8 +108,22 @@
 			top: 20%;
 			left: 45%;
 			font-size: 10rem;
-			color: white
+			color: white;
+			animation: fade 2s;
 		}
+		.filter {
+			filter: invert(100%) sepia(100%) saturate(38%) hue-rotate(321deg) brightness(110%) contrast(110%);
+		}
+
+		.sword-1 {
+			position: absolute;
+			height: 10%;
+			width: auto;
+			color: white;
+			top: 18%;
+			left: 27%;
+		}
+
 		.splash-2-text {
 			display: flex;
 			flex-direction: column;
@@ -131,6 +145,7 @@
 		}
 	}
 }
+
 
 #splash-3 {
 	background: none;
