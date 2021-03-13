@@ -103,7 +103,24 @@ class Splash extends React.Component {
             <div className="bottom-text">What is Adventr?</div>
           </div>
         </div>
-        <div className="splash" id="splash-2"></div>
+        <div className="splash" id="splash-2">
+          <div className="splash-2-content">
+            <div className="logo">a</div>
+            <div className="splash-2-text">
+              <span className="splash-2-prompt">
+                Adventuring is hard, but we made it easy.
+              </span>
+              <span className="splash-2-description">
+                We made it really, really simple for adventurers of all types to
+                make a living finishing quests and collecting the rewards.
+                Whether it's slaying manticores, recovering relics, or
+                uncovering the conspiracy behind the assassination attempt of
+                the local tailor, we'll get you the info you need so you can
+                make a name for yourself.
+              </span>
+            </div>
+          </div>
+        </div>
         <div className="splash" id="splash-3"></div>
         <div className="splash" id="splash-4"></div>
         <div className="splash" id="splash-5"></div>
