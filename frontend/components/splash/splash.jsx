@@ -16,7 +16,8 @@ class Splash extends React.Component {
         1190.4000244140625,
         1785.5999755859375,
         2380.800048828125,
-        2976,,
+        2976,
+        ,
       ],
     };
   }
@@ -33,7 +34,6 @@ class Splash extends React.Component {
         }
       }
       const scrollTop = this.myRef.current.scrollTop;
-      console.log(`myRef.scrollTop: ${scrollTop}`);
       this.setState({
         scrollTop: scrollTop,
       });
@@ -41,15 +41,6 @@ class Splash extends React.Component {
   }
 
   handleScroll(e, id) {
-    console.log($('#' + id).offset().top);
-    // const circles = document.getElementsByClassName('fa-circle');
-    // for (let i = 0; i < circles.length; i++) {
-    //   const circle = circles[i];
-    //   circle.classList.remove('fas');
-    //   circle.classList.add('far');
-    // }
-    // e.target.classList.remove('far');
-    // e.target.classList.add('fas');
     $('.splash-container').animate(
       {
         scrollTop: $('#' + id).offset().top + this.state.scrollTop,
