@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 class Splash extends React.Component {
   constructor(props) {
     super(props);
-    this.handleScroll = this.handleScroll.bind(this)
+    this.handleScroll = this.handleScroll.bind(this);
+    this.state = {
+      scrollPosition: 0
+    }
   }
 
   handleScroll(e, id) {
-    console.log($('#' + id).offset().top);
+    console.log($('#' + id).offset().top + this.state.scrollPosition)
     const circles = document.getElementsByClassName('fa-circle');
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
@@ -19,10 +22,13 @@ class Splash extends React.Component {
     e.target.classList.add('fas');
     $('.splash-container').animate(
       {
-        scrollTop: $('#' + id).offset().top,
+        scrollTop:
+         
+          $('#' + id).offset().top + this.state.scrollPosition
       },
-      1000
+      500
     );
+    this.setState({ scrollPosition: this.state.scrollPosition + $('#' + id).offset().top})
   }
   
   render() {
