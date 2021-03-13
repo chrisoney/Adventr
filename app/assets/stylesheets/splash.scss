@@ -1,10 +1,18 @@
 @import './variables.scss';
 
+.splash-container {
+	overflow: scroll;
+  height: 100vh;
+	scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
 .sidebar {
 	position: fixed;
 	left: 5%;
 	top: 40%;
-	z-index: 1;
+	z-index: 2;
 	display: flex;
 	flex-direction: column;
 	font-size: 0.5rem;
@@ -42,33 +50,31 @@
 	left: 0;
 	right: 0;
 	display: flex;
-	background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
+	scroll-snap-align: start;
 	height: 100vh;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-	background-size: cover;
 }
 
-.splash-2 {
+#splash-1 {
+	position: relative;
+	background: black;
+}
+
+#splash-1:before {
+	position: absolute;
+	z-index: 1;
+	content: '';
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	display: flex;
-	background-color: $dark-green;
-	height: 100vh;
+	background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+	background-size: cover;
+	// opacity: 0.5;
+	animation: fade 3s;
 }
-
-.splash-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: auto;
-	transform: translate(0%, -15%);
-	animation: fade 1.2s, slide 0.5s;
-}
-
 @keyframes fade{
 	from{
 		opacity: 0;
@@ -78,14 +84,44 @@
 	}
 }
 
-@keyframes slide{
-	from{
-		transform: translateY(-20px);
-	} 
-	to{
-		transform: translateY(-45px);
-	}
+#splash-2 {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	background-color: $dark-green;
 }
+
+.splash-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	transform: translate(0%, -15%);
+	// old animation
+	animation: none;
+	z-index: 1;
+}
+
+// old animations
+// @keyframes fade{
+// 	from{
+// 		opacity: 0;
+// 	} 
+// 	to{
+// 		opacity: 1;
+// 	}
+// }
+
+// @keyframes slide{
+// 	from{
+// 		transform: translateY(-20px);
+// 	} 
+// 	to{
+// 		transform: translateY(-45px);
+// 	}
+// }
 
 .app-name {
 	color: white;
