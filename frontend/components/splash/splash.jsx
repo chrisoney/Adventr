@@ -8,6 +8,7 @@ class Splash extends React.Component {
   }
 
   handleScroll(e, id) {
+    console.log(e.target, id);
     const circles = document.getElementsByClassName('fa-circle');
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
@@ -16,7 +17,6 @@ class Splash extends React.Component {
     }
     e.target.classList.remove('far');
     e.target.classList.add('fas');
-
     $('html, body').animate({
         scrollTop: $( '#' + id ).offset().top
     }, 500);        
@@ -36,19 +36,19 @@ class Splash extends React.Component {
           ></span>
           <span
             className="far fa-circle"
-            onClick={(e) => this.sidebarClick(e)}
+            onClick={(e) => this.handleScroll(e, 'splash-3')}
           ></span>
           <span
             className="far fa-circle"
-            onClick={(e) => this.sidebarClick(e)}
+            onClick={(e) => this.handleScroll(e, 'splash-4')}
           ></span>
           <span
             className="far fa-circle"
-            onClick={(e) => this.sidebarClick(e)}
+            onClick={(e) => this.handleScroll(e, 'splash-5')}
           ></span>
           <span
             className="far fa-circle"
-            onClick={(e) => this.sidebarClick(e)}
+            onClick={(e) => this.handleScroll(e, 'splash-6')}
           ></span>
         </div>
         <div className="splash" id="splash-1">
@@ -70,6 +70,10 @@ class Splash extends React.Component {
           </div>
         </div>
         <div className="splash" id="splash-2"></div>
+        <div className="splash" id="splash-3"></div>
+        <div className="splash" id="splash-4"></div>
+        <div className="splash" id="splash-5"></div>
+        <div className="splash" id="splash-6"></div>
       </div>
     );
   }

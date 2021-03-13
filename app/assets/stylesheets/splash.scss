@@ -85,12 +85,19 @@
 }
 
 #splash-2 {
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	display: flex;
 	background-color: $dark-green;
+}
+#splash-3 {
+	background-color: blue;
+}
+#splash-4 {
+	background-color: red;
+}
+#splash-5 {
+	background-color: purple;
+}
+#splash-6 {
+	background-color: black;
 }
 
 .splash-content {
