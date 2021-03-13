@@ -5,35 +5,69 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
+    this.onScroll = this.onScroll.bind(this);
+    this.myRef = React.createRef();
     this.state = {
-      scrollPosition: 0
-    }
+      scrollTop: 0,
+      scrollPosition: 0,
+      scrollPosArr: [
+        0,
+        595.2000122070312,
+        1190.4000244140625,
+        1785.5999755859375,
+        2380.800048828125,
+        2976,,
+      ],
+    };
+  }
+  onScroll() {
+    setTimeout(() => {
+      const circles = document.getElementsByClassName('fa-circle');
+      for (let i = 0; i < circles.length; i++) {
+        if (this.state.scrollPosArr[i] === this.state.scrollTop) {
+          circles[i].classList.remove('far');
+          circles[i].classList.add('fas');
+        } else {
+          circles[i].classList.remove('fas');
+          circles[i].classList.add('far');
+        }
+      }
+      const scrollTop = this.myRef.current.scrollTop;
+      console.log(`myRef.scrollTop: ${scrollTop}`);
+      this.setState({
+        scrollTop: scrollTop,
+      });
+    }, 300);
   }
 
   handleScroll(e, id) {
-    console.log($('#' + id).offset().top + this.state.scrollPosition)
-    const circles = document.getElementsByClassName('fa-circle');
-    for (let i = 0; i < circles.length; i++) {
-      const circle = circles[i];
-      circle.classList.remove('fas');
-      circle.classList.add('far');
-    }
-    e.target.classList.remove('far');
-    e.target.classList.add('fas');
+    console.log($('#' + id).offset().top);
+    // const circles = document.getElementsByClassName('fa-circle');
+    // for (let i = 0; i < circles.length; i++) {
+    //   const circle = circles[i];
+    //   circle.classList.remove('fas');
+    //   circle.classList.add('far');
+    // }
+    // e.target.classList.remove('far');
+    // e.target.classList.add('fas');
     $('.splash-container').animate(
       {
-        scrollTop:
-         
-          $('#' + id).offset().top + this.state.scrollPosition
+        scrollTop: $('#' + id).offset().top + this.state.scrollTop,
       },
       500
     );
-    this.setState({ scrollPosition: this.state.scrollPosition + $('#' + id).offset().top})
+    this.setState({
+      scrollTop: this.state.scrollTop + $('#' + id).offset().top,
+    });
   }
-  
+
   render() {
     return (
-      <div className="splash-container">
+      <div
+        className="splash-container"
+        ref={this.myRef}
+        onScroll={this.onScroll}
+      >
         <div className="sidebar">
           <span
             className="fas fa-circle"
