@@ -8,7 +8,7 @@ class Splash extends React.Component {
   }
 
   handleScroll(e, id) {
-    console.log(e.target, id);
+    console.log($('#' + id).offset().top);
     const circles = document.getElementsByClassName('fa-circle');
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
@@ -17,9 +17,12 @@ class Splash extends React.Component {
     }
     e.target.classList.remove('far');
     e.target.classList.add('fas');
-    $('html, body').animate({
-        scrollTop: $( '#' + id ).offset().top
-    }, 500);        
+    $('.splash-container').animate(
+      {
+        scrollTop: $('#' + id).offset().top,
+      },
+      1000
+    );
   }
   
   render() {

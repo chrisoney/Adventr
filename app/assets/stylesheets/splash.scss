@@ -2,6 +2,7 @@
 
 .splash-container {
 	overflow: scroll;
+	scroll-behavior: smooth;
   height: 100vh;
 	scroll-snap-type: mandatory;
 	scroll-snap-points-y: repeat(100vh);
@@ -59,22 +60,22 @@
 	background: black;
 }
 
-#splash-1:before {
-	position: absolute;
-	z-index: 1;
-	content: '';
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-	background-size: cover;
-	// opacity: 0.5;
-	animation: fade 3s;
-}
+// #splash-1:before {
+// 	position: absolute;
+// 	z-index: 1;
+// 	content: '';
+// 	top: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	right: 0;
+// 	background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
+// 	-webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+// 	background-size: cover;
+// 	// opacity: 0.5;
+// 	animation: fade 3s;
+// }
 @keyframes fade{
 	from{
 		opacity: 0;
