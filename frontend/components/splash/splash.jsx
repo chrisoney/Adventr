@@ -20,9 +20,11 @@ class Splash extends React.Component {
         if (this.state.scrollPosArr[i] === parseInt(this.state.scrollTop)) {
           circles[i].classList.remove('far');
           circles[i].classList.add('fas');
+          document.querySelector(`#splash-${i + 1}`).classList.add('active');
         } else {
           circles[i].classList.remove('fas');
           circles[i].classList.add('far');
+          document.querySelector(`#splash-${i + 1}`).classList.remove('active');
         }
       }
       const scrollTop = this.myRef.current.scrollTop;
