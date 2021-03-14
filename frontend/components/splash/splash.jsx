@@ -59,6 +59,7 @@ class Splash extends React.Component {
         ref={this.myRef}
         onScroll={this.onScroll}
       >
+        <div className="test"></div>
         <div className="sidebar">
           <span
             className="fas fa-circle"

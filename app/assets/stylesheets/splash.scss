@@ -11,12 +11,12 @@
 
 .sidebar {
 	position: fixed;
-	left: 5%;
-	top: 40%;
+	left: 7%;
+	top: 35%;
 	z-index: 2;
 	display: flex;
 	flex-direction: column;
-	font-size: 0.5rem;
+	font-size: 0.9rem;
 	color: white;
 	cursor: pointer;
 
@@ -348,4 +348,11 @@
 	color: light-grey;
 	font-family: $splash-font;
 	font-size: 16px;
+}
+
+
+@media only screen and (max-width: 800px) {
+  #splash-2, #splash-3, #splash-4, #splash-5, #splash-6, .sidebar{
+		display:none;
+	}
 }
