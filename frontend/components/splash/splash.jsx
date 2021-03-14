@@ -36,7 +36,7 @@ class Splash extends React.Component {
         console.log('true');
         document.querySelector('#splash-2').classList.add('active');
       }
-    }, 300);
+    }, 600);
   }
 
   handleScroll(e, id) {
@@ -91,7 +91,7 @@ class Splash extends React.Component {
         <div className="splash" id="splash-2">
           <div className="splash-2-content">
             <div className="icons">
-              <div className="logo">a</div>
+              <img src="/assets/fancy-a.png" className="logo" />
               <img src="/assets/vector/sword.svg" className="filter sword-1" />
               {/*must test*/}
               <svg
