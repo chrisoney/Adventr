@@ -133,19 +133,6 @@
 				left: 68%;
 			}
 		}
-		.icons.active {
-			.sword-1 {
-				opacity: 1;
-				animation: sword-1 1s;
-				position: absolute;
-				height: 10%;
-				width: auto;
-				color: white;
-				top: 18%;
-				left: 27%;
-			}
-		}
-
 		.splash-2-text {
 			display: flex;
 			flex-direction: column;
@@ -164,6 +151,22 @@
 				width: 60vw;
 				font-size: 1rem;
 				max-width: 100%;
+			}
+		}
+	}
+	&.active{
+		.splash-2-content {
+			.icons {
+				.sword-1 {
+					opacity: 1;
+					animation: sword-1 1s;
+					position: absolute;
+					height: 10%;
+					width: auto;
+					color: white;
+					top: 18%;
+					left: 27%;
+				}
 			}
 		}
 	}
