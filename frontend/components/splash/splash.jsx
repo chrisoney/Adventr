@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Splash1 from './slides/splash1';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -10,22 +11,14 @@ class Splash extends React.Component {
     this.state = {
       scrollTop: 0,
       scrollPosition: 0,
-      scrollPosArr: [
-        0,
-        595.2000122070312,
-        1190.4000244140625,
-        1785.5999755859375,
-        2380.800048828125,
-        2976,
-        ,
-      ],
+      scrollPosArr: [0, 593, 1187, 1780, 2374, 2968],
     };
   }
   onScroll() {
     setTimeout(() => {
       const circles = document.getElementsByClassName('fa-circle');
       for (let i = 0; i < circles.length; i++) {
-        if (this.state.scrollPosArr[i] === this.state.scrollTop) {
+        if (this.state.scrollPosArr[i] === parseInt(this.state.scrollTop)) {
           circles[i].classList.remove('far');
           circles[i].classList.add('fas');
         } else {
@@ -35,9 +28,11 @@ class Splash extends React.Component {
       }
       const scrollTop = this.myRef.current.scrollTop;
       this.setState({
-        scrollTop: scrollTop,
+        scrollTop,
       });
-      if (parseInt(this.state.scrollTop) === 595) {
+      console.log(this.state.scrollTop);
+      if (parseInt(this.state.scrollTop) === 593) {
+        console.log('true');
         document.querySelector('.icons').classList.add('active');
       }
     }, 300);
@@ -89,22 +84,7 @@ class Splash extends React.Component {
           ></span>
         </div>
         <div className="splash" id="splash-1">
-          <div className="splash-content">
-            <p className="app-name">adventr</p>
-            <div className="welcome-text">
-              <p>Come for the adventures.</p>
-              <p>Stay for the magic items.</p>
-            </div>
-            <Link to="/signup">
-              <button className="signup">Get Started</button>
-            </Link>
-            <Link to="/login">
-              <button className="login">Login</button>
-            </Link>
-          </div>
-          <div className="bottom-section">
-            <div className="bottom-text">What is Adventr?</div>
-          </div>
+          <Splash1 />
         </div>
         <div className="splash" id="splash-2">
           <div className="splash-2-content">
