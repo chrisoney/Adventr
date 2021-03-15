@@ -96,7 +96,7 @@
 	background-color: $dark-green;
 
 	.splash-2-content{
-		margin-left: 10%;
+		margin-left: 5%;
 		position: relative;
 		height: 100%;
 		width: 100%;
@@ -109,15 +109,15 @@
 		}
 		.icons {
 			position: absolute;
-			z-index: 1;
-			height: 100%;
-			width: 100%;
+			top: 10%;
+			height: 270px;
+			width: 540px;
 			.logo{
 				position: absolute;
 				left: 50%;
-				top: 30%;
+				top: 60%;
 				transform: translate(-50%, -50%);
-				height: 25%;
+				height: 40%;
 				width: auto;
 				color: white;
 				opacity: 0;
@@ -136,27 +136,33 @@
 				position: absolute;
 				height: 10%;
 				width: auto;
-				color: white;
 				top: 18%;
 				left: 68%;
+			}
+			.bow {
+				position: absolute;
+				height: 20%;
+				width: auto;
+				top: 39%;
+				left: 35%;
 			}
 		}
 		.splash-2-text {
 			display: flex;
 			flex-direction: column;
 			height: 35%;
-			max-width: 60%;
-			margin-bottom: 5%;
+			width: 540px;
+			margin-bottom: 2%;
 			color: white;
 			.splash-2-prompt {
-				height: 10vh;
-				max-width: 60vw;
-				font-size: 2rem;
-				margin-bottom: 5%;
+				height: 120px;
+				// width: 540px;
+				font-size: 2.5rem;
+				margin-bottom: 2%;
 			}
 			.splash-2-description {
-				height: 10vh;
-				max-width: 60vw;
+				height: 96px;
+				// max-width: 540px;
 				font-size: 1rem;
 				max-width: 100%;
 			}
