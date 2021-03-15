@@ -5,7 +5,7 @@ class Icons extends React.Component {
     return (
       <div className="icons">
         <img src="/assets/fancy-a.png" className="logo" />
-        <img src="/assets/vector/sword.svg" className="filter sword-1" />
+        <img src="/assets/vector/sword.svg" className="filter sword" />
         {/*must test*/}
         <svg
           className="skull"

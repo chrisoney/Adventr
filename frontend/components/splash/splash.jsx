@@ -32,9 +32,9 @@ class Splash extends React.Component {
       this.setState({
         scrollTop,
       });
-      console.log(this.state.scrollTop);
+      // console.log(this.state.scrollTop);
       if (parseInt(this.state.scrollTop) === 593) {
-        console.log('true');
+        // console.log('true');
         document.querySelector('#splash-2').classList.add('active');
       }
     }, 600);

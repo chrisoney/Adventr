@@ -123,21 +123,18 @@
 				opacity: 0;
 			}
 
-			.sword-1 {
+			.sword {
 				position: absolute;
 				opacity: 0;
-				height: 10%;
 				width: auto;
 				color: white;
-				top: -118px;
-				left: -127px;
 			}
 			.skull {
 				position: absolute;
-				height: 10%;
+				height: 20%;
 				width: auto;
-				top: 18%;
-				left: 68%;
+				top: 40%;
+				left: 56%;
 			}
 			.bow {
 				position: absolute;
@@ -174,21 +171,19 @@
 				.logo {
 					animation: fade 1s forwards;
 				}
-				.sword-1 {
-					animation: sword-1 1s linear 1s forwards;
+				.sword {
+					animation: sword 1s linear 1s forwards;
 					position: absolute;
-					height: 10%;
+					height: 18%;
 					width: auto;
 					color: white;
-					top: -117px;
-					left: -126px;
 				}
 			}
 		}
 	}
 }
 
-@keyframes sword-1 {
+@keyframes sword {
 	from {
 		opacity: 0;
 		top: 17%;
@@ -196,8 +191,8 @@
 	}
 	to {
 		opacity: 1;
-		top: 18%;
-		left: 27%;
+		top: 73%;
+		left: 35%;
 	}
 }
 
