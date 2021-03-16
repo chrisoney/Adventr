@@ -123,7 +123,7 @@
 				opacity: 0;
 			}
 
-			.sword, .skull, .bow, .lute, .scroll, .dialogue, .dragon, .mimic, .anvil, .crossed-axes, .wizard-staff {
+			.sword, .skull, .bow, .lute, .scroll, .dialogue, .dragon, .mimic, .anvil, .crossed-axes, .wizard-staff, .ancient-sword {
 				opacity: 0;
 			}
 			.dialogue {
@@ -136,11 +136,6 @@
 				transform: scaleY(-1) rotate(45deg);
 			}
 			.ancient-sword {
-				position: absolute;
-				height: 40%;
-				width: auto;
-				top: 63%;
-				left: 16%;
 				transform: scaleX(-1)
 			}
 			.arrows {
@@ -263,7 +258,12 @@
 					height: 25%;
 					width: auto;
 				}
-				.ancient-sword {}
+				.ancient-sword {
+					animation: ancient-sword 1s linear 1s forwards;
+					position: absolute;
+					height: 40%;
+					width: auto;
+				}
 				.arrows {}
 				.fire-bottle {}
 				.vine {}
@@ -402,6 +402,18 @@
 		opacity: 1;
 		top: -6%;
 		left: 48%;
+	}
+}
+@keyframes ancient-sword {
+	from {
+		opacity: 0;
+		top: 85%;
+		left: -20%;
+	}
+	to {
+		opacity: 1;
+		top: 63%;
+		left: 16%;
 	}
 }
 
