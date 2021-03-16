@@ -123,7 +123,7 @@
 				opacity: 0;
 			}
 
-			.sword, .skull, .bow, .lute, .scroll, .dialogue, .dragon, .mimic, .anvil, .crossed-axes, .wizard-staff, .ancient-sword, .arrows {
+			.sword, .skull, .bow, .lute, .scroll, .dialogue, .dragon, .mimic, .anvil, .crossed-axes, .wizard-staff, .ancient-sword, .arrows, .fire-bottle, .vine {
 				opacity: 0;
 			}
 			.dialogue {
@@ -142,19 +142,9 @@
 				transform: scaleX(-1)
 			}
 			.fire-bottle {
-				position: absolute;
-				height: 24%;
-				width: auto;
-				top: 85%;
-				left: 43%;
 				transform: scaleX(-1) rotate(-45deg);
 			}
 			.vine {
-				position: absolute;
-				height: 20%;
-				width: auto;
-				top: 50%;
-				left: 24%;
 				transform: rotate(-5deg);
 			}
 
@@ -265,8 +255,18 @@
 					height: 28%;
 					width: auto;
 				}
-				.fire-bottle {}
-				.vine {}
+				.fire-bottle {
+					animation: fire-bottle 1s linear 1s forwards;
+					position: absolute;
+					height: 24%;
+					width: auto;
+				}
+				.vine {
+					animation: vine 1s linear 1s forwards;
+					position: absolute;
+					height: 20%;
+					width: auto;
+				}
 			}
 		}
 	}
@@ -407,8 +407,8 @@
 @keyframes ancient-sword {
 	from {
 		opacity: 0;
-		top: 85%;
-		left: -20%;
+		top: 100%;
+		left: 16%;
 	}
 	to {
 		opacity: 1;
@@ -426,6 +426,30 @@
 		opacity: 1;
 		top: 76%;
 		left: 65%;
+	}
+}
+@keyframes fire-bottle {
+	from {
+		opacity: 0;
+		top: 120%;
+		left: 43%;
+	}
+	to {
+		opacity: 1;
+		top: 85%;
+		left: 43%;
+	}
+}
+@keyframes vine {
+	from {
+		opacity: 0;
+		top: 50%;
+		left: -25%;
+	}
+	to {
+		opacity: 1;
+		top: 50%;
+		left: 24%;
 	}
 }
 
