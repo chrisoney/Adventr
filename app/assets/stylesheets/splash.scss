@@ -123,23 +123,8 @@
 				opacity: 0;
 			}
 
-			.sword, .skull {
+			.sword, .skull, .bow, .lute {
 				opacity: 0;
-			}
-
-			.bow {
-				position: absolute;
-				height: 20%;
-				width: auto;
-				top: 37%;
-				left: 32%;
-			}
-			.lute {
-				position: absolute;
-				height: 25%;
-				width: auto;
-				top: 70%;
-				left: 55%;
 			}
 			.scroll {
 				position: absolute;
@@ -267,8 +252,18 @@
 					height: 20%;
 					width: auto;
 				}
-				.bow {}
-				.lute {}
+				.bow {
+					animation: bow 1s linear 1s forwards;
+					position: absolute;
+					height: 20%;
+					width: auto;
+				}
+				.lute {
+					animation: lute 1s linear 1s forwards;
+					position: absolute;
+					height: 25%;
+					width: auto;
+				}
 				.scroll {}
 				.dialogue {}
 				.dragon {}
@@ -307,6 +302,30 @@
 		opacity: 1;
 		top: 40%;
 		left: 56%;
+	}
+}
+@keyframes bow {
+	from {
+		opacity: 0;
+		top: 0%;
+		left: 32%;
+	}
+	to {
+		opacity: 1;
+		top: 37%;
+		left: 32%;
+	}
+}
+@keyframes lute {
+	from {
+		opacity: 0;
+		top: 100%;
+		left: 100%;
+	}
+	to {
+		opacity: 1;
+		top: 70%;
+		left: 55%;
 	}
 }
 
