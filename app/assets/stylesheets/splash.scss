@@ -127,7 +127,6 @@
 				position: absolute;
 				opacity: 0;
 				width: auto;
-				// color: white;
 			}
 			.skull {
 				position: absolute;
@@ -278,8 +277,8 @@
 @keyframes sword {
 	from {
 		opacity: 0;
-		top: 17%;
-		left: 26%;
+		top: 150%;
+		left: 0%;
 	}
 	to {
 		opacity: 1;
