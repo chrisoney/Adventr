@@ -53,11 +53,12 @@
 	display: flex;
 	scroll-snap-align: start;
 	height: 100vh;
-	background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-	background-size: cover;
+	// Removed because it doesn't add anything
+	// background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
+	// -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+	// background-size: cover;
 }
 
 #splash-1 {

@@ -5,10 +5,13 @@ module.exports = {
   entry: './frontend/adventr_entry.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+  },
+  optimization: {
+    runtimeChunk: 'single',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: ['.js', '.jsx', '*'],
   },
   module: {
     rules: [
@@ -18,11 +21,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           query: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
-      }
-    ]
+      },
+    ],
   },
-  devtool: 'source-map'
-}
+  devtool: 'source-map',
+};
