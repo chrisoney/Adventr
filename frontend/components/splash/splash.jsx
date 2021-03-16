@@ -15,10 +15,14 @@ class Splash extends React.Component {
     };
   }
   onScroll() {
+    // console.log(this.state.scrollTop);
     setTimeout(() => {
       const circles = document.getElementsByClassName('fa-circle');
       for (let i = 0; i < circles.length; i++) {
-        if (this.state.scrollPosArr[i] === parseInt(this.state.scrollTop)) {
+        if (
+          this.state.scrollPosArr[i] >= parseInt(this.state.scrollTop) - 50 &&
+          this.state.scrollPosArr[i] <= parseInt(this.state.scrollTop) + 50
+        ) {
           circles[i].classList.remove('far');
           circles[i].classList.add('fas');
           document.querySelector(`#splash-${i + 1}`).classList.add('active');
@@ -33,11 +37,11 @@ class Splash extends React.Component {
         scrollTop,
       });
       // console.log(this.state.scrollTop);
-      if (parseInt(this.state.scrollTop) === 593) {
-        // console.log('true');
-        document.querySelector('#splash-2').classList.add('active');
-      }
-    }, 600);
+      // if (parseInt(this.state.scrollTop) === 593) {
+      //   // console.log('true');
+      //   document.querySelector('#splash-2').classList.add('active');
+      // }
+    }, 800);
   }
 
   handleScroll(e, id) {
