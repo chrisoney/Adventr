@@ -123,22 +123,10 @@
 				opacity: 0;
 			}
 
-			.sword, .skull, .bow, .lute {
+			.sword, .skull, .bow, .lute, .scroll, .dialogue {
 				opacity: 0;
 			}
-			.scroll {
-				position: absolute;
-				height: 20%;
-				width: auto;
-				top: 16%;
-				left: 43%;
-			}
 			.dialogue {
-				position: absolute;
-				height: 17%;
-				width: auto;
-				top: 20%;
-				left: 55%;
 				fill: #ECDDAE;
 			}
 			.dragon {
@@ -264,8 +252,18 @@
 					height: 25%;
 					width: auto;
 				}
-				.scroll {}
-				.dialogue {}
+				.scroll {
+					animation: scroll 1s linear 1s forwards;
+					position: absolute;
+					height: 20%;
+					width: auto;
+				}
+				.dialogue {
+					animation: dialogue 1s linear 1s forwards;
+					position: absolute;
+					height: 17%;
+					width: auto;
+				}
 				.dragon {}
 				.mimic {}
 				.anvil {}
@@ -325,6 +323,30 @@
 	to {
 		opacity: 1;
 		top: 70%;
+		left: 55%;
+	}
+}
+@keyframes scroll {
+	from {
+		opacity: 0;
+		top: 0%;
+		left: 43%;
+	}
+	to {
+		opacity: 1;
+		top: 16%;
+		left: 43%;
+	}
+}
+@keyframes dialogue {
+	from {
+		opacity: 0;
+		top: 0%;
+		left: 90%;
+	}
+	to {
+		opacity: 1;
+		top: 20%;
 		left: 55%;
 	}
 }
