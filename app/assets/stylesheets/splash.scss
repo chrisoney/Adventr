@@ -105,7 +105,7 @@
 		align-items: flex-end;
 
 		.filter {
-			filter: invert(100%) sepia(100%) saturate(38%) hue-rotate(321deg) brightness(110%) contrast(110%);
+			filter: invert(84%) sepia(46%) saturate(190%) hue-rotate(4deg) brightness(98%) contrast(91%);
 		}
 		.icons {
 			position: absolute;
@@ -127,7 +127,7 @@
 				position: absolute;
 				opacity: 0;
 				width: auto;
-				color: white;
+				// color: white;
 			}
 			.skull {
 				position: absolute;
@@ -163,7 +163,7 @@
 				width: auto;
 				top: 20%;
 				left: 55%;
-				fill: #FFFFFF;
+				fill: #ECDDAE;
 			}
 			.dragon {
 				position: absolute;
