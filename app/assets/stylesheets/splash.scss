@@ -190,6 +190,24 @@
 				left: 63%;
 				fill: #FFFFFF;
 			}
+			.crossed-axes {
+				position: absolute;
+				height: 30%;
+				width: auto;
+				top: 3%;
+				left: 29%;
+				fill: #FFFFFF;
+			}
+			.wizard-staff {
+				position: absolute;
+				height: 25%;
+				width: auto;
+				top: -2%;
+				left: 48%;
+				fill: #FFFFFF;
+				transform: scaleY(-1) rotate(45deg);
+			}
+
 		}
 		.splash-2-text {
 			display: flex;
