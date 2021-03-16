@@ -123,18 +123,13 @@
 				opacity: 0;
 			}
 
-			.sword, .skull, .bow, .lute, .scroll, .dialogue, .dragon {
+			.sword, .skull, .bow, .lute, .scroll, .dialogue, .dragon, .mimic {
 				opacity: 0;
 			}
 			.dialogue {
 				fill: #ECDDAE;
 			}
 			.mimic {
-				position: absolute;
-				height: 30%;
-				width: auto;
-				top: 20%;
-				left: 15%;
 				transform: scaleX(-1);
 			}
 			.anvil {
@@ -263,7 +258,12 @@
 					height: 30%;
 					width: auto;
 				}
-				.mimic {}
+				.mimic {
+					animation: mimic 1s linear 1s forwards;
+					position: absolute;
+					height: 30%;
+					width: auto;
+				}
 				.anvil {}
 				.crossed-axes {}
 				.wizard-staff {}
@@ -358,6 +358,18 @@
 		opacity: 1;
 		top: 37%;
 		left: 69%;
+	}
+}
+@keyframes mimic {
+	from {
+		opacity: 0;
+		top: -20%;
+		left: -15%;
+	}
+	to {
+		opacity: 1;
+		top: 20%;
+		left: 15%;
 	}
 }
 
