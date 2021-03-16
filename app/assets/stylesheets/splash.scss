@@ -123,18 +123,10 @@
 				opacity: 0;
 			}
 
-			.sword {
-				position: absolute;
+			.sword, .skull {
 				opacity: 0;
-				width: auto;
 			}
-			.skull {
-				position: absolute;
-				height: 20%;
-				width: auto;
-				top: 40%;
-				left: 56%;
-			}
+
 			.bow {
 				position: absolute;
 				height: 20%;
@@ -269,6 +261,25 @@
 					width: auto;
 					color: white;
 				}
+				.skull {
+					animation: skull 1s linear 1s forwards;
+					position: absolute;
+					height: 20%;
+					width: auto;
+				}
+				.bow {}
+				.lute {}
+				.scroll {}
+				.dialogue {}
+				.dragon {}
+				.mimic {}
+				.anvil {}
+				.crossed-axes {}
+				.wizard-staff {}
+				.ancient-sword {}
+				.arrows {}
+				.fire-bottle {}
+				.vine {}
 			}
 		}
 	}
@@ -284,6 +295,18 @@
 		opacity: 1;
 		top: 74%;
 		left: 34%;
+	}
+}
+@keyframes skull {
+	from {
+		opacity: 0;
+		top: 50%;
+		left: 100%;
+	}
+	to {
+		opacity: 1;
+		top: 40%;
+		left: 56%;
 	}
 }
 
