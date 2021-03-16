@@ -123,18 +123,11 @@
 				opacity: 0;
 			}
 
-			.sword, .skull, .bow, .lute, .scroll, .dialogue {
+			.sword, .skull, .bow, .lute, .scroll, .dialogue, .dragon {
 				opacity: 0;
 			}
 			.dialogue {
 				fill: #ECDDAE;
-			}
-			.dragon {
-				position: absolute;
-				height: 30%;
-				width: auto;
-				top: 37%;
-				left: 69%;
 			}
 			.mimic {
 				position: absolute;
@@ -264,7 +257,12 @@
 					height: 17%;
 					width: auto;
 				}
-				.dragon {}
+				.dragon {
+					animation: dragon 1s linear 1s forwards;
+					position: absolute;
+					height: 30%;
+					width: auto;
+				}
 				.mimic {}
 				.anvil {}
 				.crossed-axes {}
@@ -348,6 +346,18 @@
 		opacity: 1;
 		top: 20%;
 		left: 55%;
+	}
+}
+@keyframes dragon {
+	from {
+		opacity: 0;
+		top: 0%;
+		left: 120%;
+	}
+	to {
+		opacity: 1;
+		top: 37%;
+		left: 69%;
 	}
 }
 
