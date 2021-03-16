@@ -173,6 +173,15 @@
 				left: 67%;
 				fill: #FFFFFF;
 			}
+			.mimic {
+				position: absolute;
+				height: 30%;
+				width: auto;
+				top: 20%;
+				left: 15%;
+				fill: #FFFFFF;
+				transform: scaleX(-1);
+			}
 		}
 		.splash-2-text {
 			display: flex;
