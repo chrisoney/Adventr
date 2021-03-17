@@ -33,7 +33,7 @@ class NewQuestForm extends React.Component {
     
 		if (this.state.imageFiles !== null){
 			fileArr = fileArr.concat(this.state.imageFiles);
-			imageUrlArr = urlArr.concat(this.state.imageUrls);
+			urlArr = urlArr.concat(this.state.imageUrls);
     }
     
     let uploadedImages = e.currentTarget.files;

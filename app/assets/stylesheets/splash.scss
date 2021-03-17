@@ -53,12 +53,11 @@
 	display: flex;
 	scroll-snap-align: start;
 	height: 100vh;
-	// Removed because it doesn't add anything
-	// background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
-	// -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-	// background-size: cover;
+	background: asset-data-url("temp-background.jpeg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+	background-size: cover;
 }
 
 #splash-1 {
@@ -522,7 +521,7 @@
 	}
 }
 
-.signup, .login {
+.signup, .login, .demo-user {
 	width: 300px;
 	height: 45px;
 	padding: 8px 0px;
@@ -547,13 +546,7 @@
 .demo-user {
 	background-color: $sky-blue;
 	color: white;
-	border-radius: 3px;
-	border: none;
-	width: 300px;
-	height: 45px;
-	padding: 8px 0px;
-	font-family: $splash-font;
-	font-size: 16px;
+	margin-bottom: 0px;
 }
 
 .errors{

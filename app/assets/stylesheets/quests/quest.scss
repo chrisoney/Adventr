@@ -32,7 +32,8 @@
 
 .quest {
 	background: asset-data-url("paper.jpg") no-repeat center;
-	width: 90%;
+	min-height: 270px;
+	max-width: 540px;
 	grid-column: 2, 3;
 	display: grid;
 	grid-template-rows: 30px 1fr;
