@@ -7,11 +7,14 @@ module.exports = {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js',
   },
-  optimization: {
-    runtimeChunk: 'single',
-  },
   resolve: {
     extensions: ['.js', '.jsx', '*'],
+  },
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all',
+    },
   },
   module: {
     rules: [

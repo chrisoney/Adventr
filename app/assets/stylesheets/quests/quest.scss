@@ -22,6 +22,14 @@
 	object-fit: cover;
 }
 
+.avatar-dash-small {
+	display: none;
+	height: 32px;
+	width: 32px;
+	border-radius: 3px;
+	object-fit: cover;
+}
+
 .avatar-dash:hover{
 	cursor: pointer;
 }
@@ -36,13 +44,14 @@
 	max-width: 540px;
 	grid-column: 2, 3;
 	display: grid;
-	grid-template-rows: 30px 1fr;
+	grid-template-rows: 90px 1fr;
 	background-color: white;
 	border-radius: 7px;
 }
 
 .quest-header {
-	margin: 0 0 0 0;
+	margin: 0;
+	height: 70px;
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -234,4 +243,18 @@
 // audio
 .audio {
 	margin-bottom: 10px;
+}
+// Small screen
+@media only screen and (max-width: 800px) {
+	.quest-container-dash {
+		display: flex;
+		flex-direction: column;
+		width: 540px;
+	}
+  .avatar-dash{
+		display:none;
+	}
+	.avatar-dash-small {
+		display: block;
+	}
 }
