@@ -2,6 +2,9 @@ import React from 'react';
 import Splash1 from './slides/splash1';
 import Splash2 from './slides/splash2/splash2';
 import Splash3 from './slides/splash3';
+import Splash4 from './slides/splash4';
+import Splash5 from './slides/splash5';
+import Splash6 from './slides/splash6';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -100,9 +103,15 @@ class Splash extends React.Component {
         <div className="splash" id="splash-3">
           <Splash3 />
         </div>
-        <div className="splash" id="splash-4"></div>
-        <div className="splash" id="splash-5"></div>
-        <div className="splash" id="splash-6"></div>
+        <div className="splash" id="splash-4">
+          <Splash4 />
+        </div>
+        <div className="splash" id="splash-5">
+          <Splash5 />
+        </div>
+        <div className="splash" id="splash-6">
+          <Splash6 />
+        </div>
       </div>
     );
   }
