@@ -5,17 +5,17 @@ class Splash6 extends React.Component {
     return (
       <>
         <div className="splash6-content">
+          <div className="splash6-images">Place Images here</div>
           <div className="splash6-text">
-            <div className="splash6-hook">Adventr is quests</div>
+            <div className="splash6-hook">You already know the work.</div>
             <div className="splash6-description">
-              Turns out that when you make it easy to sign up for quests, those
-              quests actually get completed. All those dangerous, worthwhile
-              missions your companions beg to go on, those are Adventr quests.
-              We'll help you discover quests like that, and we'll help other
-              adventurers find and take on yours.
+              Once you sign on with a guide, all of its quest notices show up in
+              your dashboard, just like you'd expect. See something great? Grab
+              a copy for your quest log. Add some notes if you like. Put your
+              own spin on it. Other adventurers will surely do the same to your
+              posts. That's how you build a reputation here.
             </div>
           </div>
-          <div className="splash6-image">Place Image here</div>
         </div>
       </>
     );
