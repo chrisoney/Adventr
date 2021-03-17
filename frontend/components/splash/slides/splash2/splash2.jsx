@@ -8,7 +8,7 @@ class Splash2 extends React.Component {
         <Icons />
         <div className="splash-2-text">
           <span className="splash-2-prompt">
-            Adventuring is hard, but adventr couldn't be simpler.
+            Adventuring is hard, but Adventr couldn't be simpler.
           </span>
           <span className="splash-2-description">
             We made it really, really simple for adventurers of all types to

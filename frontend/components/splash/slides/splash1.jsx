@@ -6,7 +6,7 @@ class Splash1 extends React.Component {
     return (
       <>
         <div className="splash-content">
-          <p className="app-name">adventr</p>
+          <p className="app-name">Adventr</p>
           <div className="welcome-text">
             <p>Come for the adventures.</p>
             <p>Stay for the magic items.</p>

@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
 import Splash1 from './slides/splash1';
 import Splash2 from './slides/splash2/splash2';
+import Splash3 from './slides/splash3';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -97,7 +97,9 @@ class Splash extends React.Component {
         <div className="splash" id="splash-2">
           <Splash2 />
         </div>
-        <div className="splash" id="splash-3"></div>
+        <div className="splash" id="splash-3">
+          <Splash3 />
+        </div>
         <div className="splash" id="splash-4"></div>
         <div className="splash" id="splash-5"></div>
         <div className="splash" id="splash-6"></div>
