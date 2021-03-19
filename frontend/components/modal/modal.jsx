@@ -19,6 +19,15 @@ class Modal extends React.Component {
 		let container;
     let component;
     let formType;
+    let onClickEffect;
+
+    const userPageClose = (e) => {
+      e.preventDefault();
+      document.querySelector('.user-page-container').classList.add('close');
+      window.setTimeout(() => {
+        closeModal();
+      }, 500);
+    };
 
     if (modal.slice(0, 4) === 'new-') { formType = modal.slice(4) }
 
@@ -30,28 +39,32 @@ class Modal extends React.Component {
       case 'new-video':
         component = <NewQuestContainer type={formType} />;
 				background = 'new-quest-background';
-				container = 'new-quest-container';
+        container = 'new-quest-container';
+        onClickEffect = closeModal;
         break;
       case 'avatar':
         component = <AvatarContainer />;
 				background = 'new-avatar-background';
-				container = 'new-avatar-container';
+        container = 'new-avatar-container';
+        onClickEffect = closeModal;
         break;
       case 'usermenu':
 				component = <UserMenu closeModal={closeModal}/>;
 				background = 'user-menu-background';
-				container = 'user-menu-container';
+        container = 'user-menu-container';
+        onClickEffect = closeModal;
 				break;
       case 'userpage':
 				component = <UserPage authorId={event.target.id}/>;
 				background = 'user-page-background';
-				container = 'user-page-container';
+        container = 'user-page-container';
+        onClickEffect = userPageClose;
 				break;
       default:
         return null;
     }
     return (
-      <div className={background} onClick={closeModal}>
+      <div className={background} onClick={(e) => onClickEffect(e)}>
         <div className={container} onClick={(e) => e.stopPropagation()}>
           {component}
         </div>

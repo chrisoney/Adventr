@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  grid-template-columns: 1fr 450px;
+  grid-template-columns: 1fr 600px;
   background-color: black;
   z-index: 15;
   overflow-y: auto;
@@ -17,18 +17,36 @@
   grid-column-start: 2;
   grid-column-end: 3;
   background-color: white;
-  width: 450px;
-  animation: slide-right 0.5s ease;
+  width: 600px;
+  animation: user-page-slide-left 0.5s ease-in-out;
+
+  &.close {
+    animation: user-page-slide-right 0.5s ease-in-out;
+  }
 }
 
-@keyframes slide-right {
+// .user-page-container.close {
+  
+// }
+
+@keyframes user-page-slide-left {
   from{
-      min: 0%;
-      margin-left: 450px;
+      width: 0%;
+      margin-left: 600px;
   }
   to{
       width: 100%;
       margin-left: 0px;
+  }
+}
+@keyframes user-page-slide-right {
+  from{
+    width: 100%;
+    margin-left: 0px;
+  }
+  to{
+    width: 0%;
+    margin-left: 600px;
   }
 }
 
@@ -52,4 +70,15 @@
 
 .user-page-username {
   color: white;
+}
+
+.avatar-userpage-small {
+  display: none;
+}
+
+.quest-container-userpage {
+  min-width: 540px;
+  .quest {
+    width: 100%;
+  }
 }
