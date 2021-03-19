@@ -45,14 +45,13 @@
 	max-width: 540px;
 	grid-column: 2, 3;
 	display: grid;
-	grid-template-rows: 90px 1fr;
+	grid-template-rows: 36px 1fr;
 	background-color: white;
 	border-radius: 7px;
 }
 
 .quest-header {
 	margin: 0;
-	height: 70px;
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -252,10 +251,14 @@
 		flex-direction: column;
 		width: 540px;
 	}
+	.quest {
+		grid-template-rows: 53px 1fr;
+	}
   .avatar-dash{
 		display:none;
 	}
 	.avatar-dash-small {
 		display: block;
 	}
+
 }
