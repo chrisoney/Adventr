@@ -23,12 +23,18 @@ class DashBoard extends React.Component {
     const { quests, follows, currentUser } = this.props;
 
     let questList = [];
+
     quests.forEach((quest, idx) => {
-      for (let i = 0; i < follows.length; i++){
-        let follow = follows[i];
-        if ((follow.user_id === quest.user_id && follow.follower_id === currentUser.id) || quest.user_id === currentUser.id){
-          questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />);
-          break;
+      if (quest.user_id === currentUser.id) {
+        questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />);
+      }
+      else {
+        for (let i = 0; i < follows.length; i++){
+          let follow = follows[i];
+          if ((follow.user_id === quest.user_id && follow.follower_id === currentUser.id)){
+            questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />);
+            break;
+          }
         }
       }
     })
