@@ -256,7 +256,7 @@
 }
 // Small screen
 @media only screen and (max-width: 800px) {
-	.quest-container-dash {
+	.quest-container-dash, .quest-create-container {
 		display: flex;
 		flex-direction: column;
 		width: 540px;
@@ -264,7 +264,7 @@
 	.quest {
 		grid-template-rows: 53px 1fr;
 	}
-  .avatar-dash{
+  .avatar-dash, .avatar-create{
 		display:none;
 	}
 	.avatar-dash-small {

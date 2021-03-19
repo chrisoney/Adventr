@@ -21,7 +21,6 @@ class DashBoard extends React.Component {
 
   render() {
     const { quests, follows, currentUser } = this.props;
-    console.log(currentUser);
     let questList = [];
 
     quests.forEach((quest, idx) => {

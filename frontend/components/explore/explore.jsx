@@ -20,7 +20,7 @@ class Explore extends React.Component {
 	}
 
   render() {
-    const { quests } = this.props;
+    const { quests, currentUser } = this.props;
     let questList = quests.map((quest, idx) => (
       <QuestContainer key={idx} quest={quest} loc={"dash"}/>
     ))
@@ -32,8 +32,8 @@ class Explore extends React.Component {
             <h1 className="dash-title">Explore</h1>
             <p className="dash-welcome">Welcome back to Adventr!</p>
           </div>
-          <NewQuestCreate />
-          { questList }
+          <NewQuestCreate currentUser={currentUser} />
+          {questList}
         </div>
       </div>
     );

@@ -7,7 +7,8 @@ import { fetchAllLikes } from '../../actions/like_actions';
 
 const mapStateToProps = (state) => {
   return {
-    quests: Object.values(state.entities.quests)
+    currentUser: state.session.currentUser,
+    quests: Object.values(state.entities.quests),
   };
 };
 
