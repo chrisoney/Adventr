@@ -21,7 +21,7 @@ class DashBoard extends React.Component {
 
   render() {
     const { quests, follows, currentUser } = this.props;
-
+    console.log(currentUser);
     let questList = [];
 
     quests.forEach((quest, idx) => {
@@ -46,8 +46,8 @@ class DashBoard extends React.Component {
             <h1 className="dash-title">Dashboard</h1>
             <p className="dash-welcome">Welcome back to Adventr!</p>
           </div>
-          <NewQuestCreate />
-          { questList }
+          <NewQuestCreate currentUser={currentUser} />
+          {questList}
         </div>
       </div>
     );

@@ -12,7 +12,7 @@
 	justify-content: center;
 }
 
-.avatar-dash {
+.avatar-dash, .avatar-create {
 	grid-column: 1, 2;
 	height: 64px;
 	width: 64px;
@@ -20,6 +20,10 @@
 	position: sticky;
 	top: 70px;
 	object-fit: cover;
+}
+
+.avatar-create{
+	position: static;
 }
 
 .avatar-dash-small {
