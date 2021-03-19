@@ -202,8 +202,14 @@
 	justify-content: center;
 }
 
-.quest-create-container{
-	width: 450px;
+.quest-create-container {
+	display: grid;
+	grid-template-columns: 85px 540px;;
+}
+
+.quest-create-button-container{
+	grid-column: 2, 3;
+	width: 540px;
 	display: flex;
 	justify-content: space-around;
 	border-radius: 5px;
