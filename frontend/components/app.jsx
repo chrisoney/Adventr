@@ -7,6 +7,7 @@ import Splash from './splash/splash';
 import DashboardContainer from './dashboard/dashboard_container';
 import NavbarContainer from './nav/navbar_container';
 import Modal from './modal/modal';
+import Modal2 from './modal/modal2';
 import ExploreContainer from './explore/explore_container';
 import About from './about/about'
 import LikesContainer from './likes/likes_list_container'
@@ -14,6 +15,7 @@ import LikesContainer from './likes/likes_list_container'
 const App = () => (
   <div className="app">
     <Modal />
+    <Modal2 />
     <Route path="/" component={NavbarContainer} />
     <Route exact path="/" component={Splash} />
     {/* <SplashRoute path="/register" component={Splash} /> */}

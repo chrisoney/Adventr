@@ -24,42 +24,56 @@ class UserMenu extends React.Component{
     
 
     render() {
-      const { currentUser, closeModal } = this.props;
+      const { currentUser, closeModal, openModal2 } = this.props;
+      console.log(this.props);
       return (
         <>
           <div className="user-menu-top">
-              <label className="user-menu-avatar">
-                <img src={currentUser.avatar}/>
-              </label>
-              <div className="user-menu-username">{currentUser.username}</div>
+            <label className="user-menu-avatar">
+              <img
+                src={currentUser.avatar}
+                onClick={() => {
+                  closeModal();
+                  openModal2('avatar');
+                }}
+              />
+            </label>
+            <div className="user-menu-username">{currentUser.username}</div>
           </div>
           <div className="user-menu-top-buttons">
             <div className="menu-container">
               <span className="fas fa-sign-out-alt"></span>
-              <button
-                className="link"
-                onClick={this.logoutUser}
-              >Logout</button>
+              <button className="link" onClick={this.logoutUser}>
+                Logout
+              </button>
             </div>
             <div className="menu-container" onClick={closeModal}>
               <span className="fas fa-home"></span>
-              <Link to='/dashboard' className="link">Dashboard</Link>
+              <Link to="/dashboard" className="link">
+                Dashboard
+              </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
               <span className="fas fa-compass"></span>
-              <Link to='/explore' className="link">Explore</Link>
+              <Link to="/explore" className="link">
+                Explore
+              </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
               <span className="fas fa-heart"></span>
-              <Link to='/likes' className="link">Likes</Link>
+              <Link to="/likes" className="link">
+                Likes
+              </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
               <span className="fas fa-question-circle"></span>
-              <Link to='/about' className="link">About</Link>
+              <Link to="/about" className="link">
+                About
+              </Link>
             </div>
           </div>
         </>
-      )
+      );
     }
 }
 

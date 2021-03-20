@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { openModal, openModal2, closeModal } from '../../actions/modal_actions';
 import UserPage from './user_page'
 import UserMenu from './user_menu'
 import NewQuestContainer from './new_quest_container'
@@ -11,7 +11,7 @@ class Modal extends React.Component {
 
 
   render() {
-    const { modal, closeModal } = this.props;
+    const { modal, closeModal, openModal2 } = this.props;
     if (!modal) {
       return null;
     }
@@ -43,13 +43,16 @@ class Modal extends React.Component {
         onClickEffect = closeModal;
         break;
       case 'avatar':
+        console.log('hello');
         component = <AvatarContainer />;
 				background = 'new-avatar-background';
         container = 'new-avatar-container';
         onClickEffect = closeModal;
         break;
       case 'usermenu':
-				component = <UserMenu closeModal={closeModal}/>;
+        component = (
+          <UserMenu openModal2={openModal2} closeModal={closeModal} />
+        );
 				background = 'user-menu-background';
         container = 'user-menu-container';
         onClickEffect = closeModal;
@@ -75,15 +78,17 @@ class Modal extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    modal2: state.ui.modal2,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     openModal: (modal) => dispatch(openModal(modal)),
-    closeModal: () => dispatch(closeModal())
-  }
+    openModal2: (modal) => dispatch(openModal2(modal)),
+    closeModal: () => dispatch(closeModal()),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
