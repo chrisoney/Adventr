@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
   
   def index
-    @likes = Like.where(user_id: 1)
+    @likes = Like.where(user_id: current_user.id)
   end
 
   def show

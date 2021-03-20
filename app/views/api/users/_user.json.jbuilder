@@ -1,4 +1,11 @@
-json.extract! user, :id, :username, :email, :avatar
+json.extract! user, :id, :username, :email, :guild_name, :guild_description,:avatar
+
+if user.images.attached?
+  json.imageUrls user.images.map {|image| url_for(image) }
+  json.imageFiles user.images.map {|image| (image.blob_id) }
+  json.imageFiles2 user.images.map {|image| (image) }
+end
+
 json.follows user.follows
 json.likedQuests do
   liked_ids = []
