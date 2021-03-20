@@ -1,5 +1,5 @@
 .dashboard {
-  padding-top: 50px;
+  padding-top: 90px;
   background: asset-data-url("campfire.jpg") no-repeat center fixed;
   min-height: 100vh;
 	-webkit-background-size: cover;
@@ -43,4 +43,11 @@
   font-family: fantasy;
   font-size: 20px;
   color:white;
+}
+
+@media only screen and (max-width: 800px) {
+  .dashboard {
+		margin-top: 50px;
+    padding-top: 20px;
+	}
 }

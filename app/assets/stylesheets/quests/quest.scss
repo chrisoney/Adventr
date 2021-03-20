@@ -65,10 +65,10 @@
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 	span {
-		font-size: 13px;
+		font-size: 14px;
 		color: white;
 		justify-content: center;
-		font-weight: bold;
+		font-weight: bolder;
 	}
 }
 .quest-header span:hover{
@@ -109,7 +109,7 @@
 	display: flex;
 	justify-content: start;
 	span{
-		font-size: 13px;
+		font-size: 14px;
 		color: darkgray;
 	}
 }
@@ -181,7 +181,8 @@
 
 .follow-toggle-button{
 	margin-left: 15px;
-	font-size: 12px;
+	font-size: 13px;
+	// font-weight: bolder;
 	font-family: Arial, Helvetica, sans-serif;
 }
 .follow-toggle-button:hover{

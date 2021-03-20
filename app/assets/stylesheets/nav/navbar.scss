@@ -1,16 +1,15 @@
 @import '../variables.scss';
 
 .navbar-container {
-	// display: grid;
-	// grid-template-columns: .30fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	border-bottom: 1px solid #595959;
 	width: 100%;
-	position: absolute;
-	height: 50px;
+	position: fixed;
+	height: 53px;
 	align-items: center;
 	z-index: 1;
 	display:flex;
 	justify-content: space-between;
-
+	background-color: #222222;
 }
 
 .navbar {
@@ -149,4 +148,10 @@
 
 .user-menu-button:hover {
 	cursor:pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .navbar-container{
+		// border-bottom: none;
+	}
 }
