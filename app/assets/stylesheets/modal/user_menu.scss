@@ -11,16 +11,16 @@
 
 .user-menu-container{
   position:absolute;
-  top: 0;
+  top: 55px;
   bottom: 0;
-  background-color: black;
-  width: 450px;
-  animation: slide-left 0.5s ease;
+  background-color: #222222;
+  width: 100vw;
+  animation: user-menu-slide-right 0.5s ease;
 }
 
-@keyframes slide-left {
+@keyframes user-menu-slide-right {
   from{
-      left: -450px;
+      left: -100vw;
   }
   to{
       left: 0;
