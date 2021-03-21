@@ -5,9 +5,9 @@
 	width: 100%;
 	position: fixed;
 	height: 53px;
+	display:flex;
 	align-items: center;
 	z-index: 1;
-	display:flex;
 	justify-content: space-between;
 	background-color: #222222;
 }
@@ -37,9 +37,6 @@
 }
 
 .nav-logo {
-	position: absolute;
-	top: 2;
-	right: 49%;
 	font-weight: bold;
 	font-size: 32px;
 	color: white;
@@ -50,15 +47,21 @@
 .left-side {
 	margin-left: 20px;
 	display: flex;
+	align-items: center;
 	grid-column: 2/3;
 	height: 55%;
 	position: relative;
 }
 
+.middle {
+	display: flex;
+	align-items: center;
+}
+
 .right-side{
 	display: flex;
 	justify-content: flex-end;
-	margin-right: 40px;
+	margin-right: 20px;
 	grid-column: 6/8;
 	z-index: 1;
 	color: white;
@@ -139,11 +142,32 @@
 }
 
 .user-menu-button {
-	background: transparent;
-	border: none;
-	outline: none;
-	color:white;
-	font-size: 20px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	// color:white;
+	// font-size: 20px;
+	span {
+		position: absolute;
+		height: 50%;
+		transform-origin: 50% 50%;
+		height: 2px;
+		width: 50%;
+		background-color: white;
+		border-radius: 1px;
+	}
+	span:first-child {
+		transform:rotate(0deg) translate3d(0,-6px,0);
+	}
+	span:nth-child(2) {
+		opacity: 1;
+	}
+	span:last-child {
+		transform:rotate(0deg) translate3d(0,6px,0);
+	}
 }
 
 .user-menu-button:hover {

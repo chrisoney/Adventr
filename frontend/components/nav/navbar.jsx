@@ -59,10 +59,15 @@ class Navbar extends React.Component {
       navbar = (
         <div className="navbar-container">
           <div className="left-side">
-          <button 
+            <div className="user-menu-button" onClick={() => this.props.openModal("usermenu")}>
+              <span className="user-menu-bar"></span>
+              <span className="user-menu-bar"></span>
+              <span className="user-menu-bar"></span>
+            </div>
+          {/* <button 
             className="user-menu-button fas fa-bars"
             onClick={() => this.props.openModal("usermenu")}
-          ></button>
+          ></button> */}
           </div>
           <div className="middle">
             <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
