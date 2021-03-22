@@ -13,7 +13,10 @@ class Navbar extends React.Component {
     e.preventDefault();
     document.querySelector('.user-menu-button').classList.toggle('menu-open');
     if (this.props.isModalOpen) {
-      this.props.closeModal();
+      document.querySelector('.user-menu-container').classList.add('closing');
+      setTimeout(() => {
+        this.props.closeModal();
+      }, 450);
     }
     else {
       this.props.openModal('usermenu')

@@ -17,6 +17,10 @@
   background-color: #222222;
   width: 100vw;
   animation: user-menu-slide-right 0.5s ease;
+
+  &.closing {
+    animation: user-menu-slide-left 0.5s ease;
+  }
 }
 
 @keyframes user-menu-slide-right {
@@ -25,6 +29,14 @@
   }
   to{
       left: 0;
+  }
+}
+@keyframes user-menu-slide-left {
+  from{
+      left: 0;
+  }
+  to{
+      left: -100vw;
   }
 }
 
