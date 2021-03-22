@@ -14,8 +14,16 @@ class Splash extends React.Component {
     this.myRef = React.createRef();
     this.state = {
       scrollTop: 0,
-      scrollPosArr: [0, 593, 1187, 1780, 2374, 2968],
+      scrollPosArr: [],
+      // scrollPosArr: [0, 593, 1187, 1780, 2374, 2968],
     };
+  }
+
+  componentDidMount() {
+    for (let i = 1; i < 7; i++) {
+      this.state.scrollPosArr.push($(`#splash-${i}`).offset().top);
+    }
+    console.log(this.state.scrollPosArr);
   }
   onScroll() {
     // console.log(this.state.scrollTop);
