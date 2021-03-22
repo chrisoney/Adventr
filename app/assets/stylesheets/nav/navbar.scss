@@ -148,8 +148,7 @@
 	align-items: center;
 	height: 40px;
 	width: 40px;
-	// color:white;
-	// font-size: 20px;
+	transition: all .2s cubic-bezier(.175,.885,.32,1.275);
 	span {
 		position: absolute;
 		height: 50%;

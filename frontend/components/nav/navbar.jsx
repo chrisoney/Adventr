@@ -6,6 +6,18 @@ import { openModal } from '../../actions/modal_actions';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.userMenuToggle = this.userMenuToggle.bind(this);
+  }
+
+  userMenuToggle(e) {
+    e.preventDefault();
+    document.querySelector('.user-menu-button').classList.toggle('menu-open');
+    if (this.props.isModalOpen) {
+      this.props.closeModal();
+    }
+    else {
+      this.props.openModal('usermenu')
+    }
   }
 
 
@@ -59,24 +71,28 @@ class Navbar extends React.Component {
       navbar = (
         <div className="navbar-container">
           <div className="left-side">
-            <div className="user-menu-button" onClick={() => this.props.openModal("usermenu")}>
+            <div
+              className="user-menu-button"
+              onClick={(e) => this.userMenuToggle(e)}
+              // onClick={() => this.props.openModal('usermenu')}
+            >
               <span className="user-menu-bar"></span>
               <span className="user-menu-bar"></span>
               <span className="user-menu-bar"></span>
             </div>
-          {/* <button 
-            className="user-menu-button fas fa-bars"
-            onClick={() => this.props.openModal("usermenu")}
-          ></button> */}
           </div>
           <div className="middle">
-            <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
+            <Link to="/dashboard" className="link">
+              <span className="nav-logo">a</span>
+            </Link>
           </div>
           <div className="right-side">
-            <Link to='/about' className="link"><span className="fas fa-question-circle"></span></Link>
+            <Link to="/about" className="link">
+              <span className="fas fa-question-circle"></span>
+            </Link>
           </div>
         </div>
-      )
+      );
     }
     return (
       <div className="navbar">
