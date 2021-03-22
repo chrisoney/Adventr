@@ -55,7 +55,7 @@ class Modal extends React.Component {
         );
 				background = 'user-menu-background';
         container = 'user-menu-container';
-        onClickEffect = closeModal;
+        onClickEffect = null;
 				break;
       case 'userpage':
 				component = <UserPage authorId={event.target.id}/>;
