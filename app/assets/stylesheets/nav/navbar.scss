@@ -10,6 +10,11 @@
 	z-index: 1;
 	justify-content: space-between;
 	background-color: #222222;
+
+	&.splash-nav {
+		background-color: transparent;
+		border-bottom: none;
+	}
 }
 
 .navbar {

@@ -31,39 +31,48 @@ class Navbar extends React.Component {
     let navbarBorder = (<div></div>);
     if (this.props.location.pathname === '/'){
       navbar = (
-        <div className="navbar-container">
+        <div className="navbar-container splash-nav">
           <div className="left-side">
-            <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
+            <Link to="/dashboard" className="link">
+              <span className="nav-logo">a</span>
+            </Link>
           </div>
-          <div className="right-side">
-          </div>
+          <div className="right-side"></div>
         </div>
-      )
+      );
     }
 
     if (this.props.location.pathname === '/signup') {
       navbar = (
-        <div className="navbar-container">
+        <div className="navbar-container splash-nav">
           <div className="left-side">
-            <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
+            <Link to="/dashboard" className="link">
+              <span className="nav-logo">a</span>
+            </Link>
           </div>
           <div className="right-side">
-            <Link to="/login" className="other-button"><button>Login</button></Link>
+            <Link to="/login" className="other-button">
+              <button>Login</button>
+            </Link>
           </div>
         </div>
-      )
+      );
     }
     if (this.props.location.pathname === '/login') {
       navbar = (
-        <div className="navbar-container">
+        <div className="navbar-container splash-nav">
           <div className="left-side">
-            <Link to='/dashboard' className="link"><span className="nav-logo">a</span></Link>
+            <Link to="/dashboard" className="link">
+              <span className="nav-logo">a</span>
+            </Link>
           </div>
           <div className="right-side">
-            <Link to="/signup" className="other-button"><button>Signup</button></Link>
+            <Link to="/signup" className="other-button">
+              <button>Signup</button>
+            </Link>
           </div>
         </div>
-      )
+      );
     }
     if ((this.props.location.pathname != '/login') &&
       (this.props.location.pathname != '/signup') &&
