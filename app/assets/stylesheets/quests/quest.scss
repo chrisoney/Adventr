@@ -49,12 +49,13 @@
 	max-width: 540px;
 	grid-column: 2, 3;
 	display: grid;
-	grid-template-rows: 36px 1fr;
+	grid-template-rows: 50px 1fr;
 	background-color: white;
 	border-radius: 7px;
 }
 
 .quest-header {
+	// height: 36px;
 	margin: 0;
 	padding: 10px;
 	padding-left: 20px;
