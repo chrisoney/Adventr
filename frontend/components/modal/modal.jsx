@@ -38,14 +38,13 @@ class Modal extends React.Component {
       case 'new-audio':
       case 'new-video':
         component = <NewQuestContainer type={formType} />;
-				background = 'new-quest-background';
+        background = 'new-quest-background';
         container = 'new-quest-container';
         onClickEffect = closeModal;
         break;
       case 'avatar':
-        console.log('hello');
         component = <AvatarContainer />;
-				background = 'new-avatar-background';
+        background = 'new-avatar-background';
         container = 'new-avatar-container';
         onClickEffect = closeModal;
         break;
@@ -53,16 +52,16 @@ class Modal extends React.Component {
         component = (
           <UserMenu openModal2={openModal2} closeModal={closeModal} />
         );
-				background = 'user-menu-background';
+        background = 'user-menu-background';
         container = 'user-menu-container';
         onClickEffect = null;
-				break;
+        break;
       case 'userpage':
-				component = <UserPage authorId={event.target.id}/>;
-				background = 'user-page-background';
+        component = <UserPage authorId={event.target.id} />;
+        background = 'user-page-background';
         container = 'user-page-container';
         onClickEffect = userPageClose;
-				break;
+        break;
       default:
         return null;
     }

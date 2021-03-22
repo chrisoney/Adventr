@@ -10,6 +10,7 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleResize = this.handleResize.bind(this);
     this.onScroll = this.onScroll.bind(this);
     this.myRef = React.createRef();
     this.state = {
@@ -20,11 +21,17 @@ class Splash extends React.Component {
   }
 
   componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+  handleResize() {
+    this.setState({ scrollPosArr: [] });
     for (let i = 1; i < 7; i++) {
       this.state.scrollPosArr.push($(`#splash-${i}`).offset().top);
     }
     console.log(this.state.scrollPosArr);
   }
+
   onScroll() {
     // console.log(this.state.scrollTop);
     setTimeout(() => {
