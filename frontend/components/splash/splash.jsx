@@ -11,7 +11,6 @@ class Splash extends React.Component {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
     this.onScroll = this.onScroll.bind(this);
-    this.handleResize = this.handleResize.bind(this);
     this.myRef = React.createRef();
     this.state = {
       scrollTop: 0,
