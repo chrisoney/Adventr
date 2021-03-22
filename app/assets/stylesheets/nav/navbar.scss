@@ -157,6 +157,7 @@
 		width: 50%;
 		background-color: white;
 		border-radius: 1px;
+		transition: inherit;
 	}
 	span:first-child {
 		transform:rotate(0deg) translate3d(0,-6px,0);
@@ -166,6 +167,17 @@
 	}
 	span:last-child {
 		transform:rotate(0deg) translate3d(0,6px,0);
+	}
+	&.menu-open {
+		span:first-child {
+			transform:rotate(45deg) translate3d(0,0,0);
+		}
+		span:nth-child(2) {
+			opacity: 0;
+		}
+		span:last-child {
+			transform:rotate(-45deg) translate3d(0,0,0);
+		}
 	}
 }
 
