@@ -10,36 +10,20 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
-    this.handleResize = this.handleResize.bind(this);
     this.onScroll = this.onScroll.bind(this);
+    this.handleResize = this.handleResize.bind(this);
     this.myRef = React.createRef();
     this.state = {
       scrollTop: 0,
-      scrollPosArr: [],
-      // scrollPosArr: [0, 593, 1187, 1780, 2374, 2968],
     };
   }
 
-  componentDidMount() {
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
-  }
-  handleResize() {
-    this.setState({ scrollPosArr: [] });
-    for (let i = 1; i < 7; i++) {
-      this.state.scrollPosArr.push($(`#splash-${i}`).offset().top);
-    }
-    console.log(this.state.scrollPosArr);
-  }
-
   onScroll() {
-    // console.log(this.state.scrollTop);
     setTimeout(() => {
       const circles = document.getElementsByClassName('fa-circle');
       for (let i = 0; i < circles.length; i++) {
         if (
-          this.state.scrollPosArr[i] >= parseInt(this.state.scrollTop) - 50 &&
-          this.state.scrollPosArr[i] <= parseInt(this.state.scrollTop) + 50
+          $(`#splash-${i + 1}`).offset().top === 0
         ) {
           circles[i].classList.remove('far');
           circles[i].classList.add('fas');
