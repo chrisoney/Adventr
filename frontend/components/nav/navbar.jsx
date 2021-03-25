@@ -100,7 +100,7 @@ class Navbar extends React.Component {
               <div
                 className="user-menu-button"
                 onClick={(e) => this.userMenuToggle(e)}
-                  // onClick={() => this.props.openModal('usermenu')}
+                // onClick={() => this.props.openModal('usermenu')}
               >
                 <span className="user-menu-bar"></span>
                 <span className="user-menu-bar"></span>
@@ -116,6 +116,29 @@ class Navbar extends React.Component {
               <Link to="/about" className="link">
                 <span className="fas fa-question-circle"></span>
               </Link>
+            </div>
+          </div>
+        );
+      } else {
+        navbar = (
+          <div className="navbar-container">
+            <div className="left-side">
+              <Link to="/dashboard" className="link">
+                <span className="nav-logo">a</span>
+              </Link>
+              {/* Search bar */}
+            </div>
+
+            <div className="right-side">
+              {/* Home button */}
+              {/* Explore button */}
+              {/* Message button */}
+              {/* Chat button */}
+              <Link to="/about" className="link">
+                <span className="fas fa-question-circle"></span>
+              </Link>
+              {/* User dropdown button */}
+              {/* Create modal */}
             </div>
           </div>
         );
