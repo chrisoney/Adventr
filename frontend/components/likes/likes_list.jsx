@@ -1,6 +1,6 @@
 import React from "react";
 import QuestContainer from '../quests/quest_container'
-import NewQuestCreate from '../quests/new_quest_create'
+// import NewQuestCreate from '../quests/new_quest_create'
 
 class LikesList extends React.Component {
   constructor(props) {

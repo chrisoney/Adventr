@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavbarDropdown from './navbar_dropdown';
-import { openModal } from '../../actions/modal_actions';
+// import NavbarDropdown from './navbar_dropdown';
+// import { openModal } from '../../actions/modal_actions';
 
 class Navbar extends React.Component {
   constructor(props) {

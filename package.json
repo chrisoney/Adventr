@@ -7,7 +7,6 @@
     "@babel/preset-react": "^7.10.1",
     "axios": "^0.20.0",
     "babel-loader": "^8.1.0",
-    "epsagon": "^1.96.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -40,7 +39,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "webpack-bundle-analyzer": "^4.4.0"
-  }
+  "devDependencies": {}
 }

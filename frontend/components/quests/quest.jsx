@@ -1,6 +1,6 @@
 import React from 'react';
 import HeartAnimation from './heart_animation'
-import { deleteQuest } from '../../util/quest_api_utils';
+// import { deleteQuest } from '../../util/quest_api_utils';
 
 class Quest extends React.Component {
 

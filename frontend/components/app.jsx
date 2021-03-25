@@ -10,7 +10,7 @@ import Modal from './modal/modal';
 import Modal2 from './modal/modal2';
 import ExploreContainer from './explore/explore_container';
 import SettingsContainer from './user/settings_container';
-import GuildContainer from './user/guild_container';
+import GuildpageContainer from './user/guildpage_container';
 import About from './about/about'
 import LikesContainer from './likes/likes_list_container'
 
@@ -29,7 +29,7 @@ const App = () => (
         path="/users/:userid/settings"
         component={SettingsContainer}
       />
-      <ProtectedRoute path="/users/:userid/" component={GuildContainer} />
+      <ProtectedRoute path="/users/:userid/" component={GuildpageContainer} />
       <ProtectedRoute path="/likes" component={LikesContainer} />
       <ProtectedRoute path="/about" component={About} />
     </Switch>
