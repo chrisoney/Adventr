@@ -22,3 +22,6 @@ export const fetchAllUsers = (filter) => (dispatch) =>
   UserApiUtils.fetchAllUsers(filter).then((users) =>
     dispatch(receiveAllUsers(users))
   );
+
+export const updateUser = (user) => (dispatch) =>
+  UserApiUtils.updateUser(user).then((user) => dispatch(receiveUser(user)));
