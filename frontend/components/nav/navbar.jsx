@@ -6,7 +6,20 @@ import { Link } from 'react-router-dom';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      windowSize: 0,
+    }
     this.userMenuToggle = this.userMenuToggle.bind(this);
+    this.getWindowDimensions = this.getWindowDimensions.bind(this);
+  }
+  
+  componentDidMount() {
+    window.addEventListener('resize', this.getWindowDimensions)
+  }
+
+  getWindowDimensions() {
+    const { innerWidth } = window;
+    this.setState({ windowSize: innerWidth })
   }
 
   userMenuToggle(e) {
@@ -80,31 +93,33 @@ class Navbar extends React.Component {
       navbarBorder = (<div className="nav-border"></div>);
     }
     if (this.props.currentUser) {
-      navbar = (
-        <div className="navbar-container">
-          <div className="left-side">
-            <div
-              className="user-menu-button"
-              onClick={(e) => this.userMenuToggle(e)}
-              // onClick={() => this.props.openModal('usermenu')}
-            >
-              <span className="user-menu-bar"></span>
-              <span className="user-menu-bar"></span>
-              <span className="user-menu-bar"></span>
+      if (this.state.windowSize <= 800) {
+        navbar = (
+          <div className="navbar-container">
+            <div className="left-side">
+              <div
+                className="user-menu-button"
+                onClick={(e) => this.userMenuToggle(e)}
+                  // onClick={() => this.props.openModal('usermenu')}
+              >
+                <span className="user-menu-bar"></span>
+                <span className="user-menu-bar"></span>
+                <span className="user-menu-bar"></span>
+              </div>
+            </div>
+            <div className="middle">
+              <Link to="/dashboard" className="link">
+                <span className="nav-logo">a</span>
+              </Link>
+            </div>
+            <div className="right-side">
+              <Link to="/about" className="link">
+                <span className="fas fa-question-circle"></span>
+              </Link>
             </div>
           </div>
-          <div className="middle">
-            <Link to="/dashboard" className="link">
-              <span className="nav-logo">a</span>
-            </Link>
-          </div>
-          <div className="right-side">
-            <Link to="/about" className="link">
-              <span className="fas fa-question-circle"></span>
-            </Link>
-          </div>
-        </div>
-      );
+        );
+      }
     }
     return (
       <div className="navbar">

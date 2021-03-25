@@ -32,10 +32,10 @@ class UserMenu extends React.Component{
             <label className="user-menu-avatar">
               <img
                 src={currentUser.avatar}
-                onClick={() => {
-                  closeModal();
-                  openModal2('avatar');
-                }}
+                // onClick={() => {
+                //   closeModal();
+                //   openModal2('avatar');
+                // }}
               />
             </label>
             <div className="user-menu-username">{currentUser.username}</div>
