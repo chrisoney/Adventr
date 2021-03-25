@@ -18,13 +18,14 @@ const App = () => (
     <Modal2 />
     <Route path="/" component={NavbarContainer} />
     <Route exact path="/" component={Splash} />
-    {/* <SplashRoute path="/register" component={Splash} /> */}
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <ProtectedRoute path="/dashboard" component={DashboardContainer} />
-    <ProtectedRoute path="/explore" component={ExploreContainer} />
-    <ProtectedRoute path="/likes" component={LikesContainer} />
-    <ProtectedRoute path="/about" component={About} />
+    <Switch>
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <ProtectedRoute path="/dashboard" component={DashboardContainer} />
+      <ProtectedRoute path="/explore" component={ExploreContainer} />
+      <ProtectedRoute path="/likes" component={LikesContainer} />
+      <ProtectedRoute path="/about" component={About} />
+    </Switch>
   </div>
 );
 
