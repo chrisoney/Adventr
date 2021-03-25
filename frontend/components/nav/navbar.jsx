@@ -130,15 +130,27 @@ class Navbar extends React.Component {
             </div>
 
             <div className="right-side">
-              {/* Home button */}
-              {/* Explore button */}
-              {/* Message button */}
-              {/* Chat button */}
-              <Link to="/about" className="link">
+              <Link to="/dashboard" className="nav-link">
+                <span className="fas fa-home" title="Dashboard"></span>
+              </Link>
+              <Link to="/explore" className="nav-link">
+                <span className="fas fa-compass" title="Explore"></span>
+              </Link>
+              {/* <Link to="/explore" className="nav-link"> */}
+              <span className="fas fa-scroll" title="Messages"></span>
+              {/* </Link> */}
+              {/* <Link to="/explore" className="nav-link"> */}
+              <span className="fas fa-comment" title="Chat"></span>
+              {/* </Link> */}
+              <Link to="/about" className="nav-link">
                 <span className="fas fa-question-circle"></span>
               </Link>
-              {/* User dropdown button */}
-              {/* Create modal */}
+              <span className="fas fa-user"></span>
+              <span
+                className="fas fa-feather-alt"
+                // onClick={(e) => this.userMenuToggle(e)}
+              >
+              </span>
             </div>
           </div>
         );
