@@ -66,11 +66,14 @@ class Modal extends React.Component {
         return null;
     }
     return (
-      <div className={background} onClick={(e) => onClickEffect(e)}>
-        <div className={container} onClick={(e) => e.stopPropagation()}>
-          {component}
+      <>
+        <div className="test-background"></div>
+        <div className={background} onClick={(e) => onClickEffect(e)}>
+          <div className={container} onClick={(e) => e.stopPropagation()}>
+            {component}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

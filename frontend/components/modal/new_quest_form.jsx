@@ -4,20 +4,20 @@ class NewQuestForm extends React.Component {
   constructor(props){
     super(props);
     const { type, currentUser } = this.props;
-		this.state = {
-			currentUser_id: currentUser.id,
-			type: type,
-			title: '',
-			text: '',
-			imageUrls: null,
-			imageFiles: null,
-			errors: null,
-			allowSubmit: true
-		};
-		this.reference = React.createRef();
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleUpload = this.handleUpload.bind(this);
-		this.deletePreviewImage = this.deletePreviewImage.bind(this);
+    this.state = {
+      currentUser_id: currentUser.id,
+      type: type,
+      title: '',
+      text: '',
+      imageUrls: null,
+      imageFiles: null,
+      errors: null,
+      allowSubmit: true,
+    };
+    // this.reference = React.createRef();
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+    this.deletePreviewImage = this.deletePreviewImage.bind(this);
   }
 
   handleInput(type) {

@@ -1,10 +1,22 @@
+@import '../variables.scss';
+
+.test-background {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 2;
+	background-color: #000000A7;
+}
+
 .new-quest-background {
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	background-color: black;
+	background-color: transparent;
 	z-index: 2;
 }
 
@@ -19,7 +31,7 @@
 }
 
 .image-preview {
-	width: 100px;
+	width: 100%;
 	height: auto;
 }
 
@@ -54,14 +66,14 @@
 		border: transparent;
 		border-radius: 3px;
 		color: white;
-		padding: 5px;
+		padding: 5px 10px;
 		margin: 10px;
 	}
 	.quest-close {
 		background-color: grey;
 	}
 	.quest-create {
-		background-color: rgb(54, 54, 206);
+		background-color: #00b8ff;
 	}
 	.quest-close:hover, .quest-create:hover {
 		cursor: pointer;
