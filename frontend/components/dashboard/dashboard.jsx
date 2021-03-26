@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import QuestContainer from '../quests/quest_container'
 import NewQuestCreate from '../quests/new_quest_create'
 
@@ -22,6 +23,7 @@ class DashBoard extends React.Component {
   render() {
     const { quests, follows, currentUser } = this.props;
     let questList = [];
+    const followRecs = [];
 
     quests.forEach((quest, idx) => {
       if (quest.user_id === currentUser.id) {
@@ -46,14 +48,14 @@ class DashBoard extends React.Component {
         </div>
         <div className="dashboard-right">
           <div className="follow-recommendations">
-            
+            <span className="follow-rec-title">Check out these guilds</span>
+            {followRecs}
+            <Link to="/explore">
+              <span className="explore-text">Explore all of Adventr</span>
+            </Link>
           </div>
-          <div className="suggested-recommendation">
-
-          </div>
-          <div className="advertisement">
-            
-          </div>
+          <div className="suggested-recommendation"></div>
+          <div className="advertisement"></div>
         </div>
       </div>
     );
