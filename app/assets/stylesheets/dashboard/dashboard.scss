@@ -22,6 +22,7 @@
 .dashboard-right {
   width: 320px;
   padding-top: 40px;
+  margin-left: 30px;
   margin-right: 27px;
   display: flex;
   flex-direction: column;
@@ -47,6 +48,7 @@
         .user-attributes {
           display: flex;
           flex-direction: row;
+          padding: 8px 10px;
           .follow-rec-avatar {
             width: 37px;
             height: 37px;
@@ -55,6 +57,9 @@
           .follow-rec-details {
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
+            padding-left: 8px;
+            font-size: 14px;
             .follow-rec-username{
               color: white;
             }

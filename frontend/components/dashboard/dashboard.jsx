@@ -67,10 +67,13 @@ class DashBoard extends React.Component {
       );
     }
     let currentList = [];
-    if (users.length > 4) {
+    if (users.length > 5) {
       for (let i = 0; i < 4; i++) {
         let randomIndex = Math.floor(Math.random() * users.length);
-        while (currentList.includes(randomIndex)) {
+        while (
+          users[randomIndex].id === currentUser.id ||
+          currentList.includes(randomIndex)
+        ) {
           randomIndex = Math.floor(Math.random() * users.length);
         }
         currentList.push(randomIndex);
@@ -79,8 +82,10 @@ class DashBoard extends React.Component {
       }
     } else {
       users.forEach((user) => {
-        const newFollowRec = followRecCreate(user);
-        followRecs.push(newFollowRec);
+        if (user.id !== currentUser.id) {
+          const newFollowRec = followRecCreate(user);
+          followRecs.push(newFollowRec);
+        }
       });
     }
 
