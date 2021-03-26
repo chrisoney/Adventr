@@ -12,6 +12,23 @@
 	justify-content: center;
 }
 
+
+.quest-container-dash-random {
+	.avatar-dash-random {
+		display: none;
+	}
+	.quest {
+		.quest-header {
+			.avatar-dash-random-small {
+				width: 30px;
+				height: 30px;
+				object-fit: cover;
+			}
+		}
+	}
+	
+}
+
 .avatar-dash, .avatar-create {
 	grid-column: 1, 2;
 	height: 64px;

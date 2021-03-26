@@ -83,28 +83,7 @@ class DashBoard extends React.Component {
         </li>
       );
     };
-    // let currentList = [];
-    // if (users.length > 5) {
-    //   for (let i = 0; i < 4; i++) {
-    //     let randomIndex = Math.floor(Math.random() * users.length);
-    //     while (
-    //       users[randomIndex].id === currentUser.id ||
-    //       currentList.includes(randomIndex)
-    //     ) {
-    //       randomIndex = Math.floor(Math.random() * users.length);
-    //     }
-    //     currentList.push(randomIndex);
-    //     const newFollowRec = followRecCreate(users[randomIndex]);
-    //     followRecs.push(newFollowRec);
-    //   }
-    // } else {
-    //   users.forEach((user) => {
-    //     if (user.id !== currentUser.id) {
-    //       const newFollowRec = followRecCreate(user);
-    //       followRecs.push(newFollowRec);
-    //     }
-    //   });
-    // }
+    
     
     for (let i = 0; i < users.length; i++) {
       const user = users[i];
@@ -113,6 +92,15 @@ class DashBoard extends React.Component {
         followRecs.push(newFollowRec);
       }
       if (followRecs.length === 4) break;
+    }
+
+    // Pick a random random quest
+
+    for (let x = 0; x < quests.length; x++){
+      let quest = quests[x];
+      if (!followIds.includes(quest.user_id) && quest.user_id !== currentUser.id) {
+        randomQuest = <QuestContainer quest={quest} loc={'dash-random'} />;
+      }
     }
 
     return (
@@ -130,7 +118,7 @@ class DashBoard extends React.Component {
             </Link>
           </div>
           <div className="suggested-recommendation">
-            
+            {randomQuest}
           </div>
           <div className="advertisement"></div>
         </div>

@@ -211,11 +211,11 @@ class Quest extends React.Component {
             id={this.props.authorId} />
 				<div className="quest">
           <div className="quest-header">
-          <img className={`avatar-${loc}-small`}
-            src={avatar}
-            onClick={()=>this.props.openModal("userpage")} 
-            id={this.props.authorId} />
-            {questHeader}
+            <img className={`avatar-${loc}-small`}
+              src={avatar}
+              onClick={()=>this.props.openModal("userpage")} 
+              id={this.props.authorId} />
+              {questHeader}
           </div>
 					{titleSection}
 					{imageSection}
