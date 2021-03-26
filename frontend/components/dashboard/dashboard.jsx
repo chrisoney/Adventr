@@ -46,7 +46,26 @@ class DashBoard extends React.Component {
     });
     questList = questList.reverse();
 
+
     // Follow recommendations
+
+    // Create a follow rec
+    const followRecCreate = (user) => {
+      return (
+        <div className="follow-rec-container">
+          <div className="user-attributes">
+            <img src={user.avatar} className="follow-rec-avatar"/>
+            <div className="follow-rec-details">
+              <span className="follow-rec-username">{user.username}</span>
+              <span className="follow-rec-guildname">
+                {user.guildname || user.username}
+              </span>
+            </div>
+            <div className="follow-rec-button">Follow</div>
+          </div>
+        </div>
+      );
+    }
     let currentList = [];
     if (users.length > 4) {
       for (let i = 0; i < 4; i++) {
@@ -55,21 +74,12 @@ class DashBoard extends React.Component {
           randomIndex = Math.floor(Math.random() * users.length);
         }
         currentList.push(randomIndex);
+        const newFollowRec = followRecCreate(users[randomIndex]);
+        followRecs.push(newFollowRec);
       }
     } else {
       users.forEach((user) => {
-        let newFollowRec = (
-          <div className="follow-rec-container">
-            <div className="user-attributes">
-              <div className="follow-rec-avatar">{user.avatar}</div>
-              <div className="follow-rec-details">
-                <span className="follow-rec-username">{user.username}</span>
-                <span className="follow-rec-guildname">{user.guildname}</span>
-              </div>
-              <div className="follow-rec-button">Follow</div>
-            </div>
-          </div>
-        );
+        const newFollowRec = followRecCreate(user);
         followRecs.push(newFollowRec);
       });
     }
