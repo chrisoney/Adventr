@@ -15,6 +15,7 @@ class Navbar extends React.Component {
   
   componentDidMount() {
     window.addEventListener('resize', this.getWindowDimensions)
+    this.getWindowDimensions();
   }
 
   getWindowDimensions() {
@@ -93,7 +94,7 @@ class Navbar extends React.Component {
       navbarBorder = (<div className="nav-border"></div>);
     }
     if (this.props.currentUser) {
-      if (this.state.windowSize <= 800) {
+      if (this.state.windowSize <= 980) {
         navbar = (
           <div className="navbar-container">
             <div className="left-side">
@@ -146,11 +147,12 @@ class Navbar extends React.Component {
                 <span className="fas fa-question-circle"></span>
               </Link>
               <span className="fas fa-user"></span>
-              <span
-                className="fas fa-feather-alt"
-                // onClick={(e) => this.userMenuToggle(e)}
-              >
-              </span>
+              <div className="create-new-container">
+                <span
+                  className="fas fa-feather-alt"
+                  // onClick={(e) => this.userMenuToggle(e)}
+                ></span>
+              </div>
             </div>
           </div>
         );
