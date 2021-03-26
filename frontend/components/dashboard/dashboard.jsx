@@ -12,6 +12,7 @@ class DashBoard extends React.Component {
     this.props.fetchAllQuests();
     this.props.fetchAllFollows();
     this.props.fetchAllLikes();
+    this.props.fetchAllUsers();
   }
 
   componentDidUpdate(prevProps){
@@ -27,19 +28,26 @@ class DashBoard extends React.Component {
 
     quests.forEach((quest, idx) => {
       if (quest.user_id === currentUser.id) {
-        questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />);
-      }
-      else {
-        for (let i = 0; i < follows.length; i++){
+        questList.push(<QuestContainer key={idx} quest={quest} loc={'dash'} />);
+      } else {
+        for (let i = 0; i < follows.length; i++) {
           let follow = follows[i];
-          if ((follow.user_id === quest.user_id && follow.follower_id === currentUser.id)){
-            questList.push(<QuestContainer key={idx} quest={quest} loc={"dash"} />);
+          if (
+            follow.user_id === quest.user_id &&
+            follow.follower_id === currentUser.id
+          ) {
+            questList.push(
+              <QuestContainer key={idx} quest={quest} loc={'dash'} />
+            );
             break;
           }
         }
       }
-    })
+    });
     questList = questList.reverse();
+
+    // Follow recommendations
+
     return (
       <div className="dashboard-container">
         <div className="dashboard-left">
@@ -48,7 +56,7 @@ class DashBoard extends React.Component {
         </div>
         <div className="dashboard-right">
           <div className="follow-recommendations">
-            <span className="follow-rec-title">Check out these guilds</span>
+            <h1 className="follow-rec-title">Check out these guilds</h1>
             {followRecs}
             <Link to="/explore">
               <span className="explore-text">Explore all of Adventr</span>
