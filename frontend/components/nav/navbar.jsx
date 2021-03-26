@@ -129,10 +129,11 @@ class Navbar extends React.Component {
               </Link>
               {/* Search bar */}
             </div>
-
             <div className="right-side">
-              <Link to="/dashboard" className="nav-link">
-                <span className="fas fa-home" title="Dashboard"></span>
+              <Link to="/dashboard" className='nav-link'>
+                <span className={`fas fa-home ${
+                  this.props.location.pathname === '/dashboard' ? 'active' : ''
+                }`} title="Dashboard"></span>
               </Link>
               <Link to="/explore" className="nav-link">
                 <span className="fas fa-compass" title="Explore"></span>

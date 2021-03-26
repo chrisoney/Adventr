@@ -77,8 +77,11 @@
 	span, .nav-link {
 		height: 22px;
 		width: auto;
-		color: white;
+		color: #595959;
 		cursor: pointer;
+	}
+	span.active, .nav-link.active {
+		color: white;
 	}
 
 	.create-new-container {
