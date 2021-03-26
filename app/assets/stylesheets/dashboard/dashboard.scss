@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .dashboard-container {
   margin-top: 54px;
   background: asset-data-url("campfire.jpg") no-repeat center fixed;
@@ -30,22 +32,40 @@
 
   .follow-recommendations {
     // background-color: #222222A6;
+    background: asset-data-url('quest-board.png');
+    background-size: 360px 360px;
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
     color: white;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+
+    &:hover {
+      // background-color: #222222;
+    }
 
     .follow-rec-title {
+      text-align: center;
       font-size: 21px;
       font-weight: bolder;
-      width: 300px;
+      width: 320px;
       padding: 10px;
       padding-top: none;
       border-bottom: 2px solid #595959;
     }
     .follow-recs-list {
       li.follow-rec-container {
+        width: 280px;
         display: flex;
         justify-content: space-between;
+        margin-left: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
         .user-attributes {
           display: flex;
           flex-direction: row;
@@ -62,11 +82,11 @@
             padding-left: 8px;
             font-size: 14px;
             .follow-rec-username{
-              color: white;
+              color: rgb(0, 0, 0);
               font-weight: bold;
             }
             .follow-rec-guildname {
-              color: #FFFFFFA6
+              color: #525050a6
             }
           }
         }
@@ -77,7 +97,7 @@
           width: 66.66px;
           height: 59px;
           .follow-rec-button {
-            color: lightblue;
+            color: darkblue;
           }
           .follow-rec-button:hover {
             text-decoration: underline;
@@ -86,7 +106,22 @@
         }
       }
       li.follow-rec-container:hover {
-        background-color: rgba(255,255,255,.07);
+        background-color: rgba(249, 253, 4, 0.466);
+      }
+    }
+    .follow-rec-explore-link{
+      text-decoration: none;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      .explore-text {
+        text-align: center;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+      }
+      .explore-text:hover {
+        color: $sky-blue;
       }
     }
   }

@@ -130,13 +130,23 @@ class Navbar extends React.Component {
               {/* Search bar */}
             </div>
             <div className="right-side">
-              <Link to="/dashboard" className='nav-link'>
-                <span className={`fas fa-home ${
-                  this.props.location.pathname === '/dashboard' ? 'active' : ''
-                }`} title="Dashboard"></span>
+              <Link to="/dashboard" className="nav-link">
+                <span
+                  className={`fas fa-home ${
+                    this.props.location.pathname === '/dashboard'
+                      ? 'active'
+                      : ''
+                  }`}
+                  title="Dashboard"
+                ></span>
               </Link>
               <Link to="/explore" className="nav-link">
-                <span className="fas fa-compass" title="Explore"></span>
+                <span
+                  className={`fas fa-compass ${
+                    this.props.location.pathname === '/explore' ? 'active' : ''
+                  }`}
+                  title="Explore"
+                ></span>
               </Link>
               {/* <Link to="/explore" className="nav-link"> */}
               <span className="fas fa-scroll" title="Messages"></span>
@@ -145,7 +155,11 @@ class Navbar extends React.Component {
               <span className="fas fa-comment" title="Chat"></span>
               {/* </Link> */}
               <Link to="/about" className="nav-link">
-                <span className="fas fa-question-circle"></span>
+                <span
+                  className={`fas fa-question-circle ${
+                    this.props.location.pathname === '/about' ? 'active' : ''
+                  }`}
+                ></span>
               </Link>
               <span className="fas fa-user"></span>
               <div

@@ -35,6 +35,7 @@ class DashBoard extends React.Component {
     const { quests, follows, users, currentUser } = this.props;
 
     let questList = [];
+    let randomQuest;
     const followRecs = [];
     const followIds = follows.map((follow) => follow.user_id);
 
@@ -57,6 +58,8 @@ class DashBoard extends React.Component {
       }
     });
     questList = questList.reverse();
+
+
 
     // Follow recommendations
 
@@ -122,11 +125,13 @@ class DashBoard extends React.Component {
           <div className="follow-recommendations">
             <h1 className="follow-rec-title">Check out these guilds</h1>
             <ul className="follow-recs-list">{followRecs}</ul>
-            <Link to="/explore">
+            <Link to="/explore" className="follow-rec-explore-link">
               <span className="explore-text">Explore all of Adventr</span>
             </Link>
           </div>
-          <div className="suggested-recommendation"></div>
+          <div className="suggested-recommendation">
+            
+          </div>
           <div className="advertisement"></div>
         </div>
       </div>
