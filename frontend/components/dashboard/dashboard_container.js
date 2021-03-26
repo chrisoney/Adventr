@@ -3,8 +3,13 @@ import Dashboard from "./dashboard";
 import { openModal } from "../../actions/modal_actions";
 import { fetchAllUsers } from '../../actions/user_actions';
 import { fetchAllQuests } from "../../actions/quest_actions"
-import { fetchAllFollows } from '../../actions/follow_actions';
+import {
+  fetchAllFollows,
+  followUser,
+  unfollowUser,
+} from '../../actions/follow_actions';
 import { fetchAllLikes } from '../../actions/like_actions';
+
 
 const mapStateToProps = (state) => {
   return {
@@ -21,6 +26,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllFollows: () => dispatch(fetchAllFollows()),
   fetchAllLikes: () => dispatch(fetchAllLikes()),
   fetchAllUsers: () => dispatch(fetchAllUsers()),
+  followUser: (userId) => dispatch(followUser(userId)),
+  unfollowUser: (userId) => dispatch(unfollowUser(userId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

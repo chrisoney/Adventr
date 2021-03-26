@@ -6,6 +6,7 @@ import NewQuestCreate from '../quests/new_quest_create'
 class DashBoard extends React.Component {
   constructor(props) {
     super(props);
+    this.toggleFollowed = this.toggleFollowed.bind(this);
   }
 
   componentDidMount() {
@@ -15,17 +16,27 @@ class DashBoard extends React.Component {
     this.props.fetchAllUsers();
   }
 
-  componentDidUpdate(prevProps){
-		if (this.props.quests.length !== prevProps.quests.length){
-			this.props.fetchAllQuests();
+  componentDidUpdate(prevProps) {
+    if (this.props.quests.length !== prevProps.quests.length) {
+      this.props.fetchAllQuests();
     }
-	}
+  }
+
+  toggleFollowed(e, followed, userId) {
+    e.preventDefault();
+    if (followed) {
+      this.props.unfollowUser(userId);
+    } else {
+      this.props.followUser(userId);
+    }
+  }
 
   render() {
     const { quests, follows, users, currentUser } = this.props;
 
     let questList = [];
     const followRecs = [];
+    const followIds = follows.map((follow) => follow.user_id);
 
     quests.forEach((quest, idx) => {
       if (quest.user_id === currentUser.id) {
@@ -51,6 +62,7 @@ class DashBoard extends React.Component {
 
     // Create a follow rec
     const followRecCreate = (user) => {
+      let notFollowed = !followIds.includes(user.id);
       return (
         <li className="follow-rec-container" key={user.id}>
           <div className="user-attributes">
@@ -63,7 +75,7 @@ class DashBoard extends React.Component {
             </div>
           </div>
           <div className="follow-rec-button-container">
-            <div className="follow-rec-button">Follow</div>
+            <div onClick={e => this.toggleFollowed(e, !notFollowed,user.id)} className={`${notFollowed ? 'un' : ''}follow-button follow-rec-button`}>{notFollowed ? 'Follow' : 'Unfollow'}</div>
           </div>
         </li>
       );
@@ -90,16 +102,15 @@ class DashBoard extends React.Component {
     //     }
     //   });
     // }
-    const followIds = follows.map((follow) => follow.user_id);
-    for (let i = 0; i < users.length; i++){
+    
+    for (let i = 0; i < users.length; i++) {
       const user = users[i];
       if (user.id !== currentUser.id && !followIds.includes(user.id)) {
-        console.log(user.username);
         const newFollowRec = followRecCreate(user);
         followRecs.push(newFollowRec);
       }
       if (followRecs.length === 4) break;
-    };
+    }
 
     return (
       <div className="dashboard-container">
