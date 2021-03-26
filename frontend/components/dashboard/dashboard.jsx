@@ -52,7 +52,7 @@ class DashBoard extends React.Component {
     // Create a follow rec
     const followRecCreate = (user) => {
       return (
-        <div className="follow-rec-container">
+        <li className="follow-rec-container" key={user.id}>
           <div className="user-attributes">
             <img src={user.avatar} className="follow-rec-avatar"/>
             <div className="follow-rec-details">
@@ -61,9 +61,9 @@ class DashBoard extends React.Component {
                 {user.guildname || user.username}
               </span>
             </div>
-            <div className="follow-rec-button">Follow</div>
           </div>
-        </div>
+          <div className="follow-rec-button">Follow</div>
+        </li>
       );
     }
     let currentList = [];
@@ -93,7 +93,9 @@ class DashBoard extends React.Component {
         <div className="dashboard-right">
           <div className="follow-recommendations">
             <h1 className="follow-rec-title">Check out these guilds</h1>
-            {followRecs}
+            <ul className="follow-recs-list">
+              {followRecs}
+            </ul>
             <Link to="/explore">
               <span className="explore-text">Explore all of Adventr</span>
             </Link>

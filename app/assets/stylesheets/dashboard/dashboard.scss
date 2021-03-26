@@ -40,6 +40,34 @@
       padding-top: none;
       border-bottom: 2px solid #595959;
     }
+    .follow-recs-list {
+      li.follow-rec-container {
+        display: flex;
+        justify-content: space-between;
+        .user-attributes {
+          display: flex;
+          flex-direction: row;
+          .follow-rec-avatar {
+            width: 37px;
+            height: 37px;
+            object-fit: cover;
+          }
+          .follow-rec-details {
+            display: flex;
+            flex-direction: column;
+            .follow-rec-username{
+              color: white;
+            }
+            .follow-rec-guildname {
+              color: #FFFFFFA6
+            }
+          }
+        }
+        .follow-rec-button {
+          color: lightblue;
+        }
+      }
+    }
   }
 }
 
