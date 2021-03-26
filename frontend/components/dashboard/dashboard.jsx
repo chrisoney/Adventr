@@ -40,13 +40,20 @@ class DashBoard extends React.Component {
     questList = questList.reverse();
     return (
       <div className="dashboard-container">
-        <div className="dashboard">
-          <div className="dashboard-header">
-            {/* <h1 className="dash-title">Dashboard</h1>
-            <p className="dash-welcome">Welcome back to Adventr!</p> */}
-          </div>
+        <div className="dashboard-left">
           <NewQuestCreate currentUser={currentUser} />
           {questList}
+        </div>
+        <div className="dashboard-right">
+          <div className="follow-recommendations">
+            
+          </div>
+          <div className="suggested-recommendation">
+
+          </div>
+          <div className="advertisement">
+            
+          </div>
         </div>
       </div>
     );

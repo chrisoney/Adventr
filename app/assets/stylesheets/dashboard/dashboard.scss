@@ -1,5 +1,5 @@
-.dashboard {
-  padding-top: 90px;
+.dashboard-container {
+  margin-top: 54px;
   background: asset-data-url("campfire.jpg") no-repeat center fixed;
   min-height: 100vh;
 	-webkit-background-size: cover;
@@ -8,6 +8,14 @@
   background-size: cover;
   width: 100%;
   display:flex;
+  justify-content: center;
+}
+
+.dashboard-left {
+  padding-top: 40px;
+  margin-left: 27px;
+  // margin-right: 27px;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -45,9 +53,8 @@
   color:white;
 }
 
-@media only screen and (max-width: 800px) {
-  .dashboard {
-		margin-top: 50px;
+@media only screen and (max-width: 980px) {
+  .dashboard-left {
     padding-top: 20px;
 	}
 }
