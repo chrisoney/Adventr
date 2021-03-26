@@ -54,7 +54,7 @@ class DashBoard extends React.Component {
       return (
         <li className="follow-rec-container" key={user.id}>
           <div className="user-attributes">
-            <img src={user.avatar} className="follow-rec-avatar"/>
+            <img src={user.avatar} className="follow-rec-avatar"  />
             <div className="follow-rec-details">
               <span className="follow-rec-username">{user.username}</span>
               <span className="follow-rec-guildname">
@@ -62,7 +62,9 @@ class DashBoard extends React.Component {
               </span>
             </div>
           </div>
-          <div className="follow-rec-button">Follow</div>
+          <div className="follow-rec-button-container">
+            <div className="follow-rec-button">Follow</div>
+          </div>
         </li>
       );
     }

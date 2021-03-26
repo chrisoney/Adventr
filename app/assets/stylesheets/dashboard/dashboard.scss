@@ -29,7 +29,7 @@
   align-items: center;
 
   .follow-recommendations {
-    // background-color: #222222;
+    // background-color: #222222A6;
     color: white;
     display: flex;
     flex-direction: column;
@@ -63,15 +63,30 @@
             font-size: 14px;
             .follow-rec-username{
               color: white;
+              font-weight: bold;
             }
             .follow-rec-guildname {
               color: #FFFFFFA6
             }
           }
         }
-        .follow-rec-button {
-          color: lightblue;
+        .follow-rec-button-container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 66.66px;
+          height: 59px;
+          .follow-rec-button {
+            color: lightblue;
+          }
+          .follow-rec-button:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
+      }
+      li.follow-rec-container:hover {
+        background-color: rgba(255,255,255,.07);
       }
     }
   }

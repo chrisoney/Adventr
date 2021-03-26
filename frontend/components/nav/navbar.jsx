@@ -147,11 +147,11 @@ class Navbar extends React.Component {
                 <span className="fas fa-question-circle"></span>
               </Link>
               <span className="fas fa-user"></span>
-              <div className="create-new-container">
-                <span
-                  className="fas fa-feather-alt"
-                  // onClick={(e) => this.userMenuToggle(e)}
-                ></span>
+              <div
+                className="create-new-container"
+                // onClick={(e) => this.userMenuToggle(e)}
+              >
+                <span className="fas fa-feather-alt"></span>
               </div>
             </div>
           </div>
