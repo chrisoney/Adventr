@@ -22,7 +22,7 @@ class DashBoard extends React.Component {
 	}
 
   render() {
-    const { quests, follows, currentUser } = this.props;
+    const { quests, follows, users, currentUser } = this.props;
     let questList = [];
     const followRecs = [];
 
@@ -47,6 +47,32 @@ class DashBoard extends React.Component {
     questList = questList.reverse();
 
     // Follow recommendations
+    let currentList = [];
+    if (users.length > 4) {
+      for (let i = 0; i < 4; i++) {
+        let randomIndex = Math.floor(Math.random() * users.length);
+        while (currentList.includes(randomIndex)) {
+          randomIndex = Math.floor(Math.random() * users.length);
+        }
+        currentList.push(randomIndex);
+      }
+    } else {
+      users.forEach((user) => {
+        let newFollowRec = (
+          <div className="follow-rec-container">
+            <div className="user-attributes">
+              <div className="follow-rec-avatar">{user.avatar}</div>
+              <div className="follow-rec-details">
+                <span className="follow-rec-username">{user.username}</span>
+                <span className="follow-rec-guildname">{user.guildname}</span>
+              </div>
+              <div className="follow-rec-button">Follow</div>
+            </div>
+          </div>
+        );
+        followRecs.push(newFollowRec);
+      });
+    }
 
     return (
       <div className="dashboard-container">

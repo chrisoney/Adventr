@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     quests: Object.values(state.entities.quests),
     follows: Object.values(state.entities.follows),
+    users: Object.values(state.entities.users),
   };
 };
 
