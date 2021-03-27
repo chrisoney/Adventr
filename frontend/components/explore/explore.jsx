@@ -27,7 +27,7 @@ class Explore extends React.Component {
     questList = questList.reverse();
     return (
       <div className="dashboard-container">
-        <div className="dashboard">
+        <div className="explore">
           <div className="dashboard-header">
             {/* <h1 className="dash-title">Explore</h1>
             <p className="dash-welcome">Welcome back to Adventr!</p> */}
