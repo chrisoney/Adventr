@@ -273,6 +273,23 @@
 .audio {
 	margin-bottom: 10px;
 }
+
+.quest-container-explore {
+	.avatar-explore {
+		display: none;
+	}
+	.quest {
+		.quest-header {
+			.avatar-explore-small {
+				width: 38px;
+				height: 38px;
+				object-fit: cover;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+
 // Small screen
 @media only screen and (max-width: 980px) {
 	.quest-container-dash, .quest-create-container {

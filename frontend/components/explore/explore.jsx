@@ -34,8 +34,8 @@ class Explore extends React.Component {
   render() {
     const { quests, currentUser } = this.props;
     let questList = quests.map((quest, idx) => (
-      <QuestContainer key={idx} quest={quest} loc={"dash"}/>
-    ))
+      <QuestContainer key={idx} quest={quest} loc={'explore'} />
+    ));
     questList = questList.reverse();
 
     let questDisplay;
