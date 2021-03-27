@@ -29,8 +29,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-
   .follow-recommendations {
     // background-color: #222222A6;
     background: asset-data-url('quest-board.png');
@@ -136,10 +134,9 @@
       border-bottom: 2px solid #595959;
     }
   }
-
   .advertisement {
     margin-top: 20px;
-    position: sticky;
+
     .dash-ad-title {
       display: block;
       color: white;
