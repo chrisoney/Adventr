@@ -121,7 +121,14 @@ class DashBoard extends React.Component {
             <div className="suggested-title">Sanctioned Job</div>
             {randomQuest}
           </div>
-          <div className="advertisement"></div>
+          <div className="advertisement">
+            <span className="dash-ad-title">Sponsored</span>
+            <img src="/assets/evil_ducks.png" />
+            <div className="ad-bottom-text">
+              <span>About Adventr ads</span>
+              <span>Do not sell my personal information</span>
+            </div>
+          </div>
         </div>
       </div>
     );

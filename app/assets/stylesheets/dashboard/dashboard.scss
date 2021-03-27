@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   .follow-recommendations {
     // background-color: #222222A6;
@@ -41,10 +42,6 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-
-    &:hover {
-      // background-color: #222222;
-    }
 
     .follow-rec-title {
       text-align: center;
@@ -137,6 +134,32 @@
       padding-top: 0px;
       margin-bottom: 20px;
       border-bottom: 2px solid #595959;
+    }
+  }
+
+  .advertisement {
+    margin-top: 20px;
+    position: sticky;
+    .dash-ad-title {
+      display: block;
+      color: white;
+      font-size: 21px;
+      font-weight: bolder;
+      width: 320px;
+      padding: 10px;
+      padding-top: 0px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #595959;
+    }
+    img {
+      width: 300px;
+    }
+    .ad-bottom-text{
+      span {
+        display: block;
+        color: white;
+        font-size: 16px;
+      }
     }
   }
 }

@@ -8,7 +8,9 @@ import AvatarContainer from './avatar_container'
 
 
 class Modal extends React.Component {
-
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     const { modal, closeModal, openModal2 } = this.props;
@@ -16,7 +18,7 @@ class Modal extends React.Component {
       return null;
     }
     let background;
-		let container;
+    let container;
     let component;
     let formType;
     let onClickEffect;
@@ -29,7 +31,9 @@ class Modal extends React.Component {
       }, 500);
     };
 
-    if (modal.slice(0, 4) === 'new-') { formType = modal.slice(4) }
+    if (modal.slice(0, 4) === 'new-') {
+      formType = modal.slice(4);
+    }
 
     switch (modal) {
       case 'new-text':
