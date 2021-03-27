@@ -118,6 +118,7 @@ class DashBoard extends React.Component {
             </Link>
           </div>
           <div className="suggested-recommendation">
+            <div className="suggested-title">Sanctioned Job</div>
             {randomQuest}
           </div>
           <div className="advertisement"></div>

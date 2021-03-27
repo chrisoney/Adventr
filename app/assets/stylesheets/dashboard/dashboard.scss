@@ -53,7 +53,7 @@
       width: 320px;
       padding: 10px;
       padding-top: none;
-      border-bottom: 2px solid #595959;
+      // border-bottom: 2px solid #595959;
     }
     .follow-recs-list {
       li.follow-rec-container {
@@ -123,6 +123,20 @@
       .explore-text:hover {
         color: $sky-blue;
       }
+    }
+  }
+
+  .suggested-recommendation {
+    margin-top: 20px;
+    .suggested-title {
+      color: white;
+      font-size: 21px;
+      font-weight: bolder;
+      width: 320px;
+      padding: 10px;
+      padding-top: 0px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #595959;
     }
   }
 }

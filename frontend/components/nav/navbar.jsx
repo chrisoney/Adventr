@@ -88,12 +88,15 @@ class Navbar extends React.Component {
         </div>
       );
     }
-    if ((this.props.location.pathname != '/login') &&
-      (this.props.location.pathname != '/signup') &&
-      (this.props.location.pathname != '/')) {
-      navbarBorder = (<div className="nav-border"></div>);
-    }
-    if (this.props.currentUser) {
+    // if ((this.props.location.pathname != '/login') &&
+    //   (this.props.location.pathname != '/signup') &&
+    //   (this.props.location.pathname != '/')) {
+    //   }
+    if (this.props.currentUser && 
+        (this.props.location.pathname != '/login') &&
+        (this.props.location.pathname != '/signup') &&
+        (this.props.location.pathname != '/')) {
+        navbarBorder = (<div className="nav-border"></div>);
       if (this.state.windowSize <= 980) {
         navbar = (
           <div className="navbar-container">
