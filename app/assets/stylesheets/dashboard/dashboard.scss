@@ -171,13 +171,18 @@
   background-size: cover;
   width: 100%;
   display:flex;
-  flex-direction: column;
-  align-items: center;
-
-  .quest-columns {
-    display: flex;
-    flex-direction: row;
+  .explore-left {
+    .explore-header{}
+    .quest-columns {
+      display: flex;
+      flex-direction: row;
+    }
   }
+  .explore-right {
+    .current-follows{}
+    .suggested-guilds{}
+  }
+
 }
 
 .dashboard-header{

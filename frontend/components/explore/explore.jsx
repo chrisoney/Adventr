@@ -79,12 +79,15 @@ class Explore extends React.Component {
     return (
       <div className="dashboard-container">
         <div className="explore">
-          <div className="dashboard-header">
-            {/* <h1 className="dash-title">Explore</h1>
-            <p className="dash-welcome">Welcome back to Adventr!</p> */}
+          <div className="explore-left">
+            <div className="explore-header">
+            </div>
+            {questDisplay}
           </div>
-          <NewQuestCreate currentUser={currentUser} />
-          {questDisplay}
+          <div className="explore-right">
+            <div className="current-follows"></div>
+            <div className="suggested-guilds"></div>
+          </div>
         </div>
       </div>
     );
