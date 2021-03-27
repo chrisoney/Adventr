@@ -77,11 +77,11 @@ class Explore extends React.Component {
       )
     }
     return (
-      <div className="dashboard-container">
+      <div className="explore-container">
         <div className="explore">
           <div className="explore-left">
-            <div className="explore-header">
-            </div>
+            <div className="explore-header"></div>
+            <div className="explore-tag-container"></div>
             {questDisplay}
           </div>
           <div className="explore-right">

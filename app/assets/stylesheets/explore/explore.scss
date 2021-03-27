@@ -1,0 +1,74 @@
+.explore-container {
+  margin-top: 54px;
+  background: asset-data-url("battle.png") no-repeat center fixed;
+  min-height: 100vh;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+.explore {  
+  width: 100%;
+  display:flex;
+  .explore-left {
+    .explore-header{
+      height: 50px;
+      border-bottom: 1px solid black;
+      margin-bottom: 20px;
+    }
+    .quest-columns {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  .explore-right {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 15px;
+    .current-follows{
+      width: 100%;
+      height: 437px;
+      margin-bottom: 16px;
+      background-color: red;
+    }
+    .suggested-guilds{
+      height: 367px;
+      background-color: green;
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 989px) {
+  .explore {
+    .explore-left{
+      width: 625px;
+    }
+    .explore-right{
+      display: none;
+    }
+  }
+}
+@media only screen and (min-width: 990px) {
+  .explore {
+    max-width: 970px;
+    .explore-left{
+      max-width: 620px;
+    }
+  }
+}
+@media only screen and (min-width: 1310px) {
+  .explore {
+    max-width: 1290px;
+    .explore-left{
+      max-width: 940px;
+    }
+  }
+}
+

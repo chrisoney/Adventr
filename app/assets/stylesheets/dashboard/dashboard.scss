@@ -161,30 +161,6 @@
   }
 }
 
-.explore {
-  padding-top: 50px;
-  background: asset-data-url("battle.png") no-repeat center fixed;
-  min-height: 100vh;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  display:flex;
-  .explore-left {
-    .explore-header{}
-    .quest-columns {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-  .explore-right {
-    .current-follows{}
-    .suggested-guilds{}
-  }
-
-}
-
 .dashboard-header{
   display: flex;
   flex-direction: column;
