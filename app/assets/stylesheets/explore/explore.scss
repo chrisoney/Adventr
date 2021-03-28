@@ -20,6 +20,43 @@
       height: 50px;
       border-bottom: 1px solid black;
       margin-bottom: 20px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-evenly;
+    }
+    .explore-tag-container {
+      height: 200px;
+      width: 100%;
+      display: flex;
+      margin-bottom: 30px;
+      .explore-new-tag-container {
+        margin-right: 8px;
+        padding: 8px;
+        width: 140px;
+        border-radius: 6px;
+        border: 1px solid black;
+        .new-tag-title {
+          display: flex;
+          align-items: center;
+          max-width: 100%;
+          min-height: 2em;
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+        .new-tag-examples {
+          display: flex;
+          justify-content: space-between;
+          .new-tag-example-image {
+            width: 56px;
+            height: 93.3px;
+            object-fit: cover;
+          }
+        }
+        .new-tag-follow-button {
+          width: 100%;
+          text-align: center;
+        }
+      }
     }
     .quest-columns-1 {
       width: 100%;
