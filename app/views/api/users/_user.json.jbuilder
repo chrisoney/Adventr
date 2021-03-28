@@ -14,9 +14,9 @@ json.likedQuests do
   end
   json.array! liked_ids
 end
-json.following do
+json.followed_users do
   followed_user_ids = []
-  user.following.each do |user|
+  user.followed_users.each do |user|
     followed_user_ids << user.id
   end
   json.array! followed_user_ids

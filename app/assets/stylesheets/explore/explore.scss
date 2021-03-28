@@ -21,14 +21,24 @@
       border-bottom: 1px solid black;
       margin-bottom: 20px;
     }
-    .quest-columns {
+    .quest-columns-1 {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .quest-column-1 {
+        width: 540px;
+        align-self: center;
+      }
+      .quest-container-explore {
+        margin-bottom: 20px;
+      }
+    }
+    .quest-columns-2-3 {
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      .quest-column-1 {
-        width: 540px;
-      }
 
       .quest-column-2, .quest-column-3 {
         width: 300px;

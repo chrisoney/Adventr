@@ -42,7 +42,7 @@ class Explore extends React.Component {
     if (this.state.windowSize > 1300) {
       console.log("-----------------column 3----------------------")
       questDisplay = (
-        <div className="quest-columns">
+        <div className="quest-columns-2-3">
           <div className="quest-column-3">
             {questList.filter((quest, idx) => idx % 3 === 0)}
           </div>
@@ -51,13 +51,13 @@ class Explore extends React.Component {
           </div>
           <div className="quest-column-3">
             {questList.filter((quest, idx) => idx % 3 === 2)}
-            </div>
           </div>
-      )
+        </div>
+      );
     } else if (this.state.windowSize > 1000) {
       console.log("-----------------column 2----------------------")
       questDisplay = (
-        <div className="quest-columns">
+        <div className="quest-columns-2-3">
           <div className="quest-column-2">
             {questList.filter((quest, idx) => idx % 2 === 0)}
           </div>
@@ -65,16 +65,14 @@ class Explore extends React.Component {
             {questList.filter((quest, idx) => idx % 2 === 1)}
           </div>
         </div>
-      )
+      );
     } else {
       console.log("-----------------column 1----------------------")
       questDisplay = (
-        <div className="quest-columns">
-          <div className="quest-column-1">
-            {questList}
-          </div>
+        <div className="quest-columns-1">
+          <div className="quest-column-1">{questList}</div>
         </div>
-      )
+      );
     }
     return (
       <div className="explore-container">

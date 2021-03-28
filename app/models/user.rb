@@ -32,23 +32,23 @@ class User < ApplicationRecord
     through: :likes,
     source: :quest
 
-  has_many :follows,
+  has_many :followings,
     class_name: :Follow,
     primary_key: :id,
     foreign_key: :follower
 
-  has_many :following,
-    through: :follows,
+  has_many :followed_users,
+    through: :followings,
     source: :user
 
-  has_many :fans,
+  has_many :follows,
     class_name: :Follow,
     primary_key: :id,
     foreign_key: :user
     
 
   has_many :followers,
-    through: :fans,
+    through: :follows,
     source: :follower
 
   
