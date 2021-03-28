@@ -30,3 +30,22 @@
 # user2.quests.create(title: "Escort request", text: "From here to Plainsburrow. Silver Rank minimum. Payment on arrival.", quest_type: "text");
 # user1.quests.create(title: "Unidentified dagger",text: "Can anyone determine its value?", quest_type: "image", content_url: "https://adventr-dev.s3-us-west-1.amazonaws.com/SezbQhN.png")
 
+# New tags
+
+# Tag.create(tag_name: "Warriors")
+# Tag.create(tag_name: "Clerics")
+# Tag.create(tag_name: "Rogues")
+# Tag.create(tag_name: "Rangers")
+# Tag.create(tag_name: "Warlocks")
+# Tag.create(tag_name: "Wizards")
+# Tag.create(tag_name: "Sorcerers")
+# Tag.create(tag_name: "Goblins")
+# Tag.create(tag_name: "Orcs")
+# Tag.create(tag_name: "Slimes")
+# Tag.create(tag_name: "Dragons")
+# Tag.create(tag_name: "Gold Rank")
+# Tag.create(tag_name: "Silver Rank")
+# Tag.create(tag_name: "Bronze Rank")
+# Tag.create(tag_name: "Porcelain Rank")
+# Tag.create(tag_name: "Iron Rank")
+
