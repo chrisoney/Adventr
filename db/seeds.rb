@@ -19,7 +19,9 @@
 # user4 = User.create(username: "matthew-brightfield", password: "hunter12", email: "matt@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile2.jpg");
 # user5 = User.create(username: "jess", password: "hunter12", email: "jess@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile3.jpg");
 # user6 = User.create(username: "Carla-the-Indomitable", password: "hunter12", email: "carla@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile4.jpg");
+# user7 = User.create(username: "worry", password: "hunter12", email: "worry@worry.com");
 
+user7 = User.find(22)
 
 # New quests
 
@@ -48,4 +50,7 @@
 # Tag.create(tag_name: "Bronze Rank")
 # Tag.create(tag_name: "Porcelain Rank")
 # Tag.create(tag_name: "Iron Rank")
+# tag1 = Tag.create(tag_name: 'Diamond Rank')
+tag = Tag.find(17)
 
+user7.tags << tag

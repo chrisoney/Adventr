@@ -37,3 +37,19 @@ export const deleteQuest = (questId) => {
     url: `/api/quests/${questId}`
   });
 };
+
+
+export const addTagToQuest = (questId, tag) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/users_tags',
+    data: { questId, tag },
+  });
+};
+
+export const removeTagFromQuest = (quests_tag) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/users_tags/${quests_tag.get('quests_tag[id]')}`,
+  });
+};

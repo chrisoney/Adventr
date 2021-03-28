@@ -13,7 +13,7 @@ class Tag < ApplicationRecord
   validates :tag_name, presence: true, uniqueness: true
   
   has_many :quests_tags,
-    class_name: :Quests_Tag,
+    class_name: :QuestsTag,
     foreign_key: :tag_id,
     primary_key: :id
 
@@ -22,7 +22,7 @@ class Tag < ApplicationRecord
     source: :quest
 
   has_many :users_tags,
-    class_name: :Users_Tag,
+    class_name: :UsersTag,
     foreign_key: :tag_id,
     primary_key: :id
 

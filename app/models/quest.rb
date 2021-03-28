@@ -20,7 +20,7 @@ class Quest < ApplicationRecord
   has_many :likes
 
   has_many :quests_tags,
-    class_name: :Quests_Tag,
+    class_name: :QuestsTag,
     foreign_key: :quest_id,
     primary_key: :id
 

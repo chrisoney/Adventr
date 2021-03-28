@@ -52,7 +52,7 @@ class User < ApplicationRecord
     source: :follower
 
   has_many :users_tags,
-    class_name: :Users_Tag,
+    class_name: :UsersTag,
     foreign_key: :user_id,
     primary_key: :id
 
