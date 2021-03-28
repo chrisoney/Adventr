@@ -1,34 +1,36 @@
 class Api::QuestsTagsController < ApplicationController
-  def index
-    @quests_tags = QuestsTag.order(id: :DESC)
-  end
 
-  def new
-    @quests_tags = QuestsTag.new
+  def index
+    @quests_tags = QuestsTag.where(quest_id: params[:id])
   end
 
   def show
-    @quests_tags = Tag.find(params[:id]) 
+    @quests_tag = QuestsTag.find_by(params[:id])
   end
 
   def create
-    @quests_tags = Tag.new(quests_tag_params)
-    if @quests_tags.save
+    @quests_tag = QuestsTag.new(quests_tag_params)
+    if @quests_tag.save 
+      @quest = @quests_tag.quest
+      @tag = @quests_tag.tag
       render :show
-    else 
-      render json: @quests_tags.errors.full_messages, status: 422
+    else
+      render json: @quests_tag.errors.full_messages, status: 401
     end
+
   end
 
+
   def destroy
-    @quests_tags = Tag.find(params[:id])
-    @quests_tags.destroy
+    @quests_tag = Follow.find_by(params[:id])
+    @quest = @quests_tag.quest
+    @tag = @quests_tag.tag
+    @quests_tag.destroy
     render :show
   end
 
   private
-
-  def quests_tag_params
-    params.require(:quests_tag).permit(:quest_id, :tag_id) 
+  def quests_tag_params 
+      params.require(:quests_tag).permit(:quest_id,:tag_id) 
   end
 end

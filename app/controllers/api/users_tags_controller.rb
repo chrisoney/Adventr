@@ -31,7 +31,7 @@ class Api::UsersTagsController < ApplicationController
   end
 
   private
-    def users_tags_params 
+    def users_tag_params 
         params.require(:users_tag).permit(:user_id,:tag_id) 
     end
 end
