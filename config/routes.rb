@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :quests, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :likes, only: [:index, :show, :create, :destroy]
     resources :follows, only: [:index, :show, :create, :destroy]
+    resources :tags, only: [:index, :show, :create, :destroy]
   end
 end

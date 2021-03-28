@@ -17,7 +17,7 @@ class Api::QuestsController < ApplicationController
     if @quest.save
       render :show
     else 
-      render json: @user.errors.full_messages, status: 422
+      render json: @quest.errors.full_messages, status: 422
     end
   end
 
