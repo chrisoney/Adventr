@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_033939) do
+ActiveRecord::Schema.define(version: 2021_03_28_063117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(version: 2021_03_28_033939) do
     t.index ["user_id", "id"], name: "index_quests_on_user_id_and_id"
   end
 
+  create_table "quests_tags", force: :cascade do |t|
+    t.integer "quest_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quest_id", "tag_id"], name: "index_quests_tags_on_quest_id_and_tag_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "tag_name", null: false
     t.datetime "created_at", null: false
@@ -83,6 +91,14 @@ ActiveRecord::Schema.define(version: 2021_03_28_033939) do
     t.string "guild_name"
     t.string "guild_description"
     t.index ["username", "id"], name: "index_users_on_username_and_id"
+  end
+
+  create_table "users_tags", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "tag_id"], name: "index_users_tags_on_user_id_and_tag_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

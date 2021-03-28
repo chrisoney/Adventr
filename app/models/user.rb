@@ -51,6 +51,16 @@ class User < ApplicationRecord
     through: :follows,
     source: :follower
 
+  has_many :users_tags,
+    class_name: :Users_Tag,
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :tags,
+    through: :users_tags,
+    source: :tag
+
+
   
   
   after_initialize :ensure_session_token

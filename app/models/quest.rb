@@ -19,5 +19,14 @@ class Quest < ApplicationRecord
   
   has_many :likes
 
+  has_many :quests_tags,
+    class_name: :Quests_Tag,
+    foreign_key: :quest_id,
+    primary_key: :id
+
+  has_many :tags,
+    through: :quests_tags,
+    source: :tag
+
   has_many_attached :images
 end
