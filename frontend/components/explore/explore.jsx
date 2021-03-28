@@ -102,7 +102,7 @@ class Explore extends React.Component {
                 <div className="new-tag-follow-button">Follow</div>
               </div>
                {/* Tag 2 */}
-               <div className="explore-new-tag-container">
+              <div className="explore-new-tag-container">
                 <div className="new-tag-title">#Clerics</div>
                 <div className="new-tag-examples">
                   <img
@@ -115,6 +115,7 @@ class Explore extends React.Component {
                   />
                 </div>
                 <div className="new-tag-follow-button">Follow</div>
+              </div>
               {/* Tag 3 */}
               <div className="explore-new-tag-container">
                 <div className="new-tag-title">#Rangers</div>
@@ -130,8 +131,8 @@ class Explore extends React.Component {
                 </div>
                 <div className="new-tag-follow-button">Follow</div>
               </div>
-               {/* Tag 4 */}
-               <div className="explore-new-tag-container">
+              {/* Tag 4 */}
+              <div className="explore-new-tag-container">
                 <div className="new-tag-title">#Warlocks</div>
                 <div className="new-tag-examples">
                   <img
@@ -144,6 +145,7 @@ class Explore extends React.Component {
                   />
                 </div>
                 <div className="new-tag-follow-button">Follow</div>
+              </div>
               {/* Tag 5 */}
               <div className="explore-new-tag-container">
                 <div className="new-tag-title">#Wizards</div>
