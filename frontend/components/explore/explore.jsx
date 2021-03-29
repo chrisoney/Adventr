@@ -1,13 +1,12 @@
 import React from "react";
-import QuestContainer from '../quests/quest_container'
-import NewQuestCreate from '../quests/new_quest_create'
+import QuestContainer from '../quests/quest_container';
 
 class Explore extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       windowSize: 0,
-    }
+    };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
   }
 
@@ -82,6 +81,40 @@ class Explore extends React.Component {
       tag.users.includes(currentUser.id)
     );
 
+    const newTagPictures = [
+      '/assets/river_world.jpg',
+      '/assets/circle_sample.jpg',
+      '/assets/dark_forest.jpg',
+      '/assets/tree_house.jpg',
+    ];
+    let newTagPictureIndex = 0;
+    const newTagElements = [];
+    // Creating 8 elements for new tag display
+    if (newTags.length > 0) {
+      for (let y = 0; y < 8; y++) {
+        let newTagContent = newTags[y];
+        let pictureIndexOne = newTagPictureIndex % newTagPictures.length;
+        let pictureIndexTwo = (newTagPictureIndex + 1) % newTagPictures.length;
+        // console.log(pictureIndexOne, pictureIndexTwo);
+        newTagElements.push(
+          <div className="explore-new-tag-container">
+            <div className="new-tag-title">#{newTagContent.tag_name}</div>
+            <div className="new-tag-examples">
+              <img
+                src={newTagPictures[pictureIndexOne]}
+                className="new-tag-example-image"
+              />
+              <img
+                src={newTagPictures[pictureIndexTwo]}
+                className="new-tag-example-image"
+              />
+            </div>
+            <div className="new-tag-follow-button">Follow</div>
+          </div>
+        );
+        newTagPictureIndex += 2;
+      }
+    }
     return (
       <div className="explore-container">
         <div className="explore">
@@ -93,98 +126,7 @@ class Explore extends React.Component {
               <div className="explore-tab">Guildmaster Picks</div>
               <div className="explore-tab">More</div>
             </div>
-            <div className="explore-tag-container">
-              {/* Tag 1 */}
-              <div className="explore-new-tag-container">
-                <div className="new-tag-title">#Warriors</div>
-                <div className="new-tag-examples">
-                  <img
-                    src="/assets/river_world.jpg"
-                    className="new-tag-example-image"
-                  />
-                  <img
-                    src="/assets/circle_sample.jpg"
-                    className="new-tag-example-image"
-                  />
-                </div>
-                <div className="new-tag-follow-button">Follow</div>
-              </div>
-              {/* Tag 2 */}
-              <div className="explore-new-tag-container">
-                <div className="new-tag-title">#Clerics</div>
-                <div className="new-tag-examples">
-                  <img
-                    src="/assets/dark_forest.jpg"
-                    className="new-tag-example-image"
-                  />
-                  <img
-                    src="/assets/tree_house.jpg"
-                    className="new-tag-example-image"
-                  />
-                </div>
-                <div className="new-tag-follow-button">Follow</div>
-              </div>
-              {/* Tag 3 */}
-              <div className="explore-new-tag-container">
-                <div className="new-tag-title">#Rangers</div>
-                <div className="new-tag-examples">
-                  <img
-                    src="/assets/river_world.jpg"
-                    className="new-tag-example-image"
-                  />
-                  <img
-                    src="/assets/circle_sample.jpg"
-                    className="new-tag-example-image"
-                  />
-                </div>
-                <div className="new-tag-follow-button">Follow</div>
-              </div>
-              {/* Tag 4 */}
-              <div className="explore-new-tag-container">
-                <div className="new-tag-title">#Warlocks</div>
-                <div className="new-tag-examples">
-                  <img
-                    src="/assets/dark_forest.jpg"
-                    className="new-tag-example-image"
-                  />
-                  <img
-                    src="/assets/tree_house.jpg"
-                    className="new-tag-example-image"
-                  />
-                </div>
-                <div className="new-tag-follow-button">Follow</div>
-              </div>
-              {/* Tag 5 */}
-              <div className="explore-new-tag-container">
-                <div className="new-tag-title">#Wizards</div>
-                <div className="new-tag-examples">
-                  <img
-                    src="/assets/river_world.jpg"
-                    className="new-tag-example-image"
-                  />
-                  <img
-                    src="/assets/circle_sample.jpg"
-                    className="new-tag-example-image"
-                  />
-                </div>
-                <div className="new-tag-follow-button">Follow</div>
-              </div>
-              {/* Tag 6 */}
-              <div className="explore-new-tag-container">
-                <div className="new-tag-title">#Rogues</div>
-                <div className="new-tag-examples">
-                  <img
-                    src="/assets/dark_forest.jpg"
-                    className="new-tag-example-image"
-                  />
-                  <img
-                    src="/assets/tree_house.jpg"
-                    className="new-tag-example-image"
-                  />
-                </div>
-                <div className="new-tag-follow-button">Follow</div>
-              </div>
-            </div>
+            <div className="explore-tag-container">{newTagElements}</div>
             {questDisplay}
           </div>
           <div className="explore-right">
