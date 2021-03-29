@@ -6,6 +6,7 @@ class Explore extends React.Component {
     super(props);
     this.state = {
       windowSize: 0,
+      currentFavTagIdx: 0,
     };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
   }
@@ -149,7 +150,12 @@ class Explore extends React.Component {
         </div>
       );
     });
-    const displayCurrentTagElements = [];
+    let newFavTagIdx =
+      this.state.currentFavTagIdx % allCurrentTagElements.length;
+    const displayCurrentTagElements = allCurrentTagElements.slice(
+      newFavTagIdx,
+      newFavTagIdx + 4
+    );
 
     return (
       <div className="explore-container">
