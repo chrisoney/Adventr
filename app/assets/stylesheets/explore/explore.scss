@@ -1,6 +1,6 @@
 .explore-container {
   margin-top: 54px;
-  background: asset-data-url("battle.png") no-repeat center fixed;
+  background: asset-data-url("guild.jpg") no-repeat center fixed;
   min-height: 100vh;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -18,7 +18,7 @@
     width: 100%;
     .explore-header{
       height: 50px;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #595959;
       margin-bottom: 20px;
       display: flex;
       align-items: flex-end;
@@ -36,7 +36,7 @@
         width: 140px;
         box-sizing: border-box;
         border-radius: 6px;
-        border: 1px solid black;
+        border: 1px solid #595959;
         .new-tag-title {
           display: flex;
           align-items: center;
@@ -148,7 +148,7 @@
     .explore-left{
       max-width: 620px;
       padding-right: 14px;
-      border-right: 1px solid black;
+      border-right: 1px solid #595959;
       .explore-tag-container {
         .explore-new-tag-container {
           margin-right: 20px;
