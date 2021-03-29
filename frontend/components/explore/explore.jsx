@@ -152,12 +152,18 @@ class Explore extends React.Component {
               <div className="current-tag-follows-header">
                 <div className="current-tag-follows-title">Following</div>
               </div>
-              <div className="current-tag-container">
-                {currentTagsElements}
-              </div>
+              <div className="current-tag-container">{currentTagsElements}</div>
               <div className="current-tag-follows-button">More</div>
             </div>
-            <div className="suggested-guilds"></div>
+            <div className="suggested-guilds">
+              <div className="suggested-guilds-header">
+                <div className="suggested-guilds-title">Suggested Guilds</div>
+              </div>
+              <div className="suggested-guilds-container">
+                {currentTagsElements}
+              </div>
+              <div className="suggested-guilds-button">More</div>
+            </div>
           </div>
         </div>
       </div>
