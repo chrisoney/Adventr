@@ -25,7 +25,6 @@ class UserMenu extends React.Component{
 
     render() {
       const { currentUser, closeModal, openModal2 } = this.props;
-      console.log(this.props);
       return (
         <>
           <div className="user-menu-top">

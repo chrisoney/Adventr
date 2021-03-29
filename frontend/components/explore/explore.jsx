@@ -41,7 +41,6 @@ class Explore extends React.Component {
 
     let questDisplay;
     if (this.state.windowSize > 1300) {
-      console.log("-----------------column 3----------------------")
       questDisplay = (
         <div className="quest-columns-2-3">
           <div className="quest-column-3">
@@ -56,7 +55,6 @@ class Explore extends React.Component {
         </div>
       );
     } else if (this.state.windowSize > 1000) {
-      console.log("-----------------column 2----------------------")
       questDisplay = (
         <div className="quest-columns-2-3">
           <div className="quest-column-2">
@@ -68,7 +66,6 @@ class Explore extends React.Component {
         </div>
       );
     } else {
-      console.log("-----------------column 1----------------------")
       questDisplay = (
         <div className="quest-columns-1">
           <div className="quest-column-1">{questList}</div>
