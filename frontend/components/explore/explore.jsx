@@ -88,6 +88,17 @@ class Explore extends React.Component {
       '/assets/tree_house.jpg',
     ];
     let newTagPictureIndex = 0;
+    // style={{color: "red"}}
+    const newTagColors = [
+      'red',
+      'orange',
+      'yellow',
+      'green',
+      'blue',
+      'purple',
+      'pink',
+    ];
+    let newTagColorIndex = 0;
     const newTagElements = [];
     // Creating 8 elements for new tag display
     if (newTags.length > 0) {
@@ -95,9 +106,12 @@ class Explore extends React.Component {
         let newTagContent = newTags[y];
         let pictureIndexOne = newTagPictureIndex % newTagPictures.length;
         let pictureIndexTwo = (newTagPictureIndex + 1) % newTagPictures.length;
-        // console.log(pictureIndexOne, pictureIndexTwo);
+        let colorIndex = newTagColorIndex % newTagColors.length;
         newTagElements.push(
-          <div className="explore-new-tag-container">
+          <div
+            className="explore-new-tag-container"
+            style={{ backgroundColor: newTagColors[colorIndex] }}
+          >
             <div className="new-tag-title">#{newTagContent.tag_name}</div>
             <div className="new-tag-examples">
               <img
@@ -113,6 +127,7 @@ class Explore extends React.Component {
           </div>
         );
         newTagPictureIndex += 2;
+        newTagColorIndex += 1;
       }
     }
     return (
