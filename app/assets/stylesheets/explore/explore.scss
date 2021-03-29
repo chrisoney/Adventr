@@ -113,11 +113,38 @@
       .current-tag-container {
         min-height: 308px;
         width: 100%;
+        padding-top: 10px;
         background: asset-data-url('board.jpg');
         background-size: 320px 308px;
         object-fit: cover;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        .favorited-tag-container {
+          display: flex;
+          padding: 16px;
+          background-image: asset-data-url('parchment_slip.png');
+          background-size: 100% 77px;
+          object-fit: cover;
+          width: 260px;
+
+          .favorited-tag-image {
+            width: 64px;
+            height: 40px;
+            object-fit: cover;
+          }
+          .favorited-tag-text-container{
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            .favorited-tag-name {
+              font-weight: bold;
+            }
+            .favorited-tag-recent-posts{
+
+            }
+          }
+        }
       }
       .current-tag-follows-button{
 
