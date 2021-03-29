@@ -131,7 +131,25 @@ class Explore extends React.Component {
       }
     }
     // Right side top, the current tags the user is subscribed to
-    const currentTagsElements = [];
+    const allCurrentTagElements = favoritedTags.map((tag) => {
+      let pictureIndex = newTagPictureIndex % newTagPictures.length;
+      let randNum = Math.floor(Math.random() * 50);
+      return (
+        <div className="favorited-tag-container">
+          <img
+            src={newTagPictures[pictureIndex]}
+            className="favorited-tag-image"
+          />
+          <div classname="favorited-tag-text-container">
+            <div className="favorited-tag-name">{tag.tag_name}</div>
+            <div className="favorited-tag-recent-posts">
+              {randNum} Recent Quests
+            </div>
+          </div>
+        </div>
+      );
+    });
+    const displayCurrentTagElements = [];
 
     return (
       <div className="explore-container">
@@ -160,7 +178,7 @@ class Explore extends React.Component {
                 <div className="suggested-guilds-title">Suggested Guilds</div>
               </div>
               <div className="suggested-guilds-container">
-                {currentTagsElements}
+                {displayCurrentTagElements}
               </div>
               <div className="suggested-guilds-button">More</div>
             </div>
