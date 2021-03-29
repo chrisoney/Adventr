@@ -22,6 +22,7 @@ class Modal extends React.Component {
     let component;
     let formType;
     let onClickEffect;
+    let transparentBackground;
 
     const userPageClose = (e) => {
       e.preventDefault();
@@ -45,6 +46,7 @@ class Modal extends React.Component {
         background = 'new-quest-background';
         container = 'new-quest-container';
         onClickEffect = closeModal;
+        transparentBackground = <div className="test-background"></div>;
         break;
       case 'avatar':
         component = <AvatarContainer />;
@@ -71,7 +73,7 @@ class Modal extends React.Component {
     }
     return (
       <>
-        <div className="test-background"></div>
+        {transparentBackground}
         <div className={background} onClick={(e) => onClickEffect(e)}>
           <div className={container} onClick={(e) => e.stopPropagation()}>
             {component}

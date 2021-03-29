@@ -7,7 +7,16 @@ if user.avatar_image.attached?
 end
 
 json.follows user.follows
-json.tags user.tags
+json.tags user.tags.each do |tag|
+  json.set! :id, tag.id
+  json.set! :quests, json.quests do
+    tag_quests = []
+    tag.quests.each do |quest|
+      tag_quests << quest
+    end
+  end
+end
+
 json.likedQuests do
   liked_ids = []
   user.liked_quests.each do |quest|

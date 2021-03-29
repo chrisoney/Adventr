@@ -51,6 +51,8 @@ user7 = User.find(22)
 # Tag.create(tag_name: "Porcelain Rank")
 # Tag.create(tag_name: "Iron Rank")
 # tag1 = Tag.create(tag_name: 'Diamond Rank')
-tag = Tag.find(17)
+tag = Tag.find(8)
+tag2 = Tag.find(3)
 
 user7.tags << tag
+user7.tags << tag2
