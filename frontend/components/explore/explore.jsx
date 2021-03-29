@@ -33,7 +33,7 @@ class Explore extends React.Component {
 	}
 
   render() {
-    const { quests, currentUser } = this.props;
+    const { quests, currentUser, tags } = this.props;
     let questList = quests.map((quest, idx) => (
       <QuestContainer key={idx} quest={quest} loc={'explore'} />
     ));
@@ -72,6 +72,16 @@ class Explore extends React.Component {
         </div>
       );
     }
+
+    // Tags
+    // Get the list of tags that the current user hasn't favorited
+    const newTags = tags.filter((tag) => !tag.users.includes(currentUser.id));
+
+    // Get the list of tags that the current user has favorited
+    const favoritedTags = tags.filter((tag) =>
+      tag.users.includes(currentUser.id)
+    );
+
     return (
       <div className="explore-container">
         <div className="explore">
@@ -99,7 +109,7 @@ class Explore extends React.Component {
                 </div>
                 <div className="new-tag-follow-button">Follow</div>
               </div>
-               {/* Tag 2 */}
+              {/* Tag 2 */}
               <div className="explore-new-tag-container">
                 <div className="new-tag-title">#Clerics</div>
                 <div className="new-tag-examples">
@@ -159,8 +169,8 @@ class Explore extends React.Component {
                 </div>
                 <div className="new-tag-follow-button">Follow</div>
               </div>
-               {/* Tag 6 */}
-               <div className="explore-new-tag-container">
+              {/* Tag 6 */}
+              <div className="explore-new-tag-container">
                 <div className="new-tag-title">#Rogues</div>
                 <div className="new-tag-examples">
                   <img
