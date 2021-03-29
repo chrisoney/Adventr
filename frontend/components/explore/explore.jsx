@@ -130,6 +130,9 @@ class Explore extends React.Component {
         newTagColorIndex += 1;
       }
     }
+    // Right side top, the current tags the user is subscribed to
+    const currentTagsElements = [];
+
     return (
       <div className="explore-container">
         <div className="explore">
@@ -145,7 +148,15 @@ class Explore extends React.Component {
             {questDisplay}
           </div>
           <div className="explore-right">
-            <div className="current-follows"></div>
+            <div className="current-tag-follows">
+              <div className="current-tag-follows-header">
+                <div className="current-tag-follows-title">Following</div>
+              </div>
+              <div className="current-tag-container">
+                {currentTagsElements}
+              </div>
+              <div className="current-tag-follows-button">More</div>
+            </div>
             <div className="suggested-guilds"></div>
           </div>
         </div>

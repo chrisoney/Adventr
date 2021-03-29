@@ -98,11 +98,29 @@
     flex-direction: column;
     padding-top: 20px;
     padding-left: 15px;
-    .current-follows{
+    .current-tag-follows{
       width: 100%;
       height: 437px;
       margin-bottom: 16px;
-      background-color: red;
+      // background-color: red;
+      .current-tag-follows-header{
+        .current-tag-follows-title {
+          color: white;
+          font-size: 18px;
+        }
+      }
+      .current-tag-container {
+        min-height: 308px;
+        width: 100%;
+        background: asset-data-url('board.jpg');
+        background-size: 320px 308px;
+        object-fit: cover;
+        display: flex;
+        flex-direction: column;
+      }
+      .current-tag-follows-button{
+
+      }
     }
     .suggested-guilds{
       height: 367px;
