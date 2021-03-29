@@ -29,10 +29,12 @@
       width: 100%;
       display: flex;
       margin-bottom: 30px;
+      overflow-x: scroll;
       .explore-new-tag-container {
         margin-right: 8px;
         padding: 8px;
         width: 140px;
+        box-sizing: border-box;
         border-radius: 6px;
         border: 1px solid black;
         .new-tag-title {
@@ -50,6 +52,9 @@
             width: 56px;
             height: 93.3px;
             object-fit: cover;
+            &:first-child {
+              margin-right: 12px;
+            }
           }
         }
         .new-tag-follow-button {
@@ -124,6 +129,13 @@
     max-width: 970px;
     .explore-left{
       max-width: 620px;
+      padding-right: 14px;
+      border-right: 1px solid black;
+      .explore-tag-container {
+        .explore-new-tag-container {
+          margin-right: 20px;
+        }
+      }
     }
   }
 }
