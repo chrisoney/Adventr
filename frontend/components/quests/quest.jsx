@@ -197,9 +197,7 @@ class Quest extends React.Component {
     if (quest.imageUrls && quest.quest_type === 'video') {
       videoSection = quest.imageUrls.map((imageUrl, idx) => {
         return (
-          <div key={idx}>
-            <video src={imageUrl} className="image-video" controls />
-          </div>
+          <video key={idx} src={imageUrl} className="image-video" controls />
         );
       });
     }

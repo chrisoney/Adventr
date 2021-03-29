@@ -17,6 +17,7 @@
   .explore-left {
     width: 100%;
     .explore-header{
+      color: white;
       height: 50px;
       border-bottom: 1px solid #595959;
       margin-bottom: 20px;
@@ -53,7 +54,7 @@
             height: 93.3px;
             object-fit: cover;
             &:first-child {
-              margin-right: 12px;
+              margin-right: 10px;
             }
           }
         }
