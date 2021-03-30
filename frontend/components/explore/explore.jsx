@@ -11,6 +11,7 @@ class Explore extends React.Component {
     };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
     this.handleTagFollow = this.handleTagFollow.bind(this);
+    this.handleCurrTagCycle = this.handleCurrTagCycle.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +51,15 @@ class Explore extends React.Component {
       // Set up unfollow
       e.target.innerHTML = 'Follow';
       this.props.removeTagFromUser(tag.id);
+    }
+  }
+
+  handleCurrTagCycle(length) {
+    let nextIndex = this.state.currentFavTagIdx + 4;
+    if (nextIndex > length - 1) {
+      this.setState({ currentFavTagIdx: 0 });
+    } else {
+      this.setState({ currentFavTagIdx: nextIndex });
     }
   }
 
@@ -140,8 +150,9 @@ class Explore extends React.Component {
             className="explore-new-tag-container"
             style={{ backgroundColor: bgColor }}
           >
-            <div className="new-tag-title"
-            style={{ color: iconColor }}>#{newTagContent.tag_name}</div>
+            <div className="new-tag-title" style={{ color: iconColor }}>
+              #{newTagContent.tag_name}
+            </div>
             <div className="new-tag-examples">
               <img
                 src={newTagPictures[pictureIndexOne]}
@@ -184,8 +195,8 @@ class Explore extends React.Component {
         </div>
       );
     });
-    let newFavTagIdx =
-      this.state.currentFavTagIdx % allCurrentTagElements.length;
+    let newFavTagIdx = this.state.currentFavTagIdx;
+    // this.state.currentFavTagIdx % allCurrentTagElements.length;
     const displayCurrentTagElements = allCurrentTagElements.slice(
       newFavTagIdx,
       newFavTagIdx + 4
@@ -213,7 +224,12 @@ class Explore extends React.Component {
               <div className="current-tag-container">
                 {displayCurrentTagElements}
               </div>
-              <div className="current-tag-follows-button">More</div>
+              <div
+                onClick={()  => this.handleCurrTagCycle(allCurrentTagElements.length)}
+                className="current-tag-follows-button"
+              >
+                More
+              </div>
             </div>
             <div className="suggested-guilds">
               <div className="suggested-guilds-header">
