@@ -33,7 +33,10 @@ class Explore extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.quests.length !== prevProps.quests.length) {
+    if (
+      this.props.quests.length !== prevProps.quests.length &&
+      !this.state.loading
+    ) {
       this.props.fetchAllQuests();
     }
   }
@@ -51,9 +54,9 @@ class Explore extends React.Component {
   }
 
   render() {
-    // if (this.state.loading) {
-    //   return null;
-    // }
+    if (this.state.loading) {
+      return null;
+    }
     const { quests, currentUser, tags } = this.props;
     let questList = quests.map((quest, idx) => (
       <QuestContainer key={idx} quest={quest} loc={'explore'} />
@@ -163,7 +166,6 @@ class Explore extends React.Component {
     const allCurrentTagElements = favoritedTags.map((tag) => {
       let pictureIndex = newTagPictureIndex % newTagPictures.length;
       let randNum = Math.floor(Math.random() * 25);
-      console.log('test');
       return (
         <div key={tag.id} className="favorited-tag-container">
           <img
