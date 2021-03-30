@@ -10,7 +10,7 @@ class Api::UsersTagsController < ApplicationController
   def create
     @users_tag = UsersTag.new
     @users_tag.user_id = current_user.id
-    @users_tag.tag_id = params[:id]
+    @users_tag.tag_id = params[:tagId]
     if @users_tag.save
       @user = @users_tag.user
       @tag = @users_tag.tag

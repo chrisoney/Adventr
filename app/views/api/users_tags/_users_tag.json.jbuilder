@@ -1,1 +1,1 @@
-json.extract! quests_tag, :id, :user_id, :tag_id, :created_at, :updated_at
+json.extract! users_tag, :id, :user_id, :tag_id, :created_at, :updated_at

@@ -22,11 +22,12 @@ export const updateUser = (user) => {
   });
 };
 
-export const addTagToUser = (tag) => {
+export const addTagToUser = (tagId) => {
+  console.log('------------------------------', tagId);
   return $.ajax({
     method: 'POST',
     url: 'api/users_tags',
-    data: tag,
+    data: { tagId },
   });
 };
 

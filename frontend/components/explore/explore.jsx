@@ -40,7 +40,7 @@ class Explore extends React.Component {
     questList = questList.reverse();
 
     let questDisplay;
-    if (this.state.windowSize > 1300) {
+    if (this.state.windowSize > 1310) {
       questDisplay = (
         <div className="quest-columns-2-3">
           <div className="quest-column-3">
@@ -54,7 +54,7 @@ class Explore extends React.Component {
           </div>
         </div>
       );
-    } else if (this.state.windowSize > 1000) {
+    } else if (this.state.windowSize > 990) {
       questDisplay = (
         <div className="quest-columns-2-3">
           <div className="quest-column-2">
@@ -125,7 +125,7 @@ class Explore extends React.Component {
                 className="new-tag-example-image"
               />
             </div>
-            <div className="new-tag-follow-button">Follow</div>
+            <div onClick={() => this.props.addTagToUser(newTagContent.id)} className="new-tag-follow-button">Follow</div>
           </div>
         );
         newTagPictureIndex += 2;
@@ -135,17 +135,16 @@ class Explore extends React.Component {
     // Right side top, the current tags the user is subscribed to
     const allCurrentTagElements =  favoritedTags.map((tag) => {
       let pictureIndex = newTagPictureIndex % newTagPictures.length;
-      let randNum = Math.floor(Math.random() * 50);
       return (
         <div key={tag.id} className="favorited-tag-container">
           <img
             src={newTagPictures[pictureIndex]}
             className="favorited-tag-image"
           />
-          <div classname="favorited-tag-text-container">
-            <div className="favorited-tag-name">{tag.tag_name}</div>
+          <div className="favorited-tag-text-container">
+            <div className="favorited-tag-name">#{tag.tag_name}</div>
             <div className="favorited-tag-recent-posts">
-              {randNum} Recent Quests
+              0 Recent Quests
             </div>
           </div>
         </div>

@@ -15,10 +15,7 @@ export const login = user => {
     url: '/api/session',
     method: 'POST',
     data: { user },
-  //   success: (data) => {
-  //     location.reload();
-  // }
-  })
+  });
 };
 
 export const logout = () => {
