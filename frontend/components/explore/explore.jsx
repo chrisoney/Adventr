@@ -115,13 +115,13 @@ class Explore extends React.Component {
     let newTagPictureIndex = 0;
     // style={{color: "red"}}
     const newTagColors = [
-      'red',
-      'orange',
-      'yellow',
-      'green',
-      'blue',
-      'purple',
-      'pink',
+      ['#D6BF8F', '#000000'],
+      ['#D19594', '#000000'],
+      ['#233274', '#FFFFFF'],
+      ['#0451CE', '#FFFFFF'],
+      ['#9C350D', '#FFFFFF'],
+      ['#CE846B', '#000000'],
+      ['#118520', '#FFFFFF'],
     ];
     let newTagColorIndex = 0;
     const newTagElements = [];
@@ -133,13 +133,15 @@ class Explore extends React.Component {
         let pictureIndexOne = newTagPictureIndex % newTagPictures.length;
         let pictureIndexTwo = (newTagPictureIndex + 1) % newTagPictures.length;
         let colorIndex = newTagColorIndex % newTagColors.length;
+        const [bgColor, iconColor] = newTagColors[colorIndex];
         newTagElements.push(
           <div
             key={newTagContent.id}
             className="explore-new-tag-container"
-            style={{ backgroundColor: newTagColors[colorIndex] }}
+            style={{ backgroundColor: bgColor }}
           >
-            <div className="new-tag-title">#{newTagContent.tag_name}</div>
+            <div className="new-tag-title"
+            style={{ color: iconColor }}>#{newTagContent.tag_name}</div>
             <div className="new-tag-examples">
               <img
                 src={newTagPictures[pictureIndexOne]}
@@ -153,6 +155,7 @@ class Explore extends React.Component {
             <div
               onClick={(e) => this.handleTagFollow(e, newTagContent)}
               className="new-tag-follow-button"
+              style={{ color: iconColor }}
             >
               Follow
             </div>
@@ -187,7 +190,6 @@ class Explore extends React.Component {
       newFavTagIdx,
       newFavTagIdx + 4
     );
-
     return (
       <div className="explore-container">
         <div className="explore">
