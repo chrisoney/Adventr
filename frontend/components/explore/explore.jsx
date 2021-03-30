@@ -152,13 +152,13 @@ class Explore extends React.Component {
                 className="new-tag-example-image"
               />
             </div>
-            <div
+            <button
               onClick={(e) => this.handleTagFollow(e, newTagContent)}
               className="new-tag-follow-button"
-              style={{ color: iconColor }}
+              style={{ backgroundColor: iconColor, color: bgColor }}
             >
               Follow
-            </div>
+            </button>
           </div>
         );
         newTagPictureIndex += 2;

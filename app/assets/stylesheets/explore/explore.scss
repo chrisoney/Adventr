@@ -61,7 +61,14 @@
         }
         .new-tag-follow-button {
           width: 100%;
-          text-align: center;
+          padding: 8px 20.5px;
+          margin-top: 10px;
+          font-weight: 700;
+          line-height: 1.5;
+          border-radius: 3px;
+          border: none;
+          border-style: none;
+          cursor: pointer;
         }
       }
     }
