@@ -29,3 +29,6 @@ export const updateUser = (user) => (dispatch) =>
 export const addTagToUser = (tagId) => (dispatch) => {
   UserApiUtils.addTagToUser(tagId);
 };
+export const removeTagFromUser = (tagId) => (dispatch) => {
+  UserApiUtils.removeTagFromUser(tagId);
+};

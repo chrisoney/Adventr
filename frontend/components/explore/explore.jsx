@@ -36,10 +36,11 @@ class Explore extends React.Component {
     const followed = e.target.innerHTML === 'Follow';
     if (followed) {
       e.target.innerHTML = 'Unfollow';
-      // Set up unfollow
+      this.props.addTagToUser(tag.id);
     } else {
+      // Set up unfollow
       e.target.innerHTML = 'Follow';
-      // this.props.addTagToUser(tag.id)
+      this.props.removeTagFromUser(tag.id);
     }
   }
 
@@ -114,7 +115,8 @@ class Explore extends React.Component {
     const newTagElements = [];
     // Creating 8 elements for new tag display
     if (newTags.length > 0) {
-      for (let y = 0; y < 8; y++) {
+      let end = Math.min(8, newTags.length);
+      for (let y = 0; y < end; y++) {
         let newTagContent = newTags[y];
         let pictureIndexOne = newTagPictureIndex % newTagPictures.length;
         let pictureIndexTwo = (newTagPictureIndex + 1) % newTagPictures.length;

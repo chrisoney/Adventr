@@ -23,7 +23,6 @@ export const updateUser = (user) => {
 };
 
 export const addTagToUser = (tagId) => {
-  console.log('------------------------------', tagId);
   return $.ajax({
     method: 'POST',
     url: 'api/users_tags',
@@ -31,9 +30,10 @@ export const addTagToUser = (tagId) => {
   });
 };
 
-export const removeTagFromUser = (users_tag) => {
+export const removeTagFromUser = (tagId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/users_tags/${users_tag.get('users_tag[id]')}`,
+    url: `/api/users_tags/${tagId}`,
+    data: { tagId },
   });
 };

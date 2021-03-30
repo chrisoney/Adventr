@@ -23,7 +23,7 @@ class Api::UsersTagsController < ApplicationController
 
 
   def destroy
-    @users_tag = UsersTag.find_by(user_id: current_user.id, tag_id: params[:id])
+    @users_tag = UsersTag.find_by(user_id: current_user.id, tag_id: params[:tagId])
     @user = @users_tag.user
     @tag = @users_tag.tag
     @users_tag.destroy

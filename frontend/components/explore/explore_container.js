@@ -5,7 +5,7 @@ import { fetchAllQuests } from "../../actions/quest_actions"
 import { fetchAllFollows } from '../../actions/follow_actions';
 import { fetchAllLikes } from '../../actions/like_actions';
 import { fetchAllTags } from '../../actions/tag_actions';
-import { addTagToUser } from '../../actions/user_actions';
+import { addTagToUser, removeTagFromUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -22,6 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllLikes: () => dispatch(fetchAllLikes()),
   fetchAllTags: () => dispatch(fetchAllTags()),
   addTagToUser: (tagId) => dispatch(addTagToUser(tagId)),
+  removeTagFromUser: (tagId) => dispatch(removeTagFromUser(tagId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explore);
