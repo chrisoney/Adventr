@@ -14,6 +14,7 @@
   width: 100%;
   display:flex;
   justify-content: center;
+  position: relative;
   .explore-left {
     width: 100%;
     .explore-header{
@@ -93,6 +94,8 @@
     }
   }
   .explore-right {
+    position: sticky;
+    top: 0;
     width: 100%;
     max-width: 320px;
     display: flex;

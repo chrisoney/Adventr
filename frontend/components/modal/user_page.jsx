@@ -6,9 +6,9 @@ import QuestContainer from '../quests/quest_container'
 class UserPage extends React.Component{
     constructor(props) {
         super(props);
-        this.state={
-            user: null || this.props.user 
-        }
+        this.state = {
+          user: null || this.props.user,
+        };
     }
 
 

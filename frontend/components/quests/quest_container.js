@@ -16,25 +16,26 @@ const mapStateToProps = (state, ownProps) => {
   Object.values(state.entities.follows).forEach((follow)=>{
     if (follow.user_id === ownProps.quest.user_id && follow.follower_id === state.session.currentUser.id) {followed = true} ;
   })
-  let authorId = ownProps.quest.user_id;
+  let authorId = ownProps.quest.author.id;
   return {
     currentUser: state.session.currentUser,
     authorId: authorId,
-    author: state.entities.users[authorId],
+    // author: state.entities.users[authorId],
+    author: ownProps.quest.author,
     quest: ownProps.quest,
     liked: liked,
     followed: followed,
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUser: (userId) => dispatch(fetchUser(userId)),
+  // fetchUser: (userId) => dispatch(fetchUser(userId)),
   openModal: (modal) => dispatch(openModal(modal)),
   likeQuest: (questId) => dispatch(likeQuest(questId)),
   unlikeQuest: (questId) => dispatch(unlikeQuest(questId)),
   followUser: (userId) => dispatch(followUser(userId)),
   unfollowUser: (userId) => dispatch(unfollowUser(userId)),
-  deleteQuest: (questId) => dispatch(deleteQuest(questId))
+  deleteQuest: (questId) => dispatch(deleteQuest(questId)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Quest));

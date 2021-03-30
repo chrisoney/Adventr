@@ -7,16 +7,22 @@ class Explore extends React.Component {
     this.state = {
       windowSize: 0,
       currentFavTagIdx: 0,
+      loading: true,
     };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
     this.handleTagFollow = this.handleTagFollow.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchAllQuests();
-    this.props.fetchAllFollows();
-    this.props.fetchAllLikes();
-    this.props.fetchAllTags();
+    this.props.fetchAllTags().then(() => {
+      this.props.fetchAllFollows().then(() => {
+        this.props.fetchAllLikes().then(() => {
+          this.props.fetchAllQuests().then(() => {
+            this.setState({ loading: false });
+          });
+        });
+      });
+    });
     window.addEventListener('resize', this.getWindowDimensions);
     this.getWindowDimensions();
   }
@@ -45,6 +51,9 @@ class Explore extends React.Component {
   }
 
   render() {
+    // if (this.state.loading) {
+    //   return null;
+    // }
     const { quests, currentUser, tags } = this.props;
     let questList = quests.map((quest, idx) => (
       <QuestContainer key={idx} quest={quest} loc={'explore'} />
@@ -153,6 +162,8 @@ class Explore extends React.Component {
     // Right side top, the current tags the user is subscribed to
     const allCurrentTagElements = favoritedTags.map((tag) => {
       let pictureIndex = newTagPictureIndex % newTagPictures.length;
+      let randNum = Math.floor(Math.random() * 25);
+      console.log('test');
       return (
         <div key={tag.id} className="favorited-tag-container">
           <img
@@ -161,7 +172,9 @@ class Explore extends React.Component {
           />
           <div className="favorited-tag-text-container">
             <div className="favorited-tag-name">#{tag.tag_name}</div>
-            <div className="favorited-tag-recent-posts">0 Recent Quests</div>
+            <div className="favorited-tag-recent-posts">
+              {randNum} Recent Quests
+            </div>
           </div>
         </div>
       );

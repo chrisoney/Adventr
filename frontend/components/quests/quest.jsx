@@ -17,9 +17,9 @@ class Quest extends React.Component {
   }
 
   componentDidMount() {
-    if (!this.props.author) {
-      this.props.fetchUser(this.props.authorId);
-    }
+    // if (!this.props.author) {
+    //   this.props.fetchUser(this.props.authorId);
+    // }
   }
 
   componentDidUpdate(prevState) {
