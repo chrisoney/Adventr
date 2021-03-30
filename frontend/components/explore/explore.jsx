@@ -9,6 +9,7 @@ class Explore extends React.Component {
       currentFavTagIdx: 0,
     };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
+    this.handleTagFollow = this.handleTagFollow.bind(this);
   }
 
   componentDidMount() {
@@ -16,21 +17,31 @@ class Explore extends React.Component {
     this.props.fetchAllFollows();
     this.props.fetchAllLikes();
     this.props.fetchAllTags();
-    window.addEventListener('resize', this.getWindowDimensions)
+    window.addEventListener('resize', this.getWindowDimensions);
     this.getWindowDimensions();
   }
 
   getWindowDimensions() {
     const { innerWidth } = window;
-    this.setState({ windowSize: innerWidth })
+    this.setState({ windowSize: innerWidth });
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.quests.length !== prevProps.quests.length) {
+      this.props.fetchAllQuests();
+    }
+  }
 
-  componentDidUpdate(prevProps){
-		if (this.props.quests.length !== prevProps.quests.length){
-			this.props.fetchAllQuests();
-		}
-	}
+  handleTagFollow(e, tag) {
+    const followed = e.target.innerHTML === 'Follow';
+    if (followed) {
+      e.target.innerHTML = 'Unfollow';
+      // Set up unfollow
+    } else {
+      e.target.innerHTML = 'Follow';
+      // this.props.addTagToUser(tag.id)
+    }
+  }
 
   render() {
     const { quests, currentUser, tags } = this.props;
@@ -125,7 +136,12 @@ class Explore extends React.Component {
                 className="new-tag-example-image"
               />
             </div>
-            <div onClick={() => this.props.addTagToUser(newTagContent.id)} className="new-tag-follow-button">Follow</div>
+            <div
+              onClick={(e) => this.handleTagFollow(e, newTagContent)}
+              className="new-tag-follow-button"
+            >
+              Follow
+            </div>
           </div>
         );
         newTagPictureIndex += 2;
@@ -133,7 +149,7 @@ class Explore extends React.Component {
       }
     }
     // Right side top, the current tags the user is subscribed to
-    const allCurrentTagElements =  favoritedTags.map((tag) => {
+    const allCurrentTagElements = favoritedTags.map((tag) => {
       let pictureIndex = newTagPictureIndex % newTagPictures.length;
       return (
         <div key={tag.id} className="favorited-tag-container">
@@ -143,9 +159,7 @@ class Explore extends React.Component {
           />
           <div className="favorited-tag-text-container">
             <div className="favorited-tag-name">#{tag.tag_name}</div>
-            <div className="favorited-tag-recent-posts">
-              0 Recent Quests
-            </div>
+            <div className="favorited-tag-recent-posts">0 Recent Quests</div>
           </div>
         </div>
       );
@@ -176,15 +190,17 @@ class Explore extends React.Component {
               <div className="current-tag-follows-header">
                 <div className="current-tag-follows-title">Following</div>
               </div>
-              /* <div className="current-tag-container">{displayCurrentTagElements}</div>
+              /*{' '}
+              <div className="current-tag-container">
+                {displayCurrentTagElements}
+              </div>
               <div className="current-tag-follows-button">More</div>
             </div>
             <div className="suggested-guilds">
               <div className="suggested-guilds-header">
                 <div className="suggested-guilds-title">Suggested Guilds</div>
               </div>
-              <div className="suggested-guilds-container">
-              </div>
+              <div className="suggested-guilds-container"></div>
               <div className="suggested-guilds-button">More</div>
             </div>
           </div>
