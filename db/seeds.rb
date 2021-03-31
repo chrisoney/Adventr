@@ -21,8 +21,6 @@
 # user6 = User.create(username: "Carla-the-Indomitable", password: "hunter12", email: "carla@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile4.jpg");
 # user7 = User.create(username: "worry", password: "hunter12", email: "worry@worry.com");
 
-user7 = User.find(22)
-
 # New quests
 
 # user1.quests.create(title: "Goblin Hunt", text: "There have been goblins spotted nearby", quest_type: "text");
@@ -51,8 +49,8 @@ user7 = User.find(22)
 # Tag.create(tag_name: "Porcelain Rank")
 # Tag.create(tag_name: "Iron Rank")
 # tag1 = Tag.create(tag_name: 'Diamond Rank')
-tag = Tag.find(8)
-tag2 = Tag.find(3)
+# tag = Tag.find(8)
+# tag2 = Tag.find(3)
 
-user7.tags << tag
-user7.tags << tag2
+# user7.tags << tag
+# user7.tags << tag2
