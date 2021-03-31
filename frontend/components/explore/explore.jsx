@@ -1,5 +1,6 @@
 import React from "react";
 import QuestContainer from '../quests/quest_container';
+import Loading from '../loading/loading';
 
 class Explore extends React.Component {
   constructor(props) {
@@ -65,8 +66,8 @@ class Explore extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return null;
     }
+    return <Loading />;
     const { quests, currentUser, tags } = this.props;
     let questList = quests.map((quest, idx) => (
       <QuestContainer key={idx} quest={quest} loc={'explore'} />

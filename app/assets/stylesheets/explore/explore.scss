@@ -189,6 +189,35 @@
 
 }
 
+.loading-background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+
+  .dragon-loader {
+    display:block;
+    position: absolute;
+    height: 50%;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    // animation-name: spin;
+    animation: spin 5s infinite linear;
+    // animation-iteration-count: infinite;
+    // animation-timing-function: linear; 
+  }
+}
+
+@keyframes spin {
+  from {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 
 @media only screen and (max-width: 989px) {
   .explore {
