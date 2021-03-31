@@ -1,4 +1,5 @@
 .explore-container {
+  position: relative;
   margin-top: 54px;
   background: asset-data-url("guild.jpg") no-repeat center fixed;
   min-height: 100vh;
@@ -6,7 +7,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  width: 100%;
+  width: 100vw;
   display:flex;
   justify-content: center;
 }
@@ -189,24 +190,24 @@
 
 }
 
-.loading-background {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
+// .loading-background {
+//   position: absolute;
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: black;
 
-  .dragon-loader {
-    display:block;
-    position: absolute;
-    height: 50%;
-    width: auto;
-    top: 50%;
-    left: 50%;
-    // animation-name: spin;
-    animation: spin 5s infinite linear;
-    // animation-iteration-count: infinite;
-    // animation-timing-function: linear; 
-  }
+// }
+.dragon-loader {
+  display:block;
+  position: absolute;
+  height: 50%;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  // animation-name: spin;
+  animation: spin 5s infinite linear;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: linear; 
 }
 
 @keyframes spin {

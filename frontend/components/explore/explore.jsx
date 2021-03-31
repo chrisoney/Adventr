@@ -66,8 +66,8 @@ class Explore extends React.Component {
 
   render() {
     if (this.state.loading) {
+      return <Loading background={"explore-container"}/>;
     }
-    return <Loading />;
     const { quests, currentUser, tags } = this.props;
     let questList = quests.map((quest, idx) => (
       <QuestContainer key={idx} quest={quest} loc={'explore'} />
