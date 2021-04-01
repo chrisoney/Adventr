@@ -38,11 +38,13 @@ export const deleteQuest = (questId) => {
   });
 };
 
-export const addTagToQuest = (questId, tagId) => {
+export const addTagToQuest = (quests_tag) => {
   return $.ajax({
     method: 'POST',
-    url: 'api/quests_tags',
-    data: { questId, tagId },
+    url: '/api/quests_tags',
+    data: quests_tag,
+    contentType: false,
+    processData: false,
   });
 };
 

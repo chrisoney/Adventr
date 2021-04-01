@@ -9,7 +9,8 @@ class Api::QuestsTagsController < ApplicationController
   end
 
   def create
-    @quests_tag = QuestsTag.new(quests_tag_params)
+    @quests_tag = QuestsTag.new(quests_tags_params)
+
     if @quests_tag.save 
       @quest = @quests_tag.quest
       @tag = @quests_tag.tag
@@ -30,7 +31,7 @@ class Api::QuestsTagsController < ApplicationController
   end
 
   private
-  def quests_tag_params 
-      params.require(:quests_tag).permit(:quest_id,:tag_id) 
+  def quests_tags_params 
+      params.require(:quests_tag).permit(:quest_id, :tag_id) 
   end
 end

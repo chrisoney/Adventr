@@ -93,7 +93,6 @@ class NewQuestForm extends React.Component {
       const formData = new FormData();
       // changed
       const imageFiles = this.state.imageFiles;
-      const tags = this.state.tags;
 
       formData.append('quest[title]', this.state.title);
       if (imageFiles) {
@@ -105,27 +104,30 @@ class NewQuestForm extends React.Component {
       formData.append('quest[quest_type]', this.state.type);
 
 			this.props.createQuest(formData).then((questData) => {
-        const questId = questData.quest.id;
-        debugger;
-        // if (tags) {
-        // 	tags.forEach((tag, idx) => {
-        // 		const newTag = tag[0] === '#' ? tag.slice(1) : tag;
-        // 		for (let i = 0; i < that.props.tags; i++) {
-        // 			let existingTag = that.props.tags[i];
-        // 			if (existingTag.tag_name === newTag) {
-        // 				// Create the relationship
-        // 				break;
-        // 			}
-        // 		}
-        // 		const tagFormData = new FormData();
-        // 		tagFormData.append('tag[tag_name]', newTag);
-        // 		debugger;
-        // 		this.props.createTag(tagFormData).then((tagData) => {
-        // 			const createdTagId = tagData.tag.id;
-        // 			// Create the relationship
-        // 		});
-        // 	});
-        // }
+				const questId = questData.quest.id;
+				const tags = that.state.tags;
+        if (tags) {
+          tags.forEach((tag) => {
+            const newTag = tag[0] === '#' ? tag.slice(1) : tag;
+            for (let x = 0; x < that.props.tags.length; x++) {
+              let existingTag = that.props.tags[x];
+              if (existingTag.tag_name === newTag) {
+                const questTagForm = new FormData();
+                questTagForm.append('quests_tag[quest_id]', questId);
+                questTagForm.append('quests_tag[tag_id]', existingTag.id);
+                this.props.addTagToQuest(questTagForm);
+                break;
+              }
+            }
+            // const tagFormData = new FormData();
+            // tagFormData.append('tag[tag_name]', newTag);
+            // debugger;
+            // this.props.createTag(tagFormData).then((tagData) => {
+            //   const createdTagId = tagData.tag.id;
+            //   // Create the relationship
+            // });
+          });
+        }
         this.props.closeModal();
       });
 			

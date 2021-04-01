@@ -24,5 +24,5 @@ export const fetchAllTags = () => (dispatch) =>
 export const fetchSingleTag = (tagId) => (dispatch) =>
   TagApiUtils.fetchSingleTag(tagId).then((tag) => dispatch(receieveTag(tag)));
 
-  export const createTag = (tag) => (dispatch) =>
-    TagApiUtils.createTag(tag).then((tag) => dispatch(receiveTag(tag)));
+export const createTag = (tag) => (dispatch) =>
+  TagApiUtils.createTag(tag).then((tag) => dispatch(receiveTag(tag)));
