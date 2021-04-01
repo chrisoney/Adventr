@@ -250,6 +250,14 @@ class NewQuestForm extends React.Component {
 				</div>
 			)
 
+			const quoteSection = (
+        <input
+          type="text"
+          placeholder='"Quote"'
+          className="input-quote"
+          onChange={this.handleInput('title')}
+        />
+      );
 			
 			const textSection=(
 				<textarea cols="30" rows="4" 
@@ -258,56 +266,64 @@ class NewQuestForm extends React.Component {
 				elastic="true"
 				onChange={this.handleInput("text")}></textarea>
 			)
-
-			const quoteSection=(
-				<input 
-				type="text" 
-				placeholder="&quot;Quote&quot;"
-				className="input-quote"
-				onChange={this.handleInput("title")}/>
-			)
-
+				
+			const tagSection = (
+        <textarea
+          cols="30"
+          rows="4"
+          placeholder="Tags"
+          className="input-body"
+          elastic="true"
+          onChange={this.handleInput('tags')}
+        ></textarea>
+      );
+				
 		let formBlock;
 		switch (this.state.type) {
 			case 'text':
 				formBlock = (
-					<div className = "formData">
-						{titleSection}
-						{textSection}
-					</div>
-				);
+          <div className="formData">
+            {titleSection}
+            {textSection}
+            {tagSection}
+          </div>
+        );
 				break;
 			case 'image':
 				formBlock = (
-					<div className = "formData">
-						{imageUploadSection}
-						{textSection}
-					</div>
-				);
+          <div className="formData">
+            {imageUploadSection}
+            {textSection}
+            {tagSection}
+          </div>
+        );
 				break;
 			case 'quote':
 				formBlock = (
-					<div className = "formData">
-						{quoteSection}
-						{textSection}
-					</div>
-				);
+          <div className="formData">
+            {quoteSection}
+            {textSection}
+            {tagSection}
+          </div>
+        );
 				break;
 			case 'audio':
 				formBlock = (
-					<div className = "formData">
-						{audioUploadSection}
-						{textSection}
-					</div>
-				);
+          <div className="formData">
+            {audioUploadSection}
+            {textSection}
+            {tagSection}
+          </div>
+        );
 				break;
 			case 'video':
 				formBlock = (
-					<div className = "formData">
-						{videoUploadSection}
-						{textSection}
-					</div>
-				);
+          <div className="formData">
+            {videoUploadSection}
+            {textSection}
+            {tagSection}
+          </div>
+        );
 				break;
 		}
 		
