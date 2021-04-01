@@ -106,27 +106,34 @@ class NewQuestForm extends React.Component {
 			this.props.createQuest(formData).then((questData) => {
 				const questId = questData.quest.id;
 				const tags = that.state.tags;
-        if (tags) {
-          tags.forEach((tag) => {
-            const newTag = tag[0] === '#' ? tag.slice(1) : tag;
-            for (let x = 0; x < that.props.tags.length; x++) {
-              let existingTag = that.props.tags[x];
-              if (existingTag.tag_name === newTag) {
-                const questTagForm = new FormData();
-                questTagForm.append('quests_tag[quest_id]', questId);
-                questTagForm.append('quests_tag[tag_id]', existingTag.id);
-                this.props.addTagToQuest(questTagForm);
-                break;
-              }
-            }
-            // const tagFormData = new FormData();
-            // tagFormData.append('tag[tag_name]', newTag);
-            // debugger;
-            // this.props.createTag(tagFormData).then((tagData) => {
-            //   const createdTagId = tagData.tag.id;
-            //   // Create the relationship
-            // });
-          });
+				if (tags) {
+					for (let x = 0; x < tags.length; x++){
+						let tagExists = false;
+						const inputTag = tags[x];
+						const newTag = inputTag[0] === '#' ? inputTag.slice(1) : inputTag;
+						for (let y = 0; y < that.props.tags.length; y++) {
+							let existingTag = that.props.tags[y];
+							if (existingTag.tag_name === newTag) {
+								const questTagForm = new FormData();
+								questTagForm.append('quests_tag[quest_id]', questId);
+								questTagForm.append('quests_tag[tag_id]', existingTag.id);
+								this.props.addTagToQuest(questTagForm);
+								tagExists = true;
+								break;
+							}
+						}
+						if (!tagExists) {
+							const tagFormData = new FormData();
+							tagFormData.append('tag[tag_name]', newTag);
+							this.props.createTag(tagFormData).then((tagData) => {
+								const createdTagId = tagData.tag.id;
+								const questTagForm = new FormData();
+										questTagForm.append('quests_tag[quest_id]', questId);
+										questTagForm.append('quests_tag[tag_id]', createdTagId);
+										this.props.addTagToQuest(questTagForm);
+							});
+						}
+					}
         }
         this.props.closeModal();
       });
