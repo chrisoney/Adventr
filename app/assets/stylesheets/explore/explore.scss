@@ -134,6 +134,7 @@
         }
       }
       .current-tag-container {
+        margin-top: 18px;
         min-height: 308px;
         width: 100%;
         // padding-top: 10px;
@@ -208,6 +209,7 @@
         }
       }
       .suggested-guilds-container {
+        margin-top: 18px;
         min-height: 308px;
         width: 100%;
         // padding-top: 10px;
@@ -219,11 +221,46 @@
         align-items: center;
         .suggested-guild-content-container {
           display: flex;
+          justify-content: space-between;
           padding: 16px;
           background-image: asset-data-url('parchment_slip.png');
           background-size: 100% 77px;
           object-fit: cover;
           width: 260px;
+          .user-attributes {
+            display: flex;
+            .guild-rec-avatar {
+              height: 37px;
+              width: 37px;
+              object-fit: cover;
+            }
+            .guild-rec-details {
+              margin-left: 8px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .guild-rec-username{
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+              }
+              .guild-rec-guildname {
+                color: #525050a6
+              }
+            }
+          }
+          .follow-rec-button-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 66.66px;
+            .follow-rec-button {
+              color: darkblue;
+            }
+            .follow-rec-button:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
         }
       }
       .suggested-guilds-button{

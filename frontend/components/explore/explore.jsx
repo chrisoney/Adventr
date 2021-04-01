@@ -221,12 +221,13 @@ class Explore extends React.Component {
               <div className="current-tag-follows-header">
                 <div className="current-tag-follows-title">Following</div>
               </div>
-              /*{' '}
               <div className="current-tag-container">
                 {displayCurrentTagElements}
               </div>
               <div
-                onClick={()  => this.handleCurrTagCycle(allCurrentTagElements.length)}
+                onClick={() =>
+                  this.handleCurrTagCycle(allCurrentTagElements.length)
+                }
                 className="current-tag-follows-button"
               >
                 Show More Tags
@@ -236,7 +237,22 @@ class Explore extends React.Component {
               <div className="suggested-guilds-header">
                 <div className="suggested-guilds-title">Suggested Guilds</div>
               </div>
-              <div className="suggested-guilds-container"></div>
+              <div className="suggested-guilds-container">
+                <div className="suggested-guild-content-container">
+                  <div className="user-attributes">
+                    <img src={newTagPictures[0]} className="guild-rec-avatar" />
+                    <div className="guild-rec-details">
+                      <span className="guild-rec-username">Test Username</span>
+                      <span className="guild-rec-guildname">
+                        Test Guild
+                      </span>
+                    </div>
+                  </div>
+                  <div className="follow-rec-button-container">
+                    <div className={`follow-rec-button`}>Follow</div>
+                  </div>
+                </div>
+              </div>
               <div className="suggested-guilds-button">Show More Guilds</div>
             </div>
           </div>

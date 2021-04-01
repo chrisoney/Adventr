@@ -22,7 +22,7 @@
 }
 
 .dashboard-right {
-  width: 320px;
+  width: 340px;
   padding-top: 40px;
   margin-left: 30px;
   margin-right: 27px;
@@ -31,54 +31,57 @@
   align-items: center;
   .follow-recommendations {
     // background-color: #222222A6;
+    width: 100%;
+    height: 437px;
+    margin-bottom: 16px;
     background: asset-data-url('board.jpg');
-    background-size: 360px 360px;
-    width: 340px;
-    height: 340px;
-    object-fit: cover;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-
+    background-size: 100% 437px;
     .follow-rec-title {
-      text-align: center;
-      font-size: 21px;
-      font-weight: bolder;
-      width: 320px;
-      padding: 10px;
-      padding-top: none;
-      // border-bottom: 2px solid #595959;
+      margin-top: 16px;
+      margin-left: 16px;
+      padding: 10px 20px;
+      width: fit-content;
+      background: asset-data-url('parchment_small.png');
+      background-size: 100% 100%;
+      color: rgb(59, 55, 55);
+      font-size: 18px;
+      font-weight: 900;
     }
     .follow-recs-list {
+      margin-top: 18px;
+      height: 308px;
+      width: 100%;
+      // padding-top: 10px;
+      // background: asset-data-url('board.jpg');
+      // background-size: 320px 308px;
+      // object-fit: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       li.follow-rec-container {
-        width: 280px;
         display: flex;
         justify-content: space-between;
-        margin-left: 30px;
+        padding: 16px;
         background-image: asset-data-url('parchment_slip.png');
         background-size: 100% 77px;
-        margin-bottom: 8px;
         object-fit: cover;
+        width: 280px;
         &:hover {
           cursor: pointer;
         }
 
         .user-attributes {
           display: flex;
-          flex-direction: row;
-          padding: 8px 10px;
           .follow-rec-avatar {
-            width: 37px;
             height: 37px;
+            width: 37px;
             object-fit: cover;
           }
           .follow-rec-details {
+            margin-left: 8px;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            padding-left: 8px;
-            font-size: 14px;
+            justify-content: space-between;
             .follow-rec-username{
               color: rgb(0, 0, 0);
               font-weight: bold;
@@ -93,7 +96,6 @@
           justify-content: center;
           align-items: center;
           width: 66.66px;
-          height: 59px;
           .follow-rec-button {
             color: darkblue;
           }
@@ -109,16 +111,20 @@
     }
     .follow-rec-explore-link{
       text-decoration: none;
-      display: flex;
-      justify-content: center;
-      .explore-text {
-        text-align: center;
-        font-size: 16px;
-        color: white;
+      color: rgb(59, 55, 55);
+      font-size: 16px;
+      font-weight: 900;
+      // margin-top: 16px;
+      margin-left: 16px;
+
+      padding: 10px 20px;
+      width: fit-content;
+      background: asset-data-url('parchment_small.png');
+      background-size: 100% 100%;
+
+      &:hover {
+        color: black;
         cursor: pointer;
-      }
-      .explore-text:hover {
-        color: $sky-blue;
       }
     }
   }
