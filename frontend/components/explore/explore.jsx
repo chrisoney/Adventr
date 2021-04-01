@@ -229,7 +229,7 @@ class Explore extends React.Component {
                 onClick={()  => this.handleCurrTagCycle(allCurrentTagElements.length)}
                 className="current-tag-follows-button"
               >
-                More
+                Show More Tags
               </div>
             </div>
             <div className="suggested-guilds">
@@ -237,7 +237,7 @@ class Explore extends React.Component {
                 <div className="suggested-guilds-title">Suggested Guilds</div>
               </div>
               <div className="suggested-guilds-container"></div>
-              <div className="suggested-guilds-button">More</div>
+              <div className="suggested-guilds-button">Show More Guilds</div>
             </div>
           </div>
         </div>
