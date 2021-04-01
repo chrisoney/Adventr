@@ -8,8 +8,8 @@ class NewQuestForm extends React.Component {
       currentUser_id: currentUser.id,
       type: type,
       title: '',
-			text: '',
-			tags: null,
+      text: '',
+      tags: [],
       imageUrls: null,
       imageFiles: null,
       errors: null,
@@ -25,10 +25,16 @@ class NewQuestForm extends React.Component {
 		this.props.fetchAllTags();
 	}
 
-  handleInput(type) {
-		return (e) => {
-			this.setState({ [type]: e.currentTarget.value });
-		}
+	handleInput(type) {
+		if (type !== 'tags') {
+      return (e) => {
+        this.setState({ [type]: e.currentTarget.value });
+      };
+    } else {
+      return (e) => {
+        this.setState({ [type]: e.target.value.split(' ') });
+      };
+    }
   }
 
   handleUpload(e) {
@@ -80,7 +86,7 @@ class NewQuestForm extends React.Component {
   }
   
   handleSubmit(e) {
-		
+		const that = this;
 		if (this.state.allowSubmit) {
       e.preventDefault();
       this.setState({ allowSubmit: false });
@@ -95,28 +101,34 @@ class NewQuestForm extends React.Component {
           formData.append('quest[images][]', imageFiles[idx]);
         });
       }
-      if (tags) {
-        tags.forEach((tag, idx) => {
-          const newTag = tag[0] === '#' ? tag.slice(1) : tag;
-          for (let i = 0; i < this.props.tags; i++) {
-            let existingTag = this.props.tags[i];
-            if (existingTag.tag_name === newTag) {
-              formData.append('quest[tags][]', existingTag);
-              break;
-            }
-          }
-          const tagFormData = new FormData();
-          tagFormData.append('tag[tag_name]', newTag);
-          this.props.createTag(tagFormData).then((data) => {
-            const createdTag = data.tag;
-            formData.append('quest[tags][]', createdTag);
-          });
-        });
-      }
       formData.append('quest[text]', this.state.text);
       formData.append('quest[quest_type]', this.state.type);
 
-      this.props.createQuest(formData).then(this.props.closeModal());
+			this.props.createQuest(formData).then((questData) => {
+        const questId = questData.quest.id;
+        debugger;
+        // if (tags) {
+        // 	tags.forEach((tag, idx) => {
+        // 		const newTag = tag[0] === '#' ? tag.slice(1) : tag;
+        // 		for (let i = 0; i < that.props.tags; i++) {
+        // 			let existingTag = that.props.tags[i];
+        // 			if (existingTag.tag_name === newTag) {
+        // 				// Create the relationship
+        // 				break;
+        // 			}
+        // 		}
+        // 		const tagFormData = new FormData();
+        // 		tagFormData.append('tag[tag_name]', newTag);
+        // 		debugger;
+        // 		this.props.createTag(tagFormData).then((tagData) => {
+        // 			const createdTagId = tagData.tag.id;
+        // 			// Create the relationship
+        // 		});
+        // 	});
+        // }
+        this.props.closeModal();
+      });
+			
     }
 	}
   

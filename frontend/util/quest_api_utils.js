@@ -38,18 +38,18 @@ export const deleteQuest = (questId) => {
   });
 };
 
-
-export const addTagToQuest = (questId, tag) => {
+export const addTagToQuest = (questId, tagId) => {
   return $.ajax({
     method: 'POST',
-    url: 'api/users_tags',
-    data: { questId, tag },
+    url: 'api/quests_tags',
+    data: { questId, tagId },
   });
 };
 
-export const removeTagFromQuest = (quests_tag) => {
+export const removeTagFromQuest = (tagId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/users_tags/${quests_tag.get('quests_tag[id]')}`,
+    url: `/api/quests_tags/${tagId}`,
+    data: { tagId },
   });
 };
