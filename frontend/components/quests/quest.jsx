@@ -64,7 +64,7 @@ class Quest extends React.Component {
   }
 
   render() {
-    const { currentUser, quest, authorId, deleteQuest, loc } = this.props;
+    const { currentUser, quest, authorId, deleteQuest, loc, tags } = this.props;
     let { author } = this.state;
     let visibility = this.state.visible;
     let followUser;
@@ -223,6 +223,18 @@ class Quest extends React.Component {
       );
     }
 
+    let tagSection = null;
+    if (quest.tags.length > 0) {
+      const questTags = quest.tags.map((tag) => {
+        return (
+          <div key={tag.id} className="quest-tag">
+            #{tag.tag_name}
+          </div>
+        );
+      });
+      tagSection = <div className="quest-tag-container">{questTags}</div>;
+    }
+
     let avatar = window.avatar;
     if (author && author.avatar !== 'default') {
       avatar = author.avatar;
@@ -251,6 +263,7 @@ class Quest extends React.Component {
           {audioSection}
           {videoSection}
           {textSection}
+          {tagSection}
           <div className="quest-footer-container">{questFooter}</div>
         </div>
       </div>

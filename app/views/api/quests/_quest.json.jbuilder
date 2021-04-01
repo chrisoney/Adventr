@@ -9,3 +9,4 @@ end
 json.likes quest.likes.count
 json.authorId quest.user.id
 json.author quest.user
+json.tags quest.tags
