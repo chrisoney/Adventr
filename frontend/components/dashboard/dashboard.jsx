@@ -7,6 +7,7 @@ class DashBoard extends React.Component {
   constructor(props) {
     super(props);
     this.toggleFollowed = this.toggleFollowed.bind(this);
+    // this.testing = this.testing.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +22,14 @@ class DashBoard extends React.Component {
       this.props.fetchAllQuests();
     }
   }
+
+  // testing() {
+  //   const formData = new FormData();
+  //   formData.append('tag[tag_name]', 'Testing6');
+  //   this.props.createTag(formData).then((data) => {
+  //     console.log(data.tag);
+  //   });
+  // }
 
   toggleFollowed(e, followed, userId) {
     e.preventDefault();
@@ -59,8 +68,6 @@ class DashBoard extends React.Component {
     });
     questList = questList.reverse();
 
-
-
     // Follow recommendations
 
     // Create a follow rec
@@ -78,13 +85,19 @@ class DashBoard extends React.Component {
             </div>
           </div>
           <div className="follow-rec-button-container">
-            <div onClick={e => this.toggleFollowed(e, !notFollowed,user.id)} className={`${notFollowed ? 'un' : ''}follow-button follow-rec-button`}>{notFollowed ? 'Follow' : 'Unfollow'}</div>
+            <div
+              onClick={(e) => this.toggleFollowed(e, !notFollowed, user.id)}
+              className={`${
+                notFollowed ? 'un' : ''
+              }follow-button follow-rec-button`}
+            >
+              {notFollowed ? 'Follow' : 'Unfollow'}
+            </div>
           </div>
         </li>
       );
     };
-    
-    
+
     for (let i = 0; i < users.length; i++) {
       const user = users[i];
       if (user.id !== currentUser.id && !followIds.includes(user.id)) {
@@ -96,9 +109,12 @@ class DashBoard extends React.Component {
 
     // Pick a random random quest
 
-    for (let x = 0; x < quests.length; x++){
+    for (let x = 0; x < quests.length; x++) {
       let quest = quests[x];
-      if (!followIds.includes(quest.user_id) && quest.user_id !== currentUser.id) {
+      if (
+        !followIds.includes(quest.user_id) &&
+        quest.user_id !== currentUser.id
+      ) {
         randomQuest = <QuestContainer quest={quest} loc={'dash-random'} />;
       }
     }
@@ -127,6 +143,7 @@ class DashBoard extends React.Component {
             <div className="ad-bottom-text">
               <span>About Adventr ads</span>
               <span>Do not sell my personal information</span>
+              {/* <button onClick={() => this.testing()}>Testing tags</button> */}
             </div>
           </div>
         </div>

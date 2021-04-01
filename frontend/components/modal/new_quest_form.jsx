@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchAllTags } from '../../actions/tag_actions';
 
 class NewQuestForm extends React.Component {
   constructor(props){
@@ -83,43 +82,42 @@ class NewQuestForm extends React.Component {
   handleSubmit(e) {
 		
 		if (this.state.allowSubmit) {
-
       e.preventDefault();
       this.setState({ allowSubmit: false });
-			const formData = new FormData();
-			// changed
-			const imageFiles = this.state.imageFiles;
-			const tags = this.state.tags;
+      const formData = new FormData();
+      // changed
+      const imageFiles = this.state.imageFiles;
+      const tags = this.state.tags;
 
       formData.append('quest[title]', this.state.title);
-			if (imageFiles) {
-				imageFiles.forEach((image, idx)=>{
-					formData.append('quest[images][]', imageFiles[idx]);
-				})
-			}
-			// if (tags) {
-			// 	tags.forEach((tag, idx) => {
-			// 		const newTag = tag[0] === '#' ? tag.slice(1) : tag
-			// 		for (let i = 0; i < this.props.tags; i++){
-			// 			let existingTag = this.props.tags[i];
-			// 			if (existingTag.tag_name === newTag) {
-			// 				formData.append('quest[tags][]', existingTag);
-			// 				break;
-			// 			}
-			// 		}
-			// 		const tagFormData = new FormData();
-			// 		tagFormData.append('tag[tag_name]', newTag);
-			// 		this.props.createTag(tagFormData)
-			// 	})
-			// }
-			formData.append('quest[text]', this.state.text);
-			formData.append('quest[quest_type]', this.state.type);
-			
-			this.props.createQuest(formData)
-        .then (
-          this.props.closeModal() 
-        );
-		}
+      if (imageFiles) {
+        imageFiles.forEach((image, idx) => {
+          formData.append('quest[images][]', imageFiles[idx]);
+        });
+      }
+      if (tags) {
+        tags.forEach((tag, idx) => {
+          const newTag = tag[0] === '#' ? tag.slice(1) : tag;
+          for (let i = 0; i < this.props.tags; i++) {
+            let existingTag = this.props.tags[i];
+            if (existingTag.tag_name === newTag) {
+              formData.append('quest[tags][]', existingTag);
+              break;
+            }
+          }
+          const tagFormData = new FormData();
+          tagFormData.append('tag[tag_name]', newTag);
+          this.props.createTag(tagFormData).then((data) => {
+            const createdTag = data.tag;
+            formData.append('quest[tags][]', createdTag);
+          });
+        });
+      }
+      formData.append('quest[text]', this.state.text);
+      formData.append('quest[quest_type]', this.state.type);
+
+      this.props.createQuest(formData).then(this.props.closeModal());
+    }
 	}
   
 

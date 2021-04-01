@@ -9,6 +9,7 @@ import {
   unfollowUser,
 } from '../../actions/follow_actions';
 import { fetchAllLikes } from '../../actions/like_actions';
+import { createTag } from '../../actions/tag_actions';
 
 
 const mapStateToProps = (state) => {
@@ -28,6 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllUsers: () => dispatch(fetchAllUsers()),
   followUser: (userId) => dispatch(followUser(userId)),
   unfollowUser: (userId) => dispatch(unfollowUser(userId)),
+  createTag: (tag) => dispatch(createTag(tag)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
