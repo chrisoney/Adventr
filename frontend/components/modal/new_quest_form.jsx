@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchAllTags } from '../../actions/tag_actions';
 
 class NewQuestForm extends React.Component {
   constructor(props){
@@ -8,7 +9,8 @@ class NewQuestForm extends React.Component {
       currentUser_id: currentUser.id,
       type: type,
       title: '',
-      text: '',
+			text: '',
+			tags: null,
       imageUrls: null,
       imageFiles: null,
       errors: null,
@@ -18,7 +20,11 @@ class NewQuestForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
     this.deletePreviewImage = this.deletePreviewImage.bind(this);
-  }
+	}
+	
+	componentDidMount() {
+		this.props.fetchAllTags();
+	}
 
   handleInput(type) {
 		return (e) => {
@@ -80,8 +86,10 @@ class NewQuestForm extends React.Component {
 
       e.preventDefault();
       this.setState({ allowSubmit: false });
-      const formData = new FormData();
-			let imageFiles = this.state.imageFiles;
+			const formData = new FormData();
+			// changed
+			const imageFiles = this.state.imageFiles;
+			const tags = this.state.tags;
 
       formData.append('quest[title]', this.state.title);
 			if (imageFiles) {
@@ -89,6 +97,21 @@ class NewQuestForm extends React.Component {
 					formData.append('quest[images][]', imageFiles[idx]);
 				})
 			}
+			// if (tags) {
+			// 	tags.forEach((tag, idx) => {
+			// 		const newTag = tag[0] === '#' ? tag.slice(1) : tag
+			// 		for (let i = 0; i < this.props.tags; i++){
+			// 			let existingTag = this.props.tags[i];
+			// 			if (existingTag.tag_name === newTag) {
+			// 				formData.append('quest[tags][]', existingTag);
+			// 				break;
+			// 			}
+			// 		}
+			// 		const tagFormData = new FormData();
+			// 		tagFormData.append('tag[tag_name]', newTag);
+			// 		this.props.createTag(tagFormData)
+			// 	})
+			// }
 			formData.append('quest[text]', this.state.text);
 			formData.append('quest[quest_type]', this.state.type);
 			
