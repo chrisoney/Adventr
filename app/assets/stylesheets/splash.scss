@@ -492,6 +492,27 @@
 #splash-4 {
 	background: none;
 	background-color: red;
+	display: flex;
+	.splash-3-images {
+		width: 626px;
+		
+	}
+
+	.splash-4-text {
+		display: flex;
+		flex-direction: column;
+		width: 323px;
+		// margin-bottom: 12px;
+		color: white;
+		.splash-4-hook {
+			font-size: 48px;
+			margin-bottom: 2%;
+		}
+		.splash-4-description {
+			font-size: 18px;
+			max-width: 100%;
+		}
+	}
 }
 #splash-5 {
 	background: none;

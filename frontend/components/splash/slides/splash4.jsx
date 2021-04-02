@@ -4,14 +4,14 @@ class Splash4 extends React.Component {
   render() {
     return (
       <>
-        <div className="splash6-content">
-          <div className="splash6-images">
+        <div className="splash-4-content">
+          <div className="splash-4-images">
             <img src="/assets/quest-creation-example" />
             <img src="/assets/quest-with-avatar-example" />
           </div>
-          <div className="splash6-text">
-            <div className="splash6-hook">You already know the work.</div>
-            <div className="splash6-description">
+          <div className="splash-4-text">
+            <div className="splash-4-hook">You already know the work.</div>
+            <div className="splash-4-description">
               Once you sign on with a guide, all of its quest notices show up in
               your dashboard, just like you'd expect. See something great? Grab
               a copy for your quest log. Add some notes if you like. Put your
