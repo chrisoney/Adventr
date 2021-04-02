@@ -143,7 +143,6 @@ class DashBoard extends React.Component {
             <div className="ad-bottom-text">
               <span>About Adventr ads</span>
               <span>Do not sell my personal information</span>
-              {/* <button onClick={() => this.testing()}>Testing tags</button> */}
             </div>
           </div>
         </div>
