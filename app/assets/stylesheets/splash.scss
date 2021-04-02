@@ -556,6 +556,26 @@
 #splash-5 {
 	background: none;
 	background-color: purple;
+	.splash-5-content {
+		display: flex;
+		flex-direction: column;
+
+		.splash-5-text {
+			display: flex;
+			flex-direction: column;
+			height: 35%;
+			width: 540px;
+			margin-bottom: 12px;
+			color: white;
+			.splash-5-hook {
+				font-size: 56px;
+				margin-bottom: 2%;
+			}
+			.splash-5-description {
+				font-size: 18px;
+			}
+		}
+	}
 }
 #splash-6 {
 	background: none;
