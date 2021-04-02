@@ -5,7 +5,10 @@ class Splash4 extends React.Component {
     return (
       <>
         <div className="splash6-content">
-          <div className="splash6-images">Place Images here</div>
+          <div className="splash6-images">
+            <img src="/assets/quest-creation-example" />
+            <img src="/assets/quest-with-avatar-example" />
+          </div>
           <div className="splash6-text">
             <div className="splash6-hook">You already know the work.</div>
             <div className="splash6-description">
