@@ -37,7 +37,6 @@ class Navbar extends React.Component {
     }
   }
 
-
   render() {
     let navbar = (<></>);
     let otherButton = (<></>);
@@ -157,6 +156,11 @@ class Navbar extends React.Component {
               </Link> */}
               {/* // No livechat yet
               <span className="fas fa-comment" title="Chat"></span> */}
+              <span
+                onClick={this.props.logout}
+                className="fas fa-sign-out-alt nav-link"
+              >
+              </span>
               <Link to="/about" className="nav-link">
                 <span
                   className={`fas fa-question-circle ${
@@ -167,15 +171,13 @@ class Navbar extends React.Component {
               {/* // No user dropdown yet
               <span className="fas fa-user"></span> */}
               {
-              
                 // No create-new modal yet
-                  /* <div
+                /* <div
                 className="create-new-container"
                 // onClick={(e) => this.userMenuToggle(e)}
               >
                 <span className="fas fa-feather-alt"></span>
               </div> */
-              
               }
             </div>
           </div>
