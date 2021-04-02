@@ -157,15 +157,13 @@
 			margin-bottom: 2%;
 			color: white;
 			.splash-2-prompt {
-				height: 120px;
-				// width: 540px;
+				// height: 120px;
 				font-size: 48px;
 				margin-bottom: 2%;
 			}
 			.splash-2-description {
-				height: 96px;
-				// max-width: 540px;
-				font-size: 16px;
+				// height: 96px;
+				font-size: 18px;
 				max-width: 100%;
 			}
 		}
@@ -472,18 +470,14 @@
 			flex-direction: column;
 			height: 35%;
 			width: 540px;
-			margin-bottom: 2%;
+			margin-bottom: 12px;
 			color: white;
 			.splash-3-hook {
-				height: 120px;
-				// width: 540px;
 				font-size: 48px;
 				margin-bottom: 2%;
 			}
 			.splash-3-description {
-				height: 96px;
-				// max-width: 540px;
-				font-size: 16px;
+				font-size: 18px;
 				max-width: 100%;
 			}
 		}
