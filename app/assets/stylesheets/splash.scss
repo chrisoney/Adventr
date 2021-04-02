@@ -31,7 +31,7 @@
 	bottom: 0;
 	z-index: 1;
 	width: 100vw;
-	height: 5vh;
+	height: 45px;
 	background-color: $dark-green;
 	display: flex;
 	justify-content: center;
@@ -40,9 +40,9 @@
 
 	.bottom-text {
 		color: white;
-		font-weight: 50px;
+		font-weight: 500;
 		font-family: $splash-font;
-		font-size: 0.75rem;
+		font-size: 1rem;
 	}
 }
 
@@ -559,7 +559,7 @@
 }
 #splash-6 {
 	background: none;
-	background-color: black;
+	background-color: #222222;
 }
 
 .splash-content {
@@ -675,14 +675,14 @@
 }
 
 #email::placeholder,#username::placeholder,#password::placeholder{
-	color: light-grey;
+	color: lightgrey;
 	font-family: $splash-font;
 	font-size: 16px;
 }
 
 
 @media only screen and (max-width: 990px) {
-  #splash-2, #splash-3, #splash-4, #splash-5, #splash-6, .sidebar{
+  #splash-2, #splash-3, #splash-4, #splash-5, #splash-6, .sidebar, .bottom-section{
 		display:none;
 	}
 }
