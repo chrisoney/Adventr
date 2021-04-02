@@ -483,12 +483,29 @@
 		}
 		.splash-3-image {
 			img {
+				margin-top: 100vh;
 				max-width: 940px;
 				height: auto;
 			}
 		}
 	}
+	&.active {
+		img {
+			animation: rise 2s forwards;
+		}
+	}
 }
+
+@keyframes rise {
+	from {
+		margin-top: 100vh;
+	}
+	to {
+		margin-top: 0;
+	}
+
+}
+
 #splash-4 {
 	background: none;
 	background-color: red;
