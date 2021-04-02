@@ -70,7 +70,10 @@
 .right-side{
 	width: 373px;
 	display: flex;
-	justify-content: space-between;
+	// For more icons
+	// justify-content: space-between;
+	// For fewer icons
+	justify-content: flex-end;
 	align-items: center;
 	margin-right: 20px;
 	// grid-column: 6/8;
@@ -82,6 +85,8 @@
 		width: auto;
 		color: #595959;
 		cursor: pointer;
+		// For fewer icons
+		margin-left: 10px;
 	}
 	span.active, .nav-link.active {
 		color: white;

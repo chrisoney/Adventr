@@ -1,5 +1,6 @@
 import React from 'react';
-import Splash1 from './slides/splash1';
+// import Splash1 from './slides/splash1';
+import { Link } from 'react-router-dom';
 import Splash2 from './slides/splash2/splash2';
 import Splash3 from './slides/splash3';
 import Splash4 from './slides/splash4';
@@ -93,7 +94,27 @@ class Splash extends React.Component {
           ></span>
         </div>
         <div className="splash" id="splash-1">
-          <Splash1 />
+          <div className="splash-content">
+            <p className="app-name">Adventr</p>
+            <div className="welcome-text">
+              <p>Come for the adventures.</p>
+              <p>Stay for the magic items.</p>
+            </div>
+            <Link to="/signup">
+              <button className="signup">Get Started</button>
+            </Link>
+            <Link to="/login">
+              <button className="login">Login</button>
+            </Link>
+          </div>
+          <div className="bottom-section">
+            <div
+              onClick={(e) => this.handleScroll(e, 'splash-2')}
+              className="bottom-text"
+            >
+              What is Adventr?
+            </div>
+          </div>
         </div>
         <div className="splash" id="splash-2">
           <Splash2 />
