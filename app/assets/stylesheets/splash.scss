@@ -109,7 +109,7 @@
 		}
 		.icons {
 			position: absolute;
-			top: 10%;
+			top: 20%;
 			height: 270px;
 			width: 540px;
 			.logo{
@@ -473,7 +473,7 @@
 			margin-bottom: 12px;
 			color: white;
 			.splash-3-hook {
-				font-size: 48px;
+				font-size: 56px;
 				margin-bottom: 2%;
 			}
 			.splash-3-description {
@@ -492,25 +492,38 @@
 #splash-4 {
 	background: none;
 	background-color: red;
-	display: flex;
-	.splash-3-images {
-		width: 626px;
-		
-	}
-
-	.splash-4-text {
+	overflow: hidden;
+	.splash-4-content{
 		display: flex;
-		flex-direction: column;
-		width: 323px;
-		// margin-bottom: 12px;
-		color: white;
-		.splash-4-hook {
-			font-size: 48px;
-			margin-bottom: 2%;
+		flex-direction: row;
+		.splash-4-images {
+			margin-left: 55px;
+			margin-top: 110px;
+			width: 626px;
+			img {
+				width: 626px;
+			}
+
 		}
-		.splash-4-description {
-			font-size: 18px;
-			max-width: 100%;
+
+		.splash-4-text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			// width: 323px;
+			height: 100%;
+			margin-left: 40px;
+			margin-right: 55px;
+			// margin-bottom: 12px;
+			color: white;
+			.splash-4-hook {
+				font-size: 56px;
+				margin-bottom: 2%;
+			}
+			.splash-4-description {
+				font-size: 18px;
+				max-width: 100%;
+			}
 		}
 	}
 }
@@ -533,25 +546,6 @@
 	animation: none;
 	z-index: 1;
 }
-
-// old animations
-// @keyframes fade{
-// 	from{
-// 		opacity: 0;
-// 	} 
-// 	to{
-// 		opacity: 1;
-// 	}
-// }
-
-// @keyframes slide{
-// 	from{
-// 		transform: translateY(-20px);
-// 	} 
-// 	to{
-// 		transform: translateY(-45px);
-// 	}
-// }
 
 .app-name {
 	color: white;
@@ -661,7 +655,7 @@
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 990px) {
   #splash-2, #splash-3, #splash-4, #splash-5, #splash-6, .sidebar{
 		display:none;
 	}
