@@ -10,4 +10,9 @@
 #  updated_at   :datetime         not null
 #
 class Reblog < ApplicationRecord
+  belongs_to :user,
+    class_name: "User",
+    foreign_key: "reblogger_id"
+  
+  belongs_to :quest
 end

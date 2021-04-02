@@ -17,6 +17,7 @@ class Quest < ApplicationRecord
 
   belongs_to :user
   
+  has_many :reblogs
   has_many :likes
 
   has_many :quests_tags,
