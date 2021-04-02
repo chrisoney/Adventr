@@ -6,8 +6,8 @@ class Splash4 extends React.Component {
       <>
         <div className="splash-4-content">
           <div className="splash-4-images">
-            <img src="/assets/quest-creation-example" />
-            <img src="/assets/quest-with-avatar-example" />
+            <img src="/assets/splash_4_image_1" />
+            <img src="/assets/splash_4_image_2" />
           </div>
           <div className="splash-4-text">
             <div className="splash-4-hook">You already know the work.</div>
