@@ -151,12 +151,12 @@ class Navbar extends React.Component {
                   title="Explore"
                 ></span>
               </Link>
-              {/* <Link to="/explore" className="nav-link"> */}
+              {/* // No messages yet
+              <Link to="/messages" className="nav-link">
               <span className="fas fa-scroll" title="Messages"></span>
-              {/* </Link> */}
-              {/* <Link to="/explore" className="nav-link"> */}
-              <span className="fas fa-comment" title="Chat"></span>
-              {/* </Link> */}
+              </Link> */}
+              {/* // No livechat yet
+              <span className="fas fa-comment" title="Chat"></span> */}
               <Link to="/about" className="nav-link">
                 <span
                   className={`fas fa-question-circle ${
@@ -164,13 +164,19 @@ class Navbar extends React.Component {
                   }`}
                 ></span>
               </Link>
-              <span className="fas fa-user"></span>
-              <div
+              {/* // No user dropdown yet
+              <span className="fas fa-user"></span> */}
+              {
+              
+                // No create-new modal yet
+                  /* <div
                 className="create-new-container"
                 // onClick={(e) => this.userMenuToggle(e)}
               >
                 <span className="fas fa-feather-alt"></span>
-              </div>
+              </div> */
+              
+              }
             </div>
           </div>
         );

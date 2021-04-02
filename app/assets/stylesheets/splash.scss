@@ -159,13 +159,13 @@
 			.splash-2-prompt {
 				height: 120px;
 				// width: 540px;
-				font-size: 2.5rem;
+				font-size: 48px;
 				margin-bottom: 2%;
 			}
 			.splash-2-description {
 				height: 96px;
 				// max-width: 540px;
-				font-size: 1rem;
+				font-size: 16px;
 				max-width: 100%;
 			}
 		}
@@ -455,7 +455,45 @@
 
 #splash-3 {
 	background: none;
-	background-color: blue;
+	background-color: #455787;
+	overflow: hidden;
+	.splash-3-content {
+		margin-left: 140px;
+		margin-top: 120px;
+		position: relative;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+		// align-items: flex-end;
+		.splash-3-text {
+			display: flex;
+			flex-direction: column;
+			height: 35%;
+			width: 540px;
+			margin-bottom: 2%;
+			color: white;
+			.splash-3-hook {
+				height: 120px;
+				// width: 540px;
+				font-size: 48px;
+				margin-bottom: 2%;
+			}
+			.splash-3-description {
+				height: 96px;
+				// max-width: 540px;
+				font-size: 16px;
+				max-width: 100%;
+			}
+		}
+		.splash-3-image {
+			img {
+				max-width: 940px;
+				height: auto;
+			}
+		}
+	}
 }
 #splash-4 {
 	background: none;
