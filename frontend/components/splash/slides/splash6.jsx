@@ -5,12 +5,12 @@ class Splash6 extends React.Component {
   render() {
     return (
       <>
-        <div className="splash-content">
-          <div className="splash6-text">
-            <div className="splash6-hook">
+        <div className="splash-6-content">
+          <div className="splash-6-text">
+            <div className="splash-6-hook">
               Now that you know the score, what are you waiting for?
             </div>
-            <div className="splash6-description">
+            <div className="splash-6-description">
               Your destiny awaits. Welcome to Adventr.
             </div>
           </div>

@@ -50,7 +50,14 @@ class Navbar extends React.Component {
               <span className="nav-logo">a</span>
             </Link>
           </div>
-          <div className="right-side"></div>
+          <div className="right-side">
+            <Link to="/login" className="nav-login-button">
+              <button>Login</button>
+            </Link>
+            <Link to="/login" className="nav-signup-button">
+              <button>Signup</button>
+            </Link>
+          </div>
         </div>
       );
     }
@@ -64,7 +71,7 @@ class Navbar extends React.Component {
             </Link>
           </div>
           <div className="right-side">
-            <Link to="/login" className="other-button">
+            <Link to="/login" className="switch-button">
               <button>Login</button>
             </Link>
           </div>
@@ -80,7 +87,7 @@ class Navbar extends React.Component {
             </Link>
           </div>
           <div className="right-side">
-            <Link to="/signup" className="other-button">
+            <Link to="/signup" className="switch-button">
               <button>Signup</button>
             </Link>
           </div>

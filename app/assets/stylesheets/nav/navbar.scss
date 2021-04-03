@@ -12,11 +12,30 @@
 	background-color: #222222;
 
 	&.splash-nav {
+		z-index: 2;
 		background-color: transparent;
 		border-bottom: none;
 		.right-side {
 			display: flex;
 			justify-content: flex-end;
+			.nav-login-button > button, .nav-signup-button > button{
+				border-radius: 3px;
+				font-size: 1rem;
+				font-weight: 500;
+				line-height: 1.5;
+				padding: 6px 15px;
+				color: white;
+				outline: none;
+				border: none;
+				cursor: pointer;
+			}
+			.nav-login-button > button{
+				background-color: $dark-green;
+				margin-right: 10px;
+			}
+			.nav-signup-button > button {
+				background-color: $sky-blue;
+			}
 		}
 	}
 }
@@ -30,8 +49,8 @@
 	position: absolute;
 }
 
-.other-button {
-	grid-column: 7/8;
+.switch-button {
+	// grid-column: 7/8;
 
 	button {
 		background-color: $dark-green;
