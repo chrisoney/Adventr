@@ -34,6 +34,6 @@ export const removeTagFromUser = (tag_join) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/tag_joins/${tag_join.tag.id}`,
-    data: tag_jaoin,
+    data: { tag_join },
   });
 };
