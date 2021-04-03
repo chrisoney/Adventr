@@ -15,4 +15,7 @@ class Reblog < ApplicationRecord
     foreign_key: "reblogger_id"
   
   belongs_to :quest
+
+  has_many :tag_joins, as: :taggable
+  has_many :tags, through: :tag_joins
 end

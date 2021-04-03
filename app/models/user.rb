@@ -29,8 +29,8 @@ class User < ApplicationRecord
   has_many :likes
 
   has_many :reblogs,
-    class_name: "Reblog",
-    foreign_key: "reblogger_id"
+    class_name: :Reblog,
+    foreign_key: :reblogger_id
   
   has_many :liked_quests,
     through: :likes,
@@ -59,10 +59,14 @@ class User < ApplicationRecord
     class_name: :UsersTag,
     foreign_key: :user_id,
     primary_key: :id
-
+    
   has_many :tags,
     through: :users_tags,
     source: :tag
+
+  has_many :tag_joins, as: :taggable
+  has_many :tags, through: :tag_joins
+
 
 
   

@@ -29,5 +29,8 @@ class Quest < ApplicationRecord
     through: :quests_tags,
     source: :tag
 
+  has_many :tag_joins, as: :taggable
+  has_many :tags, through: :tag_joins
+
   has_many_attached :images
 end
