@@ -1,0 +1,1 @@
+json.extract! tag_join, :id, :taggable_id, :taggable_type, :order, :tag_id, :created_at, :updated_at
