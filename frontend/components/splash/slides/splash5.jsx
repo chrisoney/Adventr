@@ -5,7 +5,43 @@ class Splash5 extends React.Component {
     return (
       <>
         <div className="splash-5-content">
-          <div className="splash-5-images"></div>
+          <div className="splash-5-images">
+            {/* Text logo */}
+            <div className="quest-option">
+              <div className="quest-option-circle">
+                <span className="fas fa-font"></span>
+              </div>
+              Text
+            </div>
+            {/* Image logo */}
+            <div className="quest-option">
+              <div className="quest-option-circle">
+                <span className="fas fa-camera"></span>
+              </div>
+              Image
+            </div>
+            {/* Quote logo */}
+            <div className="quest-option">
+              <div className="quest-option-circle">
+                <span className="fas fa-quote-right"></span>
+              </div>
+              Quote
+            </div>
+            {/* Audio logo */}
+            <div className="quest-option">
+              <div className="quest-option-circle">
+                <span className="fas fa-music"></span>
+              </div>
+              Audio
+            </div>
+            {/* Video logo */}
+            <div className="quest-option">
+              <div className="quest-option-circle">
+                <span className="fas fa-video"></span>
+              </div>
+              Video
+            </div>
+          </div>
           <div className="splash-5-text">
             <div className="splash-5-hook">
               Seriously, post any notices you want
