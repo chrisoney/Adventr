@@ -11,5 +11,8 @@
 #  updated_at    :datetime         not null
 #
 class TagJoin < ApplicationRecord
-  belongs_to :taggable, polymorphic: true
+  belongs_to :taggable, 
+    polymorphic: true
+    
+  belongs_to :tag
 end

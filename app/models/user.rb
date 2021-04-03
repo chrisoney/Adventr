@@ -55,17 +55,19 @@ class User < ApplicationRecord
     through: :follows,
     source: :follower
 
-  has_many :users_tags,
-    class_name: :UsersTag,
-    foreign_key: :user_id,
-    primary_key: :id
+  # has_many :users_tags,
+  #   class_name: :UsersTag,
+  #   foreign_key: :user_id,
+  #   primary_key: :id
     
-  has_many :tags,
-    through: :users_tags,
-    source: :tag
+  # has_many :tags,
+  #   through: :users_tags,
+  #   source: :tag
 
-  has_many :tag_joins, as: :taggable
-  has_many :tags, through: :tag_joins
+  has_many :tag_joins,
+    as: :taggable
+  has_many :tags,
+    through: :tag_joins
 
 
 

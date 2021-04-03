@@ -23,7 +23,7 @@ class Api::QuestsTagsController < ApplicationController
 
 
   def destroy
-    @quests_tag = Follow.find_by(params[:id])
+    @quests_tag = QuestsTag.find_by(params[:id])
     @quest = @quests_tag.quest
     @tag = @quests_tag.tag
     @quests_tag.destroy

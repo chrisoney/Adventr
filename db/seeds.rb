@@ -52,7 +52,9 @@
 # Tag.create(tag_name: "Iron Rank")
 # tag1 = Tag.create(tag_name: 'Diamond Rank')
 # tag = Tag.find(8)
-# tag2 = Tag.find(3)
 
-# user7.tags << tag
+user = User.find(15)
+tag = Tag.find(3)
+
+user.tags << tag
 # user7.tags << tag2
