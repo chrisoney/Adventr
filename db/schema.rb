@@ -65,14 +65,6 @@ ActiveRecord::Schema.define(version: 2021_04_02_030702) do
     t.index ["user_id", "id"], name: "index_quests_on_user_id_and_id"
   end
 
-  create_table "quests_tags", force: :cascade do |t|
-    t.integer "quest_id", null: false
-    t.integer "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["quest_id", "tag_id"], name: "index_quests_tags_on_quest_id_and_tag_id"
-  end
-
   create_table "reblogs", force: :cascade do |t|
     t.integer "reblogger_id", null: false
     t.integer "quest_id", null: false
@@ -80,6 +72,16 @@ ActiveRecord::Schema.define(version: 2021_04_02_030702) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reblogger_id", "quest_id"], name: "index_reblogs_on_reblogger_id_and_quest_id", unique: true
+  end
+
+  create_table "tag_joins", force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "taggable_id", null: false
+    t.string "taggable_type", null: false
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id", "taggable_id", "taggable_type"], name: "index_tag_joins_on_tag_id_and_taggable_id_and_taggable_type"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -100,14 +102,6 @@ ActiveRecord::Schema.define(version: 2021_04_02_030702) do
     t.string "guild_name"
     t.string "guild_description"
     t.index ["username", "id"], name: "index_users_on_username_and_id"
-  end
-
-  create_table "users_tags", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "tag_id"], name: "index_users_tags_on_user_id_and_tag_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

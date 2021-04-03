@@ -11,6 +11,8 @@
 # Like.destroy_all
 # Follow.destroy_all
 # Tag.destroy_all
+# Reblog.destroy_all
+
 
 # New users
 # user1 = User.create(username: "fake-user", password: "hunter12", email: "fakeuser@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/paladin.jpg");
