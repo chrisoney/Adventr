@@ -51,12 +51,17 @@ class Explore extends React.Component {
       tag_id: tag.id,
     };
     if (followed) {
-      e.target.innerHTML = 'Unfollow';
-      this.props.addTagToUser(tag_join);
+      const element = e.target;
+      element.innerHTML = 'Unfollow';
+      this.props.addTagToUser(tag_join).then((newTagJoin) => {
+        element.dataset.tagJoinId = newTagJoin.id;
+      });
     } else {
       // Set up unfollow
-      e.target.innerHTML = 'Follow';
-      this.props.removeTagFromUser(tag_join);
+      const element = e.target;
+      element.innerHTML = 'Follow';
+      const tagJoinId = element.dataset.tagJoinId;
+      this.props.removeTagFromUser(tagJoinId);
     }
   }
 

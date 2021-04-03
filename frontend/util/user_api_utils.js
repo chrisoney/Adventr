@@ -30,10 +30,10 @@ export const addTagToUser = (tag_join) => {
   });
 };
 
-export const removeTagFromUser = (tag_join) => {
+export const removeTagFromUser = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/tag_joins/${tag_join.tag.id}`,
-    data: { tag_join },
+    url: `/api/tag_joins/${id}`,
+    // data: { id },
   });
 };

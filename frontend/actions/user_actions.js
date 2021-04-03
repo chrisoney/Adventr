@@ -27,7 +27,9 @@ export const updateUser = (user) => (dispatch) =>
   UserApiUtils.updateUser(user).then((user) => dispatch(receiveUser(user)));
 
 export const addTagToUser = (tagJoin) => (dispatch) => {
-  UserApiUtils.addTagToUser(tagJoin);
+  return UserApiUtils.addTagToUser(tagJoin).then((tagJoin) => {
+    return tagJoin;
+  });
 };
 export const removeTagFromUser = (tagJoinId) => (dispatch) => {
   UserApiUtils.removeTagFromUser(tagJoinId);

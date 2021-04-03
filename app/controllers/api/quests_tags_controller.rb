@@ -5,7 +5,7 @@ class Api::QuestsTagsController < ApplicationController
   end
 
   def show
-    @quests_tag = QuestsTag.find_by(params[:id])
+    @quests_tag = QuestsTag.find(params[:id])
   end
 
   def create

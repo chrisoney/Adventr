@@ -5,7 +5,7 @@ class Api::LikesController < ApplicationController
   end
 
   def show
-    @like = Like.find_by(params[:id])
+    @like = Like.find(params[:id])
   end
 
   def create

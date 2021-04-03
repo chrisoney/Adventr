@@ -3,7 +3,7 @@ import { updateQuest } from '../../actions/quest_actions';
 import { closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 import EditPost from './edit_post';
-import { deleteAttachment } from '../../utils/quest_api_utils';
+// import { deleteAttachment } from '../../utils/quest_api_utils';
 
 const mapStateToProps = (state, ownProps) => {
   return {
