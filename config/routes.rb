@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :tags, only: [:index, :show, :create, :destroy]
     resources :users_tags, only: [:index, :show, :create, :destroy]
     resources :quests_tags, only: [:index, :show, :create, :destroy]
-    resources :tags_joins, only: [:index, :show, :create, :destroy]
+    resources :tag_joins, only: [:index, :show, :create, :destroy]
     resources :reblogs, only: [:index, :show, :create, :destroy]
   end
 end

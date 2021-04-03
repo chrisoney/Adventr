@@ -21,8 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllFollows: () => dispatch(fetchAllFollows()),
   fetchAllLikes: () => dispatch(fetchAllLikes()),
   fetchAllTags: () => dispatch(fetchAllTags()),
-  addTagToUser: (tagId) => dispatch(addTagToUser(tagId)),
-  removeTagFromUser: (tagId) => dispatch(removeTagFromUser(tagId)),
+  addTagToUser: (tagJoin) => dispatch(addTagToUser(tagJoin)),
+  removeTagFromUser: (tagJoinId) => dispatch(removeTagFromUser(tagJoinId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explore);

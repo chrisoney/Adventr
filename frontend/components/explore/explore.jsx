@@ -45,13 +45,18 @@ class Explore extends React.Component {
 
   handleTagFollow(e, tag) {
     const followed = e.target.innerHTML === 'Follow';
+    const tag_join = {
+      taggable_id: this.props.currentUser.id,
+      taggable_type: 'User',
+      tag_id: tag.id,
+    };
     if (followed) {
       e.target.innerHTML = 'Unfollow';
-      this.props.addTagToUser(tag.id);
+      this.props.addTagToUser(tag_join);
     } else {
       // Set up unfollow
       e.target.innerHTML = 'Follow';
-      this.props.removeTagFromUser(tag.id);
+      this.props.removeTagFromUser(tag_join);
     }
   }
 

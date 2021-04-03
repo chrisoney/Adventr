@@ -26,9 +26,9 @@ export const fetchAllUsers = (filter) => (dispatch) =>
 export const updateUser = (user) => (dispatch) =>
   UserApiUtils.updateUser(user).then((user) => dispatch(receiveUser(user)));
 
-export const addTagToUser = (tagId) => (dispatch) => {
-  UserApiUtils.addTagToUser(tagId);
+export const addTagToUser = (tagJoin) => (dispatch) => {
+  UserApiUtils.addTagToUser(tagJoin);
 };
-export const removeTagFromUser = (tagId) => (dispatch) => {
-  UserApiUtils.removeTagFromUser(tagId);
+export const removeTagFromUser = (tagJoinId) => (dispatch) => {
+  UserApiUtils.removeTagFromUser(tagJoinId);
 };

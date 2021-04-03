@@ -25,15 +25,15 @@ export const updateUser = (user) => {
 export const addTagToUser = (tag_join) => {
   return $.ajax({
     method: 'POST',
-    url: 'api/tags_joins',
-    data: tag_join,
+    url: 'api/tag_joins',
+    data: { tag_join },
   });
 };
 
-export const removeTagFromUser = (tagJoinId) => {
+export const removeTagFromUser = (tag_join) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/tags_joins/${tagJoinId}`,
-    data: { tagJoinId },
+    url: `/api/tag_joins/${tag_join.tag.id}`,
+    data: tag_jaoin,
   });
 };
