@@ -55,15 +55,34 @@
 	width: 95%;
 }
 .tag-section{
-	display: flex;
+	display: block;
+	box-sizing: border-box;
+	cursor: text;
+	.enteredTag {
+		display: inline-block;
+		color: rgba(0,0,0,.65);
+    margin-right: 1px;
+    margin-bottom: 1px;
+    display: inline-block;
+    font-size: 13px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+		&:hover {
+			background-color: #E0EEF6;
+			color: #00B8FF;
+		}
+	}
 	.tag-input-body {
+		display: inline-block;
 		margin-top: 5px;
     padding: 5px 20px 10px 15px;
     overflow: hidden;
     word-break: break-all;
     cursor: text;
 		border:none;
-		flex: 1;
+		min-width: 50px;
+		// flex: 1;
 	}
 }
 
