@@ -34,6 +34,7 @@ body {
   line-height: 1;
   background: black;
   button:focus {outline:0;}
+  input:focus {outline:0;}
 }
 ol, ul {
   list-style: none;
