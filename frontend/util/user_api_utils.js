@@ -22,18 +22,18 @@ export const updateUser = (user) => {
   });
 };
 
-export const addTagToUser = (tagId) => {
+export const addTagToUser = (tag_join) => {
   return $.ajax({
     method: 'POST',
-    url: 'api/users_tags',
-    data: { tagId },
+    url: 'api/tags_joins',
+    data: tag_join,
   });
 };
 
-export const removeTagFromUser = (tagId) => {
+export const removeTagFromUser = (tagJoinId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/users_tags/${tagId}`,
-    data: { tagId },
+    url: `/api/tags_joins/${tagJoinId}`,
+    data: { tagJoinId },
   });
 };
