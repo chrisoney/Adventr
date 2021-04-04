@@ -74,6 +74,12 @@ class GuildRecs extends React.Component {
       }
       if (followRecs.length === 4) break;
     }
+    const title =
+      currentLocation === '/explore' ? (
+        <div className="suggested-guilds-title">Suggested Guilds</div>
+      ) : (
+        <h1 className="suggested-guilds-title">Check out these guilds</h1>
+      );
     const bottomButton =
       currentLocation === '/explore' ? (
         <div className="suggested-guilds-button">Show More Guilds</div>
@@ -84,7 +90,7 @@ class GuildRecs extends React.Component {
       );
     return (
       <div className="suggested-guilds">
-        <h1 className="suggested-guilds-title">Check out these guilds</h1>
+        {title}
         <ul className="suggested-guilds-container">{followRecs}</ul>
         {bottomButton}
       </div>
