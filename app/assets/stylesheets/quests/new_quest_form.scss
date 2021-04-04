@@ -69,8 +69,9 @@
     cursor: pointer;
     border-radius: 3px;
 		&:hover {
-			background-color: #E0EEF6;
-			color: #00B8FF;
+			background-color: #f6e0e0;
+			color: #ff0000;
+			text-decoration: line-through;
 		}
 	}
 	.tag-input-body {

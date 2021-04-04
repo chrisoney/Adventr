@@ -27,21 +27,34 @@ class NewQuestForm extends React.Component {
   }
 
   createTag(e) {
-		if (e.key === 'Enter') {
-			const tag = [e.target.value];
+    if (e.key === 'Enter' && e.target.value !== '') {
+      const tag = [e.target.value];
       this.setState({ tags: this.state.tags.concat(tag) });
       // console.log(e.target);
       const newDiv = document.createElement('div');
       newDiv.classList.add('enteredTag');
       newDiv.innerHTML = `#${e.target.value}`;
+      newDiv.addEventListener('click', (e) => {
+        const tagToDelete = e.target.innerHTML.slice(1);
+        const index = this.state.tags.indexOf(tagToDelete);
+        const newTagArray = this.state.tags
+          .slice(0, index)
+          .concat(this.state.tags.slice(index + 1, this.state.tags.length));
+        this.setState({ tags: newTagArray });
+        e.target.remove();
+      });
       e.target.parentElement.insertBefore(newDiv, e.target);
       e.target.value = null;
-    } else if (e.key === 'Backspace' && this.state.tags.length > 0) {
+    } else if (
+      e.key === 'Backspace' &&
+      this.state.tags.length > 0 &&
+      e.target.value === ''
+    ) {
       const lastEle = this.state.tags.length - 1;
-      this.setState({ tags: this.state.tags.slice(0, lastEle) })
+      this.setState({ tags: this.state.tags.slice(0, lastEle) });
       e.target.previousSibling.remove();
     }
-	}
+  }
 
   handleInput(type) {
     if (type !== 'tags') {
@@ -49,11 +62,6 @@ class NewQuestForm extends React.Component {
         this.setState({ [type]: e.currentTarget.value });
       };
     }
-    // else {
-    //   return (e) => {
-    //     this.setState({ tags: this.state.tags.concat(e.target.value) });
-    //   };
-    // }
   }
 
   handleUpload(e) {
@@ -174,165 +182,165 @@ class NewQuestForm extends React.Component {
     }
   }
 
-	render() {
-		const { closeModal, currentUser, type } = this.props;
-		const { title, text, imageFiles } = this.state;
-		let placeholderText;
+  render() {
+    const { closeModal, currentUser, type } = this.props;
+    const { title, text, imageFiles } = this.state;
+    let placeholderText;
 
-		switch (type) {
-			case 'text':
-				placeholderText = 'Your text here';
-				break;
-			case 'image':
-				placeholderText = 'Add a caption';
-				break;
-			case 'quote':
-				placeholderText = ' - Source';
-				break;
-			case 'audio':
-				placeholderText = 'Add a description';
-				break;
-			case 'video':
-				placeholderText = 'Add a caption';
-				break;
-			default:
-				placeholderText = '';
-				break;
-		}
+    switch (type) {
+      case 'text':
+        placeholderText = 'Your text here';
+        break;
+      case 'image':
+        placeholderText = 'Add a caption';
+        break;
+      case 'quote':
+        placeholderText = ' - Source';
+        break;
+      case 'audio':
+        placeholderText = 'Add a description';
+        break;
+      case 'video':
+        placeholderText = 'Add a caption';
+        break;
+      default:
+        placeholderText = '';
+        break;
+    }
 
-		const titleSection = (
-			<input
-				type="text"
-				placeholder="Title"
-				className="input-title"
-				onChange={this.handleInput('title')}
-			/>
-		);
+    const titleSection = (
+      <input
+        type="text"
+        placeholder="Title"
+        className="input-title"
+        onChange={this.handleInput('title')}
+      />
+    );
 
-		const imagePreviews = this.state.imageUrls
-			? this.state.imageUrls.map((imageUrl, idx) => {
-				return (
-					<div key={idx} className="image-preview-box">
-						<img className="image-preview" src={imageUrl} />
-						<i
-							className="fas fa-times-circle delete-preview"
-							onClick={() => this.deletePreviewImage({ idx })}
-						></i>
-					</div>
-				);
-			})
-			: null;
+    const imagePreviews = this.state.imageUrls
+      ? this.state.imageUrls.map((imageUrl, idx) => {
+          return (
+            <div key={idx} className="image-preview-box">
+              <img className="image-preview" src={imageUrl} />
+              <i
+                className="fas fa-times-circle delete-preview"
+                onClick={() => this.deletePreviewImage({ idx })}
+              ></i>
+            </div>
+          );
+        })
+      : null;
 
-		const imageLabel =
-			this.state.imageFiles != null ? 'Add more photos' : 'Upload Photos!';
-		const imageUploadSection = (
-			<div className="image-upload-box">
-				{imagePreviews}
-				<label htmlFor="upload-box" className="upload-label-box">
-					<div className="camera-icon-text-container">
-						<div className="camera-icon fas fa-camera" />
-						<div>{imageLabel}</div>
-					</div>
-					<input
-						type="file"
-						accept="image/*"
-						id="upload-box"
-						onChange={this.handleUpload}
-						multiple
-					/>
-				</label>
-			</div>
-		);
+    const imageLabel =
+      this.state.imageFiles != null ? 'Add more photos' : 'Upload Photos!';
+    const imageUploadSection = (
+      <div className="image-upload-box">
+        {imagePreviews}
+        <label htmlFor="upload-box" className="upload-label-box">
+          <div className="camera-icon-text-container">
+            <div className="camera-icon fas fa-camera" />
+            <div>{imageLabel}</div>
+          </div>
+          <input
+            type="file"
+            accept="image/*"
+            id="upload-box"
+            onChange={this.handleUpload}
+            multiple
+          />
+        </label>
+      </div>
+    );
 
-		const videoPreviews = this.state.imageUrls // if
-			? this.state.imageUrls.map((imageUrl, idx) => {
-				return (
-					<div key={idx} className="image-preview-box">
-						<video controls className="image-preview" src={imageUrl} />
-						<i
-							className="fas fa-times-circle delete-preview"
-							onClick={() => this.deletePreviewImage({ idx })}
-						></i>
-					</div>
-				);
-			})
-			: null;
+    const videoPreviews = this.state.imageUrls // if
+      ? this.state.imageUrls.map((imageUrl, idx) => {
+          return (
+            <div key={idx} className="image-preview-box">
+              <video controls className="image-preview" src={imageUrl} />
+              <i
+                className="fas fa-times-circle delete-preview"
+                onClick={() => this.deletePreviewImage({ idx })}
+              ></i>
+            </div>
+          );
+        })
+      : null;
 
-		const videoLabel = 'Upload Video!';
-		const videoUploadSection = (
-			<div className="image-upload-box">
-				{videoPreviews}
-				<label htmlFor="upload-box" className="upload-label-box">
-					<div className="camera-icon-text-container">
-						<div className="camera-icon fas fa-video" />
-						<div>{videoLabel}</div>
-					</div>
-					<input
-						type="file"
-						accept="video/*"
-						id="upload-box"
-						onChange={this.handleUpload}
-					/>
-				</label>
-			</div>
-		);
+    const videoLabel = 'Upload Video!';
+    const videoUploadSection = (
+      <div className="image-upload-box">
+        {videoPreviews}
+        <label htmlFor="upload-box" className="upload-label-box">
+          <div className="camera-icon-text-container">
+            <div className="camera-icon fas fa-video" />
+            <div>{videoLabel}</div>
+          </div>
+          <input
+            type="file"
+            accept="video/*"
+            id="upload-box"
+            onChange={this.handleUpload}
+          />
+        </label>
+      </div>
+    );
 
-		const audioPreviews = this.state.imageUrls // if
-			? this.state.imageUrls.map((imageUrl, idx) => {
-				return (
-					<div key={idx} className="image-preview-box">
-						<audio controls src={imageUrl}>
-							Your browser does not support this player
+    const audioPreviews = this.state.imageUrls // if
+      ? this.state.imageUrls.map((imageUrl, idx) => {
+          return (
+            <div key={idx} className="image-preview-box">
+              <audio controls src={imageUrl}>
+                Your browser does not support this player
               </audio>
-						<i
-							className="fas fa-times-circle delete-preview"
-							onClick={() => this.deletePreviewImage({ idx })}
-						></i>
-					</div>
-				);
-			})
-			: null;
+              <i
+                className="fas fa-times-circle delete-preview"
+                onClick={() => this.deletePreviewImage({ idx })}
+              ></i>
+            </div>
+          );
+        })
+      : null;
 
-		const audioLabel = 'Upload Music!';
-		const audioUploadSection = (
-			<div className="image-upload-box">
-				{audioPreviews}
-				<label htmlFor="upload-box" className="upload-label-box">
-					<div className="camera-icon-text-container">
-						<div className="camera-icon fas fa-headphones" />
-						<div>{audioLabel}</div>
-					</div>
-					<input
-						type="file"
-						accept="audio/*"
-						id="upload-box"
-						onChange={this.handleUpload}
-					/>
-				</label>
-			</div>
-		);
+    const audioLabel = 'Upload Music!';
+    const audioUploadSection = (
+      <div className="image-upload-box">
+        {audioPreviews}
+        <label htmlFor="upload-box" className="upload-label-box">
+          <div className="camera-icon-text-container">
+            <div className="camera-icon fas fa-headphones" />
+            <div>{audioLabel}</div>
+          </div>
+          <input
+            type="file"
+            accept="audio/*"
+            id="upload-box"
+            onChange={this.handleUpload}
+          />
+        </label>
+      </div>
+    );
 
-		const quoteSection = (
-			<input
-				type="text"
-				placeholder='"Quote"'
-				className="input-quote"
-				onChange={this.handleInput('title')}
-			/>
-		);
+    const quoteSection = (
+      <input
+        type="text"
+        placeholder='"Quote"'
+        className="input-quote"
+        onChange={this.handleInput('title')}
+      />
+    );
 
-		const textSection = (
-			<textarea
-				cols="30"
-				rows="4"
-				placeholder={placeholderText}
-				className="input-body"
-				elastic="true"
-				onChange={this.handleInput('text')}
-			></textarea>
-		);
+    const textSection = (
+      <textarea
+        cols="30"
+        rows="4"
+        placeholder={placeholderText}
+        className="input-body"
+        elastic="true"
+        onChange={this.handleInput('text')}
+      ></textarea>
+    );
 
-		const tagSection = (
+    const tagSection = (
       <div
         className="tag-section"
         onClick={() => {
