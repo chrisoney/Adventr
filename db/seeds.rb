@@ -10,7 +10,7 @@
 # Quest.destroy_all
 # Like.destroy_all
 # Follow.destroy_all
-# Tag.destroy_all
+Tag.destroy_all
 # TagJoin.destroy_all
 # Reblog.destroy_all
 
@@ -35,23 +35,23 @@
 
 # New tags
 
-# Tag.create(tag_name: "Warriors")
-# Tag.create(tag_name: "Clerics")
-Tag.create(tag_name: "Rogues")
-# Tag.create(tag_name: "Rangers")
-# Tag.create(tag_name: "Warlocks")
-# Tag.create(tag_name: "Wizards")
-# Tag.create(tag_name: "Sorcerers")
-# Tag.create(tag_name: "Goblins")
-# Tag.create(tag_name: "Orcs")
-# Tag.create(tag_name: "Slimes")
-# Tag.create(tag_name: "Dragons")
-# Tag.create(tag_name: "Gold Rank")
-# Tag.create(tag_name: "Silver Rank")
-# Tag.create(tag_name: "Bronze Rank")
-# Tag.create(tag_name: "Porcelain Rank")
-# Tag.create(tag_name: "Iron Rank")
-# tag1 = Tag.create(tag_name: 'Diamond Rank')
+Tag.create(tag_name: "warriors")
+Tag.create(tag_name: "clerics")
+Tag.create(tag_name: "rogues")
+Tag.create(tag_name: "rangers")
+Tag.create(tag_name: "warlocks")
+Tag.create(tag_name: "wizards")
+Tag.create(tag_name: "sorcerers")
+Tag.create(tag_name: "goblins")
+Tag.create(tag_name: "orcs")
+Tag.create(tag_name: "slimes")
+Tag.create(tag_name: "dragons")
+Tag.create(tag_name: "gold rank")
+Tag.create(tag_name: "silver rank")
+Tag.create(tag_name: "bronze rank")
+Tag.create(tag_name: "porcelain rank")
+Tag.create(tag_name: "iron rank")
+Tag.create(tag_name: 'diamond rank')
 # tag = Tag.find(8)
 
 # user = User.find(15)
@@ -59,5 +59,3 @@ Tag.create(tag_name: "Rogues")
 
 # user.tags << tag
 # user7.tags << tag2
-
-# user = User.create(username: "creating a random user", password: "hunter12", email: "randomuser@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/paladin.jpg");

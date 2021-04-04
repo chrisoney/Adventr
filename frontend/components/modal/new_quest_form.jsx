@@ -28,22 +28,24 @@ class NewQuestForm extends React.Component {
 
   createTag(e) {
     if (e.key === 'Enter' && e.target.value !== '') {
-      const tag = [e.target.value];
-      this.setState({ tags: this.state.tags.concat(tag) });
-      // console.log(e.target);
-      const newDiv = document.createElement('div');
-      newDiv.classList.add('enteredTag');
-      newDiv.innerHTML = `#${e.target.value}`;
-      newDiv.addEventListener('click', (e) => {
-        const tagToDelete = e.target.innerHTML.slice(1);
-        const index = this.state.tags.indexOf(tagToDelete);
-        const newTagArray = this.state.tags
-          .slice(0, index)
-          .concat(this.state.tags.slice(index + 1, this.state.tags.length));
-        this.setState({ tags: newTagArray });
-        e.target.remove();
-      });
-      e.target.parentElement.insertBefore(newDiv, e.target);
+      const tag = e.target.value.toLowerCase();
+      if (this.state.tags.indexOf(tag) === -1) {
+        this.setState({ tags: this.state.tags.concat([tag]) });
+        // console.log(e.target);
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('enteredTag');
+        newDiv.innerHTML = `#${tag}`;
+        newDiv.addEventListener('click', (e) => {
+          const tagToDelete = e.target.innerHTML.slice(1);
+          const index = this.state.tags.indexOf(tagToDelete);
+          const newTagArray = this.state.tags
+            .slice(0, index)
+            .concat(this.state.tags.slice(index + 1, this.state.tags.length));
+          this.setState({ tags: newTagArray });
+          e.target.remove();
+        });
+        e.target.parentElement.insertBefore(newDiv, e.target);
+      }
       e.target.value = null;
     } else if (
       e.key === 'Backspace' &&

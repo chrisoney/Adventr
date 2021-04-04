@@ -19,7 +19,6 @@ class DashBoard extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.quests.length !== prevProps.quests.length) {
-      console.log('hello');
       this.props.fetchAllQuests();
     }
   }
