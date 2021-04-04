@@ -13,14 +13,17 @@ class Explore extends React.Component {
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
     this.handleTagFollow = this.handleTagFollow.bind(this);
     this.handleCurrTagCycle = this.handleCurrTagCycle.bind(this);
+    this.toggleFollowed = this.toggleFollowed.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllTags().then(() => {
-      this.props.fetchAllFollows().then(() => {
-        this.props.fetchAllLikes().then(() => {
-          this.props.fetchAllQuests().then(() => {
-            this.setState({ loading: false });
+      this.props.fetchAllUsers().then(() => {
+        this.props.fetchAllFollows().then(() => {
+          this.props.fetchAllLikes().then(() => {
+            this.props.fetchAllQuests().then(() => {
+              this.setState({ loading: false });
+            });
           });
         });
       });
@@ -74,7 +77,20 @@ class Explore extends React.Component {
     }
   }
 
+  toggleFollowed(e, followed, userId) {
+    e.preventDefault();
+    if (followed) {
+      this.props.unfollowUser(userId);
+    } else {
+      this.props.followUser(userId);
+    }
+  }
+
   render() {
+    const { users, follows } = this.props;
+    const followRecs = [];
+    const followIds = follows.map((follow) => follow.user_id);
+
     if (this.state.loading) {
       return <Loading background={'explore-container'} />;
     }
@@ -207,11 +223,49 @@ class Explore extends React.Component {
       );
     });
     let newFavTagIdx = this.state.currentFavTagIdx;
-    // this.state.currentFavTagIdx % allCurrentTagElements.length;
+
     const displayCurrentTagElements = allCurrentTagElements.slice(
       newFavTagIdx,
       newFavTagIdx + 4
     );
+
+    // User recommendations
+    const followRecCreate = (user) => {
+      let notFollowed = !followIds.includes(user.id);
+      return (
+        <li className="suggested-guild-content-container" key={user.id}>
+          <div className="user-attributes">
+            <img src={user.avatar} className="guild-rec-avatar" />
+            <div className="guild-rec-details">
+              <span className="guild-rec-username">{user.username}</span>
+              <span className="guild-rec-guildname">
+                {user.guildname || user.username}
+              </span>
+            </div>
+          </div>
+          <div className="follow-rec-button-container">
+            <div
+              onClick={(e) => this.toggleFollowed(e, !notFollowed, user.id)}
+              className={`${
+                notFollowed ? 'un' : ''
+              }follow-button follow-rec-button`}
+            >
+              {notFollowed ? 'Follow' : 'Unfollow'}
+            </div>
+          </div>
+        </li>
+      );
+    };
+
+    for (let i = 0; i < users.length; i++) {
+      const user = users[i];
+      if (user.id !== currentUser.id && !followIds.includes(user.id)) {
+        const newFollowRec = followRecCreate(user);
+        followRecs.push(newFollowRec);
+      }
+      if (followRecs.length === 4) break;
+    }
+
     return (
       <div className="explore-container">
         <div className="explore">
@@ -248,20 +302,19 @@ class Explore extends React.Component {
                 <div className="suggested-guilds-title">Suggested Guilds</div>
               </div>
               <div className="suggested-guilds-container">
-                <div className="suggested-guild-content-container">
+                {/* <div className="suggested-guild-content-container">
                   <div className="user-attributes">
                     <img src={newTagPictures[0]} className="guild-rec-avatar" />
                     <div className="guild-rec-details">
                       <span className="guild-rec-username">Test Username</span>
-                      <span className="guild-rec-guildname">
-                        Test Guild
-                      </span>
+                      <span className="guild-rec-guildname">Test Guild</span>
                     </div>
                   </div>
                   <div className="follow-rec-button-container">
                     <div className={`follow-rec-button`}>Follow</div>
                   </div>
-                </div>
+                </div> */}
+                {followRecs}
               </div>
               <div className="suggested-guilds-button">Show More Guilds</div>
             </div>

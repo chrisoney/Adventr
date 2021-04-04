@@ -23,14 +23,6 @@ class DashBoard extends React.Component {
     }
   }
 
-  // testing() {
-  //   const formData = new FormData();
-  //   formData.append('tag[tag_name]', 'Testing6');
-  //   this.props.createTag(formData).then((data) => {
-  //     console.log(data.tag);
-  //   });
-  // }
-
   toggleFollowed(e, followed, userId) {
     e.preventDefault();
     if (followed) {
