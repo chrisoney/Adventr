@@ -2,11 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { openModal2, closeModal2 } from '../../actions/modal_actions';
-import { Link } from 'react-router-dom';
 
 class UserDropdown extends React.Component {
   constructor(props) {
     super(props);
+    this.logutActions = this.logoutActions.bind(this);
+  }
+
+  logoutActions(e) {
+    e.stopPropagation();
+    this.props.logout();
+    this.props.closeModal2();
   }
 
   render() {
@@ -14,7 +20,7 @@ class UserDropdown extends React.Component {
       <>
         <div className="user-dropdown-header">
           <div className="header-title">Account</div>
-          <div className="header-button" onClick={this.props.logout}>
+          <div className="header-button" onClick={(e) => this.logoutActions(e)}>
             Log out
           </div>
         </div>

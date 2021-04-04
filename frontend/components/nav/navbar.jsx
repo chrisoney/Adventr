@@ -178,10 +178,11 @@ class Navbar extends React.Component {
               </Link> */}
               {/* // No livechat yet
               <span className="fas fa-comment" title="Chat"></span> */}
+              {/* // No need for logout button?
               <span
                 onClick={this.props.logout}
                 className="fas fa-sign-out-alt nav-link"
-              ></span>
+              ></span> */}
               <div className="nav-user-container">
                 <span
                   className={`fas fa-user nav-link 
