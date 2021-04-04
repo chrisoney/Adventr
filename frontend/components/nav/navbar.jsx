@@ -19,7 +19,10 @@ class Navbar extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (!this.props.isModalOpen) {
+    if (
+      !this.props.isModalOpen &&
+      document.querySelector('.user-menu-button')
+    ) {
       document.querySelector('.user-menu-button').classList.remove('menu-open');
     }
   }
