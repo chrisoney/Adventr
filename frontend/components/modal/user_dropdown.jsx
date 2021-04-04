@@ -24,14 +24,14 @@ class UserDropdown extends React.Component {
               <span className="fas fa-heart user-dropdown-icon"></span>
               <span className="panel-text">Likes</span>
             </div>
-            <div className="panel-count"></div>
+            <div className="panel-count">{this.props.likes}</div>
           </div>
           <div className="follow-panel">
             <div className="panel-left">
               <span className="fas fa-user-friends user-dropdown-icon"></span>
               <span className="panel-text">Following</span>
             </div>
-            <div className="panel-count"></div>
+            <div className="panel-count">{this.props.followings}</div>
           </div>
           <div className="settings-panel">
             <span className="fas fa-cogs user-dropdown-icon"></span>
@@ -53,8 +53,8 @@ const mapStateToProps = (state, ownProps) => {
   let currentUser = state.session.currentUser;
   return {
     currentUser: currentUser,
-    likes: currentUser.likes,
-    follows: currentUser.follows,
+    likes: currentUser.likedQuests.length,
+    followings: currentUser.followed_users.length,
   };
 };
 
