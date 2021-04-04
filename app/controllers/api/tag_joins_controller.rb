@@ -9,7 +9,6 @@ class Api::TagJoinsController < ApplicationController
   end
 
   def create
-    debugger
     @tag_join = TagJoin.new(tag_joins_params)
     if @tag_join.save 
       @taggable = @tag_join.taggable

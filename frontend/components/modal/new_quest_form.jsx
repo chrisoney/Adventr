@@ -26,7 +26,7 @@ class NewQuestForm extends React.Component {
     this.props.fetchAllTags();
   }
 
-	createTag(e) {
+  createTag(e) {
 		if (e.key === 'Enter') {
 			const tag = [e.target.value];
       this.setState({ tags: this.state.tags.concat(tag) });
@@ -36,7 +36,11 @@ class NewQuestForm extends React.Component {
       newDiv.innerHTML = `#${e.target.value}`;
       e.target.parentElement.insertBefore(newDiv, e.target);
       e.target.value = null;
-		}
+    } else if (e.key === 'Backspace' && this.state.tags.length > 0) {
+      const lastEle = this.state.tags.length - 1;
+      this.setState({ tags: this.state.tags.slice(0, lastEle) })
+      e.target.previousSibling.remove();
+    }
 	}
 
   handleInput(type) {
@@ -100,6 +104,17 @@ class NewQuestForm extends React.Component {
 
   handleSubmit(e) {
     const that = this;
+    const tagInput = document.getElementById('tagInput');
+    if (tagInput.value !== '') {
+      const tag = [tagInput.value];
+      this.setState({ tags: this.state.tags.concat(tag) });
+      // console.log(tagInput);
+      const newDiv = document.createElement('div');
+      newDiv.classList.add('enteredTag');
+      newDiv.innerHTML = `#${tagInput.value}`;
+      tagInput.parentElement.insertBefore(newDiv, tagInput);
+      tagInput.value = null;
+    }
     if (this.state.allowSubmit) {
       e.preventDefault();
       this.setState({ allowSubmit: false });
@@ -318,19 +333,21 @@ class NewQuestForm extends React.Component {
 		);
 
 		const tagSection = (
-			<div
-				className="tag-section" onClick={() => {
-					document.getElementById('tagInput').focus();
-					return false;
-				}}>
-				<input
-					id="tagInput"
+      <div
+        className="tag-section"
+        onClick={() => {
+          document.getElementById('tagInput').focus();
+          return false;
+        }}
+      >
+        <input
+          id="tagInput"
           type="text"
           placeholder="#add tags"
           className="tag-input-body"
           elastic="true"
           onChange={this.handleInput('tags')}
-          onKeyPress={(e) => this.createTag(e)}
+          onKeyDown={(e) => this.createTag(e)}
         ></input>
       </div>
     );

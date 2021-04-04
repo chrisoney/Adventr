@@ -20,15 +20,6 @@ class Quest < ApplicationRecord
   has_many :reblogs
   has_many :likes
 
-  has_many :quests_tags,
-    class_name: :QuestsTag,
-    foreign_key: :quest_id,
-    primary_key: :id
-
-  has_many :tags,
-    through: :quests_tags,
-    source: :tag
-
   has_many :tag_joins, as: :taggable
   has_many :tags, through: :tag_joins
 

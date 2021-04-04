@@ -39,7 +39,6 @@ export const deleteQuest = (questId) => {
 };
 
 export const addTagToQuest = (tag_join) => {
-  debugger;
   return $.ajax({
     method: 'POST',
     url: '/api/tag_joins',
