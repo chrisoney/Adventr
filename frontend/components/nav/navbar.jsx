@@ -8,19 +8,25 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       windowSize: 0,
-    }
+    };
     this.userMenuToggle = this.userMenuToggle.bind(this);
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
   }
-  
+
   componentDidMount() {
-    window.addEventListener('resize', this.getWindowDimensions)
+    window.addEventListener('resize', this.getWindowDimensions);
     this.getWindowDimensions();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!this.props.isModalOpen) {
+      document.querySelector('.user-menu-button').classList.remove('menu-open');
+    }
   }
 
   getWindowDimensions() {
     const { innerWidth } = window;
-    this.setState({ windowSize: innerWidth })
+    this.setState({ windowSize: innerWidth });
   }
 
   userMenuToggle(e) {
@@ -29,20 +35,22 @@ class Navbar extends React.Component {
     if (this.props.isModalOpen) {
       document.querySelector('.user-menu-container').classList.add('closing');
       setTimeout(() => {
+        document
+          .querySelector('.user-menu-button')
+          .classList.remove('menu-open');
         this.props.closeModal();
       }, 450);
-    }
-    else {
-      this.props.openModal('usermenu')
+    } else {
+      this.props.openModal('usermenu');
     }
   }
 
   render() {
-    let navbar = (<></>);
-    let otherButton = (<></>);
-    let loginNav = (<></>);
-    let navbarBorder = (<div></div>);
-    if (this.props.location.pathname === '/'){
+    let navbar = <></>;
+    let otherButton = <></>;
+    let loginNav = <></>;
+    let navbarBorder = <div></div>;
+    if (this.props.location.pathname === '/') {
       navbar = (
         <div className="navbar-container splash-nav">
           <div className="left-side">
@@ -98,11 +106,13 @@ class Navbar extends React.Component {
     //   (this.props.location.pathname != '/signup') &&
     //   (this.props.location.pathname != '/')) {
     //   }
-    if (this.props.currentUser && 
-        (this.props.location.pathname != '/login') &&
-        (this.props.location.pathname != '/signup') &&
-        (this.props.location.pathname != '/')) {
-        navbarBorder = (<div className="nav-border"></div>);
+    if (
+      this.props.currentUser &&
+      this.props.location.pathname != '/login' &&
+      this.props.location.pathname != '/signup' &&
+      this.props.location.pathname != '/'
+    ) {
+      navbarBorder = <div className="nav-border"></div>;
       if (this.state.windowSize <= 980) {
         navbar = (
           <div className="navbar-container">
@@ -166,8 +176,7 @@ class Navbar extends React.Component {
               <span
                 onClick={this.props.logout}
                 className="fas fa-sign-out-alt nav-link"
-              >
-              </span>
+              ></span>
               <Link to="/about" className="nav-link">
                 <span
                   className={`fas fa-question-circle ${
