@@ -107,13 +107,11 @@ class Splash extends React.Component {
               <button className="login">Login</button>
             </Link>
           </div>
-          <div className="bottom-section">
-            <div
-              onClick={(e) => this.handleScroll(e, 'splash-2')}
-              className="bottom-text"
-            >
-              What is Adventr?
-            </div>
+          <div
+            className="bottom-section"
+            onClick={(e) => this.handleScroll(e, 'splash-2')}
+          >
+            <div className="bottom-text">What is Adventr?</div>
           </div>
         </div>
         <div className="splash" id="splash-2">
