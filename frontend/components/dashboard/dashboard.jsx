@@ -66,12 +66,12 @@ class DashBoard extends React.Component {
     const followRecCreate = (user) => {
       let notFollowed = !followIds.includes(user.id);
       return (
-        <li className="follow-rec-container" key={user.id}>
+        <li className="suggested-guild-content-container" key={user.id}>
           <div className="user-attributes">
-            <img src={user.avatar} className="follow-rec-avatar" />
-            <div className="follow-rec-details">
-              <span className="follow-rec-username">{user.username}</span>
-              <span className="follow-rec-guildname">
+            <img src={user.avatar} className="guild-rec-avatar" />
+            <div className="guild-rec-details">
+              <span className="guild-rec-username">{user.username}</span>
+              <span className="guild-rec-guildname">
                 {user.guildname || user.username}
               </span>
             </div>
@@ -118,10 +118,10 @@ class DashBoard extends React.Component {
           {questList}
         </div>
         <div className="dashboard-right">
-          <div className="follow-recommendations">
-            <h1 className="follow-rec-title">Check out these guilds</h1>
-            <ul className="follow-recs-list">{followRecs}</ul>
-            <Link to="/explore" className="follow-rec-explore-link">
+          <div className="suggested-guilds">
+            <h1 className="suggested-guilds-title">Check out these guilds</h1>
+            <ul className="suggested-guilds-container">{followRecs}</ul>
+            <Link to="/explore" className="suggested-guilds-explore-link">
               <span className="explore-text">Explore all of Adventr</span>
             </Link>
           </div>
