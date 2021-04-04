@@ -157,6 +157,7 @@ class Navbar extends React.Component {
                 <span
                   className={`fas fa-home ${
                     this.props.location.pathname === '/dashboard'
+                      && this.props.modal2 !== 'user-dropdown'
                       ? 'active'
                       : ''
                   }`}
@@ -181,6 +182,17 @@ class Navbar extends React.Component {
                 onClick={this.props.logout}
                 className="fas fa-sign-out-alt nav-link"
               ></span>
+              <div className="nav-user-container">
+                <span
+                  className={`fas fa-user nav-link 
+                      ${this.props.modal2 === 'user-dropdown'
+                      ? 'active'
+                      : ''
+                  }`}
+                  onClick={() => this.props.openModal2('user-dropdown')}
+                ></span>
+                <Modal2 />
+              </div>
               <Link to="/about" className="nav-link">
                 <span
                   className={`fas fa-question-circle ${
@@ -188,9 +200,6 @@ class Navbar extends React.Component {
                   }`}
                 ></span>
               </Link>
-              {/* // No user dropdown yet */}
-              <span className="fas fa-user"></span>
-              <Modal2 />
               {
                 // No create-new modal yet
                 /* <div

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { openModal2, closeModal2 } from '../../actions/modal_actions';
 // import AvatarContainer from './avatar_container';
+import UserDropdown from './user_dropdown';
 
 class Modal2 extends React.Component {
   render() {
@@ -13,10 +14,9 @@ class Modal2 extends React.Component {
     let container;
     let component;
     let onClickEffect;
-
     switch (modal2) {
       case 'user-dropdown':
-        component = <User_Dropdown />;
+        component = <UserDropdown />;
         background = 'user-dropdown-background';
         container = 'user-dropdown-container';
         onClickEffect = closeModal2;

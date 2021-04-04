@@ -111,6 +111,28 @@
 		color: white;
 	}
 
+	.nav-user-container {
+		position: relative;
+		
+		.user-dropdown-background{
+			position: absolute;
+			left: -100vw;
+			right: -10vw;
+			top: -10vh;
+			bottom: -100vh;
+			z-index: 1;
+		}
+		.user-dropdown-container {
+			width: 240px;
+			z-index: 2;
+			background-color: white;
+			color: black;
+			position: absolute;
+			top: 39px;
+			right: -40px;
+		}
+	}
+
 	.create-new-container {
 		cursor: pointer;
 		background-color: #8ba039;

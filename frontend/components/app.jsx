@@ -17,7 +17,6 @@ import LikesContainer from './likes/likes_list_container'
 const App = () => (
   <div className="app">
     <Modal />
-    <Modal2 />
     <Route path="/" component={NavbarContainer} />
     <Route exact path="/" component={Splash} />
     <Switch>
