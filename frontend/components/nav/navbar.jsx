@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal2 from '../modal/modal2';
 // import NavbarDropdown from './navbar_dropdown';
 // import { openModal } from '../../actions/modal_actions';
 
@@ -187,8 +188,9 @@ class Navbar extends React.Component {
                   }`}
                 ></span>
               </Link>
-              {/* // No user dropdown yet
-              <span className="fas fa-user"></span> */}
+              {/* // No user dropdown yet */}
+              <span className="fas fa-user"></span>
+              <Modal2 />
               {
                 // No create-new modal yet
                 /* <div
