@@ -39,11 +39,11 @@ export const deleteQuest = (questId) => (dispatch) => {
   return QuestApiUtils.deleteQuest(questId).then((quest) => dispatch(removeQuest(quest.id)))
 }
 
-export const addTagToQuest = (quests_tag) => (dispatch) => {
-  QuestApiUtils.addTagToQuest(quests_tag);
+export const addTagToQuest = (tagJoin) => (dispatch) => {
+  QuestApiUtils.addTagToQuest(tagJoin);
 };
-export const removeTagFromQuest = (tagId) => (dispatch) => {
-  QuestApiUtils.removeTagFromQuest(tagId);
+export const removeTagFromQuest = (tagJoinId) => (dispatch) => {
+  QuestApiUtils.removeTagFromQuest(tagJoinId);
 };
 
 

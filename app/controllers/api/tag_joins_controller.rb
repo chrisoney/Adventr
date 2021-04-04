@@ -9,6 +9,7 @@ class Api::TagJoinsController < ApplicationController
   end
 
   def create
+    debugger
     @tag_join = TagJoin.new(tag_joins_params)
     if @tag_join.save 
       @taggable = @tag_join.taggable
@@ -22,11 +23,6 @@ class Api::TagJoinsController < ApplicationController
 
 
   def destroy
-    # @tag_join = TagJoin.where(tag_joins_params)
-    # @taggable = @tag_join.taggable
-    # @tag = @tag_join.tag
-    # @tag_join.destroy
-    # render :show
     @tag_join = TagJoin.find(params[:id])
     @tag_join.destroy
     render :show
