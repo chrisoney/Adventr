@@ -164,16 +164,18 @@ class NewQuestForm extends React.Component {
             if (!tagExists) {
               const tagFormData = new FormData();
               tagFormData.append('tag[tag_name]', newTag);
-              this.props.createTag(tagFormData).then((tagData) => {
-                const createdTagId = tagData.tag.id;
-                const questTagForm = new FormData();
-                questTagForm.append('tag_join[taggable_id]', questId);
-                questTagForm.append('tag_join[taggable_type]', 'Quest');
-                questTagForm.append('tag_join[tag_id]', createdTagId);
-                const order = x + 1;
-                questTagForm.append('tag_join[order]', order);
-                this.props.addTagToQuest(questTagForm);
-              });
+              this.props
+                .createTag(tagFormData)
+                .then((tagData) => {
+                  const createdTagId = tagData.tag.id;
+                  const questTagForm = new FormData();
+                  questTagForm.append('tag_join[taggable_id]', questId);
+                  questTagForm.append('tag_join[taggable_type]', 'Quest');
+                  questTagForm.append('tag_join[tag_id]', createdTagId);
+                  const order = x + 1;
+                  questTagForm.append('tag_join[order]', order);
+                  this.props.addTagToQuest(questTagForm);
+                })
             }
           }
         }

@@ -64,15 +64,12 @@ class User < ApplicationRecord
   #   through: :users_tags,
   #   source: :tag
 
-  has_many :tag_joins,
-    as: :taggable
-  has_many :tags,
+  has_many :tag_joins, 
+    as: :taggable,
+    dependent: :destroy
+  has_many :tags, 
     through: :tag_joins
 
-
-
-  
-  
   after_initialize :ensure_session_token
 
   def ensure_session_token

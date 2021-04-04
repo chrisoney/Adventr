@@ -20,7 +20,9 @@ class Quest < ApplicationRecord
   has_many :reblogs
   has_many :likes
 
-  has_many :tag_joins, as: :taggable
+  has_many :tag_joins,
+    as: :taggable,
+    dependent: :destroy
   has_many :tags, through: :tag_joins
 
   has_many_attached :images

@@ -11,12 +11,12 @@
 class Tag < ApplicationRecord
 
   validates :tag_name, presence: true, uniqueness: true
-
-  # attr_accessible :tag_name
-  belongs_to :taggable, 
-    polymorphic: true
-
+  
   has_many :tag_joins
+
+  # has_many :taggable, 
+  #   through: :tag_joins
+
 
   has_many :quests, 
     through: :tag_joins, 
@@ -32,23 +32,6 @@ class Tag < ApplicationRecord
     through: :tag_joins, 
     source: :taggable, 
     source_type: :Reblog
-  
-  # has_many :quests_tags,
-  #   class_name: :QuestsTag,
-  #   foreign_key: :tag_id,
-  #   primary_key: :id
 
-  # has_many :quests,
-  #   through: :quests_tags,
-  #   source: :quest
-
-  # has_many :users_tags,
-  #   class_name: :UsersTag,
-  #   foreign_key: :tag_id,
-  #   primary_key: :id
-
-  # has_many :users,
-  #   through: :users_tags,
-  #   source: :user
 
 end

@@ -11,6 +11,7 @@
 # Like.destroy_all
 # Follow.destroy_all
 # Tag.destroy_all
+# TagJoin.destroy_all
 # Reblog.destroy_all
 
 
@@ -36,7 +37,7 @@
 
 # Tag.create(tag_name: "Warriors")
 # Tag.create(tag_name: "Clerics")
-# Tag.create(tag_name: "Rogues")
+Tag.create(tag_name: "Rogues")
 # Tag.create(tag_name: "Rangers")
 # Tag.create(tag_name: "Warlocks")
 # Tag.create(tag_name: "Wizards")
@@ -53,8 +54,10 @@
 # tag1 = Tag.create(tag_name: 'Diamond Rank')
 # tag = Tag.find(8)
 
-user = User.find(15)
-tag = Tag.find(3)
+# user = User.find(15)
+# tag = Tag.find(3)
 
-user.tags << tag
+# user.tags << tag
 # user7.tags << tag2
+
+# user = User.create(username: "creating a random user", password: "hunter12", email: "randomuser@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/paladin.jpg");
