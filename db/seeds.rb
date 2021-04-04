@@ -6,13 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
-# Quest.destroy_all
-# Like.destroy_all
-# Follow.destroy_all
-Tag.destroy_all
 # TagJoin.destroy_all
+# Follow.destroy_all
+# Like.destroy_all
 # Reblog.destroy_all
+# Quest.destroy_all
+# User.destroy_all
+# Tag.destroy_all
+
+# New tags
+# tags = ["abjuration","academy","acid","adamantine","adventure","ancients","angels","arcane focus","aristocrats","artifacts","assassins","axes","barbarians","beasts","blacksmithing","blood magic","blood oath","books","bows","bronze rank","caravans","cave","celestials","chaotic","clerics","common","commoners","conjuration","contracts","copper","creatures","cultists","daggers","dark lord","demons","devils","diamond rank","dire wolves","divination","djinn","doppelgangers","dragonborn","dragons","drakes","drow","druids","duergar","dungeons","dwarves","earth","elves","enchantment","ents","evil","evocation","fallen kingdom","fey","fire","fireball","forests","genasi","ghosts","gnomes","goblins","goddesses","gods","gold","gold rank","goliaths","good","grimoires","guilds","halflings","hammers","humans","hunt","ice","illusion","infernals","kami","king","kingdom","lawful","legendary","leonin","liches","lightning","magic","magic items","magic staff","magic sword","magic wand","magical","magical creatures","merchants","monks","murder","mystery","mythic","mythril","necromancy","neutral","nobles","obsidian rank","orcs","outer planes","outsider","pit fiend","plane of existence","platinum","platinum rank","plot","polearms","political intrigue","porcelain rank","power","precursors","prince","princess","pseudodragons","queen","rangers","rare","rogues","satyr","scholars","silver","silver rank","slimes","sorcerers","sorcery","spell components","spellbooks","spys","squire","staffs","steel rank","swords","teleport","tieflings","tomes","transmutation","trolls","uncommon","undead","unseelie court","vampires","warlocks","warriors","water","wilderness","wind","wizards","wurms"]
+# for tag in tags
+#   Tag.create(tag_name: tag)
+# end
 
 
 # New users
@@ -33,25 +39,7 @@ Tag.destroy_all
 # user2.quests.create(title: "Escort request", text: "From here to Plainsburrow. Silver Rank minimum. Payment on arrival.", quest_type: "text");
 # user1.quests.create(title: "Unidentified dagger",text: "Can anyone determine its value?", quest_type: "image", content_url: "https://adventr-dev.s3-us-west-1.amazonaws.com/SezbQhN.png")
 
-# New tags
 
-Tag.create(tag_name: "warriors")
-Tag.create(tag_name: "clerics")
-Tag.create(tag_name: "rogues")
-Tag.create(tag_name: "rangers")
-Tag.create(tag_name: "warlocks")
-Tag.create(tag_name: "wizards")
-Tag.create(tag_name: "sorcerers")
-Tag.create(tag_name: "goblins")
-Tag.create(tag_name: "orcs")
-Tag.create(tag_name: "slimes")
-Tag.create(tag_name: "dragons")
-Tag.create(tag_name: "gold rank")
-Tag.create(tag_name: "silver rank")
-Tag.create(tag_name: "bronze rank")
-Tag.create(tag_name: "porcelain rank")
-Tag.create(tag_name: "iron rank")
-Tag.create(tag_name: 'diamond rank')
 # tag = Tag.find(8)
 
 # user = User.find(15)
