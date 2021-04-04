@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import QuestContainer from '../quests/quest_container'
-import NewQuestCreate from '../quests/new_quest_create'
+import QuestContainer from '../quests/quest_container';
+import NewQuestCreate from '../quests/new_quest_create';
+import GuildRecs from '../lists/guild_recs';
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class DashBoard extends React.Component {
     this.props.fetchAllQuests();
     this.props.fetchAllFollows();
     this.props.fetchAllLikes();
-    this.props.fetchAllUsers();
+    // this.props.fetchAllUsers();
   }
 
   componentDidUpdate(prevProps) {
@@ -34,7 +35,6 @@ class DashBoard extends React.Component {
 
   render() {
     const { quests, follows, users, currentUser } = this.props;
-
     let questList = [];
     let randomQuest;
     const followRecs = [];
@@ -63,41 +63,41 @@ class DashBoard extends React.Component {
     // Follow recommendations
 
     // Create a follow rec
-    const followRecCreate = (user) => {
-      let notFollowed = !followIds.includes(user.id);
-      return (
-        <li className="suggested-guild-content-container" key={user.id}>
-          <div className="user-attributes">
-            <img src={user.avatar} className="guild-rec-avatar" />
-            <div className="guild-rec-details">
-              <span className="guild-rec-username">{user.username}</span>
-              <span className="guild-rec-guildname">
-                {user.guildname || user.username}
-              </span>
-            </div>
-          </div>
-          <div className="follow-rec-button-container">
-            <div
-              onClick={(e) => this.toggleFollowed(e, !notFollowed, user.id)}
-              className={`${
-                notFollowed ? 'un' : ''
-              }follow-button follow-rec-button`}
-            >
-              {notFollowed ? 'Follow' : 'Unfollow'}
-            </div>
-          </div>
-        </li>
-      );
-    };
+    // const followRecCreate = (user) => {
+    //   let notFollowed = !followIds.includes(user.id);
+    //   return (
+    //     <li className="suggested-guild-content-container" key={user.id}>
+    //       <div className="user-attributes">
+    //         <img src={user.avatar} className="guild-rec-avatar" />
+    //         <div className="guild-rec-details">
+    //           <span className="guild-rec-username">{user.username}</span>
+    //           <span className="guild-rec-guildname">
+    //             {user.guildname || user.username}
+    //           </span>
+    //         </div>
+    //       </div>
+    //       <div className="follow-rec-button-container">
+    //         <div
+    //           onClick={(e) => this.toggleFollowed(e, !notFollowed, user.id)}
+    //           className={`${
+    //             notFollowed ? 'un' : ''
+    //           }follow-button follow-rec-button`}
+    //         >
+    //           {notFollowed ? 'Follow' : 'Unfollow'}
+    //         </div>
+    //       </div>
+    //     </li>
+    //   );
+    // };
 
-    for (let i = 0; i < users.length; i++) {
-      const user = users[i];
-      if (user.id !== currentUser.id && !followIds.includes(user.id)) {
-        const newFollowRec = followRecCreate(user);
-        followRecs.push(newFollowRec);
-      }
-      if (followRecs.length === 4) break;
-    }
+    // for (let i = 0; i < users.length; i++) {
+    //   const user = users[i];
+    //   if (user.id !== currentUser.id && !followIds.includes(user.id)) {
+    //     const newFollowRec = followRecCreate(user);
+    //     followRecs.push(newFollowRec);
+    //   }
+    //   if (followRecs.length === 4) break;
+    // }
 
     // Pick a random random quest
 
@@ -118,13 +118,14 @@ class DashBoard extends React.Component {
           {questList}
         </div>
         <div className="dashboard-right">
-          <div className="suggested-guilds">
+          {/* <div className="suggested-guilds">
             <h1 className="suggested-guilds-title">Check out these guilds</h1>
             <ul className="suggested-guilds-container">{followRecs}</ul>
             <Link to="/explore" className="suggested-guilds-explore-link">
               <span className="explore-text">Explore all of Adventr</span>
             </Link>
-          </div>
+          </div> */}
+          <GuildRecs />
           <div className="suggested-recommendation">
             <div className="suggested-title">Sanctioned Job</div>
             {randomQuest}

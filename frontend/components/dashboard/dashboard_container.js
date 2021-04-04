@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import Dashboard from "./dashboard";
 import { openModal } from "../../actions/modal_actions";
-import { fetchAllUsers } from '../../actions/user_actions';
+// import { fetchAllUsers } from '../../actions/user_actions';
 import { fetchAllQuests } from "../../actions/quest_actions"
 import {
   fetchAllFollows,
@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     quests: Object.values(state.entities.quests),
     follows: Object.values(state.entities.follows),
-    users: Object.values(state.entities.users),
+    // users: Object.values(state.entities.users),
   };
 };
 
@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllQuests: () => dispatch(fetchAllQuests()),
   fetchAllFollows: () => dispatch(fetchAllFollows()),
   fetchAllLikes: () => dispatch(fetchAllLikes()),
-  fetchAllUsers: () => dispatch(fetchAllUsers()),
+  // fetchAllUsers: () => dispatch(fetchAllUsers()),
   followUser: (userId) => dispatch(followUser(userId)),
   unfollowUser: (userId) => dispatch(unfollowUser(userId)),
 });

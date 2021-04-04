@@ -298,9 +298,7 @@ class Explore extends React.Component {
               </div>
             </div>
             <div className="suggested-guilds">
-              <div className="suggested-guilds-header">
-                <div className="suggested-guilds-title">Suggested Guilds</div>
-              </div>
+              <div className="suggested-guilds-title">Suggested Guilds</div>
               <div className="suggested-guilds-container">
                 {/* <div className="suggested-guild-content-container">
                   <div className="user-attributes">
