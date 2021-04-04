@@ -14,33 +14,33 @@ class UserDropdown extends React.Component {
       <>
         <div className="user-dropdown-header">
           <div className="header-title">Account</div>
-          <div className="header-logout" onClick={this.props.logout}>
+          <div className="header-button" onClick={this.props.logout}>
             Log out
           </div>
         </div>
         <div className="user-dropdown-top-section">
-          <div className="like-panel">
+          <div className="panel-container count-container">
             <div className="panel-left">
               <span className="fas fa-heart user-dropdown-icon"></span>
               <span className="panel-text">Likes</span>
             </div>
             <div className="panel-count">{this.props.likes}</div>
           </div>
-          <div className="follow-panel">
+          <div className="panel-container count-container">
             <div className="panel-left">
               <span className="fas fa-user-friends user-dropdown-icon"></span>
               <span className="panel-text">Following</span>
             </div>
             <div className="panel-count">{this.props.followings}</div>
           </div>
-          <div className="settings-panel">
+          <div className="panel-container">
             <span className="fas fa-cogs user-dropdown-icon"></span>
             <span className="panel-text">Settings</span>
           </div>
         </div>
-        <div className="user-dropdown-middle-header">
+        <div className="user-dropdown-header">
           <div className="header-title">Guild</div>
-          <div className="header-logout">Delete</div>
+          <div className="header-button">Delete</div>
         </div>
         <div className="user-dropdown-bottom-section"></div>
         <div className="user-dropdown-footer"></div>
