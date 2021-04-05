@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, openModal2, closeModal } from '../../actions/modal_actions';
-import UserPage from './user_page'
-import UserMenu from './user_menu'
-import NewQuestContainer from './new_quest_container'
-import AvatarContainer from './avatar_container'
-
+import UserPage from './user_page';
+import UserMenu from './user_menu';
+import NewQuestContainer from './new_quest_container';
+import AvatarContainer from './avatar_container';
+import NewQuestSelector from './new_quest_selector';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -67,6 +67,12 @@ class Modal extends React.Component {
         background = 'user-page-background';
         container = 'user-page-container';
         onClickEffect = userPageClose;
+        break;
+      case 'new-quest-selector':
+        component = <NewQuestSelector />;
+        background = 'quest-selector-background';
+        container = 'quest-selector-container';
+        onClickEffect = closeModal;
         break;
       default:
         return null;
