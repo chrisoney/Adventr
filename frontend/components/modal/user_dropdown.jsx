@@ -33,13 +33,13 @@ class UserDropdown extends React.Component {
             </div>
             <div className="panel-count">{this.props.likes}</div>
           </Link>
-          <div className="panel-container count-container">
+          <Link to='/follows' className="panel-container count-container">
             <div className="panel-left">
               <span className="fas fa-user-friends user-dropdown-icon"></span>
               <span className="panel-text">Following</span>
             </div>
             <div className="panel-count">{this.props.followings}</div>
-          </div>
+          </Link>
           <div className="panel-container">
             <span className="fas fa-cogs user-dropdown-icon"></span>
             <span className="panel-text">Settings</span>
