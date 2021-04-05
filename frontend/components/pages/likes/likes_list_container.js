@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import LikesList from './likes_list';
-import { openModal } from '../../../actions/modal_actions';
+// import { openModal } from '../../../actions/modal_actions';
 import { fetchAllQuests } from '../../../actions/quest_actions';
-import { fetchAllFollows } from '../../../actions/follow_actions';
+// import { fetchAllFollows } from '../../../actions/follow_actions';
 import { fetchAllLikes } from '../../../actions/like_actions';
 
 const mapStateToProps = (state) => {
@@ -14,9 +14,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  openModal: (modal) => dispatch(openModal(modal)),
   fetchAllQuests: () => dispatch(fetchAllQuests()),
-  fetchAllFollows: () => dispatch(fetchAllFollows()),
   fetchAllLikes: () => dispatch(fetchAllLikes()),
 });
 

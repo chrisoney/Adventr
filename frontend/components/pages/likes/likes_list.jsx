@@ -1,6 +1,6 @@
 import React from "react";
-import QuestContainer from '../quests/quest_container';
-import GuildRecs from '../lists/guild_recs';
+import QuestContainer from '../../quests/quest_container';
+import GuildRecs from '../../sidebar/guild_recs';
 
 class LikesList extends React.Component {
   constructor(props) {
@@ -9,15 +9,14 @@ class LikesList extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllQuests();
-    this.props.fetchAllFollows();
     this.props.fetchAllLikes();
   }
 
   componentDidUpdate(prevProps){
-		if (this.props.quests.length !== prevProps.quests.length){
-			this.props.fetchAllQuests();
-		}
-	}
+    // if (this.props.quests.length !== prevProps.quests.length){
+    // 	this.props.fetchAllQuests();
+    // }
+  }
 
   render() {
     const { quests, likes, currentUser } = this.props;

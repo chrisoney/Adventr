@@ -22,22 +22,29 @@ class Quest extends React.Component {
     // }
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevProps) {
     if (
-      (this.props.author && !prevState.author) ||
-      this.props.author !== prevState.author
+      (this.props.author && !prevProps.author) ||
+      this.props.author !== prevProps.author
     ) {
       this.setState({ author: this.props.author });
     }
 
-    if (this.props.followed !== prevState.followed) {
+    if (this.props.followed !== prevProps.followed) {
       this.setState({ followed: this.props.followed });
     }
-
-    if (this.props.liked !== prevState.liked) {
+    if (this.props.liked !== prevProps.liked) {
       this.setState({ liked: this.props.liked });
     }
+    if (this.props.quest.id !== prevProps.quest.id) {
+      this.setState({
+        liked: this.props.liked,
+        followed: this.props.followed,
+        visible: false
+      });
+    }
   }
+
 
   toggleLiked(e) {
     e.preventDefault();

@@ -10,9 +10,14 @@ import { deleteQuest } from '../../actions/quest_actions'
 const mapStateToProps = (state, ownProps) => {
   let liked = false;
   let followed = false;
-  Object.values(state.entities.likes).forEach((like)=>{
-    if (like.quest_id === ownProps.quest.id) { liked = true};
-  })
+  Object.values(state.entities.likes).forEach((like) => {
+    if (
+      like.quest_id === ownProps.quest.id &&
+      like.user_id === state.session.currentUser.id
+    ) {
+      liked = true;
+    }
+  });
   Object.values(state.entities.follows).forEach((follow)=>{
     if (follow.user_id === ownProps.quest.user_id && follow.follower_id === state.session.currentUser.id) {followed = true} ;
   })
