@@ -13,6 +13,7 @@ class FollowsList extends React.Component {
     this.props.fetchAllQuests();
     this.props.fetchAllFollows();
   }
+
   toggleFollowed(e, followed, userId) {
     e.preventDefault();
     if (followed) {
@@ -23,6 +24,7 @@ class FollowsList extends React.Component {
   }
 
   render() {
+    const that = this;
     const { currentUser, quests, follows, users } = this.props;
     const followedUsers = [];
     let randomQuest;
@@ -48,7 +50,7 @@ class FollowsList extends React.Component {
       'Nov',
       'Dec',
     ];
-    
+
     function latestQuest(user) {
       const updatedDates = user.quests
         .map((quest) => quest.updated_at)
@@ -80,7 +82,7 @@ class FollowsList extends React.Component {
           <div className="followed-user-right">
             <div className="follow-button-container">
               <div
-                onClick={(e) => this.toggleFollowed(e, !notFollowed, user.id)}
+                onClick={(e) => that.toggleFollowed(e, !notFollowed, user.id)}
                 className="follow-button"
               >
                 {notFollowed ? 'Follow' : 'Unfollow'}
@@ -105,9 +107,7 @@ class FollowsList extends React.Component {
               {followedUsers.length} Following
             </h1>
           </div>
-          <div className="followed-users-list-container">
-            {followedUsers}
-          </div>
+          <div className="followed-users-list-container">{followedUsers}</div>
         </div>
         <div className="dashboard-right">
           <GuildRecs />
