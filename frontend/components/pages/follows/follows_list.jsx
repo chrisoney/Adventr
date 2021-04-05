@@ -35,7 +35,13 @@ class FollowsList extends React.Component {
       }
     }
 
+    function latestQuest(user) {
+      const updatedDates = user.quests.map((quest) => quest.updated_at);
+      console.log(updatedDates);
+    }
+
     function createUserContainer(user) {
+      latestQuest(user);
       let notFollowed = !followIds.includes(user.id);
       return (
         <div key={user.id} className="followed-user-container">

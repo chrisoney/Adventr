@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import QuestContainer from '../quests/quest_container';
 import NewQuestCreate from '../quests/new_quest_create';
-import GuildRecs from '../lists/guild_recs';
+import GuildRecs from '../sidebar/guild_recs';
 
 class DashBoard extends React.Component {
   constructor(props) {

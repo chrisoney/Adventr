@@ -1,7 +1,7 @@
 import React from "react";
 import QuestContainer from '../quests/quest_container';
 import Loading from '../loading/loading';
-import GuildRecs from '../lists/guild_recs';
+import GuildRecs from '../sidebar/guild_recs';
 
 class Explore extends React.Component {
   constructor(props) {

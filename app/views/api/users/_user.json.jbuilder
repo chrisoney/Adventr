@@ -6,6 +6,7 @@ if user.avatar_image.attached?
   json.imageFile2 avatar_image
 end
 
+json.quests user.quests
 json.follows user.follows
 json.tags user.tags
 # json.tags user.tags.each do |tag|
@@ -32,10 +33,11 @@ json.followed_users do
   end
   json.array! followed_user_ids
 end
-json.authored_quests do
-  authored_quests = []
-  user.quests.each do |quest|
-    authored_quests << quest.id
-  end
-  json.array! authored_quests
-end
+# json.authored_quests do
+#   authored_quests = []
+#   user.quests.each do |quest|
+#     authored_quests << quest.id
+#   end
+#   json.array! authored_quests
+# end
+

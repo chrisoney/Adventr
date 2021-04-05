@@ -25,7 +25,10 @@ class User < ApplicationRecord
 
   has_one_attached :avatar_image
   
-  has_many :quests
+  has_many :quests,
+    class_name: :Quest,
+    foreign_key: :user_id
+    
   has_many :likes
 
   has_many :reblogs,
