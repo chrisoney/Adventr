@@ -12,7 +12,8 @@ import ExploreContainer from './explore/explore_container';
 import SettingsContainer from './user/settings_container';
 import GuildpageContainer from './user/guildpage_container';
 import About from './about/about'
-import LikesContainer from './likes/likes_list_container'
+import LikesContainer from './pages/likes/likes_list_container';
+import FollowsContainer from './pages/follows/follows_list_container';
 
 const App = () => (
   <div className="app">
@@ -30,6 +31,7 @@ const App = () => (
       />
       <ProtectedRoute path="/users/:userid/" component={GuildpageContainer} />
       <ProtectedRoute path="/likes" component={LikesContainer} />
+      <ProtectedRoute path="/follows" component={FollowsContainer} />
       <ProtectedRoute path="/about" component={About} />
     </Switch>
   </div>
