@@ -212,6 +212,10 @@ class Explore extends React.Component {
     const allCurrentTagElements = favoritedTags.map((tag) => {
       let pictureIndex = newTagPictureIndex % newTagPictures.length;
       let randNum = Math.floor(Math.random() * 25);
+      let nowDate = new Date();
+      let recentNum = tag.quests.filter((quest) => {
+        return parseInt(quest.updated_at.slice(0, 4)) === nowDate.getFullYear();
+      }).length;
       return (
         <div key={tag.id} className="favorited-tag-container">
           <img
@@ -221,7 +225,7 @@ class Explore extends React.Component {
           <div className="favorited-tag-text-container">
             <div className="favorited-tag-name">#{tag.tag_name}</div>
             <div className="favorited-tag-recent-posts">
-              {randNum} Recent Quests
+              {recentNum} Recent Quest{recentNum !== 1 ? 's'  : ''}
             </div>
           </div>
         </div>
@@ -233,43 +237,6 @@ class Explore extends React.Component {
       newFavTagIdx,
       newFavTagIdx + 4
     );
-
-    // User recommendations
-    const followRecCreate = (user) => {
-      let notFollowed = !followIds.includes(user.id);
-      return (
-        <li className="suggested-guild-content-container" key={user.id}>
-          <div className="user-attributes">
-            <img src={user.avatar} className="guild-rec-avatar" />
-            <div className="guild-rec-details">
-              <span className="guild-rec-username">{user.username}</span>
-              <span className="guild-rec-guildname">
-                {user.guildname || user.username}
-              </span>
-            </div>
-          </div>
-          <div className="follow-rec-button-container">
-            <div
-              onClick={(e) => this.toggleFollowed(e, !notFollowed, user.id)}
-              className={`${
-                notFollowed ? 'un' : ''
-              }follow-button follow-rec-button`}
-            >
-              {notFollowed ? 'Follow' : 'Unfollow'}
-            </div>
-          </div>
-        </li>
-      );
-    };
-
-    for (let i = 0; i < users.length; i++) {
-      const user = users[i];
-      if (user.id !== currentUser.id && !followIds.includes(user.id)) {
-        const newFollowRec = followRecCreate(user);
-        followRecs.push(newFollowRec);
-      }
-      if (followRecs.length === 4) break;
-    }
 
     return (
       <div className="explore-container">
@@ -303,13 +270,6 @@ class Explore extends React.Component {
               </div>
             </div>
             <GuildRecs />
-            {/* <div className="suggested-guilds">
-              <div className="suggested-guilds-title">Suggested Guilds</div>
-              <div className="suggested-guilds-container">
-                {followRecs}
-              </div>
-              <div className="suggested-guilds-button">Show More Guilds</div>
-            </div> */}
           </div>
         </div>
       </div>
