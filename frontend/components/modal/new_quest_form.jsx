@@ -28,7 +28,8 @@ class NewQuestForm extends React.Component {
 
   createTag(e) {
     if (e.key === 'Enter' && e.target.value !== '') {
-      const tag = e.target.value.toLowerCase();
+      let tag = e.target.value.toLowerCase();
+      if (tag[0] === '#') tag = tag.slice(1);
       if (this.state.tags.indexOf(tag) === -1) {
         this.setState({ tags: this.state.tags.concat([tag]) });
         // console.log(e.target);
