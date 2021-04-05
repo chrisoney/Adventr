@@ -14,6 +14,12 @@ class FollowsList extends React.Component {
     this.props.fetchAllFollows();
   }
 
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.follows.length !== prevProps.follows.length) {
+  //     this.setState({ follows: this.props.follows });
+  //   }
+  // }
+
   toggleFollowed(e, followed, userId) {
     e.preventDefault();
     if (followed) {
