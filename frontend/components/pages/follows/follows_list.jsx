@@ -5,6 +5,7 @@ import QuestContainer from '../../quests/quest_container';
 class FollowsList extends React.Component {
   constructor(props) {
     super(props);
+    this.toggleFollowed = this.toggleFollowed.bind(this);
   }
 
   componentDidMount() {
@@ -12,11 +13,20 @@ class FollowsList extends React.Component {
     this.props.fetchAllQuests();
     this.props.fetchAllFollows();
   }
+  toggleFollowed(e, followed, userId) {
+    e.preventDefault();
+    if (followed) {
+      this.props.unfollowUser(userId);
+    } else {
+      this.props.followUser(userId);
+    }
+  }
 
   render() {
     const { currentUser, quests, follows, users } = this.props;
     const followedUsers = [];
     let randomQuest;
+    const followIds = follows.map((follow) => follow.user_id);
 
     for (let x = 0; x < quests.length; x++) {
       let quest = quests[x];
@@ -26,10 +36,31 @@ class FollowsList extends React.Component {
     }
 
     function createUserContainer(user) {
-      return(<div key={user.id}>{user.username}</div>)
+      let notFollowed = !followIds.includes(user.id);
+      return (
+        <div key={user.id} className="followed-user-container">
+          <div className="followed-user-left">
+            <img src={user.avatar} className="followed-user-avatar" />
+            <div className="followed-user-details">
+              <div className="followed-user-username">{user.username}</div>
+              <div className="followed-user-guildname">{user.guild_name}</div>
+            </div>
+          </div>
+          <div className="followed-user-right">
+            <div className="follow-button-container">
+              <div
+                onClick={(e) => this.toggleFollowed(e, !notFollowed, user.id)}
+                className="follow-button"
+              >
+                {notFollowed ? 'Follow' : 'Unfollow'}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
 
-    for (let i = 0; i < users.length; i++){
+    for (let i = 0; i < users.length; i++) {
       let user = users[i];
       if (currentUser.followed_users.includes(user.id)) {
         followedUsers.push(createUserContainer(user));
@@ -39,9 +70,13 @@ class FollowsList extends React.Component {
       <div className="dashboard-container">
         <div className="dashboard-left">
           <div className="dashboard-header">
-            <h1 className="dash-title-following">{followedUsers.length} Following</h1>
+            <h1 className="dash-title-following">
+              {followedUsers.length} Following
+            </h1>
           </div>
-          {followedUsers}
+          <div className="followed-users-list-container">
+            {followedUsers}
+          </div>
         </div>
         <div className="dashboard-right">
           <GuildRecs />

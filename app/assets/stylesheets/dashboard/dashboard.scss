@@ -19,6 +19,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  .followed-users-list-container {
+    display: flex;
+    flex-direction: column;
+    .followed-user-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 93px;
+      .followed-user-left{
+        display: flex;
+        .followed-user-avatar{
+          height: 37px;
+          width: 37px;
+          object-fit: cover;
+        }
+        .followed-user-details{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+      .followed-user-right {
+        .follow-button-container {
+          display: flex;
+          align-items: center;
+          .follow-button {
+            font-weight: 700;
+            color: $sky-blue;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .dashboard-right {
@@ -175,6 +212,11 @@
   justify-self:flex-start;
   .dash-title{
     margin-left: 93px;
+    padding-top: 15px;
+    font-size: 24px;
+    color: white;
+  }
+  .dash-title-following{
     padding-top: 15px;
     font-size: 24px;
     color: white;
