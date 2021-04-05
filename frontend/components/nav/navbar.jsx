@@ -170,7 +170,10 @@ class Navbar extends React.Component {
               <Link to="/explore" className="nav-link">
                 <span
                   className={`fas fa-compass ${
-                    this.props.location.pathname === '/explore' ? 'active' : ''
+                    this.props.location.pathname === '/explore' &&
+                    this.props.modal2 !== 'user-dropdown'
+                      ? 'active'
+                      : ''
                   }`}
                   title="Explore"
                 ></span>

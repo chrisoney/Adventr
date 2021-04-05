@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { Link } from 'react-router-dom';
 import { openModal2, closeModal2 } from '../../actions/modal_actions';
 
 class UserDropdown extends React.Component {
@@ -25,13 +26,13 @@ class UserDropdown extends React.Component {
           </div>
         </div>
         <div className="user-dropdown-top-section">
-          <div className="panel-container count-container">
+          <Link to="/likes" className="panel-container count-container">
             <div className="panel-left">
               <span className="fas fa-heart user-dropdown-icon"></span>
               <span className="panel-text">Likes</span>
             </div>
             <div className="panel-count">{this.props.likes}</div>
-          </div>
+          </Link>
           <div className="panel-container count-container">
             <div className="panel-left">
               <span className="fas fa-user-friends user-dropdown-icon"></span>
