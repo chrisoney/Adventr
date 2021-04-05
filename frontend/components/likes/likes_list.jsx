@@ -1,6 +1,6 @@
 import React from "react";
-import QuestContainer from '../quests/quest_container'
-// import NewQuestCreate from '../quests/new_quest_create'
+import QuestContainer from '../quests/quest_container';
+import GuildRecs from '../lists/guild_recs';
 
 class LikesList extends React.Component {
   constructor(props) {
@@ -34,11 +34,14 @@ class LikesList extends React.Component {
     questList = questList.reverse();
     return (
       <div className="dashboard-container">
-        <div className="dashboard">
+        <div className="dashboard-left">
           <div className="dashboard-header">
-            <h1 className="dash-title">Likes</h1>
+            <h1 className="dash-title">{likes.length} Likes</h1>
           </div>
-          { questList }
+          {questList}
+        </div>
+        <div className="dashboard-right">
+          <GuildRecs />
         </div>
       </div>
     );

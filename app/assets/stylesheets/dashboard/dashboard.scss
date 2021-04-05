@@ -170,27 +170,23 @@
 }
 
 .dashboard-header{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dash-title{
-  padding-top: 15px;
-  font-family: fantasy;
-  font-size: 30px;
-  color: white;
-}
-
-.dash-welcome{
-  font-family: fantasy;
-  font-size: 20px;
-  color:white;
+  justify-self:flex-start;
+  .dash-title{
+    margin-left: 93px;
+    padding-top: 15px;
+    font-size: 24px;
+    color: white;
+  }
 }
 
 @media only screen and (max-width: 980px) {
   .dashboard-left {
     padding-top: 20px;
+    .dashboard-header {
+      margin-left: 0;
+    }
 	}
   .dashboard-right {
     display: none;
