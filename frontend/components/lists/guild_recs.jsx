@@ -12,8 +12,11 @@ import {
 class GuildRecs extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      startRecs: 0,
+    };
     this.toggleFollowed = this.toggleFollowed.bind(this);
+    this.cycleGuilds = this.cycleGuilds.bind(this);
   }
 
   componentDidMount() {
@@ -34,10 +37,19 @@ class GuildRecs extends React.Component {
     }
   }
 
+  cycleGuilds() {
+    let nextIdx;
+    if (this.state.startRecs + 4 > this.props.users.length - 1) {
+      nextIdx = 0;
+    } else {
+      nextIdx = this.state.startRecs + 4;
+    }
+    this.setState({ startRecs: nextIdx });
+  }
+
   render() {
     const { currentUser, currentLocation, follows, users } = this.props;
-    // console.log(follows);
-    const followRecs = [];
+    let followRecs = [];
     const followIds = follows.map((follow) => follow.user_id);
 
     const followRecCreate = (user) => {
@@ -72,7 +84,12 @@ class GuildRecs extends React.Component {
         const newFollowRec = followRecCreate(user);
         followRecs.push(newFollowRec);
       }
-      if (followRecs.length === 4) break;
+    }
+    if (currentLocation === '/explore') {
+      const startIdx = this.state.startRecs;
+      followRecs = followRecs.slice(startIdx, startIdx + 4);
+    } else {
+      followRecs = followRecs.slice(0, 4);
     }
     const title =
       currentLocation === '/explore' ? (
@@ -82,7 +99,9 @@ class GuildRecs extends React.Component {
       );
     const bottomButton =
       currentLocation === '/explore' ? (
-        <div className="suggested-guilds-button">Show More Guilds</div>
+        <div className="suggested-guilds-button" onClick={this.cycleGuilds}>
+          Show More Guilds
+        </div>
       ) : (
         <Link to="/explore" className="suggested-guilds-explore-link">
           <span className="explore-text">Explore all of Adventr</span>

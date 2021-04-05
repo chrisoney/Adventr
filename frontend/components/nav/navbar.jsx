@@ -27,6 +27,10 @@ class Navbar extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getWindowDimensions);
+  }
+
   getWindowDimensions() {
     const { innerWidth } = window;
     this.setState({ windowSize: innerWidth });
@@ -155,8 +159,8 @@ class Navbar extends React.Component {
               <Link to="/dashboard" className="nav-link">
                 <span
                   className={`fas fa-home ${
-                    this.props.location.pathname === '/dashboard'
-                      && this.props.modal2 !== 'user-dropdown'
+                    this.props.location.pathname === '/dashboard' &&
+                    this.props.modal2 !== 'user-dropdown'
                       ? 'active'
                       : ''
                   }`}
@@ -185,10 +189,7 @@ class Navbar extends React.Component {
               <div className="nav-user-container">
                 <span
                   className={`fas fa-user nav-link 
-                      ${this.props.modal2 === 'user-dropdown'
-                      ? 'active'
-                      : ''
-                  }`}
+                      ${this.props.modal2 === 'user-dropdown' ? 'active' : ''}`}
                   onClick={() => this.props.openModal2('user-dropdown')}
                 ></span>
                 <Modal2 />

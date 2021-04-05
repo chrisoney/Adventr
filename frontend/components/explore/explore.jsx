@@ -1,6 +1,7 @@
 import React from "react";
 import QuestContainer from '../quests/quest_container';
 import Loading from '../loading/loading';
+import GuildRecs from '../lists/guild_recs';
 
 class Explore extends React.Component {
   constructor(props) {
@@ -44,6 +45,10 @@ class Explore extends React.Component {
     ) {
       this.props.fetchAllQuests();
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getWindowDimensions);
   }
 
   handleTagFollow(e, tag) {
@@ -297,25 +302,14 @@ class Explore extends React.Component {
                 Show More Tags
               </div>
             </div>
-            <div className="suggested-guilds">
+            <GuildRecs />
+            {/* <div className="suggested-guilds">
               <div className="suggested-guilds-title">Suggested Guilds</div>
               <div className="suggested-guilds-container">
-                {/* <div className="suggested-guild-content-container">
-                  <div className="user-attributes">
-                    <img src={newTagPictures[0]} className="guild-rec-avatar" />
-                    <div className="guild-rec-details">
-                      <span className="guild-rec-username">Test Username</span>
-                      <span className="guild-rec-guildname">Test Guild</span>
-                    </div>
-                  </div>
-                  <div className="follow-rec-button-container">
-                    <div className={`follow-rec-button`}>Follow</div>
-                  </div>
-                </div> */}
                 {followRecs}
               </div>
               <div className="suggested-guilds-button">Show More Guilds</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
