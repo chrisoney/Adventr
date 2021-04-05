@@ -48,6 +48,10 @@
       &.selector-video {
         animation: emerge-5 2s linear forwards;
       }
+      &:hover {
+        background-color: #DC143C;
+        color: white;
+      }
     }
   }
 }
@@ -66,24 +70,24 @@
 @keyframes emerge-2 {
   100% {
     opacity: 1;
-    transform: translate(194px, 63px);
+    transform: translate(194px, 63px) rotate(108deg);
   }
 }
 @keyframes emerge-3 {
   100% {
     opacity: 1;
-    transform: translate(0px, 204px);
+    transform: translate(0px, 204px) rotate(180deg);
   }
 }
 @keyframes emerge-4 {
   100% {
     opacity: 1;
-    transform: translate(-194px, 63px);
+    transform: translate(-194px, 63px) rotate(-108deg);
   }
 }
 @keyframes emerge-5 {
   100% {
     opacity: 1;
-    transform: translate(-121px, -165px);
+    transform: translate(-121px, -165px) rotate(-36deg);
   }
 }
