@@ -22,6 +22,9 @@ class LikesList extends React.Component {
   render() {
     const { quests, likes, currentUser } = this.props;
     let questList = [];
+    let randomQuest;
+    let likedIds = likes.map((like) => like.quest_id);
+
     quests.forEach((quest, idx) => {
       for (let i = 0; i < likes.length; i++){
         let like = likes[i];
@@ -32,6 +35,13 @@ class LikesList extends React.Component {
       }
     })
     questList = questList.reverse();
+
+    for (let x = 0; x < quests.length; x++) {
+      let quest = quests[x];
+      if (!likedIds.includes(quest.id) && quest.user_id !== currentUser.id) {
+        randomQuest = <QuestContainer quest={quest} loc={'dash-random'} />;
+      }
+    }
     return (
       <div className="dashboard-container">
         <div className="dashboard-left">
@@ -42,6 +52,10 @@ class LikesList extends React.Component {
         </div>
         <div className="dashboard-right">
           <GuildRecs />
+          <div className="suggested-recommendation">
+            <div className="suggested-title">Sanctioned Job</div>
+            {randomQuest}
+          </div>
         </div>
       </div>
     );
