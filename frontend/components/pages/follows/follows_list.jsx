@@ -34,14 +34,39 @@ class FollowsList extends React.Component {
         randomQuest = <QuestContainer quest={quest} loc={'dash-random'} />;
       }
     }
-
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sept',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    
     function latestQuest(user) {
-      const updatedDates = user.quests.map((quest) => quest.updated_at);
-      console.log(updatedDates);
+      const updatedDates = user.quests
+        .map((quest) => quest.updated_at)
+        .sort()
+        .reverse();
+      if (updatedDates.length === 0) return 'This guild has no posts';
+      else {
+        const latest = updatedDates[0];
+        const year = latest.slice(0, 4);
+        const monthNum = parseInt(latest.slice(5, 7), 10);
+        const month = months[monthNum - 1];
+        const day = parseInt(latest.slice(8, 10), 10);
+        return `${month} ${day} ${year}`;
+      }
     }
 
     function createUserContainer(user) {
-      latestQuest(user);
+      const latestDate = latestQuest(user);
       let notFollowed = !followIds.includes(user.id);
       return (
         <div key={user.id} className="followed-user-container">
@@ -49,7 +74,7 @@ class FollowsList extends React.Component {
             <img src={user.avatar} className="followed-user-avatar" />
             <div className="followed-user-details">
               <div className="followed-user-username">{user.username}</div>
-              <div className="followed-user-guildname">{user.guild_name}</div>
+              <div className="followed-user-guildname">{latestDate}</div>
             </div>
           </div>
           <div className="followed-user-right">

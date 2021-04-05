@@ -22,6 +22,8 @@
   .followed-users-list-container {
     display: flex;
     flex-direction: column;
+    border-radius: 3px;
+    overflow: hidden;
     .followed-user-container {
       width: 540px;
       background-color: white;
@@ -29,7 +31,6 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      height: 93px;
       .followed-user-left{
         display: flex;
         padding: 8px 10px;
@@ -37,6 +38,7 @@
           height: 37px;
           width: 37px;
           object-fit: cover;
+          margin-right: 11px;
         }
         .followed-user-details{
           display: flex;
@@ -222,6 +224,8 @@
   }
   .dash-title-following{
     padding-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     font-size: 24px;
     color: white;
   }
