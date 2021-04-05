@@ -13,15 +13,77 @@
     background: asset-data-url("quest_selector_background.png");
     background-size: 540px 540px;
     display:grid;
-    grid-template-columns:30px;
-    grid-template-rows:30px;
+    grid-template-columns:62px;
+    grid-template-rows:62px;
     place-content: center;
     border-radius: 50%;
-    // animation: rotate 10s 3s linear infinite;
+    animation: rotate 10s 3s linear infinite;
+
+    .option-container {
+      grid-area:1/1;
+      height: 62px;
+      width: 62px;
+      background-color: #FFEDB5;
+      color: black;
+      border-radius: 50%;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(0,0);
+      opacity: 0;
+      cursor: pointer;
+      &.selector-text {
+        animation: emerge-1 2s linear forwards;
+      }
+      &.selector-image {
+        animation: emerge-2 2s linear forwards;
+      }
+      &.selector-quote {
+        animation: emerge-3 2s linear forwards;
+      }
+      &.selector-audio {
+        animation: emerge-4 2s linear forwards;
+      }
+      &.selector-video {
+        animation: emerge-5 2s linear forwards;
+      }
+    }
   }
 }
 @keyframes rotate {
   100% {
     transform: rotate(1turn);
+  }
+}
+
+@keyframes emerge-1 {
+  100% {
+    opacity: 1;
+    transform: translate(120px, -165px) rotate(36deg);
+  }
+}
+@keyframes emerge-2 {
+  100% {
+    opacity: 1;
+    transform: translate(194px, 63px);
+  }
+}
+@keyframes emerge-3 {
+  100% {
+    opacity: 1;
+    transform: translate(0px, 204px);
+  }
+}
+@keyframes emerge-4 {
+  100% {
+    opacity: 1;
+    transform: translate(-194px, 63px);
+  }
+}
+@keyframes emerge-5 {
+  100% {
+    opacity: 1;
+    transform: translate(-121px, -165px);
   }
 }

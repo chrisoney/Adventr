@@ -204,10 +204,8 @@ class Navbar extends React.Component {
                 ></span>
               </Link>
               <div
-                className="create-new-container"
-                onClick={(e) =>
-                  this.props.openModal('new-quest-selector')
-                }
+                className="create-new-container nav-link"
+                onClick={(e) => this.props.openModal('new-quest-selector')}
               >
                 <span className="fas fa-feather-alt"></span>
               </div>
