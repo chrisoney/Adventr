@@ -3,26 +3,33 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 class NewQuestSelector extends React.Component {
   constructor(props) {
-    superProps;
+    super(props);
+  }
+  componentDidMount() {
+    document.querySelector('body').style.position = 'fixed';
+  }
+
+  componentWillUnmount() {
+    document.querySelector('body').style.position = 'relative';
   }
 
   render() {
     return (
       <>
-        <div class="option-container selector-text">
-          <span class="fas fa-font"></span>
+        <div className="option-container selector-text">
+          <span className="fas fa-font"></span>
         </div>
-        <div class="option-container selector-image">
-          <span class="fas fa-camera"></span>
+        <div className="option-container selector-image">
+          <span className="fas fa-camera"></span>
         </div>
-        <div class="option-container selector-quote">
-          <span class="fas fa-quote-right"></span>
+        <div className="option-container selector-quote">
+          <span className="fas fa-quote-right"></span>
         </div>
-        <div class="option-container selector-audio">
-          <span class="fas fa-music"></span>
+        <div className="option-container selector-audio">
+          <span className="fas fa-music"></span>
         </div>
-        <div class="option-container selector-video">
-          <span class="fas fa-video"></span>
+        <div className="option-container selector-video">
+          <span className="fas fa-video"></span>
         </div>
       </>
     );

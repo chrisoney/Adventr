@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal2 from '../modal/modal2';
-// import { openModal } from '../../actions/modal_actions';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -204,15 +203,14 @@ class Navbar extends React.Component {
                   }`}
                 ></span>
               </Link>
-              {
-                // No create-new modal yet
-                /* <div
+              <div
                 className="create-new-container"
-                // onClick={(e) => this.userMenuToggle(e)}
+                onClick={(e) =>
+                  this.props.openModal('new-quest-selector')
+                }
               >
                 <span className="fas fa-feather-alt"></span>
-              </div> */
-              }
+              </div>
             </div>
           </div>
         );
