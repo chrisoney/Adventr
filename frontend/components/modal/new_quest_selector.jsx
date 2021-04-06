@@ -6,20 +6,33 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 class NewQuestSelector extends React.Component {
   constructor(props) {
     super(props);
-    // this.changeAnimation = this.changeAnimation.bind(this);
+    this.toggleAnimation = this.toggleAnimation.bind(this);
   }
   componentDidMount() {
     document.querySelector('body').style.position = 'fixed';
+    setTimeout(() => {
+      if (document.querySelector('.quest-selector-container')) {
+        document
+          .querySelector('.quest-selector-container')
+          .classList.add('animation-on');
+        document
+          .querySelector('.selector-cancel-button')
+          .classList.add('animation-on','visible');
+      }
+    }, 3000);
   }
 
   componentWillUnmount() {
     document.querySelector('body').style.position = 'relative';
   }
-  // changeAnimation() {
-  //   document.querySelectorAll('.option-container').forEach((ele) => {
-  //     ele.style.animation = ''
-  //   })
-  // }
+  toggleAnimation() {
+    document
+      .querySelector('.quest-selector-container')
+      .classList.toggle('animation-on');
+    document
+      .querySelector('.selector-cancel-button')
+      .classList.toggle('animation-on');
+  }
   render() {
     return (
       <>
@@ -52,6 +65,13 @@ class NewQuestSelector extends React.Component {
           className="option-container selector-video"
         >
           <span className="fas fa-video"></span>
+        </div>
+        <div
+          onClick={this.toggleAnimation}
+          className="selector-cancel-button"
+        >
+          <span>Toggle</span>
+          <span>Animation</span>
         </div>
       </>
     );
