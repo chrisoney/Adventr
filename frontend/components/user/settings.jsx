@@ -5,9 +5,27 @@ class Settings extends React.Component {
     super(props);
     this.state = {
       selectedOptions: 'account',
+      email: this.props.currentUser.email,
+      oldPassword: '',
+      newPassword: ''
     };
     this.switchOptions = this.switchOptions.bind(this);
     this.toggleAttributes = this.toggleAttributes.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInput(type) {
+    return (e) => {
+      this.setState({ [type]: e.currentTarget.value });
+    };
+  }
+
+  handleSubmit() {
+    const formData = new FormData();
+    formData.append('user[id]', this.props.currentUser.id);
+    formData.append('user[email]', this.state.email);
+    this.props.updateUser(formData);
   }
 
   switchOptions(choice) {
@@ -20,6 +38,8 @@ class Settings extends React.Component {
     const type = e.target.dataset.attributeToggle;
     document.querySelectorAll(`[data-attribute-type='${type}']`)
       .forEach(ele => ele.classList.toggle('hide'));
+    const resetInput = this.props.currentUser[type] || '';
+    this.setState({ [type]: resetInput });
   }
 
   render() {
@@ -48,6 +68,7 @@ class Settings extends React.Component {
                 <input
                   className="attribute-input"
                   defaultValue={currentUser.email}
+                  onChange={this.handleInput('email')}
                 />
                 <input
                   className="attribute-input password"
@@ -59,7 +80,10 @@ class Settings extends React.Component {
                     className="cancel-button"
                     onClick={(e) => this.toggleAttributes(e)}
                   >Cancel</div>
-                  <div className="save-button">Save</div>
+                  <div
+                    onClick={this.handleSubmit}
+                    className="save-button"
+                  >Save</div>
                 </div>
               </div>
               <div
