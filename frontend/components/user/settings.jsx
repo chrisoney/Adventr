@@ -6,7 +6,13 @@ class Settings extends React.Component {
     this.state = {
       selectedOptions: 'account',
     };
+    this.switchOptions = this.switchOptions.bind(this);
   }
+
+  switchOptions(choice) {
+    this.setState({ selectedOptions: choice });
+  }
+
   render() {
     const { currentUser } = this.props;
     let settingsleft;
@@ -16,18 +22,27 @@ class Settings extends React.Component {
         {settingsLeft}
         <div className="settings-right">
           <div className='settings-right-top'>
-            <div className='settings-right-panel'>
+            <div
+              onClick={()=> this.selectedOptions('account')}
+              className='settings-right-panel'
+            >
                 <div className='title'>Account</div>
                 <div className='description'>Adventurer's Gear</div>
               </div>
-            <div className='settings-right-panel'>
+            <div
+              onClick={()=> this.selectedOptions('dashboard')}
+              className='settings-right-panel'
+            >
               <div className='title'>Dashboard</div>
               <div className='description'>Just for Testing</div>
             </div>
           </div>
           <div className='settings-right-bottom'>
             <div className='settings-right-bottom-title'>Guilds</div>
-            <div className='guild-container'>
+            <div
+              onClick={()=> this.selectedOptions('guild')}
+              className='guild-container'
+            >
               <div className='guild-container-left'>
                 <div className='guild-container-username'>{currentUser.username}</div>
                 <div className='guild-container-guildname'>{currentUser.guild_name}</div>
