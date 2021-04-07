@@ -15,7 +15,7 @@ class Settings extends React.Component {
 
   render() {
     const { currentUser } = this.props;
-    let settingsleft;
+    let settingsLeft;
 
     return (
       <div className="settings-container">
