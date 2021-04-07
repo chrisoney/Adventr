@@ -25,11 +25,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <ProtectedRoute path="/dashboard" component={DashboardContainer} />
       <ProtectedRoute path="/explore" component={ExploreContainer} />
-      <ProtectedRoute
-        path="/users/:userid/settings"
-        component={SettingsContainer}
-      />
-      <ProtectedRoute path="/users/:userid/" component={GuildpageContainer} />
+      <ProtectedRoute path="/settings" component={SettingsContainer} />
+      <ProtectedRoute path="/guild/:guildname" component={GuildpageContainer} />
       <ProtectedRoute path="/likes" component={LikesContainer} />
       <ProtectedRoute path="/follows" component={FollowsContainer} />
       <ProtectedRoute path="/about" component={About} />
