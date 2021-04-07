@@ -12,6 +12,7 @@
   .settings-container{
     margin-top: 40px;
     display:flex;
+    height: fit-content;
     .settings-left{
       margin-left: 27px;
       width: 625px;
@@ -27,7 +28,7 @@
     }
     .settings-right{
       margin-left: 27px;
-
+      width: 320px;
     }
   }
 }
