@@ -20,7 +20,9 @@ class Settings extends React.Component {
     switch (this.state.selectedOptions) {
       case 'account':
         settingsLeft = (
-          <div>Account Info</div>
+          <div className="settings-left">
+            <div className="title">Account Info</div>
+          </div>
         );
         break;
       case 'dashboard':
@@ -38,37 +40,39 @@ class Settings extends React.Component {
     }
 
     return (
-      <div className="settings-container">
-        {settingsLeft}
-        <div className="settings-right">
-          <div className='settings-right-top'>
-            <div
-              onClick={()=> this.selectedOptions('account')}
-              className='settings-right-panel'
-            >
-                <div className='title'>Account</div>
-                <div className='description'>Adventurer's Gear</div>
+      <div className="settings-background">
+        <div className="settings-container">
+          {settingsLeft}
+          <div className="settings-right">
+            <div className='settings-right-top'>
+              <div
+                onClick={()=> this.selectedOptions('account')}
+                className='settings-right-panel'
+              >
+                  <div className='title'>Account</div>
+                  <div className='description'>Adventurer's Gear</div>
+                </div>
+              <div
+                onClick={()=> this.selectedOptions('dashboard')}
+                className='settings-right-panel'
+              >
+                <div className='title'>Dashboard</div>
+                <div className='description'>Just for Testing</div>
               </div>
-            <div
-              onClick={()=> this.selectedOptions('dashboard')}
-              className='settings-right-panel'
-            >
-              <div className='title'>Dashboard</div>
-              <div className='description'>Just for Testing</div>
             </div>
-          </div>
-          <div className='settings-right-bottom'>
-            <div className='settings-right-bottom-title'>Guilds</div>
-            <div
-              onClick={()=> this.selectedOptions('guild')}
-              className='guild-container'
-            >
-              <div className='guild-container-left'>
-                <div className='guild-container-username'>{currentUser.username}</div>
-                <div className='guild-container-guildname'>{currentUser.guild_name}</div>
-              </div>
-              <div className='guild-container-right'>
-                <span className='fas fa-star'></span>
+            <div className='settings-right-bottom'>
+              <div className='settings-right-bottom-title'>Guilds</div>
+              <div
+                onClick={()=> this.selectedOptions('guild')}
+                className='guild-container'
+              >
+                <div className='guild-container-left'>
+                  <div className='guild-container-username'>{currentUser.username}</div>
+                  <div className='guild-container-guildname'>{currentUser.guild_name}</div>
+                </div>
+                <div className='guild-container-right'>
+                  <span className='fas fa-star'></span>
+                </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-.settings-container{
+.settings-background{
   margin-top: 54px;
   background: url("https://cdna.artstation.com/p/assets/images/images/028/288/940/large/diego-herrera-sosa-previo-17-final.jpg?1594049355") no-repeat center fixed;
   min-height: 100vh;
@@ -9,9 +9,25 @@
   width: 100%;
   display:flex;
   justify-content: center;
-  .settings-left{
-  }
-  .settings-right{
-    
+  .settings-container{
+    margin-top: 40px;
+    display:flex;
+    .settings-left{
+      margin-left: 27px;
+      width: 625px;
+      padding: 25px;
+      border-radius: 3px;
+      background-color: white;
+      color: #444444;
+      .title {
+        font-size: 24px;
+        padding-bottom: 28px;
+        border-bottom: 2px solid #E5E5E5;
+      }
+    }
+    .settings-right{
+      margin-left: 27px;
+
+    }
   }
 }
