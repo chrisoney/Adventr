@@ -10,23 +10,75 @@
   display:flex;
   justify-content: center;
   .settings-container{
+    overflow-x: scroll;
     margin-top: 40px;
     display:flex;
     height: fit-content;
     .settings-left{
       margin-left: 27px;
-      width: 625px;
+      width: 575px;
       padding: 25px;
       border-radius: 3px;
       background-color: white;
       color: #444444;
-      .title {
+      float: left;
+      .left-title {
         font-size: 24px;
         padding-bottom: 28px;
         border-bottom: 2px solid #E5E5E5;
       }
+      .settings-left-panel {
+        position: relative;
+        display: flex;
+        padding: 20px 0px;
+        .panel-title{
+          width: 125px;
+          font-weight: bold;
+          font-size: 16px;
+          padding: 0px 10px;
+        }
+        .attribute-container {
+
+        }
+        .attribute-edit-container {
+          width: 430px;
+          padding: 0px 10px;
+          display: flex;
+          flex-direction: column;
+          .attribute-input {
+            width: 310px;
+            padding: 6px 9px;
+            margin-bottom: 10px;
+            border: 1px solid #D9D9D9;
+          }
+          .attribute-edit-button-container{
+            display: flex;
+            div {
+              cursor: pointer;
+            }
+          }
+        }
+        .edit-button-container{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          span {
+            color: #000000;
+            opacity: 0.25;
+            cursor: pointer;
+
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+        .hide {
+          display:none;
+        }
+      }
     }
     .settings-right{
+      float: right;
       margin-left: 27px;
       width: 320px;
     }
