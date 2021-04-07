@@ -17,6 +17,26 @@ class Settings extends React.Component {
     const { currentUser } = this.props;
     let settingsLeft;
 
+    switch (this.state.selectedOptions) {
+      case 'account':
+        settingsLeft = (
+          <div>Account Info</div>
+        );
+        break;
+      case 'dashboard':
+        settingsLeft = (
+          <div>Dashboard</div>
+        );
+        break;
+      case 'guild':
+        settingsLeft = (
+          <div>Guild Info</div>
+        );
+        break;
+      default:
+        settingsLeft = null;
+    }
+
     return (
       <div className="settings-container">
         {settingsLeft}
