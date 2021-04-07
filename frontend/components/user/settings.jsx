@@ -51,6 +51,7 @@ class Settings extends React.Component {
                 />
                 <input
                   className="attribute-input password"
+                  placeholder="Confirm Password"
                 />
                 <div className="attribute-edit-button-container">
                   <div
