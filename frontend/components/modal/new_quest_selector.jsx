@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 class NewQuestSelector extends React.Component {
@@ -90,6 +89,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(NewQuestSelector)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(NewQuestSelector)
+;
