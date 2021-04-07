@@ -3,9 +3,43 @@ import React from 'react';
 class Settings extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selectedOptions: 'account',
+    };
   }
   render() {
-    return <></>;
+    const { currentUser } = this.props;
+    let settingsleft;
+
+    return (
+      <div className="settings-container">
+        {settingsLeft}
+        <div className="settings-right">
+          <div className='settings-right-top'>
+            <div className='settings-right-panel'>
+                <div className='title'>Account</div>
+                <div className='description'>Adventurer's Gear</div>
+              </div>
+            <div className='settings-right-panel'>
+              <div className='title'>Dashboard</div>
+              <div className='description'>Just for Testing</div>
+            </div>
+          </div>
+          <div className='settings-right-bottom'>
+            <div className='settings-right-bottom-title'>Guilds</div>
+            <div className='guild-container'>
+              <div className='guild-container-left'>
+                <div className='guild-container-username'>{currentUser.username}</div>
+                <div className='guild-container-guildname'>{currentUser.guild_name}</div>
+              </div>
+              <div className='guild-container-right'>
+                <span className='fas fa-star'></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
