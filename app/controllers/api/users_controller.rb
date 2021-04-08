@@ -23,7 +23,7 @@ end
     if (@user && @user.is_password?(params[:old_password]) && @user.update(user_params))
       render :show
     else
-      render json: {errors: ["Invalid Password"], status: 401}
+      render :show
     end
   end
 
@@ -39,6 +39,6 @@ end
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :avatar, :guild_name)
+    params.require(:user).permit(:username, :email, :password, :avatar, :guild_name)
   end
 end

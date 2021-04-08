@@ -7,7 +7,7 @@ class Settings extends React.Component {
       selectedOptions: 'account',
       email: this.props.currentUser.email,
       oldPassword: '',
-      newPassword: ''
+      password: ''
     };
     this.switchOptions = this.switchOptions.bind(this);
     this.toggleAttributes = this.toggleAttributes.bind(this);
@@ -21,23 +21,30 @@ class Settings extends React.Component {
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e, type) {
+    e.preventDefault();
     const formData = new FormData();
     formData.append('user[id]', this.props.currentUser.id);
-    formData.append('user[email]', this.state.email);
+    formData.append(`user[${type}]`, this.state[type]);
     formData.append('old_password', this.state.oldPassword);
     this.props.updateUser(formData);
-    this.toggleAttributes("email");
+    this.toggleAttributes(e, type);
   }
 
   switchOptions(choice) {
     this.setState({ selectedOptions: choice });
   }
 
-  toggleAttributes(type) {
+  toggleAttributes(e, type) {
+    e.preventDefault();
     document.querySelectorAll(`[data-attribute-type='${type}']`)
       .forEach(ele => ele.classList.toggle('hide'));
-    const resetInput = this.props.currentUser[type] || '';
+    console.log(type);
+    let resetInput;
+    if (type === 'password') resetInput = '';
+    else {
+      resetInput = this.props.currentUser[type];
+    }
     //temporary password clear
     document.querySelector('.attribute-input.password').value = ''
     this.setState({ [type]: resetInput });
@@ -81,10 +88,10 @@ class Settings extends React.Component {
                 <div className="attribute-edit-button-container">
                   <div
                     className="cancel-button"
-                    onClick={(e) => this.toggleAttributes('email')}
+                    onClick={(e) => this.toggleAttributes(e, 'email')}
                   >Cancel</div>
                   <div
-                    onClick={this.handleSubmit}
+                    onClick={(e) => this.handleSubmit(e, 'email')}
                     className="save-button"
                   >Save</div>
                 </div>
@@ -95,7 +102,54 @@ class Settings extends React.Component {
               >
                 <span
                   className="fas fa-feather-alt"
-                  onClick={(e) => this.toggleAttributes('email')}
+                  onClick={(e) => this.toggleAttributes(e, 'email')}
+                ></span>
+              </div>
+            </div>
+            <div className="settings-left-panel">
+              <div className="panel-title">Password</div>
+              <div
+                data-attribute-type="password"
+                className="attribute-container"
+              >
+                <div
+                  className="current-attribute"
+                >.......</div>
+              </div>
+              <div
+                data-attribute-type="password"
+                className="attribute-edit-container hide"
+              >
+                <input
+                  type='password'
+                  className="attribute-input"
+                  placeholder="Confirm Password"
+                  onChange={this.handleInput('password')}
+                />
+                <input
+                  type="password"
+                  className="attribute-input password"
+                  placeholder="New Password"
+                  onChange={this.handleInput('oldPassword')}
+                />
+                <div className="attribute-edit-button-container">
+                  <div
+                    className="cancel-button"
+                    onClick={(e) => this.toggleAttributes(e, 'password')}
+                  >Cancel</div>
+                  <div
+                    onClick={(e) => this.handleSubmit(e, 'password')}
+                    className="save-button"
+                  >Save</div>
+                </div>
+              </div>
+              <div
+                data-attribute-type="password"
+                className="edit-button-container"
+              >
+                <span
+                  className="fas fa-feather-alt"
+                  onClick={(e) => this.toggleAttributes(e, 'password')}
                 ></span>
               </div>
             </div>
