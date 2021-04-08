@@ -155,14 +155,74 @@ class Settings extends React.Component {
           </div>
         );
         break;
-      case 'dashboard':
-        settingsLeft = (
-          <div>Dashboard</div>
-        );
-        break;
       case 'guild':
         settingsLeft = (
-          <div>Guild Info</div>
+          <div className="settings-left">
+            <div className="left-title-section">
+              <div className='title-username'>{currentUser.username}</div>
+              <div className='edit-appearance-button'>Don Your Armor</div>
+            </div>
+            <div className="appearance-section">
+              <div className="avatar-section">
+                <img src={currentUser.avatar} />
+              </div>
+              <div classname="guild-details">
+                <div classname="guildname">
+                  {currentUser.guild_name || 'Untitled'}
+                </div>
+                <div className="guild-description">
+                  {currentUser.guild_description || ''}
+                </div>
+              </div>
+            </div>
+            <div classname="settings-left-panel">
+              <div className="panel-title">Username</div>
+              <div
+                data-attribute-type="username"
+                className="attribute-container"
+              >
+                <div
+                  className="current-attribute"
+                >{currentUser.username}</div>
+              </div>
+              <div
+                data-attribute-type="username"
+                className="attribute-edit-container hide"
+              >
+                <input
+                  type='text'
+                  className="attribute-input"
+                  defaultValue={currentUser.username}
+                  onChange={this.handleInput('username')}
+                />
+                <input
+                  type="password"
+                  className="attribute-input password"
+                  placeholder="Confirm Password"
+                  onChange={this.handleInput('oldPassword')}
+                />
+                <div className="attribute-edit-button-container">
+                  <div
+                    className="cancel-button"
+                    onClick={(e) => this.toggleAttributes(e, 'username')}
+                  >Cancel</div>
+                  <div
+                    onClick={(e) => this.handleSubmit(e, 'username')}
+                    className="save-button"
+                  >Save</div>
+                </div>
+              </div>
+              <div
+                data-attribute-type="username"
+                className="edit-button-container"
+              >
+                <span
+                  className="fas fa-feather-alt"
+                  onClick={(e) => this.toggleAttributes(e, 'username')}
+                ></span>
+              </div>
+            </div>
+          </div>
         );
         break;
       default:
@@ -176,14 +236,14 @@ class Settings extends React.Component {
           <div className="settings-right">
             <div className='settings-right-top'>
               <div
-                onClick={()=> this.selectedOptions('account')}
+                onClick={()=> this.switchOptions('account')}
                 className='settings-right-panel'
               >
                   <div className='title'>Account</div>
                   <div className='description'>Adventurer's Gear</div>
                 </div>
               <div
-                onClick={()=> this.selectedOptions('dashboard')}
+                onClick={()=> this.switchOptions('dashboard')}
                 className='settings-right-panel'
               >
                 <div className='title'>Dashboard</div>
@@ -193,7 +253,7 @@ class Settings extends React.Component {
             <div className='settings-right-bottom'>
               <div className='settings-right-bottom-title'>Guilds</div>
               <div
-                onClick={()=> this.selectedOptions('guild')}
+                onClick={()=> this.switchOptions('guild')}
                 className='guild-container'
               >
                 <img src={currentUser.avatar} className="guild-container-avatar"/>
