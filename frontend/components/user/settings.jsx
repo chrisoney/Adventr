@@ -113,7 +113,7 @@ class Settings extends React.Component {
               >
                 <div
                   className="current-attribute"
-                >.......</div>
+                >&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</div>
               </div>
               <div
                 data-attribute-type="password"
