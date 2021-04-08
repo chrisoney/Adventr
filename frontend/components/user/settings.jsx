@@ -163,9 +163,9 @@ class Settings extends React.Component {
               <div className='edit-appearance-button'>Don Your Armor</div>
             </div>
             <div className="appearance-section">
-              <div className="avatar-section">
-                <img src={currentUser.avatar} />
-              </div>
+              <img className="appearance-banner"
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca7eb999-198d-4058-930a-9c99da62d96f/d5ulvau-a27e97a0-c5b9-491c-9880-d2bac30ac7a5.jpg/v1/fill/w_1065,h_750,q_70,strp/marfling_swamp___le_dernier_bastion_by_skavenzverov_d5ulvau-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMTI4IiwicGF0aCI6IlwvZlwvY2E3ZWI5OTktMTk4ZC00MDU4LTkzMGEtOWM5OWRhNjJkOTZmXC9kNXVsdmF1LWEyN2U5N2EwLWM1YjktNDkxYy05ODgwLWQyYmFjMzBhYzdhNS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8BTJXNKdLu89YM1z78RVdRQl2Ita2VDuPLOjz-XA2Bg" />
+              <img className="appearance-avatar edit" src={currentUser.avatar} />
               <div className="guild-details">
                 <div className="guildname">
                   {currentUser.guild_name || 'Untitled'}

@@ -17,18 +17,23 @@
     .settings-left{
       height: fit-content;
       margin-left: 27px;
-      min-width: 575px;
-      padding: 25px;
+      min-width: 625px;
       border-radius: 3px;
       background-color: white;
       color: #444444;
       float: left;
+      position: relative;
+      overflow: none;
       .left-title {
+        margin: 25px;
+        margin-bottom: 0px;
         font-size: 24px;
         padding-bottom: 28px;
         border-bottom: 2px solid #E5E5E5;
       }
       .settings-left-panel {
+        margin-left: 25px;
+        margin-right: 25px;
         border-top: 1px solid #F4F4F4;
         position: relative;
         display: flex;
@@ -40,8 +45,6 @@
           padding: 0px 10px;
         }
         .attribute-container {
-          // display: flex;
-          // align-items: center;
           .current-attribute {
             font-size: 16px;
           }
@@ -79,9 +82,6 @@
               background-color: #00B8FF;
             }
           }
-          &:first-child {
-            border-top: none;
-          }
         }
         .edit-button-container{
           position: absolute;
@@ -100,22 +100,56 @@
         .hide {
           display:none;
         }
+        &:nth-child(2) {
+          border-top: none;
+        }
       }
       .left-title-section {
+        position: absolute;
+        width: 100%;
+        z-index: 15;
         display: flex;
         justify-content: space-between;
       }
       .appearance-section {
-        .avatar-section {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 20px 0px;
-          img {
-            height: 96px;
-            width: 96px;
-            object-fit: cover;
+        width: 100%;
+        .appearance-banner {
+          position: relative;
+          display: block;
+          width: 625px;
+          height: 345px;
+          object-fit: cover;
+          z-index: 5;
+          border-top-right-radius: 3px;
+          border-top-left-radius: 3px;
+          .hide {display: none;}
+          // &::after {
+          //   border: 2px dashed;
+          //   bottom: 3px;
+          //   content: "";
+          //   left: 3px;
+          //   position: absolute;
+          //   right: 3px;
+          //   top: 3px;
+          //   border-radius: inherit;
+          // }
+        }
+        .appearance-avatar {
+          display: block;
+          height: 96px;
+          width: 96px;
+          object-fit: cover;
+          border-radius: 50%;
+          &.edit {
+            position: relative;
+            margin-top: -72px;
+            z-index: 10;
             border-radius: 50%;
+            margin: 20px auto;
+            margin-top: -72px;
+            justify-self: center;
+            color: white;
+            box-shadow: 0 0 0 4px;
           }
         }
       }
