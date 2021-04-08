@@ -166,8 +166,8 @@ class Settings extends React.Component {
               <div className="avatar-section">
                 <img src={currentUser.avatar} />
               </div>
-              <div classname="guild-details">
-                <div classname="guildname">
+              <div className="guild-details">
+                <div className="guildname">
                   {currentUser.guild_name || 'Untitled'}
                 </div>
                 <div className="guild-description">
@@ -175,7 +175,7 @@ class Settings extends React.Component {
                 </div>
               </div>
             </div>
-            <div classname="settings-left-panel">
+            <div className="settings-left-panel">
               <div className="panel-title">Username</div>
               <div
                 data-attribute-type="username"

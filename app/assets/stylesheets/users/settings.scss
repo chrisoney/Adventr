@@ -101,6 +101,24 @@
           display:none;
         }
       }
+      .left-title-section {
+        display: flex;
+        justify-content: space-between;
+      }
+      .appearance-section {
+        .avatar-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px 0px;
+          img {
+            height: 96px;
+            width: 96px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+      }
     }
     .settings-right{
       float: right;
