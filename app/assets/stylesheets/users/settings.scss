@@ -106,13 +106,31 @@
       }
       .left-title-section {
         position: absolute;
-        width: 100%;
+        width: 605px;
         z-index: 15;
         display: flex;
         justify-content: space-between;
+        line-height: 30px;
+        align-items: center;
+        padding: 10px;
+        .title-username {
+          color: #FFFFFF;
+          height: 30px;
+        }
+
+        .edit-appearance-button {
+          border-radius: 3px;
+          color: #FFFFFF;
+          background-color: #00B8FF;
+          height: 30px;
+          line-height: 28px;
+          padding: 0px 10px;
+          cursor: pointer;
+        }
       }
       .appearance-section {
         width: 100%;
+        padding-top: 50px;
         .appearance-banner {
           position: relative;
           display: block;
@@ -122,17 +140,7 @@
           z-index: 5;
           border-top-right-radius: 3px;
           border-top-left-radius: 3px;
-          .hide {display: none;}
-          // &::after {
-          //   border: 2px dashed;
-          //   bottom: 3px;
-          //   content: "";
-          //   left: 3px;
-          //   position: absolute;
-          //   right: 3px;
-          //   top: 3px;
-          //   border-radius: inherit;
-          // }
+          &.hide {display: none;}
         }
         .appearance-avatar {
           display: block;
@@ -140,12 +148,13 @@
           width: 96px;
           object-fit: cover;
           border-radius: 50%;
+          margin: 20px auto;
+
           &.edit {
             position: relative;
             margin-top: -72px;
             z-index: 10;
             border-radius: 50%;
-            margin: 20px auto;
             margin-top: -72px;
             justify-self: center;
             color: white;
