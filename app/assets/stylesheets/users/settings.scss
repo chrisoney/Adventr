@@ -126,12 +126,67 @@
             font-size: 14px;
             color: #FFFFFFA6;
           }
-          &:hover {
+          &:hover, &.active {
             cursor: pointer;
             background-color: #222222A2;
           }
           &:first-child {
             border-top: none;
+          }
+        }
+      }
+      .settings-right-bottom{
+        margin-top: 18px;
+        .settings-right-bottom-title {
+          padding: 0px 10px 4px 10px;
+          border-bottom: 2px solid hsla(0,0%,100%,.13);
+          font-size: 20px;
+          font-weight: 700px;
+          line-height: 25px;
+          color: white;
+        }
+        .guild-container {
+          display: flex;
+          position: relative;
+          padding: 7px 32px 7px 57px;
+          border-bottom: 1px solid hsla(0,0%,100%,.07);
+          .guild-container-avatar {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            margin: -18px 0px 0px 0px;
+            height: 37px;
+            width: 37px;
+            object-fit: cover;
+            border-radius: 3px;
+
+          }
+          .guild-container-details {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            .guild-container-username {
+              color: white;
+              font-weight: 700;
+              font-size: 16px
+            }
+            .guild-container-guildname {
+              color: hsla(0,0%,100%,.65);
+              font-size: 14px;
+            }
+          }
+          .guild-container-primary {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            line-height: 12px;
+            font-size: 12px;
+            margin: -6px 0px 0px 0px;
+            color: white;
+          }
+          &:hover, &.active {
+            cursor: pointer;
+            background-color: #222222A2;
           }
         }
       }

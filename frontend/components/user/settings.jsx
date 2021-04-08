@@ -196,11 +196,14 @@ class Settings extends React.Component {
                 onClick={()=> this.selectedOptions('guild')}
                 className='guild-container'
               >
-                <div className='guild-container-left'>
+                <img src={currentUser.avatar} className="guild-container-avatar"/>
+                <div className='guild-container-details'>
                   <div className='guild-container-username'>{currentUser.username}</div>
-                  <div className='guild-container-guildname'>{currentUser.guild_name}</div>
+                  <div className='guild-container-guildname'>
+                    {currentUser.guild_name || currentUser.username}
+                  </div>
                 </div>
-                <div className='guild-container-right'>
+                <div className='guild-container-primary'>
                   <span className='fas fa-star'></span>
                 </div>
               </div>
