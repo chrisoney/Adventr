@@ -4,9 +4,6 @@ export const signup = user => {
     url: '/api/users',
     method: 'POST',
     data: { user },
-  //   success: (data) => {
-  //     location.reload();
-  // }
   })
 };
 

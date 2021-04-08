@@ -39,7 +39,6 @@ class Settings extends React.Component {
     e.preventDefault();
     document.querySelectorAll(`[data-attribute-type='${type}']`)
       .forEach(ele => ele.classList.toggle('hide'));
-    console.log(type);
     let resetInput;
     if (type === 'password') resetInput = '';
     else {
@@ -124,13 +123,13 @@ class Settings extends React.Component {
                   type='password'
                   className="attribute-input"
                   placeholder="Confirm Password"
-                  onChange={this.handleInput('password')}
+                  onChange={this.handleInput('oldPassword')}
                 />
                 <input
                   type="password"
                   className="attribute-input password"
                   placeholder="New Password"
-                  onChange={this.handleInput('oldPassword')}
+                  onChange={this.handleInput('password')}
                 />
                 <div className="attribute-edit-button-container">
                   <div
