@@ -20,10 +20,10 @@ end
 
   def update
     @user = User.find(params[:id])
-    if (@user && @user.update(user_params))
+    if (@user && @user.is_password?(params[:old_password]) && @user.update(user_params))
       render :show
     else
-      render :show
+      render json: {errors: ["Invalid Password"], status: 401}
     end
   end
 
@@ -32,13 +32,13 @@ end
     if @user
       render :show
     else
-      render json: ["User does not exist"], status: 404
+      render :show
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :avatar, :guild_name)
+    params.require(:user).permit(:username, :email, :avatar, :guild_name)
   end
 end

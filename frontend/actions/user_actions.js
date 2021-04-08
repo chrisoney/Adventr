@@ -1,4 +1,5 @@
 import * as UserApiUtils from "../util/user_api_utils";
+import { receiveCurrentUser } from './session_actions';
 
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
@@ -23,8 +24,12 @@ export const fetchAllUsers = (filter) => (dispatch) =>
     dispatch(receiveAllUsers(users))
   );
 
-export const updateUser = (user) => (dispatch) =>
-  UserApiUtils.updateUser(user).then((user) => dispatch(receiveUser(user)));
+export const updateUser = (user) => (dispatch) => {
+  return UserApiUtils.updateUser(user)
+    .then((user) => {
+      dispatch(receiveCurrentUser(user))
+    })
+};
 
 export const addTagToUser = (tagJoin) => (dispatch) => {
   return UserApiUtils.addTagToUser(tagJoin).then((tagJoin) => {

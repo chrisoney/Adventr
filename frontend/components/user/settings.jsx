@@ -25,20 +25,21 @@ class Settings extends React.Component {
     const formData = new FormData();
     formData.append('user[id]', this.props.currentUser.id);
     formData.append('user[email]', this.state.email);
+    formData.append('old_password', this.state.oldPassword);
     this.props.updateUser(formData);
+    this.toggleAttributes("email");
   }
 
   switchOptions(choice) {
     this.setState({ selectedOptions: choice });
   }
 
-  toggleAttributes(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const type = e.target.dataset.attributeToggle;
+  toggleAttributes(type) {
     document.querySelectorAll(`[data-attribute-type='${type}']`)
       .forEach(ele => ele.classList.toggle('hide'));
     const resetInput = this.props.currentUser[type] || '';
+    //temporary password clear
+    document.querySelector('.attribute-input.password').value = ''
     this.setState({ [type]: resetInput });
   }
 
@@ -66,19 +67,21 @@ class Settings extends React.Component {
                 className="attribute-edit-container hide"
               >
                 <input
+                  type='text'
                   className="attribute-input"
                   defaultValue={currentUser.email}
                   onChange={this.handleInput('email')}
                 />
                 <input
+                  type="password"
                   className="attribute-input password"
                   placeholder="Confirm Password"
+                  onChange={this.handleInput('oldPassword')}
                 />
                 <div className="attribute-edit-button-container">
                   <div
-                    data-attribute-toggle="email"
                     className="cancel-button"
-                    onClick={(e) => this.toggleAttributes(e)}
+                    onClick={(e) => this.toggleAttributes('email')}
                   >Cancel</div>
                   <div
                     onClick={this.handleSubmit}
@@ -91,9 +94,8 @@ class Settings extends React.Component {
                 className="edit-button-container"
               >
                 <span
-                  data-attribute-toggle="email"
                   className="fas fa-feather-alt"
-                  onClick={(e) => this.toggleAttributes(e)}
+                  onClick={(e) => this.toggleAttributes('email')}
                 ></span>
               </div>
             </div>
