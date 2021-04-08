@@ -13,8 +13,9 @@
     overflow-x: scroll;
     margin-top: 40px;
     display:flex;
-    height: fit-content;
+    height: 100vh;
     .settings-left{
+      height: fit-content;
       margin-left: 27px;
       min-width: 575px;
       padding: 25px;
@@ -103,8 +104,37 @@
     }
     .settings-right{
       float: right;
+      height: fit-content;
       margin-left: 27px;
-      width: 320px;
+      min-width: 320px;
+      .settings-right-top{
+        .settings-right-panel {
+          padding: 5px 10px 7px 10px;
+          display: flex;
+          flex-direction:column;
+          white-space: nowrap;
+          text-overflow: clip;
+          line-height: 1.6;
+          // border-top: 1px solid white;
+          border-top: 1px solid hsla(0,0%,100%,.07);
+          .title {
+            font-weight: 700;
+            font-size: 16px;
+            color: #FFFFFF;
+          }
+          .description {
+            font-size: 14px;
+            color: #FFFFFFA6;
+          }
+          &:hover {
+            cursor: pointer;
+            background-color: #222222A2;
+          }
+          &:first-child {
+            border-top: none;
+          }
+        }
+      }
     }
   }
 }
