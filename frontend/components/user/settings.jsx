@@ -162,15 +162,28 @@ class Settings extends React.Component {
         );
         break;
       case 'guild':
-        settingsLeft = (
-          <div className="settings-left">
-            <div className="left-title-section">
-              <div className='title-username'>{currentUser.username}</div>
+        leftHeader = this.state.editingAppearance ? (
+          <div className="left-title-section">
+            <div className='title-username edit'>{currentUser.username}</div>
+            <div className='edit-appearance-button-container'>
               <div
                 onClick={this.toggleAppearance}
-                className='edit-appearance-button'
-              >Don Your Armor</div>
+                className='cancel-button'>Cancel</div>
+              <div className='save-button'>Save</div>
             </div>
+          </div>
+        ): (
+          <div className="left-title-section">
+            <div className='title-username'>{currentUser.username}</div>
+            <div
+              onClick={this.toggleAppearance}
+              className='edit-appearance-button'
+            >Don Your Armor</div>
+          </div>
+        );
+        settingsLeft = (
+          <div className="settings-left">
+            {leftHeader}
             <div className="appearance-section">
               <img className={`appearance-banner ${this.state.editingAppearance ? '' : 'hide'}`}
                 src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca7eb999-198d-4058-930a-9c99da62d96f/d5ulvau-a27e97a0-c5b9-491c-9880-d2bac30ac7a5.jpg/v1/fill/w_1065,h_750,q_70,strp/marfling_swamp___le_dernier_bastion_by_skavenzverov_d5ulvau-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMTI4IiwicGF0aCI6IlwvZlwvY2E3ZWI5OTktMTk4ZC00MDU4LTkzMGEtOWM5OWRhNjJkOTZmXC9kNXVsdmF1LWEyN2U5N2EwLWM1YjktNDkxYy05ODgwLWQyYmFjMzBhYzdhNS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8BTJXNKdLu89YM1z78RVdRQl2Ita2VDuPLOjz-XA2Bg" />

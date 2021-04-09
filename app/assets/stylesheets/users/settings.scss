@@ -114,8 +114,11 @@
         align-items: center;
         padding: 10px;
         .title-username {
-          color: #FFFFFF;
+          color: #00B8FF;
           height: 30px;
+          &.edit {
+            color: #FFFFFF;
+          }
         }
 
         .edit-appearance-button {
