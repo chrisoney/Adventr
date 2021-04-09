@@ -237,7 +237,7 @@ class NewQuestForm extends React.Component {
       : null;
 
     const imageLabel =
-      this.state.imageFiles != null ? 'Add more photos' : 'Upload Photos!';
+      this.state.imageFiles !== null ? 'Add more photos' : 'Upload Photos!';
     const imageUploadSection = (
       <div className="image-upload-box">
         {imagePreviews}
@@ -415,7 +415,7 @@ class NewQuestForm extends React.Component {
     }
 
     let disabled = true;
-    if (title != '' || text != '' || imageFiles != null) {
+    if (title !== '' || text !== '' || imageFiles !== null) {
       disabled = false;
     } else {
       disabled = true;

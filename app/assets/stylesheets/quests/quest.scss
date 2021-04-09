@@ -160,18 +160,18 @@
 		button {
 			margin-left: 10px;
 		}
+		.reply, .reblog, .like, .trash, .edit{
+			background:none;
+			border:none;
+			width: 24px;
+			height: 24px;
+			color: white;
+		}
+		.reply:hover, .reblog:hover, .like:hover, .trash:hover, .edit:hover {
+			cursor: pointer;
+		}
 }
 
-.reply, .reblog, .like, .trash, .edit{
-	background:none;
-	border:none;
-	width: 24px;
-	height: 24px;
-	color: white;
-}
-.reply:hover, .reblog:hover, .like:hover, .trash:hover, .edit:hover {
-	cursor: pointer;
-}
 
 .liked-heart{
 	color: red;

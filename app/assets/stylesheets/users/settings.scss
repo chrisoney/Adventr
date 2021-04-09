@@ -23,7 +23,6 @@
       color: #444444;
       float: left;
       position: relative;
-      overflow: none;
       .left-title {
         margin: 25px;
         margin-bottom: 0px;
@@ -107,7 +106,7 @@
       .left-title-section {
         position: absolute;
         width: 605px;
-        z-index: 15;
+        z-index: 11;
         display: flex;
         justify-content: space-between;
         line-height: 30px;
@@ -131,18 +130,48 @@
           cursor: pointer;
         }
       }
+      .edit-appearance-button-container {
+        display: flex;
+        font-size: 14px;
+        .cancel-button, .save-button {
+          height: 30px;
+          min-width: 49px;
+          line-height: 30px;
+          padding: 0px 10px;
+          border-radius: 2px;
+          font-weight: bold;
+          cursor: pointer;
+          text-align: center;
+          vertical-align: center;
+        }
+
+        .cancel-button {
+          margin-right: 10px;
+          background-color: rgba(0,0,0,0.5);
+          color: #FFFFFF;
+        }
+
+        .save-button {
+          background-color: #FFFFFF;
+          color: rgba(68,68,68,0.5);
+        }
+      }
+
+
       .appearance-section {
         width: 100%;
         padding-top: 50px;
+        &.edit {padding-top: 0px}
         .appearance-banner {
           position: relative;
           display: block;
           width: 625px;
-          height: 345px;
           object-fit: cover;
           z-index: 5;
           border-top-right-radius: 3px;
           border-top-left-radius: 3px;
+          opacity: 0.7;
+          animation: banner-grow 0.5s ease-in-out forwards;
           &.hide {display: none;}
         }
         .appearance-avatar {
@@ -255,5 +284,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes banner-grow {
+  from {
+    height: 60px;
+  }
+  to {
+    height: 345px;
   }
 }
