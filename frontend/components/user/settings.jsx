@@ -17,6 +17,7 @@ class Settings extends React.Component {
     this.toggleAppearance = this.toggleAppearance.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuildSubmit = this.handleGuildSubmit.bind(this);
   }
 
   handleInput(type) {
@@ -35,12 +36,27 @@ class Settings extends React.Component {
     this.toggleAttributes(e, type);
   }
 
+  handleGuildSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('user[id]', this.props.currentUser.id);
+    formData.append(`user[guild_name]`, this.state.guild_name);
+    formData.append(`user[guild_description]`, this.state.guild_description);
+    formData.append('old_password', this.state.oldPassword);
+    this.props.updateUser(formData);
+    this.toggleAppearance()
+  }
+
   switchOptions(choice) {
     this.setState({ selectedOptions: choice });
   }
 
   toggleAppearance() {
-    this.setState({ editingAppearance: !this.state.editingAppearance })
+    this.setState({
+      editingAppearance: !this.state.editingAppearance,
+      guild_name: this.props.currentUser.guild_name || 'Untitled',
+      guild_description: this.props.currentUser.guild_description || '',
+    })
   }
 
   toggleAttributes(e, type) {
@@ -53,7 +69,8 @@ class Settings extends React.Component {
       resetInput = this.props.currentUser[type];
     }
     //temporary password clear
-    document.querySelector('.attribute-input.password').value = ''
+    document.querySelectorAll('.attribute-input .password')
+      .forEach((ele) => ele.value = '');
     this.setState({ [type]: resetInput });
   }
 
@@ -90,6 +107,7 @@ class Settings extends React.Component {
                   type="password"
                   className="attribute-input password"
                   placeholder="Confirm Password"
+                  value={this.state.oldPassword}
                   onChange={this.handleInput('oldPassword')}
                 />
                 <div className="attribute-edit-button-container">
@@ -129,14 +147,16 @@ class Settings extends React.Component {
               >
                 <input
                   type='password'
-                  className="attribute-input"
+                  className="attribute-input password"
                   placeholder="Confirm Password"
+                  value={this.state.oldPassword}
                   onChange={this.handleInput('oldPassword')}
                 />
                 <input
                   type="password"
                   className="attribute-input password"
                   placeholder="New Password"
+                  value={this.state.password}
                   onChange={this.handleInput('password')}
                 />
                 <div className="attribute-edit-button-container">
@@ -171,7 +191,10 @@ class Settings extends React.Component {
               <div
                 onClick={this.toggleAppearance}
                 className='cancel-button'>Cancel</div>
-              <div className='save-button'>Save</div>
+              <div
+                onClick={this.handleGuildSubmit}
+                className='save-button'
+              >Save</div>
             </div>
           </div>
         ): (
@@ -196,6 +219,12 @@ class Settings extends React.Component {
                   className="guild-description-input"
                   defaultValue={this.state.guild_description}
                   onChange={this.handleInput('guild_description')}
+            />
+            <input
+                  type="text"
+                  className="guild-description-input"
+                  placeholder="Current Password"
+                  onChange={this.handleInput('oldPassword')}
             />
           </div>
         ) : (
