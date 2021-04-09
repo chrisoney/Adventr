@@ -216,10 +216,13 @@
               font-size: 42px;
               text-align: center;
               border: none;
-              text-decoration: underline dotted blue;
+              text-decoration: underline dashed #00B8FF 1.5px;
+              // text-decoration-thickness: 0.5px;
+              text-underline-offset: 3px;
               &:focus {
                 background-color: rgba(0,0,0,0.05);
                 border-radius: 2px;
+                text-decoration: none;
               }
             }
           }

@@ -6,6 +6,7 @@ class Settings extends React.Component {
     this.state = {
       selectedOptions: 'account',
       editingAppearance: false,
+      username: this.props.currentUser.username,
       email: this.props.currentUser.email,
       oldPassword: '',
       password: '',
@@ -24,8 +25,8 @@ class Settings extends React.Component {
   resetState() {
     this.setState({
       // editingAppearance: false,
-      email: this.props.currentUser.email,
       username: this.props.currentUser.username,
+      email: this.props.currentUser.email,
       oldPassword: '',
       password: '',
       guild_name: this.props.currentUser.guild_name || 'Untitled',
@@ -282,7 +283,7 @@ class Settings extends React.Component {
                 <input
                   type='text'
                   className="attribute-input"
-                  defaultValue={currentUser.username}
+                  value={currentUser.username}
                   onChange={this.handleInput('username')}
                 />
                 <input
