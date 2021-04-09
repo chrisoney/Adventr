@@ -8,7 +8,9 @@ class Settings extends React.Component {
       editingAppearance: false,
       email: this.props.currentUser.email,
       oldPassword: '',
-      password: ''
+      password: '',
+      guild_name: this.props.currentUser.guild_name || 'Untitled',
+      guild_description: this.props.currentUser.guild_description || '',
     };
     this.switchOptions = this.switchOptions.bind(this);
     this.toggleAttributes = this.toggleAttributes.bind(this);
@@ -180,6 +182,31 @@ class Settings extends React.Component {
               className='edit-appearance-button'
             >Don Your Armor</div>
           </div>
+          );
+        const guildDetails = this.state.editingAppearance ? (
+          <div className={"guild-details edit"}>
+            <input
+                  type="text"
+                  className="guildname-input"
+                  defaultValue={this.state.guild_name}
+                  onChange={this.handleInput('guild_name')}
+            />
+            <input
+                  type="text"
+                  className="guild-description-input"
+                  defaultValue={this.state.guild_description}
+                  onChange={this.handleInput('guild_description')}
+            />
+          </div>
+        ) : (
+          <div className={"guild-details"}>
+            <div className="guildname">
+              {currentUser.guild_name || 'Untitled'}
+            </div>
+            <div className="guild-description">
+              {currentUser.guild_description || ''}
+            </div>
+          </div>
         );
         settingsLeft = (
           <div className={`settings-left ${this.state.editingAppearance ? 'edit' : ''}`}>
@@ -191,14 +218,7 @@ class Settings extends React.Component {
                 className={`appearance-avatar ${this.state.editingAppearance ? 'edit' : ''}`}
                 src={currentUser.avatar}
               />
-              <div className={`guild-details ${this.state.editingAppearance ? 'edit' : ''}`}>
-                <div className="guildname">
-                  {currentUser.guild_name || 'Untitled'}
-                </div>
-                <div className="guild-description">
-                  {currentUser.guild_description || ''}
-                </div>
-              </div>
+              {guildDetails}
             </div>
             <div className="settings-left-panel">
               <div className="panel-title">Username</div>

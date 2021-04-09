@@ -8,8 +8,8 @@ class UserMenu extends React.Component{
     constructor(props) {
         super(props);
         this.state = { currentUser: this.props.currentUser,
-                      imageUrl: null,
-                      imageFile: null, };
+        imageUrl: null,
+        imageFile: null, };
         this.reference = React.createRef();
 
         this.logoutUser = this.logoutUser.bind(this);

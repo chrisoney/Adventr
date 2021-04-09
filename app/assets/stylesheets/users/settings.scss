@@ -212,8 +212,15 @@
             font-size: 42px;
           }
           &.edit {
-            .guildName {
-              border-bottom: 1px dotted blue;
+            .guildname-input {
+              font-size: 42px;
+              text-align: center;
+              border: none;
+              text-decoration: underline dotted blue;
+              &:focus {
+                background-color: rgba(0,0,0,0.05);
+                border-radius: 2px;
+              }
             }
           }
         }
