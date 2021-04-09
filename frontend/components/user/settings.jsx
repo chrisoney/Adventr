@@ -182,7 +182,7 @@ class Settings extends React.Component {
           </div>
         );
         settingsLeft = (
-          <div className="settings-left">
+          <div className={`settings-left ${this.state.editingAppearance ? 'edit' : ''}`}>
             {leftHeader}
             <div className={`appearance-section ${this.state.editingAppearance ? 'edit' : ''}`}>
               <img className={`appearance-banner ${this.state.editingAppearance ? '' : 'hide'}`}
@@ -191,7 +191,7 @@ class Settings extends React.Component {
                 className={`appearance-avatar ${this.state.editingAppearance ? 'edit' : ''}`}
                 src={currentUser.avatar}
               />
-              <div className="guild-details">
+              <div className={`guild-details ${this.state.editingAppearance ? 'edit' : ''}`}>
                 <div className="guildname">
                   {currentUser.guild_name || 'Untitled'}
                 </div>
