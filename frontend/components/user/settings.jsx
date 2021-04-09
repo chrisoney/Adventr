@@ -18,6 +18,19 @@ class Settings extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuildSubmit = this.handleGuildSubmit.bind(this);
+    this.resetState = this.resetState.bind(this);
+  }
+
+  resetState() {
+    this.setState({
+      // editingAppearance: false,
+      email: this.props.currentUser.email,
+      username: this.props.currentUser.username,
+      oldPassword: '',
+      password: '',
+      guild_name: this.props.currentUser.guild_name || 'Untitled',
+      guild_description: this.props.currentUser.guild_description || '',
+    })
   }
 
   handleInput(type) {
@@ -54,24 +67,26 @@ class Settings extends React.Component {
   toggleAppearance() {
     this.setState({
       editingAppearance: !this.state.editingAppearance,
-      guild_name: this.props.currentUser.guild_name || 'Untitled',
-      guild_description: this.props.currentUser.guild_description || '',
+      // guild_name: this.props.currentUser.guild_name || 'Untitled',
+      // guild_description: this.props.currentUser.guild_description || '',
     })
+    this.resetState();
   }
 
   toggleAttributes(e, type) {
     e.preventDefault();
     document.querySelectorAll(`[data-attribute-type='${type}']`)
       .forEach(ele => ele.classList.toggle('hide'));
-    let resetInput;
-    if (type === 'password') resetInput = '';
-    else {
-      resetInput = this.props.currentUser[type];
-    }
-    //temporary password clear
-    document.querySelectorAll('.attribute-input .password')
-      .forEach((ele) => ele.value = '');
-    this.setState({ [type]: resetInput });
+    // let resetInput;
+    // if (type === 'password') resetInput = '';
+    // else {
+    //   resetInput = this.props.currentUser[type];
+    // }
+    // //temporary password clear
+    // document.querySelectorAll('.attribute-input .password')
+    //   .forEach((ele) => ele.value = '');
+    // this.setState({ [type]: resetInput });
+    this.resetState();
   }
 
   render() {
@@ -209,22 +224,23 @@ class Settings extends React.Component {
         const guildDetails = this.state.editingAppearance ? (
           <div className={"guild-details edit"}>
             <input
-                  type="text"
-                  className="guildname-input"
-                  defaultValue={this.state.guild_name}
-                  onChange={this.handleInput('guild_name')}
+              type="text"
+              className="guildname-input"
+              defaultValue={this.state.guild_name}
+              onChange={this.handleInput('guild_name')}
             />
             <input
-                  type="text"
-                  className="guild-description-input"
-                  defaultValue={this.state.guild_description}
-                  onChange={this.handleInput('guild_description')}
+              type="text"
+              className="guild-description-input"
+              defaultValue={this.state.guild_description}
+              onChange={this.handleInput('guild_description')}
             />
             <input
-                  type="text"
-                  className="guild-description-input"
-                  placeholder="Current Password"
-                  onChange={this.handleInput('oldPassword')}
+              type="text"
+              className="guild-description-input"
+              placeholder="Current Password"
+              value={this.state.oldPassword}
+              onChange={this.handleInput('oldPassword')}
             />
           </div>
         ) : (
@@ -273,6 +289,7 @@ class Settings extends React.Component {
                   type="password"
                   className="attribute-input password"
                   placeholder="Confirm Password"
+                  value={this.state.oldPassword}
                   onChange={this.handleInput('oldPassword')}
                 />
                 <div className="attribute-edit-button-container">
