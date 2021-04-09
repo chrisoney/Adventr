@@ -20,9 +20,6 @@ class UserMenu extends React.Component{
       this.props.logout();
       this.props.closeModal();
     }
-
-    
-
     render() {
       const { currentUser, closeModal, openModal2 } = this.props;
       return (
@@ -68,6 +65,12 @@ class UserMenu extends React.Component{
               <span className="fas fa-user-friends"></span>
               <Link to="/follows" className="link">
                 Follows
+              </Link>
+            </div>
+            <div className="menu-container" onClick={closeModal}>
+              <span className="fas fa-cogs"></span>
+              <Link to="/settings" className="link">
+                Settings
               </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>

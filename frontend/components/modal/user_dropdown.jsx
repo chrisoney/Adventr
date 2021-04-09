@@ -40,10 +40,10 @@ class UserDropdown extends React.Component {
             </div>
             <div className="panel-count">{this.props.followings}</div>
           </Link>
-          <div className="panel-container">
+          <Link to='/settings' className="panel-container">
             <span className="fas fa-cogs user-dropdown-icon"></span>
             <span className="panel-text">Settings</span>
-          </div>
+          </Link>
         </div>
         <div className="user-dropdown-header">
           <div className="header-title">Guild</div>
