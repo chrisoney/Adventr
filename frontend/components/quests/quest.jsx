@@ -7,6 +7,7 @@ class Quest extends React.Component {
     super(props);
     this.state = {
       author: null || this.props.author,
+      authorAvatar: this.props.authorAvatar,
       liked: this.props.liked,
       visible: false,
       followed: false || this.props.followed,
@@ -72,7 +73,7 @@ class Quest extends React.Component {
 
   render() {
     const { currentUser, quest, authorId, deleteQuest, loc, tags } = this.props;
-    let { author } = this.state;
+    let { author, authorAvatar } = this.state;
     let visibility = this.state.visible;
     let followUser;
     let likedClass;
@@ -245,7 +246,7 @@ class Quest extends React.Component {
 
     let avatar = window.avatar;
     if (author && author.avatar !== 'default') {
-      avatar = author.avatar;
+      avatar = authorAvatar || author.avatar;
     }
 
     return (

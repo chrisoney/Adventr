@@ -27,6 +27,7 @@ const mapStateToProps = (state, ownProps) => {
     authorId: authorId,
     // author: state.entities.users[authorId],
     author: ownProps.quest.author,
+    authorAvatar: ownProps.quest.authorAvatar || null,
     quest: ownProps.quest,
     tags: ownProps.quest.tags,
     liked: liked,

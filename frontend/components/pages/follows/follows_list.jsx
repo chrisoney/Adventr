@@ -79,7 +79,7 @@ class FollowsList extends React.Component {
       return (
         <div key={user.id} className="followed-user-container">
           <div className="followed-user-left">
-            <img src={user.avatar} className="followed-user-avatar" />
+            <img src={user.avatarUrl || user.avatar} className="followed-user-avatar" />
             <div className="followed-user-details">
               <div className="followed-user-username">{user.username}</div>
               <div className="followed-user-latest">Updated {latestDate}</div>

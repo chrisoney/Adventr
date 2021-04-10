@@ -27,7 +27,7 @@ class UserMenu extends React.Component{
           <div className="user-menu-top">
             <label className="user-menu-avatar">
               <img
-                src={currentUser.avatar}
+                src={currentUser.avatarUrl || currentUser.avatar}
                 // onClick={() => {
                 //   closeModal();
                 //   openModal2('avatar');

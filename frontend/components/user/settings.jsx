@@ -115,7 +115,6 @@ class Settings extends React.Component {
   render() {
     const { currentUser } = this.props;
     let settingsLeft;
-
     switch (this.state.selectedOptions) {
       case 'account':
         settingsLeft = (
@@ -390,7 +389,7 @@ class Settings extends React.Component {
                 onClick={()=> this.switchOptions('guild')}
                 className='guild-container'
               >
-                <img src={currentUser.avatar} className="guild-container-avatar"/>
+                <img src={currentUser.avatarUrl || currentUser.avatar} className="guild-container-avatar"/>
                 <div className='guild-container-details'>
                   <div className='guild-container-username'>{currentUser.username}</div>
                   <div className='guild-container-guildname'>

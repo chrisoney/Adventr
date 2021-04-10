@@ -57,7 +57,7 @@ class GuildRecs extends React.Component {
       return (
         <li className="suggested-guild-content-container" key={user.id}>
           <div className="user-attributes">
-            <img src={user.avatar} className="guild-rec-avatar" />
+            <img src={user.avatarUrl || user.avatar} className="guild-rec-avatar" />
             <div className="guild-rec-details">
               <span className="guild-rec-username">{user.username}</span>
               <span className="guild-rec-guildname">

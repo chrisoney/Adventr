@@ -9,7 +9,7 @@ class NewQuestCreate extends React.Component {
 
   render(){
     const { currentUser } = this.props;
-    const avatar = currentUser.avatar;
+    const avatar = currentUser.avatarUrl || currentUser.avatar;
     const authorId = currentUser.id;
     return (
       <div className="quest-create-container">

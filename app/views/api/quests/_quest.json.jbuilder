@@ -9,4 +9,7 @@ end
 json.likes quest.likes.count
 json.authorId quest.user.id
 json.author quest.user
+if quest.user.avatar_image.attached?
+      json.authorAvatar url_for(quest.user.avatar_image)
+end
 json.tags quest.tags
