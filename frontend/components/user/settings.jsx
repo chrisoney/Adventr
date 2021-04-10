@@ -10,6 +10,8 @@ class Settings extends React.Component {
       email: this.props.currentUser.email,
       oldPassword: '',
       password: '',
+      avatarUrl: '',
+      avatarFile: null,
       guild_name: this.props.currentUser.guild_name || 'Untitled',
       guild_description: this.props.currentUser.guild_description || '',
     };
@@ -19,6 +21,7 @@ class Settings extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuildSubmit = this.handleGuildSubmit.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
     this.resetState = this.resetState.bind(this);
   }
 
@@ -31,7 +34,23 @@ class Settings extends React.Component {
       password: '',
       guild_name: this.props.currentUser.guild_name || 'Untitled',
       guild_description: this.props.currentUser.guild_description || '',
+      avatarUrl: '',
+      avatarFile: null,
     })
+  }
+
+  handleUpload(e, type) {
+    e.preventDefault();
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+      this.setState({ avatarUrl: reader.result, avatarFile: file });
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ avatarUrl: "", avatarFile: null });
+}   
   }
 
   handleInput(type) {
@@ -258,12 +277,32 @@ class Settings extends React.Component {
           <div className={`settings-left ${this.state.editingAppearance ? 'edit' : ''}`}>
             {leftHeader}
             <div className={`appearance-section ${this.state.editingAppearance ? 'edit' : ''}`}>
-              <img className={`appearance-banner ${this.state.editingAppearance ? '' : 'hide'}`}
-                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca7eb999-198d-4058-930a-9c99da62d96f/d5ulvau-a27e97a0-c5b9-491c-9880-d2bac30ac7a5.jpg/v1/fill/w_1065,h_750,q_70,strp/marfling_swamp___le_dernier_bastion_by_skavenzverov_d5ulvau-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMTI4IiwicGF0aCI6IlwvZlwvY2E3ZWI5OTktMTk4ZC00MDU4LTkzMGEtOWM5OWRhNjJkOTZmXC9kNXVsdmF1LWEyN2U5N2EwLWM1YjktNDkxYy05ODgwLWQyYmFjMzBhYzdhNS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8BTJXNKdLu89YM1z78RVdRQl2Ita2VDuPLOjz-XA2Bg" />
-              <img
-                className={`appearance-avatar ${this.state.editingAppearance ? 'edit' : ''}`}
-                src={currentUser.avatar}
-              />
+              <div className="appearance-banner-container">
+                <img className={`appearance-banner ${this.state.editingAppearance ? '' : 'hide'}`}
+                  src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca7eb999-198d-4058-930a-9c99da62d96f/d5ulvau-a27e97a0-c5b9-491c-9880-d2bac30ac7a5.jpg/v1/fill/w_1065,h_750,q_70,strp/marfling_swamp___le_dernier_bastion_by_skavenzverov_d5ulvau-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMTI4IiwicGF0aCI6IlwvZlwvY2E3ZWI5OTktMTk4ZC00MDU4LTkzMGEtOWM5OWRhNjJkOTZmXC9kNXVsdmF1LWEyN2U5N2EwLWM1YjktNDkxYy05ODgwLWQyYmFjMzBhYzdhNS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8BTJXNKdLu89YM1z78RVdRQl2Ita2VDuPLOjz-XA2Bg" />
+              </div>
+              <div className="appearance-avatar-container">
+                {this.state.editingAppearance &&
+                  <>
+                    <label
+                      htmlFor="upload-box"
+                      className="avatar-edit-button-container"
+                    >
+                      <span className="avatar-edit-button fas fa-feather-alt"></span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        id="upload-box"
+                        onChange={(e) => this.handleUpload(e, 'avatar')}
+                      />
+                    </label>
+                  </>
+                }
+                <img
+                  className={`appearance-avatar ${this.state.editingAppearance ? 'edit' : ''}`}
+                  src={this.state.avatarUrl || currentUser.avatar}
+                />
+              </div>
               {guildDetails}
             </div>
             <div className="settings-left-panel">

@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:index, :show, :create, :destroy]
     resources :follows, only: [:index, :show, :create, :destroy]
     resources :tags, only: [:index, :show, :create, :destroy]
-    # resources :users_tags, only: [:index, :show, :create, :destroy]
-    # resources :quests_tags, only: [:index, :show, :create, :destroy]
     resources :tag_joins, only: [:index, :show, :create, :destroy]
     resources :reblogs, only: [:index, :show, :create, :destroy]
   end

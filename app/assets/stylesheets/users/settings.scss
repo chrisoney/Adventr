@@ -171,35 +171,61 @@
         width: 100%;
         padding-top: 50px;
         &.edit {padding-top: 0px}
-        .appearance-banner {
-          position: relative;
-          display: block;
-          width: 625px;
-          object-fit: cover;
-          z-index: 5;
-          border-top-right-radius: 3px;
-          border-top-left-radius: 3px;
-          opacity: 0.7;
-          animation: banner-grow 0.5s ease-in-out forwards;
-          &.hide {display: none;}
-        }
-        .appearance-avatar {
-          display: block;
-          height: 96px;
-          width: 96px;
-          object-fit: cover;
-          border-radius: 50%;
-          margin: 20px auto;
+        .appearance-banner-container{
 
-          &.edit {
+          .appearance-banner {
             position: relative;
-            margin-top: -72px;
-            z-index: 10;
+            display: block;
+            width: 625px;
+            object-fit: cover;
+            z-index: 5;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+            opacity: 0.7;
+            animation: banner-grow 0.5s ease-in-out forwards;
+            &.hide {display: none;}
+          }
+        }
+        .appearance-avatar-container {
+          position:relative;
+          .avatar-edit-button-container {
+            z-index: 7;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0,0,0,0.5);
+            cursor: pointer;
+            border-radius: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .avatar-edit-button {
+              color: #FFFFFF;
+              font-size: 18px;
+              line-height: 30px;
+            }
+          }
+          .appearance-avatar {
+            display: block;
+            height: 96px;
+            width: 96px;
+            object-fit: cover;
             border-radius: 50%;
-            margin-top: -72px;
-            justify-self: center;
-            color: white;
-            box-shadow: 0 0 0 4px;
+            margin: 20px auto;
+  
+            &.edit {
+              position: relative;
+              margin-top: -72px;
+              z-index: 6;
+              border-radius: 50%;
+              margin-top: -72px;
+              justify-self: center;
+              color: white;
+              box-shadow: 0 0 0 4px;
+            }
           }
         }
 
