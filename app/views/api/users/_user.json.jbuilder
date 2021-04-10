@@ -1,9 +1,9 @@
 json.extract! user, :id, :username, :email, :guild_name, :guild_description,:avatar
 
 if user.avatar_image.attached?
-  json.avatarUrl url_for(avatar_image)
-  json.avatarFile avatar_image.blob_id
-  json.avatarFile2 avatar_image
+  json.avatarUrl url_for(user.avatar_image)
+  json.avatarFile user.avatar_image.blob_id
+  json.avatarFile2 user.avatar_image
 end
 
 json.quests user.quests

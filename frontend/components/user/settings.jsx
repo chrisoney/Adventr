@@ -75,6 +75,9 @@ class Settings extends React.Component {
     formData.append('user[id]', this.props.currentUser.id);
     formData.append(`user[guild_name]`, this.state.guild_name);
     formData.append(`user[guild_description]`, this.state.guild_description);
+    if (this.state.avatarFile) {
+      formData.append(`user[avatar_image]`, this.state.avatarFile);
+    }
     formData.append('old_password', this.state.oldPassword);
     this.props.updateUser(formData);
     this.toggleAppearance()
