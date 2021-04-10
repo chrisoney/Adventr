@@ -38,45 +38,45 @@ class UserMenu extends React.Component{
           </div>
           <div className="user-menu-top-buttons">
             <div className="menu-container">
-              <span className="fas fa-sign-out-alt"></span>
               <button className="link" onClick={this.logoutUser}>
-                Logout
+                <span className="fas fa-sign-out-alt"></span>
+                <span>Logout</span>
               </button>
             </div>
             <div className="menu-container" onClick={closeModal}>
-              <span className="fas fa-home"></span>
               <Link to="/dashboard" className="link">
-                Dashboard
+                <span className="fas fa-home"></span>
+                <span>Dashboard</span>
               </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
-              <span className="fas fa-compass"></span>
               <Link to="/explore" className="link">
-                Explore
+                <span className="fas fa-compass"></span>
+                <span>Explore</span>
               </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
-              <span className="fas fa-heart"></span>
               <Link to="/likes" className="link">
-                Likes
+                <span className="fas fa-heart"></span>
+                <span>Likes</span>
               </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
-              <span className="fas fa-user-friends"></span>
               <Link to="/follows" className="link">
-                Follows
+                <span className="fas fa-user-friends"></span>
+                <span>Follows</span>
               </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
-              <span className="fas fa-cogs"></span>
               <Link to="/settings" className="link">
-                Settings
+                <span className="fas fa-cogs"></span>
+                <span>Settings</span>
               </Link>
             </div>
             <div className="menu-container" onClick={closeModal}>
-              <span className="fas fa-question-circle"></span>
               <Link to="/about" className="link">
-                About
+                <span className="fas fa-question-circle"></span>
+                <span>About</span>
               </Link>
             </div>
           </div>

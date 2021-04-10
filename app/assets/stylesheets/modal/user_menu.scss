@@ -68,22 +68,27 @@
   color: white;
   padding: 10px 5px;
   margin: 0px 10px;
+  .fas {
+    width: 25px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  .link {
+    font-family: fantasy;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    padding: 0px 10px;
+  }
 }
 
 .menu-container:hover, .link:hover {
   cursor:pointer;
 }
 
-.link {
-  font-family: fantasy;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  text-align: left;
-  color: white;
-  font-size: 20px;
-  padding: 0px 10px;
-}
 
 @media only screen and (min-width: 980px) {
   .user-menu-background, .user-menu-container {
