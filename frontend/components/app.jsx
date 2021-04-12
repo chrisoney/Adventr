@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute, SplashRoute } from '../util/route_util';
 import SignupFormContainer from "./session/signup_form_container";
@@ -16,22 +17,27 @@ import LikesContainer from './pages/likes/likes_list_container';
 import FollowsContainer from './pages/follows/follows_list_container';
 
 const App = () => (
-  <div className="app">
-    <Modal />
-    <Route path="/" component={NavbarContainer} />
-    <Route exact path="/" component={Splash} />
-    <Switch>
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <ProtectedRoute path="/dashboard" component={DashboardContainer} />
-      <ProtectedRoute path="/explore" component={ExploreContainer} />
-      <ProtectedRoute path="/settings" component={SettingsContainer} />
-      <ProtectedRoute path="/guild/:guildname" component={GuildpageContainer} />
-      <ProtectedRoute path="/likes" component={LikesContainer} />
-      <ProtectedRoute path="/follows" component={FollowsContainer} />
-      <ProtectedRoute path="/about" component={About} />
-    </Switch>
-  </div>
+  <>
+    <Helmet>
+      <title>Adventr</title>
+    </Helmet>
+    <div className="app">
+      <Modal />
+      <Route path="/" component={NavbarContainer} />
+      <Route exact path="/" component={Splash} />
+      <Switch>
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <ProtectedRoute path="/dashboard" component={DashboardContainer} />
+        <ProtectedRoute path="/explore" component={ExploreContainer} />
+        <ProtectedRoute path="/settings" component={SettingsContainer} />
+        <ProtectedRoute path="/guild/:guildname" component={GuildpageContainer} />
+        <ProtectedRoute path="/likes" component={LikesContainer} />
+        <ProtectedRoute path="/follows" component={FollowsContainer} />
+        <ProtectedRoute path="/about" component={About} />
+      </Switch>
+    </div>
+  </>
 );
 
 export default App;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from 'react-helmet'
 import QuestContainer from '../quests/quest_container';
 import Loading from '../loading/loading';
 import GuildRecs from '../sidebar/guild_recs';
@@ -92,9 +93,9 @@ class Explore extends React.Component {
   }
 
   render() {
-    const { users, follows } = this.props;
-    const followRecs = [];
-    const followIds = follows.map((follow) => follow.user_id);
+    // const { users, follows } = this.props;
+    // const followRecs = [];
+    // const followIds = follows.map((follow) => follow.user_id);
 
     if (this.state.loading) {
       return <Loading background={'explore-container'} />;
@@ -239,40 +240,43 @@ class Explore extends React.Component {
     );
 
     return (
-      <div className="explore-container">
-        <div className="explore">
-          <div className="explore-left">
-            <div className="explore-header">
-              {/* Placeholders, no true functionality yet */}
-              <div className="explore-tab">For You</div>
-              <div className="explore-tab">Trending</div>
-              <div className="explore-tab">Guildmaster Picks</div>
-              <div className="explore-tab">More</div>
+      <>
+        <Helmet><title>Explore Adventr</title></Helmet>
+        <div className="explore-container">
+          <div className="explore">
+            <div className="explore-left">
+              <div className="explore-header">
+                {/* Placeholders, no true functionality yet */}
+                <div className="explore-tab">For You</div>
+                <div className="explore-tab">Trending</div>
+                <div className="explore-tab">Guildmaster Picks</div>
+                <div className="explore-tab">More</div>
+              </div>
+              <div className="explore-tag-container">{newTagElements}</div>
+              {questDisplay}
             </div>
-            <div className="explore-tag-container">{newTagElements}</div>
-            {questDisplay}
-          </div>
-          <div className="explore-right">
-            <div className="current-tag-follows">
-              <div className="current-tag-follows-header">
-                <div className="current-tag-follows-title">Following</div>
+            <div className="explore-right">
+              <div className="current-tag-follows">
+                <div className="current-tag-follows-header">
+                  <div className="current-tag-follows-title">Following</div>
+                </div>
+                <div className="current-tag-container">
+                  {displayCurrentTagElements}
+                </div>
+                <div
+                  onClick={() =>
+                    this.handleCurrTagCycle(allCurrentTagElements.length)
+                  }
+                  className="current-tag-follows-button"
+                >
+                  Show More Tags
+                </div>
               </div>
-              <div className="current-tag-container">
-                {displayCurrentTagElements}
-              </div>
-              <div
-                onClick={() =>
-                  this.handleCurrTagCycle(allCurrentTagElements.length)
-                }
-                className="current-tag-follows-button"
-              >
-                Show More Tags
-              </div>
+              <GuildRecs />
             </div>
-            <GuildRecs />
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
