@@ -10,7 +10,7 @@ class Settings extends React.Component {
       email: this.props.currentUser.email,
       oldPassword: '',
       password: '',
-      avatarUrl: '',
+      avatarUrl: this.props.currentUser.avatarUrl || '',
       avatarFile: null,
       guild_name: this.props.currentUser.guild_name || 'Untitled',
       guild_description: this.props.currentUser.guild_description || '',
@@ -34,7 +34,7 @@ class Settings extends React.Component {
       password: '',
       guild_name: this.props.currentUser.guild_name || 'Untitled',
       guild_description: this.props.currentUser.guild_description || '',
-      avatarUrl: '',
+      avatarUrl: this.props.currentUser.avatarUrl || '',
       avatarFile: null,
     })
   }
@@ -49,7 +49,10 @@ class Settings extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({ avatarUrl: "", avatarFile: null });
+      this.setState({
+        avatarUrl: this.props.currentUser.avatarUrl || "",
+        avatarFile: null
+      });
 }   
   }
 
@@ -302,7 +305,7 @@ class Settings extends React.Component {
                 }
                 <img
                   className={`appearance-avatar ${this.state.editingAppearance ? 'edit' : ''}`}
-                  src={this.state.avatarUrl || currentUser.avatar}
+                  src={this.state.avatarUrl}
                 />
               </div>
               {guildDetails}
@@ -361,7 +364,6 @@ class Settings extends React.Component {
       default:
         settingsLeft = null;
     }
-
     return (
       <div className="settings-background">
         <div className="settings-container">
@@ -389,7 +391,7 @@ class Settings extends React.Component {
                 onClick={()=> this.switchOptions('guild')}
                 className='guild-container'
               >
-                <img src={currentUser.avatarUrl || currentUser.avatar} className="guild-container-avatar"/>
+                <img src={currentUser.avatarUrl} className="guild-container-avatar"/>
                 <div className='guild-container-details'>
                   <div className='guild-container-username'>{currentUser.username}</div>
                   <div className='guild-container-guildname'>
