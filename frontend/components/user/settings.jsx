@@ -257,12 +257,13 @@ class Settings extends React.Component {
             <input
               type="text"
               className="guild-description-input"
+              placeholder="Description"
               defaultValue={this.state.guild_description}
               onChange={this.handleInput('guild_description')}
             />
             <input
-              type="text"
-              className="guild-password-input"
+              type="password"
+              className="guild-description-input"
               placeholder="Current Password"
               value={this.state.oldPassword}
               onChange={this.handleInput('oldPassword')}
