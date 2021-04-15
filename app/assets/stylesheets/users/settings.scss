@@ -251,6 +251,15 @@
                 text-decoration: none;
               }
             }
+            .guild-description-input {
+              width: 525px;
+              background-color: rgba(0,0,0,0.05);
+              text-align: center;
+              min-height: 20px;
+              font-size: 100%;
+              border: none;
+            }
+            .guild-password-input{}
           }
         }
       }
