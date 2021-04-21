@@ -9,7 +9,7 @@
 	align-items: center;
 	z-index: 15;
 	justify-content: space-between;
-	background-color: #222222;
+	background-color: $light-grey;
 
 	&.splash-nav {
 		z-index: 2;
@@ -189,7 +189,7 @@
 		width: 45px;
 		height: 32px;
 		span {
-			color: #222222;
+			color: $light-grey;
 			padding-top:2px;
 			height: 22px;
 			width: auto;

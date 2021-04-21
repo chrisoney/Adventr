@@ -1,7 +1,9 @@
+@import './variables.scss';
+
 .quest-create-button-container {
   min-height: 104px;
   display: flex;
-  background-color: #222222;
+  background-color: $light-grey;
   align-items: center;
 }
 

@@ -98,7 +98,7 @@
 	padding-right: 20px;
 	display: flex;
 	align-items: center;
-  background-color: #222222;
+  background-color: $light-grey;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 	span {
@@ -125,7 +125,7 @@
 }
 
 .quest-footer {
-  background-color: #222222;
+  background-color: #062b4b;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;

@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .user-menu-background {
   display: grid;
   position: fixed;
@@ -14,7 +16,7 @@
   // top: 54px;
   top: 0;
   bottom: 0;
-  background-color: #222222;
+  background-color: $light-grey;
   width: 100vw;
   animation: user-menu-slide-right 0.5s ease;
 
