@@ -20,6 +20,11 @@
 #   Tag.create(tag_name: tag)
 # end
 # New users
+users_usernames = []
+users_emails = []
+users_guild_names = []
+users_guild_descriptions = []
+users_avatars_filenames = []
 # user1 = User.create(username: "fake-user", password: "hunter12", email: "fakeuser@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/paladin.jpg");
 # user2 = User.create(username: "terriblis", password: "hunter12", email: "terriblis@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/SezbQhN.png");
 # user3 = User.create(username: "carl", password: "hunter12", email: "carl@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile1.jpg");

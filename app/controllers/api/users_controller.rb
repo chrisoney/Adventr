@@ -11,7 +11,6 @@ end
     @user = User.new(user_params)
     file = File.open('app/assets/images/default_avatar.jpg')
     @user.avatar_image.attach(io: file, filename: 'default_avatar.jpg')
-    # @user.avatar = "https://adventr-dev.s3-us-west-1.amazonaws.com/magic.jpg"
     if @user.save
       login!(@user)
       render 'api/users/dashboard'
