@@ -9,7 +9,7 @@ class NewQuestForm extends React.Component {
       type: quest ? quest.type : type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
-      tags: quest ? quest.tags : ['testing', 'also'],
+      tags: quest ? quest.tags : [],
       imageUrls: quest ? quest.imageUrls : null,
       imageFiles: quest ? quest.imageFiles : null,
       errors: null,
@@ -68,6 +68,7 @@ class NewQuestForm extends React.Component {
   }
 
   handleUpload(e) {
+    console.log("hello")
     let that = this;
     let fileArr = [];
     let urlArr = [];
@@ -81,6 +82,7 @@ class NewQuestForm extends React.Component {
 
     for (let i = 0; i < uploadedImages.length; i++) {
       let file = uploadedImages[i];
+      console.log(uploadedImages)
       let fileReader = new FileReader();
 
       fileReader.onloadend = () => {
@@ -250,6 +252,7 @@ class NewQuestForm extends React.Component {
             type="file"
             accept="image/*"
             id="upload-box"
+            value=""
             onChange={this.handleUpload}
             multiple
           />
