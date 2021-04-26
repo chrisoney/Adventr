@@ -138,10 +138,10 @@ class Quest extends React.Component {
           <div className="quest-footer-left"></div>
           <div className="quest-footer-right">
             <div className="quest-buttons">
-              {/* <button 
+              <button 
                 className="edit fas fa-edit"
-                onClick={() => this.props.history.push("/quests/".concat(quest.id).concat("/edit"))}
-              ></button> */}
+                onClick={() => this.props.openModal(`edit-quest-${quest.id}`)}
+              ></button>
               <button
                 className="trash fas fa-trash"
                 onClick={() => deleteQuest(quest.id)}

@@ -36,8 +36,6 @@ class Modal extends React.Component {
     if (modal.slice(0, 4) === 'new-') {
       formType = modal.slice(4);
     }
-    if (quest) formType = quest.type;
-
     switch (modal) {
       case 'new-text':
       case 'new-image':
@@ -51,7 +49,7 @@ class Modal extends React.Component {
         transparentBackground = <div className="test-background"></div>;
         break;
       case 'edit-quest':
-        component = <EditQuestContainer type={formType} quest={quest}/>;
+        component = <EditQuestContainer type={quest.quest_type} quest={quest}/>;
         background = 'new-quest-background';
         container = 'new-quest-container';
         onClickEffect = closeModal;
@@ -99,10 +97,17 @@ class Modal extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
+  let modal = state.ui.modal;
+  let quest;
+  if (modal && modal.startsWith('edit-quest')) {
+    modal = state.ui.modal.slice(0, 10);
+    const id = parseInt(state.ui.modal.slice(11));
+    quest = state.entities.quests[id];
+  }
   return {
-    quest: ownProps.quest || null,
-    modal: state.ui.modal,
+    quest,
+    modal: modal,
     modal2: state.ui.modal2,
   };
 };

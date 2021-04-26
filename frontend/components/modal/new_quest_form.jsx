@@ -7,7 +7,7 @@ class NewQuestForm extends React.Component {
     this.state = {
       currentUser_id: currentUser.id,
       id: quest ? quest.id : null,
-      type: quest ? quest.type : type,
+      type: type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
       tags: quest ? quest.tags : [],
