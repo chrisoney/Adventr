@@ -9,7 +9,7 @@ class NewQuestForm extends React.Component {
       type: quest ? quest.type : type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
-      tags: quest ? quest.tags : [],
+      tags: quest ? quest.tags : ['testing', 'also'],
       imageUrls: quest ? quest.imageUrls : null,
       imageFiles: quest ? quest.imageFiles : null,
       errors: null,
@@ -33,19 +33,19 @@ class NewQuestForm extends React.Component {
       if (this.state.tags.indexOf(tag) === -1) {
         this.setState({ tags: this.state.tags.concat([tag]) });
         // console.log(e.target);
-        const newDiv = document.createElement('div');
-        newDiv.classList.add('enteredTag');
-        newDiv.innerHTML = `#${tag}`;
-        newDiv.addEventListener('click', (e) => {
-          const tagToDelete = e.target.innerHTML.slice(1);
-          const index = this.state.tags.indexOf(tagToDelete);
-          const newTagArray = this.state.tags
-            .slice(0, index)
-            .concat(this.state.tags.slice(index + 1, this.state.tags.length));
-          this.setState({ tags: newTagArray });
-          e.target.remove();
-        });
-        e.target.parentElement.insertBefore(newDiv, e.target);
+        // const newDiv = document.createElement('div');
+        // newDiv.classList.add('enteredTag');
+        // newDiv.innerHTML = `#${tag}`;
+        // newDiv.addEventListener('click', (e) => {
+        //   const tagToDelete = e.target.innerHTML.slice(1);
+        //   const index = this.state.tags.indexOf(tagToDelete);
+        //   const newTagArray = this.state.tags
+        //     .slice(0, index)
+        //     .concat(this.state.tags.slice(index + 1, this.state.tags.length));
+        //   this.setState({ tags: newTagArray });
+        //   e.target.remove();
+        // });
+        // e.target.parentElement.insertBefore(newDiv, e.target);
       }
       e.target.value = null;
     } else if (
@@ -353,6 +353,9 @@ class NewQuestForm extends React.Component {
           return false;
         }}
       >
+        {this.state.tags.map((tag,idx) => {
+          return <div key={idx} className="enteredTag">#{tag}</div>
+        })}
         <input
           id="tagInput"
           type="text"
