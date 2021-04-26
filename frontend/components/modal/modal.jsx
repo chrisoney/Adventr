@@ -6,6 +6,7 @@ import UserMenu from './user_menu';
 import NewQuestContainer from './new_quest_container';
 import AvatarContainer from './avatar_container';
 import NewQuestSelector from './new_quest_selector';
+import EditQuestContainer from './edit_quest_container';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { modal, closeModal, openModal2 } = this.props;
+    const { modal, closeModal, openModal2, quest } = this.props;
     if (!modal) {
       return null;
     }
@@ -35,6 +36,7 @@ class Modal extends React.Component {
     if (modal.slice(0, 4) === 'new-') {
       formType = modal.slice(4);
     }
+    if (quest) formType = quest.type;
 
     switch (modal) {
       case 'new-text':
@@ -42,7 +44,14 @@ class Modal extends React.Component {
       case 'new-quote':
       case 'new-audio':
       case 'new-video':
-        component = <NewQuestContainer type={formType} />;
+        component = <NewQuestContainer type={formType}/>;
+        background = 'new-quest-background';
+        container = 'new-quest-container';
+        onClickEffect = closeModal;
+        transparentBackground = <div className="test-background"></div>;
+        break;
+      case 'edit-quest':
+        component = <EditQuestContainer type={formType} quest={quest}/>;
         background = 'new-quest-background';
         container = 'new-quest-container';
         onClickEffect = closeModal;
@@ -90,8 +99,9 @@ class Modal extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    quest: ownProps.quest || null,
     modal: state.ui.modal,
     modal2: state.ui.modal2,
   };

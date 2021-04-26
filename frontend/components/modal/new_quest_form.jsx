@@ -6,6 +6,7 @@ class NewQuestForm extends React.Component {
     const { type, currentUser, quest } = this.props;
     this.state = {
       currentUser_id: currentUser.id,
+      id: quest ? quest.id : null,
       type: quest ? quest.type : type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
@@ -68,7 +69,6 @@ class NewQuestForm extends React.Component {
   }
 
   handleUpload(e) {
-    console.log("hello")
     let that = this;
     let fileArr = [];
     let urlArr = [];
@@ -82,7 +82,6 @@ class NewQuestForm extends React.Component {
 
     for (let i = 0; i < uploadedImages.length; i++) {
       let file = uploadedImages[i];
-      console.log(uploadedImages)
       let fileReader = new FileReader();
 
       fileReader.onloadend = () => {
@@ -134,7 +133,8 @@ class NewQuestForm extends React.Component {
       const formData = new FormData();
       // changed
       const imageFiles = this.state.imageFiles;
-
+      const id = this.state.id;
+      if (id) formData.append('quest[id]', id)
       formData.append('quest[title]', this.state.title);
       if (imageFiles) {
         imageFiles.forEach((image, idx) => {
@@ -144,7 +144,7 @@ class NewQuestForm extends React.Component {
       formData.append('quest[text]', this.state.text);
       formData.append('quest[quest_type]', this.state.type);
 
-      this.props.createQuest(formData).then((questData) => {
+      this.props.questSubmitAction(formData).then((questData) => {
         const questId = questData.quest.id;
         const tags = that.state.tags;
         if (tags) {
