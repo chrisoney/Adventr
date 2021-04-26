@@ -23,7 +23,6 @@ class Api::QuestsController < ApplicationController
 
   def update
     @quest = Quest.find(params[:id])
-    
     if (@quest && @quest.update(quest_params))
       render :show
     else

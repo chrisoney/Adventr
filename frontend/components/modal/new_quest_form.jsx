@@ -10,7 +10,7 @@ class NewQuestForm extends React.Component {
       type: type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
-      tags: quest ? quest.tags : [],
+      tags: quest ? quest.tags.map(tag => tag.tag_name) : [],
       imageUrls: quest ? quest.imageUrls : null,
       imageFiles: quest ? quest.imageFiles : null,
       errors: null,
@@ -218,6 +218,7 @@ class NewQuestForm extends React.Component {
     const titleSection = (
       <input
         type="text"
+        value={title}
         placeholder="Title"
         className="input-title"
         onChange={this.handleInput('title')}
@@ -341,6 +342,7 @@ class NewQuestForm extends React.Component {
       <textarea
         cols="30"
         rows="4"
+        value={text}
         placeholder={placeholderText}
         className="input-body"
         elastic="true"
