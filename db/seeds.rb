@@ -20,6 +20,7 @@
 #   Tag.create(tag_name: tag)
 # end
 # New users
+users = []
 users_usernames = []
 users_emails = []
 users_guild_names = []

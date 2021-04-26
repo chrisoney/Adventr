@@ -3,15 +3,15 @@ import React from 'react';
 class NewQuestForm extends React.Component {
   constructor(props) {
     super(props);
-    const { type, currentUser } = this.props;
+    const { type, currentUser, quest } = this.props;
     this.state = {
       currentUser_id: currentUser.id,
-      type: type,
-      title: '',
-      text: '',
-      tags: [],
-      imageUrls: null,
-      imageFiles: null,
+      type: quest ? quest.type : type,
+      title: quest ? quest.title : '',
+      text: quest ? quest.text : '',
+      tags: quest ? quest.tags : [],
+      imageUrls: quest ? quest.imageUrls : null,
+      imageFiles: quest ? quest.imageFiles : null,
       errors: null,
       allowSubmit: true,
     };
