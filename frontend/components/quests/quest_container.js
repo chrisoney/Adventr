@@ -29,7 +29,7 @@ const mapStateToProps = (state, ownProps) => {
     author: ownProps.quest.author,
     authorAvatar: ownProps.quest.authorAvatar || null,
     quest: ownProps.quest,
-    tags: ownProps.quest.tags,
+    tags_joins: ownProps.quest.tag_joins,
     liked: liked,
     followed: followed,
   };

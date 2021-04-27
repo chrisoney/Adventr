@@ -10,7 +10,7 @@ class NewQuestForm extends React.Component {
       type: type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
-      tags: quest ? quest.tags.map(tag => tag.tag_name) : [],
+      tags: quest ? quest.tag_joins.map(tag_join => tag_join.tag.tag_name) : [],
       oldImageUrls: quest ? quest.imageUrls : null,
       imageUrls: null,
       imageFiles: null,
@@ -20,17 +20,16 @@ class NewQuestForm extends React.Component {
     // this.reference = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-    this.editUpload = this.editUpload.bind(this);
     this.deletePreviewImage = this.deletePreviewImage.bind(this);
     this.createTag = this.createTag.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllTags();
-    // this.editUpload(this.props.quest.imageUrls)
   }
 
   createTag(e) {
+    const that = this;
     if (e.key === 'Enter' && e.target.value !== '') {
       let tag = e.target.value.toLowerCase();
       if (tag[0] === '#') tag = tag.slice(1);
@@ -58,8 +57,16 @@ class NewQuestForm extends React.Component {
       e.target.value === ''
     ) {
       const lastEle = this.state.tags.length - 1;
+      const tagToDelete = this.state.tags[lastEle]
       this.setState({ tags: this.state.tags.slice(0, lastEle) });
-      e.target.previousSibling.remove();
+      if (this.props.task === 'edit') {
+        this.props.quest.tag_joins.forEach((tag_join) => {
+          if (tag_join.tag.tag_name === tagToDelete) {
+            that.props.removeTagFromQuest(tag_join.id)
+          }
+        })
+      }
+
     }
   }
 
@@ -97,37 +104,6 @@ class NewQuestForm extends React.Component {
       };
       if (file) fileReader.readAsDataURL(file);
     }
-  }
-
-  editUpload(imageUrls) {
-    let that = this;
-    let fileArr = [];
-    let urlArr = [];
-
-    if (this.state.imageFiles !== null) {
-      fileArr = fileArr.concat(this.state.imageFiles);
-      urlArr = urlArr.concat(this.state.imageUrls);
-    }
-    debugger
-    // let uploadedImages = imageUrls.map(imgUrl => {
-    //   File.open(imgUrl)
-    // });
-
-    // for (let i = 0; i < uploadedImages.length; i++) {
-    //   let file = uploadedImages[i];
-    //   let fileReader = new FileReader();
-
-    //   fileReader.onloadend = () => {
-    //     fileArr = fileArr.concat(file);
-    //     urlArr = urlArr.concat(fileReader.result);
-    //     that.setState({
-    //       imageFiles: fileArr,
-    //       imageUrls: urlArr,
-    //     });
-    //   };
-    //   if (file) fileReader.readAsDataURL(file);
-    // }
-    
   }
 
   deletePreviewImage(idx) {
@@ -182,11 +158,14 @@ class NewQuestForm extends React.Component {
       this.props.questSubmitAction(formData).then((questData) => {
         const questId = questData.quest.id;
         const tags = that.state.tags;
+        const existingTags = that.props.quest.tag_joins
+          .map(tag_join => tag_join.tag.tag_name);
         if (tags) {
           for (let x = 0; x < tags.length; x++) {
             let tagExists = false;
             const inputTag = tags[x];
             const newTag = inputTag[0] === '#' ? inputTag.slice(1) : inputTag;
+            if (existingTags.includes(newTag)) continue;
             for (let y = 0; y < that.props.tags.length; y++) {
               let existingTag = that.props.tags[y];
               if (existingTag.tag_name === newTag) {
@@ -289,7 +268,7 @@ class NewQuestForm extends React.Component {
       newImagePreviews;
 
     const imageLabel =
-      this.state.imageFiles !== null ? 'Add more photos' : 'Upload Photos!';
+      this.state.imageFiles !== null || this.state.oldImagesFiles !== null ? 'Add more photos' : 'Upload Photos!';
     const imageUploadSection = (
       <div className="image-upload-box">
         {imagePreviews}
@@ -408,7 +387,7 @@ class NewQuestForm extends React.Component {
         }}
       >
         {this.state.tags.map((tag,idx) => {
-          return <div key={idx} className="enteredTag">#{tag}</div>
+          return <div key={idx} className="enteredTag">{`#${tag}`}</div>
         })}
         <input
           id="tagInput"

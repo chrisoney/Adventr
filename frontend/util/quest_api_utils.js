@@ -52,6 +52,6 @@ export const removeTagFromQuest = (id) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/tag_joins/${id}`,
-    // data: { id },
+    data: { id },
   });
 };

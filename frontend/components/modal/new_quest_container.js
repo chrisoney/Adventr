@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     tags: Object.values(state.entities.tags),
     type: ownProps.type,
+    task: 'create'
   };
 }
 

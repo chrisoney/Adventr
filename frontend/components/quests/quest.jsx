@@ -233,11 +233,15 @@ class Quest extends React.Component {
     }
 
     let tagSection = null;
-    if (quest.tags.length > 0) {
-      const questTags = quest.tags.map((tag,idx) => {
+    if (quest.tag_joins.length > 0) {
+      const questTags = quest.tag_joins.map((tag_join,idx) => {
         return (
-          <div key={`quest-${quest.id}-tag-${idx}`} className="quest-tag">
-            #{tag.tag_name}
+          <div
+            key={`quest-${quest.id}-tag-${idx}`}
+            className="quest-tag"
+            data-tag-join-id={tag_join.id}
+          >
+            #{tag_join.tag.tag_name}
           </div>
         );
       });
