@@ -32,6 +32,9 @@ class Api::QuestsController < ApplicationController
 
   def destroy
     @quest = Quest.find(params[:id])
+    if @quest.images.attached?
+      @quest.images.purge
+    end
     @quest.destroy
     render :show
   end

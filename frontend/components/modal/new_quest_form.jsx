@@ -11,20 +11,23 @@ class NewQuestForm extends React.Component {
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
       tags: quest ? quest.tags.map(tag => tag.tag_name) : [],
-      imageUrls: quest ? quest.imageUrls : null,
-      imageFiles: quest ? quest.imageFiles : null,
+      oldImageUrls: quest ? quest.imageUrls : null,
+      imageUrls: null,
+      imageFiles: null,
       errors: null,
       allowSubmit: true,
     };
     // this.reference = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+    this.editUpload = this.editUpload.bind(this);
     this.deletePreviewImage = this.deletePreviewImage.bind(this);
     this.createTag = this.createTag.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllTags();
+    // this.editUpload(this.props.quest.imageUrls)
   }
 
   createTag(e) {
@@ -96,6 +99,37 @@ class NewQuestForm extends React.Component {
     }
   }
 
+  editUpload(imageUrls) {
+    let that = this;
+    let fileArr = [];
+    let urlArr = [];
+
+    if (this.state.imageFiles !== null) {
+      fileArr = fileArr.concat(this.state.imageFiles);
+      urlArr = urlArr.concat(this.state.imageUrls);
+    }
+    debugger
+    // let uploadedImages = imageUrls.map(imgUrl => {
+    //   File.open(imgUrl)
+    // });
+
+    // for (let i = 0; i < uploadedImages.length; i++) {
+    //   let file = uploadedImages[i];
+    //   let fileReader = new FileReader();
+
+    //   fileReader.onloadend = () => {
+    //     fileArr = fileArr.concat(file);
+    //     urlArr = urlArr.concat(fileReader.result);
+    //     that.setState({
+    //       imageFiles: fileArr,
+    //       imageUrls: urlArr,
+    //     });
+    //   };
+    //   if (file) fileReader.readAsDataURL(file);
+    // }
+    
+  }
+
   deletePreviewImage(idx) {
     let index = idx.idx;
 
@@ -136,6 +170,7 @@ class NewQuestForm extends React.Component {
       const id = this.state.id;
       if (id) formData.append('quest[id]', id)
       formData.append('quest[title]', this.state.title);
+      console.log(imageFiles)
       if (imageFiles) {
         imageFiles.forEach((image, idx) => {
           formData.append('quest[images][]', imageFiles[idx]);
@@ -225,10 +260,20 @@ class NewQuestForm extends React.Component {
       />
     );
 
-    const imagePreviews = this.state.imageUrls
+    const oldImagePreviews = this.state.oldImageUrls
+      ? this.state.oldImageUrls.map((imageUrl, idx) => {
+          return (
+            <div key={`old-img-${idx}`} className="image-preview-box">
+              <img className="image-preview" src={imageUrl} />
+            </div>
+          );
+        })
+      : null;
+    
+    const newImagePreviews = this.state.imageUrls
       ? this.state.imageUrls.map((imageUrl, idx) => {
           return (
-            <div key={idx} className="image-preview-box">
+            <div key={`new-img-${idx}`} className="image-preview-box">
               <img className="image-preview" src={imageUrl} />
               <i
                 className="fas fa-times-circle delete-preview"
@@ -238,6 +283,10 @@ class NewQuestForm extends React.Component {
           );
         })
       : null;
+    
+    const imagePreviews = oldImagePreviews ?
+      oldImagePreviews.concat(newImagePreviews) :
+      newImagePreviews;
 
     const imageLabel =
       this.state.imageFiles !== null ? 'Add more photos' : 'Upload Photos!';

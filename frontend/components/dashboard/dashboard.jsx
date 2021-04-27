@@ -42,7 +42,7 @@ class DashBoard extends React.Component {
 
     quests.forEach((quest, idx) => {
       if (quest.user_id === currentUser.id) {
-        questList.push(<QuestContainer key={idx} quest={quest} loc={'dash'} />);
+        questList.push(<QuestContainer key={`quest-${idx}`} quest={quest} loc={'dash'} />);
       } else {
         for (let i = 0; i < follows.length; i++) {
           let follow = follows[i];
@@ -51,7 +51,7 @@ class DashBoard extends React.Component {
             follow.follower_id === currentUser.id
           ) {
             questList.push(
-              <QuestContainer key={idx} quest={quest} loc={'dash'} />
+              <QuestContainer key={`quest-${idx}`} quest={quest} loc={'dash'} />
             );
             break;
           }

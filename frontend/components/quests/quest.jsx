@@ -198,7 +198,7 @@ class Quest extends React.Component {
     let imageSection = null;
     if (quest.imageUrls && quest.quest_type === 'image') {
       imageSection = quest.imageUrls.map((imageUrl, idx) => {
-        return <img key={idx} className="image-video" src={imageUrl} />;
+        return <img key={`img-${idx}`} className="image-video" src={imageUrl} />;
       });
     }
 
@@ -206,7 +206,7 @@ class Quest extends React.Component {
     if (quest.imageUrls && quest.quest_type === 'video') {
       videoSection = quest.imageUrls.map((imageUrl, idx) => {
         return (
-          <video key={idx} src={imageUrl} className="image-video" controls />
+          <video key={`vid-${idx}`} src={imageUrl} className="image-video" controls />
         );
       });
     }
@@ -215,7 +215,7 @@ class Quest extends React.Component {
     if (quest.imageUrls && quest.quest_type === 'audio') {
       audioSection = quest.imageUrls.map((imageUrl, idx) => {
         return (
-          <div key={idx} className="audio">
+          <div key={`audio-${idx}`} className="audio">
             <audio className="audio-controls" src={imageUrl} controls />
           </div>
         );
@@ -234,9 +234,9 @@ class Quest extends React.Component {
 
     let tagSection = null;
     if (quest.tags.length > 0) {
-      const questTags = quest.tags.map((tag) => {
+      const questTags = quest.tags.map((tag,idx) => {
         return (
-          <div key={tag.id} className="quest-tag">
+          <div key={`quest-${quest.id}-tag-${idx}`} className="quest-tag">
             #{tag.tag_name}
           </div>
         );
@@ -250,7 +250,7 @@ class Quest extends React.Component {
     }
 
     return (
-      <div key={quest.id} className={`quest-container-${loc}`}>
+      <div key={`quest-${quest.id}`} className={`quest-container-${loc}`}>
         <img
           className={`avatar-${loc}`}
           src={avatar}

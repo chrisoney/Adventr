@@ -21,7 +21,6 @@ end
 
   def update
     @user = User.find(params[:id])
-    debugger
     if (@user && @user.is_password?(params[:old_password]) && @user.update(user_params))
       render :show
     else
