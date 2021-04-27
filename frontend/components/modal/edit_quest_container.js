@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NewQuestForm from './new_quest_form'
-import { updateQuest, addTagToQuest, removeTagFromQuest } from '../../actions/quest_actions';
+import { fetchAllQuests, updateQuest, addTagToQuest, removeTagFromQuest } from '../../actions/quest_actions';
 import { fetchAllTags, createTag } from '../../actions/tag_actions';
 import { closeModal } from '../../actions/modal_actions'
 
@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   questSubmitAction: (quest) => dispatch(updateQuest(quest)),
   fetchAllTags: () => dispatch(fetchAllTags()),
+  fetchAllQuests: () => dispatch(fetchAllQuests()),
   createTag: (tag) => dispatch(createTag(tag)),
   addTagToQuest: (quests_tag) => dispatch(addTagToQuest(quests_tag)),
   removeTagFromQuest: (tag_join_id) => dispatch(removeTagFromQuest(tag_join_id)),

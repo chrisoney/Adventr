@@ -40,10 +40,10 @@ export const deleteQuest = (questId) => (dispatch) => {
 }
 
 export const addTagToQuest = (tagJoin) => (dispatch) => {
-  QuestApiUtils.addTagToQuest(tagJoin);
+  return QuestApiUtils.addTagToQuest(tagJoin);
 };
 export const removeTagFromQuest = (tagJoinId) => (dispatch) => {
-  QuestApiUtils.removeTagFromQuest(tagJoinId);
+  return QuestApiUtils.removeTagFromQuest(tagJoinId);
 };
 
 

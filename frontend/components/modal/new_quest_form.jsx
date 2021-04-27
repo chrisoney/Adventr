@@ -16,6 +16,7 @@ class NewQuestForm extends React.Component {
       imageFiles: null,
       errors: null,
       allowSubmit: true,
+      tagEntered: false,
     };
     // this.reference = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,6 +27,10 @@ class NewQuestForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllTags();
+  }
+
+  componentWillUnmount() {
+    this.props.fetchAllQuests();
   }
 
   createTag(e) {
@@ -62,7 +67,10 @@ class NewQuestForm extends React.Component {
       if (this.props.task === 'edit') {
         this.props.quest.tag_joins.forEach((tag_join) => {
           if (tag_join.tag.tag_name === tagToDelete) {
-            that.props.removeTagFromQuest(tag_join.id)
+            that.setState({ allowSubmit: false });
+            that.props.removeTagFromQuest(tag_join.id).then(() => {
+              that.setState({ allowSubmit: true });
+            })
           }
         })
       }
@@ -146,7 +154,6 @@ class NewQuestForm extends React.Component {
       const id = this.state.id;
       if (id) formData.append('quest[id]', id)
       formData.append('quest[title]', this.state.title);
-      console.log(imageFiles)
       if (imageFiles) {
         imageFiles.forEach((image, idx) => {
           formData.append('quest[images][]', imageFiles[idx]);
@@ -158,8 +165,9 @@ class NewQuestForm extends React.Component {
       this.props.questSubmitAction(formData).then((questData) => {
         const questId = questData.quest.id;
         const tags = that.state.tags;
-        const existingTags = that.props.quest.tag_joins
-          .map(tag_join => tag_join.tag.tag_name);
+        const existingTags = that.props.task === 'edit' ?
+          that.props.quest.tag_joins.map(tag_join => tag_join.tag.tag_name) :
+          [];
         if (tags) {
           for (let x = 0; x < tags.length; x++) {
             let tagExists = false;
@@ -175,7 +183,7 @@ class NewQuestForm extends React.Component {
                 questTagForm.append('tag_join[tag_id]', existingTag.id);
                 const order = x + 1;
                 questTagForm.append('tag_join[order]', order);
-                this.props.addTagToQuest(questTagForm);
+                this.props.addTagToQuest(questTagForm)
                 tagExists = true;
                 break;
               }
