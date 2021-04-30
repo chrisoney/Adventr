@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import TagPage from './tag_page';
+import Explore from './explore';
 import { fetchAllTags } from '../../actions/tag_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    page: 'search',
     currentUser: state.session.currentUser,
-    tag: state.entities.tags[ownProps.match.params.tagId]
   };
 };
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllTags: () => dispatch(fetchAllTags())
   }
 };
-export default connect(mapStateToProps, mapDispatchToProps)(TagPage);
+export default connect(mapStateToProps, mapDispatchToProps)(Explore);

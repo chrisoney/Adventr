@@ -14,7 +14,7 @@ import GuildpageContainer from './user/guildpage_container';
 import About from './about/about'
 import LikesContainer from './pages/likes/likes_list_container';
 import FollowsContainer from './pages/follows/follows_list_container';
-import TagContainer from './tag/tag_container';
+import TagContainer from './explore/tag_container';
 
 const App = () => (
   <>

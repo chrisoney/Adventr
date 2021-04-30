@@ -19,17 +19,30 @@ class Explore extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllTags().then(() => {
-      this.props.fetchAllUsers().then(() => {
-        this.props.fetchAllFollows().then(() => {
-          this.props.fetchAllLikes().then(() => {
-            this.props.fetchAllQuests().then(() => {
-              this.setState({ loading: false });
+    switch (this.props.page) {
+      case 'explore':
+        this.props.fetchAllTags().then(() => {
+          this.props.fetchAllUsers().then(() => {
+            this.props.fetchAllFollows().then(() => {
+              this.props.fetchAllLikes().then(() => {
+                this.props.fetchAllQuests().then(() => {
+                  this.setState({ loading: false });
+                });
+              });
             });
           });
         });
-      });
-    });
+        break;
+      case 'tag':
+        this.props.fetchAllTags().then(() => {
+          this.props.fetchAllQuests().then(() => {
+            this.setState({ loading: false });
+          })
+        });
+        break;
+      default:
+        break;
+    }
     window.addEventListener('resize', this.getWindowDimensions);
     this.getWindowDimensions();
   }
@@ -93,19 +106,32 @@ class Explore extends React.Component {
   }
 
   render() {
-    // const { users, follows } = this.props;
-    // const followRecs = [];
-    // const followIds = follows.map((follow) => follow.user_id);
 
     if (this.state.loading) {
       return <Loading background={'explore-container'} />;
     }
-    const { quests, currentUser, tags } = this.props;
-    let questList = quests.map((quest, idx) => (
-      <QuestContainer key={idx} quest={quest} loc={'explore'} />
-    ));
+    const { quests, currentUser, tags, tag, page } = this.props;
+    let questList;
+    switch (page) {
+      case 'explore':
+        questList = quests.map((quest, idx) => (
+          <QuestContainer key={idx} quest={quest} loc={'explore'} />
+        ));
+        break;
+      case 'tag':
+        questList = quests.filter((quest) => {
+          return quest.tag_joins.map((tag_join) => tag_join.tag.tag_name)
+            .includes(tag.tag_name);
+        }).map((quest, idx) => (
+          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc={'explore'} />
+        ));
+        console.log(questList)
+        break;
+      default:
+        break;
+    }
+    
     questList = questList.reverse();
-
     let questDisplay;
     if (this.state.windowSize > 1310) {
       questDisplay = (
@@ -238,6 +264,15 @@ class Explore extends React.Component {
       newFavTagIdx,
       newFavTagIdx + 4
     );
+
+    switch (page) {
+      case 'explore':
+        break;
+      case 'tag':
+        break;
+      default:
+        break;
+    }
 
     return (
       <>

@@ -17,6 +17,7 @@ import {
 
 const mapStateToProps = (state) => {
   return {
+    page: 'explore',
     currentUser: state.session.currentUser,
     quests: Object.values(state.entities.quests),
     follows: Object.values(state.entities.follows),
