@@ -6,7 +6,16 @@ class TagPage extends React.Component {
   }
 
   render() {
-    return null;
+    return (
+      <div className="tag-page-container">
+        <div className="tag-page-left">
+
+        </div>
+        <div className="tag-page-right">
+          
+        </div>
+      </div>
+    )
   }
 }
 

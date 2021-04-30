@@ -8,13 +8,13 @@ import Splash from './splash/splash';
 import DashboardContainer from './dashboard/dashboard_container';
 import NavbarContainer from './nav/navbar_container';
 import Modal from './modal/modal';
-import Modal2 from './modal/modal2';
 import ExploreContainer from './explore/explore_container';
 import SettingsContainer from './user/settings_container';
 import GuildpageContainer from './user/guildpage_container';
 import About from './about/about'
 import LikesContainer from './pages/likes/likes_list_container';
 import FollowsContainer from './pages/follows/follows_list_container';
+import TagContainer from './tag/tag_container';
 
 const App = () => (
   <>
@@ -32,6 +32,7 @@ const App = () => (
         <ProtectedRoute path="/explore" component={ExploreContainer} />
         <ProtectedRoute path="/settings" component={SettingsContainer} />
         <ProtectedRoute path="/guild/:guildname" component={GuildpageContainer} />
+        <ProtectedRoute path='/tag/:tagId' component={TagContainer} />
         <ProtectedRoute path="/likes" component={LikesContainer} />
         <ProtectedRoute path="/follows" component={FollowsContainer} />
         <ProtectedRoute path="/about" component={About} />
