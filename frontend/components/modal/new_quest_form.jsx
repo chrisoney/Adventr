@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../loading/loading'
 
 class NewQuestForm extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class NewQuestForm extends React.Component {
       imageFiles: null,
       errors: null,
       allowSubmit: true,
-      tagEntered: false,
+      loading: false,
     };
     // this.reference = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +31,7 @@ class NewQuestForm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.fetchAllQuests();
+    this.props.fetchAllQuests().then(() => {})
   }
 
   createTag(e) {
@@ -201,7 +202,9 @@ class NewQuestForm extends React.Component {
                   questTagForm.append('tag_join[tag_id]', createdTagId);
                   const order = x + 1;
                   questTagForm.append('tag_join[order]', order);
-                  this.props.addTagToQuest(questTagForm);
+                  this.props.addTagToQuest(questTagForm).then(() => {
+                    this.setState({ loading: true })
+                  });
                 })
             }
           }
@@ -215,6 +218,10 @@ class NewQuestForm extends React.Component {
     const { closeModal, currentUser, type } = this.props;
     const { title, text, imageFiles } = this.state;
     let placeholderText;
+
+    if (this.state.loading) {
+      return <Loading background={'explore-container'}/>
+    }
 
     switch (type) {
       case 'text':
@@ -296,8 +303,8 @@ class NewQuestForm extends React.Component {
         </label>
       </div>
     );
-
-    const videoPreviews = this.state.imageUrls // if
+    // UPDATE VIDEO AND AUDIO WITH CASES
+    const newVideoPreviews = this.state.imageUrls // if
       ? this.state.imageUrls.map((imageUrl, idx) => {
           return (
             <div key={idx} className="image-preview-box">
@@ -310,6 +317,10 @@ class NewQuestForm extends React.Component {
           );
         })
       : null;
+    
+    const videoPreviews = oldImagePreviews ?
+      oldImagePreviews.concat(newVideoPreviews) :
+      newVideoPreviews;
 
     const videoLabel = 'Upload Video!';
     const videoUploadSection = (
@@ -330,7 +341,7 @@ class NewQuestForm extends React.Component {
       </div>
     );
 
-    const audioPreviews = this.state.imageUrls // if
+    const newAudioPreviews = this.state.imageUrls // if
       ? this.state.imageUrls.map((imageUrl, idx) => {
           return (
             <div key={idx} className="image-preview-box">
@@ -345,6 +356,10 @@ class NewQuestForm extends React.Component {
           );
         })
       : null;
+    
+    const audioPreviews = oldImagePreviews ?
+      oldImagePreviews.concat(newAudioPreviews) :
+      newAudioPreviews;
 
     const audioLabel = 'Upload Music!';
     const audioUploadSection = (
