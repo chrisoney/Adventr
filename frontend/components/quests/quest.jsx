@@ -1,5 +1,6 @@
 import React from 'react';
-import HeartAnimation from './heart_animation'
+import { Link } from 'react-router-dom';
+import HeartAnimation from './heart_animation';
 // import { deleteQuest } from '../../util/quest_api_utils';
 
 class Quest extends React.Component {
@@ -236,13 +237,14 @@ class Quest extends React.Component {
     if (quest.tag_joins.length > 0) {
       const questTags = quest.tag_joins.map((tag_join,idx) => {
         return (
-          <div
+          <Link
+            to={`/tag/${tag_join.tag.id}`}
             key={`quest-${quest.id}-tag-${idx}`}
             className="quest-tag"
             data-tag-join-id={tag_join.id}
           >
             #{tag_join.tag.tag_name}
-          </div>
+          </Link>
         );
       });
       tagSection = <div className="quest-tag-container">{questTags}</div>;
