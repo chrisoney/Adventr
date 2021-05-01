@@ -328,23 +328,24 @@ class Explore extends React.Component {
           .includes(tag.tag_name);
       })
       tempQuestList.forEach(quest => {
-        let questTags = quest.tag_joins.map((ele) => ele.tag.tag_name);
-        if (questTags.includes(tag.tag_name)) {
-          questTags = questTags.filter(ele => ele !== tag.tag_name)
+        let questTags = quest.tag_joins.map((ele) => ele.tag);
+        if (questTags.map(ele => ele.tag_name).includes(tag.tag_name)
+          ) {
+          questTags = questTags.filter(ele => ele.tag_name !== tag.tag_name)
         }
         questTags.forEach((tag) => {
-          if (!relatedTags[tag]) relatedTags[tag] = 0;
-          relatedTags[tag]++;
+          if (!relatedTags[tag.id]) relatedTags[tag.id] = {count: 0, name: tag.tag_name, id: tag.id};
+          relatedTags[tag.id].count++;
         })
       })
       const tagArr = [];
       Object.keys(relatedTags)
-        .forEach((ele) => tagArr.push([ele, relatedTags[ele]]))
+        .forEach((ele) => tagArr.push(relatedTags[ele]))
       const sortedArr = tagArr.sort((a, b) => {
-        if (a[1] < b[1]) return 1;
+        if (a.count < b.count) return 1;
         else return -1;
-      }).map(ele => ele[0]).slice(0, 7);
-      console.log(sortedArr)
+      }).slice(0, 7);
+      console.log(sortedArr);
     }
 
     let pageTitle, topNav, leftMiddle, rightTop, rightBottom;
