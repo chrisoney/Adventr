@@ -85,20 +85,20 @@ class GuildRecs extends React.Component {
         followRecs.push(newFollowRec);
       }
     }
-    if (currentLocation === '/explore') {
+    if (currentLocation !== '/dashboard') {
       const startIdx = this.state.startRecs;
       followRecs = followRecs.slice(startIdx, startIdx + 4);
     } else {
       followRecs = followRecs.slice(0, 4);
     }
     const title =
-      currentLocation === '/explore' ? (
+      currentLocation !== '/dashboard' ? (
         <div className="suggested-guilds-title">Suggested Guilds</div>
       ) : (
         <h1 className="suggested-guilds-title">Check out these guilds</h1>
       );
     const bottomButton =
-      currentLocation === '/explore' ? (
+      currentLocation !== '/dashboard' ? (
         <div className="suggested-guilds-button" onClick={this.cycleGuilds}>
           Show More Guilds
         </div>

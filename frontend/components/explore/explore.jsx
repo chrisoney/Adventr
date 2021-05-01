@@ -241,7 +241,10 @@ class Explore extends React.Component {
         let end = Math.min(8, newTags.length);
         for (let y = 0; y < end; y++) {
           let newTagContent = newTags[y];
-          const pictures = newTagContent.quest_urls.slice(0,2);
+          const pictures = []
+          if (newTagContent.quest_data.quest_urls) {
+            pictures = newTagContent.quest_data.quest_urls.slice(0, 2);
+          }
           while (pictures.length < 2) {
             pictures.push(newTagPictures[newTagPictureIndex % newTagPictures.length])
             newTagPictureIndex += 1;
@@ -296,8 +299,8 @@ class Explore extends React.Component {
           className="favorited-tag-container"
         >
           <img
-            src={
-              tag.quest_urls.length > 0 ? tag.quest_urls[0] :
+            src={tag.quest_data.quest_urls && tag.quest_data.quest_urls.length > 0 ?
+              tag.quest_data.quest_urls[0] :
               newTagPictures[0]
             }
             className="favorited-tag-image"
@@ -368,7 +371,7 @@ class Explore extends React.Component {
         );
         leftMiddle = null;
         rightTop = null;
-        rightBottom = tagCycle;
+        rightBottom = (<GuildRecs />);
         break;
       default:
         pageTitle = "Something broke!"

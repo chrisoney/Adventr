@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.explore-container {
+.explore-container, .black-container {
   position: relative;
   margin-top: 54px;
   background: asset-data-url("guild.jpg") no-repeat center fixed;
@@ -12,6 +12,9 @@
   width: 100vw;
   display:flex;
   justify-content: center;
+}
+.black-container {
+  background: black;
 }
 .explore {  
   width: 100%;
