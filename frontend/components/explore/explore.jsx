@@ -12,8 +12,10 @@ class Explore extends React.Component {
       windowSize: 0,
       currentFavTagIdx: 0,
       loading: true,
+      tagPageTab: 'Recent'
     };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
+    this.handleTabs = this.handleTabs.bind(this);
     this.handleTagFollow = this.handleTagFollow.bind(this);
     this.handleCurrTagCycle = this.handleCurrTagCycle.bind(this);
     this.toggleFollowed = this.toggleFollowed.bind(this);
@@ -71,6 +73,10 @@ class Explore extends React.Component {
     window.removeEventListener('resize', this.getWindowDimensions);
   }
 
+  handleTabs(newTab) {
+    this.setState({ tagPageTab: newTab })
+  }
+
   handleTagFollow(e, tag) {
     e.stopPropagation();
     e.preventDefault();
@@ -119,7 +125,7 @@ class Explore extends React.Component {
       return <Loading background={'explore-container'} />;
     }
     const { quests, currentUser, tags, tag, page } = this.props;
-
+    const { tagPageTab } = this.state;
     // Good place for a 404 page
     // if (!tag && page === 'tag') {
     //   return null;
@@ -144,6 +150,14 @@ class Explore extends React.Component {
     }
     
     questList = questList.reverse();
+
+    if (tagPageTab === 'Top') {
+      questList = questList.sort((a, b) => {
+        if (a.likes > b.likes) return 1;
+        else return -1;
+      })
+    }
+
     let questDisplay;
     if (this.state.windowSize > 1310) {
       questDisplay = (
@@ -337,8 +351,14 @@ class Explore extends React.Component {
         pageTitle = `Tag - #${tag.tag_name}`;
         topNav = (
           <>
-            <div className="explore-tab">Recent</div>
-            <div className="explore-tab">Top</div>
+            <div
+              onClick={(e) => this.handleTabs('Recent')}
+              className={`explore-tab ${tagPageTab === 'Recent' ? 'active' : ''}`}
+            >Recent</div>
+            <div
+              onClick={(e) => this.handleTabs('Top')}
+              className={`explore-tab ${tagPageTab === 'Top' ? 'active' : ''}`}
+            >Top</div>
           </>
         );
         leftMiddle = null;
