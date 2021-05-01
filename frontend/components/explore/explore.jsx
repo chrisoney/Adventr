@@ -340,7 +340,7 @@ class Explore extends React.Component {
             <div className="explore-tab">Top</div>
           </>
         );
-        rightTop = (<GuildRecs />);
+        rightTop = null;
         rightBottom = tagCycle;
         break;
       default:

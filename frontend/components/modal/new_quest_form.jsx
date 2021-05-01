@@ -215,7 +215,7 @@ class NewQuestForm extends React.Component {
   }
 
   render() {
-    const { closeModal, currentUser, type } = this.props;
+    const { closeModal, currentUser, type, task } = this.props;
     const { title, text, imageFiles } = this.state;
     let placeholderText;
 
@@ -480,6 +480,10 @@ class NewQuestForm extends React.Component {
       disabled = true;
     }
 
+    let submitText;
+    if (task === 'edit') submitText = 'Update'
+    else submitText = 'Create';
+
     return (
       <>
         {/* <img className="avatar-dash" src={currentUser.avatar} /> */}
@@ -495,7 +499,7 @@ class NewQuestForm extends React.Component {
               className="quest-create"
               onClick={this.handleSubmit}
             >
-              <span>Create</span>
+              <span>{submitText}</span>
             </button>
           </div>
         </div>
