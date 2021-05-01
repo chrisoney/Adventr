@@ -286,7 +286,6 @@ class Explore extends React.Component {
     }
     // Right side top, the current tags the user is subscribed to
     const allCurrentTagElements = favoritedTags.map((tag) => {
-      let pictureIndex = newTagPictureIndex % newTagPictures.length;
       // let randNum = Math.floor(Math.random() * 25);
       let nowDate = new Date();
       let recentNum = tag.quests.filter((quest) => {
@@ -320,6 +319,33 @@ class Explore extends React.Component {
       newFavTagIdx,
       newFavTagIdx + 4
     );
+
+    // Getting the other tags
+    if (page === 'tag') {
+      const relatedTags = {};
+      const tempQuestList = quests.filter((quest) => {
+        return quest.tag_joins.map((tag_join) => tag_join.tag.tag_name)
+          .includes(tag.tag_name);
+      })
+      tempQuestList.forEach(quest => {
+        let questTags = quest.tag_joins.map((ele) => ele.tag.tag_name);
+        if (questTags.includes(tag.tag_name)) {
+          questTags = questTags.filter(ele => ele !== tag.tag_name)
+        }
+        questTags.forEach((tag) => {
+          if (!relatedTags[tag]) relatedTags[tag] = 0;
+          relatedTags[tag]++;
+        })
+      })
+      const tagArr = [];
+      Object.keys(relatedTags)
+        .forEach((ele) => tagArr.push([ele, relatedTags[ele]]))
+      const sortedArr = tagArr.sort((a, b) => {
+        if (a[1] < b[1]) return 1;
+        else return -1;
+      }).map(ele => ele[0]).slice(0, 7);
+      console.log(sortedArr)
+    }
 
     let pageTitle, topNav, leftMiddle, rightTop, rightBottom;
     let tagCycle = (
