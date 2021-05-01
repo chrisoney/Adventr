@@ -51,6 +51,7 @@ class GuildRecs extends React.Component {
     const { currentUser, currentLocation, follows, users } = this.props;
     let followRecs = [];
     const followIds = follows.map((follow) => follow.user_id);
+    const nonExploreLinks = ['/dashboard', '/likes', '/follows']
 
     const followRecCreate = (user) => {
       let notFollowed = !followIds.includes(user.id);
@@ -85,20 +86,20 @@ class GuildRecs extends React.Component {
         followRecs.push(newFollowRec);
       }
     }
-    if (currentLocation !== '/dashboard') {
+    if (!nonExploreLinks.includes(currentLocation)) {
       const startIdx = this.state.startRecs;
       followRecs = followRecs.slice(startIdx, startIdx + 4);
     } else {
       followRecs = followRecs.slice(0, 4);
     }
     const title =
-      currentLocation !== '/dashboard' ? (
+      !nonExploreLinks.includes(currentLocation) ? (
         <div className="suggested-guilds-title">Suggested Guilds</div>
       ) : (
         <h1 className="suggested-guilds-title">Check out these guilds</h1>
       );
     const bottomButton =
-      currentLocation !== '/dashboard' ? (
+      !nonExploreLinks.includes(currentLocation) ? (
         <div className="suggested-guilds-button" onClick={this.cycleGuilds}>
           Show More Guilds
         </div>

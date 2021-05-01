@@ -2,16 +2,6 @@ json.extract! tag, :id, :tag_name, :created_at, :updated_at
 
 json.quests tag.quests
 
-json.quest_urls do
-  quest_urls = []
-  tag.quests.each do |quest|
-    if quest.images.attached? and quest.quest_type == 'image'
-      quest_urls = quest.images.map {|image| url_for(image) }
-    end
-  end
-  json.array! quest_urls
-end
-
 
 quest_data = {}
 tag.quests.each do |quest|

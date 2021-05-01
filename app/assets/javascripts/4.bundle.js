@@ -464,6 +464,7 @@ var GuildRecs = /*#__PURE__*/function (_React$Component) {
       var followIds = follows.map(function (follow) {
         return follow.user_id;
       });
+      var nonExploreLinks = ['/dashboard', '/likes', '/follows'];
 
       var followRecCreate = function followRecCreate(user) {
         var notFollowed = !followIds.includes(user.id);
@@ -500,19 +501,19 @@ var GuildRecs = /*#__PURE__*/function (_React$Component) {
         }
       }
 
-      if (currentLocation !== '/dashboard') {
+      if (!nonExploreLinks.includes(currentLocation)) {
         var startIdx = this.state.startRecs;
         followRecs = followRecs.slice(startIdx, startIdx + 4);
       } else {
         followRecs = followRecs.slice(0, 4);
       }
 
-      var title = currentLocation !== '/dashboard' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var title = !nonExploreLinks.includes(currentLocation) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "suggested-guilds-title"
       }, "Suggested Guilds") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "suggested-guilds-title"
       }, "Check out these guilds");
-      var bottomButton = currentLocation !== '/dashboard' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var bottomButton = !nonExploreLinks.includes(currentLocation) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "suggested-guilds-button",
         onClick: this.cycleGuilds
       }, "Show More Guilds") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
