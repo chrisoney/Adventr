@@ -26,6 +26,10 @@
 				padding-right: 10px;
 			}
 		}
+		.quest-footer {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
 	}
 }
 
@@ -123,6 +127,7 @@
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
+	line-height: 18px;
 	font-family: fantasy;
 	font-weight: bolder;
 	white-space: pre-wrap;
@@ -134,15 +139,19 @@
 	justify-content: space-between;
 	padding: 10px;
   padding-left: 20px;
+	padding-right: 20px;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
 .quest-footer-left {
 	display: flex;
 	justify-content: start;
-	span{
-		font-size: 14px;
-		color: darkgray;
+	align-items: center;
+
+	.note-section{
+		font-size: 16px;
+		color: white;
+		font-weight: 700px;
 	}
 }
 .quest-footer-right {
@@ -300,7 +309,6 @@
 				object-fit: cover;
 				padding-right: 10px;
 			}
-
 		}
 	}
 }

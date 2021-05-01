@@ -102,6 +102,12 @@
 
       .quest-container-explore {
         margin-bottom: 20px;
+        .quest {
+          .quest-footer {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
       }
     }
     .empty-quests-container {

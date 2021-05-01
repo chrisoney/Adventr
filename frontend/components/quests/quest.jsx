@@ -136,7 +136,11 @@ class Quest extends React.Component {
       );
       questFooter = (
         <div className="quest-footer">
-          <div className="quest-footer-left"></div>
+          <div className="quest-footer-left">
+            <div className="note-section">
+              {quest.likes} Notes
+            </div>
+          </div>
           <div className="quest-footer-right">
             <div className="quest-buttons">
               <button 
@@ -166,7 +170,11 @@ class Quest extends React.Component {
       );
       questFooter = (
         <div className="quest-footer">
-          <div className="quest-footer-left">{/* <span>Notes</span> */}</div>
+          <div className="quest-footer-left">
+            <div className="note-section">
+              {quest.likes} {quest.likes === 1 ? "Note" : "Notes"}
+            </div>
+          </div>
           <div className="quest-footer-right">
             <div className="quest-buttons">
               {/* Not functional yet */}
