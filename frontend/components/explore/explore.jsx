@@ -246,7 +246,6 @@ class Explore extends React.Component {
             pictures.push(newTagPictures[newTagPictureIndex % newTagPictures.length])
             newTagPictureIndex += 1;
           }
-
           let colorIndex = newTagColorIndex % newTagColors.length;
           const [bgColor, iconColor] = newTagColors[colorIndex];
           newTagElements.push(
@@ -297,7 +296,10 @@ class Explore extends React.Component {
           className="favorited-tag-container"
         >
           <img
-            src={newTagPictures[pictureIndex]}
+            src={
+              tag.quest_urls.length > 0 ? tag.quest_urls[0] :
+              newTagPictures[0]
+            }
             className="favorited-tag-image"
           />
           <div className="favorited-tag-text-container">

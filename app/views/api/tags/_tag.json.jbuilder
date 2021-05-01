@@ -5,7 +5,7 @@ json.quests tag.quests
 json.quest_urls do
   quest_urls = []
   tag.quests.each do |quest|
-    if quest.images.attached?
+    if quest.images.attached? && quest.quest_type == 'image'
       quest_urls = quest.images.map {|image| url_for(image) }
     end
   end
