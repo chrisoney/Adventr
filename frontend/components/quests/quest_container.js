@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Quest from './quest';
-import { fetchUser } from '../../actions/user_actions';
+// import { fetchUser } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
-import { likeQuest, unlikeQuest } from '../../actions/like_actions';
+import { likeQuest, unlikeQuest, fetchAllLikes } from '../../actions/like_actions';
 import { followUser, unfollowUser } from '../../actions/follow_actions';
-import { deleteQuest } from '../../actions/quest_actions'
+import { deleteQuest, fetchSingleQuest } from '../../actions/quest_actions'
 
 const mapStateToProps = (state, ownProps) => {
   let liked = false;
@@ -22,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
     if (follow.user_id === ownProps.quest.user_id && follow.follower_id === state.session.currentUser.id) {followed = true} ;
   })
   let authorId = ownProps.quest.author.id;
-  return {
+    return {
     currentUser: state.session.currentUser,
     authorId: authorId,
     // author: state.entities.users[authorId],
@@ -32,6 +32,7 @@ const mapStateToProps = (state, ownProps) => {
     tags_joins: ownProps.quest.tag_joins,
     liked: liked,
     followed: followed,
+    noteCount: ownProps.quest.likes,
   };
 };
 
@@ -40,9 +41,11 @@ const mapDispatchToProps = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal)),
   likeQuest: (questId) => dispatch(likeQuest(questId)),
   unlikeQuest: (questId) => dispatch(unlikeQuest(questId)),
+  fetchAllLikes: () => dispatch(fetchAllLikes()),
   followUser: (userId) => dispatch(followUser(userId)),
   unfollowUser: (userId) => dispatch(unfollowUser(userId)),
   deleteQuest: (questId) => dispatch(deleteQuest(questId)),
+  fetchSingleQuest: (questId) => dispatch(fetchSingleQuest(questId)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Quest));

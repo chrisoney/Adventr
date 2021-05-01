@@ -26,7 +26,7 @@ export const fetchAllQuests = () => (dispatch) =>
 
 export const fetchSingleQuest = (questId) => (dispatch) =>
   QuestApiUtils.fetchSingleQuest(questId).then((quest) =>
-    dispatch(receieveQuest(quest))
+    dispatch(receiveQuest(quest))
   );
 
 export const createQuest = (quest) => (dispatch) =>

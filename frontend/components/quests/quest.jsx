@@ -13,7 +13,6 @@ class Quest extends React.Component {
       visible: false,
       followed: false || this.props.followed,
     };
-
     this.toggleFollowed = this.toggleFollowed.bind(this);
     this.toggleLiked = this.toggleLiked.bind(this);
   }
@@ -22,6 +21,8 @@ class Quest extends React.Component {
     // if (!this.props.author) {
     //   this.props.fetchUser(this.props.authorId);
     // }
+    this.props.fetchAllLikes();
+    // this.props.fetchSingleQuest(this.props.quest.id);
   }
 
   componentDidUpdate(prevProps) {
@@ -37,6 +38,8 @@ class Quest extends React.Component {
     }
     if (this.props.liked !== prevProps.liked) {
       this.setState({ liked: this.props.liked });
+      this.props.fetchSingleQuest(this.props.quest.id);
+      this.props.fetchAllLikes();
     }
     if (this.props.quest.id !== prevProps.quest.id) {
       this.setState({
@@ -73,12 +76,13 @@ class Quest extends React.Component {
   }
 
   render() {
-    const { currentUser, quest, authorId, deleteQuest, loc, tags } = this.props;
+    const { currentUser, quest, authorId, deleteQuest, loc, tags, noteCount } = this.props;
     let { author, authorAvatar } = this.state;
     let visibility = this.state.visible;
     let followUser;
     let likedClass;
     let heartAnimation;
+
 
     let questHeader;
     let questFooter;
@@ -138,7 +142,7 @@ class Quest extends React.Component {
         <div className="quest-footer">
           <div className="quest-footer-left">
             <div className="note-section">
-              {quest.likes} Notes
+              {noteCount} {noteCount === 1 ? "Note" : "Notes"}
             </div>
           </div>
           <div className="quest-footer-right">
@@ -172,7 +176,7 @@ class Quest extends React.Component {
         <div className="quest-footer">
           <div className="quest-footer-left">
             <div className="note-section">
-              {quest.likes} {quest.likes === 1 ? "Note" : "Notes"}
+              {noteCount} {noteCount === 1 ? "Note" : "Notes"}
             </div>
           </div>
           <div className="quest-footer-right">
