@@ -300,12 +300,27 @@ class Explore extends React.Component {
     );
 
     let pageTitle;
+    let topNav;
     switch (page) {
       case 'explore':
         pageTitle = "Explore Adventr"
+        topNav = (
+          <>
+            <div className="explore-tab">For You</div>
+            <div className="explore-tab">Trending</div>
+            <div className="explore-tab">Guildmaster Picks</div>
+            <div className="explore-tab">More</div>
+          </>
+        );
         break;
       case 'tag':
-        pageTitle = `Tag - #${tag.tag_name}`
+        pageTitle = `Tag - #${tag.tag_name}`;
+        topNav = (
+          <>
+            <div className="explore-tab">Recent</div>
+            <div className="explore-tab">Top</div>
+          </>
+        );
         break;
       default:
         pageTitle = "Something broke!"
@@ -320,10 +335,7 @@ class Explore extends React.Component {
             <div className="explore-left">
               <div className="explore-header">
                 {/* Placeholders, no true functionality yet */}
-                <div className="explore-tab">For You</div>
-                <div className="explore-tab">Trending</div>
-                <div className="explore-tab">Guildmaster Picks</div>
-                <div className="explore-tab">More</div>
+                {topNav}
               </div>
               <div className="explore-tag-container">{newTagElements}</div>
               {questDisplay}
