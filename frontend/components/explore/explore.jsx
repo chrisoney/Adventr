@@ -196,14 +196,10 @@ class Explore extends React.Component {
     }
 
     // Tags
-    // Get the list of tags that the current user hasn't favorited
-    const newTags = tags.filter((tag) => !tag.users.includes(currentUser.id));
-
     // Get the list of tags that the current user has favorited
     const favoritedTags = tags.filter((tag) =>
       tag.users.includes(currentUser.id)
     );
-
     const newTagPictures = [
       '/assets/river_world.jpg',
       '/assets/circle_sample.jpg',
@@ -222,47 +218,51 @@ class Explore extends React.Component {
       ['#118520', '#FFFFFF'],
     ];
     let newTagColorIndex = 0;
+    // Get the list of tags that the current user hasn't favorited
     const newTagElements = [];
-    // Creating 8 elements for new tag display
-    if (newTags.length > 0) {
-      let end = Math.min(8, newTags.length);
-      for (let y = 0; y < end; y++) {
-        let newTagContent = newTags[y];
-        let pictureIndexOne = newTagPictureIndex % newTagPictures.length;
-        let pictureIndexTwo = (newTagPictureIndex + 1) % newTagPictures.length;
-        let colorIndex = newTagColorIndex % newTagColors.length;
-        const [bgColor, iconColor] = newTagColors[colorIndex];
-        newTagElements.push(
-          <Link
-            to={`/tag/${newTagContent.id}`}
-            key={newTagContent.id}
-            className="explore-new-tag-container"
-            style={{ backgroundColor: bgColor }}
-          >
-            <div className="new-tag-title" style={{ color: iconColor }}>
-              #{newTagContent.tag_name}
-            </div>
-            <div className="new-tag-examples">
-              <img
-                src={newTagPictures[pictureIndexOne]}
-                className="new-tag-example-image"
-              />
-              <img
-                src={newTagPictures[pictureIndexTwo]}
-                className="new-tag-example-image"
-              />
-            </div>
-            <button
-              onClick={(e) => this.handleTagFollow(e, newTagContent)}
-              className="new-tag-follow-button"
-              style={{ backgroundColor: iconColor, color: bgColor }}
+    if (page === 'explore') {
+      const newTags = tags.filter((tag) => !tag.users.includes(currentUser.id));
+      // Creating 8 elements for new tag display
+      if (newTags.length > 0) {
+        let end = Math.min(8, newTags.length);
+        for (let y = 0; y < end; y++) {
+          let newTagContent = newTags[y];
+          let pictureIndexOne = newTagPictureIndex % newTagPictures.length;
+          let pictureIndexTwo = (newTagPictureIndex + 1) % newTagPictures.length;
+          let colorIndex = newTagColorIndex % newTagColors.length;
+          const [bgColor, iconColor] = newTagColors[colorIndex];
+          newTagElements.push(
+            <Link
+              to={`/tag/${newTagContent.id}`}
+              key={newTagContent.id}
+              className="explore-new-tag-container"
+              style={{ backgroundColor: bgColor }}
             >
-              Follow
-            </button>
-          </Link>
-        );
-        newTagPictureIndex += 2;
-        newTagColorIndex += 1;
+              <div className="new-tag-title" style={{ color: iconColor }}>
+                #{newTagContent.tag_name}
+              </div>
+              <div className="new-tag-examples">
+                <img
+                  src={newTagPictures[pictureIndexOne]}
+                  className="new-tag-example-image"
+                />
+                <img
+                  src={newTagPictures[pictureIndexTwo]}
+                  className="new-tag-example-image"
+                />
+              </div>
+              <button
+                onClick={(e) => this.handleTagFollow(e, newTagContent)}
+                className="new-tag-follow-button"
+                style={{ backgroundColor: iconColor, color: bgColor }}
+              >
+                Follow
+              </button>
+            </Link>
+          );
+          newTagPictureIndex += 2;
+          newTagColorIndex += 1;
+        }
       }
     }
     // Right side top, the current tags the user is subscribed to
@@ -299,7 +299,7 @@ class Explore extends React.Component {
       newFavTagIdx + 4
     );
 
-    let pageTitle, topNav, rightTop, rightBottom;
+    let pageTitle, topNav, leftMiddle, rightTop, rightBottom;
     let tagCycle = (
       <div className="current-tag-follows">
         <div className="current-tag-follows-header">
@@ -329,6 +329,7 @@ class Explore extends React.Component {
             <div className="explore-tab">More</div>
           </>
         );
+        leftMiddle = (<div className="explore-tag-container">{newTagElements}</div>)
         rightTop = tagCycle;
         rightBottom = (<GuildRecs />)
         break;
@@ -340,6 +341,7 @@ class Explore extends React.Component {
             <div className="explore-tab">Top</div>
           </>
         );
+        leftMiddle = null;
         rightTop = null;
         rightBottom = tagCycle;
         break;
@@ -358,7 +360,7 @@ class Explore extends React.Component {
                 {/* Placeholders, no true functionality yet */}
                 {topNav}
               </div>
-              <div className="explore-tag-container">{newTagElements}</div>
+              {leftMiddle}
               {questDisplay}
             </div>
             <div className="explore-right">
