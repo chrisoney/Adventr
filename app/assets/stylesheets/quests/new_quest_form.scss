@@ -25,10 +25,14 @@
 	z-index: 3;
 	background-color: white;
 	position: absolute;
+	width: 540px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: 3px;
+	.quest-form-box {
+		width: 100%;
+	}
 }
 
 .image-preview {

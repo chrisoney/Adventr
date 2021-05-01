@@ -61,7 +61,7 @@ class GuildRecs extends React.Component {
             <div className="guild-rec-details">
               <span className="guild-rec-username">{user.username}</span>
               <span className="guild-rec-guildname">
-                {user.guildname || user.username}
+                {user.guild_name || user.username}
               </span>
             </div>
           </div>
