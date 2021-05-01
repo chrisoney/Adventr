@@ -1,5 +1,6 @@
 import React from "react";
-import { Helmet } from 'react-helmet'
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import QuestContainer from '../quests/quest_container';
 import Loading from '../loading/loading';
 import GuildRecs from '../sidebar/guild_recs';
@@ -19,30 +20,35 @@ class Explore extends React.Component {
   }
 
   componentDidMount() {
-    switch (this.props.page) {
-      case 'explore':
-        this.props.fetchAllTags().then(() => {
-          this.props.fetchAllUsers().then(() => {
-            this.props.fetchAllFollows().then(() => {
-              this.props.fetchAllLikes().then(() => {
-                this.props.fetchAllQuests().then(() => {
-                  this.setState({ loading: false });
-                });
-              });
-            });
-          });
-        });
-        break;
-      case 'tag':
-        this.props.fetchAllTags().then(() => {
-          this.props.fetchAllQuests().then(() => {
-            this.setState({ loading: false });
-          })
-        });
-        break;
-      default:
-        break;
-    }
+    this.props.fetchAllTags().then(() => {
+      this.props.fetchAllQuests().then(() => {
+        this.setState({ loading: false })
+      })
+    });
+    // switch (this.props.page) {
+    //   case 'explore':
+    //     this.props.fetchAllTags().then(() => {
+    //       this.props.fetchAllUsers().then(() => {
+    //         this.props.fetchAllFollows().then(() => {
+    //           this.props.fetchAllLikes().then(() => {
+    //             this.props.fetchAllQuests().then(() => {
+    //               this.setState({ loading: false });
+    //             });
+    //           });
+    //         });
+    //       });
+    //     });
+    //     break;
+    //   case 'tag':
+    //     this.props.fetchAllTags().then(() => {
+    //       this.props.fetchAllQuests().then(() => {
+    //         this.setState({ loading: false });
+    //       })
+    //     });
+    //     break;
+    //   default:
+    //     break;
+    // }
     window.addEventListener('resize', this.getWindowDimensions);
     this.getWindowDimensions();
   }
@@ -66,6 +72,8 @@ class Explore extends React.Component {
   }
 
   handleTagFollow(e, tag) {
+    e.stopPropagation();
+    e.preventDefault();
     const followed = e.target.innerHTML === 'Follow';
     const tag_join = {
       taggable_id: this.props.currentUser.id,
@@ -111,6 +119,11 @@ class Explore extends React.Component {
       return <Loading background={'explore-container'} />;
     }
     const { quests, currentUser, tags, tag, page } = this.props;
+
+    // Good place for a 404 page
+    // if (!tag && page === 'tag') {
+    //   return null;
+    // }
     let questList;
     switch (page) {
       case 'explore':
@@ -125,7 +138,6 @@ class Explore extends React.Component {
         }).map((quest, idx) => (
           <QuestContainer key={`quest-${quest.id}`} quest={quest} loc={'explore'} />
         ));
-        console.log(questList)
         break;
       default:
         break;
@@ -166,6 +178,23 @@ class Explore extends React.Component {
       );
     }
 
+    if (questList.length === 0) {
+      let questMessage;
+      switch (page) {
+        case 'explore':
+          questMessage = 'There are no quests to discover! Something might be wrong with the database.'
+          break;
+        case 'tag':
+          questMessage = 'There are no quests with that tag. You could make the first!'
+          break;
+        default:
+          questMessage = 'Something is very very wrong. Chris should fix this.'
+      }
+      questDisplay = (
+        <div className="empty-quests-container">{questMessage}</div>
+      )
+    }
+
     // Tags
     // Get the list of tags that the current user hasn't favorited
     const newTags = tags.filter((tag) => !tag.users.includes(currentUser.id));
@@ -204,7 +233,8 @@ class Explore extends React.Component {
         let colorIndex = newTagColorIndex % newTagColors.length;
         const [bgColor, iconColor] = newTagColors[colorIndex];
         newTagElements.push(
-          <div
+          <Link
+            to={`/tag/${newTagContent.id}`}
             key={newTagContent.id}
             className="explore-new-tag-container"
             style={{ backgroundColor: bgColor }}
@@ -229,7 +259,7 @@ class Explore extends React.Component {
             >
               Follow
             </button>
-          </div>
+          </Link>
         );
         newTagPictureIndex += 2;
         newTagColorIndex += 1;
@@ -265,18 +295,22 @@ class Explore extends React.Component {
       newFavTagIdx + 4
     );
 
+    let pageTitle;
     switch (page) {
       case 'explore':
+        pageTitle = "Explore Adventr"
         break;
       case 'tag':
+        pageTitle = `Tag - #${tag.tag_name}`
         break;
       default:
+        pageTitle = "Something broke!"
         break;
     }
 
     return (
       <>
-        <Helmet><title>Explore Adventr</title></Helmet>
+        <Helmet><title>{pageTitle}</title></Helmet>
         <div className="explore-container">
           <div className="explore">
             <div className="explore-left">
