@@ -299,8 +299,25 @@ class Explore extends React.Component {
       newFavTagIdx + 4
     );
 
-    let pageTitle;
-    let topNav;
+    let pageTitle, topNav, rightTop, rightBottom;
+    let tagCycle = (
+      <div className="current-tag-follows">
+        <div className="current-tag-follows-header">
+          <div className="current-tag-follows-title">Following</div>
+        </div>
+        <div className="current-tag-container">
+          {displayCurrentTagElements}
+        </div>
+        <div
+          onClick={() =>
+            this.handleCurrTagCycle(allCurrentTagElements.length)
+          }
+          className="current-tag-follows-button"
+        >
+          Show More Tags
+        </div>
+      </div>
+    )
     switch (page) {
       case 'explore':
         pageTitle = "Explore Adventr"
@@ -312,6 +329,8 @@ class Explore extends React.Component {
             <div className="explore-tab">More</div>
           </>
         );
+        rightTop = tagCycle;
+        rightBottom = (<GuildRecs />)
         break;
       case 'tag':
         pageTitle = `Tag - #${tag.tag_name}`;
@@ -321,6 +340,8 @@ class Explore extends React.Component {
             <div className="explore-tab">Top</div>
           </>
         );
+        rightTop = (<GuildRecs />);
+        rightBottom = tagCycle;
         break;
       default:
         pageTitle = "Something broke!"
@@ -341,23 +362,8 @@ class Explore extends React.Component {
               {questDisplay}
             </div>
             <div className="explore-right">
-              <div className="current-tag-follows">
-                <div className="current-tag-follows-header">
-                  <div className="current-tag-follows-title">Following</div>
-                </div>
-                <div className="current-tag-container">
-                  {displayCurrentTagElements}
-                </div>
-                <div
-                  onClick={() =>
-                    this.handleCurrTagCycle(allCurrentTagElements.length)
-                  }
-                  className="current-tag-follows-button"
-                >
-                  Show More Tags
-                </div>
-              </div>
-              <GuildRecs />
+              {rightTop}
+              {rightBottom}
             </div>
           </div>
         </div>
