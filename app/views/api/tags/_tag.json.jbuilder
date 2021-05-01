@@ -2,6 +2,16 @@ json.extract! tag, :id, :tag_name, :created_at, :updated_at
 
 json.quests tag.quests
 
+json.quest_urls do
+  quest_urls = []
+  tag.quests.each do |quest|
+    if quest.images.attached?
+      quest_urls = quest.images.map {|image| url_for(image) }
+    end
+  end
+  json.array! quest_urls
+end
+
 json.users do
   users_who_favorited = []
   tag.users.each do |user|

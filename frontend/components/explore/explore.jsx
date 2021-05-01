@@ -241,8 +241,12 @@ class Explore extends React.Component {
         let end = Math.min(8, newTags.length);
         for (let y = 0; y < end; y++) {
           let newTagContent = newTags[y];
-          let pictureIndexOne = newTagPictureIndex % newTagPictures.length;
-          let pictureIndexTwo = (newTagPictureIndex + 1) % newTagPictures.length;
+          const pictures = newTagContent.quest_urls.slice(0,2);
+          while (pictures.length < 2) {
+            pictures.push(newTagPictures[newTagPictureIndex % newTagPictures.length])
+            newTagPictureIndex += 1;
+          }
+
           let colorIndex = newTagColorIndex % newTagColors.length;
           const [bgColor, iconColor] = newTagColors[colorIndex];
           newTagElements.push(
@@ -257,11 +261,11 @@ class Explore extends React.Component {
               </div>
               <div className="new-tag-examples">
                 <img
-                  src={newTagPictures[pictureIndexOne]}
+                  src={pictures[0]}
                   className="new-tag-example-image"
                 />
                 <img
-                  src={newTagPictures[pictureIndexTwo]}
+                  src={pictures[1]}
                   className="new-tag-example-image"
                 />
               </div>
@@ -274,7 +278,6 @@ class Explore extends React.Component {
               </button>
             </Link>
           );
-          newTagPictureIndex += 2;
           newTagColorIndex += 1;
         }
       }
@@ -282,7 +285,7 @@ class Explore extends React.Component {
     // Right side top, the current tags the user is subscribed to
     const allCurrentTagElements = favoritedTags.map((tag) => {
       let pictureIndex = newTagPictureIndex % newTagPictures.length;
-      let randNum = Math.floor(Math.random() * 25);
+      // let randNum = Math.floor(Math.random() * 25);
       let nowDate = new Date();
       let recentNum = tag.quests.filter((quest) => {
         return parseInt(quest.updated_at.slice(0, 4)) === nowDate.getFullYear();
