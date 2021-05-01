@@ -104,6 +104,12 @@
         margin-bottom: 20px;
       }
     }
+    .empty-quests-container {
+      text-align: center;
+      color: white;
+      font-size: 36px;
+      padding-top: 50px;
+    }
   }
   .explore-right {
     position: sticky;
@@ -146,6 +152,8 @@
         flex-direction: column;
         align-items: center;
         .favorited-tag-container {
+          color: black;
+          text-decoration: none;
           display: flex;
           padding: 16px;
           background-image: asset-data-url('parchment_slip.png');
@@ -162,6 +170,7 @@
             margin-left: 8px;
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
             font-size: 14px;
             .favorited-tag-name {
               font-weight: bold;

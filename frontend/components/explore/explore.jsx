@@ -274,7 +274,11 @@ class Explore extends React.Component {
         return parseInt(quest.updated_at.slice(0, 4)) === nowDate.getFullYear();
       }).length;
       return (
-        <div key={tag.id} className="favorited-tag-container">
+        <Link
+          to={`/tag/${tag.id}`}
+          key={`tag-${tag.id}`}
+          className="favorited-tag-container"
+        >
           <img
             src={newTagPictures[pictureIndex]}
             className="favorited-tag-image"
@@ -285,7 +289,7 @@ class Explore extends React.Component {
               {recentNum} Recent Quest{recentNum !== 1 ? 's'  : ''}
             </div>
           </div>
-        </div>
+        </Link>
       );
     });
     let newFavTagIdx = this.state.currentFavTagIdx;
