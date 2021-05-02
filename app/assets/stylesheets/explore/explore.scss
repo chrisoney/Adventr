@@ -271,6 +271,25 @@
           margin-bottom: 20px;
           font-size: 16px;
         }
+
+        .tag-details-right-follow-button {
+          background-color: $accent-blue;
+          color: $navy;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 1.5;
+          border-radius: 3px;
+          padding: 8px 20.5px;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          &.unfollowed {
+            background-color: transparent;
+            color: rgba($white, 0.65);
+            border: 2px solid rgba($white, 0.65);
+            padding: 6px 10px;
+          }
+        }
       }
     }
     .suggested-guilds{

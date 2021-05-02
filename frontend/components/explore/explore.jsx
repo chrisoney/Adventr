@@ -12,7 +12,7 @@ class Explore extends React.Component {
       windowSize: 0,
       currentFavTagIdx: 0,
       loading: true,
-      tagPageTab: 'Recent'
+      tagPageTab: 'Recent',
     };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
     this.handleTabs = this.handleTabs.bind(this);
@@ -90,9 +90,10 @@ class Explore extends React.Component {
     if (notFollowed) {
       const element = e.target;
       element.innerHTML = 'Unfollow';
-      this.props.addTagToUser(tag_join).then((newTagJoin) => {
-        element.dataset.tagJoinId = newTagJoin.id;
-      });
+      this.props.addTagToUser(tag_join);
+      //   .then((newTagJoin) => {
+      //   element.dataset.tagJoinId = newTagJoin.id;
+      // });
     } else {
       // Set up unfollow
       const element = e.target;
@@ -100,6 +101,7 @@ class Explore extends React.Component {
       const tagJoinId = element.dataset.tagJoinId;
       this.props.removeTagFromUser(tagJoinId);
     }
+    this.props.fetchSingleTag(tag.id)
   }
 
   handleCurrTagCycle(length) {
@@ -412,7 +414,8 @@ class Explore extends React.Component {
             </span>
             <button
               onClick={(e) => this.handleTagFollow(e, tag)}
-              className="tag-details-right-follow-button"
+              className={`tag-details-right-follow-button
+                          ${tag.current_tag_join ? 'unfollowed' : ''}`}
               data-tag-join-id={tag.current_tag_join
                 ? tag.current_tag_join.id : null}
             >

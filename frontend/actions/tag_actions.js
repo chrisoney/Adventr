@@ -22,7 +22,7 @@ export const fetchAllTags = () => (dispatch) =>
   TagApiUtils.fetchAllTags().then((tags) => dispatch(receiveAllTags(tags)));
 
 export const fetchSingleTag = (tagId) => (dispatch) =>
-  TagApiUtils.fetchSingleTag(tagId).then((tag) => dispatch(receieveTag(tag)));
+  TagApiUtils.fetchSingleTag(tagId).then((tag) => dispatch(receiveTag(tag)));
 
 export const createTag = (tag) => (dispatch) =>
   TagApiUtils.createTag(tag).then((tag) => dispatch(receiveTag(tag)));

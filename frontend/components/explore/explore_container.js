@@ -8,7 +8,7 @@ import {
   unfollowUser,
 } from '../../actions/follow_actions';
 import { fetchAllLikes } from '../../actions/like_actions';
-import { fetchAllTags } from '../../actions/tag_actions';
+import { fetchAllTags, fetchSingleTag } from '../../actions/tag_actions';
 import {
   fetchAllUsers,
   addTagToUser,
@@ -32,6 +32,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllFollows: () => dispatch(fetchAllFollows()),
   fetchAllLikes: () => dispatch(fetchAllLikes()),
   fetchAllTags: () => dispatch(fetchAllTags()),
+  fetchSingleTag: (id) => dispatch(fetchSingleTag(id)),
   fetchAllUsers: () => dispatch(fetchAllUsers()),
   addTagToUser: (tagJoin) => dispatch(addTagToUser(tagJoin)),
   removeTagFromUser: (tagJoinId) => dispatch(removeTagFromUser(tagJoinId)),
