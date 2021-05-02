@@ -370,29 +370,39 @@ class Explore extends React.Component {
     
     let tagDetailsRight = null;
     if (page === 'tag') {
-      const userPageId = tag.quest_data.user.id || 0;
+      let userPageId = null;
+      let imageSource = '/assets/river_world.jpg';
+      if (tag.quest_data.user) {
+        imageSource = tag.quest_data.quest_urls[0];
+        userPageId = tag.quest_data.user.id;
+      }
       tagDetailsRight = (
         <div className="tag-details-right-container">
           <div
-            onClick={() => this.props.openModal('userpage')}
+            onClick={userPageId
+              ? () => this.props.openModal('userpage')
+              : null}
             id={userPageId}
-            className="tag-details-right-image-container"
+            className={`tag-details-right-image-container 
+                        ${userPageId ? '' : 'no-user'}`}
           >
             <img
               id={userPageId}
               className="tag-details-right-image"
-              src={tag.quest_data.quest_urls[0]}
+              src={imageSource}
             />
-            <div id={userPageId} className="tag-details-right-user-info">
-              <span id={userPageId} className="user-info-posted-by">
-                Posted by
-                </span>
-              <img
-                id={userPageId}
-                className="user-avatar"
-                src={tag.quest_data.user_avatar}
-              />
-            </div>
+            {tag.quest_data.user &&
+              <div id={userPageId} className="tag-details-right-user-info">
+                <span id={userPageId} className="user-info-posted-by">
+                  Posted by
+                  </span>
+                <img
+                  id={userPageId}
+                  className="user-avatar"
+                  src={tag.quest_data.user_avatar}
+                />
+              </div>
+            }
           </div>
           <div className="tag-details-right-bottom">
             <span className="tag-name">#{tag.tag_name}</span>
