@@ -13,7 +13,8 @@ class LikesList extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    // if (this.props.quests.length !== prevProps.quests.length){
+    // if (this.props.quests.length !== prevProps.quests.length) {
+    //   console.log('test')
     // 	this.props.fetchAllQuests();
     // }
   }
@@ -37,10 +38,11 @@ class LikesList extends React.Component {
     });
     questList = questList.reverse();
 
-    for (let x = 0; x < quests.length; x++) {
+    for (let x = quests.length - 1; x > 0; x--) {
       let quest = quests[x];
       if (!likedIds.includes(quest.id) && quest.user_id !== currentUser.id) {
         randomQuest = <QuestContainer quest={quest} loc={'dash-random'} />;
+        break;
       }
     }
     return (

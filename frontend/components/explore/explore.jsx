@@ -391,60 +391,69 @@ class Explore extends React.Component {
       </div>
     )
     
-    let tagDetailsRight = null;
-    if (page === 'tag') {
+    let tagDetailsRight, tagDetailsLeft = null;
+    const tagDetailGenerator = (pos) => {
       let userPageId = null;
       let imageSource = '/assets/river_world.jpg';
       if (tag.quest_data.user) {
         imageSource = tag.quest_data.quest_urls[0];
         userPageId = tag.quest_data.user.id;
       }
-      tagDetailsRight = (
+
+      const userInfoSection = tag.quest_data.user ? (
+        <div id={userPageId} className="tag-details-right-user-info">
+          <span id={userPageId} className="user-info-posted-by">
+            Posted by
+            </span>
+          <img
+            id={userPageId}
+            className="user-avatar"
+            src={tag.quest_data.user_avatar}
+          />
+        </div>
+      ) : null;
+
+      const tagInfoSection = (
+        <>
+          <span className="tag-name">#{tag.tag_name}</span>
+          <span className="tag-popularity">
+            {tag.users.length} follower{tag.users.length === 1 ? '': 's'} / {' '}
+            {tag.quests.length} recent post{tag.quests.length === 1 ? '': 's'}
+          </span>
+          <button
+            onClick={(e) => this.handleTagFollow(e, tag)}
+            className={`tag-details-right-follow-button
+                        ${tag.current_tag_join ? 'unfollowed' : ''}`}
+            data-tag-join-id={tag.current_tag_join
+              ? tag.current_tag_join.id : null}
+          >
+            {tag.users.includes(currentUser.id) ? "Unfollow" : "Follow"}
+          </button>
+        </>
+      )
+
+      const relatedTagSection = (
+        <div className="related-tags-container">
+          {relatedTagsArr}
+        </div>
+      )
+
+      return (
         <div className="tag-details-right-container">
           <div
             onClick={userPageId
               ? () => this.props.openModal('userpage')
               : null}
             id={userPageId}
+            style={{background: `url(${imageSource}) no-repeat center`}}
             className={`tag-details-right-image-container 
                         ${userPageId ? '' : 'no-user'}`}
           >
-            <img
-              id={userPageId}
-              className="tag-details-right-image"
-              src={imageSource}
-            />
-            {tag.quest_data.user &&
-              <div id={userPageId} className="tag-details-right-user-info">
-                <span id={userPageId} className="user-info-posted-by">
-                  Posted by
-                  </span>
-                <img
-                  id={userPageId}
-                  className="user-avatar"
-                  src={tag.quest_data.user_avatar}
-                />
-              </div>
-            }
+            {userInfoSection}
           </div>
-          <div className="tag-details-right-bottom">
-            <span className="tag-name">#{tag.tag_name}</span>
-            <span className="tag-popularity">
-              {tag.users.length} followers / {' '}
-              {tag.quests.length} recent posts
-            </span>
-            <button
-              onClick={(e) => this.handleTagFollow(e, tag)}
-              className={`tag-details-right-follow-button
-                          ${tag.current_tag_join ? 'unfollowed' : ''}`}
-              data-tag-join-id={tag.current_tag_join
-                ? tag.current_tag_join.id : null}
-            >
-              {tag.users.includes(currentUser.id) ? "Unfollow" : "Follow"}
-            </button>
-            <div className="related-tags-container">
-              {relatedTagsArr}
-            </div>
+          <div className={`tag-details-${pos}-bottom`}>
+            {tagInfoSection}
+            {relatedTagSection}
           </div>
         </div>
       )
@@ -480,7 +489,7 @@ class Explore extends React.Component {
           </>
         );
         leftMiddle = null;
-        rightTop = tagDetailsRight;
+        rightTop = tagDetailGenerator('right');
         rightBottom = (<GuildRecs />);
         break;
       default:
