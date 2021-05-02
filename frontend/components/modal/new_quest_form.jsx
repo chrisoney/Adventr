@@ -36,7 +36,6 @@ class NewQuestForm extends React.Component {
 
   deleteTag(e) {
     const tagToDelete = e.target.innerHTML.slice(1);
-    console.log(tagToDelete)
     const index = this.state.tags.indexOf(tagToDelete);
     const newTagArray = this.state.tags
       .slice(0, index)
@@ -63,7 +62,6 @@ class NewQuestForm extends React.Component {
       if (this.state.tags.indexOf(tag) === -1) {
         this.setState({ tags: this.state.tags.concat([tag]) });
         if (this.props.task === 'edit') {
-          console.log('HIT')
           this.setState({ allowSubmit: true });
         }
         

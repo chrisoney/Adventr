@@ -11,6 +11,9 @@ tag.quests.each do |quest|
     if quest.user.avatar_image.attached?
      quest_data["user_avatar"] = url_for(quest.user.avatar_image)
     end
+    if quest_data["user_avatar"]
+      break
+    end
   end
 end
 json.quest_data quest_data

@@ -345,7 +345,6 @@ class Explore extends React.Component {
         if (a.count < b.count) return 1;
         else return -1;
       }).slice(0, 7);
-      console.log(sortedArr);
     }
 
     let pageTitle, topNav, leftMiddle, rightTop, rightBottom;
@@ -367,6 +366,44 @@ class Explore extends React.Component {
         </div>
       </div>
     )
+    
+    let tagDetailsRight = null;
+    if (page === 'tag') {
+      const userPageId = tag.quest_data.user.id || 0;
+      tagDetailsRight = (
+        <div className="tag-details-right-container">
+          <div
+            onClick={() => this.props.openModal('userpage')}
+            id={userPageId}
+            className="tag-details-right-image-container"
+          >
+            <img
+              id={userPageId}
+              className="tag-details-right-image"
+              src={tag.quest_data.quest_urls[0]}
+            />
+            <div id={userPageId} className="tag-details-right-user-info">
+              <span id={userPageId} className="user-info-posted-by">
+                Posted by
+                </span>
+              <img
+                id={userPageId}
+                className="user-avatar"
+                src={tag.quest_data.user_avatar}
+              />
+            </div>
+          </div>
+          <div className="tag-details-right-bottom">
+            <span className="tag-name">#{tag.tag_name}</span>
+            <span className="tag-popularity">
+              {tag.users.length} followers / {' '}
+              {tag.quests.length} recent posts
+            </span>
+          </div>
+        </div>
+      )
+    }
+
     switch (page) {
       case 'explore':
         pageTitle = "Explore Adventr"
@@ -397,7 +434,7 @@ class Explore extends React.Component {
           </>
         );
         leftMiddle = null;
-        rightTop = null;
+        rightTop = tagDetailsRight;
         rightBottom = (<GuildRecs />);
         break;
       default:

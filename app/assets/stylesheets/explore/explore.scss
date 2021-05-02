@@ -217,6 +217,57 @@
         }
       }
     }
+
+    .tag-details-right-container {
+      width: 320px;
+      background-color: #122943;
+      .tag-details-right-image-container {
+        width: 320px;
+        height: 186px;
+        position: relative;
+        cursor: pointer;
+        .tag-details-right-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .tag-details-right-user-info {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 8px;
+          display: flex;
+          align-items: center;
+          .user-info-posted-by {
+            color: white;
+            margin-right: 10px;
+          }
+          .user-avatar {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+            border-radius: 1px;
+          }
+        }
+      }
+      .tag-details-right-bottom {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        .tag-name {
+          font-size: 28px;
+          font-weight: 400;
+          text-overflow: ellipsis;
+          max-height: 2.5em;
+        }
+        .tag-popularity {
+          margin-top: 4px;
+          margin-bottom: 20px;
+          font-size: 16px;
+        }
+      }
+    }
     .suggested-guilds{
       width: 100%;
       height: 437px;
