@@ -80,28 +80,36 @@ class Explore extends React.Component {
   handleTagFollow(e, tag) {
     e.stopPropagation();
     e.preventDefault();
-    // const followed = e.target.innerHTML === 'Follow';
-    const notFollowed = !tag.users.includes(this.props.currentUser.id);
+    let notFollowed;
+    switch (this.props.page) {
+      case 'explore':
+        notFollowed = e.target.innerHTML === 'Follow';
+        break;
+      case 'tag':
+        notFollowed = !tag.users.includes(this.props.currentUser.id);
+        break;
+      default:
+        break;
+    }
     const tag_join = {
       taggable_id: this.props.currentUser.id,
       taggable_type: 'User',
       tag_id: tag.id,
     };
+    const element = e.target;
     if (notFollowed) {
-      const element = e.target;
       element.innerHTML = 'Unfollow';
-      this.props.addTagToUser(tag_join);
-      //   .then((newTagJoin) => {
-      //   element.dataset.tagJoinId = newTagJoin.id;
-      // });
+      this.props.addTagToUser(tag_join)
+        .then((newTagJoin) => {
+        element.dataset.tagJoinId = newTagJoin.id;
+      });
     } else {
       // Set up unfollow
-      const element = e.target;
       element.innerHTML = 'Follow';
       const tagJoinId = element.dataset.tagJoinId;
       this.props.removeTagFromUser(tagJoinId);
     }
-    this.props.fetchSingleTag(tag.id)
+    if (this.props.page === 'tag') this.props.fetchSingleTag(tag.id)
   }
 
   handleCurrTagCycle(length) {
