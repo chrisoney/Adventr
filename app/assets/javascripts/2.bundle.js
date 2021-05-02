@@ -640,7 +640,7 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
       imageUrls: null,
       imageFiles: null,
       errors: null,
-      allowSubmit: true,
+      allowSubmit: false,
       loading: false
     }; // this.reference = React.createRef();
 
@@ -662,6 +662,34 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
       this.props.fetchAllQuests().then(function () {});
     }
   }, {
+    key: "deleteTag",
+    value: function deleteTag(e) {
+      var tagToDelete = e.target.innerHTML.slice(1);
+      console.log(tagToDelete);
+      var index = this.state.tags.indexOf(tagToDelete);
+      var newTagArray = this.state.tags.slice(0, index).concat(this.state.tags.slice(index + 1, this.state.tags.length));
+      this.setState({
+        tags: newTagArray
+      });
+
+      if (this.props.task === 'edit') {
+        this.props.quest.tag_joins.forEach(function (tag_join) {
+          if (tag_join.tag.tag_name === tagToDelete) {
+            that.setState({
+              allowSubmit: false
+            });
+            that.props.removeTagFromQuest(tag_join.id).then(function () {
+              that.setState({
+                allowSubmit: true
+              });
+            });
+          }
+        });
+      }
+
+      e.target.remove();
+    }
+  }, {
     key: "createTag",
     value: function createTag(e) {
       var that = this;
@@ -673,7 +701,14 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
         if (this.state.tags.indexOf(tag) === -1) {
           this.setState({
             tags: this.state.tags.concat([tag])
-          }); // console.log(e.target);
+          });
+
+          if (this.props.task === 'edit') {
+            console.log('HIT');
+            this.setState({
+              allowSubmit: true
+            });
+          } // console.log(e.target);
           // const newDiv = document.createElement('div');
           // newDiv.classList.add('enteredTag');
           // newDiv.innerHTML = `#${tag}`;
@@ -687,6 +722,7 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
           //   e.target.remove();
           // });
           // e.target.parentElement.insertBefore(newDiv, e.target);
+
         }
 
         e.target.value = null;
@@ -781,12 +817,17 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
       var that = this;
       var tagInput = document.getElementById('tagInput');
 
+      if (this.state.title !== '' || this.state.text !== '' || this.state.imageFiles !== null || this.state.allowSubmit) {
+        this.setState({
+          allowSubmit: true
+        });
+      }
+
       if (tagInput.value !== '') {
         var tag = [tagInput.value];
         this.setState({
           tags: this.state.tags.concat(tag)
-        }); // console.log(tagInput);
-
+        });
         var newDiv = document.createElement('div');
         newDiv.classList.add('enteredTag');
         newDiv.innerHTML = "#".concat(tagInput.value);
@@ -935,13 +976,38 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleInput('title')
       });
       var oldImagePreviews = this.state.oldImageUrls ? this.state.oldImageUrls.map(function (imageUrl, idx) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: "old-img-".concat(idx),
-          className: "image-preview-box"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "image-preview",
-          src: imageUrl
-        }));
+        switch (type) {
+          case 'image':
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              key: "old-img-".concat(idx),
+              className: "image-preview-box"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+              className: "image-preview",
+              src: imageUrl
+            }));
+
+          case 'video':
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              key: "old-vid-".concat(idx),
+              className: "image-preview-box"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+              controls: true,
+              className: "image-preview",
+              src: imageUrl
+            }));
+
+          case 'audio':
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              key: "old-aud-".concat(idx),
+              className: "image-preview-box"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("audio", {
+              controls: true,
+              src: imageUrl
+            }, "Your browser does not support this player"));
+
+          default:
+            return null;
+        }
       }) : null;
       var newImagePreviews = this.state.imageUrls ? this.state.imageUrls.map(function (imageUrl, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1071,6 +1137,9 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
         }
       }, this.state.tags.map(function (tag, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: function onClick(e) {
+            return _this4.deleteTag(e);
+          },
           key: idx,
           className: "enteredTag"
         }, "#".concat(tag));
@@ -1121,10 +1190,8 @@ var NewQuestForm = /*#__PURE__*/function (_React$Component) {
 
       var disabled = true;
 
-      if (title !== '' || text !== '' || imageFiles !== null) {
+      if (title !== '' || text !== '' || imageFiles !== null || this.state.allowSubmit) {
         disabled = false;
-      } else {
-        disabled = true;
       }
 
       var submitText;

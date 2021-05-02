@@ -16,7 +16,7 @@ class NewQuestForm extends React.Component {
       imageUrls: null,
       imageFiles: null,
       errors: null,
-      allowSubmit: true,
+      allowSubmit: false,
       loading: false,
     };
     // this.reference = React.createRef();
@@ -34,6 +34,27 @@ class NewQuestForm extends React.Component {
     this.props.fetchAllQuests().then(() => {})
   }
 
+  deleteTag(e) {
+    const tagToDelete = e.target.innerHTML.slice(1);
+    console.log(tagToDelete)
+    const index = this.state.tags.indexOf(tagToDelete);
+    const newTagArray = this.state.tags
+      .slice(0, index)
+      .concat(this.state.tags.slice(index + 1, this.state.tags.length));
+    this.setState({ tags: newTagArray });
+    if (this.props.task === 'edit') {
+      this.props.quest.tag_joins.forEach((tag_join) => {
+        if (tag_join.tag.tag_name === tagToDelete) {
+          that.setState({ allowSubmit: false });
+          that.props.removeTagFromQuest(tag_join.id).then(() => {
+            that.setState({ allowSubmit: true });
+          })
+        }
+      })
+    }
+    e.target.remove();
+  }
+
   createTag(e) {
     const that = this;
     if (e.key === 'Enter' && e.target.value !== '') {
@@ -41,6 +62,11 @@ class NewQuestForm extends React.Component {
       if (tag[0] === '#') tag = tag.slice(1);
       if (this.state.tags.indexOf(tag) === -1) {
         this.setState({ tags: this.state.tags.concat([tag]) });
+        if (this.props.task === 'edit') {
+          console.log('HIT')
+          this.setState({ allowSubmit: true });
+        }
+        
         // console.log(e.target);
         // const newDiv = document.createElement('div');
         // newDiv.classList.add('enteredTag');
@@ -136,10 +162,18 @@ class NewQuestForm extends React.Component {
   handleSubmit(e) {
     const that = this;
     const tagInput = document.getElementById('tagInput');
+
+    if (
+      this.state.title !== '' ||
+      this.state.text !== '' ||
+      this.state.imageFiles !== null ||
+      this.state.allowSubmit) {
+      this.setState({ allowSubmit: true})
+    }
+
     if (tagInput.value !== '') {
       const tag = [tagInput.value];
       this.setState({ tags: this.state.tags.concat(tag) });
-      // console.log(tagInput);
       const newDiv = document.createElement('div');
       newDiv.classList.add('enteredTag');
       newDiv.innerHTML = `#${tagInput.value}`;
@@ -256,11 +290,30 @@ class NewQuestForm extends React.Component {
 
     const oldImagePreviews = this.state.oldImageUrls
       ? this.state.oldImageUrls.map((imageUrl, idx) => {
-          return (
-            <div key={`old-img-${idx}`} className="image-preview-box">
-              <img className="image-preview" src={imageUrl} />
-            </div>
-          );
+        switch (type) {
+          case 'image':
+            return (
+              <div key={`old-img-${idx}`} className="image-preview-box">
+                <img className="image-preview" src={imageUrl} />
+              </div>
+            );
+          case 'video':
+            return (
+              <div key={`old-vid-${idx}`} className="image-preview-box">
+                <video controls className="image-preview" src={imageUrl} />
+              </div>
+            )
+          case 'audio':
+            return (
+              <div key={`old-aud-${idx}`} className="image-preview-box">
+                <audio controls src={imageUrl}>
+                  Your browser does not support this player
+                </audio>
+              </div>
+            );
+          default:
+            return null;
+        }
         })
       : null;
     
@@ -410,7 +463,13 @@ class NewQuestForm extends React.Component {
         }}
       >
         {this.state.tags.map((tag,idx) => {
-          return <div key={idx} className="enteredTag">{`#${tag}`}</div>
+          return (
+            <div
+              onClick={(e) => this.deleteTag(e)}
+              key={idx}
+              className="enteredTag"
+            >{`#${tag}`}</div>
+          )
         })}
         <input
           id="tagInput"
@@ -474,10 +533,8 @@ class NewQuestForm extends React.Component {
     }
 
     let disabled = true;
-    if (title !== '' || text !== '' || imageFiles !== null) {
+    if (title !== '' || text !== '' || imageFiles !== null || this.state.allowSubmit) {
       disabled = false;
-    } else {
-      disabled = true;
     }
 
     let submitText;
