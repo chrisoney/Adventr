@@ -331,9 +331,11 @@ class Explore extends React.Component {
       newFavTagIdx + 4
     );
 
-    // Getting the other tags
+    // Getting the related tags
+    const relatedTagsArr = []
+
     if (page === 'tag') {
-      const relatedTags = {};
+      const relatedTagsObj = {};
       const tempQuestList = quests.filter((quest) => {
         return quest.tag_joins.map((tag_join) => tag_join.tag.tag_name)
           .includes(tag.tag_name);
@@ -345,19 +347,30 @@ class Explore extends React.Component {
           questTags = questTags.filter(ele => ele.tag_name !== tag.tag_name)
         }
         questTags.forEach((tag) => {
-          if (!relatedTags[tag.id]) relatedTags[tag.id] = {count: 0, name: tag.tag_name, id: tag.id};
-          relatedTags[tag.id].count++;
+          if (!relatedTagsObj[tag.id]) relatedTagsObj[tag.id] = {count: 0, name: tag.tag_name, id: tag.id};
+          relatedTagsObj[tag.id].count++;
         })
       })
       const tagArr = [];
-      Object.keys(relatedTags)
-        .forEach((ele) => tagArr.push(relatedTags[ele]))
+      Object.keys(relatedTagsObj)
+        .forEach((ele) => tagArr.push(relatedTagsObj[ele]))
       const sortedArr = tagArr.sort((a, b) => {
         if (a.count < b.count) return 1;
         else return -1;
       }).slice(0, 7);
+
+      relatedTagsArr.push(...sortedArr.map((tag => {
+        return (
+          <Link
+            to={`/tag/${tag.id}`}
+            className="related-tag-link">#{tag.name}
+          </Link>
+        )
+      })))
     }
 
+
+    // Logic for cycling through the tags in the sidebar
     let pageTitle, topNav, leftMiddle, rightTop, rightBottom;
     let tagCycle = (
       <div className="current-tag-follows">
@@ -429,6 +442,9 @@ class Explore extends React.Component {
             >
               {tag.users.includes(currentUser.id) ? "Unfollow" : "Follow"}
             </button>
+            <div className="related-tags-container">
+              {relatedTagsArr}
+            </div>
           </div>
         </div>
       )
