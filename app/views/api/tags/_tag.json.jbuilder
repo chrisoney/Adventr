@@ -27,6 +27,12 @@ json.users do
   json.array! users_who_favorited
 end
 
+tag.tag_joins.each do |tag_join|
+  if tag_join.taggable_id === current_user.id && tag_join.taggable_type === "User"
+    json.set! :current_tag_join, tag_join
+  end
+end
+
 # json.quests tag.quests.each do |quest|
 #   json.id quest.id
 #   json.title quest.title

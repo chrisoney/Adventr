@@ -80,13 +80,14 @@ class Explore extends React.Component {
   handleTagFollow(e, tag) {
     e.stopPropagation();
     e.preventDefault();
-    const followed = e.target.innerHTML === 'Follow';
+    // const followed = e.target.innerHTML === 'Follow';
+    const notFollowed = !tag.users.includes(this.props.currentUser.id);
     const tag_join = {
       taggable_id: this.props.currentUser.id,
       taggable_type: 'User',
       tag_id: tag.id,
     };
-    if (followed) {
+    if (notFollowed) {
       const element = e.target;
       element.innerHTML = 'Unfollow';
       this.props.addTagToUser(tag_join).then((newTagJoin) => {
@@ -399,6 +400,14 @@ class Explore extends React.Component {
               {tag.users.length} followers / {' '}
               {tag.quests.length} recent posts
             </span>
+            <button
+              onClick={(e) => this.handleTagFollow(e, tag)}
+              className="tag-details-right-follow-button"
+              data-tag-join-id={tag.current_tag_join
+                ? tag.current_tag_join.id : null}
+            >
+              {tag.users.includes(currentUser.id) ? "Unfollow" : "Follow"}
+            </button>
           </div>
         </div>
       )
