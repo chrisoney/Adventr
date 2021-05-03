@@ -87,6 +87,8 @@ class Quest extends React.Component {
     let likedClass;
     let heartAnimation;
 
+    const quest = type === 'quest' ? posting : posting.quest;
+
     let questHeader;
     let questFooter;
 
@@ -197,30 +199,30 @@ class Quest extends React.Component {
         </div>
       );
     }
-    let isQuote = posting.quest_type === 'quote' ? '"' : (source = null);
-    let source = posting.quest_type === 'quote' ? '\u2014' : (isQuote = null);
+    let isQuote = quest.quest_type === 'quote' ? '"' : (source = null);
+    let source = quest.quest_type === 'quote' ? '\u2014' : (isQuote = null);
 
     let titleSection = null;
-    if (posting.title !== '') {
+    if (quest.title !== '') {
       titleSection = (
         <div className="title">
           {isQuote}
-          {posting.title}
+          {quest.title}
           {isQuote}
         </div>
       );
     }
 
     let imageSection = null;
-    if (posting.imageUrls && posting.quest_type === 'image') {
-      imageSection = posting.imageUrls.map((imageUrl, idx) => {
+    if (quest.imageUrls && quest.quest_type === 'image') {
+      imageSection = quest.imageUrls.map((imageUrl, idx) => {
         return <img key={`img-${idx}`} className="image-video" src={imageUrl} />;
       });
     }
 
     let videoSection = null;
-    if (posting.imageUrls && posting.quest_type === 'video') {
-      videoSection = posting.imageUrls.map((imageUrl, idx) => {
+    if (quest.imageUrls && quest.quest_type === 'video') {
+      videoSection = quest.imageUrls.map((imageUrl, idx) => {
         return (
           <video key={`vid-${idx}`} src={imageUrl} className="image-video" controls />
         );
@@ -228,8 +230,8 @@ class Quest extends React.Component {
     }
 
     let audioSection = null;
-    if (posting.imageUrls && posting.quest_type === 'audio') {
-      audioSection = posting.imageUrls.map((imageUrl, idx) => {
+    if (quest.imageUrls && quest.quest_type === 'audio') {
+      audioSection = quest.imageUrls.map((imageUrl, idx) => {
         return (
           <div key={`audio-${idx}`} className="audio">
             <audio className="audio-controls" src={imageUrl} controls />
