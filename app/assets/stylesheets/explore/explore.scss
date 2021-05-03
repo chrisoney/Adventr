@@ -11,11 +11,109 @@
   background-size: cover;
   width: 100vw;
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .black-container {
   background: black;
 }
+
+.tag-details-top-container {
+  width: 100vw;
+  height: 264px;
+  .tag-details-top-image-container {
+    width: 100vw;
+    height: 264px;
+    background-size: 100%;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    // object-fit: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    .tag-top-info-container {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      .tag-name {
+        font-size: 28px;
+        font-weight: 400;
+        text-overflow: ellipsis;
+        max-height: 2.5em;
+      }
+      .tag-popularity {
+        margin-top: 4px;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .tag-details-top-follow-button {
+        background-color: $accent-blue;
+        color: $navy;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.5;
+        border-radius: 3px;
+        padding: 8px 20.5px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        &.unfollowed {
+          background-color: transparent;
+          color: rgba($white, 0.65);
+          border: 2px solid rgba($white, 0.65);
+          padding: 6px 10px;
+        }
+      }
+    }
+    .tag-details-top-user-info {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      .user-info-posted-by {
+        color: white;
+        margin-right: 10px;
+      }
+      .user-avatar {
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+    }
+  }
+}
+
+.related-tags-top-container {
+  margin-top: 20px;
+  margin-bottom: -10px;
+  .related-tag-link {
+    cursor: pointer;
+    display: inline-block;
+    color: $white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    border: 2px solid rgba($white, 0.25);
+    border-radius: 30px;
+    padding: 2px 13px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: rgba($accent-blue, 0.25);
+      color: $accent-blue;
+    }
+  }
+}
+
 .explore {  
   width: 100%;
   display:flex;
@@ -221,6 +319,7 @@
     .tag-details-right-container {
       width: 320px;
       background-color: #122943;
+      margin-bottom: 20px;
       .tag-details-right-image-container {
         width: 320px;
         height: 186px;
@@ -289,7 +388,7 @@
             padding: 6px 10px;
           }
         }
-        .related-tags-container {
+        .related-tags-right-container {
           margin-top: 20px;
           margin-bottom: -10px;
           .related-tag-link {
@@ -453,12 +552,16 @@
   }
 }
 @media only screen and (min-width: 990px) {
+  .tag-details-top-container, .related-tags-top-container {
+    display: none;
+  }
   .explore {
     max-width: 970px;
     .explore-left{
       max-width: 620px;
       padding-right: 14px;
       border-right: 1px solid #595959;
+
       .explore-tag-container {
         .explore-new-tag-container {
           margin-right: 20px;

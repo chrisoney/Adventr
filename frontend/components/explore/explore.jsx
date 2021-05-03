@@ -363,6 +363,7 @@ class Explore extends React.Component {
         return (
           <Link
             to={`/tag/${tag.id}`}
+            key={`related-tag-${tag.id}`}
             className="related-tag-link">#{tag.name}
           </Link>
         )
@@ -371,7 +372,7 @@ class Explore extends React.Component {
 
 
     // Logic for cycling through the tags in the sidebar
-    let pageTitle, topNav, leftMiddle, rightTop, rightBottom;
+    let pageTitle, topNav, leftMiddle, rightTop, rightBottom, leftTop;
     let tagCycle = (
       <div className="current-tag-follows">
         <div className="current-tag-follows-header">
@@ -391,7 +392,6 @@ class Explore extends React.Component {
       </div>
     )
     
-    let tagDetailsRight, tagDetailsLeft = null;
     const tagDetailGenerator = (pos) => {
       let userPageId = null;
       let imageSource = '/assets/river_world.jpg';
@@ -401,7 +401,7 @@ class Explore extends React.Component {
       }
 
       const userInfoSection = tag.quest_data.user ? (
-        <div id={userPageId} className="tag-details-right-user-info">
+        <div id={userPageId} className={`tag-details-${pos}-user-info`}>
           <span id={userPageId} className="user-info-posted-by">
             Posted by
             </span>
@@ -422,7 +422,7 @@ class Explore extends React.Component {
           </span>
           <button
             onClick={(e) => this.handleTagFollow(e, tag)}
-            className={`tag-details-right-follow-button
+            className={`tag-details-${pos}-follow-button
                         ${tag.current_tag_join ? 'unfollowed' : ''}`}
             data-tag-join-id={tag.current_tag_join
               ? tag.current_tag_join.id : null}
@@ -433,35 +433,54 @@ class Explore extends React.Component {
       )
 
       const relatedTagSection = (
-        <div className="related-tags-container">
+        <div className={`related-tags-${pos}-container`}>
           {relatedTagsArr}
         </div>
       )
 
       return (
-        <div className="tag-details-right-container">
+        <>
+        <div className={`tag-details-${pos}-container`}>
           <div
             onClick={userPageId
               ? () => this.props.openModal('userpage')
               : null}
             id={userPageId}
-            style={{background: `url(${imageSource}) no-repeat center`}}
-            className={`tag-details-right-image-container 
+              style={{
+                backgroundImage: `url(${imageSource})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'center',
+                backgroundSize: '100%'
+              }}
+            className={`tag-details-${pos}-image-container 
                         ${userPageId ? '' : 'no-user'}`}
           >
-            {userInfoSection}
+            {pos === 'right' ? userInfoSection : (
+              <>
+                <div className="tag-top-info-container">{tagInfoSection}</div>
+                {userInfoSection}
+              </>
+            )}
+            {/* {userInfoSection} */}
           </div>
           <div className={`tag-details-${pos}-bottom`}>
-            {tagInfoSection}
-            {relatedTagSection}
+            {pos === 'right' ? (
+              <>
+                {tagInfoSection}
+                {relatedTagSection}
+              </>
+            ) : null}
           </div>
         </div>
-      )
+        { pos === 'right' ? null : relatedTagSection }
+      </>
+      );
     }
 
     switch (page) {
       case 'explore':
-        pageTitle = "Explore Adventr"
+        pageTitle = "Explore Adventr";
+        leftTop = null;
         topNav = (
           <>
             <div className="explore-tab">For You</div>
@@ -476,6 +495,7 @@ class Explore extends React.Component {
         break;
       case 'tag':
         pageTitle = `Tag - #${tag.tag_name}`;
+        leftTop = tagDetailGenerator('top');
         topNav = (
           <>
             <div
@@ -501,6 +521,7 @@ class Explore extends React.Component {
       <>
         <Helmet><title>{pageTitle}</title></Helmet>
         <div className="explore-container">
+          {leftTop}
           <div className="explore">
             <div className="explore-left">
               <div className="explore-header">
