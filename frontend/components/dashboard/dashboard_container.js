@@ -24,6 +24,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal)),
   fetchAllQuests: () => dispatch(fetchAllQuests()),
+  fetchAllReblogs: () => dispatch(fetchAllReblogs()),
   fetchAllFollows: () => dispatch(fetchAllFollows()),
   fetchAllLikes: () => dispatch(fetchAllLikes()),
   // fetchAllUsers: () => dispatch(fetchAllUsers()),

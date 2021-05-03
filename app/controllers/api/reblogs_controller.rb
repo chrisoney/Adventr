@@ -1,6 +1,6 @@
 class Api::ReblogsController < ApplicationController
   def index
-    @reblogs = Reblog.where(reblogger_id: current_user.id)
+    @reblogs = Reblog.order(id: :DESC).includes(:user)
   end
 
   def show
@@ -9,7 +9,7 @@ class Api::ReblogsController < ApplicationController
 
   def create
     @reblog = Reblog.new(reblog_params)
-    if @reblog.save 
+    if @reblog.save
       @quest = @reblog.quest
       @reblogger = @reblog.user
       render :show
@@ -20,10 +20,10 @@ class Api::ReblogsController < ApplicationController
 
 
   def destroy
-    @reblog = Reblog.find_by(user_id: current_user.id, quest_id: params[:id])
+    @quest = Quest.find(params[:id])
     @reblog.destroy
-    @quest = @reblog.quest
-    @user = @reblog.user
+    # @quest = @reblog.quest
+    # @user = @reblog.user
     render :show
   end
 

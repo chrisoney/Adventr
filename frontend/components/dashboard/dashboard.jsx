@@ -15,6 +15,7 @@ class DashBoard extends React.Component {
     this.props.fetchAllQuests();
     this.props.fetchAllFollows();
     this.props.fetchAllLikes();
+    this.props.fetchAllReblogs();
     // this.props.fetchAllUsers();
   }
 
