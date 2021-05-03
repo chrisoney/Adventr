@@ -20,10 +20,10 @@
 
 .tag-details-top-container {
   width: 100vw;
-  height: 264px;
+  height: 214px;
   .tag-details-top-image-container {
     width: 100vw;
-    height: 264px;
+    height: 214px;
     background-size: 100%;
     // -webkit-background-size: cover;
     // -moz-background-size: cover;
@@ -70,7 +70,7 @@
       }
     }
     .tag-details-top-user-info {
-      padding: 8px;
+      padding: 16px;
       display: flex;
       align-items: center;
       .user-info-posted-by {
