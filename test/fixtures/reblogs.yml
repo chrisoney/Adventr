@@ -3,19 +3,19 @@
 # Table name: reblogs
 #
 #  id           :bigint           not null, primary key
-#  reblogger_id :integer          not null
+#  user_id      :integer          not null
 #  quest_id     :integer          not null
-#  body         :integer          not null
+#  text         :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 
 one:
-  reblogger_id: 1
+  user_id: 1
   quest_id: 1
-  body: 1
+  text: 1
 
 two:
-  reblogger_id: 1
+  user_id: 1
   quest_id: 1
-  body: 1
+  text: 1

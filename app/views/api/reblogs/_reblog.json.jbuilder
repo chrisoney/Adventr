@@ -1,7 +1,6 @@
-json.extract! reblog, :id, :reblogger_id, :quest_id, :body
+json.extract! reblog, :id, :user_id, :quest_id, :text
 
-json.rebloggerId reblog.user.id
-json.reblogger reblog.user
+json.author reblog.user
 
 json.quest reblog.quest
 json.quest_author reblog.quest.user

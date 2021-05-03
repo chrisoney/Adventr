@@ -66,12 +66,12 @@ ActiveRecord::Schema.define(version: 2021_04_02_030702) do
   end
 
   create_table "reblogs", force: :cascade do |t|
-    t.integer "reblogger_id", null: false
+    t.integer "user_id", null: false
     t.integer "quest_id", null: false
-    t.integer "body", null: false
+    t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["reblogger_id", "quest_id"], name: "index_reblogs_on_reblogger_id_and_quest_id", unique: true
+    t.index ["user_id", "quest_id"], name: "index_reblogs_on_user_id_and_quest_id", unique: true
   end
 
   create_table "tag_joins", force: :cascade do |t|

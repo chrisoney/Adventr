@@ -52,7 +52,7 @@ users_avatars_filenames = []
 tag = Tag.find(77)
 tag2 = Tag.find(86)
 
-reblog = Reblog.create(reblogger_id: 16, quest_id: 138, body: 'This is the new text to test the reblogs');
+reblog = Reblog.create(user_id: 16, quest_id: 138, text: 'This is the new text to test the reblogs');
 reblog.tags << tag << tag2
 
 

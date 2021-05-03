@@ -16,6 +16,7 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     quests: Object.values(state.entities.quests),
+    reblogs: Object.values(state.entities.reblogs),
     follows: Object.values(state.entities.follows),
     // users: Object.values(state.entities.users),
   };

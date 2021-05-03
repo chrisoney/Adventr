@@ -87,6 +87,7 @@ class Quest extends React.Component {
     let likedClass;
     let heartAnimation;
 
+
     const quest = type === 'quest' ? posting : posting.quest;
 
     let questHeader;
@@ -136,7 +137,7 @@ class Quest extends React.Component {
     if (authorId === currentUser.id) {
       questHeader = (
         <span
-          className={`${type}-author`}
+          className={`quest-author`}
           onClick={() => this.props.openModal('userpage')}
           id={this.props.authorId}
         >
@@ -144,17 +145,17 @@ class Quest extends React.Component {
         </span>
       );
       questFooter = (
-        <div className={`${type}-footer`}>
-          <div className={`${type}-footer-left`}>
+        <div className={`quest-footer`}>
+          <div className={`quest-footer-left`}>
             <div className="note-section">
               {noteCount} {noteCount === 1 ? "Note" : "Notes"}
             </div>
           </div>
-          <div className={`${type}-footer-right`}>
-            <div className={`${type}-buttons`}>
+          <div className={`quest-footer-right`}>
+            <div className={`quest-buttons`}>
               <button 
                 className="edit fas fa-edit"
-                onClick={() => this.props.openModal(`edit-${type}-${posting.id}`)}
+                onClick={() => this.props.openModal(`edit-quest-${posting.id}`)}
               ></button>
               <button
                 className="trash fas fa-trash"
@@ -178,14 +179,14 @@ class Quest extends React.Component {
         </>
       );
       questFooter = (
-        <div className={`${type}-footer`}>
-          <div className={`${type}-footer-left`}>
+        <div className={`quest-footer`}>
+          <div className={`quest-footer-left`}>
             <div className="note-section">
               {noteCount} {noteCount === 1 ? "Note" : "Notes"}
             </div>
           </div>
-          <div className={`${type}-footer-right`}>
-            <div className={`${type}-buttons`}>
+          <div className={`quest-footer-right`}>
+            <div className={`quest-buttons`}>
               {/* Not functional yet */}
               {/* <button className="reply fas fa-reply"></button>
               <button className="reblog fas fa-retweet"></button> */}
@@ -256,15 +257,15 @@ class Quest extends React.Component {
         return (
           <Link
             to={`/tag/${tag_join.tag.id}`}
-            key={`${type}-${posting.id}-tag-${idx}`}
-            className={`${type}-tag`}
+            key={`quest-${posting.id}-tag-${idx}`}
+            className={`quest-tag`}
             data-tag-join-id={tag_join.id}
           >
             #{tag_join.tag.tag_name}
           </Link>
         );
       });
-      tagSection = <div className={`${type}-tag-container`}>{questTags}</div>;
+      tagSection = <div className={`quest-tag-container`}>{questTags}</div>;
     }
 
     let avatar = window.avatar;
@@ -273,15 +274,15 @@ class Quest extends React.Component {
     }
 
     return (
-      <div key={`${type}-${posting.id}`} className={`${type}-container-${loc}`}>
+      <div key={`${type}-${posting.id}`} className={`quest-container-${loc}`}>
         <img
           className={`avatar-${loc}`}
           src={avatar}
           onClick={() => this.props.openModal('userpage')}
           id={this.props.authorId}
         />
-        <div className={`${type}`}>
-          <div className={`${type}-header`}>
+        <div className={`quest`}>
+          <div className={`quest-header`}>
             <img
               className={`avatar-${loc}-small`}
               src={avatar}
@@ -296,7 +297,7 @@ class Quest extends React.Component {
           {videoSection}
           {textSection}
           {tagSection}
-          <div className={`${type}-footer-container`}>{questFooter}</div>
+          <div className={`quest-footer-container`}>{questFooter}</div>
         </div>
       </div>
     );

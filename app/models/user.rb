@@ -33,7 +33,7 @@ class User < ApplicationRecord
 
   has_many :reblogs,
     class_name: :Reblog,
-    foreign_key: :reblogger_id
+    foreign_key: :user_id
   
   has_many :liked_quests,
     through: :likes,

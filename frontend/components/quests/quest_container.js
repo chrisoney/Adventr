@@ -24,7 +24,7 @@ const mapStateToProps = (state, ownProps) => {
     if (follow.user_id === posting.user_id && follow.follower_id === state.session.currentUser.id) {followed = true} ;
   })
   let authorId = posting.author.id;
-    return {
+  return {
     currentUser: state.session.currentUser,
     authorId: authorId,
     // author: state.entities.users[authorId],

@@ -35,7 +35,7 @@ class DashBoard extends React.Component {
   }
 
   render() {
-    const { quests, follows, users, currentUser } = this.props;
+    const { quests, reblogs, follows, users, currentUser } = this.props;
     let questList = [];
     let randomQuest;
     const followRecs = [];
@@ -59,7 +59,28 @@ class DashBoard extends React.Component {
         }
       }
     });
-    questList = questList.reverse();
+    reblogs.forEach((reblog, idx) => {
+      if (reblog.user_id === currentUser.id) {
+        questList.push(<QuestContainer key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>);
+      } else {
+        for (let i = 0; i < follows.length; i++) {
+          let follow = follows[i];
+          if (
+            follow.user_id === reblog.user_id &&
+            follow.follower_id === currentUser.id
+          ) {
+            questList.push(
+              <QuestContainer key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>
+            );
+            break;
+          }
+        }
+      }
+    });
+    questList = questList.sort((a, b) => {
+      if (a.updated_at > b.updated_at) return 1;
+      else return -1;
+    })
 
     for (let x = 0; x < quests.length; x++) {
       let quest = quests[x];

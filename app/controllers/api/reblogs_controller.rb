@@ -11,7 +11,7 @@ class Api::ReblogsController < ApplicationController
     @reblog = Reblog.new(reblog_params)
     if @reblog.save
       @quest = @reblog.quest
-      @reblogger = @reblog.user
+      @user = @reblog.user
       render :show
     else
       render json: @reblog.errors.full_messages, status: 401
@@ -30,6 +30,6 @@ class Api::ReblogsController < ApplicationController
   private
 
   def reblog_params
-    params.require(:reblog).permit(:reblogger_id, :quest_id, :body)
+    params.require(:reblog).permit(:user_id, :quest_id, :text)
   end
 end
