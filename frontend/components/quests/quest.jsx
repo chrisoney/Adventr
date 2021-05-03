@@ -80,7 +80,7 @@ class Quest extends React.Component {
   }
 
   render() {
-    const { currentUser, posting, authorId, deleteQuest, loc, tags, noteCount } = this.props;
+    const { currentUser, posting, authorId, deleteQuest, loc, tags, noteCount, type } = this.props;
     let { author, authorAvatar } = this.state;
     let visibility = this.state.visible;
     let followUser;
@@ -134,7 +134,7 @@ class Quest extends React.Component {
     if (authorId === currentUser.id) {
       questHeader = (
         <span
-          className="quest-author"
+          className={`${type}-author`}
           onClick={() => this.props.openModal('userpage')}
           id={this.props.authorId}
         >
@@ -142,17 +142,17 @@ class Quest extends React.Component {
         </span>
       );
       questFooter = (
-        <div className="quest-footer">
-          <div className="quest-footer-left">
+        <div className={`${type}-footer`}>
+          <div className={`${type}-footer-left`}>
             <div className="note-section">
               {noteCount} {noteCount === 1 ? "Note" : "Notes"}
             </div>
           </div>
-          <div className="quest-footer-right">
-            <div className="quest-buttons">
+          <div className={`${type}-footer-right`}>
+            <div className={`${type}-buttons`}>
               <button 
                 className="edit fas fa-edit"
-                onClick={() => this.props.openModal(`edit-quest-${posting.id}`)}
+                onClick={() => this.props.openModal(`edit-${type}-${posting.id}`)}
               ></button>
               <button
                 className="trash fas fa-trash"
@@ -176,14 +176,14 @@ class Quest extends React.Component {
         </>
       );
       questFooter = (
-        <div className="quest-footer">
-          <div className="quest-footer-left">
+        <div className={`${type}-footer`}>
+          <div className={`${type}-footer-left`}>
             <div className="note-section">
               {noteCount} {noteCount === 1 ? "Note" : "Notes"}
             </div>
           </div>
-          <div className="quest-footer-right">
-            <div className="quest-buttons">
+          <div className={`${type}-footer-right`}>
+            <div className={`${type}-buttons`}>
               {/* Not functional yet */}
               {/* <button className="reply fas fa-reply"></button>
               <button className="reblog fas fa-retweet"></button> */}
@@ -254,15 +254,15 @@ class Quest extends React.Component {
         return (
           <Link
             to={`/tag/${tag_join.tag.id}`}
-            key={`quest-${posting.id}-tag-${idx}`}
-            className="quest-tag"
+            key={`${type}-${posting.id}-tag-${idx}`}
+            className={`${type}-tag`}
             data-tag-join-id={tag_join.id}
           >
             #{tag_join.tag.tag_name}
           </Link>
         );
       });
-      tagSection = <div className="quest-tag-container">{questTags}</div>;
+      tagSection = <div className={`${type}-tag-container`}>{questTags}</div>;
     }
 
     let avatar = window.avatar;
@@ -271,15 +271,15 @@ class Quest extends React.Component {
     }
 
     return (
-      <div key={`quest-${posting.id}`} className={`quest-container-${loc}`}>
+      <div key={`${type}-${posting.id}`} className={`${type}-container-${loc}`}>
         <img
           className={`avatar-${loc}`}
           src={avatar}
           onClick={() => this.props.openModal('userpage')}
           id={this.props.authorId}
         />
-        <div className="quest">
-          <div className="quest-header">
+        <div className={`${type}`}>
+          <div className={`${type}-header`}>
             <img
               className={`avatar-${loc}-small`}
               src={avatar}
@@ -294,7 +294,7 @@ class Quest extends React.Component {
           {videoSection}
           {textSection}
           {tagSection}
-          <div className="quest-footer-container">{questFooter}</div>
+          <div className={`${type}-footer-container`}>{questFooter}</div>
         </div>
       </div>
     );
