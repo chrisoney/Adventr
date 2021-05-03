@@ -37,7 +37,7 @@ class UserPage extends React.Component{
     let avatar = this.props.user.avatarUrl || this.props.user.avatar;
     let sortedQuests = myQuests.reverse();
     let showQuests = sortedQuests.map((quest, idx)=>(
-        <QuestContainer key={idx} quest={quest} loc={"userpage"}/>
+        <QuestContainer key={idx} quest={quest} loc={"userpage"} type="quest"/>
     ))
     
         return (<>

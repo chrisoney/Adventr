@@ -30,7 +30,7 @@ class LikesList extends React.Component {
         let like = likes[i];
         if (like.user_id === currentUser.id && like.quest_id === quest.id) {
           questList.push(
-            <QuestContainer key={idx} quest={quest} loc={'dash'} />
+            <QuestContainer key={idx} quest={quest} loc={'dash'} type="quest"/>
           );
           break;
         }
@@ -41,7 +41,7 @@ class LikesList extends React.Component {
     for (let x = quests.length - 1; x > 0; x--) {
       let quest = quests[x];
       if (!likedIds.includes(quest.id) && quest.user_id !== currentUser.id) {
-        randomQuest = <QuestContainer quest={quest} loc={'dash-random'} />;
+        randomQuest = <QuestContainer quest={quest} loc={'dash-random'} type="quest"/>;
         break;
       }
     }

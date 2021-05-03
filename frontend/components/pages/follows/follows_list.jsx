@@ -39,7 +39,7 @@ class FollowsList extends React.Component {
     for (let x = 0; x < quests.length; x++) {
       let quest = quests[x];
       if (quest.user_id !== currentUser.id) {
-        randomQuest = <QuestContainer quest={quest} loc={'dash-random'} />;
+        randomQuest = <QuestContainer quest={quest} loc={'dash-random'} type="quest"/>;
       }
     }
     const months = [

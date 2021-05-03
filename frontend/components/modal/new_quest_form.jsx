@@ -44,14 +44,13 @@ class NewQuestForm extends React.Component {
     if (this.props.task === 'edit') {
       this.props.quest.tag_joins.forEach((tag_join) => {
         if (tag_join.tag.tag_name === tagToDelete) {
-          that.setState({ allowSubmit: false });
-          that.props.removeTagFromQuest(tag_join.id).then(() => {
-            that.setState({ allowSubmit: true });
+          this.setState({ allowSubmit: false });
+          this.props.removeTagFromQuest(tag_join.id).then(() => {
+            this.setState({ allowSubmit: true });
           })
         }
       })
     }
-    e.target.remove();
   }
 
   createTag(e) {
@@ -216,7 +215,7 @@ class NewQuestForm extends React.Component {
                 questTagForm.append('tag_join[tag_id]', existingTag.id);
                 const order = x + 1;
                 questTagForm.append('tag_join[order]', order);
-                this.props.addTagToQuest(questTagForm)
+                this.props.addTagToQuest(questTagForm);
                 tagExists = true;
                 break;
               }

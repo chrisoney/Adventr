@@ -38,10 +38,14 @@ class Quest extends React.Component {
     }
     if (this.props.liked !== prevProps.liked) {
       this.setState({ liked: this.props.liked });
-      this.props.fetchSingleQuest(this.props.quest.id);
+      if (this.props.type === 'quest') {
+        this.props.fetchSingleQuest(this.props.posting.id);
+      } else if (this.props.type === 'reblog') {
+        console.log('huh?')
+      }
       this.props.fetchAllLikes();
     }
-    if (this.props.quest.id !== prevProps.quest.id) {
+    if (this.props.posting.id !== prevProps.posting.id) {
       this.setState({
         liked: this.props.liked,
         followed: this.props.followed,
@@ -53,11 +57,11 @@ class Quest extends React.Component {
 
   toggleLiked(e) {
     e.preventDefault();
-    const quest = this.props.quest;
+    const posting = this.props.posting;
     if (this.state.liked) {
-      this.props.unlikeQuest(quest.id);
+      this.props.unlikeQuest(posting.id);
     } else {
-      this.props.likeQuest(quest.id);
+      this.props.likeQuest(posting.id);
     }
     this.setState({ liked: !this.state.liked });
     this.setState({ visible: true });
@@ -67,22 +71,21 @@ class Quest extends React.Component {
   }
 
   toggleFollowed() {
-    const quest = this.props.quest;
+    const posting = this.props.posting;
     if (this.state.followed) {
-      this.props.unfollowUser(quest.authorId);
+      this.props.unfollowUser(posting.authorId);
     } else {
-      this.props.followUser(quest.authorId);
+      this.props.followUser(posting.authorId);
     }
   }
 
   render() {
-    const { currentUser, quest, authorId, deleteQuest, loc, tags, noteCount } = this.props;
+    const { currentUser, posting, authorId, deleteQuest, loc, tags, noteCount } = this.props;
     let { author, authorAvatar } = this.state;
     let visibility = this.state.visible;
     let followUser;
     let likedClass;
     let heartAnimation;
-
 
     let questHeader;
     let questFooter;
@@ -149,12 +152,12 @@ class Quest extends React.Component {
             <div className="quest-buttons">
               <button 
                 className="edit fas fa-edit"
-                onClick={() => this.props.openModal(`edit-quest-${quest.id}`)}
+                onClick={() => this.props.openModal(`edit-quest-${posting.id}`)}
               ></button>
               <button
                 className="trash fas fa-trash"
-                onClick={() => deleteQuest(quest.id)}
-                id={quest.id}
+                onClick={() => deleteQuest(posting.id)}
+                id={posting.id}
               ></button>
             </div>
           </div>
@@ -194,30 +197,30 @@ class Quest extends React.Component {
         </div>
       );
     }
-    let isQuote = quest.quest_type === 'quote' ? '"' : (source = null);
-    let source = quest.quest_type === 'quote' ? '\u2014' : (isQuote = null);
+    let isQuote = posting.quest_type === 'quote' ? '"' : (source = null);
+    let source = posting.quest_type === 'quote' ? '\u2014' : (isQuote = null);
 
     let titleSection = null;
-    if (quest.title !== '') {
+    if (posting.title !== '') {
       titleSection = (
         <div className="title">
           {isQuote}
-          {quest.title}
+          {posting.title}
           {isQuote}
         </div>
       );
     }
 
     let imageSection = null;
-    if (quest.imageUrls && quest.quest_type === 'image') {
-      imageSection = quest.imageUrls.map((imageUrl, idx) => {
+    if (posting.imageUrls && posting.quest_type === 'image') {
+      imageSection = posting.imageUrls.map((imageUrl, idx) => {
         return <img key={`img-${idx}`} className="image-video" src={imageUrl} />;
       });
     }
 
     let videoSection = null;
-    if (quest.imageUrls && quest.quest_type === 'video') {
-      videoSection = quest.imageUrls.map((imageUrl, idx) => {
+    if (posting.imageUrls && posting.quest_type === 'video') {
+      videoSection = posting.imageUrls.map((imageUrl, idx) => {
         return (
           <video key={`vid-${idx}`} src={imageUrl} className="image-video" controls />
         );
@@ -225,8 +228,8 @@ class Quest extends React.Component {
     }
 
     let audioSection = null;
-    if (quest.imageUrls && quest.quest_type === 'audio') {
-      audioSection = quest.imageUrls.map((imageUrl, idx) => {
+    if (posting.imageUrls && posting.quest_type === 'audio') {
+      audioSection = posting.imageUrls.map((imageUrl, idx) => {
         return (
           <div key={`audio-${idx}`} className="audio">
             <audio className="audio-controls" src={imageUrl} controls />
@@ -236,22 +239,22 @@ class Quest extends React.Component {
     }
 
     let textSection = null;
-    if (quest.text !== '') {
+    if (posting.text !== '') {
       textSection = (
         <div className="text">
           {source}
-          {quest.text}
+          {posting.text}
         </div>
       );
     }
 
     let tagSection = null;
-    if (quest.tag_joins.length > 0) {
-      const questTags = quest.tag_joins.map((tag_join,idx) => {
+    if (posting.tag_joins.length > 0) {
+      const questTags = posting.tag_joins.map((tag_join,idx) => {
         return (
           <Link
             to={`/tag/${tag_join.tag.id}`}
-            key={`quest-${quest.id}-tag-${idx}`}
+            key={`quest-${posting.id}-tag-${idx}`}
             className="quest-tag"
             data-tag-join-id={tag_join.id}
           >
@@ -268,7 +271,7 @@ class Quest extends React.Component {
     }
 
     return (
-      <div key={`quest-${quest.id}`} className={`quest-container-${loc}`}>
+      <div key={`quest-${posting.id}`} className={`quest-container-${loc}`}>
         <img
           className={`avatar-${loc}`}
           src={avatar}

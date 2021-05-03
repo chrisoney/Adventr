@@ -10,29 +10,32 @@ import { deleteQuest, fetchSingleQuest } from '../../actions/quest_actions'
 const mapStateToProps = (state, ownProps) => {
   let liked = false;
   let followed = false;
+  const posting = ownProps.quest || ownProps.reblog;
+  const type = ownProps.type;
   Object.values(state.entities.likes).forEach((like) => {
     if (
-      like.quest_id === ownProps.quest.id &&
+      like.quest_id === posting.id &&
       like.user_id === state.session.currentUser.id
     ) {
       liked = true;
     }
   });
   Object.values(state.entities.follows).forEach((follow)=>{
-    if (follow.user_id === ownProps.quest.user_id && follow.follower_id === state.session.currentUser.id) {followed = true} ;
+    if (follow.user_id === posting.user_id && follow.follower_id === state.session.currentUser.id) {followed = true} ;
   })
-  let authorId = ownProps.quest.author.id;
+  let authorId = posting.author.id;
     return {
     currentUser: state.session.currentUser,
     authorId: authorId,
     // author: state.entities.users[authorId],
-    author: ownProps.quest.author,
-    authorAvatar: ownProps.quest.authorAvatar || null,
-    quest: ownProps.quest,
-    tags_joins: ownProps.quest.tag_joins,
+    author: posting.author,
+    authorAvatar: posting.authorAvatar || null,
+    posting,
+    tags_joins: posting.tag_joins,
     liked: liked,
     followed: followed,
-    noteCount: ownProps.quest.likes,
+    type,
+    noteCount: posting.likes,
   };
 };
 

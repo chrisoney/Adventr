@@ -145,7 +145,7 @@ class Explore extends React.Component {
     switch (page) {
       case 'explore':
         questList = quests.map((quest, idx) => (
-          <QuestContainer key={idx} quest={quest} loc={'explore'} />
+          <QuestContainer key={idx} quest={quest} loc={'explore'} type="quest"/>
         ));
         break;
       case 'tag':
@@ -153,7 +153,7 @@ class Explore extends React.Component {
           return quest.tag_joins.map((tag_join) => tag_join.tag.tag_name)
             .includes(tag.tag_name);
         }).map((quest, idx) => (
-          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc={'explore'} />
+          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc={'explore'} type="quest"/>
         ));
         break;
       default:
