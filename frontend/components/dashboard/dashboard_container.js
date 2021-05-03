@@ -2,7 +2,8 @@ import { connect } from "react-redux";
 import Dashboard from "./dashboard";
 import { openModal } from "../../actions/modal_actions";
 // import { fetchAllUsers } from '../../actions/user_actions';
-import { fetchAllQuests } from "../../actions/quest_actions"
+import { fetchAllQuests } from "../../actions/quest_actions";
+import { fetchAllReblogs } from '../../actions/reblog_actions';
 import {
   fetchAllFollows,
   followUser,

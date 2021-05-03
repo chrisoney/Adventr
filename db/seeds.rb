@@ -13,6 +13,7 @@
 # Quest.destroy_all
 # User.destroy_all
 # Tag.destroy_all
+Reblog.destroy_all
 
 # New tags
 # tags = ["abjuration","academy","acid","adamantine","adventure","ancients","angels","arcane focus","aristocrats","artifacts","assassins","axes","barbarians","beasts","blacksmithing","blood magic","blood oath","books","bows","bronze rank","caravans","cave","celestials","chaotic","clerics","common","commoners","conjuration","contracts","copper","creatures","cultists","daggers","dark lord","demons","devils","diamond rank","dire wolves","divination","djinn","doppelgangers","dragonborn","dragons","drakes","drow","druids","duergar","dungeons","dwarves","earth","elves","enchantment","ents","evil","evocation","fallen kingdom","fey","fire","fireball","forests","genasi","ghosts","gnomes","goblins","goddesses","gods","gold","gold rank","goliaths","good","grimoires","guilds","halflings","hammers","humans","hunt","ice","illusion","infernals","kami","king","kingdom","lawful","legendary","leonin","liches","lightning","magic", "magic items", "magic staff","magic sword","magic wand","magical","magical creatures","merchants","monks","murder","mystery","mythic","mythril","necromancy","neutral","nobles","obsidian rank","orcs","outer planes","outsider","pit fiend","plane of existence","platinum","platinum rank","plot","polearms","political intrigue","porcelain rank","power","precursors","prince","princess","pseudodragons","queen","rangers","rare","rogues","satyr","scholars","silver","silver rank","slimes","sorcerers","sorcery","spell components","spellbooks","spys","squire","staffs","steel rank","swords","teleport","tieflings","tomes","transmutation","trolls","uncommon","undead","unseelie court","vampires","warlocks","warriors","water","wilderness","wind","wizards","wurms"]
@@ -48,7 +49,12 @@ users_avatars_filenames = []
 # quest.images.attach(io: file, filename: 'dagger.jpg')
 # quest.tags << tag
 
-# tag = Tag.find(8)
+tag = Tag.find(77)
+tag2 = Tag.find(86)
+
+reblog = Reblog.create(reblogger_id: 16, quest_id: 138, body: 'This is the new text to test the reblogs');
+reblog.tags << tag << tag2
+
 
 # user = User.find(15)
 # tag = Tag.find(3)
