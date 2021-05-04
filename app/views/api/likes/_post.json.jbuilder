@@ -1,1 +1,0 @@
-json.likes @like.user_id, @like.quest_id

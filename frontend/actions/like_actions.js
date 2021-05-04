@@ -23,13 +23,13 @@ export const fetchAllLikes = () => dispatch =>
   LikeApiUtils.fetchAllLikes()
   .then(likes => dispatch(receiveAllLikes(likes)))
 
-export const likeQuest = (questId) => (dispatch) => {
-  LikeApiUtils.likeQuest(questId)
+export const likePosting = (like) => (dispatch) => {
+  LikeApiUtils.likePosting(like)
   .then((like)=>dispatch(receiveLike(like)))
 }
 	
 
-export const unlikeQuest = (questId) => (dispatch) => {
-	LikeApiUtils.unlikeQuest(questId)
+export const unlikePosting = (like) => (dispatch) => {
+	LikeApiUtils.unlikePosting(like)
   .then((like)=>dispatch(removeLike(like)));
 }

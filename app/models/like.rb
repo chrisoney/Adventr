@@ -2,11 +2,12 @@
 #
 # Table name: likes
 #
-#  id         :bigint           not null, primary key
-#  user_id    :integer          not null
-#  quest_id   :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :bigint           not null, primary key
+#  user_id       :integer          not null
+#  likeable_id   :integer          not null
+#  likeable_type :string           not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 class Like < ApplicationRecord
   belongs_to :user,

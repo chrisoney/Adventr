@@ -23,12 +23,12 @@ class LikesList extends React.Component {
     const { quests, likes, currentUser } = this.props;
     let questList = [];
     let randomQuest;
-    let likedIds = likes.map((like) => like.quest_id);
+    let likedIds = likes.map((like) => like.likeable_id);
 
     quests.forEach((quest, idx) => {
       for (let i = 0; i < likes.length; i++) {
         let like = likes[i];
-        if (like.user_id === currentUser.id && like.quest_id === quest.id) {
+        if (like.user_id === currentUser.id && like.likeable_id === quest.id && like.likeable_type === 'Quest') {
           questList.push(
             <QuestContainer key={idx} quest={quest} loc={'dash'} type="quest"/>
           );

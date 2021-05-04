@@ -58,10 +58,16 @@ class Quest extends React.Component {
   toggleLiked(e) {
     e.preventDefault();
     const posting = this.props.posting;
+    const likeable_type = this.props.type[0].toUpperCase()
+      + this.props.type.slice(1);
+    const formData = new FormData();
+    formData.append('like[user_id]', this.props.currentUser.id);
+    formData.append('like[likeable_id]', this.props.posting.id);
+    formData.append('like[likeable_type]', likeable_type);
     if (this.state.liked) {
-      this.props.unlikeQuest(posting.id);
+      this.props.unlikePosting(formData);
     } else {
-      this.props.likeQuest(posting.id);
+      this.props.likePosting(formData);
     }
     this.setState({ liked: !this.state.liked });
     this.setState({ visible: true });

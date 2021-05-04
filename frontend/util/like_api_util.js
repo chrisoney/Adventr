@@ -12,18 +12,21 @@ export const receiveLike = (id) => (
   })
 )
 
-export const likeQuest = (id) => (
+export const likePosting = (like) => 
   $.ajax({
     url: '/api/likes',
     method: 'POST',
-    data: {id}
+    data: like,
+    contentType: false,
+    processData: false
   })
-)
 
-export const unlikeQuest = (id) => (
+export const unlikePosting = (like) => (
   $.ajax({
-    url: `/api/likes/${id}`,
+    url: `/api/likes/${like.get("like[likeable_id]")}`,
     method: 'DELETE',
-    data: {id}
+    data: like,
+    contentType: false,
+    processData: false
   })
 )

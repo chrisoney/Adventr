@@ -2,12 +2,12 @@
 #
 # Table name: reblogs
 #
-#  id           :bigint           not null, primary key
-#  user_id      :integer          not null
-#  quest_id     :integer          not null
-#  text         :integer          not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id         :bigint           not null, primary key
+#  user_id    :integer          not null
+#  quest_id   :integer          not null
+#  text       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 one:

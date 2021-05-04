@@ -9,11 +9,9 @@ class Api::LikesController < ApplicationController
   end
 
   def create
-    @like = Like.new
-    @like.user_id = current_user.id
-    @like.quest_id = params[:id]
+    @like = Like.new(like_params)
     if @like.save 
-      @quest = @like.quest
+      # @quest = @like.quest
       render :show
     else
       render json: @like.errors.full_messages, status: 401
@@ -22,10 +20,15 @@ class Api::LikesController < ApplicationController
 
 
   def destroy
-    @like = Like.find_by(user_id: current_user.id, quest_id: params[:id])
+    @like = Like.find_by(like_params)
     @like.destroy
-    @quest = @like.quest
-    @user = @like.user
+    # @quest = @like.quest
+    # @user = @like.user
     render :show
+  end
+
+  private
+  def like_params
+    params.require(:like).permit(:user_id, :likeable_id, :likeable_type)
   end
 end

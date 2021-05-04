@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Quest from './quest';
 // import { fetchUser } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
-import { likeQuest, unlikeQuest, fetchAllLikes } from '../../actions/like_actions';
+import { likePosting, unlikePosting, fetchAllLikes } from '../../actions/like_actions';
 import { followUser, unfollowUser } from '../../actions/follow_actions';
 import { deleteQuest, fetchSingleQuest } from '../../actions/quest_actions'
 
@@ -11,10 +11,9 @@ const mapStateToProps = (state, ownProps) => {
   let liked = false;
   let followed = false;
   const posting = ownProps.quest || ownProps.reblog;
-  const type = ownProps.type;
   Object.values(state.entities.likes).forEach((like) => {
     if (
-      like.quest_id === posting.id &&
+      like.likeable_id === posting.id &&
       like.user_id === state.session.currentUser.id
     ) {
       liked = true;
@@ -34,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
     tags_joins: posting.tag_joins,
     liked: liked,
     followed: followed,
-    type,
+    type: ownProps.type,
     noteCount: posting.likes,
   };
 };
@@ -42,8 +41,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   // fetchUser: (userId) => dispatch(fetchUser(userId)),
   openModal: (modal) => dispatch(openModal(modal)),
-  likeQuest: (questId) => dispatch(likeQuest(questId)),
-  unlikeQuest: (questId) => dispatch(unlikeQuest(questId)),
+  likePosting: (like) => dispatch(likePosting(like)),
+  unlikePosting: (postingId) => dispatch(unlikePosting(postingId)),
   fetchAllLikes: () => dispatch(fetchAllLikes()),
   followUser: (userId) => dispatch(followUser(userId)),
   unfollowUser: (userId) => dispatch(unfollowUser(userId)),
