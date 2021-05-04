@@ -37,7 +37,8 @@ class User < ApplicationRecord
   
   has_many :liked_quests,
     through: :likes,
-    source: :quest
+    source: :likeable, 
+    source_type: :Quest
 
   has_many :followings,
     class_name: :Follow,

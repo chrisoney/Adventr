@@ -16,6 +16,10 @@ class Reblog < ApplicationRecord
   
   belongs_to :quest
 
+  has_many :likes, 
+    as: :likeable,
+    dependent: :destroy
+
   has_many :tag_joins, 
     as: :taggable,
     dependent: :destroy

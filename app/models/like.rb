@@ -14,9 +14,7 @@ class Like < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id
 
-  belongs_to :quest,
-    class_name: :Quest,
-    primary_key: :id,
-    foreign_key: :quest_id
+  belongs_to :likeable, 
+    polymorphic: true
 
 end
