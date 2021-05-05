@@ -441,8 +441,8 @@ class NewQuestForm extends React.Component {
 
     const textSection = (
       <textarea
-        cols="30"
-        rows="4"
+        // cols="30"
+        // rows="4"
         value={text}
         placeholder={placeholderText}
         className="input-body"

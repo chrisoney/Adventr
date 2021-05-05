@@ -32,7 +32,15 @@
 	border-radius: 3px;
 	.quest-form-box {
 		width: 100%;
+		.formData {
+			display: flex;
+			flex-direction: column;
+		}
 	}
+}
+
+.image-upload-box {
+	margin-bottom: 10px;
 }
 
 .image-preview {
@@ -49,19 +57,26 @@
 	font-family: Arial, Helvetica, sans-serif;
 	outline: none;
 	margin-left: 10px;
+	padding: 2px 10px;
 }
 
 .input-title, .input-quote{
 	font-size: 30px;
+	&::placeholder {
+		color: rgba(0,0,0,0.65);
+	}
 }
 
 .input-body {
-	width: 95%;
+	// width: 95%;
+	min-height: 80px;
+	// margin-left: none;
 }
 .tag-section{
 	display: block;
 	box-sizing: border-box;
 	cursor: text;
+	padding: 5px 20px 10px 15px;
 	.enteredTag {
 		display: inline-block;
 		color: rgba(0,0,0,.65);
@@ -81,7 +96,6 @@
 	.tag-input-body {
 		display: inline-block;
 		margin-top: 5px;
-    padding: 5px 20px 10px 15px;
     overflow: hidden;
     word-break: break-all;
     cursor: text;
@@ -92,13 +106,14 @@
 }
 
 .quest-form-top-block{
-	margin: 10px;
+	padding: 10px 15px 10px 20px;
 }
 
 .quest-form-bottom-block{
 	display: flex;
 	justify-content: space-between;
 	border-top: 1px solid #f2F2F2;
+	padding: 15px 20px;
 	button {
 		border: transparent;
 		border-radius: 3px;
