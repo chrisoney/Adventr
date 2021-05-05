@@ -334,8 +334,9 @@ class NewQuestForm extends React.Component {
       oldImagePreviews.concat(newImagePreviews) :
       newImagePreviews;
 
+    console.log(this.state.im)
     const imageLabel =
-      this.state.imageFiles !== null || this.state.oldImagesFiles !== null ? 'Add more photos' : 'Upload Photos!';
+      this.state.imageFiles !== null || this.state.oldImageUrls !== null ? 'Add more photos' : 'Upload Photos!';
     const imageUploadSection = (
       <div className="image-upload-box">
         {imagePreviews}
@@ -376,7 +377,10 @@ class NewQuestForm extends React.Component {
       oldImagePreviews.concat(newVideoPreviews) :
       newVideoPreviews;
 
-    const videoLabel = 'Upload Video!';
+    const videoLabel = this.state.imageFiles !== null
+      || this.state.oldImageUrls !== null
+      ? 'Add more videos' : 'Upload Video!';
+    // const videoLabel = 'Upload Video!';
     const videoUploadSection = (
       <div className="image-upload-box">
         {videoPreviews}
@@ -417,7 +421,8 @@ class NewQuestForm extends React.Component {
       oldImagePreviews.concat(newAudioPreviews) :
       newAudioPreviews;
 
-    const audioLabel = 'Upload Music!';
+    const audioLabel = this.state.imageFiles !== null || this.state.oldImageUrls !== null ? 'Add more music' : 'Upload Music!';
+    // const audioLabel = 'Upload Music!';
     const audioUploadSection = (
       <div className="image-upload-box">
         {audioPreviews}
