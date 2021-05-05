@@ -243,9 +243,20 @@
 }
 
 .audio {
-	margin-top: 10px;
+	margin-top: 0px;
 	display: flex;
 	justify-content: center;
+	audio::-webkit-media-controls-panel{
+		background: asset-data-url("paper.jpg") no-repeat center;
+	}
+	audio::-webkit-media-controls-play-button {
+		transform: scale(1.5);
+	}
+	.audio-controls {
+		// filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+		width: 90%;
+
+	}
 }
 
 .quest-create-container {
@@ -293,9 +304,6 @@
 
 
 // audio
-.audio {
-	margin-bottom: 10px;
-}
 
 .quest-container-explore {
 	.avatar-explore {

@@ -157,15 +157,17 @@ class NewQuestForm extends React.Component {
   }
 
   handleSubmit(e) {
+    let allow = this.state.allowSubmit;
     const that = this;
     const tagInput = document.getElementById('tagInput');
+    e.preventDefault();
 
     if (
       this.state.title !== '' ||
       this.state.text !== '' ||
       this.state.imageFiles !== null ||
       this.state.allowSubmit) {
-      this.setState({ allowSubmit: true})
+      allow = true;
     }
 
     if (tagInput.value !== '') {
@@ -177,8 +179,7 @@ class NewQuestForm extends React.Component {
       tagInput.parentElement.insertBefore(newDiv, tagInput);
       tagInput.value = null;
     }
-    if (this.state.allowSubmit) {
-      e.preventDefault();
+    if (allow) {
       this.setState({ allowSubmit: false });
       const formData = new FormData();
       // changed
@@ -193,7 +194,7 @@ class NewQuestForm extends React.Component {
       }
       formData.append('quest[text]', this.state.text);
       formData.append('quest[quest_type]', this.state.type);
-
+      this.setState({loading: true})
       this.props.questSubmitAction(formData).then((questData) => {
         const questId = questData.quest.id;
         const tags = that.state.tags;
@@ -233,14 +234,13 @@ class NewQuestForm extends React.Component {
                   questTagForm.append('tag_join[tag_id]', createdTagId);
                   const order = x + 1;
                   questTagForm.append('tag_join[order]', order);
-                  this.props.addTagToQuest(questTagForm).then(() => {
-                    this.setState({ loading: true })
-                  });
+                  this.props.addTagToQuest(questTagForm);
                 })
             }
           }
         }
-        this.props.closeModal();
+        // that.setState({})
+        that.props.closeModal();
       });
     }
   }
@@ -249,10 +249,6 @@ class NewQuestForm extends React.Component {
     const { closeModal, currentUser, type, task } = this.props;
     const { title, text, imageFiles } = this.state;
     let placeholderText;
-
-    if (this.state.loading) {
-      return <Loading background={'explore-container'}/>
-    }
 
     switch (type) {
       case 'text':
@@ -334,9 +330,11 @@ class NewQuestForm extends React.Component {
       oldImagePreviews.concat(newImagePreviews) :
       newImagePreviews;
     
+    // useful for the rest of the uploads
     const prevImages = this.state.imageFiles !== null
       || this.state.oldImageUrls !== null;
     const uploadSize = prevImages ? 36 : 196;
+
     const imageLabel = prevImages ? 'Add more photos' : 'Upload Photos!';
     const imageUploadSection = (
       <div className="image-upload-box">
@@ -389,9 +387,12 @@ class NewQuestForm extends React.Component {
       <div className="image-upload-box">
         {videoPreviews}
         <label htmlFor="upload-box" className="upload-label-box">
-          <div className="camera-icon-text-container">
+          <div
+            className={`camera-icon-text-container ${prevImages ?'invert': ''}`}
+            style={{ height: uploadSize }}
+          >
             <div className="camera-icon fas fa-video" />
-            <div>{videoLabel}</div>
+            <div className='image-label'>{videoLabel}</div>
           </div>
           <input
             type="file"
@@ -431,9 +432,12 @@ class NewQuestForm extends React.Component {
       <div className="image-upload-box">
         {audioPreviews}
         <label htmlFor="upload-box" className="upload-label-box">
-          <div className="camera-icon-text-container">
+          <div
+            className={`camera-icon-text-container ${prevImages ?'invert': ''}`}
+            style={{ height: uploadSize }}
+          >
             <div className="camera-icon fas fa-headphones" />
-            <div>{audioLabel}</div>
+            <div className="image-label">{audioLabel}</div>
           </div>
           <input
             type="file"
@@ -454,7 +458,7 @@ class NewQuestForm extends React.Component {
       />
     );
 
-    const textSection = imageFiles && !['text', 'quote'].includes(type) ? (
+    const textSection = (imageFiles || this.state.oldImageUrls) && !['text', 'quote'].includes(type) ? (
       <textarea
         value={text}
         placeholder={placeholderText}
@@ -553,6 +557,7 @@ class NewQuestForm extends React.Component {
 
     return (
       <>
+        {this.state.loading && <Loading />}
         {/* <img className="avatar-dash" src={currentUser.avatar} /> */}
         <div className="quest-form-box quest-box">
           <div className="quest-form-top-block">{currentUser.username}</div>
@@ -566,7 +571,7 @@ class NewQuestForm extends React.Component {
               className="quest-create"
               onClick={this.handleSubmit}
             >
-              <span>{submitText}</span>
+              {submitText}
             </button>
           </div>
         </div>

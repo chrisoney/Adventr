@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.explore-container, .black-container {
+.explore-container {
   position: relative;
   margin-top: 54px;
   background: asset-data-url("guild.jpg") no-repeat center fixed;
@@ -15,7 +15,14 @@
   align-items: center;
 }
 .black-container {
-  background: black;
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
 }
 
 .tag-details-top-container {
