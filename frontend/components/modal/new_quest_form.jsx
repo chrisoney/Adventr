@@ -333,17 +333,21 @@ class NewQuestForm extends React.Component {
     const imagePreviews = oldImagePreviews ?
       oldImagePreviews.concat(newImagePreviews) :
       newImagePreviews;
-
-    console.log(this.state.im)
-    const imageLabel =
-      this.state.imageFiles !== null || this.state.oldImageUrls !== null ? 'Add more photos' : 'Upload Photos!';
+    
+    const prevImages = this.state.imageFiles !== null
+      || this.state.oldImageUrls !== null;
+    const uploadSize = prevImages ? 36 : 196;
+    const imageLabel = prevImages ? 'Add more photos' : 'Upload Photos!';
     const imageUploadSection = (
       <div className="image-upload-box">
         {imagePreviews}
         <label htmlFor="upload-box" className="upload-label-box">
-          <div className="camera-icon-text-container">
+          <div
+            className={`camera-icon-text-container ${prevImages ?'invert': ''}`}
+            style={{ height: uploadSize }}
+          >
             <div className="camera-icon fas fa-camera" />
-            <div>{imageLabel}</div>
+            <div className="image-label">{imageLabel}</div>
           </div>
           <input
             type="file"

@@ -177,7 +177,7 @@ input[type="file"]{
 
 .camera-icon-text-container{
 	width: 100%;
-	min-height: 100px;
+	// min-height: 100px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -185,6 +185,26 @@ input[type="file"]{
 	border-top: dashed 1px grey;
 	border-bottom: dashed 1px grey;
 	background-color: #F2F2F2;
+	color: rgb(152, 152, 152);
+	.image-label {
+		font-size: 18px;
+	}
+	.fas {
+		line-height: 60px;
+		font-size: 60px;
+		margin-bottom: 10px;
+	}
+	&.invert {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		.fas {
+			font-size: 16px;
+			margin-right: 10px;
+			margin-bottom: 0;
+		}
+	}
 }
 
 .camera-icon-text-container:hover {
