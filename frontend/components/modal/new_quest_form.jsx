@@ -319,10 +319,12 @@ class NewQuestForm extends React.Component {
           return (
             <div key={`new-img-${idx}`} className="image-preview-box">
               <img className="image-preview" src={imageUrl} />
-              <i
-                className="fas fa-times-circle delete-preview"
-                onClick={() => this.deletePreviewImage({ idx })}
-              ></i>
+              <div className="delete-preview-container">
+                <i
+                  className="fas fa-times-circle delete-preview"
+                  onClick={() => this.deletePreviewImage({ idx })}
+                ></i>
+              </div>
             </div>
           );
         })
@@ -359,10 +361,12 @@ class NewQuestForm extends React.Component {
           return (
             <div key={idx} className="image-preview-box">
               <video controls className="image-preview" src={imageUrl} />
-              <i
-                className="fas fa-times-circle delete-preview"
-                onClick={() => this.deletePreviewImage({ idx })}
-              ></i>
+              <div className="delete-preview-container">
+                <i
+                  className="fas fa-times-circle delete-preview"
+                  onClick={() => this.deletePreviewImage({ idx })}
+                ></i>
+              </div>
             </div>
           );
         })
@@ -398,10 +402,12 @@ class NewQuestForm extends React.Component {
               <audio controls src={imageUrl}>
                 Your browser does not support this player
               </audio>
-              <i
-                className="fas fa-times-circle delete-preview"
-                onClick={() => this.deletePreviewImage({ idx })}
-              ></i>
+              <div className="delete-preview-container">
+                <i
+                  className="fas fa-times-circle delete-preview"
+                  onClick={() => this.deletePreviewImage({ idx })}
+                ></i>
+              </div>
             </div>
           );
         })
@@ -439,17 +445,15 @@ class NewQuestForm extends React.Component {
       />
     );
 
-    const textSection = (
+    const textSection = imageFiles && !['text', 'quote'].includes(type) ? (
       <textarea
-        // cols="30"
-        // rows="4"
         value={text}
         placeholder={placeholderText}
         className="input-body"
-        elastic="true"
+        // elastic="false"
         onChange={this.handleInput('text')}
       ></textarea>
-    );
+    ) : null;
 
     const tagSection = (
       <div

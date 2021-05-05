@@ -22,6 +22,7 @@
 }
 
 .new-quest-container {
+	margin-top: 55px;
 	z-index: 3;
 	background-color: white;
 	position: absolute;
@@ -42,10 +43,41 @@
 .image-upload-box {
 	margin-bottom: 10px;
 }
+.image-preview-box {
+	position: relative;
+	.image-preview {
+		width: 100%;
+		height: auto;
+	}
 
-.image-preview {
-	width: 100%;
-	height: auto;
+	&:hover {
+		.delete-preview-container {
+			.delete-preview {
+				display: block;
+			}
+		}
+	}
+	.delete-preview-container {
+		position:absolute;
+		top: 5px;
+		right: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		.delete-preview {
+			display: none;
+			color:red;
+			font-size: 30px;
+			-webkit-text-stroke-width: 0.5px;
+			-webkit-text-stroke-color: white;
+			&:hover {
+				cursor: pointer;
+				transition: all 0.5s ease-in-out;
+				transform: scale(1.1);
+			}
+		}
+	}
 }
 
 .quest-form-box {
@@ -68,9 +100,8 @@
 }
 
 .input-body {
-	// width: 95%;
 	min-height: 80px;
-	// margin-left: none;
+	resize: none;
 }
 .tag-section{
 	display: block;
