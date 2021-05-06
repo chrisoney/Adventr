@@ -1,4 +1,6 @@
-# Users
+# Migrations
+
+## Users
 
 ```ruby
   def change
@@ -13,4 +15,27 @@
     end
     add_index   :users, [:username, :id]
   end
+```
+
+## Active Storage Blobs
+
+rails active_storage:install
+
+## Quests
+
+```ruby
+class CreateQuests < ActiveRecord::Migration[5.2]
+  def change
+    create_table :quests do |t|
+      t.integer :original_quest_id
+      t.integer :user_id, null: false
+      t.string  :title
+      t.text    :text
+      t.string :quest_type
+    
+      t.timestamps
+    end
+    add_index :quests, [:user_id, :id]
+  end
+end
 ```
