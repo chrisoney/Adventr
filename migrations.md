@@ -3,19 +3,49 @@
 ## Users
 
 ```ruby
-  def change
-    create_table :users do |t|
-      t.string :username, null: false, unique: true
-      t.string :email, null: false, unique: true
-      t.string :password_digest, null: false, unique: true
-      t.string :guild_name
-      t.string :guild_description
-      t.string :session_token, null: false, unique: true
-      t.timestamps
-    end
-    add_index   :users, [:username, :id]
+def change
+  create_table :users do |t|
+    t.string :username, null: false, unique: true
+    t.string :email, null: false, unique: true
+    t.string :password_digest, null: false, unique: true
+    t.string :guild_name
+    t.string :guild_description
+    t.string :session_token, null: false, unique: true
+    t.timestamps
   end
+  add_index   :users, [:username, :id]
+end
 ```
+
+## Option 2 - Users
+
+```ruby
+def change
+  create_table :users do |t|
+    t.string :username, null: false, unique: true
+    t.string :email, null: false, unique: true
+    t.string :password_digest, null: false, unique: true
+    t.string :session_token, null: false, unique: true
+    t.timestamps
+  end
+  add_index   :users, [:username, :id]
+end
+```
+
+## Option 2 - Guilds
+
+```ruby
+def change
+  create_table :guilds do |t|
+    t.integer :user_id, null: false
+    t.string :guild_name, null: false
+    t.string :guild_description
+    t.boolean :primary
+    t.timestamps
+  end
+end
+```
+
 
 ## Active Storage Blobs
 
