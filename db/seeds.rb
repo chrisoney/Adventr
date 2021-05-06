@@ -27,7 +27,7 @@ users_emails = []
 users_guild_names = []
 users_guild_descriptions = []
 users_avatars_filenames = []
-# user1 = User.create(username: "fake-user", password: "hunter12", email: "fakeuser@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/paladin.jpg");
+# user1 = User.create(username: "Generic_Hero", password: "hunter12", email: "generic_hero@fake.com");
 # user2 = User.create(username: "terriblis", password: "hunter12", email: "terriblis@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/SezbQhN.png");
 # user3 = User.create(username: "carl", password: "hunter12", email: "carl@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile1.jpg");
 # user4 = User.create(username: "matthew-brightfield", password: "hunter12", email: "matt@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile2.jpg");
@@ -49,11 +49,7 @@ users_avatars_filenames = []
 # quest.images.attach(io: file, filename: 'dagger.jpg')
 # quest.tags << tag
 
-tag = Tag.find(77)
-tag2 = Tag.find(86)
 
-reblog = Reblog.create(user_id: 16, quest_id: 138, text: 'This is the new text to test the reblogs');
-reblog.tags << tag << tag2
 
 
 # user = User.find(15)
