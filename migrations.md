@@ -64,3 +64,44 @@ def change
   add_index :likes, [:user_id, :likeable_id, :likeable_type]
 end
 ```
+
+## Tags
+
+```ruby
+def change
+  create_table :tags do |t|
+    t.string :tag_name, null: false
+    t.timestamps
+  end
+  add_index :tags, :tag_name, unique: true
+end
+```
+
+## Tag Joins
+
+```ruby
+def change
+  create_table :tag_joins do |t|
+    t.integer :tag_id, null: false
+    t.integer :taggable_id, null: false
+    t.string :taggable_type, null: false
+    t.integer :order
+    t.timestamps
+  end
+  add_index :tag_joins, [:tag_id, :taggable_id, :taggable_type]
+end
+```
+
+## Reblogs
+
+```ruby
+def change
+  create_table :reblogs do |t|
+    t.integer :user_id, null: false
+    t.integer :quest_id, null: false
+    t.string :text
+    t.timestamps
+  end
+  add_index :reblogs, [:user_id, :quest_id], unique: true
+end
+```
