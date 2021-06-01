@@ -16,7 +16,35 @@
 # Reblog.destroy_all
 
 # New tags
-# tags = ["abjuration","academy","acid","adamantine","adventure","ancients","angels","arcane focus","aristocrats","artifacts","assassins","axes","barbarians","beasts","blacksmithing","blood magic","blood oath","books","bows","bronze rank","caravans","cave","celestials","chaotic","clerics","common","commoners","conjuration","contracts","copper","creatures","cultists","daggers","dark lord","demons","devils","diamond rank","dire wolves","divination","djinn","doppelgangers","dragonborn","dragons","drakes","drow","druids","duergar","dungeons","dwarves","earth","elves","enchantment","ents","evil","evocation","fallen kingdom","fey","fire","fireball","forests","genasi","ghosts","gnomes","goblins","goddesses","gods","gold","gold rank","goliaths","good","grimoires","guilds","halflings","hammers","humans","hunt","ice","illusion","infernals","kami","king","kingdom","lawful","legendary","leonin","liches","lightning","magic", "magic items", "magic staff","magic sword","magic wand","magical","magical creatures","merchants","monks","murder","mystery","mythic","mythril","necromancy","neutral","nobles","obsidian rank","orcs","outer planes","outsider","pit fiend","plane of existence","platinum","platinum rank","plot","polearms","political intrigue","porcelain rank","power","precursors","prince","princess","pseudodragons","queen","rangers","rare","rogues","satyr","scholars","silver","silver rank","slimes","sorcerers","sorcery","spell components","spellbooks","spys","squire","staffs","steel rank","swords","teleport","tieflings","tomes","transmutation","trolls","uncommon","undead","unseelie court","vampires","warlocks","warriors","water","wilderness","wind","wizards","wurms"]
+abjuration = Tag.create(tag_name: 'abjuration')
+academy = Tag.create(tag_name: 'academy')
+acid = Tag.create(tag_name: 'acid')
+adamantine = Tag.create(tag_name: 'adamantine')
+adventure = Tag.create(tag_name: 'adventure')
+alchemists = Tag.create(tag_name: 'alchemists')
+alchemy = Tag.create(tag_name: 'alchemy')
+ancients = Tag.create(tag_name: 'ancients')
+angels = Tag.create(tag_name: 'angels')
+arcane_focus = Tag.create(tag_name: 'arcane focus')
+aristocrats = Tag.create(tag_name: 'aristocrats')
+artifacts = Tag.create(tag_name: 'artifacts')
+artificers = Tag.create(tag_name: 'artificers')
+assassins = Tag.create(tag_name: 'assassins')
+axes = Tag.create(tag_name: 'axes')
+barbarians = Tag.create(tag_name: 'barbarians')
+beasts = Tag.create(tag_name: 'beasts')
+blacksmithing = Tag.create(tag_name: 'blacksmithing')
+blood_magic = Tag.create(tag_name: 'blood magic')
+blood_oath = Tag.create(tag_name: 'blood oath')
+books = Tag.create(tag_name: 'books')
+bows = Tag.create(tag_name: 'bows')
+bronze_rank = Tag.create(tag_name: 'bronze rank')
+caravans = Tag.create(tag_name: 'caravans')
+cave = Tag.create(tag_name: 'cave')
+celestials = Tag.create(tag_name: 'celestials')
+chaotic = Tag.create(tag_name: 'chaotic')
+clerics = Tag.create(tag_name: 'clerics')
+# tags = ["common","commoners","conjuration","contracts","copper","creatures","cultists","daggers","dark lord","demons","devils","diamond rank","dire wolves","divination","djinn","doppelgangers","dragonborn","dragons","drakes","drow","druids","duergar","dungeons","dwarves","earth","elves","enchantment","ents","evil","evocation","fallen kingdom","fey","fire","fireball","forests","genasi","ghosts","gnomes","goblins","goddesses","gods","gold","gold rank","goliaths","good","grimoires","guilds","halflings","hammers","humans","hunt","ice","illusion","infernals","kami","king","kingdom","lawful","legendary","leonin","liches","lightning","magic", "magic items", "magic staff","magic sword","magic wand","magical","magical creatures","merchants","monks","murder","mystery","mythic","mythril","necromancy","neutral","nobles","obsidian rank","orcs","outer planes","outsider","pit fiend","plane of existence","platinum","platinum rank","plot","polearms","political intrigue","porcelain rank","power","precursors","prince","princess","pseudodragons","queen","rangers","rare","rogues","satyr","scholars","silver","silver rank","slimes","sorcerers","sorcery","spell components","spellbooks","spys","squire","staffs","steel rank","swords","teleport","tieflings","tomes","transmutation","trolls","uncommon","undead","unseelie court","vampires","warlocks","warriors","water","wilderness","wind","wizards","wurms"]
 # for tag in tags
 #   Tag.create(tag_name: tag)
 # end
