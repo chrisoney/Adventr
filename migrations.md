@@ -46,7 +46,6 @@ def change
 end
 ```
 
-
 ## Active Storage Blobs
 
 rails active_storage:install

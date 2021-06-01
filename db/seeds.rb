@@ -13,21 +13,20 @@
 # Quest.destroy_all
 # User.destroy_all
 # Tag.destroy_all
-Reblog.destroy_all
+# Reblog.destroy_all
 
 # New tags
 # tags = ["abjuration","academy","acid","adamantine","adventure","ancients","angels","arcane focus","aristocrats","artifacts","assassins","axes","barbarians","beasts","blacksmithing","blood magic","blood oath","books","bows","bronze rank","caravans","cave","celestials","chaotic","clerics","common","commoners","conjuration","contracts","copper","creatures","cultists","daggers","dark lord","demons","devils","diamond rank","dire wolves","divination","djinn","doppelgangers","dragonborn","dragons","drakes","drow","druids","duergar","dungeons","dwarves","earth","elves","enchantment","ents","evil","evocation","fallen kingdom","fey","fire","fireball","forests","genasi","ghosts","gnomes","goblins","goddesses","gods","gold","gold rank","goliaths","good","grimoires","guilds","halflings","hammers","humans","hunt","ice","illusion","infernals","kami","king","kingdom","lawful","legendary","leonin","liches","lightning","magic", "magic items", "magic staff","magic sword","magic wand","magical","magical creatures","merchants","monks","murder","mystery","mythic","mythril","necromancy","neutral","nobles","obsidian rank","orcs","outer planes","outsider","pit fiend","plane of existence","platinum","platinum rank","plot","polearms","political intrigue","porcelain rank","power","precursors","prince","princess","pseudodragons","queen","rangers","rare","rogues","satyr","scholars","silver","silver rank","slimes","sorcerers","sorcery","spell components","spellbooks","spys","squire","staffs","steel rank","swords","teleport","tieflings","tomes","transmutation","trolls","uncommon","undead","unseelie court","vampires","warlocks","warriors","water","wilderness","wind","wizards","wurms"]
 # for tag in tags
 #   Tag.create(tag_name: tag)
 # end
+
 # New users
-users = []
-users_usernames = []
-users_emails = []
-users_guild_names = []
-users_guild_descriptions = []
-users_avatars_filenames = []
-# user1 = User.create(username: "Generic_Hero", password: "hunter12", email: "generic_hero@fake.com");
+
+hero = User.create(username: "Generic_Hero", password: "hunter12", email: "generic_hero@fake.com");
+hero_avatar = File.open('app/assets/adventr_seeder_images/avatars/generic_hero.jpg')
+hero.avatar_image.attach(io: hero_avatar, filename: 'hero.jpg')
+
 # user2 = User.create(username: "terriblis", password: "hunter12", email: "terriblis@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/SezbQhN.png");
 # user3 = User.create(username: "carl", password: "hunter12", email: "carl@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile1.jpg");
 # user4 = User.create(username: "matthew-brightfield", password: "hunter12", email: "matt@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile2.jpg");
