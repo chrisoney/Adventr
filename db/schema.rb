@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_030702) do
+ActiveRecord::Schema.define(version: 2021_06_02_022456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,15 +54,12 @@ ActiveRecord::Schema.define(version: 2021_04_02_030702) do
   end
 
   create_table "quests", force: :cascade do |t|
-    t.integer "original_quest_id"
     t.integer "user_id", null: false
     t.string "title"
     t.text "text"
-    t.string "content_url"
-    t.string "tags"
+    t.string "quest_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "quest_type", null: false
     t.index ["user_id", "id"], name: "index_quests_on_user_id_and_id"
   end
 
@@ -96,12 +93,11 @@ ActiveRecord::Schema.define(version: 2021_04_02_030702) do
     t.string "username", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
+    t.string "guild_name"
+    t.text "guild_description"
     t.string "session_token", null: false
-    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "guild_name"
-    t.string "guild_description"
     t.index ["username", "id"], name: "index_users_on_username_and_id"
   end
 

@@ -9,7 +9,7 @@ def change
     t.string :email, null: false, unique: true
     t.string :password_digest, null: false, unique: true
     t.string :guild_name
-    t.string :guild_description
+    t.text :guild_description
     t.string :session_token, null: false, unique: true
     t.timestamps
   end

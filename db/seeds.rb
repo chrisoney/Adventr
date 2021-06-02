@@ -230,6 +230,8 @@ carl.avatar_image.attach(io: carl_avatar, filename: 'carl.jpg')
 
 # User 10
 catherine = User.create(username: "Catherine_Foundling", password: "hunter12", email: "queen-catherine@evil.org", guild_name: "Army of Callow", guild_description: "The army under Queen Catherine, formerly the Squire, First Under the Night. Set against the Undead Horror.")
+catherine_avatar = File.open('app/assets/adventr_seeder_images/avatars/catherine.jpg')
+catherine.avatar_image.attach(io: catherine_avatar, filename: 'catherine.jpg')
 
 # New quests
 
