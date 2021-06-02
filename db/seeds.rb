@@ -183,14 +183,26 @@ wurms = Tag.create(tag_name: 'wurms')
 # end
 
 # New users
-
-hero = User.create(username: "Generic_Hero", password: "hunter12", email: "generic_hero@fake.com");
+# User 1
+hero = User.create(username: "Generic_Hero", password: "hunter12", email: "generic_hero@fake.com", guild_name: "Demo-lition Crew", guild_description: "The Hero's party. We will vanquish the demon lord!");
 hero_avatar = File.open('app/assets/adventr_seeder_images/avatars/generic_hero.jpg')
 hero.avatar_image.attach(io: hero_avatar, filename: 'hero.jpg')
 
-# user2 = User.create(username: "terriblis", password: "hunter12", email: "terriblis@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/SezbQhN.png");
-# user3 = User.create(username: "carl", password: "hunter12", email: "carl@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile1.jpg");
-# user4 = User.create(username: "matthew-brightfield", password: "hunter12", email: "matt@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile2.jpg");
+# User 2
+terriblis = User.create(username: "terriblis", password: "hunter12", email: "terriblis@fake.com", guild_name: "Mage College", guild_description: "Stop killing my skeletons");
+terriblis_avatar = File.open('app/assets/adventr_seeder_images/avatars/terriblis.jpg')
+terriblis.avatar_image.attach(io: terriblis_avatar, filename: 'terriblis.jpg')
+
+# User 3
+matt = User.create(username: "Matt", password: "hunter12", email: "matt@fake.com", guild_name: "Spellcaster Apprentices", guild_description: "Our alchemists can raise your charisma stat!");
+matt_avatar = File.open('app/assets/adventr_seeder_images/avatars/matt.jpg')
+matt.avatar_image.attach(io: matt_avatar, filename: 'matt.jpg')
+
+# User 4
+jess = User.create(username: "jess", password: "hunter12", email: "jess@fake.com", guild_name: "Hunter's Guild", guild_description: "We'll hunt anything! Maybe even you!");
+jess_avatar = File.open('app/assets/adventr_seeder_images/avatars/jess.jpg')
+jess.avatar_image.attach(io: jess_avatar, filename: 'jess.jpg')
+
 # user5 = User.create(username: "jess", password: "hunter12", email: "jess@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile3.jpg");
 # user6 = User.create(username: "Carla-the-Indomitable", password: "hunter12", email: "carla@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile4.jpg");
 # user7 = User.create(username: "worry", password: "hunter12", email: "worry@worry.com");
