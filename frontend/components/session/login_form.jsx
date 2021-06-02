@@ -35,12 +35,10 @@ class LoginForm extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     const demo = {
-      username: "fake-user",
-      email: "fakeuser@fake.com",
+      username: "Generic_Hero",
+      email: "generic_hero@fake.com",
       password: "hunter12",
     };
-
-
     this.props
       .login(demo)
       .then(() => this.props.history.push("/dashboard"))
