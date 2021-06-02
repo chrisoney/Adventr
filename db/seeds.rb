@@ -200,8 +200,8 @@ matt.avatar_image.attach(io: matt_avatar, filename: 'matt.jpg')
 
 # User 4
 jess = User.create(username: "jess", password: "hunter12", email: "jess@fake.com", guild_name: "Hunter's Guild", guild_description: "We'll hunt anything! Maybe even you!");
-jess_avatar = File.open('app/assets/adventr_seeder_images/avatars/jess.jpg')
-jess.avatar_image.attach(io: jess_avatar, filename: 'jess.jpg')
+jess_avatar = File.open('app/assets/adventr_seeder_images/avatars/jess.png')
+jess.avatar_image.attach(io: jess_avatar, filename: 'jess.png')
 
 # User 5
 ingrid = User.create(username: "Ingrid-the-Indomitable", password: "hunter12", email: "ingrid@fake.com", guild_name: "The Court of Winter", guild_description: "Nothing will stand in our way");
@@ -210,8 +210,8 @@ ingrid.avatar_image.attach(io: ingrid_avatar, filename: 'ingrid.jpg')
 
 # User 6
 kmsvr = User.create(username: "Kmsvr", password: "hunter12", email: "kmsvr@horns.org", guild_name: "Horns of Hammerad", guild_description: "Inspired by the former Horns of Hammerad, we rose from the ashes of old teams or affiliations.";
-kmsvr_avatar = File.open('app/assets/adventr_seeder_images/avatars/kmsvr.jpg')
-kmsvr.avatar_image.attach(io: kmsvr_avatar, filename: 'kmsvr.jpg')
+kmsvr_avatar = File.open('app/assets/adventr_seeder_images/avatars/kmsvr.png')
+kmsvr.avatar_image.attach(io: kmsvr_avatar, filename: 'kmsvr.png')
 
 # User 7
 goblin_slayer = User.create(username: "Goblin Slayer", password: "hunter12", email: "beardcutter@exterminate.com", guild_name: "The Guild", guild_description: "We kill goblins. Are you a goblin?");
