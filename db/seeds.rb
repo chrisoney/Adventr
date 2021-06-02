@@ -203,9 +203,33 @@ jess = User.create(username: "jess", password: "hunter12", email: "jess@fake.com
 jess_avatar = File.open('app/assets/adventr_seeder_images/avatars/jess.jpg')
 jess.avatar_image.attach(io: jess_avatar, filename: 'jess.jpg')
 
-# user5 = User.create(username: "jess", password: "hunter12", email: "jess@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile3.jpg");
-# user6 = User.create(username: "Carla-the-Indomitable", password: "hunter12", email: "carla@fake.com", avatar: "https://adventr-dev.s3-us-west-1.amazonaws.com/profile4.jpg");
-# user7 = User.create(username: "worry", password: "hunter12", email: "worry@worry.com");
+# User 5
+ingrid = User.create(username: "Ingrid-the-Indomitable", password: "hunter12", email: "ingrid@fake.com", guild_name: "The Court of Winter", guild_description: "Nothing will stand in our way");
+ingrid_avatar = File.open('app/assets/adventr_seeder_images/avatars/ingrid.jpg')
+ingrid.avatar_image.attach(io: ingrid_avatar, filename: 'ingrid.jpg')
+
+# User 6
+kmsvr = User.create(username: "Kmsvr", password: "hunter12", email: "kmsvr@horns.org", guild_name: "Horns of Hammerad", guild_description: "Inspired by the former Horns of Hammerad, we rose from the ashes of old teams or affiliations.";
+kmsvr_avatar = File.open('app/assets/adventr_seeder_images/avatars/kmsvr.jpg')
+kmsvr.avatar_image.attach(io: kmsvr_avatar, filename: 'kmsvr.jpg')
+
+# User 7
+goblin_slayer = User.create(username: "Goblin Slayer", password: "hunter12", email: "beardcutter@exterminate.com", guild_name: "The Guild", guild_description: "We kill goblins. Are you a goblin?");
+goblin_slayer_avatar = File.open('app/assets/adventr_seeder_images/avatars/goblin_slayer.jpg')
+goblin_slayer.avatar_image.attach(io: goblin_slayer_avatar, filename: 'goblin_slayer.jpg')
+
+# User 8
+rain = User.create(username: "Rain", password: "hunter12", email: "rain@fake.com", guild_name: "Ascension", guild_description: "Ascension, allied with both The Adventurer's Guild and The Watch, is a growing guild meant to support equal opportunity for all its members through otherworldly math and paperwork.")
+rain_avatar = File.open('app/assets/adventr_seeder_images/avatars/rain.jpg')
+rain.avatar_image.attach(io: rain_avatar, filename: 'rain.jpg')
+
+# User 9
+carl = User.create(username: "Dungeon_Crawler_Carl", password: "hunter12", email: "carl@princessdonutsociety.com", guild_name: "Princess Donut Royal Entourage", guild_description: "The Princess Donut Royal Entourage will soon reach the Sixth Floor. Don't mind Carl and all his explosive nonsense, this is a proper party.")
+carl_avatar = File.open('app/assets/adventr_seeder_images/avatars/carl.jpg')
+carl.avatar_image.attach(io: carl_avatar, filename: 'carl.jpg')
+
+# User 10
+catherine = User.create(username: "Catherine_Foundling", password: "hunter12", email: "queen-catherine@evil.org", guild_name: "Army of Callow", guild_description: "The army under Queen Catherine, formerly the Squire, First Under the Night. Set against the Undead Horror.")
 
 # New quests
 
