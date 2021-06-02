@@ -84,6 +84,7 @@ escort_quest = Tag.create(tag_name: 'escort quest')
 evil = Tag.create(tag_name: 'evil')
 evil_overlords = Tag.create(tag_name: 'evil overlords')
 evocation = Tag.create(tag_name: 'evocation')
+exploration = Tag.create(tag_name: 'exploration')
 explosives = Tag.create(tag_name: 'explosives')
 fetch = Tag.create(tag_name: 'fetch')
 fallen_kingdom = Tag.create(tag_name: 'fallen kingdom')
@@ -227,14 +228,14 @@ ingrid_avatar = File.open('app/assets/adventr_seeder_images/avatars/ingrid.jpg')
 ingrid.avatar_image.attach(io: ingrid_avatar, filename: 'ingrid.jpg')
 
 # User 6
-kmsvr = User.create(username: "Kmsvr", password: "hunter12", email: "kmsvr@horns.org", guild_name: "Horns of Hammerad", guild_description: "Inspired by the former Horns of Hammerad, we rose from the ashes of old teams or affiliations.";
+kmsvr = User.create(username: "Kmsvr", password: "hunter12", email: "kmsvr@horns.org", guild_name: "Horns of Hammerad", guild_description: "Inspired by the former Horns of Hammerad, we rose from the ashes of old teams or affiliations.");
 kmsvr_avatar = File.open('app/assets/adventr_seeder_images/avatars/kmsvr.png')
 kmsvr.avatar_image.attach(io: kmsvr_avatar, filename: 'kmsvr.png')
 
 # User 7
 goblin_slayer = User.create(username: "Goblin Slayer", password: "hunter12", email: "beardcutter@exterminate.com", guild_name: "The Guild", guild_description: "We kill goblins. Are you a goblin?");
-goblin_slayer_avatar = File.open('app/assets/adventr_seeder_images/avatars/goblin_slayer.jpg')
-goblin_slayer.avatar_image.attach(io: goblin_slayer_avatar, filename: 'goblin_slayer.jpg')
+goblin_slayer_avatar = File.open('app/assets/adventr_seeder_images/avatars/goblin_slayer.png')
+goblin_slayer.avatar_image.attach(io: goblin_slayer_avatar, filename: 'goblin_slayer.png')
 
 # User 8
 rain = User.create(username: "Rain", password: "hunter12", email: "rain@fake.com", guild_name: "Ascension", guild_description: "Ascension, allied with both The Adventurer's Guild and The Watch, is a growing guild meant to support equal opportunity for all its members through otherworldly math and paperwork.")
@@ -253,16 +254,61 @@ catherine.avatar_image.attach(io: catherine_avatar, filename: 'catherine.jpg')
 
 # Adding tags to users
 hero_tags = [gold_rank, goblins, magic_items, dungeons, fighters, warriors, paladins, dragons, exploration, monster_extermination]
-terriblis_tags = [silver_rank, necromancy, divination, sorcerers, magic, magic_items, spellcraft, evil_overlords, lich, undead]
-matt_tags = [bronze_rank, magic, magic_items, spellcasting, wizards, sorcerers, necromancy, clerics, artificers, druids]
-jess_tags = [rangers, hunt, monster_extermination, dungeons, fetch, food, wilderness, bows]
-ingrid_tags = [warriors, barbarians, monster_extermination, dungeons, dragons, mountains, exploration]
-kmsvr_tags = [gold_rank, magic_items, creller, ice, magic, warriors, rangers, sorcerers, wizards, necromancy, silver, bandits, dungeons]
-goblin_slayer_tags = [goblins, silver_rank, monster_extermination, monster_nest, demon_army, magic_items, dungeons, goblin_champions, goblin_kings, goblin_lords, rescue_mission, protection, escort_quest]
-rain_tags = [dungeons, magic_items, artificers, alchemists, barbarians, bards, clerics, druids, dynamos, fighters, monks, paladins, rangers, rogues, sorcerers, warlocks, wizards, the_watch, slimes, silver_rank]
-carl_tags = [magic, explosives, dungeons, monster_extermination, anarchy, ai, familiars]
-catherine_tags = [undead, angels, army, orcs, goblins, magic, gods, evil, fallen_kingdom, squire, staffs, unseelie_court]
+for tag in hero_tags
+  hero.tags << tag
+end
 
+terriblis_tags = [silver_rank, necromancy, divination, sorcerers, magic, magic_items, spellcasting, evil_overlords, lich, undead]
+for tag in terriblis_tags
+  terriblis.tags << tag
+end
+
+matt_tags = [bronze_rank, magic, magic_items, spellcasting, wizards, sorcerers, necromancy, clerics, artificers, druids]
+for tag in matt_tags
+  matt.tags << tag
+end
+
+jess_tags = [rangers, hunt, monster_extermination, dungeons, fetch, food, wilderness, bows]
+for tag in jess_tags
+  jess.tags << tag
+end
+
+ingrid_tags = [warriors, barbarians, monster_extermination, dungeons, dragons, mountains, exploration]
+for tag in ingrid_tags
+  ingrid.tags << tag
+end
+
+kmsvr_tags = [gold_rank, magic_items, creller, ice, magic, warriors, rangers, sorcerers, wizards, necromancy, silver, bandits, dungeons]
+for tag in kmsvr_tags
+  kmsvr.tags << tag
+end
+
+goblin_slayer_tags = [goblins, silver_rank, monster_extermination, monster_nest, demon_army, magic_items, dungeons, goblin_champions, goblin_kings, goblin_lords, rescue_mission, protection, escort_quest]
+for tag in goblin_slayer_tags
+  goblin_slayer.tags << tag
+end
+
+rain_tags = [dungeons, magic_items, artificers, alchemists, barbarians, bards, clerics, druids, dynamos, fighters, monks, paladins, rangers, rogues, sorcerers, warlocks, wizards, the_watch, slimes, silver_rank]
+for tag in rain_tags
+  rain.tags << tag
+end
+
+carl_tags = [magic, explosives, dungeons, monster_extermination, anarchy, ai, familiars]
+for tag in carl_tags
+  carl.tags << tag
+end
+
+catherine_tags = [undead, angels, army, orcs, goblins, magic, gods, evil, fallen_kingdom, squire, staffs, unseelie_court]
+for tag in catherine_tags
+  catherine.tags << tag
+end
+
+
+# Code for putting in quest tags with order
+# temp_array = [good, sorcerers]
+# temp_array.each_with_index do |tag, idx|
+#   TagJoin.create(taggable: catherine, tag: tag, order: idx + 1)
+# end
 # New quests
 
 # user1.quests.create(title: "Goblin Hunt", text: "There have been goblins spotted nearby", quest_type: "text");
