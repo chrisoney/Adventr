@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :email, :guild_name, :guild_description,:avatar
+json.extract! user, :id, :username, :email, :guild_name, :guild_description
 
 if user.avatar_image.attached?
   json.avatarUrl url_for(user.avatar_image)
