@@ -10,9 +10,9 @@
 # Follow.destroy_all
 # Like.destroy_all
 # Reblog.destroy_all
-# Quest.destroy_all
-# User.destroy_all
-# Tag.destroy_all
+Quest.destroy_all
+User.destroy_all
+Tag.destroy_all
 # Reblog.destroy_all
 
 # New tags
@@ -309,7 +309,9 @@ end
 # temp_array.each_with_index do |tag, idx|
 #   TagJoin.create(taggable: catherine, tag: tag, order: idx + 1)
 # end
-# New quests
+
+# New quests for hero
+hero_quest_1 = Quest.create(title: "So I've got this [Hero] class...", text: "I'm not sure what I'm supposed to be doing. I level really quickly but since my Guild apparently doesn't make exceptions, I'm stuck killing rats in sewers like the other Porcelains. Does anybody know of any loopholes to rise through the ranks quickly? I'm worried that I'll be fetching mushrooms from Kantai forest when the Demon Lord razes the capital.", quest_type: 'text', user_id: hero.id)
 
 # user1.quests.create(title: "Goblin Hunt", text: "There have been goblins spotted nearby", quest_type: "text");
 # user2.quests.create(title: "Ogre Hunt", text: "Five gold per head", quest_type: "text");
