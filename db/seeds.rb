@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# TagJoin.destroy_all
+TagJoin.destroy_all
 # Follow.destroy_all
 # Like.destroy_all
 # Reblog.destroy_all
@@ -112,6 +112,7 @@ grimoires = Tag.create(tag_name: 'grimoires')
 guilds = Tag.create(tag_name: 'guilds')
 halflings = Tag.create(tag_name: 'halflings')
 hammers = Tag.create(tag_name: 'hammers')
+hero_tag = Tag.create(tag_name: 'hero')
 humans = Tag.create(tag_name: 'humans')
 hunt = Tag.create(tag_name: 'hunt')
 ice = Tag.create(tag_name: 'ice')
@@ -140,7 +141,6 @@ mythril = Tag.create(tag_name: 'mythril')
 necromancy = Tag.create(tag_name: 'necromancy')
 neutral = Tag.create(tag_name: 'neutral')
 nobles = Tag.create(tag_name: 'nobles')
-magical = Tag.create(tag_name: 'magical')
 obsidian_rank = Tag.create(tag_name: 'obsidian rank')
 orcs = Tag.create(tag_name: 'orcs')
 outer_planes = Tag.create(tag_name: 'outer planes')
@@ -311,9 +311,17 @@ end
 # end
 
 # New quests for hero
+# Hero quest 1
 hero_quest_1 = Quest.create(title: "So I've got this [Hero] class...", text: "I'm not sure what I'm supposed to be doing. I level really quickly but since my Guild apparently doesn't make exceptions, I'm stuck killing rats in sewers like the other Porcelains. Does anybody know of any loopholes to rise through the ranks quickly? I'm worried that I'll be fetching mushrooms from Kantai forest when the Demon Lord razes the capital.", quest_type: 'text', user_id: hero.id)
 
-# user1.quests.create(title: "Goblin Hunt", text: "There have been goblins spotted nearby", quest_type: "text");
+hero_quest_1_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot]
+
+hero_quest_1_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: hero_quest_1, tag: tag, order: idx + 1)
+end
+
+
+
 # user2.quests.create(title: "Ogre Hunt", text: "Five gold per head", quest_type: "text");
 # user1.quests.create(title: "Free fire magic lessons", text: "Must bring change of clothes", quest_type: "text");
 # user1.quests.create(title: "Sewer cleanup", text: "Rats in the sewers. You know the drill.", quest_type: "text");
