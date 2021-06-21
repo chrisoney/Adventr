@@ -1,4 +1,4 @@
-json.extract! quest, :id, :user_id, :title, :text, :quest_type, :content_url, :created_at, :updated_at
+json.extract! quest, :id, :user_id, :title, :text, :quest_type, :created_at, :updated_at
 
 if quest.images.attached?
       json.imageUrls quest.images.map {|image| url_for(image) }

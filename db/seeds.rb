@@ -298,7 +298,7 @@ for tag in carl_tags
   carl.tags << tag
 end
 
-catherine_tags = [undead, angels, army, orcs, goblins, magic, gods, evil, fallen_kingdom, squire, staffs, unseelie_court]
+catherine_tags = [undead, angels, army, orcs, goblins, kingdom, magic, gods, evil, fallen_kingdom, squire, staffs, queen, unseelie_court]
 for tag in catherine_tags
   catherine.tags << tag
 end
@@ -311,7 +311,7 @@ end
 # end
 
 # New quests for hero
-# Hero quest 1
+# Hero quest 1 - Text
 hero_quest_1 = Quest.create(title: "So I've got this [Hero] class...", text: "I'm not sure what I'm supposed to be doing. I level really quickly but since my Guild apparently doesn't make exceptions, I'm stuck killing rats in sewers like the other Porcelains. Does anybody know of any loopholes to rise through the ranks quickly? I'm worried that I'll be fetching mushrooms from Kantai forest when the Demon Lord razes the capital.", quest_type: 'text', user_id: hero.id)
 
 hero_quest_1_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot]
@@ -320,9 +320,25 @@ hero_quest_1_tags.each_with_index do |tag, idx|
   TagJoin.create(taggable: hero_quest_1, tag: tag, order: idx + 1)
 end
 
+# Hero quest 2 - Image
+hero_quest_2 = Quest.create(title: "Does anyone else hear this?", text: "Whenever I start fighting, I hear a song start playing. My teammates swear they don't hear it, and I'm not sure if I believe them. I had a bard recreate it as best as he could. Please let me know if you recognize it.", quest_type: 'audio', user_id: hero.id)
+
+quest_2_audio = File.open('app/assets/adventr_seeder_images/quest_audio/final_fantasy_battle.mp3')
+hero_quest_2.images.attach(io: quest_2_audio, filename: 'final_fantasy_battle.mp3')
+
+hero_quest_2_tags = [bards, magic, monster_extermination, enchantment, fey]
+
+hero_quest_2_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: hero_quest_2, tag: tag, order: idx + 1)
+end
+
+# Hero quest 3 - Image
+# Hero quest 4 - Image
+# Hero quest 5 - Quote
+# Hero quest 6 - Video
+# Hero quest 7 - Audio
 
 
-# user2.quests.create(title: "Ogre Hunt", text: "Five gold per head", quest_type: "text");
 # user1.quests.create(title: "Free fire magic lessons", text: "Must bring change of clothes", quest_type: "text");
 # user1.quests.create(title: "Sewer cleanup", text: "Rats in the sewers. You know the drill.", quest_type: "text");
 # user2.quests.create(title: "Escort request", text: "From here to Plainsburrow. Silver Rank minimum. Payment on arrival.", quest_type: "text");
