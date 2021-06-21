@@ -335,11 +335,10 @@ hero_quest_2_tags.each_with_index do |tag, idx|
 end
 
 # Hero quest 3 - Image
-
 hero_quest_3 = Quest.create(title: "Found this grimoire. Anyone know how to destroy it?", text: "Apparently it's known as The Necronomicon. At first I planned on keeping or selling it, but I'm 95% sure it's bound in human skin. Also, it whispers things to me at night. Horrible things.\nSide note: If you're known as 'Old Man Henderson', there are some unimaginable horrors out to get you.", quest_type: 'image', user_id: hero.id)
 
-quest_3_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_3/necronomicon.png')
-hero_quest_3.images.attach(io: quest_2_image_1, filename: 'mysterious_letter_1.png')
+quest_3_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_3/necronomicon.jpeg')
+hero_quest_3.images.attach(io: quest_3_image_1, filename: 'necronomicon.jpeg')
 
 # Hero quest 4 - Image
 # Hero quest 5 - Quote
