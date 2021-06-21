@@ -175,7 +175,7 @@ sorcery = Tag.create(tag_name: 'sorcery')
 spell_components = Tag.create(tag_name: 'spell components')
 spellbooks = Tag.create(tag_name: 'spellbooks')
 spellcasting = Tag.create(tag_name: 'spellcasting')
-spys = Tag.create(tag_name: 'spys')
+spies = Tag.create(tag_name: 'spies')
 squire = Tag.create(tag_name: 'squire')
 staffs = Tag.create(tag_name: 'staffs')
 steel_rank = Tag.create(tag_name: 'steel rank')
@@ -339,6 +339,12 @@ hero_quest_3 = Quest.create(title: "Found this grimoire. Anyone know how to dest
 
 quest_3_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_3/necronomicon.jpeg')
 hero_quest_3.images.attach(io: quest_3_image_1, filename: 'necronomicon.jpeg')
+
+hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes]
+
+hero_quest_3_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: hero_quest_3, tag: tag, order: idx + 1)
+end
 
 # Hero quest 4 - Image
 # Hero quest 5 - Quote
