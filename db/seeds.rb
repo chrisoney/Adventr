@@ -321,22 +321,114 @@ hero_quest_1_tags.each_with_index do |tag, idx|
 end
 
 # Hero quest 2 - Image
-hero_quest_2 = Quest.create(title: "Does anyone else hear this?", text: "Whenever I start fighting, I hear a song start playing. My teammates swear they don't hear it, and I'm not sure if I believe them. I had a bard recreate it as best as he could. Please let me know if you recognize it.", quest_type: 'audio', user_id: hero.id)
+hero_quest_2 = Quest.create(title: "Has anyone seen a macguffin lying around?", text: "I think I'm supposed to be tracking down a low-level general in the demon army, but I'm struggling to figure out what I need to do to trigger the quest. I'm pretty sure I'm supposed to find a letter, but it's not in any of the lore/readable items I make my wizard cart around. Attached are pictures of other suspicious letters I've found that are probably somewhat similar.", quest_type: 'image', user_id: hero.id)
 
-quest_2_audio = File.open('app/assets/adventr_seeder_images/quest_audio/final_fantasy_battle.mp3')
-hero_quest_2.images.attach(io: quest_2_audio, filename: 'final_fantasy_battle.mp3')
+quest_2_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_2/mysterious_letter_1.png')
+hero_quest_2.images.attach(io: quest_2_image_1, filename: 'mysterious_letter_1.png')
+quest_2_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_2/mysterious_letter_2.png')
+hero_quest_2.images.attach(io: quest_2_image_2, filename: 'mysterious_letter_2.png')
 
-hero_quest_2_tags = [bards, magic, monster_extermination, enchantment, fey]
+hero_quest_2_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, contracts, mystery]
 
 hero_quest_2_tags.each_with_index do |tag, idx|
   TagJoin.create(taggable: hero_quest_2, tag: tag, order: idx + 1)
 end
 
 # Hero quest 3 - Image
+
+hero_quest_3 = Quest.create(title: "Found this grimoire. Anyone know how to destroy it?", text: "Apparently it's known as The Necronomicon. At first I planned on keeping or selling it, but I'm 95% sure it's bound in human skin. Also, it whispers things to me at night. Horrible things.\nSide note: If you're known as 'Old Man Henderson', there are some unimaginable horrors out to get you.", quest_type: 'image', user_id: hero.id)
+
+quest_3_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_3/necronomicon.png')
+hero_quest_3.images.attach(io: quest_2_image_1, filename: 'mysterious_letter_1.png')
+
 # Hero quest 4 - Image
 # Hero quest 5 - Quote
 # Hero quest 6 - Video
 # Hero quest 7 - Audio
+hero_quest_7 = Quest.create(title: "Does anyone else hear this?", text: "Whenever I start fighting, I hear a song start playing. My teammates swear they don't hear it, and I'm not sure if I believe them. I had a bard recreate it as best as he could. Please let me know if you recognize it.", quest_type: 'audio', user_id: hero.id)
+
+quest_7_audio = File.open('app/assets/adventr_seeder_images/quest_audio/final_fantasy_battle.mp3')
+hero_quest_7.images.attach(io: quest_7_audio, filename: 'final_fantasy_battle.mp3')
+
+hero_quest_7_tags = [bards, magic, monster_extermination, enchantment, fey]
+
+hero_quest_7_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: hero_quest_7, tag: tag, order: idx + 1)
+end
+
+# Terriblis quests
+# Terriblis quest 1 - Text
+# Terriblis quest 2 - Image
+# Terriblis quest 3 - Image
+# Terriblis quest 4 - Image
+# Terriblis quest 5 - Quote
+# Terriblis quest 6 - Video
+# Terriblis quest 7 - Audio
+# Matt quests
+# Matt quest 1 - Text
+# Matt quest 2 - Image
+# Matt quest 3 - Image
+# Matt quest 4 - Image
+# Matt quest 5 - Quote
+# Matt quest 6 - Video
+# Matt quest 7 - Audio
+# Jess quests
+# Jess quest 1 - Text
+# Jess quest 2 - Image
+# Jess quest 3 - Image
+# Jess quest 4 - Image
+# Jess quest 5 - Quote
+# Jess quest 6 - Video
+# Jess quest 7 - Audio
+# Ingrid quests
+# Ingrid quest 1 - Text
+# Ingrid quest 2 - Image
+# Ingrid quest 3 - Image
+# Ingrid quest 4 - Image
+# Ingrid quest 5 - Quote
+# Ingrid quest 6 - Video
+# Ingrid quest 7 - Audio
+# Kmsvr quests
+# Kmsvr quest 1 - Text
+# Kmsvr quest 2 - Image
+# Kmsvr quest 3 - Image
+# Kmsvr quest 4 - Image
+# Kmsvr quest 5 - Quote
+# Kmsvr quest 6 - Video
+# Kmsvr quest 7 - Audio
+# Goblin Slayer quests
+# Goblin Slayer quest 1 - Text
+# Goblin Slayer quest 2 - Image
+# Goblin Slayer quest 3 - Image
+# Goblin Slayer quest 4 - Image
+# Goblin Slayer quest 5 - Quote
+# Goblin Slayer quest 6 - Video
+# Goblin Slayer quest 7 - Audio
+# Rain quests
+# Rain quest 1 - Text
+# Rain quest 2 - Image
+# Rain quest 3 - Image
+# Rain quest 4 - Image
+# Rain quest 5 - Quote
+# Rain quest 6 - Video
+# Rain quest 7 - Audio
+# Carl quests
+# Carl quest 1 - Text
+# Carl quest 2 - Image
+# Carl quest 3 - Image
+# Carl quest 4 - Image
+# Carl quest 5 - Quote
+# Carl quest 6 - Video
+# Carl quest 7 - Audio
+# Catherine quests
+# Catherine quest 1 - Text
+# Catherine quest 2 - Image
+# Catherine quest 3 - Image
+# Catherine quest 4 - Image
+# Catherine quest 5 - Quote
+# Catherine quest 6 - Video
+# Catherine quest 7 - Audio
+
 
 
 # user1.quests.create(title: "Free fire magic lessons", text: "Must bring change of clothes", quest_type: "text");
