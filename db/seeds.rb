@@ -396,36 +396,59 @@ end
 
 # Terriblis quests
 # Terriblis quest 1 - Text
+terriblis_quest_8 = Quest.create(title: "Please stop killing my skeletons.", text: "I know they're easy experience. I know the sound of their bones jumbling around is annoying. But please stop killing them. \n You would not believe how long it takes to raise 10 skeletons. Don't even get me started on the material cost, since I go through legal channels. \n \n And to the person that seems to target my [Awakened Skeleton Knight] exclusively, there will be no mercy for you. You have sunk entire fortunes with your murder hobo antics. I know for a fact it never initiated a fight, because I only taught it to love. Your days are numbered.", quest_type: "text", user_id: terriblis.id)
+
+terriblis_quest_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlords, fallen_kingdom, lawful, lich, murder, necromancy, paladins, scholars, spell_components, spellcasting, undead, warlocks]
+
+terriblis_quest_8_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: terriblis_quest_8, tag: tag, order: idx + 1)
+end
 
 # Terriblis quest 2 - Image
-# Terriblis quest 3 - Image
-# Terriblis quest 4 - Image
-# Terriblis quest 5 - Quote
-terriblis_quest_5 = Quest.create(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
+terriblis_quest_9 = Quest.create(title: "Looking for spellcasters to test my new offal dragon golem", text: "", quest_type: "image", user_id: terriblis.id)
 
-terriblis_quest_5_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies]
+quest_9_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_9/meat_dragon.png')
+terriblis_quest_9.images.attach(io: quest_9_image_1, filename: 'meat_dragon.png')
 
-terriblis_quest_5_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: terriblis_quest_5, tag: tag, order: idx + 1)
+terriblis_quest_9_tags = []
+
+terriblis_quest_9_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: terriblis_quest_9, tag: tag, order: idx + 1)
 end
-# Terriblis quest 6 - Video
-# Terriblis quest 7 - Audio
+
+# Terriblis quest 10 - Image
+# terriblis_quest_10 = Quest.create(title: "", text: "", quest_type: "image", user_id: terriblis.id)
+# Terriblis quest 11 - Image
+# terriblis_quest_11 = Quest.create(title: "", text: "", quest_type: "image", user_id: terriblis.id)
+# Terriblis quest 12 - Quote
+terriblis_quest_12 = Quest.create(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
+
+terriblis_quest_12_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies]
+
+terriblis_quest_12_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: terriblis_quest_12, tag: tag, order: idx + 1)
+end
+# Terriblis quest 13 - Video
+# terriblis_quest_13 = Quest.create(title: "", text: "", quest_type: "video", user_id: terriblis.id)
+# Terriblis quest 14 - Audio
+# terriblis_quest_14 = Quest.create(title: "", text: "", quest_type: "audio", user_id: terriblis.id)
+
 # Matt quests
-# Matt quest 1 - Text
-# Matt quest 2 - Image
-# Matt quest 3 - Image
-# Matt quest 4 - Image
-# Matt quest 5 - Quote
-# Matt quest 6 - Video
-# Matt quest 7 - Audio
+# Matt quest 15 - Text
+# Matt quest 16 - Image
+# Matt quest 17 - Image
+# Matt quest 18 - Image
+# Matt quest 19 - Quote
+# Matt quest 20 - Video
+# Matt quest 21 - Audio
 # Jess quests
-# Jess quest 1 - Text
-# Jess quest 2 - Image
-# Jess quest 3 - Image
-# Jess quest 4 - Image
-# Jess quest 5 - Quote
-# Jess quest 6 - Video
-# Jess quest 7 - Audio
+# Jess quest 22 - Text
+# Jess quest 23 - Image
+# Jess quest 24 - Image
+# Jess quest 25 - Image
+# Jess quest 26 - Quote
+# Jess quest 27 - Video
+# Jess quest 28 - Audio
 # Ingrid quests
 # Ingrid quest 1 - Text
 # Ingrid quest 2 - Image
