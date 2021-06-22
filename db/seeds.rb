@@ -405,12 +405,12 @@ terriblis_quest_8_tags.each_with_index do |tag, idx|
 end
 
 # Terriblis quest 2 - Image
-terriblis_quest_9 = Quest.create(title: "Looking for spellcasters to test my new offal dragon golem", text: "", quest_type: "image", user_id: terriblis.id)
+terriblis_quest_9 = Quest.create(title: "Looking for spellcasters to test my new offal dragon golem", text: "I have finally achieved my dream of creating a dragon golem from offal. It is glory incarnate. I am looking for a variety of mages to test their spells against my creation. It should be a rewarding experience for everyone involved, though you will also be compensated with gold and enough crystal wash to eliminate the smell of being in the same room as an offal dragon for several hours.", quest_type: "image", user_id: terriblis.id)
 
 quest_9_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_9/meat_dragon.png')
 terriblis_quest_9.images.attach(io: quest_9_image_1, filename: 'meat_dragon.png')
 
-terriblis_quest_9_tags = []
+terriblis_quest_9_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuration, dragons, familiars, fire, ice, lightning, magical_creatures, necromancy, sorcerers, sorcery, transmutation, undead, warlocks, wizards, wurms]
 
 terriblis_quest_9_tags.each_with_index do |tag, idx|
   TagJoin.create(taggable: terriblis_quest_9, tag: tag, order: idx + 1)
@@ -450,53 +450,53 @@ end
 # Jess quest 27 - Video
 # Jess quest 28 - Audio
 # Ingrid quests
-# Ingrid quest 1 - Text
-# Ingrid quest 2 - Image
-# Ingrid quest 3 - Image
-# Ingrid quest 4 - Image
-# Ingrid quest 5 - Quote
-# Ingrid quest 6 - Video
-# Ingrid quest 7 - Audio
+# Ingrid quest 29 - Text
+# Ingrid quest 30 - Image
+# Ingrid quest 31 - Image
+# Ingrid quest 32 - Image
+# Ingrid quest 33 - Quote
+# Ingrid quest 34 - Video
+# Ingrid quest 35 - Audio
 # Kmsvr quests
-# Kmsvr quest 1 - Text
-# Kmsvr quest 2 - Image
-# Kmsvr quest 3 - Image
-# Kmsvr quest 4 - Image
-# Kmsvr quest 5 - Quote
-# Kmsvr quest 6 - Video
-# Kmsvr quest 7 - Audio
+# Kmsvr quest 36 - Text
+# Kmsvr quest 37 - Image
+# Kmsvr quest 38 - Image
+# Kmsvr quest 39 - Image
+# Kmsvr quest 40 - Quote
+# Kmsvr quest 41 - Video
+# Kmsvr quest 42 - Audio
 # Goblin Slayer quests
-# Goblin Slayer quest 1 - Text
-# Goblin Slayer quest 2 - Image
-# Goblin Slayer quest 3 - Image
-# Goblin Slayer quest 4 - Image
-# Goblin Slayer quest 5 - Quote
-# Goblin Slayer quest 6 - Video
-# Goblin Slayer quest 7 - Audio
+# Goblin Slayer quest 43 - Text
+# Goblin Slayer quest 44 - Image
+# Goblin Slayer quest 45 - Image
+# Goblin Slayer quest 46 - Image
+# Goblin Slayer quest 47 - Quote
+# Goblin Slayer quest 48 - Video
+# Goblin Slayer quest 49 - Audio
 # Rain quests
-# Rain quest 1 - Text
-# Rain quest 2 - Image
-# Rain quest 3 - Image
-# Rain quest 4 - Image
-# Rain quest 5 - Quote
-# Rain quest 6 - Video
-# Rain quest 7 - Audio
+# Rain quest 50 - Text
+# Rain quest 51 - Image
+# Rain quest 52 - Image
+# Rain quest 53 - Image
+# Rain quest 54 - Quote
+# Rain quest 55 - Video
+# Rain quest 56 - Audio
 # Carl quests
-# Carl quest 1 - Text
-# Carl quest 2 - Image
-# Carl quest 3 - Image
-# Carl quest 4 - Image
-# Carl quest 5 - Quote
-# Carl quest 6 - Video
-# Carl quest 7 - Audio
+# Carl quest 57 - Text
+# Carl quest 58 - Image
+# Carl quest 59 - Image
+# Carl quest 60 - Image
+# Carl quest 61 - Quote
+# Carl quest 62 - Video
+# Carl quest 63 - Audio
 # Catherine quests
-# Catherine quest 1 - Text
-# Catherine quest 2 - Image
-# Catherine quest 3 - Image
-# Catherine quest 4 - Image
-# Catherine quest 5 - Quote
-# Catherine quest 6 - Video
-# Catherine quest 7 - Audio
+# Catherine quest 64 - Text
+# Catherine quest 65 - Image
+# Catherine quest 66 - Image
+# Catherine quest 67 - Image
+# Catherine quest 68 - Quote
+# Catherine quest 69 - Video
+# Catherine quest 70 - Audio
 
 
 
