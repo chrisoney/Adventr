@@ -340,15 +340,48 @@ hero_quest_3 = Quest.create(title: "Found this grimoire. Anyone know how to dest
 quest_3_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_3/necronomicon.jpeg')
 hero_quest_3.images.attach(io: quest_3_image_1, filename: 'necronomicon.jpeg')
 
-hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes]
+hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood_magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes]
 
 hero_quest_3_tags.each_with_index do |tag, idx|
   TagJoin.create(taggable: hero_quest_3, tag: tag, order: idx + 1)
 end
 
 # Hero quest 4 - Image
+hero_quest_4 = Quest.create(title: "Looking for a smith to make me better pauldrons.", text: "I learned in my old world that bigger pauldrons make for a stronger, more intimidating warrior. For some reason, the only ones I've found so far in this land have been reasonably sized. Willing to spend about 10 gold on each, 15 if they can have different but complementary designs.", quest_type: "image", user_id: hero.id)
+
+quest_4_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_4/pauldron_1.jpg')
+hero_quest_4.images.attach(io: quest_4_image_1, filename: 'pauldron_1.jpg')
+
+quest_4_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_4/pauldron_2.jpg')
+hero_quest_4.images.attach(io: quest_4_image_2, filename: 'pauldron_2.jpg')
+
+hero_quest_4_tags = [adamantine, artificers, blacksmithing, dwarves, gold, magic_items, merchants, mythic, mythril, platinum, power, protection]
+
+hero_quest_4_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: hero_quest_4, tag: tag, order: idx + 1)
+end
+
 # Hero quest 5 - Quote
+hero_quest_5 = Quest.create(title: "It's really exciting to get to be the main character of something.", text: "Noah Schnapp", quest_type: "quote", user_id: hero.id)
+
+hero_quest_5_tags = [hero_tag, adventure, chaotic, good, guilds, legendary, paladins, plot]
+
+hero_quest_5_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: hero_quest_5, tag: tag, order: idx + 1)
+end
+
 # Hero quest 6 - Video
+hero_quest_6 = Quest.create(title: "Sometimes it really feels like this.", text: "", quest_type: "video", user_id: hero.id)
+
+quest_6_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/everything_goes_wrong.mp4')
+hero_quest_6.images.attach(io: quest_6_video_1, filename: 'everything_goes_wrong.mp4')
+
+hero_quest_6_tags = [hero_tag, bandits, beasts, cave, commoners, contracts, divination, escort_quest, exploration, fetch, forests, humans, hunt, chaotic, magical_creatures, murder, mystery, neutral, outsider, plot, rescue_mission, the_watch, trolls, warriors, wilderness]
+
+hero_quest_6_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: hero_quest_6, tag: tag, order: idx + 1)
+end
+
 # Hero quest 7 - Audio
 hero_quest_7 = Quest.create(title: "Does anyone else hear this?", text: "Whenever I start fighting, I hear a song start playing. My teammates swear they don't hear it, and I'm not sure if I believe them. I had a bard recreate it as best as he could. Please let me know if you recognize it.", quest_type: 'audio', user_id: hero.id)
 
@@ -363,10 +396,18 @@ end
 
 # Terriblis quests
 # Terriblis quest 1 - Text
+
 # Terriblis quest 2 - Image
 # Terriblis quest 3 - Image
 # Terriblis quest 4 - Image
 # Terriblis quest 5 - Quote
+terriblis_quest_5 = Quest.create(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
+
+terriblis_quest_5_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies]
+
+terriblis_quest_5_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: terriblis_quest_5, tag: tag, order: idx + 1)
+end
 # Terriblis quest 6 - Video
 # Terriblis quest 7 - Audio
 # Matt quests

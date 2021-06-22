@@ -221,9 +221,7 @@ class Quest extends React.Component {
     if (quest.title !== '') {
       titleSection = (
         <div className="title">
-          {isQuote}
-          {quest.title}
-          {isQuote}
+          {isQuote} {quest.title} {isQuote}
         </div>
       );
     }
