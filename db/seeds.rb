@@ -310,15 +310,20 @@ end
 #   TagJoin.create(taggable: catherine, tag: tag, order: idx + 1)
 # end
 
+# Method for adding an array of tags to a quest
+def addTagsToQuest(tags, quest)
+  tags.each_with_index do |tag, idx|
+    TagJoin.create(taggable: quest, tag: tag, order: idx + 1)
+  end
+end
+
 # New quests for hero
 # Hero quest 1 - Text
 hero_quest_1 = Quest.create(title: "So I've got this [Hero] class...", text: "I'm not sure what I'm supposed to be doing. I level really quickly but since my Guild apparently doesn't make exceptions, I'm stuck killing rats in sewers like the other Porcelains. Does anybody know of any loopholes to rise through the ranks quickly? I'm worried that I'll be fetching mushrooms from Kantai forest when the Demon Lord razes the capital.", quest_type: 'text', user_id: hero.id)
 
 hero_quest_1_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot]
 
-hero_quest_1_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: hero_quest_1, tag: tag, order: idx + 1)
-end
+addTagsToQuest(hero_quest_1_tags, hero_quest_1)
 
 # Hero quest 2 - Image
 hero_quest_2 = Quest.create(title: "Has anyone seen a macguffin lying around?", text: "I think I'm supposed to be tracking down a low-level general in the demon army, but I'm struggling to figure out what I need to do to trigger the quest. I'm pretty sure I'm supposed to find a letter, but it's not in any of the lore/readable items I make my wizard cart around. Attached are pictures of other suspicious letters I've found that are probably somewhat similar.", quest_type: 'image', user_id: hero.id)
@@ -330,9 +335,7 @@ hero_quest_2.images.attach(io: quest_2_image_2, filename: 'mysterious_letter_2.p
 
 hero_quest_2_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, contracts, mystery]
 
-hero_quest_2_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: hero_quest_2, tag: tag, order: idx + 1)
-end
+addTagsToQuest(hero_quest_2_tags, hero_quest_2)
 
 # Hero quest 3 - Image
 hero_quest_3 = Quest.create(title: "Found this grimoire. Anyone know how to destroy it?", text: "Apparently it's known as The Necronomicon. At first I planned on keeping or selling it, but I'm 95% sure it's bound in human skin. Also, it whispers things to me at night. Horrible things.\nSide note: If you're known as 'Old Man Henderson', there are some unimaginable horrors out to get you.", quest_type: 'image', user_id: hero.id)
@@ -342,9 +345,7 @@ hero_quest_3.images.attach(io: quest_3_image_1, filename: 'necronomicon.jpeg')
 
 hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood_magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes]
 
-hero_quest_3_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: hero_quest_3, tag: tag, order: idx + 1)
-end
+addTagsToQuest(hero_quest_3_tags, hero_quest_3)
 
 # Hero quest 4 - Image
 hero_quest_4 = Quest.create(title: "Looking for a smith to make me better pauldrons.", text: "I learned in my old world that bigger pauldrons make for a stronger, more intimidating warrior. For some reason, the only ones I've found so far in this land have been reasonably sized. Willing to spend about 10 gold on each, 15 if they can have different but complementary designs.", quest_type: "image", user_id: hero.id)
@@ -357,18 +358,14 @@ hero_quest_4.images.attach(io: quest_4_image_2, filename: 'pauldron_2.jpg')
 
 hero_quest_4_tags = [adamantine, artificers, blacksmithing, dwarves, gold, magic_items, merchants, mythic, mythril, platinum, power, protection]
 
-hero_quest_4_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: hero_quest_4, tag: tag, order: idx + 1)
-end
+addTagsToQuest(hero_quest_4_tags, hero_quest_4)
 
 # Hero quest 5 - Quote
 hero_quest_5 = Quest.create(title: "It's really exciting to get to be the main character of something.", text: "Noah Schnapp", quest_type: "quote", user_id: hero.id)
 
 hero_quest_5_tags = [hero_tag, adventure, chaotic, good, guilds, legendary, paladins, plot]
 
-hero_quest_5_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: hero_quest_5, tag: tag, order: idx + 1)
-end
+addTagsToQuest(hero_quest_5_tags, hero_quest_5)
 
 # Hero quest 6 - Video
 hero_quest_6 = Quest.create(title: "Sometimes it really feels like this.", text: "", quest_type: "video", user_id: hero.id)
@@ -378,9 +375,7 @@ hero_quest_6.images.attach(io: quest_6_video_1, filename: 'everything_goes_wrong
 
 hero_quest_6_tags = [hero_tag, bandits, beasts, cave, commoners, contracts, divination, escort_quest, exploration, fetch, forests, humans, hunt, chaotic, magical_creatures, murder, mystery, neutral, outsider, plot, rescue_mission, the_watch, trolls, warriors, wilderness]
 
-hero_quest_6_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: hero_quest_6, tag: tag, order: idx + 1)
-end
+addTagsToQuest(hero_quest_6_tags, hero_quest_6)
 
 # Hero quest 7 - Audio
 hero_quest_7 = Quest.create(title: "Does anyone else hear this?", text: "Whenever I start fighting, I hear a song start playing. My teammates swear they don't hear it, and I'm not sure if I believe them. I had a bard recreate it as best as he could. Please let me know if you recognize it.", quest_type: 'audio', user_id: hero.id)
@@ -390,9 +385,7 @@ hero_quest_7.images.attach(io: quest_7_audio, filename: 'final_fantasy_battle.mp
 
 hero_quest_7_tags = [bards, magic, monster_extermination, enchantment, fey]
 
-hero_quest_7_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: hero_quest_7, tag: tag, order: idx + 1)
-end
+addTagsToQuest(hero_quest_7_tags, hero_quest_7)
 
 # Terriblis quests
 # Terriblis quest 1 - Text
@@ -400,9 +393,7 @@ terriblis_quest_8 = Quest.create(title: "Please stop killing my skeletons.", tex
 
 terriblis_quest_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlords, fallen_kingdom, lawful, lich, murder, necromancy, paladins, scholars, spell_components, spellcasting, undead, warlocks]
 
-terriblis_quest_8_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: terriblis_quest_8, tag: tag, order: idx + 1)
-end
+addTagsToQuest(terriblis_quest_8_tags, terriblis_quest_8)
 
 # Terriblis quest 2 - Image
 terriblis_quest_9 = Quest.create(title: "Looking for spellcasters to test my new offal dragon golem", text: "I have finally achieved my dream of creating a dragon golem from offal. It is glory incarnate. I am looking for a variety of mages to test their spells against my creation. It should be a rewarding experience for everyone involved, though you will also be compensated with gold and enough crystal wash to eliminate the smell of being in the same room as an offal dragon for several hours.", quest_type: "image", user_id: terriblis.id)
@@ -412,9 +403,8 @@ terriblis_quest_9.images.attach(io: quest_9_image_1, filename: 'meat_dragon.png'
 
 terriblis_quest_9_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuration, dragons, familiars, fire, ice, lightning, magical_creatures, necromancy, sorcerers, sorcery, transmutation, undead, warlocks, wizards, wurms]
 
-terriblis_quest_9_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: terriblis_quest_9, tag: tag, order: idx + 1)
-end
+addTagsToQuest(terriblis_quest_9_tags, terriblis_quest_9)
+
 
 # Terriblis quest 10 - Image
 terriblis_quest_10 = Quest.create(title: "Shoggoth infestation", text: "I spilled something perfectly legal to possess and now my castle is full of Shoggoths. They don't do much besides eat valuable artifacts and whisper secrets from a place I've never heard of in the voice of my second nemesis. I want them gone immediately.", quest_type: "image", user_id: terriblis.id)
@@ -428,9 +418,7 @@ terriblis_quest_10.images.attach(io: quest_10_image_3, filename: 'shoggoth_3.png
 
 terriblis_quest_10_tags = [ancients, beasts, chaotic, creatures, evil, magical_creatures, monster_extermination, monster_nest, outer_planes]
 
-terriblis_quest_10_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: terriblis_quest_10, tag: tag, order: idx + 1)
-end
+addTagsToQuest(terriblis_quest_10_tags, terriblis_quest_10)
 
 # Terriblis quest 11 - Image
 
@@ -441,22 +429,34 @@ terriblis_quest_11.images.attach(io: quest_11_image_1, filename: 'assassination_
 
 terriblis_quest_11_tags = [assassins, bandits, blood_oath, contracts, hero_tag, murder, political_intrigue, rogues, spies]
 
-terriblis_quest_11_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: terriblis_quest_11, tag: tag, order: idx + 1)
-end
+addTagsToQuest(terriblis_quest_11_tags, terriblis_quest_11)
 
 # Terriblis quest 12 - Quote
 terriblis_quest_12 = Quest.create(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
 
 terriblis_quest_12_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies]
 
-terriblis_quest_12_tags.each_with_index do |tag, idx|
-  TagJoin.create(taggable: terriblis_quest_12, tag: tag, order: idx + 1)
-end
+addTagsToQuest(terriblis_quest_12_tags, terriblis_quest_12)
+
 # Terriblis quest 13 - Video
-# terriblis_quest_13 = Quest.create(title: "", text: "", quest_type: "video", user_id: terriblis.id)
+terriblis_quest_13 = Quest.create(title: "There may be similarities...", text: "", quest_type: "video", user_id: terriblis.id)
+
+quest_13_video = File.open('app/assets/adventr_seeder_images/quest_videos/prozd_villain.mp4')
+terriblis_quest_11.images.attach(io: quest_13_video, filename: 'prozd_villain.mp4')
+
+terriblis_quest_13_tags = [aristocrats, bards, dark_lord, evil, evil_overlords, hero_tag, mystery, nobles, plot]
+
+addTagsToQuest(terriblis_quest_13_tags, terriblis_quest_13)
+
 # Terriblis quest 14 - Audio
-# terriblis_quest_14 = Quest.create(title: "", text: "", quest_type: "audio", user_id: terriblis.id)
+terriblis_quest_14 = Quest.create(title: "", text: "", quest_type: "audio", user_id: terriblis.id)
+
+quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/------')
+terriblis_quest_14.images.attach(io: quest_14_audio, filename: '------')
+
+terriblis_quest_14_tags = []
+
+addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
 
 # Matt quests
 # Matt quest 15 - Text
