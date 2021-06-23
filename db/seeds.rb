@@ -417,9 +417,34 @@ terriblis_quest_9_tags.each_with_index do |tag, idx|
 end
 
 # Terriblis quest 10 - Image
-# terriblis_quest_10 = Quest.create(title: "", text: "", quest_type: "image", user_id: terriblis.id)
+terriblis_quest_10 = Quest.create(title: "Shoggoth infestation", text: "I spilled something perfectly legal to possess and now my castle is full of Shoggoths. They don't do much besides eat valuable artifacts and whisper secrets from a place I've never heard of in the voice of my second nemesis. I want them gone immediately.", quest_type: "image", user_id: terriblis.id)
+
+quest_10_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_10/shoggoth_1.jpeg')
+terriblis_quest_10.images.attach(io: quest_10_image_1, filename: 'shoggoth_1.jpeg')
+quest_10_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_10/shoggoth_2.jpg')
+terriblis_quest_10.images.attach(io: quest_10_image_2, filename: 'shoggoth_2.jpg')
+quest_10_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_10/shoggoth_3.png')
+terriblis_quest_10.images.attach(io: quest_10_image_3, filename: 'shoggoth_3.png')
+
+terriblis_quest_10_tags = [ancients, beasts, chaotic, creatures, evil, magical_creatures, monster_extermination, monster_nest, outer_planes]
+
+terriblis_quest_10_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: terriblis_quest_10, tag: tag, order: idx + 1)
+end
+
 # Terriblis quest 11 - Image
-# terriblis_quest_11 = Quest.create(title: "", text: "", quest_type: "image", user_id: terriblis.id)
+
+terriblis_quest_11 = Quest.create(title: "Looking to hire an assassin. Must be Platinum Rank or higher", text: "As a disclaimer, your target is still low level. This is a real request. Payment and dossier on the victim will be provided upon acceptance of the quest. I cannot say their name here, but their title rhymes with [Zero].", quest_type: "image", user_id: terriblis.id)
+
+quest_11_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_11/assassination_target.jpg')
+terriblis_quest_11.images.attach(io: quest_11_image_1, filename: 'assassination_target.jpg')
+
+terriblis_quest_11_tags = [assassins, bandits, blood_oath, contracts, hero_tag, murder, political_intrigue, rogues, spies]
+
+terriblis_quest_11_tags.each_with_index do |tag, idx|
+  TagJoin.create(taggable: terriblis_quest_11, tag: tag, order: idx + 1)
+end
+
 # Terriblis quest 12 - Quote
 terriblis_quest_12 = Quest.create(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
 
