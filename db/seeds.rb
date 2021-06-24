@@ -479,29 +479,67 @@ addTagsToQuest(matt_quest_16_tags, matt_quest_16)
 
 # Matt quest 17 - Image
 
-matt_quest_17 = Quest.create(title: "", text: "", quest_type: "image", user_id: matt.id)
+matt_quest_17 = Quest.create(title: "Are you having issues preparing for battle?", text: "As time goes on and true battle is seen, many warriors begin to find donning their armor and dashing into the fray more difficult. Whether it be mental, emotional, or physical, it is no fault of their own. The lifestyle of  an adventurer can wear on you. Luckily, our guild has discovered a solution. A team of Alchemists from Soleil have developed a potion from the liver of certain species of non-sentient fey that can be used to give you back that warrior's spirit! Our own members of different ranks have thoroughly tested the effects and found them safe - though not for our foes! Inquire with any of our adventurers or staff for a 1-part-in-10 discount!", quest_type: "image", user_id: matt.id)
 
-quest_17_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_17/---------')
-matt_quest_17.images.attach(io: quest_17_image_1, filename: '---------')
+quest_17_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_17/potion.png')
+matt_quest_17.images.attach(io: quest_17_image_1, filename: 'potion.png')
 
-matt_quest_17_tags = []
+quest_17_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_17/berserker.png')
+matt_quest_17.images.attach(io: quest_17_image_2, filename: 'berserker.png')
+
+matt_quest_17_tags = [alchemists, alchemy, army, barbarians, blood_magic, chaotic, explosives, fighters, lawful, magic, merchants, power, transmutation, warriors]
 
 addTagsToQuest(matt_quest_17_tags, matt_quest_17)
 
 # Matt quest 18 - Image
 
-# matt_quest_18 = Quest.create(title: "", text: "", quest_type: "image", user_id: matt.id)
+matt_quest_18 = Quest.create(title: "Staffs or wands? Which do you want to wield in the heat of battle?", text: "After extensive research into the strengths and weaknesses of both, we give the edge to staffs. They're heavier and often less wieldy, but you can't argue with the resilience or power that they offer. Luckily, we have enchanters in our employ that can convert any wand lower than the Very Rare grade to a staff of even greater quality! Enquire at any of our offices for a price quote and estimated end result.", quest_type: "image", user_id: matt.id)
 
-# quest_18_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/---------')
-# matt_quest_18.images.attach(io: quest_18_image_1, filename: '---------')
+quest_18_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/staffs.png')
+matt_quest_18.images.attach(io: quest_18_image_1, filename: 'staffs.png')
 
-# matt_quest_18_tags = []
+quest_18_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/wands.png')
+matt_quest_18.images.attach(io: quest_18_image_2, filename: 'wands.png')
 
-# addTagsToQuest(matt_quest_18_tags, matt_quest_18)
+matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlock, wizards, druids]
+
+addTagsToQuest(matt_quest_18_tags, matt_quest_18)
 
 # Matt quest 19 - Quote
+
+matt_quest_19 = Quest.create(title: "You have power over your mind - not outside events. Unless someone has mind magic; then you have power over nothing.", text: "Marcus the Aeromancer", quest_type: "quote", user_id: matt.id)
+
+matt_quest_19_tags = [academy, books, divination, magic, magic_items, magical_creatures, merchants, nobles, power, protection, sorcery, spellcasting, unseelie_court, fey, vampires]
+
+addTagsToQuest(matt_quest_19_tags, matt_quest_19)
+
+
 # Matt quest 20 - Video
+
+matt_quest_20 = Quest.create(title: "Some of our members show off their magic.", text: "", quest_type: "video", user_id: matt.id)
+
+quest_20_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/lightning_bolt.mp4')
+matt_quest_20.images.attach(io: quest_20_video_1, filename: 'lightning_bolt.mp4')
+
+quest_20_video_2 = File.open('app/assets/adventr_seeder_images/quest_videos/bean_wizard.mp4')
+matt_quest_20.images.attach(io: quest_20_video_2, filename: 'bean_wizard.mp4')
+
+matt_quest_20_tags = [academy, anarchy, bronze_rank, chaotic, beasts, creatures, forests, lightning, magic, spellcasting, staffs, wizards]
+
+addTagsToQuest(matt_quest_20_tags, matt_quest_20)
+
 # Matt quest 21 - Audio
+
+
+matt_quest_21 = Quest.create(title: "", text: "", quest_type: "audio", user_id: matt.id)
+
+quest_21_audio = File.open('app/assets/adventr_seeder_images/quest_audio/-------')
+matt_quest_21.images.attach(io: quest_21_audio, filename: '-------')
+
+matt_quest_21_tags = []
+
+addTagsToQuest(matt_quest_21_tags, matt_quest_21)
+
 # Jess quests
 # Jess quest 22 - Text
 # Jess quest 23 - Image
