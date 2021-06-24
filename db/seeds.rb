@@ -463,22 +463,42 @@ addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
 
 matt_quest_15 = Quest.create(title: "Hello from Spellcaster Apprentices!", text: "Guilds are sprouting up every single day to help adventurers live happier, wealthier lives. Out with the old, in with the new. Innovation is all around us, and new teams are formed to help us maximize treasure haul and increase leveling speed.\n\nBut in a world where one wrong step can result in a lightningbolt to the face and literal dragons are breathing fire down our necks, there's too little accountability. Guilds incentivize adventurers to make false promises, pay town cries and bards to tell fake stories about them, all while not backing up their teams with support they can rely on. It's bulette shite.\n\nSpellcaster Apprentices was born to bring transparency to the our heroes' journeys - or the heroes themselves - specifically around spell matrices that help you maximize your power and potential rewards. We'll also help you weed through the BS quests, and highlight the ones worth the attention.", quest_type: "text", user_id: matt.id)
 
-matt_quest_15_tags = []
+matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromany, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards]
 
 addTagsToQuest(matt_quest_15_tags, matt_quest_15)
+
 # Matt quest 16 - Image
+matt_quest_16 = Quest.create(title: "Having trouble with a \"Loot Dispute\"?", text: "Divying up the spoils of a successful quest can be tough, especially when your party members have... conflicting personalities. There's no reason to take on all of that stress yourself, though! Our mediators have experience in coming to agreements that are beneficial for everyone, or making the tough decisions for the sake of party integrity. Schedule an appointment at one of our branch offices and have your Loot Dispute settled amicably - or at least bloodlessly - today!", quest_type: "image", user_id: matt.id)
 
-# matt_quest_16 = Quest.create(title: "", text: "", quest_type: "text", user_id: matt.id)
+quest_16_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_16/magic_item_tug_of_war.png')
+matt_quest_16.images.attach(io: quest_16_image_1, filename: 'magic_item_tug_of_war.png')
 
-# quest_16_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_16/---------')
-# matt_quest_16.images.attach(io: quest_16_image_1, filename: '---------')
+matt_quest_16_tags = [adamantine, arcane_focus, artifacts, axes, books, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, gold, spell_components, spellbooks, staffs, swords, tomes]
 
-# matt_quest_16_tags = []
-
-# addTagsToQuest(matt_quest_16_tags, matt_quest_16)
+addTagsToQuest(matt_quest_16_tags, matt_quest_16)
 
 # Matt quest 17 - Image
+
+matt_quest_17 = Quest.create(title: "", text: "", quest_type: "image", user_id: matt.id)
+
+quest_17_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_17/---------')
+matt_quest_17.images.attach(io: quest_17_image_1, filename: '---------')
+
+matt_quest_17_tags = []
+
+addTagsToQuest(matt_quest_17_tags, matt_quest_17)
+
 # Matt quest 18 - Image
+
+# matt_quest_18 = Quest.create(title: "", text: "", quest_type: "image", user_id: matt.id)
+
+# quest_18_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/---------')
+# matt_quest_18.images.attach(io: quest_18_image_1, filename: '---------')
+
+# matt_quest_18_tags = []
+
+# addTagsToQuest(matt_quest_18_tags, matt_quest_18)
+
 # Matt quest 19 - Quote
 # Matt quest 20 - Video
 # Matt quest 21 - Audio
