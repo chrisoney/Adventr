@@ -449,18 +449,34 @@ terriblis_quest_13_tags = [aristocrats, bards, dark_lord, evil, evil_overlords, 
 addTagsToQuest(terriblis_quest_13_tags, terriblis_quest_13)
 
 # Terriblis quest 14 - Audio
-terriblis_quest_14 = Quest.create(title: "", text: "", quest_type: "audio", user_id: terriblis.id)
+terriblis_quest_14 = Quest.create(title: "An excellent song by a rather odd bard.", text: "I have not had the pleasure of meeting this bard in person, mind you. I was sold this song crystal and thought it a scam due to the price. Only after slaughtering the merchant caravan in its entirety did I test the product and find its music most agreeable. I hope to \"recruit\" the bard himself one day.", quest_type: "audio", user_id: terriblis.id)
 
-quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/------')
-terriblis_quest_14.images.attach(io: quest_14_audio, filename: '------')
+quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/witch_drums.mp3')
+terriblis_quest_14.images.attach(io: quest_14_audio, filename: 'witch_drums.mp3')
 
-terriblis_quest_14_tags = []
+terriblis_quest_14_tags = [bards, caravans, magic_items, merchants, sorcery, wizards]
 
 addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
 
 # Matt quests
 # Matt quest 15 - Text
+
+matt_quest_15 = Quest.create(title: "Hello from Spellcaster Apprentices!", text: "Guilds are sprouting up every single day to help adventurers live happier, wealthier lives. Out with the old, in with the new. Innovation is all around us, and new teams are formed to help us maximize treasure haul and increase leveling speed.\n\nBut in a world where one wrong step can result in a lightningbolt to the face and literal dragons are breathing fire down our necks, there's too little accountability. Guilds incentivize adventurers to make false promises, pay town cries and bards to tell fake stories about them, all while not backing up their teams with support they can rely on. It's bulette shite.\n\nSpellcaster Apprentices was born to bring transparency to the our heroes' journeys - or the heroes themselves - specifically around spell matrices that help you maximize your power and potential rewards. We'll also help you weed through the BS quests, and highlight the ones worth the attention.", quest_type: "text", user_id: matt.id)
+
+matt_quest_15_tags = []
+
+addTagsToQuest(matt_quest_15_tags, matt_quest_15)
 # Matt quest 16 - Image
+
+# matt_quest_16 = Quest.create(title: "", text: "", quest_type: "text", user_id: matt.id)
+
+# quest_16_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_16/---------')
+# matt_quest_16.images.attach(io: quest_16_image_1, filename: '---------')
+
+# matt_quest_16_tags = []
+
+# addTagsToQuest(matt_quest_16_tags, matt_quest_16)
+
 # Matt quest 17 - Image
 # Matt quest 18 - Image
 # Matt quest 19 - Quote
