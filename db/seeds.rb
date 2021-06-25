@@ -564,19 +564,25 @@ addTagsToQuest(jess_quest_23_tags, jess_quest_23)
 
 # Jess quest 24 - Image
 
-jess_quest_24 = Quest.create(title: "", text: "", quest_type: "image", user_id: jess.id)
+jess_quest_24 = Quest.create(title: "Looking for an appraisal on a seemingly magical bow", text: "No known effects yet. Presumed to be free of curses as our idiot of a rogue seems fine after picking it up with his bare hands. Willing to negotiate prior to appraisal for costs of evaluation.", quest_type: "image", user_id: jess.id)
 
-quest_24_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_24/---------.jpg')
-jess_quest_24.images.attach(io: quest_24_image_1, filename: '---------.jpg')
+quest_24_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_24/unknown_bow.jpg')
+jess_quest_24.images.attach(io: quest_24_image_1, filename: 'unknown_bow.jpg')
 
-quest_24_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_24/-----.jpg')
-jess_quest_24.images.attach(io: quest_24_image_2, filename: '-----.jpg')
-
-jess_quest_24_tags = []
+jess_quest_24_tags = [artifacts, artificers, blacksmithing, bows, contracts, divination, enchantment, magic_items, rare, transmutation, wizards]
 
 addTagsToQuest(jess_quest_24_tags, jess_quest_24)
 
 # Jess quest 25 - Image
+
+jess_quest_25 = Quest.create(title: "", text: "", quest_type: "image", user_id: jess.id)
+
+quest_25_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_25/----------')
+jess_quest_25.images.attach(io: quest_25_image_1, filename: '----------')
+
+jess_quest_25_tags = []
+
+addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
 # Jess quest 26 - Quote
 
