@@ -530,24 +530,36 @@ addTagsToQuest(matt_quest_20_tags, matt_quest_20)
 
 # Matt quest 21 - Audio
 
+matt_quest_21 = Quest.create(title: "A breakout hit by a band of bards", text: "Spellcaster Apprentices is a firm supporter of the arts, especially those related to spellcasting!", quest_type: "audio", user_id: matt.id)
 
-matt_quest_21 = Quest.create(title: "", text: "", quest_type: "audio", user_id: matt.id)
+quest_21_audio = File.open('app/assets/adventr_seeder_images/quest_audio/do_you_believe_in_magic.mp3')
+matt_quest_21.images.attach(io: quest_21_audio, filename: 'do_you_believe_in_magic.mp3')
 
-quest_21_audio = File.open('app/assets/adventr_seeder_images/quest_audio/-------')
-matt_quest_21.images.attach(io: quest_21_audio, filename: '-------')
-
-matt_quest_21_tags = []
+matt_quest_21_tags = [abjuration, artificers, bards, blood_magic, clerics, conjuration, divination, druids, dynamos, enchantment, evocation, familiars, illusion, magic, necromancy, paladins, sorcerers, spellcasting, transmutation, wizards]
 
 addTagsToQuest(matt_quest_21_tags, matt_quest_21)
 
 # Jess quests
 # Jess quest 22 - Text
+
+jess_quest_22 = Quest.create(title: "Looking for a new member for our party.", text: "We're a group of mostly rogues, rangers, and druids, though we're open to most other classes. Our general choice in quest leans towards hunting for supplies for alchemists/smaller settlements, tracking down and potentially eliminating bandits, or maintenance of the natural balance of wild areas. You must have the following characterstics to apply:\nA love and respect of nature,\nA standard bronze ranking in the generalistic system\nExperience working with a team of any size above and including 3 three members\nA willingness to learn and share your own knowledge\n100+ years of senior developer experience\n\nWe look foward to hearing from all applicants!", quest_type: "text", user_id: jess.id)
+
+jess_quest_22_tags = [adventure, alchemy, bandits, beasts, creatures, bows, caravans, cave, commoners, dire_wolves, druids, dungeons, elves, earth, escort_quest, exploration, goblins, goblin_champions, good, hunt, lawful, magical_creatures, monster_extermination, monster_nest, neutral, mountains, pseudodragons, rangers, rescue_mission, rogues, spell_components, the_watch, undead, wilderness, wind]
+
+addTagsToQuest(jess_quest_22_tags, jess_quest_22)
+
 # Jess quest 23 - Image
+
 # Jess quest 24 - Image
+
 # Jess quest 25 - Image
+
 # Jess quest 26 - Quote
+
 # Jess quest 27 - Video
+
 # Jess quest 28 - Audio
+
 # Ingrid quests
 # Ingrid quest 29 - Text
 # Ingrid quest 30 - Image
