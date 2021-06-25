@@ -575,12 +575,12 @@ addTagsToQuest(jess_quest_24_tags, jess_quest_24)
 
 # Jess quest 25 - Image
 
-jess_quest_25 = Quest.create(title: "", text: "", quest_type: "image", user_id: jess.id)
+jess_quest_25 = Quest.create(title: "Mutated kuo-toa parts for sale", text: "Before anyone starts, it's not the sapient variety. Even if it was, these monsters were so mutated by some sick, unidentified strain of mana that they were damn near unrecognizable at first. The parts seem to be poison- and water-aligned to some extent like normal, but also carry a disturbing amount of acidic mana. That's the best layman guess, a good alchemist will tell you more. Also, I guess if anyone wants their daggers we'll sell them cheaply. Same alignments on the enchantments, low quality. Picture related: like that, but somewhat more inside-out.", quest_type: "image", user_id: jess.id)
 
-quest_25_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_25/----------')
-jess_quest_25.images.attach(io: quest_25_image_1, filename: '----------')
+quest_25_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_25/koa_toa.png')
+jess_quest_25.images.attach(io: quest_25_image_1, filename: 'koa_toa.png')
 
-jess_quest_25_tags = []
+jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchanment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components]
 
 addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
