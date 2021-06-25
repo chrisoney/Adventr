@@ -586,12 +586,43 @@ addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
 # Jess quest 26 - Quote
 
+jess_quest_26 = Quest.create(title: "Nature, for me is raw and dangerous and difficult and beautiful and unnerving.", text: "Hollowseeker Goldsworthy", quest_type: "quote", user_id: jess.id)
+
+jess_quest_26_tags = [adventure, beasts, cave, creatures, creller, dire_wolves, dragons, drakes, earth, ents, exploration, fey, food, hunt, magical_creatures, mountains, pseudodragons, satyr, slimes, trolls, wilderness, wurms, wind]
+
+addTagsToQuest(jess_quest_26_tags, jess_quest_26)
+
 # Jess quest 27 - Video
+
+jess_quest_27 = Quest.create(title: "The benefits of high DEX", text: "STR is important too, but I cannot express emphatically enough how easily a decent DEX could save your hide. This is just an example of the mobility a solid DEX stat can give you, even in rough terrain.", quest_type: "video", user_id: jess.id)
+
+quest_27_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/forest_parkour.mp4')
+jess_quest_27.images.attach(io: quest_27_video_1, filename: 'forest_parkour.mp4')
+
+jess_quest_27_tags = [adventure, assassins, bows, cave, daggers, druids, elves, exploration, forests, hunt, monks, mountains, rangers, rogues, wilderness, wind]
+
+addTagsToQuest(jess_quest_27_tags, jess_quest_27)
 
 # Jess quest 28 - Audio
 
+jess_quest_28 = Quest.create(title: "Our team's anthem", text: "", quest_type: "audio", user_id: jess.id)
+
+quest_28_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/born_to_be_wild.mp3')
+jess_quest_28.images.attach(io: quest_28_audio_1, filename: 'born_to_be_wild.mp3')
+
+jess_quest_28_tags = [adventure, barbarians, beasts, cave, dire_wolves, druids, earth, elves, ents, exploration, fey, food, forests, hunt, monster_nest, mountains, orcs, rangers, rogues, unseelie_court, wilderness, wind]
+
+addTagsToQuest(jess_quest_28_tags, jess_quest_28)
+
 # Ingrid quests
 # Ingrid quest 29 - Text
+
+ingrid_quest_29 = Quest.create(title: "", text: "", quest_type: "text", user_id: ingrid.id)
+
+ingrid_quest_29_tags = []
+
+addTagsToQuest(ingrid_quest_29_tags, ingrid_quest_29)
+
 # Ingrid quest 30 - Image
 # Ingrid quest 31 - Image
 # Ingrid quest 32 - Image
