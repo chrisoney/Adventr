@@ -493,7 +493,7 @@ addTagsToQuest(matt_quest_17_tags, matt_quest_17)
 
 # Matt quest 18 - Image
 
-matt_quest_18 = Quest.create(title: "Staffs or wands? Which do you want to wield in the heat of battle?", text: "After extensive research into the strengths and weaknesses of both, we give the edge to staffs. They're heavier and often less wieldy, but you can't argue with the resilience or power that they offer. Luckily, we have enchanters in our employ that can convert any wand lower than the Very Rare grade to a staff of even greater quality! Enquire at any of our offices for a price quote and estimated end result.", quest_type: "image", user_id: matt.id)
+matt_quest_18 = Quest.create(title: "Staffs or wands? Which do you want to wield in the heat of battle?", text: "After extensive research into the strengths and weaknesses of both, we give the edge to staffs. They're heavier and often less wieldy, but you can't argue with the resilience or power that they offer. Luckily, we have enchanters in our employ that can convert any wand lower than the Very Rare grade to a staff of even greater quality! Inquire at any of our offices for a price quote and estimated end result.", quest_type: "image", user_id: matt.id)
 
 quest_18_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/staffs.png')
 matt_quest_18.images.attach(io: quest_18_image_1, filename: 'staffs.png')
@@ -550,7 +550,31 @@ addTagsToQuest(jess_quest_22_tags, jess_quest_22)
 
 # Jess quest 23 - Image
 
+jess_quest_23 = Quest.create(title: "Goblin King sighting. Requesting collaboration.", text: "We have confirmed a sighting of the [Goblin King] near Restmos. Our group is not capable of besting it on our own, but can provide support to a group with frontliners. Inquire around Restmos or at the Adventurer's Guild branch in Atsu. Only accepting parties of Gold Rank or above", quest_type: "image", user_id: jess.id)
+
+quest_23_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_23/goblin_king.jpg')
+jess_quest_23.images.attach(io: quest_23_image_1, filename: 'goblin_king.jpg')
+
+quest_23_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_23/goblin_king_2.jpg')
+jess_quest_23.images.attach(io: quest_23_image_2, filename: 'goblin_king_2.jpg')
+
+jess_quest_23_tags = [creatures, diamond_rank, evil, goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, guilds, hunt, monster_extermination, obsidian_rank, platinum_rank, warriors, barbarians, monks, paladins, fighters]
+
+addTagsToQuest(jess_quest_23_tags, jess_quest_23)
+
 # Jess quest 24 - Image
+
+jess_quest_24 = Quest.create(title: "", text: "", quest_type: "image", user_id: jess.id)
+
+quest_24_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_24/---------.jpg')
+jess_quest_24.images.attach(io: quest_24_image_1, filename: '---------.jpg')
+
+quest_24_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_24/-----.jpg')
+jess_quest_24.images.attach(io: quest_24_image_2, filename: '-----.jpg')
+
+jess_quest_24_tags = []
+
+addTagsToQuest(jess_quest_24_tags, jess_quest_24)
 
 # Jess quest 25 - Image
 
