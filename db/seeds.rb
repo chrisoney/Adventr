@@ -617,9 +617,9 @@ addTagsToQuest(jess_quest_28_tags, jess_quest_28)
 # Ingrid quests
 # Ingrid quest 29 - Text
 
-ingrid_quest_29 = Quest.create(title: "", text: "", quest_type: "text", user_id: ingrid.id)
+ingrid_quest_29 = Quest.create(title: "Looking for talented craftswomen and craftsmen to build equipment based around the scales of an adult white dragon.", text: "Payment can be negotiated, but will based around normal currency and materials remaining after the jobs are done. Please only inquire if you are skilled enough to have worked with materials from platinum ranks threats or above.", quest_type: "text", user_id: ingrid.id)
 
-ingrid_quest_29_tags = []
+ingrid_quest_29_tags = [artificers, beasts, blacksmithing, caravans, creatures, diamond_rank, dragons, hunt, ice, magical_creatures, wurms]
 
 addTagsToQuest(ingrid_quest_29_tags, ingrid_quest_29)
 
