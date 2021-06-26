@@ -624,24 +624,114 @@ ingrid_quest_29_tags = [artificers, beasts, blacksmithing, caravans, creatures, 
 addTagsToQuest(ingrid_quest_29_tags, ingrid_quest_29)
 
 # Ingrid quest 30 - Image
+
+ingrid_quest_30 = Quest.create(title: "", text: "", quest_type: "image", user_id: ingrid.id)
+
+quest_30_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_30/------------')
+ingrid_quest_30.images.attach(io: quest_30_image_1, filename: '------------')
+
+ingrid_quest_30_tags = []
+
+addTagsToQuest(ingrid_quest_30_tags, ingrid_quest_30)
+
 # Ingrid quest 31 - Image
+
+# ingrid_quest_31 = Quest.create(title: "", text: "", quest_type: "image", user_id: ingrid.id)
+
+# quest_31_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_31/------------')
+# ingrid_quest_31.images.attach(io: quest_31_image_1, filename: '------------')
+
+# ingrid_quest_31_tags = []
+
+# addTagsToQuest(ingrid_quest_31_tags, ingrid_quest_31)
+
 # Ingrid quest 32 - Image
+
+# ingrid_quest_32 = Quest.create(title: "", text: "", quest_type: "image", user_id: ingrid.id)
+
+# quest_32_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_32/------------')
+# ingrid_quest_32.images.attach(io: quest_32_image_1, filename: '------------')
+
+# ingrid_quest_32_tags = []
+
+# addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
+
 # Ingrid quest 33 - Quote
 # Ingrid quest 34 - Video
 # Ingrid quest 35 - Audio
 # Kmsvr quests
 # Kmsvr quest 36 - Text
 # Kmsvr quest 37 - Image
+
+# kmsvr_quest_37 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
+
+# quest_37_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_37/------------')
+# kmsvr_quest_37.images.attach(io: quest_37_image_1, filename: '------------')
+
+# kmsvr_quest_37_tags = []
+
+# addTagsToQuest(kmsvr_quest_37_tags, kmsvr_quest_37)
+
 # Kmsvr quest 38 - Image
+
+# kmsvr_quest_38 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
+
+# quest_38_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_38/------------')
+# kmsvr_quest_38.images.attach(io: quest_38_image_1, filename: '------------')
+
+# kmsvr_quest_38_tags = []
+
+# addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
+
 # Kmsvr quest 39 - Image
+
+# kmsvr_quest_39 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
+
+# quest_39_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_39/------------')
+# kmsvr_quest_39.images.attach(io: quest_39_image_1, filename: '------------')
+
+# kmsvr_quest_39_tags = []
+
+# addTagsToQuest(kmsvr_quest_39_tags, kmsvr_quest_39)
+
 # Kmsvr quest 40 - Quote
 # Kmsvr quest 41 - Video
 # Kmsvr quest 42 - Audio
 # Goblin Slayer quests
 # Goblin Slayer quest 43 - Text
 # Goblin Slayer quest 44 - Image
+
+# goblin_slayer_quest_44 = Quest.create(title: "", text: "", quest_type: "image", user_id: goblin_slayer.id)
+
+# quest_44_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_44/------------')
+# goblin_slayer_quest_44.images.attach(io: quest_44_image_1, filename: '------------')
+
+# goblin_slayer_quest_44_tags = []
+
+# addTagsToQuest(goblin_slayer_quest_44_tags, goblin_slayer_quest_44)
+
 # Goblin Slayer quest 45 - Image
+
+# goblin_slayer_quest_45 = Quest.create(title: "", text: "", quest_type: "image", user_id: goblin_slayer.id)
+
+# quest_45_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_45/------------')
+# goblin_slayer_quest_45.images.attach(io: quest_45_image_1, filename: '------------')
+
+# goblin_slayer_quest_45_tags = []
+
+# addTagsToQuest(goblin_slayer_quest_45_tags, goblin_slayer_quest_45)
+
 # Goblin Slayer quest 46 - Image
+
+# goblin_slayer_quest_46 = Quest.create(title: "", text: "", quest_type: "image", user_id: goblin_slayer.id)
+
+# quest_46_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_46/------------')
+# goblin_slayer_quest_46.images.attach(io: quest_46_image_1, filename: '------------')
+
+# goblin_slayer_quest_46_tags = []
+
+# addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
+
 # Goblin Slayer quest 47 - Quote
 # Goblin Slayer quest 48 - Video
 # Goblin Slayer quest 49 - Audio
