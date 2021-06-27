@@ -639,14 +639,14 @@ addTagsToQuest(ingrid_quest_30_tags, ingrid_quest_30)
 
 # Ingrid quest 31 - Image
 
-# ingrid_quest_31 = Quest.create(title: "", text: "", quest_type: "image", user_id: ingrid.id)
+ingrid_quest_31 = Quest.create(title: "Request mage support with the exploration of a potentially new dungeon in the Brennan range.", text: "Exact details will be discussed during negotiations. We hold claim over first delve for over 3 weeks due to guild law. We seek those with powerful fire magic.", quest_type: "image", user_id: ingrid.id)
 
-# quest_31_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_31/------------')
-# ingrid_quest_31.images.attach(io: quest_31_image_1, filename: '------------')
+quest_31_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_31/dungeon_entrance.jpg')
+ingrid_quest_31.images.attach(io: quest_31_image_1, filename: 'dungeon_entrance.jpg')
 
-# ingrid_quest_31_tags = []
+ingrid_quest_31_tags = []
 
-# addTagsToQuest(ingrid_quest_31_tags, ingrid_quest_31)
+addTagsToQuest(ingrid_quest_31_tags, ingrid_quest_31)
 
 # Ingrid quest 32 - Image
 
