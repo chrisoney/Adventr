@@ -625,12 +625,15 @@ addTagsToQuest(ingrid_quest_29_tags, ingrid_quest_29)
 
 # Ingrid quest 30 - Image
 
-ingrid_quest_30 = Quest.create(title: "", text: "", quest_type: "image", user_id: ingrid.id)
+ingrid_quest_30 = Quest.create(title: "Looking for information on local dire wolf populations", text: "Half payment up front, the other half after your intel is confirmed. Looking for any and all information, especially locations and warnings about any aberrant behavior.", quest_type: "image", user_id: ingrid.id)
 
-quest_30_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_30/------------')
-ingrid_quest_30.images.attach(io: quest_30_image_1, filename: '------------')
+quest_30_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_30/dire_wolves_1.jpeg')
+ingrid_quest_30.images.attach(io: quest_30_image_1, filename: 'dire_wolves_1.jpeg')
 
-ingrid_quest_30_tags = []
+quest_30_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_30/dire_wolves_2.jpg')
+ingrid_quest_30.images.attach(io: quest_30_image_2, filename: 'dire_wolves_2.jpg')
+
+ingrid_quest_30_tags = [beasts, cave, creatures, dire_wolves, food, ice, magical_creatures, monster_extermination, monster_nest, mountains, rangers, druids, silver_rank, wilderness]
 
 addTagsToQuest(ingrid_quest_30_tags, ingrid_quest_30)
 
