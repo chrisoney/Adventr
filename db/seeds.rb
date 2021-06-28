@@ -644,7 +644,7 @@ ingrid_quest_31 = Quest.create(title: "Request mage support with the exploration
 quest_31_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_31/dungeon_entrance.jpg')
 ingrid_quest_31.images.attach(io: quest_31_image_1, filename: 'dungeon_entrance.jpg')
 
-ingrid_quest_31_tags = []
+ingrid_quest_31_tags = [adventure, bards, clerics, druids, dungeons, dynamos, escort_quest, exploration, fire, fireball, ice, magic, mountains, paladins, protection, sorcerers, sorcery, spellcasting, warlocks, wilderness, wizards]
 
 addTagsToQuest(ingrid_quest_31_tags, ingrid_quest_31)
 
