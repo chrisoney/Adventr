@@ -55,7 +55,7 @@ conjuration = Tag.create(tag_name: 'conjuration')
 contracts = Tag.create(tag_name: 'contracts')
 copper = Tag.create(tag_name: 'copper')
 creatures = Tag.create(tag_name: 'creatures')
-creller = Tag.create(tag_name: 'creller')
+creler = Tag.create(tag_name: 'creler')
 cultists = Tag.create(tag_name: 'cultists')
 daggers = Tag.create(tag_name: 'daggers')
 dark_lord = Tag.create(tag_name: 'darklord')
@@ -278,7 +278,7 @@ for tag in ingrid_tags
   ingrid.tags << tag
 end
 
-kmsvr_tags = [gold_rank, magic_items, creller, ice, magic, warriors, rangers, sorcerers, wizards, necromancy, silver, bandits, dungeons]
+kmsvr_tags = [gold_rank, magic_items, creler, ice, magic, warriors, rangers, sorcerers, wizards, necromancy, silver, bandits, dungeons]
 for tag in kmsvr_tags
   kmsvr.tags << tag
 end
@@ -588,7 +588,7 @@ addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
 jess_quest_26 = Quest.create(title: "Nature, for me is raw and dangerous and difficult and beautiful and unnerving.", text: "Hollowseeker Goldsworthy", quest_type: "quote", user_id: jess.id)
 
-jess_quest_26_tags = [adventure, beasts, cave, creatures, creller, dire_wolves, dragons, drakes, earth, ents, exploration, fey, food, hunt, magical_creatures, mountains, pseudodragons, satyr, slimes, trolls, wilderness, wurms, wind].shuffle
+jess_quest_26_tags = [adventure, beasts, cave, creatures, creler, dire_wolves, dragons, drakes, earth, ents, exploration, fey, food, hunt, magical_creatures, mountains, pseudodragons, satyr, slimes, trolls, wilderness, wurms, wind].shuffle
 
 addTagsToQuest(jess_quest_26_tags, jess_quest_26)
 
@@ -697,7 +697,7 @@ addTagsToQuest(ingrid_quest_35_tags, ingrid_quest_35)
 
 kmsvr_quest_36 = Quest.create(title: "Have you read The Wandering Inn?", text: "It is a very long story, but it's a good story. It also has several wonderful characters like me (Kmsvr). Please go give it a chance, it is one of my (Kmsvr's) favorites.", quest_type: "text", user_id: kmsvr.id)
 
-kmsvr_quest_36_tags = [academy, adventure, ai, alchemists, ancients, aristocrats, artifacts, assassins, blacksmithing, chaotic, commoners, creller, demons, djinn, dragons, dungeons, escort_quest, exploration, fey, goblins, good, humans, legendary, magical_creatures, necromancy, political_intrigue, rescue_mission, the_watch]
+kmsvr_quest_36_tags = [academy, adventure, ai, alchemists, ancients, aristocrats, artifacts, assassins, blacksmithing, chaotic, commoners, creler, demons, djinn, dragons, dungeons, escort_quest, exploration, fey, goblins, good, humans, legendary, magical_creatures, necromancy, political_intrigue, rescue_mission, the_watch].shuffle
 
 addTagsToQuest(kmsvr_quest_36_tags, kmsvr_quest_36)
 
@@ -708,18 +708,21 @@ kmsvr_quest_37 = Quest.create(title: "Here is a picture of our team.", text: "So
 quest_37_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_37/horns_of_hammerad_by_mg.jpg')
 kmsvr_quest_37.images.attach(io: quest_37_image_1, filename: 'horns_of_hammerad_by_mg.jpg')
 
-kmsvr_quest_37_tags = [academy, adventure, artifacts, commoners, contracts, creller, dungeons, elves, fighters, gold_rank, good, guilds, humans, ice, lawful, magic_items, monster_extermination, necromancy, nobles, sorcerers, swords, undead]
+kmsvr_quest_37_tags = [academy, adventure, artifacts, commoners, contracts, creler, dungeons, elves, fighters, gold_rank, good, guilds, humans, ice, lawful, magic_items, monster_extermination, necromancy, nobles, sorcerers, swords, undead].shuffle
 
 addTagsToQuest(kmsvr_quest_37_tags, kmsvr_quest_37)
 
 # Kmsvr quest 38 - Image
 
-kmsvr_quest_38 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
+kmsvr_quest_38 = Quest.create(title: "There are crelers and we need more teams to kill them.", text: "There are just the baby crelers. We have defeated an adult before with assistance. Dominance asserted. We request assistance wiping these babies out.", quest_type: "image", user_id: kmsvr.id)
 
-quest_38_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_38/------------')
-kmsvr_quest_38.images.attach(io: quest_38_image_1, filename: '------------')
+quest_38_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_38/creler_1.jpeg')
+kmsvr_quest_38.images.attach(io: quest_38_image_1, filename: 'creler_1.jpeg')
 
-kmsvr_quest_38_tags = []
+quest_38_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_38/creler_2.png')
+kmsvr_quest_38.images.attach(io: quest_38_image_1, filename: 'creler_2.png')
+
+kmsvr_quest_38_tags = [acid, contracts, creatures, creler, evil, gold_rank, magical_creatures, monster_extermination, monster_nest, silver_rank, the_watch].shuffle
 
 addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
 
@@ -727,8 +730,8 @@ addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
 
 # kmsvr_quest_39 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
 
-# quest_39_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_39/------------')
-# kmsvr_quest_39.images.attach(io: quest_39_image_1, filename: '------------')
+# quest_39_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_39/lich.png')
+# kmsvr_quest_39.images.attach(io: quest_39_image_1, filename: 'lich.png')
 
 # kmsvr_quest_39_tags = []
 
@@ -738,12 +741,32 @@ addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
 
 kmsvr_quest_40 = Quest.create(title: "Is it war?", text: "Me (Kmsvr)", quest_type: "quote", user_id: kmsvr.id)
 
-kmsvr_quest_40_tags = [army, chaotic, fighters, gold_rank, hero_tag, hunt, kingdom, the_watch]
+kmsvr_quest_40_tags = [army, chaotic, fighters, gold_rank, hero_tag, hunt, kingdom, the_watch].shuffle
 
 addTagsToQuest(kmsvr_quest_40_tags, kmsvr_quest_40)
 
 # Kmsvr quest 41 - Video
+
+kmsvr_quest_41 = Quest.create(title: "", text: "", quest_type: "video", user_id: kmsvr.id)
+
+quest_41_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/------------')
+kmsvr_quest_41.images.attach(io: quest_41_video_1, filename: '------------')
+
+kmsvr_quest_41_tags = [].shuffle
+
+addTagsToQuest(kmsvr_quest_41_tags, kmsvr_quest_41)
+
 # Kmsvr quest 42 - Audio
+
+kmsvr_quest_42 = Quest.create(title: "", text: "", quest_type: "audio", user_id: kmsvr.id)
+
+quest_42_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/------------')
+kmsvr_quest_42.images.attach(io: quest_42_audio_1, filename: '------------')
+
+kmsvr_quest_42_tags = [].shuffle
+
+addTagsToQuest(kmsvr_quest_42_tags, kmsvr_quest_42)
+
 # Goblin Slayer quests
 # Goblin Slayer quest 43 - Text
 # Goblin Slayer quest 44 - Image
