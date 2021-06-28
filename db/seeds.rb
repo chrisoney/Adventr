@@ -747,12 +747,12 @@ addTagsToQuest(kmsvr_quest_40_tags, kmsvr_quest_40)
 
 # Kmsvr quest 41 - Video
 
-kmsvr_quest_41 = Quest.create(title: "", text: "", quest_type: "video", user_id: kmsvr.id)
+kmsvr_quest_41 = Quest.create(title: "Fan-made video about our lives", text: "We're not mentioned, but that's only because we're very important characters that come later on.", quest_type: "video", user_id: kmsvr.id)
 
-quest_41_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/------------')
-kmsvr_quest_41.images.attach(io: quest_41_video_1, filename: '------------')
+quest_41_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/wandering_inn_fan_video.mp4')
+kmsvr_quest_41.images.attach(io: quest_41_video_1, filename: 'wandering_inn_fan_video.mp4')
 
-kmsvr_quest_41_tags = [].shuffle
+kmsvr_quest_41_tags = [adventure, creatures, creler, cultists, demon_army, dragons, dungeons, evocation, exploration, explosives, goblins, goblin_champions, goblin_lords, goblin_king, gods, goddesses].shuffle
 
 addTagsToQuest(kmsvr_quest_41_tags, kmsvr_quest_41)
 
@@ -760,8 +760,8 @@ addTagsToQuest(kmsvr_quest_41_tags, kmsvr_quest_41)
 
 kmsvr_quest_42 = Quest.create(title: "", text: "", quest_type: "audio", user_id: kmsvr.id)
 
-quest_42_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/------------')
-kmsvr_quest_42.images.attach(io: quest_42_audio_1, filename: '------------')
+quest_42_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/we_will_rock_you.mp3')
+kmsvr_quest_42.images.attach(io: quest_42_audio_1, filename: 'we_will_rock_you.mp3')
 
 kmsvr_quest_42_tags = [].shuffle
 
