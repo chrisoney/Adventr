@@ -321,7 +321,7 @@ end
 # Hero quest 1 - Text
 hero_quest_1 = Quest.create(title: "So I've got this [Hero] class...", text: "I'm not sure what I'm supposed to be doing. I level really quickly but since my Guild apparently doesn't make exceptions, I'm stuck killing rats in sewers like the other Porcelains. Does anybody know of any loopholes to rise through the ranks quickly? I'm worried that I'll be fetching mushrooms from Kantai forest when the Demon Lord razes the capital.", quest_type: 'text', user_id: hero.id)
 
-hero_quest_1_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot]
+hero_quest_1_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot].shuffle
 
 addTagsToQuest(hero_quest_1_tags, hero_quest_1)
 
@@ -333,7 +333,7 @@ hero_quest_2.images.attach(io: quest_2_image_1, filename: 'mysterious_letter_1.p
 quest_2_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_2/mysterious_letter_2.png')
 hero_quest_2.images.attach(io: quest_2_image_2, filename: 'mysterious_letter_2.png')
 
-hero_quest_2_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, contracts, mystery]
+hero_quest_2_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, contracts, mystery].shuffle
 
 addTagsToQuest(hero_quest_2_tags, hero_quest_2)
 
@@ -343,7 +343,7 @@ hero_quest_3 = Quest.create(title: "Found this grimoire. Anyone know how to dest
 quest_3_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_3/necronomicon.jpeg')
 hero_quest_3.images.attach(io: quest_3_image_1, filename: 'necronomicon.jpeg')
 
-hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood_magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes]
+hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood_magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes].shuffle
 
 addTagsToQuest(hero_quest_3_tags, hero_quest_3)
 
@@ -356,14 +356,14 @@ hero_quest_4.images.attach(io: quest_4_image_1, filename: 'pauldron_1.jpg')
 quest_4_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_4/pauldron_2.jpg')
 hero_quest_4.images.attach(io: quest_4_image_2, filename: 'pauldron_2.jpg')
 
-hero_quest_4_tags = [adamantine, artificers, blacksmithing, dwarves, gold, magic_items, merchants, mythic, mythril, platinum, power, protection]
+hero_quest_4_tags = [adamantine, artificers, blacksmithing, dwarves, gold, magic_items, merchants, mythic, mythril, platinum, power, protection].shuffle
 
 addTagsToQuest(hero_quest_4_tags, hero_quest_4)
 
 # Hero quest 5 - Quote
 hero_quest_5 = Quest.create(title: "It's really exciting to get to be the main character of something.", text: "Noah Schnapp", quest_type: "quote", user_id: hero.id)
 
-hero_quest_5_tags = [hero_tag, adventure, chaotic, good, guilds, legendary, paladins, plot]
+hero_quest_5_tags = [hero_tag, adventure, chaotic, good, guilds, legendary, paladins, plot].shuffle
 
 addTagsToQuest(hero_quest_5_tags, hero_quest_5)
 
@@ -373,7 +373,7 @@ hero_quest_6 = Quest.create(title: "Sometimes it really feels like this.", text:
 quest_6_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/everything_goes_wrong.mp4')
 hero_quest_6.images.attach(io: quest_6_video_1, filename: 'everything_goes_wrong.mp4')
 
-hero_quest_6_tags = [hero_tag, bandits, beasts, cave, commoners, contracts, divination, escort_quest, exploration, fetch, forests, humans, hunt, chaotic, magical_creatures, murder, mystery, neutral, outsider, plot, rescue_mission, the_watch, trolls, warriors, wilderness]
+hero_quest_6_tags = [hero_tag, bandits, beasts, cave, commoners, contracts, divination, escort_quest, exploration, fetch, forests, humans, hunt, chaotic, magical_creatures, murder, mystery, neutral, outsider, plot, rescue_mission, the_watch, trolls, warriors, wilderness].shuffle
 
 addTagsToQuest(hero_quest_6_tags, hero_quest_6)
 
@@ -383,7 +383,7 @@ hero_quest_7 = Quest.create(title: "Does anyone else hear this?", text: "Wheneve
 quest_7_audio = File.open('app/assets/adventr_seeder_images/quest_audio/final_fantasy_battle.mp3')
 hero_quest_7.images.attach(io: quest_7_audio, filename: 'final_fantasy_battle.mp3')
 
-hero_quest_7_tags = [bards, magic, monster_extermination, enchantment, fey]
+hero_quest_7_tags = [bards, magic, monster_extermination, enchantment, fey].shuffle
 
 addTagsToQuest(hero_quest_7_tags, hero_quest_7)
 
@@ -391,7 +391,7 @@ addTagsToQuest(hero_quest_7_tags, hero_quest_7)
 # Terriblis quest 1 - Text
 terriblis_quest_8 = Quest.create(title: "Please stop killing my skeletons.", text: "I know they're easy experience. I know the sound of their bones jumbling around is annoying. But please stop killing them. \n You would not believe how long it takes to raise 10 skeletons. Don't even get me started on the material cost, since I go through legal channels. \n \n And to the person that seems to target my [Awakened Skeleton Knight] exclusively, there will be no mercy for you. You have sunk entire fortunes with your murder hobo antics. I know for a fact it never initiated a fight, because I only taught it to love. Your days are numbered.", quest_type: "text", user_id: terriblis.id)
 
-terriblis_quest_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlords, fallen_kingdom, lawful, lich, murder, necromancy, paladins, scholars, spell_components, spellcasting, undead, warlocks]
+terriblis_quest_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlords, fallen_kingdom, lawful, lich, murder, necromancy, paladins, scholars, spell_components, spellcasting, undead, warlocks].shuffle
 
 addTagsToQuest(terriblis_quest_8_tags, terriblis_quest_8)
 
@@ -401,7 +401,7 @@ terriblis_quest_9 = Quest.create(title: "Looking for spellcasters to test my new
 quest_9_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_9/meat_dragon.png')
 terriblis_quest_9.images.attach(io: quest_9_image_1, filename: 'meat_dragon.png')
 
-terriblis_quest_9_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuration, dragons, familiars, fire, ice, lightning, magical_creatures, necromancy, sorcerers, sorcery, transmutation, undead, warlocks, wizards, wurms]
+terriblis_quest_9_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuration, dragons, familiars, fire, ice, lightning, magical_creatures, necromancy, sorcerers, sorcery, transmutation, undead, warlocks, wizards, wurms].shuffle
 
 addTagsToQuest(terriblis_quest_9_tags, terriblis_quest_9)
 
@@ -416,7 +416,7 @@ terriblis_quest_10.images.attach(io: quest_10_image_2, filename: 'shoggoth_2.jpg
 quest_10_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_10/shoggoth_3.png')
 terriblis_quest_10.images.attach(io: quest_10_image_3, filename: 'shoggoth_3.png')
 
-terriblis_quest_10_tags = [ancients, beasts, chaotic, creatures, evil, magical_creatures, monster_extermination, monster_nest, outer_planes]
+terriblis_quest_10_tags = [ancients, beasts, chaotic, creatures, evil, magical_creatures, monster_extermination, monster_nest, outer_planes].shuffle
 
 addTagsToQuest(terriblis_quest_10_tags, terriblis_quest_10)
 
@@ -427,14 +427,14 @@ terriblis_quest_11 = Quest.create(title: "Looking to hire an assassin. Must be P
 quest_11_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_11/assassination_target.jpg')
 terriblis_quest_11.images.attach(io: quest_11_image_1, filename: 'assassination_target.jpg')
 
-terriblis_quest_11_tags = [assassins, bandits, blood_oath, contracts, hero_tag, murder, political_intrigue, rogues, spies]
+terriblis_quest_11_tags = [assassins, bandits, blood_oath, contracts, hero_tag, murder, political_intrigue, rogues, spies].shuffle
 
 addTagsToQuest(terriblis_quest_11_tags, terriblis_quest_11)
 
 # Terriblis quest 12 - Quote
 terriblis_quest_12 = Quest.create(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
 
-terriblis_quest_12_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies]
+terriblis_quest_12_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies].shuffle
 
 addTagsToQuest(terriblis_quest_12_tags, terriblis_quest_12)
 
@@ -444,7 +444,7 @@ terriblis_quest_13 = Quest.create(title: "There may be similarities...", text: "
 quest_13_video = File.open('app/assets/adventr_seeder_images/quest_videos/prozd_villain.mp4')
 terriblis_quest_11.images.attach(io: quest_13_video, filename: 'prozd_villain.mp4')
 
-terriblis_quest_13_tags = [aristocrats, bards, dark_lord, evil, evil_overlords, hero_tag, mystery, nobles, plot]
+terriblis_quest_13_tags = [aristocrats, bards, dark_lord, evil, evil_overlords, hero_tag, mystery, nobles, plot].shuffle
 
 addTagsToQuest(terriblis_quest_13_tags, terriblis_quest_13)
 
@@ -454,7 +454,7 @@ terriblis_quest_14 = Quest.create(title: "An excellent song by a rather odd bard
 quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/witch_drums.mp3')
 terriblis_quest_14.images.attach(io: quest_14_audio, filename: 'witch_drums.mp3')
 
-terriblis_quest_14_tags = [bards, caravans, magic_items, merchants, sorcery, wizards]
+terriblis_quest_14_tags = [bards, caravans, magic_items, merchants, sorcery, wizards].shuffle
 
 addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
 
@@ -463,7 +463,7 @@ addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
 
 matt_quest_15 = Quest.create(title: "Hello from Spellcaster Apprentices!", text: "Guilds are sprouting up every single day to help adventurers live happier, wealthier lives. Out with the old, in with the new. Innovation is all around us, and new teams are formed to help us maximize treasure haul and increase leveling speed.\n\nBut in a world where one wrong step can result in a lightningbolt to the face and literal dragons are breathing fire down our necks, there's too little accountability. Guilds incentivize adventurers to make false promises, pay town cries and bards to tell fake stories about them, all while not backing up their teams with support they can rely on. It's bulette shite.\n\nSpellcaster Apprentices was born to bring transparency to the our heroes' journeys - or the heroes themselves - specifically around spell matrices that help you maximize your power and potential rewards. We'll also help you weed through the BS quests, and highlight the ones worth the attention.", quest_type: "text", user_id: matt.id)
 
-matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromany, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards]
+matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromany, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards].shuffle
 
 addTagsToQuest(matt_quest_15_tags, matt_quest_15)
 
@@ -473,7 +473,7 @@ matt_quest_16 = Quest.create(title: "Having trouble with a \"Loot Dispute\"?", t
 quest_16_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_16/magic_item_tug_of_war.png')
 matt_quest_16.images.attach(io: quest_16_image_1, filename: 'magic_item_tug_of_war.png')
 
-matt_quest_16_tags = [adamantine, arcane_focus, artifacts, axes, books, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, gold, spell_components, spellbooks, staffs, swords, tomes]
+matt_quest_16_tags = [adamantine, arcane_focus, artifacts, axes, books, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, gold, spell_components, spellbooks, staffs, swords, tomes].shuffle
 
 addTagsToQuest(matt_quest_16_tags, matt_quest_16)
 
@@ -487,7 +487,7 @@ matt_quest_17.images.attach(io: quest_17_image_1, filename: 'potion.png')
 quest_17_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_17/berserker.png')
 matt_quest_17.images.attach(io: quest_17_image_2, filename: 'berserker.png')
 
-matt_quest_17_tags = [alchemists, alchemy, army, barbarians, blood_magic, chaotic, explosives, fighters, lawful, magic, merchants, power, transmutation, warriors]
+matt_quest_17_tags = [alchemists, alchemy, army, barbarians, blood_magic, chaotic, explosives, fighters, lawful, magic, merchants, power, transmutation, warriors].shuffle
 
 addTagsToQuest(matt_quest_17_tags, matt_quest_17)
 
@@ -501,7 +501,7 @@ matt_quest_18.images.attach(io: quest_18_image_1, filename: 'staffs.png')
 quest_18_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/wands.png')
 matt_quest_18.images.attach(io: quest_18_image_2, filename: 'wands.png')
 
-matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlock, wizards, druids]
+matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlock, wizards, druids].shuffle
 
 addTagsToQuest(matt_quest_18_tags, matt_quest_18)
 
@@ -509,7 +509,7 @@ addTagsToQuest(matt_quest_18_tags, matt_quest_18)
 
 matt_quest_19 = Quest.create(title: "You have power over your mind - not outside events. Unless someone has mind magic; then you have power over nothing.", text: "Marcus the Aeromancer", quest_type: "quote", user_id: matt.id)
 
-matt_quest_19_tags = [academy, books, divination, magic, magic_items, magical_creatures, merchants, nobles, power, protection, sorcery, spellcasting, unseelie_court, fey, vampires]
+matt_quest_19_tags = [academy, books, divination, magic, magic_items, magical_creatures, merchants, nobles, power, protection, sorcery, spellcasting, unseelie_court, fey, vampires].shuffle
 
 addTagsToQuest(matt_quest_19_tags, matt_quest_19)
 
@@ -524,7 +524,7 @@ matt_quest_20.images.attach(io: quest_20_video_1, filename: 'lightning_bolt.mp4'
 quest_20_video_2 = File.open('app/assets/adventr_seeder_images/quest_videos/bean_wizard.mp4')
 matt_quest_20.images.attach(io: quest_20_video_2, filename: 'bean_wizard.mp4')
 
-matt_quest_20_tags = [academy, anarchy, bronze_rank, chaotic, beasts, creatures, forests, lightning, magic, spellcasting, staffs, wizards]
+matt_quest_20_tags = [academy, anarchy, bronze_rank, chaotic, beasts, creatures, forests, lightning, magic, spellcasting, staffs, wizards].shuffle
 
 addTagsToQuest(matt_quest_20_tags, matt_quest_20)
 
@@ -535,7 +535,7 @@ matt_quest_21 = Quest.create(title: "A breakout hit by a band of bards", text: "
 quest_21_audio = File.open('app/assets/adventr_seeder_images/quest_audio/do_you_believe_in_magic.mp3')
 matt_quest_21.images.attach(io: quest_21_audio, filename: 'do_you_believe_in_magic.mp3')
 
-matt_quest_21_tags = [abjuration, artificers, bards, blood_magic, clerics, conjuration, divination, druids, dynamos, enchantment, evocation, familiars, illusion, magic, necromancy, paladins, sorcerers, spellcasting, transmutation, wizards]
+matt_quest_21_tags = [abjuration, artificers, bards, blood_magic, clerics, conjuration, divination, druids, dynamos, enchantment, evocation, familiars, illusion, magic, necromancy, paladins, sorcerers, spellcasting, transmutation, wizards].shuffle
 
 addTagsToQuest(matt_quest_21_tags, matt_quest_21)
 
@@ -544,7 +544,7 @@ addTagsToQuest(matt_quest_21_tags, matt_quest_21)
 
 jess_quest_22 = Quest.create(title: "Looking for a new member for our party.", text: "We're a group of mostly rogues, rangers, and druids, though we're open to most other classes. Our general choice in quest leans towards hunting for supplies for alchemists/smaller settlements, tracking down and potentially eliminating bandits, or maintenance of the natural balance of wild areas. You must have the following characterstics to apply:\nA love and respect of nature,\nA standard bronze ranking in the generalistic system\nExperience working with a team of any size above and including 3 three members\nA willingness to learn and share your own knowledge\n100+ years of senior developer experience\n\nWe look foward to hearing from all applicants!", quest_type: "text", user_id: jess.id)
 
-jess_quest_22_tags = [adventure, alchemy, bandits, beasts, creatures, bows, caravans, cave, commoners, dire_wolves, druids, dungeons, elves, earth, escort_quest, exploration, goblins, goblin_champions, good, hunt, lawful, magical_creatures, monster_extermination, monster_nest, neutral, mountains, pseudodragons, rangers, rescue_mission, rogues, spell_components, the_watch, undead, wilderness, wind]
+jess_quest_22_tags = [adventure, alchemy, bandits, beasts, creatures, bows, caravans, cave, commoners, dire_wolves, druids, dungeons, elves, earth, escort_quest, exploration, goblins, goblin_champions, good, hunt, lawful, magical_creatures, monster_extermination, monster_nest, neutral, mountains, pseudodragons, rangers, rescue_mission, rogues, spell_components, the_watch, undead, wilderness, wind].shuffle
 
 addTagsToQuest(jess_quest_22_tags, jess_quest_22)
 
@@ -558,7 +558,7 @@ jess_quest_23.images.attach(io: quest_23_image_1, filename: 'goblin_king.jpg')
 quest_23_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_23/goblin_king_2.jpg')
 jess_quest_23.images.attach(io: quest_23_image_2, filename: 'goblin_king_2.jpg')
 
-jess_quest_23_tags = [creatures, diamond_rank, evil, goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, guilds, hunt, monster_extermination, obsidian_rank, platinum_rank, warriors, barbarians, monks, paladins, fighters]
+jess_quest_23_tags = [creatures, diamond_rank, evil, goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, guilds, hunt, monster_extermination, obsidian_rank, platinum_rank, warriors, barbarians, monks, paladins, fighters].shuffle
 
 addTagsToQuest(jess_quest_23_tags, jess_quest_23)
 
@@ -569,7 +569,7 @@ jess_quest_24 = Quest.create(title: "Looking for an appraisal on a seemingly mag
 quest_24_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_24/unknown_bow.jpg')
 jess_quest_24.images.attach(io: quest_24_image_1, filename: 'unknown_bow.jpg')
 
-jess_quest_24_tags = [artifacts, artificers, blacksmithing, bows, contracts, divination, enchantment, magic_items, rare, transmutation, wizards]
+jess_quest_24_tags = [artifacts, artificers, blacksmithing, bows, contracts, divination, enchantment, magic_items, rare, transmutation, wizards].shuffle
 
 addTagsToQuest(jess_quest_24_tags, jess_quest_24)
 
@@ -580,7 +580,7 @@ jess_quest_25 = Quest.create(title: "Mutated kuo-toa parts for sale", text: "Bef
 quest_25_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_25/koa_toa.png')
 jess_quest_25.images.attach(io: quest_25_image_1, filename: 'koa_toa.png')
 
-jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchanment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components]
+jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchanment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components].shuffle
 
 addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
@@ -588,7 +588,7 @@ addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
 jess_quest_26 = Quest.create(title: "Nature, for me is raw and dangerous and difficult and beautiful and unnerving.", text: "Hollowseeker Goldsworthy", quest_type: "quote", user_id: jess.id)
 
-jess_quest_26_tags = [adventure, beasts, cave, creatures, creller, dire_wolves, dragons, drakes, earth, ents, exploration, fey, food, hunt, magical_creatures, mountains, pseudodragons, satyr, slimes, trolls, wilderness, wurms, wind]
+jess_quest_26_tags = [adventure, beasts, cave, creatures, creller, dire_wolves, dragons, drakes, earth, ents, exploration, fey, food, hunt, magical_creatures, mountains, pseudodragons, satyr, slimes, trolls, wilderness, wurms, wind].shuffle
 
 addTagsToQuest(jess_quest_26_tags, jess_quest_26)
 
@@ -599,7 +599,7 @@ jess_quest_27 = Quest.create(title: "The benefits of high DEX", text: "STR is im
 quest_27_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/forest_parkour.mp4')
 jess_quest_27.images.attach(io: quest_27_video_1, filename: 'forest_parkour.mp4')
 
-jess_quest_27_tags = [adventure, assassins, bows, cave, daggers, druids, elves, exploration, forests, hunt, monks, mountains, rangers, rogues, wilderness, wind]
+jess_quest_27_tags = [adventure, assassins, bows, cave, daggers, druids, elves, exploration, forests, hunt, monks, mountains, rangers, rogues, wilderness, wind].shuffle
 
 addTagsToQuest(jess_quest_27_tags, jess_quest_27)
 
@@ -610,7 +610,7 @@ jess_quest_28 = Quest.create(title: "Our team's anthem", text: "", quest_type: "
 quest_28_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/born_to_be_wild.mp3')
 jess_quest_28.images.attach(io: quest_28_audio_1, filename: 'born_to_be_wild.mp3')
 
-jess_quest_28_tags = [adventure, barbarians, beasts, cave, dire_wolves, druids, earth, elves, ents, exploration, fey, food, forests, hunt, monster_nest, mountains, orcs, rangers, rogues, unseelie_court, wilderness, wind]
+jess_quest_28_tags = [adventure, barbarians, beasts, cave, dire_wolves, druids, earth, elves, ents, exploration, fey, food, forests, hunt, monster_nest, mountains, orcs, rangers, rogues, unseelie_court, wilderness, wind].shuffle
 
 addTagsToQuest(jess_quest_28_tags, jess_quest_28)
 
@@ -619,7 +619,7 @@ addTagsToQuest(jess_quest_28_tags, jess_quest_28)
 
 ingrid_quest_29 = Quest.create(title: "Looking for talented craftswomen and craftsmen to build equipment based around the scales of an adult white dragon.", text: "Payment can be negotiated, but will based around normal currency and materials remaining after the jobs are done. Please only inquire if you are skilled enough to have worked with materials from platinum ranks threats or above.", quest_type: "text", user_id: ingrid.id)
 
-ingrid_quest_29_tags = [artificers, beasts, blacksmithing, caravans, creatures, diamond_rank, dragons, hunt, ice, magical_creatures, wurms]
+ingrid_quest_29_tags = [artificers, beasts, blacksmithing, caravans, creatures, diamond_rank, dragons, hunt, ice, magical_creatures, wurms].shuffle
 
 addTagsToQuest(ingrid_quest_29_tags, ingrid_quest_29)
 
@@ -633,7 +633,7 @@ ingrid_quest_30.images.attach(io: quest_30_image_1, filename: 'dire_wolves_1.jpe
 quest_30_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_30/dire_wolves_2.jpg')
 ingrid_quest_30.images.attach(io: quest_30_image_2, filename: 'dire_wolves_2.jpg')
 
-ingrid_quest_30_tags = [beasts, cave, creatures, dire_wolves, food, ice, magical_creatures, monster_extermination, monster_nest, mountains, rangers, druids, silver_rank, wilderness]
+ingrid_quest_30_tags = [beasts, cave, creatures, dire_wolves, food, ice, magical_creatures, monster_extermination, monster_nest, mountains, rangers, druids, silver_rank, wilderness].shuffle
 
 addTagsToQuest(ingrid_quest_30_tags, ingrid_quest_30)
 
@@ -644,7 +644,7 @@ ingrid_quest_31 = Quest.create(title: "Request mage support with the exploration
 quest_31_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_31/dungeon_entrance.jpg')
 ingrid_quest_31.images.attach(io: quest_31_image_1, filename: 'dungeon_entrance.jpg')
 
-ingrid_quest_31_tags = [adventure, bards, clerics, druids, dungeons, dynamos, escort_quest, exploration, fire, fireball, ice, magic, mountains, paladins, protection, sorcerers, sorcery, spellcasting, warlocks, wilderness, wizards]
+ingrid_quest_31_tags = [adventure, bards, clerics, druids, dungeons, dynamos, escort_quest, exploration, fire, fireball, ice, magic, mountains, paladins, protection, sorcerers, sorcery, spellcasting, warlocks, wilderness, wizards].shuffle
 
 addTagsToQuest(ingrid_quest_31_tags, ingrid_quest_31)
 
@@ -655,7 +655,7 @@ ingrid_quest_32 = Quest.create(title: "Don't know what the hells this is suppose
 quest_32_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_32/mysterious_creature.jpg')
 ingrid_quest_32.images.attach(io: quest_32_image_1, filename: 'mysterious_creature.jpg')
 
-ingrid_quest_32_tags = [beasts, creatures, diamond_rank, divination, dungeons, exploration, guilds, hunt, magical_creatures, monster_extermination, monster_nest, mountains, mystery, outer_planes, outsider, rare, wilderness]
+ingrid_quest_32_tags = [beasts, creatures, diamond_rank, divination, dungeons, exploration, guilds, hunt, magical_creatures, monster_extermination, monster_nest, mountains, mystery, outer_planes, outsider, rare, wilderness].shuffle
 
 addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
 
@@ -663,7 +663,7 @@ addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
 
 ingrid_quest_33 = Quest.create(title: "In preparing for battle I have always found that plans are useless, but planning is indispensable.", text: "Dwight D. Eisenhower", quest_type: "quote", user_id: ingrid.id)
 
-ingrid_quest_33_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank]
+ingrid_quest_33_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank].shuffle
 
 addTagsToQuest(ingrid_quest_33_tags, ingrid_quest_33)
 
@@ -674,7 +674,7 @@ ingrid_quest_34 = Quest.create(title: "Footage from a scrying orb of an old batt
 quest_34_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/viking_battle.mp4')
 ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4')
 
-ingrid_quest_34_tags = [army, axes, barbarians, bows, commoners, druids, dwarves, elves, evil_overlords, fallen_kingdom, fighters, forests, gods, goddesses, goliaths, good, hammers, humans, king, kingdoms, lawful, legendary, mountains, plot, queen, rangers, rogues, sorcery, swords, staffs, trolls, warriors, wilderness]
+ingrid_quest_34_tags = [army, axes, barbarians, bows, commoners, druids, dwarves, elves, evil_overlords, fallen_kingdom, fighters, forests, gods, goddesses, goliaths, good, hammers, humans, king, kingdoms, lawful, legendary, mountains, plot, queen, rangers, rogues, sorcery, swords, staffs, trolls, warriors, wilderness].shuffle
 
 addTagsToQuest(ingrid_quest_34_tags, ingrid_quest_34)
 
