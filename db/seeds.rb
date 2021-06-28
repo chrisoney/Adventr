@@ -728,14 +728,14 @@ addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
 
 # Kmsvr quest 39 - Image
 
-# kmsvr_quest_39 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
+kmsvr_quest_39 = Quest.create(title: "There is a lich loose in the Flooded Plains", text: "This is a bad lich. There are plenty of good necromancers, like Comrade Pisces. This, however, is a bad lich, so we should stop him. Looking for information about the bad lich. Thank you.", quest_type: "image", user_id: kmsvr.id)
 
-# quest_39_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_39/lich.png')
-# kmsvr_quest_39.images.attach(io: quest_39_image_1, filename: 'lich.png')
+quest_39_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_39/lich.png')
+kmsvr_quest_39.images.attach(io: quest_39_image_1, filename: 'lich.png')
 
-# kmsvr_quest_39_tags = []
+kmsvr_quest_39_tags = [ancients, blood_magic, clerics, dark_lord, evil, evil_overlords, gold_rank, lich, magical_creatures, monster_extermination, necromancy, paladins, sorcerers, warlocks, undead].shuffle
 
-# addTagsToQuest(kmsvr_quest_39_tags, kmsvr_quest_39)
+addTagsToQuest(kmsvr_quest_39_tags, kmsvr_quest_39)
 
 # Kmsvr quest 40 - Quote
 
