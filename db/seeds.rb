@@ -660,8 +660,35 @@ ingrid_quest_32_tags = [beasts, creatures, diamond_rank, divination, dungeons, e
 addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
 
 # Ingrid quest 33 - Quote
+
+ingrid_quest_33 = Quest.create(title: "In preparing for battle I have always found that plans are useless, but planning is indispensable.", text: "Dwight D. Eisenhower", quest_type: "quote", user_id: ingrid.id)
+
+ingrid_quest_33_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank]
+
+addTagsToQuest(ingrid_quest_33_tags, ingrid_quest_33)
+
 # Ingrid quest 34 - Video
+
+ingrid_quest_34 = Quest.create(title: "Footage from a scrying orb of an old battle my kingdom was involved in", text: "It was a great day for my people. A resounding win. Enjoy and take note of our power", quest_type: "video", user_id: ingrid.id)
+
+quest_34_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/viking_battle.mp4')
+ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4')
+
+ingrid_quest_34_tags = [army, axes, barbarians, bows, commoners, druids, dwarves, elves, evil_overlords, fallen_kingdom, fighters, forests, gods, goddesses, goliaths, good, hammers, humans, king, kingdoms, lawful, legendary, mountains, plot, queen, rangers, rogues, sorcery, swords, staffs, trolls, warriors, wilderness]
+
+addTagsToQuest(ingrid_quest_34_tags, ingrid_quest_34)
+
 # Ingrid quest 35 - Audio
+
+# ingrid_quest_35 = Quest.create(title: "", text: "", quest_type: "audio", user_id: ingrid.id)
+
+# quest_35_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/------------')
+# ingrid_quest_35.images.attach(io: quest_35_audio_1, filename: '------------')
+
+# ingrid_quest_35_tags = []
+
+# addTagsToQuest(ingrid_quest_35_tags, ingrid_quest_35)
+
 # Kmsvr quests
 # Kmsvr quest 36 - Text
 # Kmsvr quest 37 - Image
