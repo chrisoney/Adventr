@@ -663,7 +663,7 @@ addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
 
 ingrid_quest_33 = Quest.create(title: "In preparing for battle I have always found that plans are useless, but planning is indispensable.", text: "Dwight D. Eisenhower", quest_type: "quote", user_id: ingrid.id)
 
-ingrid_quest_33_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank].shuffle
+ingrid_quest_33_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero_tag, monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank].shuffle
 
 addTagsToQuest(ingrid_quest_33_tags, ingrid_quest_33)
 
@@ -694,27 +694,34 @@ addTagsToQuest(ingrid_quest_35_tags, ingrid_quest_35)
 
 # Kmsvr quests
 # Kmsvr quest 36 - Text
+
+kmsvr_quest_36 = Quest.create(title: "Have you read The Wandering Inn?", text: "It is a very long story, but it's a good story. It also has several wonderful characters like me (Kmsvr). Please go give it a chance, it is one of my (Kmsvr's) favorites.", quest_type: "text", user_id: kmsvr.id)
+
+kmsvr_quest_36_tags = [academy, adventure, ai, alchemists, ancients, aristocrats, artifacts, assassins, blacksmithing, chaotic, commoners, creller, demons, djinn, dragons, dungeons, escort_quest, exploration, fey, goblins, good, humans, legendary, magical_creatures, necromancy, political_intrigue, rescue_mission, the_watch]
+
+addTagsToQuest(kmsvr_quest_36_tags, kmsvr_quest_36)
+
 # Kmsvr quest 37 - Image
 
-# kmsvr_quest_37 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
+kmsvr_quest_37 = Quest.create(title: "Here is a picture of our team.", text: "Someone drew a picture of our team. It is great and my team let's me hold on to it. Notice how powerful each of us is. I am asserting dominance over whoever reads this.", quest_type: "image", user_id: kmsvr.id)
 
-# quest_37_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_37/------------')
-# kmsvr_quest_37.images.attach(io: quest_37_image_1, filename: '------------')
+quest_37_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_37/horns_of_hammerad_by_mg.jpg')
+kmsvr_quest_37.images.attach(io: quest_37_image_1, filename: 'horns_of_hammerad_by_mg.jpg')
 
-# kmsvr_quest_37_tags = []
+kmsvr_quest_37_tags = [academy, adventure, artifacts, commoners, contracts, creller, dungeons, elves, fighters, gold_rank, good, guilds, humans, ice, lawful, magic_items, monster_extermination, necromancy, nobles, sorcerers, swords, undead]
 
-# addTagsToQuest(kmsvr_quest_37_tags, kmsvr_quest_37)
+addTagsToQuest(kmsvr_quest_37_tags, kmsvr_quest_37)
 
 # Kmsvr quest 38 - Image
 
-# kmsvr_quest_38 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
+kmsvr_quest_38 = Quest.create(title: "", text: "", quest_type: "image", user_id: kmsvr.id)
 
-# quest_38_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_38/------------')
-# kmsvr_quest_38.images.attach(io: quest_38_image_1, filename: '------------')
+quest_38_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_38/------------')
+kmsvr_quest_38.images.attach(io: quest_38_image_1, filename: '------------')
 
-# kmsvr_quest_38_tags = []
+kmsvr_quest_38_tags = []
 
-# addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
+addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
 
 # Kmsvr quest 39 - Image
 
@@ -728,6 +735,13 @@ addTagsToQuest(ingrid_quest_35_tags, ingrid_quest_35)
 # addTagsToQuest(kmsvr_quest_39_tags, kmsvr_quest_39)
 
 # Kmsvr quest 40 - Quote
+
+kmsvr_quest_40 = Quest.create(title: "Is it war?", text: "Me (Kmsvr)", quest_type: "quote", user_id: kmsvr.id)
+
+kmsvr_quest_40_tags = [army, chaotic, fighters, gold_rank, hero_tag, hunt, kingdom, the_watch]
+
+addTagsToQuest(kmsvr_quest_40_tags, kmsvr_quest_40)
+
 # Kmsvr quest 41 - Video
 # Kmsvr quest 42 - Audio
 # Goblin Slayer quests
