@@ -792,14 +792,20 @@ addTagsToQuest(goblin_slayer_quest_44_tags, goblin_slayer_quest_44)
 
 # Goblin Slayer quest 45 - Image
 
-# goblin_slayer_quest_45 = Quest.create(title: "", text: "", quest_type: "image", user_id: goblin_slayer.id)
+goblin_slayer_quest_45 = Quest.create(title: "Looking for magical scrolls", text: "Utility spells would be best. Prices negotiable.", quest_type: "image", user_id: goblin_slayer.id)
 
-# quest_45_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_45/------------')
-# goblin_slayer_quest_45.images.attach(io: quest_45_image_1, filename: '------------')
+quest_45_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_45/magic_scroll_1.png')
+goblin_slayer_quest_45.images.attach(io: quest_45_image_1, filename: 'magic_scroll_1.png')
 
-# goblin_slayer_quest_45_tags = [goblins, goblin_champions, goblin_lords, goblin_king]
+quest_45_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_45/magic_scroll_2.jpg')
+goblin_slayer_quest_45.images.attach(io: quest_45_image_2, filename: 'magic_scroll_2.jpg')
 
-# addTagsToQuest(goblin_slayer_quest_45_tags, goblin_slayer_quest_45)
+quest_45_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_45/magic_scroll_3.jpg')
+goblin_slayer_quest_45.images.attach(io: quest_45_image_3, filename: 'magic_scroll_3.jpg')
+
+goblin_slayer_quest_45_tags = [goblins, goblin_champions, goblin_lords, goblin_king, abjuration, artifacts, artificers, books, conjuration, divination, enchantment, explosives, fireball, lightning, magic_items, monster_extermination, protection, rare, spellcasting, transmutation]
+
+addTagsToQuest(goblin_slayer_quest_45_tags, goblin_slayer_quest_45)
 
 # Goblin Slayer quest 46 - Image
 
