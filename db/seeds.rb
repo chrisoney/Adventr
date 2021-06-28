@@ -650,14 +650,14 @@ addTagsToQuest(ingrid_quest_31_tags, ingrid_quest_31)
 
 # Ingrid quest 32 - Image
 
-# ingrid_quest_32 = Quest.create(title: "", text: "", quest_type: "image", user_id: ingrid.id)
+ingrid_quest_32 = Quest.create(title: "Don't know what the hells this is supposed to be but it's out there.", text: "Any information would be useful, though we don't intend on hunting it down. We almost lost 3 of our own. It used purely physical attacks to chase us off, though that doesn't rule out it knowing magic. Couldn't [Appraise] it, which is why we don't have a name. It seems DEX focused.", quest_type: "image", user_id: ingrid.id)
 
-# quest_32_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_32/------------')
-# ingrid_quest_32.images.attach(io: quest_32_image_1, filename: '------------')
+quest_32_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_32/mysterious_creature.jpg')
+ingrid_quest_32.images.attach(io: quest_32_image_1, filename: 'mysterious_creature.jpg')
 
-# ingrid_quest_32_tags = []
+ingrid_quest_32_tags = [beasts, creatures, diamond_rank, divination, dungeons, exploration, guilds, hunt, magical_creatures, monster_extermination, monster_nest, mountains, mystery, outer_planes, outsider, rare, wilderness]
 
-# addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
+addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
 
 # Ingrid quest 33 - Quote
 # Ingrid quest 34 - Video
