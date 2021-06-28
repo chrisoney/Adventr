@@ -680,14 +680,17 @@ addTagsToQuest(ingrid_quest_34_tags, ingrid_quest_34)
 
 # Ingrid quest 35 - Audio
 
-# ingrid_quest_35 = Quest.create(title: "", text: "", quest_type: "audio", user_id: ingrid.id)
+ingrid_quest_35 = Quest.create(title: "Battle music is integral to success", text: "We often hire a bard for the greatest battles we partake in", quest_type: "audio", user_id: ingrid.id)
 
-# quest_35_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/------------')
-# ingrid_quest_35.images.attach(io: quest_35_audio_1, filename: '------------')
+quest_35_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/immigrant_song.mp3')
+ingrid_quest_35.images.attach(io: quest_35_audio_1, filename: 'immigrant_song.mp3')
 
-# ingrid_quest_35_tags = []
+quest_35_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/ride_of_the_valkyries.mp3')
+ingrid_quest_35.images.attach(io: quest_35_audio_2, filename: 'ride_of_the_valkyries.mp3')
 
-# addTagsToQuest(ingrid_quest_35_tags, ingrid_quest_35)
+ingrid_quest_35_tags = [adventure, angels, army, barbarians, demon_army, hunt, legendary, mythic, warriors, paladins, bards, fighters].shuffle
+
+addTagsToQuest(ingrid_quest_35_tags, ingrid_quest_35)
 
 # Kmsvr quests
 # Kmsvr quest 36 - Text
