@@ -851,10 +851,7 @@ addTagsToQuest(goblin_slayer_quest_49_tags, goblin_slayer_quest_49)
 # Rain quests
 # Rain quest 50 - Text
 
-rain_quest_50 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
-
-quest_50_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/----------')
-rain_quest_50.images.attach(io: quest_50_audio_1, filename: '----------')
+rain_quest_50 = Quest.create(title: "", text: "", quest_type: "text", user_id: rain.id)
 
 rain_quest_50_tags = [].shuffle
 
@@ -862,20 +859,67 @@ addTagsToQuest(rain_quest_50_tags, rain_quest_50)
 
 # Rain quest 51 - Image
 
-rain_quest_50 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
+# rain_quest_51 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
 
-quest_50_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/----------')
-rain_quest_50.images.attach(io: quest_50_audio_1, filename: '----------')
+# quest_51_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_51/----------')
+# rain_quest_51.images.attach(io: quest_51_image_1, filename: '----------')
 
-rain_quest_50_tags = [].shuffle
+# rain_quest_51_tags = [].shuffle
 
-addTagsToQuest(rain_quest_50_tags, rain_quest_50)
+# addTagsToQuest(rain_quest_51_tags, rain_quest_51)
 
 # Rain quest 52 - Image
+
+# rain_quest_52 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
+
+# quest_52_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_52/----------')
+# rain_quest_52.images.attach(io: quest_52_image_1, filename: '----------')
+
+# rain_quest_52_tags = [].shuffle
+
+# addTagsToQuest(rain_quest_52_tags, rain_quest_52)
+
 # Rain quest 53 - Image
+
+# rain_quest_53 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
+
+# quest_53_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_53/----------')
+# rain_quest_53.images.attach(io: quest_53_image_1, filename: '----------')
+
+# rain_quest_53_tags = [].shuffle
+
+# addTagsToQuest(rain_quest_53_tags, rain_quest_53)
+
 # Rain quest 54 - Quote
+
+# rain_quest_54 = Quest.create(title: "", text: "", quest_type: "quote", user_id: rain.id)
+
+# rain_quest_54_tags = [].shuffle
+
+# addTagsToQuest(rain_quest_54_tags, rain_quest_54)
+
 # Rain quest 55 - Video
+
+# rain_quest_55 = Quest.create(title: "", text: "", quest_type: "video", user_id: rain.id)
+
+# quest_55_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/----------')
+# rain_quest_55.images.attach(io: quest_55_video_1, filename: '----------')
+
+# rain_quest_55_tags = [].shuffle
+
+# addTagsToQuest(rain_quest_55_tags, rain_quest_55)
+
 # Rain quest 56 - Audio
+
+# rain_quest_56 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
+
+# quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/----------')
+# rain_quest_56.images.attach(io: quest_56_audio_1, filename: '----------')
+
+# rain_quest_56_tags = [].shuffle
+
+# addTagsToQuest(rain_quest_56_tags, rain_quest_56)
+
 # Carl quests
 # Carl quest 57 - Text
 # Carl quest 58 - Image
