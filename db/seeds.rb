@@ -851,33 +851,33 @@ addTagsToQuest(goblin_slayer_quest_49_tags, goblin_slayer_quest_49)
 # Rain quests
 # Rain quest 50 - Text
 
-rain_quest_50 = Quest.create(title: "", text: "", quest_type: "text", user_id: rain.id)
+rain_quest_50 = Quest.create(title: "Looking for insight into how you all interact with the [System].", text: "I know the [System] can be a very touchy subject, so I assure you that I will not share your information with anyone. I'm just looking into how different people interact with it, as from what I've read and heard this can vary wildly. Any information at all will help, though if you've done something especially odd with it I would be especially interested.", quest_type: "text", user_id: rain.id)
 
-rain_quest_50_tags = [].shuffle
+rain_quest_50_tags = [academy, ai, enchantment, magic, mystery, outsider].shuffle
 
 addTagsToQuest(rain_quest_50_tags, rain_quest_50)
 
 # Rain quest 51 - Image
 
-# rain_quest_51 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
+rain_quest_51 = Quest.create(title: "Not all slimes are evil!", text: "This probably isn't the best picture to include considering Dozer was helping clean up after a fight, but I promise he's harmless. The worst thing he'll do is try to hug your face, but he would never injure someone. Crystal slimes aren't bad slimes!", quest_type: "image", user_id: rain.id)
 
-# quest_51_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_51/----------')
-# rain_quest_51.images.attach(io: quest_51_image_1, filename: '----------')
+quest_51_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_51/slime.jpg')
+rain_quest_51.images.attach(io: quest_51_image_1, filename: 'slime.jpg')
 
-# rain_quest_51_tags = [].shuffle
+rain_quest_51_tags = [creatures, good, magical_creatures, slimes].shuffle
 
-# addTagsToQuest(rain_quest_51_tags, rain_quest_51)
+addTagsToQuest(rain_quest_51_tags, rain_quest_51)
 
 # Rain quest 52 - Image
 
-# rain_quest_52 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
+rain_quest_52 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
 
-# quest_52_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_52/----------')
-# rain_quest_52.images.attach(io: quest_52_image_1, filename: '----------')
+quest_52_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_52/----------')
+rain_quest_52.images.attach(io: quest_52_image_1, filename: '----------')
 
-# rain_quest_52_tags = [].shuffle
+rain_quest_52_tags = [].shuffle
 
-# addTagsToQuest(rain_quest_52_tags, rain_quest_52)
+addTagsToQuest(rain_quest_52_tags, rain_quest_52)
 
 # Rain quest 53 - Image
 
