@@ -772,7 +772,7 @@ addTagsToQuest(kmsvr_quest_42_tags, kmsvr_quest_42)
 
 goblin_slayer_quest_43 = Quest.create(title: "Do not overlook goblins", text: "It is easy to not see them as a threat. They are weak alone. Most are not overly clever. A good [Porcelain Rank] team can defeat them.\nBut they learn. They group up. They become a problem. Do not overlook goblin quests, or you will allow the world to face another [Goblin King].", quest_type: "text", user_id: goblin_slayer.id)
 
-goblin_slayer_quest_43_tags = [evil, goblins, goblin_champions, goblin_lords, goblin_king, hunt, monster_extermination, monster_nest, obsidian_rank, porcelain_rank, rescue_mission, wilderness]
+goblin_slayer_quest_43_tags = [evil, goblins, goblin_champions, goblin_lords, goblin_king, hunt, monster_extermination, monster_nest, obsidian_rank, porcelain_rank, rescue_mission, wilderness].shuffle
 
 addTagsToQuest(goblin_slayer_quest_43_tags, goblin_slayer_quest_43)
 
@@ -786,7 +786,7 @@ goblin_slayer_quest_44.images.attach(io: quest_44_image_1, filename: 'goblin_cha
 quest_44_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_44/goblin_champion_2.jpeg')
 goblin_slayer_quest_44.images.attach(io: quest_44_image_1, filename: 'goblin_champion_2.jpeg')
 
-goblin_slayer_quest_44_tags = [goblins, goblin_champions, goblin_lords, goblin_king, gold_rank, monster_nest, monster_extermination, kingdom, wilderness]
+goblin_slayer_quest_44_tags = [goblins, goblin_champions, goblin_lords, goblin_king, gold_rank, monster_nest, monster_extermination, kingdom, wilderness].shuffle
 
 addTagsToQuest(goblin_slayer_quest_44_tags, goblin_slayer_quest_44)
 
@@ -803,7 +803,7 @@ goblin_slayer_quest_45.images.attach(io: quest_45_image_2, filename: 'magic_scro
 quest_45_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_45/magic_scroll_3.jpg')
 goblin_slayer_quest_45.images.attach(io: quest_45_image_3, filename: 'magic_scroll_3.jpg')
 
-goblin_slayer_quest_45_tags = [goblins, goblin_champions, goblin_lords, goblin_king, abjuration, artifacts, artificers, books, conjuration, divination, enchantment, explosives, fireball, lightning, magic_items, monster_extermination, protection, rare, spellcasting, transmutation]
+goblin_slayer_quest_45_tags = [goblins, goblin_champions, goblin_lords, goblin_king, abjuration, artifacts, artificers, books, conjuration, divination, enchantment, explosives, fireball, lightning, magic_items, monster_extermination, protection, rare, spellcasting, transmutation].shuffle
 
 addTagsToQuest(goblin_slayer_quest_45_tags, goblin_slayer_quest_45)
 
@@ -814,7 +814,7 @@ goblin_slayer_quest_46 = Quest.create(title: "Is this a goblin?", text: "I've be
 quest_46_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_46/ogre.jpeg')
 goblin_slayer_quest_46.images.attach(io: quest_46_image_1, filename: 'ogre.jpeg')
 
-goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_king, alchemists, beasts, creatures, demons, devils, goliaths, magical_creatures, monster_extermination, monster_nest, mountains]
+goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_king, alchemists, beasts, creatures, demons, devils, goliaths, magical_creatures, monster_extermination, monster_nest, mountains].shuffle
 
 addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
 
@@ -822,35 +822,55 @@ addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
 
 goblin_slayer_quest_47 = Quest.create(title: "It's your actions.. not your strength, that would lead you to victory.", text: "Burglar", quest_type: "quote", user_id: goblin_slayer.id)
 
-goblin_slayer_quest_47_tags = [adventure, ancients, barbarians, blood_oath, fighters, gods, goblins, goblin_champions, goblin_lords, goblin_king, hunt, monster_extermination, monster_nest]
+goblin_slayer_quest_47_tags = [adventure, ancients, barbarians, blood_oath, fighters, gods, goblins, goblin_champions, goblin_lords, goblin_king, hunt, monster_extermination, monster_nest].shuffle
 
 addTagsToQuest(goblin_slayer_quest_47_tags, goblin_slayer_quest_47)
 
 # Goblin Slayer quest 48 - Video
 
-# goblin_slayer_quest_48 = Quest.create(title: "", text: "", quest_type: "video", user_id: goblin_slayer.id)
+goblin_slayer_quest_48 = Quest.create(title: "This is how the party formed.", text: "We kill goblins together.", quest_type: "video", user_id: goblin_slayer.id)
 
-# quest_48_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/------------')
-# goblin_slayer_quest_48.images.attach(io: quest_48_video_1, filename: '------------')
+quest_48_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/party_formation.mp4')
+goblin_slayer_quest_48.images.attach(io: quest_48_video_1, filename: 'party_formation.mp4')
 
-# goblin_slayer_quest_48_tags = []
+goblin_slayer_quest_48_tags = [goblins, goblin_champions, goblin_lords, goblin_king, adventure, clerics, dragonborn, druids, elves, exploration, guilds, monks, monster_extermination, dwarves, humans, protection, rangers, silver_rank, warriors].shuffle
 
-# addTagsToQuest(goblin_slayer_quest_48_tags, goblin_slayer_quest_48)
+addTagsToQuest(goblin_slayer_quest_48_tags, goblin_slayer_quest_48)
 
 # Goblin Slayer quest 49 - Audio
 
-# goblin_slayer_quest_49 = Quest.create(title: "", text: "", quest_type: "audio", user_id: goblin_slayer.id)
+goblin_slayer_quest_49 = Quest.create(title: "I like this music.", text: "", quest_type: "audio", user_id: goblin_slayer.id)
 
-# quest_49_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/------------')
-# goblin_slayer_quest_49.images.attach(io: quest_49_audio_1, filename: '------------')
+quest_49_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/goblin_slayer_theme.mp3')
+goblin_slayer_quest_49.images.attach(io: quest_49_audio_1, filename: 'goblin_slayer_theme.mp3')
 
-# goblin_slayer_quest_49_tags = []
+goblin_slayer_quest_49_tags = [goblins, goblin_champions, goblin_lords, goblin_king, bards].shuffle
 
-# addTagsToQuest(goblin_slayer_quest_49_tags, goblin_slayer_quest_49)
+addTagsToQuest(goblin_slayer_quest_49_tags, goblin_slayer_quest_49)
 
 # Rain quests
 # Rain quest 50 - Text
+
+rain_quest_50 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
+
+quest_50_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/----------')
+rain_quest_50.images.attach(io: quest_50_audio_1, filename: '----------')
+
+rain_quest_50_tags = [].shuffle
+
+addTagsToQuest(rain_quest_50_tags, rain_quest_50)
+
 # Rain quest 51 - Image
+
+rain_quest_50 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
+
+quest_50_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/----------')
+rain_quest_50.images.attach(io: quest_50_audio_1, filename: '----------')
+
+rain_quest_50_tags = [].shuffle
+
+addTagsToQuest(rain_quest_50_tags, rain_quest_50)
+
 # Rain quest 52 - Image
 # Rain quest 53 - Image
 # Rain quest 54 - Quote
