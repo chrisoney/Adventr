@@ -870,25 +870,25 @@ addTagsToQuest(rain_quest_51_tags, rain_quest_51)
 
 # Rain quest 52 - Image
 
-rain_quest_52 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
+rain_quest_52 = Quest.create(title: "Now I know we aren't supposed to talk about dragons", text: "Hear me out, though. Is there any information at all that's safe to discuss? Does writing it down protect the reader from \"retribution\"? Do they just have really good hearing? Is magic involved? Are there magical protections you could use? Are there different types? Are different types more dangerous to talk about? If you talk about them in a very general sense, do some become angrier than others? Any answers at all would be appreciated.", quest_type: "image", user_id: rain.id)
 
-quest_52_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_52/----------')
-rain_quest_52.images.attach(io: quest_52_image_1, filename: '----------')
+quest_52_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_52/dragons.jpg')
+rain_quest_52.images.attach(io: quest_52_image_1, filename: 'dragons.jpg')
 
-rain_quest_52_tags = [].shuffle
+rain_quest_52_tags = [books, cave, beasts, creatures, dragonborn, dragons, drakes, evil, good, hunt, magical_creatures, monster_nest, mountains,  outsider,power, protection, pseudodragons, rare, wurms].shuffle
 
 addTagsToQuest(rain_quest_52_tags, rain_quest_52)
 
 # Rain quest 53 - Image
 
-# rain_quest_53 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
+rain_quest_53 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
 
-# quest_53_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_53/----------')
-# rain_quest_53.images.attach(io: quest_53_image_1, filename: '----------')
+quest_53_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_53/----------')
+rain_quest_53.images.attach(io: quest_53_image_1, filename: '----------')
 
-# rain_quest_53_tags = [].shuffle
+rain_quest_53_tags = [].shuffle
 
-# addTagsToQuest(rain_quest_53_tags, rain_quest_53)
+addTagsToQuest(rain_quest_53_tags, rain_quest_53)
 
 # Rain quest 54 - Quote
 
