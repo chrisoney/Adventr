@@ -814,7 +814,7 @@ goblin_slayer_quest_46 = Quest.create(title: "Is this a goblin?", text: "I've be
 quest_46_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_46/ogre.jpeg')
 goblin_slayer_quest_46.images.attach(io: quest_46_image_1, filename: 'ogre.jpeg')
 
-goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_king]
+goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_king, alchemists, beasts, creatures, demons, devils, goliaths, magical_creatures, monster_extermination, monster_nest, mountains]
 
 addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
 
