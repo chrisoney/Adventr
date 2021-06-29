@@ -809,14 +809,14 @@ addTagsToQuest(goblin_slayer_quest_45_tags, goblin_slayer_quest_45)
 
 # Goblin Slayer quest 46 - Image
 
-# goblin_slayer_quest_46 = Quest.create(title: "", text: "", quest_type: "image", user_id: goblin_slayer.id)
+goblin_slayer_quest_46 = Quest.create(title: "Is this a goblin?", text: "I've been told it is not. It acts like a goblin though.", quest_type: "image", user_id: goblin_slayer.id)
 
-# quest_46_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_46/------------')
-# goblin_slayer_quest_46.images.attach(io: quest_46_image_1, filename: '------------')
+quest_46_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_46/ogre.jpeg')
+goblin_slayer_quest_46.images.attach(io: quest_46_image_1, filename: 'ogre.jpeg')
 
-# goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_king]
+goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_king]
 
-# addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
+addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
 
 # Goblin Slayer quest 47 - Quote
 
