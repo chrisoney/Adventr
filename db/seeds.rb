@@ -915,16 +915,16 @@ addTagsToQuest(rain_quest_55_tags, rain_quest_55)
 
 rain_quest_56 = Quest.create(title: "Had some bards recreate some songs.", text: "I hope you like them! They're from some of my favorite stories.", quest_type: "audio", user_id: rain.id)
 
-quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/concerning_hobbits.mp3')
+quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/concerning_hobbits.mp3')
 rain_quest_56.images.attach(io: quest_56_audio_1, filename: 'concerning_hobbits.mp3')
 
-quest_56_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/song_of_durin.mp3')
+quest_56_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/song_of_durin.mp3')
 rain_quest_56.images.attach(io: quest_56_audio_2, filename: 'song_of_durin.mp3')
 
-quest_56_audio_3 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/use_well_the_days.mp3')
+quest_56_audio_3 = File.open('app/assets/adventr_seeder_images/quest_audio/use_well_the_days.mp3')
 rain_quest_56.images.attach(io: quest_56_audio_3, filename: 'use_well_the_days.mp3')
 
-quest_56_audio_4 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/the_bridge_of _khazad_dum.mp3')
+quest_56_audio_4 = File.open('app/assets/adventr_seeder_images/quest_audio/the_bridge_of _khazad_dum.mp3')
 rain_quest_56.images.attach(io: quest_56_audio_4, filename: 'the_bridge_of _khazad_dum.mp3')
 
 rain_quest_56_tags = [adventure, army, bards, books, dark_lord, dwarves, elves, escort_quest, exploration, fallen_kingdom, forests, hero_tag, humans, legendary, magic, mountains, outsider, power, dragons, wizards, wurms].shuffle
@@ -933,12 +933,77 @@ addTagsToQuest(rain_quest_56_tags, rain_quest_56)
 
 # Carl quests
 # Carl quest 57 - Text
+
+carl_quest_57 = Quest.create(title: "", text: "", quest_type: "text", user_id: carl.id)
+
+carl_quest_57_tags = [].shuffle
+
+addTagsToQuest(carl_quest_57_tags, carl_quest_57)
+
 # Carl quest 58 - Image
+
+
+# carl_quest_58 = Quest.create(title: "", text: "", quest_type: "image", user_id: carl.id)
+
+# quest_58_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_58/-------------')
+# carl_quest_58.images.attach(io: quest_58_image_1, filename: '-------------')
+
+# carl_quest_58_tags = [].shuffle
+
+# addTagsToQuest(carl_quest_58_tags, carl_quest_58)
+
 # Carl quest 59 - Image
+
+# carl_quest_59 = Quest.create(title: "", text: "", quest_type: "image", user_id: carl.id)
+
+# quest_59_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_59/-------------')
+# carl_quest_59.images.attach(io: quest_59_image_1, filename: '-------------')
+
+# carl_quest_59_tags = [].shuffle
+
+# addTagsToQuest(carl_quest_59_tags, carl_quest_59)
+
 # Carl quest 60 - Image
+
+# carl_quest_60 = Quest.create(title: "", text: "", quest_type: "image", user_id: carl.id)
+
+# quest_60_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_60/-------------')
+# carl_quest_60.images.attach(io: quest_60_image_1, filename: '-------------')
+
+# carl_quest_60_tags = [].shuffle
+
+# addTagsToQuest(carl_quest_60_tags, carl_quest_60)
+
 # Carl quest 61 - Quote
+
+# carl_quest_61 = Quest.create(title: "", text: "", quest_type: "quote", user_id: carl.id)
+
+# carl_quest_61_tags = [].shuffle
+
+# addTagsToQuest(carl_quest_61_tags, carl_quest_61)
+
 # Carl quest 62 - Video
+
+# carl_quest_62 = Quest.create(title: "", text: "", quest_type: "video", user_id: carl.id)
+
+# quest_62_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/-------------')
+# carl_quest_62.images.attach(io: quest_62_video_1, filename: '-------------')
+
+# carl_quest_62_tags = [].shuffle
+
+# addTagsToQuest(carl_quest_62_tags, carl_quest_62)
+
 # Carl quest 63 - Audio
+
+# carl_quest_63 = Quest.create(title: "", text: "", quest_type: "audio", user_id: carl.id)
+
+# quest_63_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/-------------')
+# carl_quest_63.images.attach(io: quest_63_audio_1, filename: '-------------')
+
+# carl_quest_63_tags = [].shuffle
+
+# addTagsToQuest(carl_quest_63_tags, carl_quest_63)
+
 # Catherine quests
 # Catherine quest 64 - Text
 # Catherine quest 65 - Image
