@@ -927,7 +927,7 @@ rain_quest_56.images.attach(io: quest_56_audio_3, filename: 'use_well_the_days.m
 quest_56_audio_4 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/the_bridge_of _khazad_dum.mp3')
 rain_quest_56.images.attach(io: quest_56_audio_4, filename: 'the_bridge_of _khazad_dum.mp3')
 
-rain_quest_56_tags = [outsider].shuffle
+rain_quest_56_tags = [adventure, army, bards, books, dark_lord, dwarves, elves, escort_quest, exploration, fallen_kingdom, forests, hero_tag, humans, legendary, magic, mountains, outsider, power, dragons, wizards, wurms].shuffle
 
 addTagsToQuest(rain_quest_56_tags, rain_quest_56)
 
