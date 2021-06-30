@@ -934,9 +934,9 @@ addTagsToQuest(rain_quest_56_tags, rain_quest_56)
 # Carl quests
 # Carl quest 57 - Text
 
-carl_quest_57 = Quest.create(title: "", text: "", quest_type: "text", user_id: carl.id)
+carl_quest_57 = Quest.create(title: "Is anyone else having weird interactions with the system AI?", text: "I don't want to go into details, but it seems pretty into... feet. I don't know if this is just me. I really really hope it isn't. It won't leave me alone though, and almost caused my party to die on a few occasions. Any advice at all would be much appreciated.", quest_type: "text", user_id: carl.id)
 
-carl_quest_57_tags = [].shuffle
+carl_quest_57_tags = [ai, chaotic, dungeons, evil, gods, murder].shuffle
 
 addTagsToQuest(carl_quest_57_tags, carl_quest_57)
 
