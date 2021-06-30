@@ -913,7 +913,7 @@ addTagsToQuest(rain_quest_55_tags, rain_quest_55)
 
 # Rain quest 56 - Audio
 
-rain_quest_56 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
+rain_quest_56 = Quest.create(title: "Had some bards recreate some songs.", text: "I hope you like them! They're from some of my favorite stories.", quest_type: "audio", user_id: rain.id)
 
 quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/concerning_hobbits.mp3')
 rain_quest_56.images.attach(io: quest_56_audio_1, filename: 'concerning_hobbits.mp3')
@@ -927,7 +927,7 @@ rain_quest_56.images.attach(io: quest_56_audio_3, filename: 'use_well_the_days.m
 quest_56_audio_4 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/the_bridge_of _khazad_dum.mp3')
 rain_quest_56.images.attach(io: quest_56_audio_4, filename: 'the_bridge_of _khazad_dum.mp3')
 
-rain_quest_56_tags = [].shuffle
+rain_quest_56_tags = [outsider].shuffle
 
 addTagsToQuest(rain_quest_56_tags, rain_quest_56)
 
