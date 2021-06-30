@@ -881,44 +881,55 @@ addTagsToQuest(rain_quest_52_tags, rain_quest_52)
 
 # Rain quest 53 - Image
 
-rain_quest_53 = Quest.create(title: "", text: "", quest_type: "image", user_id: rain.id)
+rain_quest_53 = Quest.create(title: "Where are the dwarves?", text: "I expected dwarves and yet I haven't met any. I know you're out there. I know a master smith, you can trade tips! Wait, I know that not all dwarves are blacksmiths. Is that racist? Sorry. Let's be friends!", quest_type: "image", user_id: rain.id)
 
-quest_53_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_53/----------')
-rain_quest_53.images.attach(io: quest_53_image_1, filename: '----------')
+quest_53_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_53/dwarves.jpg')
+rain_quest_53.images.attach(io: quest_53_image_1, filename: 'dwarves.jpg')
+quest_53_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_53/grudges.jpg')
+rain_quest_53.images.attach(io: quest_53_image_2, filename: 'grudges.jpg')
 
-rain_quest_53_tags = [].shuffle
+rain_quest_53_tags = [blacksmithing, dwarves, enchantment, hammers, kingdom, mountains, outsider, scholars].shuffle
 
 addTagsToQuest(rain_quest_53_tags, rain_quest_53)
 
 # Rain quest 54 - Quote
 
-# rain_quest_54 = Quest.create(title: "", text: "", quest_type: "quote", user_id: rain.id)
+rain_quest_54 = Quest.create(title: "Even the smallest person can change the course of the future.", text: "Galadriel", quest_type: "quote", user_id: rain.id)
 
-# rain_quest_54_tags = [].shuffle
+rain_quest_54_tags = [adventure, ancients, dwarves, elves, evil_overlords, fallen_kingdom, good, hero_tag, mythic, outsider, queen, sorcerers, wizards].shuffle
 
-# addTagsToQuest(rain_quest_54_tags, rain_quest_54)
+addTagsToQuest(rain_quest_54_tags, rain_quest_54)
 
 # Rain quest 55 - Video
 
-# rain_quest_55 = Quest.create(title: "", text: "", quest_type: "video", user_id: rain.id)
+rain_quest_55 = Quest.create(title: "You shall not pass!", text: "Great scene from a great movie. Movies are like plays. Um, never mind.", quest_type: "video", user_id: rain.id)
 
-# quest_55_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/----------')
-# rain_quest_55.images.attach(io: quest_55_video_1, filename: '----------')
+quest_55_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/you_shall_not_pass.mp4')
+rain_quest_55.images.attach(io: quest_55_video_1, filename: 'you_shall_not_pass.mp4')
 
-# rain_quest_55_tags = [].shuffle
+rain_quest_55_tags = [adventure, army, bards, books, commoners, creatures, demon_army, demons, dwarves, evil, hero_tag, legendary, mountains, orcs, plot, spellcasting, staffs, wizards].shuffle
 
-# addTagsToQuest(rain_quest_55_tags, rain_quest_55)
+addTagsToQuest(rain_quest_55_tags, rain_quest_55)
 
 # Rain quest 56 - Audio
 
-# rain_quest_56 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
+rain_quest_56 = Quest.create(title: "", text: "", quest_type: "audio", user_id: rain.id)
 
-# quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/----------')
-# rain_quest_56.images.attach(io: quest_56_audio_1, filename: '----------')
+quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/concerning_hobbits.mp3')
+rain_quest_56.images.attach(io: quest_56_audio_1, filename: 'concerning_hobbits.mp3')
 
-# rain_quest_56_tags = [].shuffle
+quest_56_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/song_of_durin.mp3')
+rain_quest_56.images.attach(io: quest_56_audio_2, filename: 'song_of_durin.mp3')
 
-# addTagsToQuest(rain_quest_56_tags, rain_quest_56)
+quest_56_audio_3 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/use_well_the_days.mp3')
+rain_quest_56.images.attach(io: quest_56_audio_3, filename: 'use_well_the_days.mp3')
+
+quest_56_audio_4 = File.open('app/assets/adventr_seeder_images/quest_audio/quest_56/the_bridge_of _khazad_dum.mp3')
+rain_quest_56.images.attach(io: quest_56_audio_4, filename: 'the_bridge_of _khazad_dum.mp3')
+
+rain_quest_56_tags = [].shuffle
+
+addTagsToQuest(rain_quest_56_tags, rain_quest_56)
 
 # Carl quests
 # Carl quest 57 - Text
