@@ -986,36 +986,141 @@ addTagsToQuest(carl_quest_61_tags, carl_quest_61)
 
 # Carl quest 62 - Video
 
-# carl_quest_62 = Quest.create(title: "", text: "", quest_type: "video", user_id: carl.id)
+carl_quest_62 = Quest.create(title: "HERE ARE SOME TIPS IF ANYONE WANTS TO HOLD A CAT SHOW", text: "Donut: I KNOW WE'VE GOT A LOT GOING ON TRYING TO SURVIVE, BUT I THINK WE SHOULD HOLD A CAT SHOW. IT WOULD HELP TAKE EVERYONE'S MIND OFF THINGS FOR A BIT. YES IT WOULD, CARL. PLUS, MISS BEATRICE MIGHT SEE THE SHOW AND BE ABLE TO FIND US. IT'S LIKE THAT TIME SHE SAW YOU ON TV IN A CITY A FEW HOURS AWAY SO SHE TOLD HER YOGA INSTRUCTOR BRAD HE COULD STAY LONGER.\n\nI WON'T PARTICIPATE SO THAT OTHERS CAN HAVE A CHANCE TO WIN. THE AI CAN BE THE ANNOUNCER. NO DOGS OR GOATS ALLOWED.", quest_type: "video", user_id: carl.id)
 
-# quest_62_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/-------------')
-# carl_quest_62.images.attach(io: quest_62_video_1, filename: '-------------')
+quest_62_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/cat_show.mp4')
+carl_quest_62.images.attach(io: quest_62_video_1, filename: 'cat_show.mp4')
 
-# carl_quest_62_tags = [].shuffle
+carl_quest_62_tags = [ai, beasts,gods, goddesses, gold, gold_rank, lawful, princess, spies].shuffle
 
-# addTagsToQuest(carl_quest_62_tags, carl_quest_62)
+addTagsToQuest(carl_quest_62_tags, carl_quest_62)
 
 # Carl quest 63 - Audio
 
-# carl_quest_63 = Quest.create(title: "", text: "", quest_type: "audio", user_id: carl.id)
+carl_quest_63 = Quest.create(title: "I figured out how to code some of the songs to specific explosives/tools", text: "Carl: I finally figured out how to map specific songs to specific explosives/tools/contraptions. I still don't know how to select the pool of songs though. Here are two that I'm using right now. If you hear Rainbow in the Dark, run away. That's a grab bag of different dangerous effects depending on the mobs I know of in the area. If you hear I Believe In A Thing Called Love, make your way towards it. I'm just using that as a meet up point with a defensible position.", quest_type: "audio", user_id: carl.id)
 
-# quest_63_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/-------------')
-# carl_quest_63.images.attach(io: quest_63_audio_1, filename: '-------------')
+quest_63_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/rainbow_in_the_dark.mp3')
+carl_quest_63.images.attach(io: quest_63_audio_1, filename: 'rainbow_in_the_dark.mp3')
 
-# carl_quest_63_tags = [].shuffle
+quest_63_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/i_believe_in_a_thing_called_love.mp3')
+carl_quest_63.images.attach(io: quest_63_audio_2, filename: 'i_believe_in_a_thing_called_love.mp3')
 
-# addTagsToQuest(carl_quest_63_tags, carl_quest_63)
+carl_quest_63_tags = [acid, alchemy, anarchy, chaotic, bards, creatures, dungeons, earth, explosives, fire, ice, lightning, magic, magic_items, monster_extermination, plot, transmutation].shuffle
+
+addTagsToQuest(carl_quest_63_tags, carl_quest_63)
 
 # Catherine quests
 # Catherine quest 64 - Text
+
+catherine_quest_64 = Quest.create(title: "", text: "", quest_type: "text", user_id: catherine.id)
+
+catherine_quest_64_tags = [].shuffle
+
+addTagsToQuest(catherine_quest_64_tags, catherine_quest_64)
 # Catherine quest 65 - Image
+
+# catherine_quest_65 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
+
+# quest_65_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/------------')
+# catherine_quest_65.images.attach(io: quest_65_image_1, filename: '------------')
+
+# quest_65_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/------------')
+# catherine_quest_65.images.attach(io: quest_65_image_2, filename: '------------')
+
+# catherine_quest_65_tags = [].shuffle
+
+# addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
+
 # Catherine quest 66 - Image
+
+# catherine_quest_66 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
+
+# quest_66_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/------------')
+# catherine_quest_66.images.attach(io: quest_66_image_1, filename: '------------')
+
+# quest_66_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/------------')
+# catherine_quest_66.images.attach(io: quest_66_image_2, filename: '------------')
+
+# catherine_quest_66_tags = [].shuffle
+
+# addTagsToQuest(catherine_quest_66_tags, catherine_quest_66)
+
 # Catherine quest 67 - Image
+
+# catherine_quest_67 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
+
+# # quest_67_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/------------')
+# # catherine_quest_67.images.attach(io: quest_67_image_1, filename: '------------')
+
+# # quest_67_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/------------')
+# # catherine_quest_67.images.attach(io: quest_67_image_2, filename: '------------')
+
+# catherine_quest_67_tags = [].shuffle
+
+# # addTagsToQuest(catherine_quest_67_tags, catherine_quest_67)
+
 # Catherine quest 68 - Quote
+
+# catherine_quest_68 = Quest.create(title: "", text: "", quest_type: "quote", user_id: catherine.id)
+
+# catherine_quest_68_tags = [].shuffle
+
+# addTagsToQuest(catherine_quest_68_tags, catherine_quest_68)
+
 # Catherine quest 69 - Video
+
+# catherine_quest_69 = Quest.create(title: "", text: "", quest_type: "video", user_id: catherine.id)
+
+# quest_69_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/summoning_demons.mp4')
+# catherine_quest_69.images.attach(io: quest_69_video_1, filename: 'summoning_demons.mp4')
+
+# catherine_quest_69_tags = [].shuffle
+
+# addTagsToQuest(catherine_quest_69_tags, catherine_quest_69)
+
 # Catherine quest 70 - Audio
 
+# catherine_quest_69 = Quest.create(title: "", text: "", quest_type: "audio", user_id: catherine.id)
 
+# quest_69_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/the_girl_who_climbed_the_tower.mp3')
+# catherine_quest_69.images.attach(io: quest_69_audio_1, filename: 'the_girl_who_climbed_the_tower.mp3')
+
+# catherine_quest_69_tags = [].shuffle
+
+# addTagsToQuest(catherine_quest_69_tags, catherine_quest_69)
+
+# Reblogs Section
+
+# Follows Section
+def addFollowsToUser(follows, user)
+  follows.each do |follow|
+    user.follows << follow
+  end
+end
+
+# Hero Follows
+# hero_follows = []
+# addFollowsToUser(hero_follows, hero)
+# Terriblis Follows
+# Matt Follows
+# Jess Follows
+# Ingrid Follows
+# Kmsvr Follows
+# Goblin Slayer Follows
+# Rain Follows
+# Carl Follows
+# Catherine Follows
+
+
+
+
+
+
+
+
+
+
+# Notes for later:
 
 # user1.quests.create(title: "Free fire magic lessons", text: "Must bring change of clothes", quest_type: "text");
 # user1.quests.create(title: "Sewer cleanup", text: "Rats in the sewers. You know the drill.", quest_type: "text");
