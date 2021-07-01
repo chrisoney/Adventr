@@ -1061,33 +1061,33 @@ addTagsToQuest(catherine_quest_64_tags, catherine_quest_64)
 
 # Catherine quest 68 - Quote
 
-# catherine_quest_68 = Quest.create(title: "", text: "", quest_type: "quote", user_id: catherine.id)
+catherine_quest_68 = Quest.create(title: "We should never forget that for a great evil to be defeated, a lesser evil must first become great.", text: "Eleanor Fairfax, founder of the Fairfax dynasty", quest_type: "quote", user_id: catherine.id)
 
-# catherine_quest_68_tags = [].shuffle
+catherine_quest_68_tags = [books, dark_lord, evil, evil_overlords, fallen_kingdom, good, humans, kingdom, nobles, queen, the_watch, army].shuffle
 
-# addTagsToQuest(catherine_quest_68_tags, catherine_quest_68)
+addTagsToQuest(catherine_quest_68_tags, catherine_quest_68)
 
 # Catherine quest 69 - Video
 
-# catherine_quest_69 = Quest.create(title: "", text: "", quest_type: "video", user_id: catherine.id)
+catherine_quest_69 = Quest.create(title: "On demon summoning...", text: "Amusing, but Masego assures me quite emphatically that it has no roots in \"respectable\" circles dedicated to  Trismegistan sorceries.", quest_type: "video", user_id: catherine.id)
 
-# quest_69_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/summoning_demons.mp4')
-# catherine_quest_69.images.attach(io: quest_69_video_1, filename: 'summoning_demons.mp4')
+quest_69_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/summoning_demons.mp4')
+catherine_quest_69.images.attach(io: quest_69_video_1, filename: 'summoning_demons.mp4')
 
-# catherine_quest_69_tags = [].shuffle
+catherine_quest_69_tags = [angels, blood_magic, blood_oath, conjuration, creatures, demon_army, demons, devils, evil, magic, nobles, outer_planes, sorcerers, sorcery, squire, tomes, warlocks, wizards].shuffle
 
-# addTagsToQuest(catherine_quest_69_tags, catherine_quest_69)
+addTagsToQuest(catherine_quest_69_tags, catherine_quest_69)
 
 # Catherine quest 70 - Audio
 
-# catherine_quest_69 = Quest.create(title: "", text: "", quest_type: "audio", user_id: catherine.id)
+catherine_quest_70 = Quest.create(title: "I've heard this song fairly often recently", text: "I'm sure I'm not the only one.", quest_type: "audio", user_id: catherine.id)
 
-# quest_69_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/the_girl_who_climbed_the_tower.mp3')
-# catherine_quest_69.images.attach(io: quest_69_audio_1, filename: 'the_girl_who_climbed_the_tower.mp3')
+quest_70_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/the_girl_who_climbed_the_tower.mp3')
+catherine_quest_70.images.attach(io: quest_70_audio_1, filename: 'the_girl_who_climbed_the_tower.mp3')
 
-# catherine_quest_69_tags = [].shuffle
+catherine_quest_70_tags = [aristocrats, army, dark_lord, divination, evil, evil_overlords, fallen_kingdom, goddesses, kingdom, magic, nobles, political_intrigue, power, queen, spies, squire].shuffle
 
-# addTagsToQuest(catherine_quest_69_tags, catherine_quest_69)
+addTagsToQuest(catherine_quest_70_tags, catherine_quest_70)
 
 # Reblogs Section
 
