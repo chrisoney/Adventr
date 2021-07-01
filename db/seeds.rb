@@ -934,7 +934,7 @@ addTagsToQuest(rain_quest_56_tags, rain_quest_56)
 # Carl quests
 # Carl quest 57 - Text
 
-carl_quest_57 = Quest.create(title: "Is anyone else having weird interactions with the system AI?", text: "I don't want to go into details, but it seems pretty into... feet. I don't know if this is just me. I really really hope it isn't. It won't leave me alone though, and almost caused my party to die on a few occasions. Any advice at all would be much appreciated.", quest_type: "text", user_id: carl.id)
+carl_quest_57 = Quest.create(title: "Is anyone else having weird interactions with the system AI?", text: "Carl: I don't want to go into details, but it seems pretty into... feet. I don't know if this is just me. I really really hope it isn't. It won't leave me alone though, and almost caused my party to die on a few occasions. Any advice at all would be much appreciated.", quest_type: "text", user_id: carl.id)
 
 carl_quest_57_tags = [ai, chaotic, dungeons, evil, gods, murder].shuffle
 
@@ -942,45 +942,47 @@ addTagsToQuest(carl_quest_57_tags, carl_quest_57)
 
 # Carl quest 58 - Image
 
+carl_quest_58 = Quest.create(title: "This is my original party.", text: "Carl: We have new members and there are a few people we team up with occasionally, but we haven't exactly had the time to sketch out pictures for everyone. If you see Donut or Mordecai, trade information so we can help each other out.\n\nDonut: THIS IS DONUT. IF YOU SEE A MAN IN HIS UNDERPANTS MAKING EVERYTHING EXPLODE, THAT'S CARL. HE'S ACTUALLY NICE AND NOT A PREDATOR.\n\nCarl: God dammit, Donut.", quest_type: "image", user_id: carl.id)
 
-# carl_quest_58 = Quest.create(title: "", text: "", quest_type: "image", user_id: carl.id)
+quest_58_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_58/princess_donut.jpg')
+carl_quest_58.images.attach(io: quest_58_image_1, filename: 'princess_donut.jpg')
 
-# quest_58_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_58/-------------')
-# carl_quest_58.images.attach(io: quest_58_image_1, filename: '-------------')
+quest_58_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_58/mordecai.jpg')
+carl_quest_58.images.attach(io: quest_58_image_2, filename: 'mordecai.jpg')
 
-# carl_quest_58_tags = [].shuffle
+carl_quest_58_tags = [ai, adventure, anarchy, books, chaotic, dungeons, earth, explosives, familiars, fighters, good, hero_tag, humans, magic, magical_creatures, outer_planes, plot, sorcerers, spellcasting, alchemists, alchemy, princess].shuffle
 
-# addTagsToQuest(carl_quest_58_tags, carl_quest_58)
+addTagsToQuest(carl_quest_58_tags, carl_quest_58)
 
 # Carl quest 59 - Image
 
-# carl_quest_59 = Quest.create(title: "", text: "", quest_type: "image", user_id: carl.id)
+carl_quest_59 = Quest.create(title: "Here's an example of what we used to be up against.", text: "Carl: These guys were a headache, though I'm pretty sure we could take them pretty easily at this point. They're not smart, and they don't pay attention to their weapon cache, so that's a good source of explosives if you can sneak in. If they spot you, though, just run. You don't want to deal with their Hob lobbers, even if you're too powerful to be in danger.\n\nDonut: CARL FLIRTED WITH A GOBLIN TO TRICK THEM. THAT WASN'T VERY NICE OF HIM. MISS BEATRICE WOULD NOT STAND FOR SUCH BEHAVIOR IF SHE WAS HERE.", quest_type: "image", user_id: carl.id)
 
-# quest_59_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_59/-------------')
-# carl_quest_59.images.attach(io: quest_59_image_1, filename: '-------------')
+quest_59_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_59/goblin_bomb_bard.jpg')
+carl_quest_59.images.attach(io: quest_59_image_1, filename: 'goblin_bomb_bard.jpg')
 
-# carl_quest_59_tags = [].shuffle
+carl_quest_59_tags = [ai, alchemy, chaotic, creatures, bards, dungeons, evil, explosives, goblins, hunt, magical_creatures, monster_extermination, plot, porcelain_rank, princess].shuffle
 
-# addTagsToQuest(carl_quest_59_tags, carl_quest_59)
+addTagsToQuest(carl_quest_59_tags, carl_quest_59)
 
 # Carl quest 60 - Image
 
-# carl_quest_60 = Quest.create(title: "", text: "", quest_type: "image", user_id: carl.id)
+carl_quest_60 = Quest.create(title: "Some notes on The Iron Tangle", text: "Carl: Here are some quick notes on what we've learned about The Iron Tangle. Also be on the lookout for fairies in the engine rooms; they can be helpful. Also, Gods and Goddesses are starting to be summoned. If you see any of those, just run.", quest_type: "image", user_id: carl.id)
 
-# quest_60_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_60/-------------')
-# carl_quest_60.images.attach(io: quest_60_image_1, filename: '-------------')
+quest_60_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_60/iron_tangle.jpg')
+carl_quest_60.images.attach(io: quest_60_image_1, filename: 'iron_tangle.jpg')
 
-# carl_quest_60_tags = [].shuffle
+carl_quest_60_tags = [anarchy, books, conjuration, creatures, dungeons, exploration, gods, goddesses, humans, magic, magical_creatures, monster_nest, monster_extermination, outer_planes, protection, rescue_mission, scholars, trolls, undead].shuffle
 
-# addTagsToQuest(carl_quest_60_tags, carl_quest_60)
+addTagsToQuest(carl_quest_60_tags, carl_quest_60)
 
 # Carl quest 61 - Quote
 
-# carl_quest_61 = Quest.create(title: "", text: "", quest_type: "quote", user_id: carl.id)
+carl_quest_61 = Quest.create(title: "Can't go into detail here. I'll update if I survive this. My party member got that Color Spray spell that I remember from D&D, but it's basically useless here. It's just a light show that does no damage and hangs around for too long. There seems to be some solidness to the colors, because you can trap them.\nI figured out that if I can grab some of the colors, I can mix them in a flash bang. It's not a great weapon, but it's really useful against any mob with sensitive eyesight.\nIf you know someone with the spell, stock up on several of this kind of bomb for Floor 8. If you make something called... [Carkin Jazz Bombnanza]... you did it right. I didn't pick the name.", text: "Cark, 17th holder of the Anarchist's Cookbook", quest_type: "quote", user_id: carl.id)
 
-# carl_quest_61_tags = [].shuffle
+carl_quest_61_tags = [ai, anarchy, chaotic, dungeons, enchantment, explosives, illusion, magic, magic_items, monster_extermination, sorcery, spellcasting, transmutation].shuffle
 
-# addTagsToQuest(carl_quest_61_tags, carl_quest_61)
+addTagsToQuest(carl_quest_61_tags, carl_quest_61)
 
 # Carl quest 62 - Video
 
