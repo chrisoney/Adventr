@@ -1024,7 +1024,7 @@ catherine_quest_65 = Quest.create(title: "Looking for a band of five to retrieve
 quest_65_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/scepter.png')
 catherine_quest_65.images.attach(io: quest_65_image_1, filename: 'scepter.png')
 
-catherine_quest_65_tags = [].shuffle
+catherine_quest_65_tags = [adventure, alchemists, hero_tag].shuffle
 
 addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
 
@@ -1032,11 +1032,11 @@ addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
 
 # catherine_quest_66 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
 
-# quest_66_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/------------')
-# catherine_quest_66.images.attach(io: quest_66_image_1, filename: '------------')
+# quest_66_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/summer_fey_1.jpeg')
+# catherine_quest_66.images.attach(io: quest_66_image_1, filename: 'summer_fey_1.jpeg')
 
-# quest_66_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/------------')
-# catherine_quest_66.images.attach(io: quest_66_image_2, filename: '------------')
+# quest_66_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/summer_fey_2.jpeg')
+# catherine_quest_66.images.attach(io: quest_66_image_2, filename: 'summer_fey_2.jpeg')
 
 # catherine_quest_66_tags = [].shuffle
 
@@ -1046,11 +1046,13 @@ addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
 
 # catherine_quest_67 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
 
-# # quest_67_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/------------')
-# # catherine_quest_67.images.attach(io: quest_67_image_1, filename: '------------')
+# # quest_67_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/the_dead_king.jpg')
+# # catherine_quest_67.images.attach(io: quest_67_image_1, filename: 'the_dead_king.jpg')
 
-# # quest_67_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/------------')
-# # catherine_quest_67.images.attach(io: quest_67_image_2, filename: '------------')
+# # quest_67_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/bone_wurm.jpg')
+# # catherine_quest_67.images.attach(io: quest_67_image_2, filename: 'bone_wurm.jpg')
+# # quest_67_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/revenant.jpeg')
+# # catherine_quest_67.images.attach(io: quest_67_image_3, filename: 'revenant.jpeg')
 
 # catherine_quest_67_tags = [].shuffle
 
