@@ -21,7 +21,7 @@ class Quest extends React.Component {
     // if (!this.props.author) {
     //   this.props.fetchUser(this.props.authorId);
     // }
-    this.props.fetchAllLikes();
+    // this.props.fetchAllLikes();
     // this.props.fetchSingleQuest(this.props.quest.id);
   }
 

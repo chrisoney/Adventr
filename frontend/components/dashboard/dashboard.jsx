@@ -38,7 +38,6 @@ class DashBoard extends React.Component {
     const { quests, reblogs, follows, users, currentUser } = this.props;
     let questList = [];
     let randomQuest;
-    const followRecs = [];
     const followIds = follows.map((follow) => follow.user_id);
 
     quests.forEach((quest, idx) => {
