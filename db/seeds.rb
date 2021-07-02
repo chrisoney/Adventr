@@ -1014,7 +1014,7 @@ addTagsToQuest(carl_quest_63_tags, carl_quest_63)
 
 catherine_quest_64 = Quest.create(title: "Join the Army of Callow", text: "The time has come. An ancient evil has always been at our doorstep for longer than we care to remember, but now it encroaches on our land. The time for apathy or delusion is over.\n\nThe Grand Alliance has formed because we have no other choice. We need brave men and women like yourself to drive the undead hordes back. Make no mistake, looking the other way will not save your families. It is only together that we have any hope of finally putting down the enemy once and for all. Join the Army of Callow today and save our future.", quest_type: "text", user_id: catherine.id)
 
-catherine_quest_64_tags = [ancients, army, contracts, cultists, dark_lord, demon_army, demons, devils, diamond_rank, evil, evil_overlords, fallen_kingdom, lich, political_intrigue, queen, sorcerers, sorcery, spies, undead].shuffle
+catherine_quest_64_tags = [ancients, army, contracts, cultists, dark_lord, demon_army, demons, devils, diamond_rank, evil, evil_overlords, fallen_kingdom, lich, political_intrigue, queen, sorcerers, sorcery, spies, undead, necromancy].shuffle
 
 addTagsToQuest(catherine_quest_64_tags, catherine_quest_64)
 # Catherine quest 65 - Image
@@ -1024,39 +1024,39 @@ catherine_quest_65 = Quest.create(title: "Looking for a band of five to retrieve
 quest_65_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/scepter.png')
 catherine_quest_65.images.attach(io: quest_65_image_1, filename: 'scepter.png')
 
-catherine_quest_65_tags = [adventure, alchemists, hero_tag].shuffle
+catherine_quest_65_tags = [adventure, alchemists, hero_tag, artificers, artifacts, assassins, barbarians, bards, clerics, gold_rank, druids, evil, fighters, gods, goddesses, good, magic_items, monks, paladins, plot, rangers, rogues, scholars, sorcerers, arcane_focus, warriors, warlocks, wizards, spies].shuffle
 
 addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
 
 # Catherine quest 66 - Image
 
-# catherine_quest_66 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
+catherine_quest_66 = Quest.create(title: "The Court of Summer", text: "Best left alone. Beware their fire and other aspects. If you can, run at the sight of them. If you cannot, splash water directly in their eyes should you get the chance. It won't accomplish anything, but I'd thank you for the mental image.", quest_type: "image", user_id: catherine.id)
 
-# quest_66_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/summer_fey_1.jpeg')
-# catherine_quest_66.images.attach(io: quest_66_image_1, filename: 'summer_fey_1.jpeg')
+quest_66_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/summer_fey_1.jpeg')
+catherine_quest_66.images.attach(io: quest_66_image_1, filename: 'summer_fey_1.jpeg')
 
-# quest_66_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/summer_fey_2.jpeg')
-# catherine_quest_66.images.attach(io: quest_66_image_2, filename: 'summer_fey_2.jpeg')
+quest_66_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_66/summer_fey_2.jpeg')
+catherine_quest_66.images.attach(io: quest_66_image_2, filename: 'summer_fey_2.jpeg')
 
-# catherine_quest_66_tags = [].shuffle
+catherine_quest_66_tags = [ancients, elves, fey, fire, hunt, illusion, lawful, magical_creatures, plot, spellcasting, wilderness, unseelie_court].shuffle
 
-# addTagsToQuest(catherine_quest_66_tags, catherine_quest_66)
+addTagsToQuest(catherine_quest_66_tags, catherine_quest_66)
 
 # Catherine quest 67 - Image
 
-# catherine_quest_67 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
+catherine_quest_67 = Quest.create(title: "The Ancient Evil is at our doorstep. Will you cower or fight?", text: "These will be sparse notes on the Dead King.\nFirst off, the Villain himself. Whatever outlandish stories you've heard of his power, they are true. He holds dominion over vast armies of the undead. He controlls myriad demons and devils. His personal magicks are varied and powerful. If you set eyes on him, you will likely die soonafter.\nNext, two common enemies. The first are bone wurms, those undead vessels within which the Undead King transports his soldiers. Not much can be done to penetrate their defenses. Overwhelming force is the key here.\nNext we have the Revenants. Their power varies as it is tied to who they were when they were alive. The only constant is that they are far and above the standard skeleton you face. Be wary and rely on your comrades against them.", quest_type: "image", user_id: catherine.id)
 
-# # quest_67_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/the_dead_king.jpg')
-# # catherine_quest_67.images.attach(io: quest_67_image_1, filename: 'the_dead_king.jpg')
+quest_67_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/the_dead_king.jpg')
+catherine_quest_67.images.attach(io: quest_67_image_1, filename: 'the_dead_king.jpg')
 
-# # quest_67_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/bone_wurm.jpg')
-# # catherine_quest_67.images.attach(io: quest_67_image_2, filename: 'bone_wurm.jpg')
-# # quest_67_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/revenant.jpeg')
-# # catherine_quest_67.images.attach(io: quest_67_image_3, filename: 'revenant.jpeg')
+quest_67_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/bone_wurm.jpg')
+catherine_quest_67.images.attach(io: quest_67_image_2, filename: 'bone_wurm.jpg')
+quest_67_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/revenant.jpeg')
+catherine_quest_67.images.attach(io: quest_67_image_3, filename: 'revenant.jpeg')
 
-# catherine_quest_67_tags = [].shuffle
+catherine_quest_67_tags = [ancients, army, blood_magic, dark_lord, demon_army, demons, devils, drakes, evil, evil_overlords, fallen_kingdom, grimoires, lich, ,magical_creatures, necromancy, power, spies, undead, warlocks, wurms].shuffle
 
-# # addTagsToQuest(catherine_quest_67_tags, catherine_quest_67)
+addTagsToQuest(catherine_quest_67_tags, catherine_quest_67)
 
 # Catherine quest 68 - Quote
 
