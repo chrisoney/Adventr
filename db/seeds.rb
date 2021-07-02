@@ -243,7 +243,7 @@ rain_avatar = File.open('app/assets/adventr_seeder_images/avatars/rain.jpg')
 rain.avatar_image.attach(io: rain_avatar, filename: 'rain.jpg')
 
 # User 9
-carl = User.create(username: "Dungeon_Crawler_Carl", password: "hunter12", email: "carl@princessdonutsociety.com", guild_name: "Princess Donut Royal Entourage", guild_description: "The Princess Donut Royal Entourage will soon reach the Sixth Floor. Don't mind Carl and all his explosive nonsense, this is a proper party.")
+carl = User.create(username: "Dungeon_Crawler_Carl", password: "hunter12", email: "carl@princessdonutsociety.com", guild_name: "The Royal Court of Princess Donut", guild_description: "The Royal Court of Princess Donut will soon reach the Sixth Floor. Don't mind Carl and all his explosive nonsense, this is a proper party.")
 carl_avatar = File.open('app/assets/adventr_seeder_images/avatars/carl.jpg')
 carl.avatar_image.attach(io: carl_avatar, filename: 'carl.jpg')
 
@@ -1012,24 +1012,21 @@ addTagsToQuest(carl_quest_63_tags, carl_quest_63)
 # Catherine quests
 # Catherine quest 64 - Text
 
-catherine_quest_64 = Quest.create(title: "", text: "", quest_type: "text", user_id: catherine.id)
+catherine_quest_64 = Quest.create(title: "Join the Army of Callow", text: "The time has come. An ancient evil has always been at our doorstep for longer than we care to remember, but now it encroaches on our land. The time for apathy or delusion is over.\n\nThe Grand Alliance has formed because we have no other choice. We need brave men and women like yourself to drive the undead hordes back. Make no mistake, looking the other way will not save your families. It is only together that we have any hope of finally putting down the enemy once and for all. Join the Army of Callow today and save our future.", quest_type: "text", user_id: catherine.id)
 
-catherine_quest_64_tags = [].shuffle
+catherine_quest_64_tags = [ancients, army, contracts, cultists, dark_lord, demon_army, demons, devils, diamond_rank, evil, evil_overlords, fallen_kingdom, lich, political_intrigue, queen, sorcerers, sorcery, spies, undead].shuffle
 
 addTagsToQuest(catherine_quest_64_tags, catherine_quest_64)
 # Catherine quest 65 - Image
 
-# catherine_quest_65 = Quest.create(title: "", text: "", quest_type: "image", user_id: catherine.id)
+catherine_quest_65 = Quest.create(title: "Looking for a band of five to retrieve something lost by Kairos, the Named", text: "Prefered make up will combine Heroes and Villains. We don't have time to squabble right now.\n\nWe seek Kairos' old scepter. By all accounts it is ridiculously gaudy, so it shouldn't be hard to spot. You will be given a container within which to transport the item once you've found it. You'll also receive tools with which to handle the item and instructions for how to do so. Your band must contain a caster well versed in Trismegistan sorceries.\n\nYou will be paid well for undertaking this mission.", quest_type: "image", user_id: catherine.id)
 
-# quest_65_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/------------')
-# catherine_quest_65.images.attach(io: quest_65_image_1, filename: '------------')
+quest_65_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/scepter.png')
+catherine_quest_65.images.attach(io: quest_65_image_1, filename: 'scepter.png')
 
-# quest_65_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/------------')
-# catherine_quest_65.images.attach(io: quest_65_image_2, filename: '------------')
+catherine_quest_65_tags = [].shuffle
 
-# catherine_quest_65_tags = [].shuffle
-
-# addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
+addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
 
 # Catherine quest 66 - Image
 
@@ -1069,7 +1066,7 @@ addTagsToQuest(catherine_quest_68_tags, catherine_quest_68)
 
 # Catherine quest 69 - Video
 
-catherine_quest_69 = Quest.create(title: "On demon summoning...", text: "Amusing, but Masego assures me quite emphatically that it has no roots in \"respectable\" circles dedicated to  Trismegistan sorceries.", quest_type: "video", user_id: catherine.id)
+catherine_quest_69 = Quest.create(title: "On demon summoning...", text: "Amusing, but Masego assures me quite emphatically that it has no roots in \"respectable\" circles dedicated to Trismegistan sorceries.", quest_type: "video", user_id: catherine.id)
 
 quest_69_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/summoning_demons.mp4')
 catherine_quest_69.images.attach(io: quest_69_video_1, filename: 'summoning_demons.mp4')
