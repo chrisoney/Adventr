@@ -463,7 +463,7 @@ addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
 
 matt_quest_15 = Quest.create(title: "Hello from Spellcaster Apprentices!", text: "Guilds are sprouting up every single day to help adventurers live happier, wealthier lives. Out with the old, in with the new. Innovation is all around us, and new teams are formed to help us maximize treasure haul and increase leveling speed.\n\nBut in a world where one wrong step can result in a lightningbolt to the face and literal dragons are breathing fire down our necks, there's too little accountability. Guilds incentivize adventurers to make false promises, pay town cries and bards to tell fake stories about them, all while not backing up their teams with support they can rely on. It's bulette shite.\n\nSpellcaster Apprentices was born to bring transparency to the our heroes' journeys - or the heroes themselves - specifically around spell matrices that help you maximize your power and potential rewards. We'll also help you weed through the BS quests, and highlight the ones worth the attention.", quest_type: "text", user_id: matt.id)
 
-matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromany, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards].shuffle
+matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromancy, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards].shuffle
 
 addTagsToQuest(matt_quest_15_tags, matt_quest_15)
 
@@ -501,7 +501,7 @@ matt_quest_18.images.attach(io: quest_18_image_1, filename: 'staffs.png')
 quest_18_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/wands.png')
 matt_quest_18.images.attach(io: quest_18_image_2, filename: 'wands.png')
 
-matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlock, wizards, druids].shuffle
+matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlocks, wizards, druids].shuffle
 
 addTagsToQuest(matt_quest_18_tags, matt_quest_18)
 
@@ -577,10 +577,10 @@ addTagsToQuest(jess_quest_24_tags, jess_quest_24)
 
 jess_quest_25 = Quest.create(title: "Mutated kuo-toa parts for sale", text: "Before anyone starts, it's not the sapient variety. Even if it was, these monsters were so mutated by some sick, unidentified strain of mana that they were damn near unrecognizable at first. The parts seem to be poison- and water-aligned to some extent like normal, but also carry a disturbing amount of acidic mana. That's the best layman guess, a good alchemist will tell you more. Also, I guess if anyone wants their daggers we'll sell them cheaply. Same alignments on the enchantments, low quality. Picture related: like that, but somewhat more inside-out.", quest_type: "image", user_id: jess.id)
 
-quest_25_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_25/koa_toa.png')
-jess_quest_25.images.attach(io: quest_25_image_1, filename: 'koa_toa.png')
+quest_25_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_25/kuo_toa.png')
+jess_quest_25.images.attach(io: quest_25_image_1, filename: 'kuo_toa.png')
 
-jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchanment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components].shuffle
+jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchantment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components].shuffle
 
 addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
@@ -674,7 +674,7 @@ ingrid_quest_34 = Quest.create(title: "Footage from a scrying orb of an old batt
 quest_34_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/viking_battle.mp4')
 ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4')
 
-ingrid_quest_34_tags = [army, axes, barbarians, bows, commoners, druids, dwarves, elves, evil_overlords, fallen_kingdom, fighters, forests, gods, goddesses, goliaths, good, hammers, humans, king, kingdoms, lawful, legendary, mountains, plot, queen, rangers, rogues, sorcery, swords, staffs, trolls, warriors, wilderness].shuffle
+ingrid_quest_34_tags = [army, axes, barbarians, bows, commoners, druids, dwarves, elves, evil_overlords, fallen_kingdom, fighters, forests, gods, goddesses, goliaths, good, hammers, humans, king, kingdom, lawful, legendary, mountains, plot, queen, rangers, rogues, sorcery, swords, staffs, trolls, warriors, wilderness].shuffle
 
 addTagsToQuest(ingrid_quest_34_tags, ingrid_quest_34)
 
@@ -752,7 +752,7 @@ kmsvr_quest_41 = Quest.create(title: "Fan-made video about our lives", text: "We
 quest_41_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/wandering_inn_fan_video.mp4')
 kmsvr_quest_41.images.attach(io: quest_41_video_1, filename: 'wandering_inn_fan_video.mp4')
 
-kmsvr_quest_41_tags = [adventure, creatures, creler, cultists, demon_army, dragons, dungeons, evocation, exploration, explosives, goblins, goblin_champions, goblin_lords, goblin_king, gods, goddesses, good, hero_tag, legendary, magic, murder, mystery, political_intrigue, rescue_mission, the_watch, undead].shuffle
+kmsvr_quest_41_tags = [adventure, creatures, creler, cultists, demon_army, dragons, dungeons, evocation, exploration, explosives, goblins, goblin_champions, goblin_lords, goblin_kings, gods, goddesses, good, hero_tag, legendary, magic, murder, mystery, political_intrigue, rescue_mission, the_watch, undead].shuffle
 
 addTagsToQuest(kmsvr_quest_41_tags, kmsvr_quest_41)
 
@@ -772,7 +772,7 @@ addTagsToQuest(kmsvr_quest_42_tags, kmsvr_quest_42)
 
 goblin_slayer_quest_43 = Quest.create(title: "Do not overlook goblins", text: "It is easy to not see them as a threat. They are weak alone. Most are not overly clever. A good [Porcelain Rank] team can defeat them.\nBut they learn. They group up. They become a problem. Do not overlook goblin quests, or you will allow the world to face another [Goblin King].", quest_type: "text", user_id: goblin_slayer.id)
 
-goblin_slayer_quest_43_tags = [evil, goblins, goblin_champions, goblin_lords, goblin_king, hunt, monster_extermination, monster_nest, obsidian_rank, porcelain_rank, rescue_mission, wilderness].shuffle
+goblin_slayer_quest_43_tags = [evil, goblins, goblin_champions, goblin_lords, goblin_kings, hunt, monster_extermination, monster_nest, obsidian_rank, porcelain_rank, rescue_mission, wilderness].shuffle
 
 addTagsToQuest(goblin_slayer_quest_43_tags, goblin_slayer_quest_43)
 
@@ -786,7 +786,7 @@ goblin_slayer_quest_44.images.attach(io: quest_44_image_1, filename: 'goblin_cha
 quest_44_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_44/goblin_champion_2.jpeg')
 goblin_slayer_quest_44.images.attach(io: quest_44_image_1, filename: 'goblin_champion_2.jpeg')
 
-goblin_slayer_quest_44_tags = [goblins, goblin_champions, goblin_lords, goblin_king, gold_rank, monster_nest, monster_extermination, kingdom, wilderness].shuffle
+goblin_slayer_quest_44_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, monster_nest, monster_extermination, kingdom, wilderness].shuffle
 
 addTagsToQuest(goblin_slayer_quest_44_tags, goblin_slayer_quest_44)
 
@@ -803,7 +803,7 @@ goblin_slayer_quest_45.images.attach(io: quest_45_image_2, filename: 'magic_scro
 quest_45_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_45/magic_scroll_3.jpg')
 goblin_slayer_quest_45.images.attach(io: quest_45_image_3, filename: 'magic_scroll_3.jpg')
 
-goblin_slayer_quest_45_tags = [goblins, goblin_champions, goblin_lords, goblin_king, abjuration, artifacts, artificers, books, conjuration, divination, enchantment, explosives, fireball, lightning, magic_items, monster_extermination, protection, rare, spellcasting, transmutation].shuffle
+goblin_slayer_quest_45_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, abjuration, artifacts, artificers, books, conjuration, divination, enchantment, explosives, fireball, lightning, magic_items, monster_extermination, protection, rare, spellcasting, transmutation].shuffle
 
 addTagsToQuest(goblin_slayer_quest_45_tags, goblin_slayer_quest_45)
 
@@ -814,7 +814,7 @@ goblin_slayer_quest_46 = Quest.create(title: "Is this a goblin?", text: "I've be
 quest_46_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_46/ogre.jpeg')
 goblin_slayer_quest_46.images.attach(io: quest_46_image_1, filename: 'ogre.jpeg')
 
-goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_king, alchemists, beasts, creatures, demons, devils, goliaths, magical_creatures, monster_extermination, monster_nest, mountains].shuffle
+goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, alchemists, beasts, creatures, demons, devils, goliaths, magical_creatures, monster_extermination, monster_nest, mountains].shuffle
 
 addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
 
@@ -822,7 +822,7 @@ addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
 
 goblin_slayer_quest_47 = Quest.create(title: "It's your actions.. not your strength, that would lead you to victory.", text: "Burglar", quest_type: "quote", user_id: goblin_slayer.id)
 
-goblin_slayer_quest_47_tags = [adventure, ancients, barbarians, blood_oath, fighters, gods, goblins, goblin_champions, goblin_lords, goblin_king, hunt, monster_extermination, monster_nest].shuffle
+goblin_slayer_quest_47_tags = [adventure, ancients, barbarians, blood_oath, fighters, gods, goblins, goblin_champions, goblin_lords, goblin_kings, hunt, monster_extermination, monster_nest].shuffle
 
 addTagsToQuest(goblin_slayer_quest_47_tags, goblin_slayer_quest_47)
 
@@ -833,7 +833,7 @@ goblin_slayer_quest_48 = Quest.create(title: "This is how the party formed.", te
 quest_48_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/party_formation.mp4')
 goblin_slayer_quest_48.images.attach(io: quest_48_video_1, filename: 'party_formation.mp4')
 
-goblin_slayer_quest_48_tags = [goblins, goblin_champions, goblin_lords, goblin_king, adventure, clerics, dragonborn, druids, elves, exploration, guilds, monks, monster_extermination, dwarves, humans, protection, rangers, silver_rank, warriors].shuffle
+goblin_slayer_quest_48_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, adventure, clerics, dragonborn, druids, elves, exploration, guilds, monks, monster_extermination, dwarves, humans, protection, rangers, silver_rank, warriors].shuffle
 
 addTagsToQuest(goblin_slayer_quest_48_tags, goblin_slayer_quest_48)
 
@@ -844,7 +844,7 @@ goblin_slayer_quest_49 = Quest.create(title: "I like this music.", text: "", que
 quest_49_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/goblin_slayer_theme.mp3')
 goblin_slayer_quest_49.images.attach(io: quest_49_audio_1, filename: 'goblin_slayer_theme.mp3')
 
-goblin_slayer_quest_49_tags = [goblins, goblin_champions, goblin_lords, goblin_king, bards].shuffle
+goblin_slayer_quest_49_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, bards].shuffle
 
 addTagsToQuest(goblin_slayer_quest_49_tags, goblin_slayer_quest_49)
 
@@ -1054,7 +1054,7 @@ catherine_quest_67.images.attach(io: quest_67_image_2, filename: 'bone_wurm.jpg'
 quest_67_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_67/revenant.jpeg')
 catherine_quest_67.images.attach(io: quest_67_image_3, filename: 'revenant.jpeg')
 
-catherine_quest_67_tags = [ancients, army, blood_magic, dark_lord, demon_army, demons, devils, drakes, evil, evil_overlords, fallen_kingdom, grimoires, lich, ,magical_creatures, necromancy, power, spies, undead, warlocks, wurms].shuffle
+catherine_quest_67_tags = [ancients, army, blood_magic, dark_lord, demon_army, demons, devils, drakes, evil, evil_overlords, fallen_kingdom, grimoires, lich,magical_creatures, necromancy, power, spies, undead, warlocks, wurms].shuffle
 
 addTagsToQuest(catherine_quest_67_tags, catherine_quest_67)
 
