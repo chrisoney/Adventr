@@ -871,6 +871,9 @@ ingrid_quest_29_tags = [artificers, beasts, blacksmithing, caravans, creatures, 
 
 addTagsToQuest(ingrid_quest_29_tags, ingrid_quest_29)
 
+quest_29_likes = [jess, kmsvr, carl, catherine]
+addLikesToQuest(quest_29_likes, ingrid_quest_29)
+
 # Ingrid quest 30 - Image
 
 ingrid_quest_30 = Quest.create(title: "Looking for information on local dire wolf populations", text: "Half payment up front, the other half after your intel is confirmed. Looking for any and all information, especially locations and warnings about any aberrant behavior.", quest_type: "image", user_id: ingrid.id)
@@ -885,6 +888,9 @@ ingrid_quest_30_tags = [beasts, cave, creatures, dire_wolves, food, ice, magical
 
 addTagsToQuest(ingrid_quest_30_tags, ingrid_quest_30)
 
+quest_30_likes = [hero, jess, kmsvr, rain]
+addLikesToQuest(quest_30_likes, ingrid_quest_30)
+
 # Ingrid quest 31 - Image
 
 ingrid_quest_31 = Quest.create(title: "Request mage support with the exploration of a potentially new dungeon in the Brennan range.", text: "Exact details will be discussed during negotiations. We hold claim over first delve for over 3 weeks due to guild law. We seek those with powerful fire magic.", quest_type: "image", user_id: ingrid.id)
@@ -895,6 +901,9 @@ ingrid_quest_31.images.attach(io: quest_31_image_1, filename: 'dungeon_entrance.
 ingrid_quest_31_tags = [adventure, bards, clerics, druids, dungeons, dynamos, escort_quest, exploration, fire, fireball, ice, magic, mountains, paladins, protection, sorcerers, sorcery, spellcasting, warlocks, wilderness, wizards].shuffle
 
 addTagsToQuest(ingrid_quest_31_tags, ingrid_quest_31)
+
+quest_31_likes = [hero, terriblis, goblin_slayer, rain]
+addLikesToQuest(quest_31_likes, ingrid_quest_31)
 
 # Ingrid quest 32 - Image
 
@@ -907,6 +916,9 @@ ingrid_quest_32_tags = [beasts, creatures, diamond_rank, divination, dungeons, e
 
 addTagsToQuest(ingrid_quest_32_tags, ingrid_quest_32)
 
+quest_32_likes = [terriblis, kmsvr, catherine]
+addLikesToQuest(quest_32_likes, ingrid_quest_32)
+
 # Ingrid quest 33 - Quote
 
 ingrid_quest_33 = Quest.create(title: "In preparing for battle I have always found that plans are useless, but planning is indispensable.", text: "Dwight D. Eisenhower", quest_type: "quote", user_id: ingrid.id)
@@ -914,6 +926,9 @@ ingrid_quest_33 = Quest.create(title: "In preparing for battle I have always fou
 ingrid_quest_33_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero_tag, monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank].shuffle
 
 addTagsToQuest(ingrid_quest_33_tags, ingrid_quest_33)
+
+quest_33_likes = [hero, kmsvr, goblin_slayer, rain]
+addLikesToQuest(quest_33_likes, ingrid_quest_33)
 
 # Ingrid quest 34 - Video
 
@@ -925,6 +940,9 @@ ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4
 ingrid_quest_34_tags = [army, axes, barbarians, bows, commoners, druids, dwarves, elves, evil_overlords, fallen_kingdom, fighters, forests, gods, goddesses, goliaths, good, hammers, humans, king, kingdom, lawful, legendary, mountains, plot, queen, rangers, rogues, sorcery, swords, staffs, trolls, warriors, wilderness].shuffle
 
 addTagsToQuest(ingrid_quest_34_tags, ingrid_quest_34)
+
+quest_34_likes = [hero, rain, catherine]
+addLikesToQuest(quest_34_likes, ingrid_quest_34)
 
 # Ingrid quest 35 - Audio
 
@@ -939,6 +957,9 @@ ingrid_quest_35.images.attach(io: quest_35_audio_2, filename: 'ride_of_the_valky
 ingrid_quest_35_tags = [adventure, angels, army, barbarians, demon_army, hunt, legendary, mythic, warriors, paladins, bards, fighters].shuffle
 
 addTagsToQuest(ingrid_quest_35_tags, ingrid_quest_35)
+
+quest_35_likes = [hero, rain, carl, catherine]
+addLikesToQuest(quest_35_likes, ingrid_quest_35)
 
 # Kmsvr quests
 # Kmsvr quest 36 - Text
