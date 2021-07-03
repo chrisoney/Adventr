@@ -775,6 +775,9 @@ jess_quest_22_tags = [adventure, alchemy, bandits, beasts, creatures, bows, cara
 
 addTagsToQuest(jess_quest_22_tags, jess_quest_22)
 
+quest_22_likes = [hero]
+addLikesToQuest(quest_22_likes, jess_quest_22)
+
 # Jess quest 23 - Image
 
 jess_quest_23 = Quest.create(title: "Goblin King sighting. Requesting collaboration.", text: "We have confirmed a sighting of the [Goblin King] near Restmos. Our group is not capable of besting it on our own, but can provide support to a group with frontliners. Inquire around Restmos or at the Adventurer's Guild branch in Atsu. Only accepting parties of Gold Rank or above", quest_type: "image", user_id: jess.id)
@@ -789,6 +792,9 @@ jess_quest_23_tags = [creatures, diamond_rank, evil, goblins, goblin_champions, 
 
 addTagsToQuest(jess_quest_23_tags, jess_quest_23)
 
+quest_23_likes = [hero, goblin_slayer]
+addLikesToQuest(quest_23_likes, jess_quest_23)
+
 # Jess quest 24 - Image
 
 jess_quest_24 = Quest.create(title: "Looking for an appraisal on a seemingly magical bow", text: "No known effects yet. Presumed to be free of curses as our idiot of a rogue seems fine after picking it up with his bare hands. Willing to negotiate prior to appraisal for costs of evaluation.", quest_type: "image", user_id: jess.id)
@@ -799,6 +805,9 @@ jess_quest_24.images.attach(io: quest_24_image_1, filename: 'unknown_bow.jpg')
 jess_quest_24_tags = [artifacts, artificers, blacksmithing, bows, contracts, divination, enchantment, magic_items, rare, transmutation, wizards].shuffle
 
 addTagsToQuest(jess_quest_24_tags, jess_quest_24)
+
+quest_24_likes = [terriblis, matt, ingrid, kmsvr, catherine]
+addLikesToQuest(quest_24_likes, jess_quest_24)
 
 # Jess quest 25 - Image
 
@@ -811,6 +820,9 @@ jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creature
 
 addTagsToQuest(jess_quest_25_tags, jess_quest_25)
 
+quest_25_likes = [terriblis, matt, goblin_slayer, rain, carl]
+addLikesToQuest(quest_25_likes, jess_quest_25)
+
 # Jess quest 26 - Quote
 
 jess_quest_26 = Quest.create(title: "Nature, for me is raw and dangerous and difficult and beautiful and unnerving.", text: "Hollowseeker Goldsworthy", quest_type: "quote", user_id: jess.id)
@@ -818,6 +830,9 @@ jess_quest_26 = Quest.create(title: "Nature, for me is raw and dangerous and dif
 jess_quest_26_tags = [adventure, beasts, cave, creatures, creler, dire_wolves, dragons, drakes, earth, ents, exploration, fey, food, hunt, magical_creatures, mountains, pseudodragons, satyr, slimes, trolls, wilderness, wurms, wind].shuffle
 
 addTagsToQuest(jess_quest_26_tags, jess_quest_26)
+
+quest_26_likes = [ingrid, kmsvr, rain]
+addLikesToQuest(quest_26_likes, jess_quest_26)
 
 # Jess quest 27 - Video
 
@@ -830,6 +845,9 @@ jess_quest_27_tags = [adventure, assassins, bows, cave, daggers, druids, elves, 
 
 addTagsToQuest(jess_quest_27_tags, jess_quest_27)
 
+quest_27_likes = [hero, ingrid, kmsvr, goblin_slayer]
+addLikesToQuest(quest_27_likes, jess_quest_27)
+
 # Jess quest 28 - Audio
 
 jess_quest_28 = Quest.create(title: "Our team's anthem", text: "", quest_type: "audio", user_id: jess.id)
@@ -840,6 +858,9 @@ jess_quest_28.images.attach(io: quest_28_audio_1, filename: 'born_to_be_wild.mp3
 jess_quest_28_tags = [adventure, barbarians, beasts, cave, dire_wolves, druids, earth, elves, ents, exploration, fey, food, forests, hunt, monster_nest, mountains, orcs, rangers, rogues, unseelie_court, wilderness, wind].shuffle
 
 addTagsToQuest(jess_quest_28_tags, jess_quest_28)
+
+quest_28_likes = [hero, ingrid, kmsvr]
+addLikesToQuest(quest_28_likes, jess_quest_28)
 
 # Ingrid quests
 # Ingrid quest 29 - Text
