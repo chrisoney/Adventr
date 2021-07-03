@@ -1373,6 +1373,10 @@ catherine_quest_64 = Quest.create(title: "Join the Army of Callow", text: "The t
 catherine_quest_64_tags = [ancients, army, contracts, cultists, dark_lord, demon_army, demons, devils, diamond_rank, evil, evil_overlords, fallen_kingdom, lich, political_intrigue, queen, sorcerers, sorcery, spies, undead, necromancy].shuffle
 
 addTagsToQuest(catherine_quest_64_tags, catherine_quest_64)
+
+quest_64_likes = [hero, terriblis]
+addLikesToQuest(quest_64_likes, catherine_quest_64)
+
 # Catherine quest 65 - Image
 
 catherine_quest_65 = Quest.create(title: "Looking for a band of five to retrieve something lost by Kairos, the Named", text: "Prefered make up will combine Heroes and Villains. We don't have time to squabble right now.\n\nWe seek Kairos' old scepter. By all accounts it is ridiculously gaudy, so it shouldn't be hard to spot. You will be given a container within which to transport the item once you've found it. You'll also receive tools with which to handle the item and instructions for how to do so. Your band must contain a caster well versed in Trismegistan sorceries.\n\nYou will be paid well for undertaking this mission.", quest_type: "image", user_id: catherine.id)
@@ -1383,6 +1387,9 @@ catherine_quest_65.images.attach(io: quest_65_image_1, filename: 'scepter.png')
 catherine_quest_65_tags = [adventure, alchemists, hero_tag, artificers, artifacts, assassins, barbarians, bards, clerics, gold_rank, druids, evil, fighters, gods, goddesses, good, magic_items, monks, paladins, plot, rangers, rogues, scholars, sorcerers, arcane_focus, warriors, warlocks, wizards, spies].shuffle
 
 addTagsToQuest(catherine_quest_65_tags, catherine_quest_65)
+
+quest_65_likes = [hero, terriblis]
+addLikesToQuest(quest_65_likes, catherine_quest_65)
 
 # Catherine quest 66 - Image
 
@@ -1397,6 +1404,9 @@ catherine_quest_66.images.attach(io: quest_66_image_2, filename: 'summer_fey_2.j
 catherine_quest_66_tags = [ancients, elves, fey, fire, hunt, illusion, lawful, magical_creatures, plot, spellcasting, wilderness, unseelie_court].shuffle
 
 addTagsToQuest(catherine_quest_66_tags, catherine_quest_66)
+
+quest_66_likes = [hero, matt, jess, ingrid, kmsvr, rain, carl]
+addLikesToQuest(quest_66_likes, catherine_quest_66)
 
 # Catherine quest 67 - Image
 
@@ -1414,6 +1424,9 @@ catherine_quest_67_tags = [ancients, army, blood_magic, dark_lord, demon_army, d
 
 addTagsToQuest(catherine_quest_67_tags, catherine_quest_67)
 
+quest_67_likes = [hero, terriblis, rain, carl]
+addLikesToQuest(quest_67_likes, catherine_quest_67)
+
 # Catherine quest 68 - Quote
 
 catherine_quest_68 = Quest.create(title: "We should never forget that for a great evil to be defeated, a lesser evil must first become great.", text: "Eleanor Fairfax, founder of the Fairfax dynasty", quest_type: "quote", user_id: catherine.id)
@@ -1421,6 +1434,9 @@ catherine_quest_68 = Quest.create(title: "We should never forget that for a grea
 catherine_quest_68_tags = [books, dark_lord, evil, evil_overlords, fallen_kingdom, good, humans, kingdom, nobles, queen, the_watch, army].shuffle
 
 addTagsToQuest(catherine_quest_68_tags, catherine_quest_68)
+
+quest_68_likes = [hero, matt, jess, ingrid, kmsvr, goblin_slayer, rain, carl]
+addLikesToQuest(quest_68_likes, catherine_quest_68)
 
 # Catherine quest 69 - Video
 
@@ -1433,6 +1449,9 @@ catherine_quest_69_tags = [angels, blood_magic, blood_oath, conjuration, creatur
 
 addTagsToQuest(catherine_quest_69_tags, catherine_quest_69)
 
+quest_69_likes = [terriblis, matt, carl]
+addLikesToQuest(quest_69_likes, catherine_quest_69)
+
 # Catherine quest 70 - Audio
 
 catherine_quest_70 = Quest.create(title: "I've heard this song fairly often recently", text: "I'm sure I'm not the only one.", quest_type: "audio", user_id: catherine.id)
@@ -1443,6 +1462,9 @@ catherine_quest_70.images.attach(io: quest_70_audio_1, filename: 'the_girl_who_c
 catherine_quest_70_tags = [aristocrats, army, dark_lord, divination, evil, evil_overlords, fallen_kingdom, goddesses, kingdom, magic, nobles, political_intrigue, power, queen, spies, squire].shuffle
 
 addTagsToQuest(catherine_quest_70_tags, catherine_quest_70)
+
+quest_70_likes = [terriblis, jess, ingrid, kmsvr]
+addLikesToQuest(quest_70_likes, catherine_quest_70)
 
 # --------------------------------Quests End-----------------------------------
 
