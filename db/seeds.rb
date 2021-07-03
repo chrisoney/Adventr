@@ -410,6 +410,9 @@ rain = User.find_by(username: "Rain")
 carl = User.find_by(username: "Dungeon_Crawler_Carl")
 catherine = User.find_by(username: "Catherine_Foundling")
 
+# user array in case you lose it
+# [hero, terriblis, matt, jess, ingrid, kmsvr, goblin_slayer, rain, carl, catherine]
+
 # # Adding tags to users
 # hero_tags = [gold_rank, goblins, magic_items, dungeons, fighters, warriors, paladins, dragons, exploration, monster_extermination]
 # for tag in hero_tags
@@ -1066,6 +1069,9 @@ goblin_slayer_quest_43_tags = [evil, goblins, goblin_champions, goblin_lords, go
 
 addTagsToQuest(goblin_slayer_quest_43_tags, goblin_slayer_quest_43)
 
+quest_43_likes = [hero, matt, jess, ingrid, rain, carl]
+addLikesToQuest(quest_43_likes, goblin_slayer_quest_43)
+
 # Goblin Slayer quest 44 - Image
 
 goblin_slayer_quest_44 = Quest.create(title: "Goblin Champions", text: "Gold Rank threat. Spotted outside of Water Town. I will also take this quest.", quest_type: "image", user_id: goblin_slayer.id)
@@ -1079,6 +1085,9 @@ goblin_slayer_quest_44.images.attach(io: quest_44_image_1, filename: 'goblin_cha
 goblin_slayer_quest_44_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, monster_nest, monster_extermination, kingdom, wilderness].shuffle
 
 addTagsToQuest(goblin_slayer_quest_44_tags, goblin_slayer_quest_44)
+
+quest_44_likes = [hero, rain, carl]
+addLikesToQuest(quest_44_likes, goblin_slayer_quest_44)
 
 # Goblin Slayer quest 45 - Image
 
@@ -1097,6 +1106,9 @@ goblin_slayer_quest_45_tags = [goblins, goblin_champions, goblin_lords, goblin_k
 
 addTagsToQuest(goblin_slayer_quest_45_tags, goblin_slayer_quest_45)
 
+quest_45_likes = [terriblis, matt, kmsvr, rain, carl, catherine]
+addLikesToQuest(quest_45_likes, goblin_slayer_quest_45)
+
 # Goblin Slayer quest 46 - Image
 
 goblin_slayer_quest_46 = Quest.create(title: "Is this a goblin?", text: "I've been told it is not. It acts like a goblin though.", quest_type: "image", user_id: goblin_slayer.id)
@@ -1108,6 +1120,9 @@ goblin_slayer_quest_46_tags = [goblins, goblin_champions, goblin_lords, goblin_k
 
 addTagsToQuest(goblin_slayer_quest_46_tags, goblin_slayer_quest_46)
 
+quest_46_likes = [jess, ingrid, kmsvr, rain, carl]
+addLikesToQuest(quest_46_likes, goblin_slayer_quest_46)
+
 # Goblin Slayer quest 47 - Quote
 
 goblin_slayer_quest_47 = Quest.create(title: "It's your actions.. not your strength, that would lead you to victory.", text: "Burglar", quest_type: "quote", user_id: goblin_slayer.id)
@@ -1115,6 +1130,9 @@ goblin_slayer_quest_47 = Quest.create(title: "It's your actions.. not your stren
 goblin_slayer_quest_47_tags = [adventure, ancients, barbarians, blood_oath, fighters, gods, goblins, goblin_champions, goblin_lords, goblin_kings, hunt, monster_extermination, monster_nest].shuffle
 
 addTagsToQuest(goblin_slayer_quest_47_tags, goblin_slayer_quest_47)
+
+quest_47_likes = [kmsvr, rain, carl, catherine]
+addLikesToQuest(quest_47_likes, goblin_slayer_quest_47)
 
 # Goblin Slayer quest 48 - Video
 
@@ -1127,6 +1145,9 @@ goblin_slayer_quest_48_tags = [goblins, goblin_champions, goblin_lords, goblin_k
 
 addTagsToQuest(goblin_slayer_quest_48_tags, goblin_slayer_quest_48)
 
+quest_48_likes = [hero, matt, rain, catherine]
+addLikesToQuest(quest_48_likes, goblin_slayer_quest_48)
+
 # Goblin Slayer quest 49 - Audio
 
 goblin_slayer_quest_49 = Quest.create(title: "I like this music.", text: "", quest_type: "audio", user_id: goblin_slayer.id)
@@ -1138,6 +1159,9 @@ goblin_slayer_quest_49_tags = [goblins, goblin_champions, goblin_lords, goblin_k
 
 addTagsToQuest(goblin_slayer_quest_49_tags, goblin_slayer_quest_49)
 
+quest_49_likes = [hero, terriblis, catherine]
+addLikesToQuest(quest_49_likes, goblin_slayer_quest_49)
+
 # Rain quests
 # Rain quest 50 - Text
 
@@ -1146,6 +1170,9 @@ rain_quest_50 = Quest.create(title: "Looking for insight into how you all intera
 rain_quest_50_tags = [academy, ai, enchantment, magic, mystery, outsider].shuffle
 
 addTagsToQuest(rain_quest_50_tags, rain_quest_50)
+
+quest_50_likes = [hero, carl]
+addLikesToQuest(quest_50_likes, rain_quest_50)
 
 # Rain quest 51 - Image
 
@@ -1158,6 +1185,9 @@ rain_quest_51_tags = [creatures, good, magical_creatures, slimes].shuffle
 
 addTagsToQuest(rain_quest_51_tags, rain_quest_51)
 
+quest_51_likes = [hero, matt, catherine]
+addLikesToQuest(quest_51_likes, rain_quest_51)
+
 # Rain quest 52 - Image
 
 rain_quest_52 = Quest.create(title: "Now I know we aren't supposed to talk about dragons", text: "Hear me out, though. Is there any information at all that's safe to discuss? Does writing it down protect the reader from \"retribution\"? Do they just have really good hearing? Is magic involved? Are there magical protections you could use? Are there different types? Are different types more dangerous to talk about? If you talk about them in a very general sense, do some become angrier than others? Any answers at all would be appreciated.", quest_type: "image", user_id: rain.id)
@@ -1168,6 +1198,9 @@ rain_quest_52.images.attach(io: quest_52_image_1, filename: 'dragons.jpg')
 rain_quest_52_tags = [books, cave, beasts, creatures, dragonborn, dragons, drakes, evil, good, hunt, magical_creatures, monster_nest, mountains,  outsider,power, protection, pseudodragons, rare, wurms].shuffle
 
 addTagsToQuest(rain_quest_52_tags, rain_quest_52)
+
+quest_52_likes = [kmsvr]
+addLikesToQuest(quest_52_likes, rain_quest_52)
 
 # Rain quest 53 - Image
 
@@ -1182,6 +1215,9 @@ rain_quest_53_tags = [blacksmithing, dwarves, enchantment, hammers, kingdom, mou
 
 addTagsToQuest(rain_quest_53_tags, rain_quest_53)
 
+quest_53_likes = [hero, kmsvr, catherine]
+addLikesToQuest(quest_53_likes, rain_quest_53)
+
 # Rain quest 54 - Quote
 
 rain_quest_54 = Quest.create(title: "Even the smallest person can change the course of the future.", text: "Galadriel", quest_type: "quote", user_id: rain.id)
@@ -1189,6 +1225,9 @@ rain_quest_54 = Quest.create(title: "Even the smallest person can change the cou
 rain_quest_54_tags = [adventure, ancients, dwarves, elves, evil_overlords, fallen_kingdom, good, hero_tag, mythic, outsider, queen, sorcerers, wizards].shuffle
 
 addTagsToQuest(rain_quest_54_tags, rain_quest_54)
+
+quest_54_likes = [hero, matt, jess, ingrid, kmsvr, goblin_slayer, carl, catherine]
+addLikesToQuest(quest_54_likes, rain_quest_54)
 
 # Rain quest 55 - Video
 
@@ -1200,6 +1239,9 @@ rain_quest_55.images.attach(io: quest_55_video_1, filename: 'you_shall_not_pass.
 rain_quest_55_tags = [adventure, army, bards, books, commoners, creatures, demon_army, demons, dwarves, evil, hero_tag, legendary, mountains, orcs, plot, spellcasting, staffs, wizards].shuffle
 
 addTagsToQuest(rain_quest_55_tags, rain_quest_55)
+
+quest_55_likes = [hero, matt, goblin_slayer, carl]
+addLikesToQuest(quest_55_likes, rain_quest_55)
 
 # Rain quest 56 - Audio
 
@@ -1221,6 +1263,9 @@ rain_quest_56_tags = [adventure, army, bards, books, dark_lord, dwarves, elves, 
 
 addTagsToQuest(rain_quest_56_tags, rain_quest_56)
 
+quest_56_likes = [hero, matt, jess, ingrid, kmsvr, goblin_slayer, carl, catherine]
+addLikesToQuest(quest_56_likes, rain_quest_56)
+
 # Carl quests
 # Carl quest 57 - Text
 
@@ -1229,6 +1274,9 @@ carl_quest_57 = Quest.create(title: "Is anyone else having weird interactions wi
 carl_quest_57_tags = [ai, chaotic, dungeons, evil, gods, murder].shuffle
 
 addTagsToQuest(carl_quest_57_tags, carl_quest_57)
+
+quest_57_likes = [hero, terriblis, matt, jess, ingrid, kmsvr, goblin_slayer, rain, carl, catherine]
+addLikesToQuest(quest_57_likes, carl_quest_57)
 
 # Carl quest 58 - Image
 
