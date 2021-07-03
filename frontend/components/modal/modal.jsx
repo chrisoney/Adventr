@@ -14,7 +14,7 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { modal, closeModal, openModal2, quest } = this.props;
+    const { modal, closeModal, openModal2, quest, reblogAction } = this.props;
     if (!modal) {
       return null;
     }
@@ -48,8 +48,13 @@ class Modal extends React.Component {
         onClickEffect = closeModal;
         transparentBackground = <div className="test-background"></div>;
         break;
+      case 'reblog-new':
       case 'edit-quest':
-        component = <EditQuestContainer type={quest.quest_type} quest={quest}/>;
+        component = <EditQuestContainer
+          type={quest.quest_type}
+          quest={quest}
+          reblogAction={reblogAction}
+        />;
         background = 'new-quest-background';
         container = 'new-quest-container';
         onClickEffect = closeModal;
@@ -100,15 +105,27 @@ class Modal extends React.Component {
 const mapStateToProps = (state) => {
   let modal = state.ui.modal;
   let quest;
+  let reblogAction = null;
   if (modal && modal.startsWith('edit-quest')) {
     modal = state.ui.modal.slice(0, 10);
     const id = parseInt(state.ui.modal.slice(11));
     quest = state.entities.quests[id];
+  } else if (modal && modal.startsWith('reblog-new')) {
+    modal = modal.slice(0, 10);
+    const id = parseInt(state.ui.modal.slice(11));
+    quest = state.entities.quests[id];
+    reblogAction = 'create';
+  } else if (modal && modal.startsWith('reblog-edit')) {
+    modal = modal.slice(0, 11);
+    const id = parseInt(state.ui.modal.slice(12));
+    quest = state.entities.quests[id];
+    reblogAction = 'edit';
   }
   return {
     quest,
     modal: modal,
     modal2: state.ui.modal2,
+    reblogAction
   };
 };
 

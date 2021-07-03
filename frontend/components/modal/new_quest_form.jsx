@@ -458,7 +458,10 @@ class NewQuestForm extends React.Component {
       />
     );
 
-    const textSection = (imageFiles || this.state.oldImageUrls) && !['text', 'quote'].includes(type) ? (
+    // What the fuck is the purpose of this
+    const textSection = (imageFiles || this.state.oldImageUrls)
+      && !['text', 'quote'].includes(type)
+      ? (
       <textarea
         value={text}
         placeholder={placeholderText}
@@ -466,7 +469,15 @@ class NewQuestForm extends React.Component {
         // elastic="false"
         onChange={this.handleInput('text')}
       ></textarea>
-    ) : null;
+      ) : (
+        <textarea
+        value={text}
+        placeholder={placeholderText}
+        className="input-body"
+        // elastic="false"
+        onChange={this.handleInput('text')}
+      ></textarea>
+    );
 
     const tagSection = (
       <div

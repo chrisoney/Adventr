@@ -202,8 +202,11 @@ class Quest extends React.Component {
           <div className={`quest-footer-right`}>
             <div className={`quest-buttons`}>
               {/* Not functional yet */}
-              {/* <button className="reply fas fa-reply"></button>
-              <button className="reblog fas fa-retweet"></button> */}
+              {/* <button className="reply fas fa-reply"></button> */}
+              {type !== 'reblog' && <button
+                className="reblog fas fa-retweet"
+                onClick={e => this.props.openModal(`reblog-new-${posting.id}`)}
+              ></button>}
               <button
                 className={`like ${likedClass}`}
                 onClick={(e) => this.toggleLiked(e)}
