@@ -970,6 +970,9 @@ kmsvr_quest_36_tags = [academy, adventure, ai, alchemists, ancients, aristocrats
 
 addTagsToQuest(kmsvr_quest_36_tags, kmsvr_quest_36)
 
+quest_36_likes = [terriblis, matt, jess, ingrid, rain]
+addLikesToQuest(quest_36_likes, kmsvr_quest_36)
+
 # Kmsvr quest 37 - Image
 
 kmsvr_quest_37 = Quest.create(title: "Here is a picture of our team.", text: "Someone drew a picture of our team. It is great and my team let's me hold on to it. Notice how powerful each of us is. I am asserting dominance over whoever reads this.", quest_type: "image", user_id: kmsvr.id)
@@ -980,6 +983,9 @@ kmsvr_quest_37.images.attach(io: quest_37_image_1, filename: 'horns_of_hammerad_
 kmsvr_quest_37_tags = [academy, adventure, artifacts, commoners, contracts, creler, dungeons, elves, fighters, gold_rank, good, guilds, humans, ice, lawful, magic_items, monster_extermination, necromancy, nobles, sorcerers, swords, undead].shuffle
 
 addTagsToQuest(kmsvr_quest_37_tags, kmsvr_quest_37)
+
+quest_37_likes = [hero, matt, jess, ingrid, rain]
+addLikesToQuest(quest_37_likes, kmsvr_quest_37)
 
 # Kmsvr quest 38 - Image
 
@@ -995,6 +1001,9 @@ kmsvr_quest_38_tags = [acid, contracts, creatures, creler, evil, gold_rank, magi
 
 addTagsToQuest(kmsvr_quest_38_tags, kmsvr_quest_38)
 
+quest_38_likes = [terriblis, jess, ingrid, carl, catherine]
+addLikesToQuest(quest_38_likes, kmsvr_quest_38)
+
 # Kmsvr quest 39 - Image
 
 kmsvr_quest_39 = Quest.create(title: "There is a lich loose in the Flooded Plains", text: "This is a bad lich. There are plenty of good necromancers, like Comrade Pisces. This, however, is a bad lich, so we should stop him. Looking for information about the bad lich. Thank you.", quest_type: "image", user_id: kmsvr.id)
@@ -1006,6 +1015,9 @@ kmsvr_quest_39_tags = [ancients, blood_magic, clerics, dark_lord, evil, evil_ove
 
 addTagsToQuest(kmsvr_quest_39_tags, kmsvr_quest_39)
 
+quest_39_likes = [hero, matt, catherine]
+addLikesToQuest(quest_39_likes, kmsvr_quest_39)
+
 # Kmsvr quest 40 - Quote
 
 kmsvr_quest_40 = Quest.create(title: "Is it war?", text: "Me (Kmsvr)", quest_type: "quote", user_id: kmsvr.id)
@@ -1013,6 +1025,9 @@ kmsvr_quest_40 = Quest.create(title: "Is it war?", text: "Me (Kmsvr)", quest_typ
 kmsvr_quest_40_tags = [army, chaotic, fighters, gold_rank, hero_tag, hunt, kingdom, the_watch].shuffle
 
 addTagsToQuest(kmsvr_quest_40_tags, kmsvr_quest_40)
+
+quest_40_likes = [hero, rain, carl, catherine]
+addLikesToQuest(quest_40_likes, kmsvr_quest_40)
 
 # Kmsvr quest 41 - Video
 
@@ -1025,6 +1040,9 @@ kmsvr_quest_41_tags = [adventure, creatures, creler, cultists, demon_army, drago
 
 addTagsToQuest(kmsvr_quest_41_tags, kmsvr_quest_41)
 
+quest_41_likes = [hero, matt, jess, rain, catherine]
+addLikesToQuest(quest_41_likes, kmsvr_quest_41)
+
 # Kmsvr quest 42 - Audio
 
 kmsvr_quest_42 = Quest.create(title: "New release by The Singer of Terandria", text: "She calls it We Will Rock You and claims it to be the work of a [Queen]!", quest_type: "audio", user_id: kmsvr.id)
@@ -1035,6 +1053,9 @@ kmsvr_quest_42.images.attach(io: quest_42_audio_1, filename: 'we_will_rock_you.m
 kmsvr_quest_42_tags = [angels, army, bards, commoners, good, mythic, outsider, plot, queen].shuffle
 
 addTagsToQuest(kmsvr_quest_42_tags, kmsvr_quest_42)
+
+quest_42_likes = [matt, rain, carl]
+addLikesToQuest(quest_42_likes, kmsvr_quest_42)
 
 # Goblin Slayer quests
 # Goblin Slayer quest 43 - Text
