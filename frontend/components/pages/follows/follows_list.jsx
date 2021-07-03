@@ -82,7 +82,12 @@ class FollowsList extends React.Component {
             <img src={user.avatarUrl || user.avatar} className="followed-user-avatar" />
             <div className="followed-user-details">
               <div className="followed-user-username">{user.username}</div>
-              <div className="followed-user-latest">Updated {latestDate}</div>
+              <div className="followed-user-latest">
+                {user.quests.length === 0 ?
+                  'This Guild has no posts yet.' :
+                  `Updated ${latestDate}`
+                }
+              </div>
             </div>
           </div>
           <div className="followed-user-right">

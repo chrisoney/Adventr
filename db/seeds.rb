@@ -1466,15 +1466,91 @@ addTagsToQuest(catherine_quest_70_tags, catherine_quest_70)
 quest_70_likes = [terriblis, jess, ingrid, kmsvr]
 addLikesToQuest(quest_70_likes, catherine_quest_70)
 
-quest_list = [hero_quest_1, hero_quest_2, hero_quest_3, hero_quest_4, hero_quest_5, hero_quest_6, hero_quest_7, terriblis_quest_8, terriblis_quest_9, terriblis_quest_10, terriblis_quest_11, terriblis_quest_12, terriblis_quest_13, terriblis_quest_14, matt_quest_15, matt_quest_16, matt_quest_17, matt_quest_18, matt_quest_19, matt_quest_20, matt_quest_21, jess_quest_22, jess_quest_23, jess_quest_24, jess_quest_25, jess_quest_26, jess_quest_27, jess_quest_28, ingrid_quest_29, ingrid_quest_30, ingrid_quest_31, ingrid_quest_32, ingrid_quest_33, ingrid_quest_34, ingrid_quest_35, kmsvr_quest_36, kmsvr_quest_37, kmsvr_quest_38, kmsvr_quest_39, kmsvr_quest_40, kmsvr_quest_41, kmsvr_quest_42, goblin_slayer_quest_43, goblin_slayer_quest_44, goblin_slayer_quest_45, goblin_slayer_quest_46, goblin_slayer_quest_47, goblin_slayer_quest_48, goblin_slayer_quest_49, rain_quest_50, rain_quest_51, rain_quest_52, rain_quest_53, rain_quest_54, rain_quest_55, rain_quest_56, carl_quest_57, carl_quest_58, carl_quest_59, carl_quest_60, carl_quest_61, carl_quest_62, carl_quest_63, catherine_quest_64, catherine_quest_65, catherine_quest_66, catherine_quest_67, catherine_quest_68, catherine_quest_69, catherine_quest_70]
+quest_list = [hero_quest_1, hero_quest_2, hero_quest_3, hero_quest_4, hero_quest_5, hero_quest_6, hero_quest_7, terriblis_quest_8, terriblis_quest_9, terriblis_quest_10, terriblis_quest_11, terriblis_quest_12, terriblis_quest_13, terriblis_quest_14, matt_quest_15, matt_quest_16, matt_quest_17, matt_quest_18, matt_quest_19, matt_quest_20, matt_quest_21, jess_quest_22, jess_quest_23, jess_quest_24, jess_quest_25, jess_quest_26, jess_quest_27, jess_quest_28, ingrid_quest_29, ingrid_quest_30, ingrid_quest_31, ingrid_quest_32, ingrid_quest_33, ingrid_quest_34, ingrid_quest_35, kmsvr_quest_36, kmsvr_quest_37, kmsvr_quest_38, kmsvr_quest_39, kmsvr_quest_40, kmsvr_quest_41, kmsvr_quest_42, goblin_slayer_quest_43, goblin_slayer_quest_44, goblin_slayer_quest_45, goblin_slayer_quest_46, goblin_slayer_quest_47, goblin_slayer_quest_48, goblin_slayer_quest_49, rain_quest_50, rain_quest_51, rain_quest_52, rain_quest_53, rain_quest_54, rain_quest_55, rain_quest_56, carl_quest_57, carl_quest_58, carl_quest_59, carl_quest_60, carl_quest_61, carl_quest_62, carl_quest_63, catherine_quest_64, catherine_quest_65, catherine_quest_66, catherine_quest_67, catherine_quest_68, catherine_quest_69, catherine_quest_70].shuffle
 
-quest_list.each do |quest|
-  quest.save
-end
+# Saving just the quests
+# quest_list.each do |quest|
+#   quest.save
+# end
 
 # --------------------------------Quests End-----------------------------------
 
 # Reblogs Section
+# Hero Reblog 1
+hero_reblog_1 = Reblog.new(user_id: hero.id, quest_id: null, text: "")
+# Hero Reblog 2
+hero_reblog_2 = Reblog.new(user_id: hero.id, quest_id: null, text: "")
+# Hero Reblog 3
+hero_reblog_3 = Reblog.new(user_id: hero.id, quest_id: null, text: "")
+# Terriblis Reblog 4
+terriblis_reblog_4 = Reblog.new(user_id: terriblis.id, quest_id: null, text: "")
+# Terriblis Reblog 5
+terriblis_reblog_5 = Reblog.new(user_id: terriblis.id, quest_id: null, text: "")
+# Terriblis Reblog 6
+terriblis_reblog_6 = Reblog.new(user_id: terriblis.id, quest_id: null, text: "")
+# Matt Reblog 7
+matt_reblog_7 = Reblog.new(user_id: matt.id, quest_id: null, text: "")
+# Matt Reblog 8
+matt_reblog_8 = Reblog.new(user_id: matt.id, quest_id: null, text: "")
+# Matt Reblog 9
+matt_reblog_9 = Reblog.new(user_id: matt.id, quest_id: null, text: "")
+# Jess Reblog 10
+jess_reblog_10 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
+# Jess Reblog 11
+jess_reblog_11 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
+# Jess Reblog 12
+jess_reblog_12 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
+# Ingrid Reblog 13
+ingrid_reblog_13 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
+# Ingrid Reblog 14
+ingrid_reblog_14 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
+# Ingrid Reblog 15
+ingrid_reblog_15 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
+# Kmsvr Reblog 16
+kmsvr_reblog_16 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
+# Kmsvr Reblog 17
+kmsvr_reblog_17 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
+# Kmsvr Reblog 18
+kmsvr_reblog_18 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
+# Goblin Slayer Reblog 19
+goblin_slayer_reblog_19 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
+# Goblin Slayer Reblog 20
+goblin_slayer_reblog_20 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
+# Goblin Slayer Reblog 21
+goblin_slayer_reblog_21 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
+# Rain Reblog 22
+rain_reblog_22 = Reblog.new(user_id: rain.id, quest_id: null, text: "")
+# Rain Reblog 23
+rain_reblog_23 = Reblog.new(user_id: rain.id, quest_id: null, text: "")
+# Rain Reblog 24
+rain_reblog_24 = Reblog.new(user_id: rain.id, quest_id: null, text: "")
+# Carl Reblog 25
+carl_reblog_25 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
+# Carl Reblog 26
+carl_reblog_26 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
+# Carl Reblog 27
+carl_reblog_27 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
+# Catherine Reblog 28
+catherine_reblog_28 = Reblog.new(user_id: catherine.id, quest_id: null, text: "")
+# Catherine Reblog 29
+catherine_reblog_29 = Reblog.new(user_id: catherine.id, quest_id: null, text: "")
+# Catherine Reblog 30
+catherine_reblog_30 = Reblog.new(user_id: catherine.id, quest_id: null, text: "")
+
+reblog_list = [hero_reblog_1, hero_reblog_2, hero_reblog_3, terriblis_reblog_4, terriblis_reblog_5, terriblis_reblog_6, matt_reblog_7, matt_reblog_8, matt_reblog_9, jess_reblog_10, jess_reblog_11, jess_reblog_12, ingrid_reblog_13, ingrid_reblog_14, ingrid_reblog_15, kmsvr_reblog_16, kmsvr_reblog_17, kmsvr_reblog_18, goblin_slayer_reblog_19, goblin_slayer_reblog_20, goblin_slayer_reblog_21, rain_reblog_22, rain_reblog_23, rain_reblog_24, carl_reblog_25, carl_reblog_26, carl_reblog_27, catherine_reblog_28, catherine_reblog_29, catherine_reblog_30].shuffle
+
+# Saving just the reblogs
+# reblog_list.each do |reblog|
+#   reblog.save
+# end
+
+combined_list = quest_list.concat(reblog_list).shuffle
+
+combined_list.each do |inst|
+  inst.save
+end
+
+# -------------------------------Reblogs End-----------------------------------
 
 # Follows Section
 def addFollowsToUser(follows, user)
@@ -1490,7 +1566,7 @@ addFollowsToUser(hero_follows, hero)
 terriblis_follows = [matt, kmsvr, rain, carl]
 addFollowsToUser(terriblis_follows, terriblis)
 # Matt Follows
-matt_follows = [hero, terriblis, matt, rain, carl, catherine]
+matt_follows = [hero, terriblis, rain, carl, catherine]
 addFollowsToUser(matt_follows, matt)
 # Jess Follows
 jess_follows = [hero, ingrid, kmsvr, goblin_slayer, rain]
