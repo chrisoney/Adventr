@@ -1477,36 +1477,36 @@ def addFollowsToUser(follows, user)
   end
 end
 
-# # Hero Follows
-# hero_follows = []
-# addFollowsToUser(hero_follows, hero)
-# # Terriblis Follows
-# terriblis_follows = []
-# addFollowsToUser(terriblis_follows, terriblis)
-# # Matt Follows
-# matt_follows = []
-# addFollowsToUser(matt_follows, matt)
-# # Jess Follows
-# jess_follows = []
-# addFollowsToUser(jess_follows, jess)
-# # Ingrid Follows
-# ingrid_follows = []
-# addFollowsToUser(ingrid_follows, ingrid)
-# # Kmsvr Follows
-# kmsvr_follows = []
-# addFollowsToUser(kmsvr_follows, kmsvr)
-# # Goblin Slayer Follows
-# goblin_slayer_follows = []
-# addFollowsToUser(goblin_slayer_follows, goblin_slayer)
-# # Rain Follows
-# rain_follows = []
-# addFollowsToUser(rain_follows, rain)
-# # Carl Follows
-# carl_follows = []
-# addFollowsToUser(carl_follows, carl)
-# # Catherine Follows
-# catherine_follows = []
-# addFollowsToUser(catherine_follows, catherine)
+# Hero Follows
+hero_follows = [matt, jess, kmsvr, rain, carl, catherine]
+addFollowsToUser(hero_follows, hero)
+# Terriblis Follows
+terriblis_follows = [matt, kmsvr, rain, carl]
+addFollowsToUser(terriblis_follows, terriblis)
+# Matt Follows
+matt_follows = [hero, terriblis, matt, rain, carl, catherine]
+addFollowsToUser(matt_follows, matt)
+# Jess Follows
+jess_follows = [hero, ingrid, kmsvr, goblin_slayer, rain]
+addFollowsToUser(jess_follows, jess)
+# Ingrid Follows
+ingrid_follows = [hero, terriblis, goblin_slayer, catherine]
+addFollowsToUser(ingrid_follows, ingrid)
+# Kmsvr Follows
+kmsvr_follows = [hero, terriblis, matt, jess, ingrid, goblin_slayer, rain, carl, catherine]
+addFollowsToUser(kmsvr_follows, kmsvr)
+# Goblin Slayer Follows
+goblin_slayer_follows = [catherine]
+addFollowsToUser(goblin_slayer_follows, goblin_slayer)
+# Rain Follows
+rain_follows = [hero, matt, jess, ingrid, kmsvr, goblin_slayer, carl, catherine]
+addFollowsToUser(rain_follows, rain)
+# Carl Follows
+carl_follows = [hero, terriblis, matt, jess, ingrid, kmsvr, goblin_slayer, rain, catherine]
+addFollowsToUser(carl_follows, carl)
+# Catherine Follows
+catherine_follows = [hero, terriblis, kmsvr, rain]
+addFollowsToUser(catherine_follows, catherine)
 
 
 
