@@ -704,8 +704,8 @@ matt_quest_17_tags = [alchemists, alchemy, army, barbarians, blood_magic, chaoti
 
 addTagsToQuest(matt_quest_17_tags, matt_quest_17)
 
-quest_16_likes = [hero, terriblis, ingrid, goblin_slayer]
-addLikesToQuest(quest_16_likes, matt_quest_16)
+quest_17_likes = [hero, terriblis, ingrid, goblin_slayer]
+addLikesToQuest(quest_17_likes, matt_quest_17)
 
 # Matt quest 18 - Image
 
@@ -721,6 +721,9 @@ matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, cleri
 
 addTagsToQuest(matt_quest_18_tags, matt_quest_18)
 
+quest_18_likes = [terriblis, rain, catherine]
+addLikesToQuest(quest_18_likes, matt_quest_18)
+
 # Matt quest 19 - Quote
 
 matt_quest_19 = Quest.create(title: "You have power over your mind - not outside events. Unless someone has mind magic; then you have power over nothing.", text: "Marcus the Aeromancer", quest_type: "quote", user_id: matt.id)
@@ -729,6 +732,8 @@ matt_quest_19_tags = [academy, books, divination, magic, magic_items, magical_cr
 
 addTagsToQuest(matt_quest_19_tags, matt_quest_19)
 
+quest_19_likes = [terriblis, kmsvr, goblin_slayer, rain]
+addLikesToQuest(quest_19_likes, matt_quest_19)
 
 # Matt quest 20 - Video
 
@@ -744,6 +749,9 @@ matt_quest_20_tags = [academy, anarchy, bronze_rank, chaotic, beasts, creatures,
 
 addTagsToQuest(matt_quest_20_tags, matt_quest_20)
 
+quest_20_likes = [hero, rain]
+addLikesToQuest(quest_20_likes, matt_quest_20)
+
 # Matt quest 21 - Audio
 
 matt_quest_21 = Quest.create(title: "A breakout hit by a band of bards", text: "Spellcaster Apprentices is a firm supporter of the arts, especially those related to spellcasting!", quest_type: "audio", user_id: matt.id)
@@ -754,6 +762,9 @@ matt_quest_21.images.attach(io: quest_21_audio, filename: 'do_you_believe_in_mag
 matt_quest_21_tags = [abjuration, artificers, bards, blood_magic, clerics, conjuration, divination, druids, dynamos, enchantment, evocation, familiars, illusion, magic, necromancy, paladins, sorcerers, spellcasting, transmutation, wizards].shuffle
 
 addTagsToQuest(matt_quest_21_tags, matt_quest_21)
+
+quest_21_likes = [terriblis, kmsvr, carl]
+addLikesToQuest(quest_21_likes, matt_quest_21)
 
 # Jess quests
 # Jess quest 22 - Text
