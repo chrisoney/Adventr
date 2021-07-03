@@ -1275,7 +1275,7 @@ carl_quest_57_tags = [ai, chaotic, dungeons, evil, gods, murder].shuffle
 
 addTagsToQuest(carl_quest_57_tags, carl_quest_57)
 
-quest_57_likes = [hero, terriblis, matt, jess, ingrid, kmsvr, goblin_slayer, rain, carl, catherine]
+quest_57_likes = [hero, kmsvr, rain]
 addLikesToQuest(quest_57_likes, carl_quest_57)
 
 # Carl quest 58 - Image
@@ -1292,6 +1292,9 @@ carl_quest_58_tags = [ai, adventure, anarchy, books, chaotic, dungeons, earth, e
 
 addTagsToQuest(carl_quest_58_tags, carl_quest_58)
 
+quest_58_likes = [matt, jess, ingrid, kmsvr, goblin_slayer, rain]
+addLikesToQuest(quest_58_likes, carl_quest_58)
+
 # Carl quest 59 - Image
 
 carl_quest_59 = Quest.create(title: "Here's an example of what we used to be up against.", text: "Carl: These guys were a headache, though I'm pretty sure we could take them pretty easily at this point. They're not smart, and they don't pay attention to their weapon cache, so that's a good source of explosives if you can sneak in. If they spot you, though, just run. You don't want to deal with their Hob lobbers, even if you're too powerful to be in danger.\n\nDonut: CARL FLIRTED WITH A GOBLIN TO TRICK THEM. THAT WASN'T VERY NICE OF HIM. MISS BEATRICE WOULD NOT STAND FOR SUCH BEHAVIOR IF SHE WAS HERE.", quest_type: "image", user_id: carl.id)
@@ -1302,6 +1305,9 @@ carl_quest_59.images.attach(io: quest_59_image_1, filename: 'goblin_bomb_bard.jp
 carl_quest_59_tags = [ai, alchemy, chaotic, creatures, bards, dungeons, evil, explosives, goblins, hunt, magical_creatures, monster_extermination, plot, porcelain_rank, princess].shuffle
 
 addTagsToQuest(carl_quest_59_tags, carl_quest_59)
+
+quest_59_likes = [jess, ingrid, goblin_slayer, rain]
+addLikesToQuest(quest_59_likes, carl_quest_59)
 
 # Carl quest 60 - Image
 
@@ -1314,6 +1320,9 @@ carl_quest_60_tags = [anarchy, books, conjuration, creatures, dungeons, explorat
 
 addTagsToQuest(carl_quest_60_tags, carl_quest_60)
 
+quest_60_likes = [kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(quest_60_likes, carl_quest_60)
+
 # Carl quest 61 - Quote
 
 carl_quest_61 = Quest.create(title: "Can't go into detail here. I'll update if I survive this. My party member got that Color Spray spell that I remember from D&D, but it's basically useless here. It's just a light show that does no damage and hangs around for too long. There seems to be some solidness to the colors, because you can trap them.\nI figured out that if I can grab some of the colors, I can mix them in a flash bang. It's not a great weapon, but it's really useful against any mob with sensitive eyesight.\nIf you know someone with the spell, stock up on several of this kind of bomb for Floor 8. If you make something called... [Carkin Jazz Bombnanza]... you did it right. I didn't pick the name.", text: "Cark, 17th holder of the Anarchist's Cookbook", quest_type: "quote", user_id: carl.id)
@@ -1321,6 +1330,9 @@ carl_quest_61 = Quest.create(title: "Can't go into detail here. I'll update if I
 carl_quest_61_tags = [ai, anarchy, chaotic, dungeons, enchantment, explosives, illusion, magic, magic_items, monster_extermination, sorcery, spellcasting, transmutation].shuffle
 
 addTagsToQuest(carl_quest_61_tags, carl_quest_61)
+
+quest_61_likes = [hero, matt, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(quest_61_likes, carl_quest_61)
 
 # Carl quest 62 - Video
 
@@ -1332,6 +1344,9 @@ carl_quest_62.images.attach(io: quest_62_video_1, filename: 'cat_show.mp4')
 carl_quest_62_tags = [ai, beasts,gods, goddesses, gold, gold_rank, lawful, princess, spies].shuffle
 
 addTagsToQuest(carl_quest_62_tags, carl_quest_62)
+
+quest_62_likes = [kmsvr, catherine]
+addLikesToQuest(quest_62_likes, carl_quest_62)
 
 # Carl quest 63 - Audio
 
@@ -1346,6 +1361,9 @@ carl_quest_63.images.attach(io: quest_63_audio_2, filename: 'i_believe_in_a_thin
 carl_quest_63_tags = [acid, alchemy, anarchy, chaotic, bards, creatures, dungeons, earth, explosives, fire, ice, lightning, magic, magic_items, monster_extermination, plot, transmutation].shuffle
 
 addTagsToQuest(carl_quest_63_tags, carl_quest_63)
+
+quest_63_likes = [hero, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(quest_63_likes, carl_quest_63)
 
 # Catherine quests
 # Catherine quest 64 - Text
