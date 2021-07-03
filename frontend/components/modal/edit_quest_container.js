@@ -10,6 +10,8 @@ const mapStateToProps = (state, ownProps) => {
     tags: Object.values(state.entities.tags),
     type: ownProps.type,
     quest: ownProps.quest,
+    reblogAction: ownProps.reblogAction,
+    reblogText: '',
     task: 'edit'
   };
 }

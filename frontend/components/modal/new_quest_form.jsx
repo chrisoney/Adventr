@@ -4,13 +4,14 @@ import Loading from '../loading/loading'
 class NewQuestForm extends React.Component {
   constructor(props) {
     super(props);
-    const { type, currentUser, quest } = this.props;
+    const { type, currentUser, quest, reblogText } = this.props;
     this.state = {
       currentUser_id: currentUser.id,
       id: quest ? quest.id : null,
       type: type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
+      reblogText: reblogText,
       tags: quest ? quest.tag_joins.map(tag_join => tag_join.tag.tag_name) : [],
       oldImageUrls: quest ? quest.imageUrls : null,
       imageUrls: null,
@@ -246,9 +247,10 @@ class NewQuestForm extends React.Component {
   }
 
   render() {
-    const { closeModal, currentUser, type, task } = this.props;
-    const { title, text, imageFiles } = this.state;
+    const { closeModal, currentUser, type, task, reblogAction } = this.props;
+    const { title, text, reblogText, imageFiles } = this.state;
     let placeholderText;
+    console.log(reblogAction)
 
     switch (type) {
       case 'text':
@@ -459,25 +461,53 @@ class NewQuestForm extends React.Component {
     );
 
     // What the fuck is the purpose of this
-    const textSection = (imageFiles || this.state.oldImageUrls)
-      && !['text', 'quote'].includes(type)
+    // const textSection = (imageFiles || this.state.oldImageUrls)
+    //   && !['text', 'quote'].includes(type)
+    //   ? (
+    //   <textarea
+    //     value={text}
+    //     placeholder={placeholderText}
+    //     className="input-body"
+    //     // elastic="false"
+    //     onChange={this.handleInput('text')}
+    //   ></textarea>
+    //   ) : (
+    //     <textarea
+    //     value={text}
+    //     placeholder={placeholderText}
+    //     className="input-body"
+    //     // elastic="false"
+    //     onChange={this.handleInput('text')}
+    //   ></textarea>
+    // );
+    const textSection = reblogAction
       ? (
-      <textarea
-        value={text}
-        placeholder={placeholderText}
-        className="input-body"
-        // elastic="false"
-        onChange={this.handleInput('text')}
-      ></textarea>
+        <div
+          className="old-text-area"
+          // elastic="false"
+        >
+          <div className="old-text-area-content">{text}</div>
+          <div className="old-text-area-author">{`By ${this.props.quest.author.username}`}</div>
+        </div>
       ) : (
         <textarea
-        value={text}
+          value={text}
+          placeholder={placeholderText}
+          className="input-body"
+          // elastic="false"
+          onChange={this.handleInput('text')}
+        ></textarea>
+    );
+    
+    const reblogTextSection = reblogAction ? (
+      <textarea
+        value={reblogText}
         placeholder={placeholderText}
         className="input-body"
         // elastic="false"
-        onChange={this.handleInput('text')}
+        onChange={this.handleInput('reblogText')}
       ></textarea>
-    );
+    ) : null;
 
     const tagSection = (
       <div
@@ -524,6 +554,7 @@ class NewQuestForm extends React.Component {
           <div className="formData">
             {imageUploadSection}
             {textSection}
+            {reblogTextSection}
             {tagSection}
           </div>
         );
@@ -533,6 +564,7 @@ class NewQuestForm extends React.Component {
           <div className="formData">
             {quoteSection}
             {textSection}
+            {reblogTextSection}
             {tagSection}
           </div>
         );
@@ -542,6 +574,7 @@ class NewQuestForm extends React.Component {
           <div className="formData">
             {audioUploadSection}
             {textSection}
+            {reblogTextSection}
             {tagSection}
           </div>
         );
@@ -551,6 +584,7 @@ class NewQuestForm extends React.Component {
           <div className="formData">
             {videoUploadSection}
             {textSection}
+            {reblogTextSection}
             {tagSection}
           </div>
         );
