@@ -594,6 +594,9 @@ terriblis_quest_9_tags = [abjuration, acid, alchemy, bards, blood_magic, conjura
 
 addTagsToQuest(terriblis_quest_9_tags, terriblis_quest_9)
 
+quest_9_likes = [hero, matt, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(quest_9_likes, terriblis_quest_9)
+
 
 # Terriblis quest 10 - Image
 terriblis_quest_10 = Quest.create(title: "Shoggoth infestation", text: "I spilled something perfectly legal to possess and now my castle is full of Shoggoths. They don't do much besides eat valuable artifacts and whisper secrets from a place I've never heard of in the voice of my second nemesis. I want them gone immediately.", quest_type: "image", user_id: terriblis.id)
@@ -609,6 +612,9 @@ terriblis_quest_10_tags = [ancients, beasts, chaotic, creatures, evil, magical_c
 
 addTagsToQuest(terriblis_quest_10_tags, terriblis_quest_10)
 
+quest_10_likes = [ingrid, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(quest_10_likes, terriblis_quest_10)
+
 # Terriblis quest 11 - Image
 
 terriblis_quest_11 = Quest.create(title: "Looking to hire an assassin. Must be Platinum Rank or higher", text: "As a disclaimer, your target is still low level. This is a real request. Payment and dossier on the victim will be provided upon acceptance of the quest. I cannot say their name here, but their title rhymes with [Zero].", quest_type: "image", user_id: terriblis.id)
@@ -620,12 +626,18 @@ terriblis_quest_11_tags = [assassins, bandits, blood_oath, contracts, hero_tag, 
 
 addTagsToQuest(terriblis_quest_11_tags, terriblis_quest_11)
 
+quest_11_likes = [hero, catherine]
+addLikesToQuest(quest_11_likes, terriblis_quest_11)
+
 # Terriblis quest 12 - Quote
 terriblis_quest_12 = Quest.create(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
 
 terriblis_quest_12_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies].shuffle
 
 addTagsToQuest(terriblis_quest_12_tags, terriblis_quest_12)
+
+quest_12_likes = [jess, ingrid, kmsvr, catherine]
+addLikesToQuest(quest_12_likes, terriblis_quest_12)
 
 # Terriblis quest 13 - Video
 terriblis_quest_13 = Quest.create(title: "There may be similarities...", text: "", quest_type: "video", user_id: terriblis.id)
@@ -637,6 +649,9 @@ terriblis_quest_13_tags = [aristocrats, bards, dark_lord, evil, evil_overlords, 
 
 addTagsToQuest(terriblis_quest_13_tags, terriblis_quest_13)
 
+quest_13_likes = [rain, carl, catherine]
+addLikesToQuest(quest_13_likes, terriblis_quest_13)
+
 # Terriblis quest 14 - Audio
 terriblis_quest_14 = Quest.create(title: "An excellent song by a rather odd bard.", text: "I have not had the pleasure of meeting this bard in person, mind you. I was sold this song crystal and thought it a scam due to the price. Only after slaughtering the merchant caravan in its entirety did I test the product and find its music most agreeable. I hope to \"recruit\" the bard himself one day.", quest_type: "audio", user_id: terriblis.id)
 
@@ -647,6 +662,9 @@ terriblis_quest_14_tags = [bards, caravans, magic_items, merchants, sorcery, wiz
 
 addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
 
+quest_14_likes = [hero, ingrid, catherine]
+addLikesToQuest(quest_14_likes, terriblis_quest_14)
+
 # Matt quests
 # Matt quest 15 - Text
 
@@ -655,6 +673,9 @@ matt_quest_15 = Quest.create(title: "Hello from Spellcaster Apprentices!", text:
 matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromancy, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards].shuffle
 
 addTagsToQuest(matt_quest_15_tags, matt_quest_15)
+
+quest_15_likes = [terriblis, rain]
+addLikesToQuest(quest_15_likes, matt_quest_15)
 
 # Matt quest 16 - Image
 matt_quest_16 = Quest.create(title: "Having trouble with a \"Loot Dispute\"?", text: "Divying up the spoils of a successful quest can be tough, especially when your party members have... conflicting personalities. There's no reason to take on all of that stress yourself, though! Our mediators have experience in coming to agreements that are beneficial for everyone, or making the tough decisions for the sake of party integrity. Schedule an appointment at one of our branch offices and have your Loot Dispute settled amicably - or at least bloodlessly - today!", quest_type: "image", user_id: matt.id)
@@ -665,6 +686,9 @@ matt_quest_16.images.attach(io: quest_16_image_1, filename: 'magic_item_tug_of_w
 matt_quest_16_tags = [adamantine, arcane_focus, artifacts, axes, books, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, gold, spell_components, spellbooks, staffs, swords, tomes].shuffle
 
 addTagsToQuest(matt_quest_16_tags, matt_quest_16)
+
+quest_16_likes = [hero, jess, ingrid, goblin_slayer, carl]
+addLikesToQuest(quest_16_likes, matt_quest_16)
 
 # Matt quest 17 - Image
 
@@ -679,6 +703,9 @@ matt_quest_17.images.attach(io: quest_17_image_2, filename: 'berserker.png')
 matt_quest_17_tags = [alchemists, alchemy, army, barbarians, blood_magic, chaotic, explosives, fighters, lawful, magic, merchants, power, transmutation, warriors].shuffle
 
 addTagsToQuest(matt_quest_17_tags, matt_quest_17)
+
+quest_16_likes = [hero, terriblis, ingrid, goblin_slayer]
+addLikesToQuest(quest_16_likes, matt_quest_16)
 
 # Matt quest 18 - Image
 
