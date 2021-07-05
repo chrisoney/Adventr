@@ -42,13 +42,13 @@ class Modal extends React.Component {
       case 'new-quote':
       case 'new-audio':
       case 'new-video':
+      case 'reblog-new':
         component = <NewQuestContainer type={formType}/>;
         background = 'new-quest-background';
         container = 'new-quest-container';
         onClickEffect = closeModal;
         transparentBackground = <div className="test-background"></div>;
         break;
-      case 'reblog-new':
       case 'edit-quest':
         component = <EditQuestContainer
           type={quest.quest_type}
