@@ -24,7 +24,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchAllTags: () => dispatch(fetchAllTags()),
     fetchAllQuests: () => dispatch(fetchAllQuests()),
     createTag: (tag) => dispatch(createTag(tag)),
-    addTagToQuest: (quests_tag) => dispatch(addTagToQuest(quests_tag)),
+    addTagAction: ownProps.quest ?
+      (reblogs_tag) => dispatch(addTagToReblog(reblogs_tag)) :
+      (quests_tag) => dispatch(addTagToQuest(quests_tag)),
     closeModal: () => dispatch(closeModal()),
   }
 };
