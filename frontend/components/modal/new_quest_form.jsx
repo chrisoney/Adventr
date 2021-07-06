@@ -247,7 +247,7 @@ class NewQuestForm extends React.Component {
   }
 
   render() {
-    const { closeModal, currentUser, type, task, reblogAction } = this.props;
+    const { closeModal, currentUser, type, task, reblogAction, model } = this.props;
     const { title, text, reblogText, imageFiles } = this.state;
     let placeholderText;
     switch (type) {
@@ -307,23 +307,23 @@ class NewQuestForm extends React.Component {
           default:
             return null;
         }
-        })
+      })
       : null;
     
     const newImagePreviews = this.state.imageUrls
       ? this.state.imageUrls.map((imageUrl, idx) => {
-          return (
-            <div key={`new-img-${idx}`} className="image-preview-box">
-              <img className="image-preview" src={imageUrl} />
-              <div className="delete-preview-container">
-                <i
-                  className="fas fa-times-circle delete-preview"
-                  onClick={() => this.deletePreviewImage({ idx })}
-                ></i>
-              </div>
+        return (
+          <div key={`new-img-${idx}`} className="image-preview-box">
+            <img className="image-preview" src={imageUrl} />
+            <div className="delete-preview-container">
+              <i
+                className="fas fa-times-circle delete-preview"
+                onClick={() => this.deletePreviewImage({ idx })}
+              ></i>
             </div>
-          );
-        })
+          </div>
+        );
+      })
       : null;
     
     const imagePreviews = oldImagePreviews ?
@@ -339,9 +339,9 @@ class NewQuestForm extends React.Component {
     const imageUploadSection = (
       <div className="image-upload-box">
         {imagePreviews}
-        <label htmlFor="upload-box" className="upload-label-box">
+        {model === 'quest' && <label htmlFor="upload-box" className="upload-label-box">
           <div
-            className={`camera-icon-text-container ${prevImages ?'invert': ''}`}
+            className={`camera-icon-text-container ${prevImages ? 'invert' : ''}`}
             style={{ height: uploadSize }}
           >
             <div className="camera-icon fas fa-camera" />
@@ -355,24 +355,24 @@ class NewQuestForm extends React.Component {
             onChange={this.handleUpload}
             multiple
           />
-        </label>
+        </label>}
       </div>
     );
     // UPDATE VIDEO AND AUDIO WITH CASES
     const newVideoPreviews = this.state.imageUrls // if
       ? this.state.imageUrls.map((imageUrl, idx) => {
-          return (
-            <div key={idx} className="image-preview-box">
-              <video controls className="image-preview" src={imageUrl} />
-              <div className="delete-preview-container">
-                <i
-                  className="fas fa-times-circle delete-preview"
-                  onClick={() => this.deletePreviewImage({ idx })}
-                ></i>
-              </div>
+        return (
+          <div key={idx} className="image-preview-box">
+            <video controls className="image-preview" src={imageUrl} />
+            <div className="delete-preview-container">
+              <i
+                className="fas fa-times-circle delete-preview"
+                onClick={() => this.deletePreviewImage({ idx })}
+              ></i>
             </div>
-          );
-        })
+          </div>
+        );
+      })
       : null;
     
     const videoPreviews = oldImagePreviews ?
@@ -386,9 +386,9 @@ class NewQuestForm extends React.Component {
     const videoUploadSection = (
       <div className="image-upload-box">
         {videoPreviews}
-        <label htmlFor="upload-box" className="upload-label-box">
+        {model === 'quest' && <label htmlFor="upload-box" className="upload-label-box">
           <div
-            className={`camera-icon-text-container ${prevImages ?'invert': ''}`}
+            className={`camera-icon-text-container ${prevImages ? 'invert' : ''}`}
             style={{ height: uploadSize }}
           >
             <div className="camera-icon fas fa-video" />
@@ -400,26 +400,26 @@ class NewQuestForm extends React.Component {
             id="upload-box"
             onChange={this.handleUpload}
           />
-        </label>
+        </label>}
       </div>
     );
 
     const newAudioPreviews = this.state.imageUrls // if
       ? this.state.imageUrls.map((imageUrl, idx) => {
-          return (
-            <div key={idx} className="image-preview-box">
-              <audio controls src={imageUrl}>
-                Your browser does not support this player
-              </audio>
-              <div className="delete-preview-container">
-                <i
-                  className="fas fa-times-circle delete-preview"
-                  onClick={() => this.deletePreviewImage({ idx })}
-                ></i>
-              </div>
+        return (
+          <div key={idx} className="image-preview-box">
+            <audio controls src={imageUrl}>
+              Your browser does not support this player
+            </audio>
+            <div className="delete-preview-container">
+              <i
+                className="fas fa-times-circle delete-preview"
+                onClick={() => this.deletePreviewImage({ idx })}
+              ></i>
             </div>
-          );
-        })
+          </div>
+        );
+      })
       : null;
     
     const audioPreviews = oldImagePreviews ?
@@ -431,7 +431,7 @@ class NewQuestForm extends React.Component {
     const audioUploadSection = (
       <div className="image-upload-box">
         {audioPreviews}
-        <label htmlFor="upload-box" className="upload-label-box">
+        {model === 'quest' && <label htmlFor="upload-box" className="upload-label-box">
           <div
             className={`camera-icon-text-container ${prevImages ?'invert': ''}`}
             style={{ height: uploadSize }}
@@ -445,7 +445,7 @@ class NewQuestForm extends React.Component {
             id="upload-box"
             onChange={this.handleUpload}
           />
-        </label>
+        </label >}
       </div>
     );
 
@@ -543,6 +543,7 @@ class NewQuestForm extends React.Component {
           <div className="formData">
             {titleSection}
             {textSection}
+            {reblogTextSection}
             {tagSection}
           </div>
         );
