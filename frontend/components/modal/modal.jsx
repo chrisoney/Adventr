@@ -49,7 +49,7 @@ class Modal extends React.Component {
         transparentBackground = <div className="test-background"></div>;
         break;
       case 'reblog-new':
-        component = <NewQuestContainer type={quest.type} quest={quest} reblogAction={reblogAction}/>;
+        component = <NewQuestContainer type={quest.quest_type} quest={quest} reblogAction={reblogAction}/>;
         background = 'new-quest-background';
         container = 'new-quest-container';
         onClickEffect = closeModal;

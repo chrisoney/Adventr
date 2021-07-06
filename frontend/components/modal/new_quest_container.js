@@ -6,6 +6,7 @@ import { fetchAllTags, createTag } from '../../actions/tag_actions';
 import { closeModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps.type)
   return {
     currentUser: state.session.currentUser,
     tags: Object.values(state.entities.tags),
@@ -16,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log(ownProps.quest)
   return {
     questSubmitAction: ownProps.quest ?
       (reblog) => dispatch(createReblog(reblog)):
