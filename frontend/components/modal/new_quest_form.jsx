@@ -250,8 +250,6 @@ class NewQuestForm extends React.Component {
     const { closeModal, currentUser, type, task, reblogAction } = this.props;
     const { title, text, reblogText, imageFiles } = this.state;
     let placeholderText;
-    console.log(reblogAction)
-
     switch (type) {
       case 'text':
         placeholderText = 'Your text here';

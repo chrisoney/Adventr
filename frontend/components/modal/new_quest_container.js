@@ -15,14 +15,17 @@ const mapStateToProps = (state, ownProps) => {
   };
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  questSubmitAction: ownProps.quest ?
-    (quest) => dispatch(createQuest(quest)) :
-    (reblog) => dispatch(createReblog(reblog)),
-  fetchAllTags: () => dispatch(fetchAllTags()),
-  fetchAllQuests: () => dispatch(fetchAllQuests()),
-  createTag: (tag) => dispatch(createTag(tag)),
-  addTagToQuest: (quests_tag) => dispatch(addTagToQuest(quests_tag)),
-  closeModal: () => dispatch(closeModal()),
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log(ownProps.quest)
+  return {
+    questSubmitAction: ownProps.quest ?
+      (reblog) => dispatch(createReblog(reblog)):
+      (quest) => dispatch(createQuest(quest)),
+    fetchAllTags: () => dispatch(fetchAllTags()),
+    fetchAllQuests: () => dispatch(fetchAllQuests()),
+    createTag: (tag) => dispatch(createTag(tag)),
+    addTagToQuest: (quests_tag) => dispatch(addTagToQuest(quests_tag)),
+    closeModal: () => dispatch(closeModal()),
+  }
+};
 export default connect(mapStateToProps, mapDispatchToProps)(NewQuestForm);
