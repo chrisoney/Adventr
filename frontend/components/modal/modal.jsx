@@ -60,6 +60,7 @@ class Modal extends React.Component {
           type={quest.quest_type}
           quest={quest}
           reblogAction={reblogAction}
+          model='Quest'
         />;
         background = 'new-quest-background';
         container = 'new-quest-container';

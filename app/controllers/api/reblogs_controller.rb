@@ -9,6 +9,7 @@ class Api::ReblogsController < ApplicationController
 
   def create
     @reblog = Reblog.new(reblog_params)
+    @reblog.user_id = current_user.id
     if @reblog.save
       @quest = @reblog.quest
       @user = @reblog.user

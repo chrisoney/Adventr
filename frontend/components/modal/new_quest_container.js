@@ -6,7 +6,6 @@ import { fetchAllTags, createTag } from '../../actions/tag_actions';
 import { closeModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps.type)
   return {
     currentUser: state.session.currentUser,
     tags: Object.values(state.entities.tags),

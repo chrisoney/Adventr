@@ -4,14 +4,15 @@ import Loading from '../loading/loading'
 class NewQuestForm extends React.Component {
   constructor(props) {
     super(props);
-    const { type, currentUser, quest, reblogText } = this.props;
+    const { type, currentUser, quest, reblog } = this.props;
     this.state = {
       currentUser_id: currentUser.id,
-      id: quest ? quest.id : null,
+      questId: quest ? quest.id : null,
+      reblogId: reblog ? reblog.id : null,
       type: type,
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
-      reblogText: reblogText,
+      reblogText: reblog ? reblog.text : '',
       tags: quest ? quest.tag_joins.map(tag_join => tag_join.tag.tag_name) : [],
       oldImageUrls: quest ? quest.imageUrls : null,
       imageUrls: null,
@@ -183,21 +184,30 @@ class NewQuestForm extends React.Component {
     if (allow) {
       this.setState({ allowSubmit: false });
       const formData = new FormData();
-      // changed
+      // Quest
       const imageFiles = this.state.imageFiles;
-      const id = this.state.id;
-      if (id) formData.append('quest[id]', id)
-      formData.append('quest[title]', this.state.title);
-      if (imageFiles) {
-        imageFiles.forEach((image, idx) => {
-          formData.append('quest[images][]', imageFiles[idx]);
-        });
+      const questId = this.state.questId;
+      const reblogId = this.state.reblogId;
+      if (this.props.model === 'Quest') {
+        if (questId) formData.append('quest[id]', questId)
+        formData.append('quest[title]', this.state.title);
+        if (imageFiles) {
+          imageFiles.forEach((image, idx) => {
+            formData.append('quest[images][]', imageFiles[idx]);
+          });
+        }
+        formData.append('quest[text]', this.state.text);
+        formData.append('quest[quest_type]', this.state.type);
+        this.setState({loading: true})
+      } else {
+        if (reblogId) formData.append('reblog[id]', reblogId)
+        formData.append('reblog[quest_id]', this.state.questId);
+        formData.append('reblog[text]', this.state.reblogText);
       }
-      formData.append('quest[text]', this.state.text);
-      formData.append('quest[quest_type]', this.state.type);
-      this.setState({loading: true})
-      this.props.questSubmitAction(formData).then((questData) => {
-        const questId = questData.quest.id;
+      this.props.questSubmitAction(formData).then((data) => {
+        const taggableId = this.props.model === 'Quest' ?
+          data.quest.id :
+          data.reblog.id;
         const tags = that.state.tags;
         const existingTags = that.props.task === 'edit' ?
           that.props.quest.tag_joins.map(tag_join => tag_join.tag.tag_name) :
@@ -211,13 +221,13 @@ class NewQuestForm extends React.Component {
             for (let y = 0; y < that.props.tags.length; y++) {
               let existingTag = that.props.tags[y];
               if (existingTag.tag_name === newTag) {
-                const questTagForm = new FormData();
-                questTagForm.append('tag_join[taggable_id]', questId);
-                questTagForm.append('tag_join[taggable_type]', this.props.model);
-                questTagForm.append('tag_join[tag_id]', existingTag.id);
+                const tagJoinForm = new FormData();
+                tagJoinForm.append('tag_join[taggable_id]', taggableId);
+                tagJoinForm.append('tag_join[taggable_type]', this.props.model);
+                tagJoinForm.append('tag_join[tag_id]', existingTag.id);
                 const order = x + 1;
-                questTagForm.append('tag_join[order]', order);
-                this.props.addTagAction(questTagForm);
+                tagJoinForm.append('tag_join[order]', order);
+                this.props.addTagAction(tagJoinForm);
                 tagExists = true;
                 break;
               }
@@ -229,13 +239,13 @@ class NewQuestForm extends React.Component {
                 .createTag(tagFormData)
                 .then((tagData) => {
                   const createdTagId = tagData.tag.id;
-                  const questTagForm = new FormData();
-                  questTagForm.append('tag_join[taggable_id]', questId);
-                  questTagForm.append('tag_join[taggable_type]', this.props.model);
-                  questTagForm.append('tag_join[tag_id]', createdTagId);
+                  const tagJoinForm = new FormData();
+                  tagJoinForm.append('tag_join[taggable_id]', taggableId);
+                  tagJoinForm.append('tag_join[taggable_type]', this.props.model);
+                  tagJoinForm.append('tag_join[tag_id]', createdTagId);
                   const order = x + 1;
-                  questTagForm.append('tag_join[order]', order);
-                  this.props.addTagAction(questTagForm);
+                  tagJoinForm.append('tag_join[order]', order);
+                  this.props.addTagAction(tagJoinForm);
                 })
             }
           }
