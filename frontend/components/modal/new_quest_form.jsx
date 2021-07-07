@@ -213,11 +213,11 @@ class NewQuestForm extends React.Component {
               if (existingTag.tag_name === newTag) {
                 const questTagForm = new FormData();
                 questTagForm.append('tag_join[taggable_id]', questId);
-                questTagForm.append('tag_join[taggable_type]', 'Quest');
+                questTagForm.append('tag_join[taggable_type]', this.props.model);
                 questTagForm.append('tag_join[tag_id]', existingTag.id);
                 const order = x + 1;
                 questTagForm.append('tag_join[order]', order);
-                this.props.addTagToQuest(questTagForm);
+                this.props.addTagAction(questTagForm);
                 tagExists = true;
                 break;
               }
@@ -231,11 +231,11 @@ class NewQuestForm extends React.Component {
                   const createdTagId = tagData.tag.id;
                   const questTagForm = new FormData();
                   questTagForm.append('tag_join[taggable_id]', questId);
-                  questTagForm.append('tag_join[taggable_type]', 'Quest');
+                  questTagForm.append('tag_join[taggable_type]', this.props.model);
                   questTagForm.append('tag_join[tag_id]', createdTagId);
                   const order = x + 1;
                   questTagForm.append('tag_join[order]', order);
-                  this.props.addTagToQuest(questTagForm);
+                  this.props.addTagAction(questTagForm);
                 })
             }
           }

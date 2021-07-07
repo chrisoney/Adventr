@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     type: ownProps.type,
     task: 'create',
     quest: ownProps.quest || null,
-    model: ownProps.quest ? 'reblog' : 'quest',
+    model: ownProps.quest ? 'Reblog' : 'Quest',
   };
 }
 
