@@ -636,6 +636,7 @@ class NewQuestForm extends React.Component {
 
     let submitText;
     if (task === 'edit') submitText = 'Update'
+    else if (model === 'Reblog') submitText = 'Reblog'
     else submitText = 'Create';
 
     return (
