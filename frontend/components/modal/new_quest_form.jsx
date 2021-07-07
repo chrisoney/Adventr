@@ -247,7 +247,7 @@ class NewQuestForm extends React.Component {
   }
 
   render() {
-    const { closeModal, currentUser, type, task, reblogAction, model } = this.props;
+    const { closeModal, currentUser, type, task, reblogAction, model, quest } = this.props;
     const { title, text, reblogText, imageFiles } = this.state;
     let placeholderText;
     switch (type) {
@@ -271,15 +271,16 @@ class NewQuestForm extends React.Component {
         break;
     }
 
-    const titleSection = (
+    const titleSection = model === 'Quest' ? 
       <input
         type="text"
         value={title}
         placeholder="Title"
         className="input-title"
         onChange={this.handleInput('title')}
-      />
-    );
+      /> :
+      <div className="old-quest-title">{title}</div>
+    ;
 
     const oldImagePreviews = this.state.oldImageUrls
       ? this.state.oldImageUrls.map((imageUrl, idx) => {
@@ -542,6 +543,10 @@ class NewQuestForm extends React.Component {
           <div className="formData">
             {model === 'Reblog' ?
               <div className="old-quest-data">
+                <div className="old-quest-data-header">
+                  <img className="old-quest-avatar" src={quest.authorAvatar} />
+                  <div className="old-quest-username">{quest.author.username}</div>
+                </div>
                 {titleSection}
                 {textSection}
               </div> :
@@ -643,7 +648,7 @@ class NewQuestForm extends React.Component {
             {model === 'Reblog' &&
             <>
               <i className="fas fa-retweet"></i>
-              <div className="old-author">{this.props.quest.author.username}</div>
+              <div className="old-author">{quest.author.username}</div>
             </>
             }
           </div>
