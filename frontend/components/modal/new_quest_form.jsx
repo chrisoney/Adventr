@@ -252,7 +252,7 @@ class NewQuestForm extends React.Component {
     let placeholderText;
     switch (type) {
       case 'text':
-        placeholderText = 'Your text here';
+        placeholderText = 'Go ahead, put anything';
         break;
       case 'image':
         placeholderText = 'Add a caption';
@@ -485,7 +485,6 @@ class NewQuestForm extends React.Component {
           // elastic="false"
         >
           <div className="old-text-area-content">{text}</div>
-          <div className="old-text-area-author">{`By ${this.props.quest.author.username}`}</div>
         </div>
       ) : (
         <textarea
@@ -497,7 +496,7 @@ class NewQuestForm extends React.Component {
         ></textarea>
     );
     
-    const reblogTextSection = reblogAction ? (
+    const reblogTextSection = model === 'Reblog' ? (
       <textarea
         value={reblogText}
         placeholder={placeholderText}
@@ -541,8 +540,15 @@ class NewQuestForm extends React.Component {
       case 'text':
         formBlock = (
           <div className="formData">
-            {titleSection}
-            {textSection}
+            {model === 'Reblog' ?
+              <div className="old-quest-data">
+                {titleSection}
+                {textSection}
+              </div> :
+              <>
+                {titleSection}
+                {textSection}
+              </>}
             {reblogTextSection}
             {tagSection}
           </div>
@@ -551,8 +557,15 @@ class NewQuestForm extends React.Component {
       case 'image':
         formBlock = (
           <div className="formData">
-            {imageUploadSection}
-            {textSection}
+            {model === 'Reblog' ?
+              <div className="old-quest-data">
+                {imageUploadSection}
+                {textSection}
+              </div> :
+              <>
+                {imageUploadSection}
+                {textSection}
+              </>}
             {reblogTextSection}
             {tagSection}
           </div>
@@ -561,8 +574,15 @@ class NewQuestForm extends React.Component {
       case 'quote':
         formBlock = (
           <div className="formData">
-            {quoteSection}
-            {textSection}
+             {model === 'Reblog' ?
+              <div className="old-quest-data">
+                {quoteSection}
+                {textSection}
+              </div> :
+              <>
+                {quoteSection}
+                {textSection}
+              </>}
             {reblogTextSection}
             {tagSection}
           </div>
@@ -571,8 +591,15 @@ class NewQuestForm extends React.Component {
       case 'audio':
         formBlock = (
           <div className="formData">
-            {audioUploadSection}
-            {textSection}
+            {model === 'Reblog' ?
+              <div className="old-quest-data">
+                {audioUploadSection}
+                {textSection}
+              </div> :
+              <>
+                {audioUploadSection}
+                {textSection}
+              </>}
             {reblogTextSection}
             {tagSection}
           </div>
@@ -581,8 +608,15 @@ class NewQuestForm extends React.Component {
       case 'video':
         formBlock = (
           <div className="formData">
-            {videoUploadSection}
-            {textSection}
+            {model === 'Reblog' ?
+              <div className="old-quest-data">
+                {videoUploadSection}
+                {textSection}
+              </div> :
+              <>
+                {videoUploadSection}
+                {textSection}
+              </>}
             {reblogTextSection}
             {tagSection}
           </div>
@@ -604,7 +638,15 @@ class NewQuestForm extends React.Component {
         {this.state.loading && <Loading />}
         {/* <img className="avatar-dash" src={currentUser.avatar} /> */}
         <div className="quest-form-box quest-box">
-          <div className="quest-form-top-block">{currentUser.username}</div>
+          <div className="quest-form-top-block">
+            <div className="current-username">{currentUser.username}</div>
+            {model === 'Reblog' &&
+            <>
+              <i className="fas fa-retweet"></i>
+              <div className="old-author">{this.props.quest.author.username}</div>
+            </>
+            }
+          </div>
           {formBlock}
           <div className="quest-form-bottom-block">
             <button className="quest-close" onClick={closeModal}>
