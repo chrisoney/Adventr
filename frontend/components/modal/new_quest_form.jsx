@@ -47,7 +47,7 @@ class NewQuestForm extends React.Component {
       this.props.quest.tag_joins.forEach((tag_join) => {
         if (tag_join.tag.tag_name === tagToDelete) {
           this.setState({ allowSubmit: false });
-          this.props.removeTagFromQuest(tag_join.id).then(() => {
+          this.props.removeTagAction(tag_join.id).then(() => {
             this.setState({ allowSubmit: true });
           })
         }
@@ -94,7 +94,7 @@ class NewQuestForm extends React.Component {
         this.props.quest.tag_joins.forEach((tag_join) => {
           if (tag_join.tag.tag_name === tagToDelete) {
             that.setState({ allowSubmit: false });
-            that.props.removeTagFromQuest(tag_join.id).then(() => {
+            that.props.removeTagAction(tag_join.id).then(() => {
               that.setState({ allowSubmit: true });
             })
           }
