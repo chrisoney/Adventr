@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :follows, only: [:index, :show, :create, :destroy]
     resources :tags, only: [:index, :show, :create, :destroy]
     resources :tag_joins, only: [:index, :show, :create, :destroy]
-    resources :reblogs, only: [:index, :show, :create, :destroy]
+    resources :reblogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
 end

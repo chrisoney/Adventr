@@ -21,7 +21,7 @@ class Api::ReblogsController < ApplicationController
 
 
   def destroy
-    @quest = Quest.find(params[:id])
+    @reblog = Reblog.find(params[:id])
     @reblog.destroy
     # @quest = @reblog.quest
     # @user = @reblog.user
