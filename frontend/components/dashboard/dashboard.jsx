@@ -3,20 +3,32 @@ import { Link } from 'react-router-dom';
 import QuestContainer from '../quests/quest_container';
 import NewQuestCreate from '../quests/new_quest_create';
 import GuildRecs from '../sidebar/guild_recs';
+import Loading from '../loading/loading';
+
 
 class DashBoard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true,
+    };
     this.toggleFollowed = this.toggleFollowed.bind(this);
-    // this.testing = this.testing.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchAllQuests();
-    this.props.fetchAllFollows();
-    this.props.fetchAllLikes();
-    this.props.fetchAllReblogs();
-    // this.props.fetchAllUsers();
+    this.props.fetchAllQuests().then(() => {
+      this.props.fetchAllFollows().then(() => {
+        this.props.fetchAllLikes().then(() => {
+          this.props.fetchAllReblogs().then(() => {
+            this.setState({ loading: false })
+          })
+        })
+      })
+    });
+    // this.props.fetchAllQuests();
+    // this.props.fetchAllFollows();
+    // this.props.fetchAllLikes();
+    // this.props.fetchAllReblogs();
   }
 
   componentDidUpdate(prevProps) {
@@ -35,6 +47,11 @@ class DashBoard extends React.Component {
   }
 
   render() {
+
+    if (this.state.loading) {
+      return <Loading background={'dashboard-container'} />;
+    }
+
     const { quests, reblogs, follows, users, currentUser } = this.props;
     let questList = [];
     let randomQuest;

@@ -86,7 +86,7 @@ class Quest extends React.Component {
   }
 
   render() {
-    const { currentUser, posting, authorId, deleteQuest, loc, tags, noteCount, type } = this.props;
+    const { currentUser, posting, authorId, deleteQuest, loc, tags, noteCount, type, reblogQuest } = this.props;
     let { author, authorAvatar } = this.state;
     let visibility = this.state.visible;
     let followUser;
@@ -94,7 +94,7 @@ class Quest extends React.Component {
     let heartAnimation;
 
 
-    const quest = type === 'quest' ? posting : posting.quest;
+    const quest = type === 'quest' ? posting : reblogQuest;
 
     let questHeader;
     let questFooter;

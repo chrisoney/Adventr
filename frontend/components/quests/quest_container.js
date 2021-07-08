@@ -35,6 +35,7 @@ const mapStateToProps = (state, ownProps) => {
     followed: followed,
     type: ownProps.type,
     noteCount: posting.likes,
+    reblogQuest: ownProps.type === 'reblog' ? state.entities.quests[posting.quest_id] : null,
   };
 };
 
