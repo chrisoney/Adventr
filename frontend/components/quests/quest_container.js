@@ -6,6 +6,7 @@ import { openModal } from '../../actions/modal_actions';
 import { likePosting, unlikePosting, fetchAllLikes } from '../../actions/like_actions';
 import { followUser, unfollowUser } from '../../actions/follow_actions';
 import { deleteQuest, fetchSingleQuest } from '../../actions/quest_actions'
+import { deleteReblog, fetchSingleReblog } from '../../actions/reblog_actions'
 
 const mapStateToProps = (state, ownProps) => {
   let liked = false;
@@ -39,7 +40,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   // fetchUser: (userId) => dispatch(fetchUser(userId)),
   openModal: (modal) => dispatch(openModal(modal)),
   likePosting: (like) => dispatch(likePosting(like)),
@@ -47,7 +48,9 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllLikes: () => dispatch(fetchAllLikes()),
   followUser: (userId) => dispatch(followUser(userId)),
   unfollowUser: (userId) => dispatch(unfollowUser(userId)),
-  deleteQuest: (questId) => dispatch(deleteQuest(questId)),
+  deletePosting: ownProps.type === 'quest' ?
+    (questId) => dispatch(deleteQuest(questId)) :
+    (reblogId) => dispatch(deleteReblog(reblogId)),
   fetchSingleQuest: (questId) => dispatch(fetchSingleQuest(questId)),
 });
 

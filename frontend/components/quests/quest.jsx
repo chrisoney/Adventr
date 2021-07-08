@@ -86,7 +86,7 @@ class Quest extends React.Component {
   }
 
   render() {
-    const { currentUser, posting, authorId, deleteQuest, loc, tags, noteCount, type, reblogQuest } = this.props;
+    const { currentUser, posting, authorId, deletePosting, loc, tags, noteCount, type, reblogQuest } = this.props;
     let { author, authorAvatar } = this.state;
     let visibility = this.state.visible;
     let followUser;
@@ -165,7 +165,7 @@ class Quest extends React.Component {
               ></button>
               <button
                 className="trash fas fa-trash"
-                onClick={() => deleteQuest(posting.id)}
+                onClick={() => deletePosting(posting.id)}
                 id={posting.id}
               ></button>
             </div>
