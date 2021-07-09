@@ -1,4 +1,4 @@
-json.extract! reblog, :id, :user_id, :quest_id, :text
+json.extract! reblog, :id, :user_id, :quest_id, :text, :created_at, :updated_at
 
 json.author reblog.user
 json.authorId reblog.user.id

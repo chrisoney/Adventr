@@ -59,7 +59,7 @@ class DashBoard extends React.Component {
 
     quests.forEach((quest, idx) => {
       if (quest.user_id === currentUser.id) {
-        questList.push(<QuestContainer key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>);
+        questList.push(<QuestContainer order={quest.updated_at} key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>);
       } else {
         for (let i = 0; i < follows.length; i++) {
           let follow = follows[i];
@@ -68,7 +68,7 @@ class DashBoard extends React.Component {
             follow.follower_id === currentUser.id
           ) {
             questList.push(
-              <QuestContainer key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>
+              <QuestContainer order={quest.updated_at} key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>
             );
             break;
           }
@@ -77,7 +77,7 @@ class DashBoard extends React.Component {
     });
     reblogs.forEach((reblog, idx) => {
       if (reblog.user_id === currentUser.id) {
-        questList.push(<QuestContainer key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>);
+        questList.push(<QuestContainer order={reblog.updated_at} key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>);
       } else {
         for (let i = 0; i < follows.length; i++) {
           let follow = follows[i];
@@ -86,17 +86,19 @@ class DashBoard extends React.Component {
             follow.follower_id === currentUser.id
           ) {
             questList.push(
-              <QuestContainer key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>
+              <QuestContainer order={reblog.updated_at} key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>
             );
             break;
           }
         }
       }
     });
+    console.log(questList.map(ele => ele.props.order))
     questList = questList.sort((a, b) => {
-      if (a.updated_at > b.updated_at) return 1;
-      else return -1;
+      if (a.props.order > b.props.order) return -1;
+      else return 1;
     })
+    console.log(questList.map(ele => ele.props.order))
 
     for (let x = 0; x < quests.length; x++) {
       let quest = quests[x];
