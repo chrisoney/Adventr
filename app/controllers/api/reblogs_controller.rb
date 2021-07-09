@@ -3,6 +3,10 @@ class Api::ReblogsController < ApplicationController
     @reblogs = Reblog.order(id: :DESC).includes(:user)
   end
 
+  def new
+    @reblog = Reblog.new
+  end
+
   def show
     @reblog = Reblog.find_by(params[:id])
   end
@@ -19,6 +23,14 @@ class Api::ReblogsController < ApplicationController
     end
   end
 
+  def update
+    @reblog = Reblog.find(params[:id])
+    if (@reblog && @reblog.update(reblog_params))
+      render :show
+    else
+      render :show
+    end
+  end
 
   def destroy
     @reblog = Reblog.find(params[:id])

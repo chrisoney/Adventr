@@ -161,7 +161,7 @@ class Quest extends React.Component {
             <div className={`quest-buttons`}>
               <button 
                 className="edit fas fa-edit"
-                onClick={() => this.props.openModal(`edit-quest-${posting.id}`)}
+                onClick={() => this.props.openModal(`edit-${type}-${posting.id}`)}
               ></button>
               <button
                 className="trash fas fa-trash"

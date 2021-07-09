@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     tags: Object.values(state.entities.tags),
     type: ownProps.type,
     quest: ownProps.quest,
+    reblog: ownProps.reblog,
     reblogAction: ownProps.reblogAction,
     reblogText: '',
     task: 'edit',

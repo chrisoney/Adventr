@@ -13,7 +13,7 @@ class NewQuestForm extends React.Component {
       title: quest ? quest.title : '',
       text: quest ? quest.text : '',
       reblogText: reblog ? reblog.text : '',
-      tags: quest ? quest.tag_joins.map(tag_join => tag_join.tag.tag_name) : [],
+      tags: reblog ? reblog.tag_joins.map(tag_join => tag_join.tag.tag_name) : quest ? quest.tag_joins.map(tag_join => tag_join.tag.tag_name) : [],
       oldImageUrls: quest ? quest.imageUrls : null,
       imageUrls: null,
       imageFiles: null,
@@ -257,7 +257,7 @@ class NewQuestForm extends React.Component {
   }
 
   render() {
-    const { closeModal, currentUser, type, task, reblogAction, model, quest } = this.props;
+    const { closeModal, currentUser, type, task, reblogAction, model, quest, reblog } = this.props;
     const { title, text, reblogText, imageFiles } = this.state;
     let placeholderText;
     switch (type) {
