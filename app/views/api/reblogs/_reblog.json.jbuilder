@@ -1,6 +1,7 @@
 json.extract! reblog, :id, :user_id, :quest_id, :text
 
 json.author reblog.user
+json.authorId reblog.user.id
 
 json.quest reblog.quest
 # if reblog.quest.images.attached?
