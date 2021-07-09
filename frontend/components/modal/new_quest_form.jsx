@@ -356,7 +356,7 @@ class NewQuestForm extends React.Component {
     const imageUploadSection = (
       <div className="image-upload-box">
         {imagePreviews}
-        {model === 'quest' && <label htmlFor="upload-box" className="upload-label-box">
+        {model === 'Quest' && <label htmlFor="upload-box" className="upload-label-box">
           <div
             className={`camera-icon-text-container ${prevImages ? 'invert' : ''}`}
             style={{ height: uploadSize }}
@@ -403,7 +403,7 @@ class NewQuestForm extends React.Component {
     const videoUploadSection = (
       <div className="image-upload-box">
         {videoPreviews}
-        {model === 'quest' && <label htmlFor="upload-box" className="upload-label-box">
+        {model === 'Quest' && <label htmlFor="upload-box" className="upload-label-box">
           <div
             className={`camera-icon-text-container ${prevImages ? 'invert' : ''}`}
             style={{ height: uploadSize }}
@@ -448,7 +448,7 @@ class NewQuestForm extends React.Component {
     const audioUploadSection = (
       <div className="image-upload-box">
         {audioPreviews}
-        {model === 'quest' && <label htmlFor="upload-box" className="upload-label-box">
+        {model === 'Quest' && <label htmlFor="upload-box" className="upload-label-box">
           <div
             className={`camera-icon-text-container ${prevImages ?'invert': ''}`}
             style={{ height: uploadSize }}
