@@ -44,7 +44,10 @@ class NewQuestForm extends React.Component {
       .concat(this.state.tags.slice(index + 1, this.state.tags.length));
     this.setState({ tags: newTagArray });
     if (this.props.task === 'edit') {
-      this.props.quest.tag_joins.forEach((tag_join) => {
+        let model;
+        if (this.props.model === 'Quest') model = this.props.quest;
+        else if (this.props.model === 'Reblog') model = this.props.reblog;
+        model.tag_joins.forEach((tag_join) => {
         if (tag_join.tag.tag_name === tagToDelete) {
           this.setState({ allowSubmit: false });
           this.props.removeTagAction(tag_join.id).then(() => {
@@ -91,7 +94,10 @@ class NewQuestForm extends React.Component {
       const tagToDelete = this.state.tags[lastEle]
       this.setState({ tags: this.state.tags.slice(0, lastEle) });
       if (this.props.task === 'edit') {
-        this.props.quest.tag_joins.forEach((tag_join) => {
+        let model;
+        if (this.props.model === 'Quest') model = this.props.quest;
+        else if (this.props.model === 'Reblog') model = this.props.reblog;
+        model.tag_joins.forEach((tag_join) => {
           if (tag_join.tag.tag_name === tagToDelete) {
             that.setState({ allowSubmit: false });
             that.props.removeTagAction(tag_join.id).then(() => {
