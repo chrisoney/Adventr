@@ -152,7 +152,7 @@ class Quest extends React.Component {
           </span>
           {type === 'reblog' && (
             <>
-              <span className="reblog header-icon fas fa-retweet"></span>
+              <span className="reblog-header-icon fas fa-retweet"></span>
               <span className="reblog-header-username">
                 {posting.quest_author.username}
               </span>
@@ -193,7 +193,7 @@ class Quest extends React.Component {
           </span>
           {type === 'reblog' && (
             <>
-              <span className="reblog header-icon fas fa-retweet"></span>
+              <span className="reblog-header-icon fas fa-retweet"></span>
               <span className="reblog-header-username">
                 {posting.quest_author.username}
               </span>
