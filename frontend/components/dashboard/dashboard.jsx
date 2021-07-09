@@ -77,7 +77,14 @@ class DashBoard extends React.Component {
     });
     reblogs.forEach((reblog, idx) => {
       if (reblog.user_id === currentUser.id) {
-        questList.push(<QuestContainer order={reblog.updated_at} key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>);
+        questList.push(
+          <QuestContainer
+            order={reblog.updated_at}
+            key={`reblog-${idx}`}
+            reblog={reblog}
+            loc={'dash'}
+            type="reblog" />
+        );
       } else {
         for (let i = 0; i < follows.length; i++) {
           let follow = follows[i];
@@ -86,7 +93,12 @@ class DashBoard extends React.Component {
             follow.follower_id === currentUser.id
           ) {
             questList.push(
-              <QuestContainer order={reblog.updated_at} key={`reblog-${idx}`} reblog={reblog} loc={'dash'} type="reblog"/>
+              <QuestContainer
+                order={reblog.updated_at}
+                key={`reblog-${idx}`}
+                reblog={reblog}
+                loc={'dash'}
+                type="reblog" />
             );
             break;
           }
