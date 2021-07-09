@@ -57,7 +57,7 @@ class Quest extends React.Component {
 
   toggleLiked(e) {
     e.preventDefault();
-    const posting = this.props.posting;
+    // const posting = this.props.posting;
     const likeable_type = this.props.type[0].toUpperCase()
       + this.props.type.slice(1);
     const formData = new FormData();
