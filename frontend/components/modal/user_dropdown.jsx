@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 import { openModal2, closeModal2 } from '../../actions/modal_actions';
+import { fetchAllLikes } from '../../actions/like_actions';
+import { fetchAllFollows } from '../../actions/follow_actions';
 
 class UserDropdown extends React.Component {
   constructor(props) {
     super(props);
-    this.logutActions = this.logoutActions.bind(this);
+    this.logoutActions = this.logoutActions.bind(this);
   }
 
   logoutActions(e) {
@@ -58,10 +60,16 @@ class UserDropdown extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   let currentUser = state.session.currentUser;
+  const likes = Object.values(state.entities.likes)
+    .filter(like => like.user_id === currentUser.id)
+    .length;
+  const followings = Object.values(state.entities.follows)
+    .filter(follow => follow.follower_id === currentUser.id)
+    .length;
   return {
     currentUser: currentUser,
-    likes: currentUser.likedQuests.length,
-    followings: currentUser.followed_users.length,
+    likes,
+    followings: followings,
   };
 };
 
@@ -69,6 +77,8 @@ const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   openModal2: () => dispatch(openModal2()),
   closeModal2: () => dispatch(closeModal2()),
+  fetchAllLikes: () => dispatch(fetchAllLikes()),
+  fetchAllFollows: () => dispatch(fetchAllFollows())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDropdown);

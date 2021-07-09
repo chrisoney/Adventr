@@ -249,7 +249,7 @@
       width: 100%;
       height: 437px;
       margin-bottom: 16px;
-      background: asset-data-url('board.jpg');
+      // background: asset-data-url('board.jpg');
       background-size: 100% 437px;
       // background-color: red;
       .current-tag-follows-header{
@@ -285,6 +285,7 @@
           background-size: 100% 77px;
           object-fit: cover;
           width: 260px;
+          margin-bottom: 5px;
 
           .favorited-tag-image {
             width: 64px;
@@ -310,6 +311,7 @@
         font-weight: 900;
         // margin-top: 16px;
         margin-left: 16px;
+        // margin-top: 15px;
 
         padding: 10px 20px;
         width: fit-content;
@@ -427,7 +429,7 @@
       width: 100%;
       height: 437px;
       margin-bottom: 16px;
-      background: asset-data-url('board.jpg');
+      // background: asset-data-url('board.jpg');
       background-size: 100% 437px;
       .suggested-guilds-title {
           margin-top: 16px;
@@ -459,6 +461,7 @@
           background-size: 100% 77px;
           object-fit: cover;
           width: 260px;
+          margin-bottom: 5px;
           .user-attributes {
             display: flex;
             .guild-rec-avatar {
@@ -501,6 +504,7 @@
         font-weight: 900;
         // margin-top: 16px;
         margin-left: 16px;
+        // margin-top: 15px;
 
         padding: 10px 20px;
         width: fit-content;
