@@ -263,13 +263,22 @@ class Quest extends React.Component {
     }
 
     let textSection = null;
-    if (posting.text !== '') {
+    if (quest.text !== '') {
       textSection = (
         <div className="text">
           {source}
-          {posting.text}
+          {quest.text}
         </div>
       );
+    }
+
+    let reblogTextSection = null;
+    if (type === 'reblog' && posting.text !== '') {
+      reblogTextSection = (
+        <div className="reblog-text">
+          {posting.text}
+        </div>
+      )
     }
 
     let tagSection = null;
@@ -312,11 +321,14 @@ class Quest extends React.Component {
             />
             {questHeader}
           </div>
-          {titleSection}
-          {imageSection}
-          {audioSection}
-          {videoSection}
-          {textSection}
+          <div className={type === 'reblog' ? "old-text-area" : ""}>
+            {titleSection}
+            {imageSection}
+            {audioSection}
+            {videoSection}
+            {textSection}
+          </div>
+          {reblogTextSection}
           {tagSection}
           <div className={`quest-footer-container`}>{questFooter}</div>
         </div>
