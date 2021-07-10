@@ -249,7 +249,8 @@ class Explore extends React.Component {
       const newTags = tags.filter((tag) => !tag.users.includes(currentUser.id));
       // Creating 8 elements for new tag display
       if (newTags.length > 0) {
-        let end = Math.min(8, newTags.length);
+        // let end = Math.min(12, newTags.length); // Set a limit on the tags
+        let end = newTags.length;
         for (let y = 0; y < end; y++) {
           let newTagContent = newTags[y];
           const pictures = []
