@@ -105,12 +105,10 @@ class DashBoard extends React.Component {
         }
       }
     });
-    console.log(questList.map(ele => ele.props.order))
     questList = questList.sort((a, b) => {
       if (a.props.order > b.props.order) return -1;
       else return 1;
     })
-    console.log(questList.map(ele => ele.props.order))
 
     for (let x = 0; x < quests.length; x++) {
       let quest = quests[x];

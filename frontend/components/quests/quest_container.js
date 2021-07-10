@@ -51,7 +51,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   deletePosting: ownProps.type === 'quest' ?
     (questId) => dispatch(deleteQuest(questId)) :
     (reblogId) => dispatch(deleteReblog(reblogId)),
-  fetchSingleQuest: (questId) => dispatch(fetchSingleQuest(questId)),
+  fetchPosting: ownProps.type === 'quest' ?
+    (questId) => dispatch(fetchSingleQuest(questId)) :
+    (reblogId) => dispatch(fetchSingleReblog(reblogId)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Quest));

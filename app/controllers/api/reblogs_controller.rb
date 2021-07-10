@@ -8,7 +8,7 @@ class Api::ReblogsController < ApplicationController
   end
 
   def show
-    @reblog = Reblog.find_by(params[:id])
+    @reblog = Reblog.find(params[:id])
   end
 
   def create

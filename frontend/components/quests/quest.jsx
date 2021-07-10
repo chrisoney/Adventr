@@ -38,11 +38,7 @@ class Quest extends React.Component {
     }
     if (this.props.liked !== prevProps.liked) {
       this.setState({ liked: this.props.liked });
-      if (this.props.type === 'quest') {
-        this.props.fetchSingleQuest(this.props.posting.id);
-      } else if (this.props.type === 'reblog') {
-        console.log('huh?')
-      }
+      this.props.fetchPosting(this.props.posting.id);
       this.props.fetchAllLikes();
     }
     if (this.props.posting.id !== prevProps.posting.id) {
