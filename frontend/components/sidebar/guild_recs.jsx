@@ -21,6 +21,7 @@ class GuildRecs extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllUsers();
+    this.props.fetchAllFollows();
   }
 
   componentDidUpdate(prevProps) {
