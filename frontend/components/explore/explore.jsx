@@ -484,10 +484,18 @@ class Explore extends React.Component {
         leftTop = null;
         topNav = (
           <>
-            <div className="explore-tab">For You</div>
-            <div className="explore-tab">Trending</div>
-            <div className="explore-tab">Guildmaster Picks</div>
-            <div className="explore-tab">More</div>
+            <div
+              onClick={(e) => this.handleTabs('For You')}
+              className={`explore-tab ${tagPageTab === 'For You' ? 'active' : ''}`}>For You</div>
+            <div
+              onClick={(e) => this.handleTabs('Trending')}
+              className={`explore-tab ${tagPageTab === 'Trending' ? 'active' : ''}`}>Trending</div>
+            <div
+              onClick={(e) => this.handleTabs('Guildmaster Picks')}
+              className={`explore-tab ${tagPageTab === 'Guildmaster Picks' ? 'active' : ''}`}>Guildmaster Picks</div>
+            <div
+              onClick={(e) => this.handleTabs('More')}
+              className={`explore-tab ${tagPageTab === 'More' ? 'active' : ''}`}>More</div>
           </>
         );
         leftMiddle = (<div className="explore-tag-container">{newTagElements}</div>)
