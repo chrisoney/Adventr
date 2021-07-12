@@ -23,9 +23,11 @@ class Explore extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllTags().then(() => {
-      this.props.fetchAllQuests().then(() => {
-        this.props.fetchAllLikes().then(() => {
-          this.setState({ loading: false })
+      this.props.fetchAllLikes().then(() => {
+        this.props.fetchAllQuests().then(() => {
+          this.props.fetchAllReblogs().then(() => {
+            this.setState({ loading: false })
+          })
         })
       })
     });
@@ -137,17 +139,20 @@ class Explore extends React.Component {
     if (this.state.loading) {
       return <Loading background={'explore-container'} />;
     }
-    const { quests, currentUser, tags, tag, page } = this.props;
+    const { quests, reblogs, currentUser, tags, tag, page } = this.props;
     const { pageTab } = this.state;
     // Good place for a 404 page
     // if (!tag && page === 'tag') {
     //   return null;
     // }
-    let questList;
+    let questList, reblogList, totalList;
     switch (page) {
       case 'explore':
-        questList = quests.map((quest, idx) => (
-          <QuestContainer key={idx} quest={quest} loc={'explore'} type="quest"/>
+        questList = quests.map((quest) => (
+          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc='explore' type="quest"/>
+        ));
+        reblogList = reblogs.map((reblog) => (
+          <QuestContainer key={`reblog-${reblog.id}`} reblog={reblog} loc='explore' type="reblog"/>
         ));
         break;
       case 'tag':
@@ -155,17 +160,22 @@ class Explore extends React.Component {
           return quest.tag_joins.map((tag_join) => tag_join.tag.tag_name)
             .includes(tag.tag_name);
         }).map((quest, idx) => (
-          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc={'explore'} type="quest"/>
+          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc='explore' type="quest"/>
+        ));
+        reblogList = reblogs.filter((reblog) => {
+          return reblog.tag_joins.map((tag_join) => tag_join.tag.tag_name)
+            .includes(tag.tag_name);
+        }).map((reblog, idx) => (
+          <QuestContainer key={`reblog-${reblog.id}`} reblog={reblog} loc='explore' type="reblog"/>
         ));
         break;
       default:
         break;
     }
     
-    questList = questList.reverse();
-
+    totalList = questList.concat(reblogList).reverse();
     if (pageTab === 'Top') {
-      questList = questList.sort((a, b) => {
+      totalList = totalList.sort((a, b) => {
         if (a.likes > b.likes) return 1;
         else return -1;
       })
@@ -176,13 +186,13 @@ class Explore extends React.Component {
       questDisplay = (
         <div className="quest-columns-2-3">
           <div className="quest-column-3">
-            {questList.filter((quest, idx) => idx % 3 === 0)}
+            {totalList.filter((quest, idx) => idx % 3 === 0)}
           </div>
           <div className="quest-column-3">
-            {questList.filter((quest, idx) => idx % 3 === 1)}
+            {questtotalListList.filter((quest, idx) => idx % 3 === 1)}
           </div>
           <div className="quest-column-3">
-            {questList.filter((quest, idx) => idx % 3 === 2)}
+            {totalList.filter((quest, idx) => idx % 3 === 2)}
           </div>
         </div>
       );
@@ -190,22 +200,22 @@ class Explore extends React.Component {
       questDisplay = (
         <div className="quest-columns-2-3">
           <div className="quest-column-2">
-            {questList.filter((quest, idx) => idx % 2 === 0)}
+            {totalList.filter((quest, idx) => idx % 2 === 0)}
           </div>
           <div className="quest-column-2">
-            {questList.filter((quest, idx) => idx % 2 === 1)}
+            {totalList.filter((quest, idx) => idx % 2 === 1)}
           </div>
         </div>
       );
     } else {
       questDisplay = (
         <div className="quest-columns-1">
-          <div className="quest-column-1">{questList}</div>
+          <div className="quest-column-1">{totalList}</div>
         </div>
       );
     }
 
-    if (questList.length === 0) {
+    if (totalList.length === 0) {
       let questMessage;
       switch (page) {
         case 'explore':
@@ -339,11 +349,11 @@ class Explore extends React.Component {
 
     if (page === 'tag') {
       const relatedTagsObj = {};
-      const tempQuestList = quests.filter((quest) => {
+      const tempTotalList = quests.concat(reblogs).filter((quest) => {
         return quest.tag_joins.map((tag_join) => tag_join.tag.tag_name)
           .includes(tag.tag_name);
       })
-      tempQuestList.forEach(quest => {
+      tempTotalList.forEach(quest => {
         let questTags = quest.tag_joins.map((ele) => ele.tag);
         if (questTags.map(ele => ele.tag_name).includes(tag.tag_name)
           ) {

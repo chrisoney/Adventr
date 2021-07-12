@@ -3,6 +3,7 @@ import Explore from './explore';
 import { fetchAllTags, fetchSingleTag } from '../../actions/tag_actions';
 import { fetchAllLikes } from '../../actions/like_actions';
 import { fetchAllQuests } from '../../actions/quest_actions';
+import { fetchAllReblogs } from '../../actions/reblog_actions';
 import { openModal } from '../../actions/modal_actions';
 import {
   addTagToUser,
@@ -15,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     tag: state.entities.tags[ownProps.match.params.tagId],
     quests: Object.values(state.entities.quests),
+    reblogs: Object.values(state.entities.reblogs),
     tags: Object.values(state.entities.tags),
   };
 };
@@ -24,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllTags: () => dispatch(fetchAllTags()),
     fetchSingleTag: (id) => dispatch(fetchSingleTag(id)),
     fetchAllQuests: () => dispatch(fetchAllQuests()),
+    fetchAllReblogs: () => dispatch(fetchAllReblogs()),
     fetchAllLikes: () => dispatch(fetchAllLikes()),
     addTagToUser: (tagJoin) => dispatch(addTagToUser(tagJoin)),
     removeTagFromUser: (tagJoinId) => dispatch(removeTagFromUser(tagJoinId)),

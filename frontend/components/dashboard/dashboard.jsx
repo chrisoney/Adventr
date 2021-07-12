@@ -59,7 +59,7 @@ class DashBoard extends React.Component {
 
     quests.forEach((quest, idx) => {
       if (quest.user_id === currentUser.id) {
-        questList.push(<QuestContainer order={quest.updated_at} key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>);
+        questList.push(<QuestContainer updated_at={quest.updated_at} key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>);
       } else {
         for (let i = 0; i < follows.length; i++) {
           let follow = follows[i];
@@ -68,7 +68,7 @@ class DashBoard extends React.Component {
             follow.follower_id === currentUser.id
           ) {
             questList.push(
-              <QuestContainer order={quest.updated_at} key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>
+              <QuestContainer updated_at={quest.updated_at} key={`quest-${idx}`} quest={quest} loc={'dash'} type="quest"/>
             );
             break;
           }
@@ -79,7 +79,7 @@ class DashBoard extends React.Component {
       if (reblog.user_id === currentUser.id) {
         questList.push(
           <QuestContainer
-            order={reblog.updated_at}
+            updated_at={reblog.updated_at}
             key={`reblog-${idx}`}
             reblog={reblog}
             loc={'dash'}
@@ -94,7 +94,7 @@ class DashBoard extends React.Component {
           ) {
             questList.push(
               <QuestContainer
-                order={reblog.updated_at}
+                updated_at={reblog.updated_at}
                 key={`reblog-${idx}`}
                 reblog={reblog}
                 loc={'dash'}
@@ -106,7 +106,7 @@ class DashBoard extends React.Component {
       }
     });
     questList = questList.sort((a, b) => {
-      if (a.props.order > b.props.order) return -1;
+      if (a.props.updated_at > b.props.updated_at) return -1;
       else return 1;
     })
 
