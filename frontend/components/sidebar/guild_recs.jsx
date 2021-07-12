@@ -40,7 +40,7 @@ class GuildRecs extends React.Component {
 
   cycleGuilds() {
     let nextIdx;
-    if (this.state.startRecs + 4 > this.props.users.length - 1) {
+    if (this.state.startRecs + 4 > this.props.numFollows - 1) {
       nextIdx = 0;
     } else {
       nextIdx = this.state.startRecs + 4;
@@ -120,11 +120,15 @@ class GuildRecs extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  let users = Object.values(state.entities.users);
+  let follows = Object.values(state.entities.follows);
+  const followIds = follows.map((follow) => follow.user_id);
   return {
     currentUser: state.session.currentUser,
     currentLocation: ownProps.location.pathname,
-    follows: Object.values(state.entities.follows),
-    users: Object.values(state.entities.users),
+    follows,
+    users,
+    numFollows: users.length - followIds.length,
   };
 };
 
