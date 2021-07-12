@@ -145,29 +145,42 @@ class Explore extends React.Component {
     // if (!tag && page === 'tag') {
     //   return null;
     // }
+
+    function createQuestEle(quest) {
+      return <QuestContainer
+        key={`quest-${quest.id}`}
+        updated_at={quest.updated_at}
+        noteCount={quest.likes}
+        quest={quest}
+        loc='explore'
+        type="quest"
+      />
+    }
+    function createReblogEle(reblog) {
+      return <QuestContainer
+        key={`reblog-${reblog.id}`}
+        updated_at={reblog.updated_at}
+        noteCount={reblog.likes}
+        reblog={reblog}
+        loc='explore'
+        type="reblog" />
+    }
+
     let questList, reblogList, totalList;
     switch (page) {
       case 'explore':
-        questList = quests.map((quest) => (
-          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc='explore' type="quest"/>
-        ));
-        reblogList = reblogs.map((reblog) => (
-          <QuestContainer key={`reblog-${reblog.id}`} reblog={reblog} loc='explore' type="reblog"/>
-        ));
+        questList = quests.map((quest) => createQuestEle(quest));
+        reblogList = reblogs.map((reblog) => createReblogEle(reblog));
         break;
       case 'tag':
         questList = quests.filter((quest) => {
           return quest.tag_joins.map((tag_join) => tag_join.tag.tag_name)
             .includes(tag.tag_name);
-        }).map((quest, idx) => (
-          <QuestContainer key={`quest-${quest.id}`} quest={quest} loc='explore' type="quest"/>
-        ));
+        }).map((quest, idx) => createQuestEle(quest));
         reblogList = reblogs.filter((reblog) => {
           return reblog.tag_joins.map((tag_join) => tag_join.tag.tag_name)
             .includes(tag.tag_name);
-        }).map((reblog, idx) => (
-          <QuestContainer key={`reblog-${reblog.id}`} reblog={reblog} loc='explore' type="reblog"/>
-        ));
+        }).map((reblog, idx) => createReblogEle(reblog));
         break;
       default:
         break;
@@ -176,8 +189,13 @@ class Explore extends React.Component {
     totalList = questList.concat(reblogList).reverse();
     if (pageTab === 'Top') {
       totalList = totalList.sort((a, b) => {
-        if (a.likes > b.likes) return 1;
-        else return -1;
+        if (a.props.noteCount > b.props.noteCount) return -1;
+        else return 1;
+      })
+    } else if (pageTab === 'Recent' || pageTab === 'For You') {
+      totalList = totalList.sort((a, b) => {
+        if (a.props.updated_at > b.props.updated_at) return -1;
+        else return 1;
       })
     }
 
