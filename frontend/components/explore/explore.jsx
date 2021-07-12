@@ -12,7 +12,7 @@ class Explore extends React.Component {
       windowSize: 0,
       currentFavTagIdx: 0,
       loading: true,
-      tagPageTab: 'Recent',
+      pageTab: this.props.location.pathname === '/explore' ? 'For You' : 'Recent',
     };
     this.getWindowDimensions = this.getWindowDimensions.bind(this);
     this.handleTabs = this.handleTabs.bind(this);
@@ -74,7 +74,7 @@ class Explore extends React.Component {
   }
 
   handleTabs(newTab) {
-    this.setState({ tagPageTab: newTab })
+    this.setState({ pageTab: newTab })
   }
 
   handleTagFollow(e, tag) {
@@ -136,7 +136,7 @@ class Explore extends React.Component {
       return <Loading background={'explore-container'} />;
     }
     const { quests, currentUser, tags, tag, page } = this.props;
-    const { tagPageTab } = this.state;
+    const { pageTab } = this.state;
     // Good place for a 404 page
     // if (!tag && page === 'tag') {
     //   return null;
@@ -162,7 +162,7 @@ class Explore extends React.Component {
     
     questList = questList.reverse();
 
-    if (tagPageTab === 'Top') {
+    if (pageTab === 'Top') {
       questList = questList.sort((a, b) => {
         if (a.likes > b.likes) return 1;
         else return -1;
@@ -486,16 +486,16 @@ class Explore extends React.Component {
           <>
             <div
               onClick={(e) => this.handleTabs('For You')}
-              className={`explore-tab ${tagPageTab === 'For You' ? 'active' : ''}`}>For You</div>
+              className={`explore-tab ${pageTab === 'For You' ? 'active' : ''}`}>For You</div>
             <div
               onClick={(e) => this.handleTabs('Trending')}
-              className={`explore-tab ${tagPageTab === 'Trending' ? 'active' : ''}`}>Trending</div>
+              className={`explore-tab ${pageTab === 'Trending' ? 'active' : ''}`}>Trending</div>
             <div
               onClick={(e) => this.handleTabs('Guildmaster Picks')}
-              className={`explore-tab ${tagPageTab === 'Guildmaster Picks' ? 'active' : ''}`}>Guildmaster Picks</div>
+              className={`explore-tab ${pageTab === 'Guildmaster Picks' ? 'active' : ''}`}>Guildmaster Picks</div>
             <div
               onClick={(e) => this.handleTabs('More')}
-              className={`explore-tab ${tagPageTab === 'More' ? 'active' : ''}`}>More</div>
+              className={`explore-tab ${pageTab === 'More' ? 'active' : ''}`}>More</div>
           </>
         );
         leftMiddle = (<div className="explore-tag-container">{newTagElements}</div>)
@@ -509,11 +509,11 @@ class Explore extends React.Component {
           <>
             <div
               onClick={(e) => this.handleTabs('Recent')}
-              className={`explore-tab ${tagPageTab === 'Recent' ? 'active' : ''}`}
+              className={`explore-tab ${pageTab === 'Recent' ? 'active' : ''}`}
             >Recent</div>
             <div
               onClick={(e) => this.handleTabs('Top')}
-              className={`explore-tab ${tagPageTab === 'Top' ? 'active' : ''}`}
+              className={`explore-tab ${pageTab === 'Top' ? 'active' : ''}`}
             >Top</div>
           </>
         );
