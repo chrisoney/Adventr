@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Explore from './explore';
 import { fetchAllTags, fetchSingleTag } from '../../actions/tag_actions';
+import { fetchAllLikes } from '../../actions/like_actions';
 import { fetchAllQuests } from '../../actions/quest_actions';
 import { openModal } from '../../actions/modal_actions';
 import {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllTags: () => dispatch(fetchAllTags()),
     fetchSingleTag: (id) => dispatch(fetchSingleTag(id)),
     fetchAllQuests: () => dispatch(fetchAllQuests()),
+    fetchAllLikes: () => dispatch(fetchAllLikes()),
     addTagToUser: (tagJoin) => dispatch(addTagToUser(tagJoin)),
     removeTagFromUser: (tagJoinId) => dispatch(removeTagFromUser(tagJoinId)),
     openModal: (modal) => dispatch(openModal(modal))

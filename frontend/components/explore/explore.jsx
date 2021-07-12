@@ -24,7 +24,9 @@ class Explore extends React.Component {
   componentDidMount() {
     this.props.fetchAllTags().then(() => {
       this.props.fetchAllQuests().then(() => {
-        this.setState({ loading: false })
+        this.props.fetchAllLikes().then(() => {
+          this.setState({ loading: false })
+        })
       })
     });
     // switch (this.props.page) {

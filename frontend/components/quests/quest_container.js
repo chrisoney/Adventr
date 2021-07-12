@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
       like.likeable_id === posting.id &&
       like.user_id === state.session.currentUser.id
     ) {
-      liked = true; 
+      liked = true;
     }
   });
   Object.values(state.entities.follows).forEach((follow)=>{

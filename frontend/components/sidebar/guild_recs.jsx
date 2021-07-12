@@ -122,13 +122,12 @@ class GuildRecs extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   let users = Object.values(state.entities.users);
   let follows = Object.values(state.entities.follows);
-  const followIds = follows.map((follow) => follow.user_id);
   return {
     currentUser: state.session.currentUser,
     currentLocation: ownProps.location.pathname,
     follows,
     users,
-    numFollows: users.length - followIds.length,
+    numFollows: users.length - follows.length,
   };
 };
 
