@@ -33,7 +33,11 @@ class NewQuestForm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.fetchAllQuests().then(() => {})
+    if (this.props.model === 'Quest') {
+      this.props.fetchAllQuests()
+    } else {
+      this.props.fetchAllReblogs()
+    }
   }
 
   deleteTag(e) {

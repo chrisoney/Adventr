@@ -25,6 +25,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     (quest) => dispatch(updateQuest(quest)),
   fetchAllTags: () => dispatch(fetchAllTags()),
   fetchAllQuests: () => dispatch(fetchAllQuests()),
+  fetchAllReblogs: () => dispatch(fetchAllReblogs()),
   createTag: (tag) => dispatch(createTag(tag)),
   addTagAction: ownProps.model === 'Reblog' ?
       (reblogs_tag) => dispatch(addTagToReblog(reblogs_tag)) :
