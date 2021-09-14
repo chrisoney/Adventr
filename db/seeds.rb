@@ -1631,15 +1631,39 @@ ingrid_reblog_15_likes = [hero, rain, carl]
 addLikesToQuest(ingrid_reblog_15_likes, ingrid_reblog_15)
 
 # Kmsvr Reblog 16
-kmsvr_reblog_16 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
-# We're here now
+kmsvr_reblog_16 = Reblog.new(user_id: kmsvr.id, quest_id: catherine_quest_66.id, text: "I think you may be underestimating the evil incarnate in water, Your Grace.")
+
+kmsvr_reblog_16_tags = [ancients, elves, fey, fire, hunt, illusion, lawful, magical_creatures, plot, spellcasting, wilderness, unseelie_court, ice].shuffle
+
+addTagsToQuest(kmsvr_reblog_16_tags, kmsvr_reblog_16)
+
+kmsvr_reblog_16_likes = [hero, matt, jess, ingrid, rain, carl]
+addLikesToQuest(kmsvr_reblog_16_likes, kmsvr_reblog_16)
 
 # Kmsvr Reblog 17
-kmsvr_reblog_17 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
+kmsvr_reblog_17 = Reblog.new(user_id: kmsvr.id, quest_id: carl_quest_59.id, text: "Goblins are our friends, except when they are not. When they are not, are they succeptible to ambushing tactics? Asking for a friend also named Kmsvr. Please don't tell Erin.")
+
+kmsvr_reblog_17_tags = [ai, alchemy, chaotic, creatures, bards, dungeons, evil, explosives, goblins, hunt, magical_creatures, monster_extermination, plot, porcelain_rank, princess].shuffle
+
+addTagsToQuest(kmsvr_reblog_17_tags, kmsvr_reblog_17)
+
+kmsvr_reblog_17_likes = [jess, ingrid, goblin_slayer, rain]
+addLikesToQuest(kmsvr_reblog_17_likes, kmsvr_reblog_17)
+
 # Kmsvr Reblog 18
-kmsvr_reblog_18 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
+kmsvr_reblog_18 = Reblog.new(user_id: kmsvr.id, quest_id: rain_quest_56.id, text: "Are these song crystals for sale? I think this would be good music to play during ambushes. It would frighten bandits and maybe animals. Maybe not animals. We will need to test.")
+
+kmsvr_reblog_18_tags = [adventure, army, bards, books, dark_lord, dwarves, elves, escort_quest, exploration, fallen_kingdom, forests, hero_tag, humans, legendary, magic, mountains, outsider, power, dragons, wizards, wurms, beasts].shuffle
+
+addTagsToQuest(kmsvr_reblog_18_tags, kmsvr_reblog_18)
+
+kmsvr_reblog_18_likes = [hero, matt, jess, ingrid, goblin_slayer, carl, catherine]
+addLikesToQuest(kmsvr_reblog_18_likes, kmsvr_reblog_18)
+
 # Goblin Slayer Reblog 19
 goblin_slayer_reblog_19 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
+# We're here now
+
 # Goblin Slayer Reblog 20
 goblin_slayer_reblog_20 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
 # Goblin Slayer Reblog 21
