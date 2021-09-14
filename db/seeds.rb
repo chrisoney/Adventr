@@ -1540,13 +1540,40 @@ terriblis_reblog_6_likes = [terriblis, rain, catherine]
 addLikesToQuest(terriblis_reblog_6_likes, terriblis_reblog_6)
 
 # Matt Reblog 7
-matt_reblog_7 = Reblog.new(user_id: matt.id, quest_id: null, text: "")
+matt_reblog_7 = Reblog.new(user_id: matt.id, quest_id: hero_quest_1.id, text: "Have you any interest in magic? Stories say that Heroes level quite a bit more quickly than your average adventurer. Our team of coaches can ensure that you achieve the most powerful spellcasting build possible in the most efficient way possible. Please don't hesitate to stop by one of our offices for a consultation!")
+
+matt_reblog_7_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot, magic].shuffle
+
+addTagsToQuest(matt_reblog_7_tags, matt_reblog_7)
+
+matt_reblog_7_likes = [jess, kmsvr]
+addLikesToQuest(matt_reblog_7_likes, matt_reblog_7)
+
 # Matt Reblog 8
-matt_reblog_8 = Reblog.new(user_id: matt.id, quest_id: null, text: "")
+matt_reblog_8 = Reblog.new(user_id: matt.id, quest_id: terriblis_quest_8.id, text: "Having trouble with security? Our expert team of [Inscribers] can set up runic defense arrays in any environment. Stop by one of our offices for a consultation and preliminary quote!")
+
+matt_reblog_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlords, fallen_kingdom, lawful, lich, murder, necromancy, paladins, scholars, spell_components, spellcasting, undead, warlocks].shuffle
+
+addTagsToQuest(matt_reblog_8_tags, matt_reblog_8)
+
+matt_reblog_8_likes = [ingrid, kmsvr, rain]
+addLikesToQuest(matt_reblog_8_likes, matt_reblog_8)
+
 # Matt Reblog 9
-matt_reblog_9 = Reblog.new(user_id: matt.id, quest_id: null, text: "")
+matt_reblog_9 = Reblog.new(user_id: matt.id, quest_id: goblin_slayer_quest_45.id, text: "Looking for the latest and/or greatest in spellcasting scrolls for any occasion? Look no further! We have scrolls you've never dreamed of! Offensive spells, defensive arrays, utility magic, we've got it all! Grab one of our catalogues from the front desk of any Adventurer's Guild and you won't be disappointed!")
+
+matt_reblog_9_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, abjuration, artifacts, artificers, books, conjuration, divination, enchantment, explosives, fireball, lightning, magic_items, monster_extermination, protection, rare, spellcasting, transmutation].shuffle
+
+addTagsToQuest(matt_reblog_9_tags, matt_reblog_9)
+
+matt_reblog_9_likes = [terriblis, kmsvr, rain, carl, catherine]
+addLikesToQuest(matt_reblog_9_likes, matt_reblog_9)
+
+
 # Jess Reblog 10
 jess_reblog_10 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
+# We're here now
+
 # Jess Reblog 11
 jess_reblog_11 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
 # Jess Reblog 12
