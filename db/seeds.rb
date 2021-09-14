@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # TagJoin.destroy_all
-Follow.destroy_all
-Like.destroy_all
-# Reblog.destroy_all
-Quest.destroy_all
+# Follow.destroy_all
+# Like.destroy_all
+Reblog.destroy_all
+# Quest.destroy_all
 # User.destroy_all
 # Tag.destroy_all
 
@@ -1477,11 +1477,34 @@ quest_list = [hero_quest_1, hero_quest_2, hero_quest_3, hero_quest_4, hero_quest
 
 # Reblogs Section
 # Hero Reblog 1
-hero_reblog_1 = Reblog.new(user_id: hero.id, quest_id: null, text: "")
+hero_reblog_1 = Reblog.new(user_id: hero.id, quest_id: terriblis_quest_11.id, text: "Is there any way to veto another person's quest? Or cancel it? I suspect the completition of this won't work out well for me...")
+
+hero_reblog_1_tags = [assassins, bandits, blood_oath, contracts, murder, political_intrigue, rogues, spies, rescue_mission].shuffle
+
+addTagsToQuest(hero_reblog_1_tags, hero_reblog_1)
+
+hero_reblog_1_likes = [catherine]
+addLikesToQuest(hero_reblog_1_likes, hero_reblog_1)
+
 # Hero Reblog 2
-hero_reblog_2 = Reblog.new(user_id: hero.id, quest_id: null, text: "")
+hero_reblog_2 = Reblog.new(user_id: hero.id, quest_id: catherine_quest_67.id, text: "I'm told you accept heroes alongside villains? I'm not sure how much help I can be of, but I'll lend my sword.")
+
+hero_reblog_2_tags = [ancients, army, blood_magic, dark_lord, demon_army, demons, devils, drakes, evil, evil_overlords, fallen_kingdom, grimoires, lich,magical_creatures, necromancy, power, spies, undead, warlocks, wurms, good, hero_tag].shuffle
+
+addTagsToQuest(hero_reblog_2_tags, hero_reblog_2)
+
+hero_reblog_2_likes = [terriblis, rain, carl]
+addLikesToQuest(hero_reblog_2_likes, hero_reblog_2)
+
 # Hero Reblog 3
-hero_reblog_3 = Reblog.new(user_id: hero.id, quest_id: null, text: "")
+hero_reblog_3 = Reblog.new(user_id: hero.id, quest_id: rain_quest_55.id, text: "Absolutely classic. How did you get a copy over here? Wait, are you even from... y'know... The other place?")
+
+hero_reblog_3_tags = [adventure, army, bards, books, commoners, creatures, demon_army, demons, dwarves, evil, hero_tag, legendary, mountains, orcs, plot, spellcasting, staffs, wizards, outsider].shuffle
+addTagsToQuest(hero_reblog_3_tags, hero_reblog_3)
+
+hero_reblog_3_likes = [matt, goblin_slayer, carl]
+addLikesToQuest(hero_reblog_3_likes, hero_reblog_3)
+
 # Terriblis Reblog 4
 terriblis_reblog_4 = Reblog.new(user_id: terriblis.id, quest_id: null, text: "")
 # Terriblis Reblog 5
