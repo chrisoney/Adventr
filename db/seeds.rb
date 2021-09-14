@@ -1506,11 +1506,39 @@ hero_reblog_3_likes = [matt, goblin_slayer, carl]
 addLikesToQuest(hero_reblog_3_likes, hero_reblog_3)
 
 # Terriblis Reblog 4
-terriblis_reblog_4 = Reblog.new(user_id: terriblis.id, quest_id: null, text: "")
+terriblis_reblog_4 = Reblog.new(user_id: terriblis.id, quest_id: goblin_slayer_quest_46.id, text: "No. No, that is not a goblin. Is this a real question?")
+
+
+terriblis_reblog_4_tags = [alchemists, beasts, creatures, demons, devils, goliaths, magical_creatures, monster_extermination, monster_nest, mountains].shuffle
+
+addTagsToQuest(terriblis_reblog_4_tags, terriblis_reblog_4)
+
+terriblis_reblog_4_likes = [jess, ingrid, kmsvr, rain, carl]
+addLikesToQuest(terriblis_reblog_4_likes, terriblis_reblog_4)
+
+
 # Terriblis Reblog 5
-terriblis_reblog_5 = Reblog.new(user_id: terriblis.id, quest_id: null, text: "")
+terriblis_reblog_5 = Reblog.new(user_id: terriblis.id, quest_id: kmsvr_quest_40.id, text: "Stop quoting yourself. What is wrong with the adventurers here?")
+
+
+terriblis_reblog_5_tags = [army, chaotic, fighters, gold_rank, hunt, kingdom, the_watch].shuffle
+
+addTagsToQuest(terriblis_reblog_5_tags, terriblis_reblog_5)
+
+terriblis_reblog_5_likes = [rain, carl, catherine]
+addLikesToQuest(terriblis_reblog_5_likes, terriblis_reblog_5)
+
+
 # Terriblis Reblog 6
-terriblis_reblog_6 = Reblog.new(user_id: terriblis.id, quest_id: null, text: "")
+terriblis_reblog_6 = Reblog.new(user_id: terriblis.id, quest_id: matt_quest_18.id, text: "I would be interested in writing guest articles for your publication. If you consider the expertise of an ancient being that has seen the rise and fall of more civilizations than you can name sufficient, I shall await your correspondence.")
+
+terriblis_reblog_6_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlocks, wizards, druids].shuffle
+
+addTagsToQuest(terriblis_reblog_6_tags, terriblis_reblog_6)
+
+terriblis_reblog_6_likes = [terriblis, rain, catherine]
+addLikesToQuest(terriblis_reblog_6_likes, terriblis_reblog_6)
+
 # Matt Reblog 7
 matt_reblog_7 = Reblog.new(user_id: matt.id, quest_id: null, text: "")
 # Matt Reblog 8
