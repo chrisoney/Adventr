@@ -1571,15 +1571,39 @@ addLikesToQuest(matt_reblog_9_likes, matt_reblog_9)
 
 
 # Jess Reblog 10
-jess_reblog_10 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
-# We're here now
+jess_reblog_10 = Reblog.new(user_id: jess.id, quest_id: matt_quest_16.id, text: "I would like to schedule an appointment. Will give more details about the loot in person, but it consists of mostly silver-grade weaponry and a gold-rank helm.")
+
+jess_reblog_10_tags = [artifacts, axes, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, silve_rank, gold, gold_rank, staffs, swords].shuffle
+
+addTagsToQuest(jess_reblog_10_tags, jess_reblog_10)
+
+jess_reblog_10_likes = [hero, ingrid, goblin_slayer, carl]
+addLikesToQuest(jess_reblog_10_likes, jess_reblog_10)
 
 # Jess Reblog 11
-jess_reblog_11 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
+jess_reblog_11 = Reblog.new(user_id: jess.id, quest_id: carl_quest_63.id, text: "We are interested in these traps you make. I have heard tell that there is little magic to them. We have an alchemist who would love to discuss things with you, to the benefit of both.")
+
+jess_reblog_11_tags = [acid, alchemy, anarchy, chaotic, bards, creatures, dungeons, earth, explosives, fire, ice, lightning, magic, magic_items, monster_extermination, plot, transmutation].shuffle
+
+addTagsToQuest(jess_reblog_11_tags, jess_reblog_11)
+
+jess_reblog_11_likes = [hero, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(jess_reblog_11_likes, jess_reblog_11)
+
 # Jess Reblog 12
-jess_reblog_12 = Reblog.new(user_id: jess.id, quest_id: null, text: "")
+jess_reblog_12 = Reblog.new(user_id: jess.id, quest_id: ingrid_quest_33.id, text: "Spoken like a true leader. Best of luck in your adventures.")
+
+jess_reblog_12_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero_tag, monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank].shuffle
+
+addTagsToQuest(jess_reblog_12_tags, jess_reblog_12)
+
+jess_reblog_12_likes = [hero, kmsvr, goblin_slayer, rain]
+addLikesToQuest(jess_reblog_12_likes, jess_reblog_12)
+
 # Ingrid Reblog 13
 ingrid_reblog_13 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
+# We're here now
+
 # Ingrid Reblog 14
 ingrid_reblog_14 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
 # Ingrid Reblog 15
