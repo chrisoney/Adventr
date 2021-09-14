@@ -1601,15 +1601,39 @@ jess_reblog_12_likes = [hero, kmsvr, goblin_slayer, rain]
 addLikesToQuest(jess_reblog_12_likes, jess_reblog_12)
 
 # Ingrid Reblog 13
-ingrid_reblog_13 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
-# We're here now
+ingrid_reblog_13 = Reblog.new(user_id: ingrid.id, quest_id: catherine_quest_68.id, text: "My team will answer your call, Queen Catherine, as our ancestors have done for yours.")
+
+ingrid_reblog_13_tags = [books, dark_lord, evil, evil_overlords, fallen_kingdom, good, humans, kingdom, nobles, queen, the_watch, army].shuffle
+
+addTagsToQuest(ingrid_reblog_13_tags, ingrid_reblog_13)
+
+ingrid_reblog_13_likes = [hero, matt, jess, kmsvr, goblin_slayer, rain, carl]
+addLikesToQuest(ingrid_reblog_13_likes, ingrid_reblog_13)
 
 # Ingrid Reblog 14
-ingrid_reblog_14 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
+ingrid_reblog_14 = Reblog.new(user_id: ingrid.id, quest_id: carl_quest_60.id, text: "Where might this \"Iron Tangle\" be located? It looks to be a challenge, and The Court of Winter seeks to sharpen our skills.")
+
+ingrid_reblog_14_tags = [anarchy, books, conjuration, creatures, dungeons, exploration, gods, goddesses, humans, magic, magical_creatures, monster_nest, monster_extermination, outer_planes, protection, rescue_mission, scholars, trolls, undead, warriors].shuffle
+
+addTagsToQuest(ingrid_reblog_14_tags, ingrid_reblog_14)
+
+ingrid_reblog_14_likes = [kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(ingrid_reblog_14_likes, ingrid_reblog_14)
+
 # Ingrid Reblog 15
-ingrid_reblog_15 = Reblog.new(user_id: ingrid.id, quest_id: null, text: "")
+ingrid_reblog_15 = Reblog.new(user_id: ingrid.id, quest_id: goblin_slayer_quest_44.id, text: "Water Town is but a day's ride from our location. We shall aide you in this.")
+
+ingrid_reblog_15_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, monster_nest, monster_extermination, kingdom, wilderness, warriors].shuffle
+
+addTagsToQuest(ingrid_reblog_15_tags, ingrid_reblog_15)
+
+ingrid_reblog_15_likes = [hero, rain, carl]
+addLikesToQuest(ingrid_reblog_15_likes, ingrid_reblog_15)
+
 # Kmsvr Reblog 16
 kmsvr_reblog_16 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
+# We're here now
+
 # Kmsvr Reblog 17
 kmsvr_reblog_17 = Reblog.new(user_id: kmsvr.id, quest_id: null, text: "")
 # Kmsvr Reblog 18
