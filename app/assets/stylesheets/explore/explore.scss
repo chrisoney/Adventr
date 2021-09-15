@@ -217,6 +217,13 @@
 
       .quest-column-2, .quest-column-3 {
         width: 300px;
+        .author-reblog-major-container {
+          display: flex;
+          flex-direction: column;
+          .reblog-header-section-container {
+            display: flex;
+          }
+        }
       }
 
       .quest-container-explore {

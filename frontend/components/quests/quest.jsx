@@ -138,7 +138,7 @@ class Quest extends React.Component {
 
     if (authorId === currentUser.id) {
       questHeader = (
-        <>
+        <div className='author-reblog-major-container'>
           <span
             className={`quest-author`}
             onClick={() => this.props.openModal('userpage')}
@@ -147,14 +147,14 @@ class Quest extends React.Component {
             {author.username}
           </span>
           {type === 'reblog' && (
-            <>
+            <div className="reblog-header-section-container">
               <span className="reblog-header-icon fas fa-retweet"></span>
               <span className="reblog-header-username">
                 {posting.quest_author.username}
               </span>
-            </>
+            </div>
           )}
-        </>
+        </div>
       );
       questFooter = (
         <div className={`quest-footer`}>
@@ -181,21 +181,23 @@ class Quest extends React.Component {
     } else {
       questHeader = (
         <>
-          <span
-            onClick={() => this.props.openModal('userpage')}
-            id={this.props.authorId}
-          >
-            {author.username}
-          </span>
-          {type === 'reblog' && (
-            <>
-              <span className="reblog-header-icon fas fa-retweet"></span>
-              <span className="reblog-header-username">
-                {posting.quest_author.username}
-              </span>
-            </>
-          )}
-          {followUser}
+          <div className='author-reblog-major-container'>
+            <span
+              onClick={() => this.props.openModal('userpage')}
+              id={this.props.authorId}
+            >
+              {author.username}
+            </span>
+            {type === 'reblog' && (
+              <div className="reblog-header-section-container">
+                <span className="reblog-header-icon fas fa-retweet"></span>
+                <span className="reblog-header-username">
+                  {posting.quest_author.username}
+                </span>
+              </div>
+            )}
+          </div>
+          { followUser }
         </>
       );
       questFooter = (
@@ -238,7 +240,9 @@ class Quest extends React.Component {
     let imageSection = null;
     if (quest.imageUrls && quest.quest_type === 'image') {
       imageSection = quest.imageUrls.map((imageUrl, idx) => {
-        return <img key={`img-${idx}`} className="image-video" src={imageUrl} />;
+        return <img key={`img-${idx}`}
+          className={`image-video${type === 'quest' ? '': '-reblog'}`}
+          src={imageUrl} />;
       });
     }
 
@@ -246,7 +250,9 @@ class Quest extends React.Component {
     if (quest.imageUrls && quest.quest_type === 'video') {
       videoSection = quest.imageUrls.map((imageUrl, idx) => {
         return (
-          <video key={`vid-${idx}`} src={imageUrl} className="image-video" controls />
+          <video key={`vid-${idx}`} src={imageUrl}
+            className={`image-video${type === 'quest' ? '': '-reblog'}`}
+            controls />
         );
       });
     }

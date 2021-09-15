@@ -39,6 +39,11 @@ class User < ApplicationRecord
     source: :likeable, 
     source_type: :Quest
 
+  has_many :liked_reblogs,
+    through: :likes,
+    source: :likeable, 
+    source_type: :Reblog
+
   has_many :followings,
     class_name: :Follow,
     primary_key: :id,

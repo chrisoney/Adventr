@@ -207,7 +207,7 @@ class Explore extends React.Component {
             {totalList.filter((quest, idx) => idx % 3 === 0)}
           </div>
           <div className="quest-column-3">
-            {questtotalListList.filter((quest, idx) => idx % 3 === 1)}
+            {totalList.filter((quest, idx) => idx % 3 === 1)}
           </div>
           <div className="quest-column-3">
             {totalList.filter((quest, idx) => idx % 3 === 2)}

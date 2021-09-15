@@ -6,463 +6,465 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# TagJoin.destroy_all
-# Follow.destroy_all
-# Like.destroy_all
+TagJoin.destroy_all
+Follow.destroy_all
+Like.destroy_all
 Reblog.destroy_all
-# Quest.destroy_all
-# User.destroy_all
-# Tag.destroy_all
+Quest.destroy_all
+User.destroy_all
+Tag.destroy_all
 
 # # New tags
-# abjuration = Tag.create(tag_name: 'abjuration')
-# academy = Tag.create(tag_name: 'academy')
-# acid = Tag.create(tag_name: 'acid')
-# adamantine = Tag.create(tag_name: 'adamantine')
-# adventure = Tag.create(tag_name: 'adventure')
-# ai = Tag.create(tag_name: 'ai')
-# alchemists = Tag.create(tag_name: 'alchemists')
-# alchemy = Tag.create(tag_name: 'alchemy')
-# anarchy = Tag.create(tag_name: 'anarchy')
-# ancients = Tag.create(tag_name: 'ancients')
-# angels = Tag.create(tag_name: 'angels')
-# arcane_focus = Tag.create(tag_name: 'arcane focus')
-# aristocrats = Tag.create(tag_name: 'aristocrats')
-# army = Tag.create(tag_name: 'army')
-# artifacts = Tag.create(tag_name: 'artifacts')
-# artificers = Tag.create(tag_name: 'artificers')
-# assassins = Tag.create(tag_name: 'assassins')
-# axes = Tag.create(tag_name: 'axes')
-# bandits = Tag.create(tag_name: 'bandits')
-# barbarians = Tag.create(tag_name: 'barbarians')
-# bards = Tag.create(tag_name: 'bards')
-# beasts = Tag.create(tag_name: 'beasts')
-# blacksmithing = Tag.create(tag_name: 'blacksmithing')
-# blood_magic = Tag.create(tag_name: 'blood magic')
-# blood_oath = Tag.create(tag_name: 'blood oath')
-# books = Tag.create(tag_name: 'books')
-# bows = Tag.create(tag_name: 'bows')
-# bronze_rank = Tag.create(tag_name: 'bronze rank')
-# caravans = Tag.create(tag_name: 'caravans')
-# cave = Tag.create(tag_name: 'cave')
-# chaotic = Tag.create(tag_name: 'chaotic')
-# clerics = Tag.create(tag_name: 'clerics')
-# common = Tag.create(tag_name: 'common')
-# commoners = Tag.create(tag_name: 'commoners')
-# conjuration = Tag.create(tag_name: 'conjuration')
-# contracts = Tag.create(tag_name: 'contracts')
-# creatures = Tag.create(tag_name: 'creatures')
-# creler = Tag.create(tag_name: 'creler')
-# cultists = Tag.create(tag_name: 'cultists')
-# daggers = Tag.create(tag_name: 'daggers')
-# dark_lord = Tag.create(tag_name: 'darklord')
-# demon_army = Tag.create(tag_name: 'demon_army')
-# demons = Tag.create(tag_name: 'demons')
-# devils = Tag.create(tag_name: 'devils')
-# diamond_rank = Tag.create(tag_name: 'diamond rank')
-# dire_wolves = Tag.create(tag_name: 'dire wolves')
-# divination = Tag.create(tag_name: 'divination')
-# djinn = Tag.create(tag_name: 'djinn')
-# dragonborn = Tag.create(tag_name: 'dragonborn')
-# dragons = Tag.create(tag_name: 'dragons')
-# drakes = Tag.create(tag_name: 'drakes')
-# druids = Tag.create(tag_name: 'druids')
-# dungeons = Tag.create(tag_name: 'dungeons')
-# dwarves = Tag.create(tag_name: 'dwarves')
-# dynamos = Tag.create(tag_name: 'dynamos')
-# earth = Tag.create(tag_name: 'earth')
-# elves = Tag.create(tag_name: 'elves')
-# enchantment = Tag.create(tag_name: 'enchantment')
-# ents = Tag.create(tag_name: 'ents')
-# escort_quest = Tag.create(tag_name: 'escort quest')
-# evil = Tag.create(tag_name: 'evil')
-# evil_overlords = Tag.create(tag_name: 'evil overlords')
-# evocation = Tag.create(tag_name: 'evocation')
-# exploration = Tag.create(tag_name: 'exploration')
-# explosives = Tag.create(tag_name: 'explosives')
-# fetch = Tag.create(tag_name: 'fetch')
-# fallen_kingdom = Tag.create(tag_name: 'fallen kingdom')
-# familiars = Tag.create(tag_name: 'familiars')
-# fey = Tag.create(tag_name: 'fey')
-# fighters = Tag.create(tag_name: 'fighters')
-# fire = Tag.create(tag_name: 'fire')
-# fireball = Tag.create(tag_name: 'fireball')
-# food = Tag.create(tag_name: 'food')
-# forests = Tag.create(tag_name: 'forests')
-# goblins = Tag.create(tag_name: 'goblins')
-# goblin_champions = Tag.create(tag_name: 'goblin champions')
-# goblin_lords = Tag.create(tag_name: 'goblin lords')
-# goblin_kings = Tag.create(tag_name: 'goblin kings')
-# gods = Tag.create(tag_name: 'gods')
-# goddesses = Tag.create(tag_name: 'goddesses')
-# gold = Tag.create(tag_name: 'gold')
-# gold_rank = Tag.create(tag_name: 'gold rank')
-# goliaths = Tag.create(tag_name: 'goliaths')
-# good = Tag.create(tag_name: 'good')
-# grimoires = Tag.create(tag_name: 'grimoires')
-# guilds = Tag.create(tag_name: 'guilds')
-# hammers = Tag.create(tag_name: 'hammers')
-# hero_tag = Tag.create(tag_name: 'hero')
-# humans = Tag.create(tag_name: 'humans')
-# hunt = Tag.create(tag_name: 'hunt')
-# ice = Tag.create(tag_name: 'ice')
-# illusion = Tag.create(tag_name: 'illusion')
-# king = Tag.create(tag_name: 'king')
-# kingdom = Tag.create(tag_name: 'kingdom')
-# lawful = Tag.create(tag_name: 'lawful')
-# legendary = Tag.create(tag_name: 'legendary')
-# lich = Tag.create(tag_name: 'lich')
-# lightning = Tag.create(tag_name: 'lightning')
-# magic = Tag.create(tag_name: 'magic')
-# magic_items = Tag.create(tag_name: 'magic items')
-# magical_creatures = Tag.create(tag_name: 'magical creatures')
-# merchants = Tag.create(tag_name: 'merchants')
-# monks = Tag.create(tag_name: 'monks')
-# monster_extermination = Tag.create(tag_name: 'monster_extermination')
-# monster_nest = Tag.create(tag_name: 'monster nest')
-# mountains = Tag.create(tag_name: 'mountains')
-# murder = Tag.create(tag_name: 'murder')
-# mystery = Tag.create(tag_name: 'mystery')
-# mythic = Tag.create(tag_name: 'mythic')
-# mythril = Tag.create(tag_name: 'mythril')
-# necromancy = Tag.create(tag_name: 'necromancy')
-# neutral = Tag.create(tag_name: 'neutral')
-# nobles = Tag.create(tag_name: 'nobles')
-# obsidian_rank = Tag.create(tag_name: 'obsidian rank')
-# orcs = Tag.create(tag_name: 'orcs')
-# outer_planes = Tag.create(tag_name: 'outer planes')
-# outsider = Tag.create(tag_name: 'outsider')
-# paladins = Tag.create(tag_name: 'paladins')
-# platinum = Tag.create(tag_name: 'platinum')
-# platinum_rank = Tag.create(tag_name: 'platinum rank')
-# plot = Tag.create(tag_name: 'plot')
-# polearms = Tag.create(tag_name: 'polearms')
-# political_intrigue = Tag.create(tag_name: 'political intrigue')
-# porcelain_rank = Tag.create(tag_name: 'porcelain rank')
-# power = Tag.create(tag_name: 'power')
-# princess = Tag.create(tag_name: 'princess')
-# protection = Tag.create(tag_name: 'protection')
-# pseudodragons = Tag.create(tag_name: 'pseudodragons')
-# queen = Tag.create(tag_name: 'queen')
-# rangers = Tag.create(tag_name: 'rangers')
-# rare = Tag.create(tag_name: 'rare')
-# rescue_mission = Tag.create(tag_name: 'rescue_mission')
-# rogues = Tag.create(tag_name: 'rogues')
-# satyr = Tag.create(tag_name: 'satyr')
-# scholars = Tag.create(tag_name: 'scholars')
-# silver = Tag.create(tag_name: 'silver')
-# silver_rank = Tag.create(tag_name: 'silverrank')
-# slimes = Tag.create(tag_name: 'slimes')
-# sorcerers = Tag.create(tag_name: 'sorcerers')
-# sorcery = Tag.create(tag_name: 'sorcery')
-# spell_components = Tag.create(tag_name: 'spell components')
-# spellbooks = Tag.create(tag_name: 'spellbooks')
-# spellcasting = Tag.create(tag_name: 'spellcasting')
-# spies = Tag.create(tag_name: 'spies')
-# squire = Tag.create(tag_name: 'squire')
-# staffs = Tag.create(tag_name: 'staffs')
-# steel_rank = Tag.create(tag_name: 'steel rank')
-# swords = Tag.create(tag_name: 'swords')
-# the_watch = Tag.create(tag_name: 'the_watch')
-# tomes = Tag.create(tag_name: 'tomes')
-# transmutation = Tag.create(tag_name: 'transmutation')
-# trolls = Tag.create(tag_name: 'trolls')
-# undead = Tag.create(tag_name: 'undead')
-# unseelie_court = Tag.create(tag_name: 'unseelie court')
-# vampires = Tag.create(tag_name: 'vampires')
-# warlocks = Tag.create(tag_name: 'warlocks')
-# warriors = Tag.create(tag_name: 'warriors')
-# wilderness = Tag.create(tag_name: 'wilderness')
-# wind = Tag.create(tag_name: 'wind')
-# wizards = Tag.create(tag_name: 'wizards')
-# wurms = Tag.create(tag_name: 'wurms')
+abjuration = Tag.create(tag_name: 'abjuration')
+academy = Tag.create(tag_name: 'academy')
+acid = Tag.create(tag_name: 'acid')
+adamantine = Tag.create(tag_name: 'adamantine')
+adventure = Tag.create(tag_name: 'adventure')
+ai = Tag.create(tag_name: 'ai')
+alchemists = Tag.create(tag_name: 'alchemists')
+alchemy = Tag.create(tag_name: 'alchemy')
+anarchy = Tag.create(tag_name: 'anarchy')
+ancients = Tag.create(tag_name: 'ancients')
+angels = Tag.create(tag_name: 'angels')
+arcane_focus = Tag.create(tag_name: 'arcane focus')
+aristocrats = Tag.create(tag_name: 'aristocrats')
+army = Tag.create(tag_name: 'army')
+artifacts = Tag.create(tag_name: 'artifacts')
+artificers = Tag.create(tag_name: 'artificers')
+assassins = Tag.create(tag_name: 'assassins')
+axes = Tag.create(tag_name: 'axes')
+bandits = Tag.create(tag_name: 'bandits')
+barbarians = Tag.create(tag_name: 'barbarians')
+bards = Tag.create(tag_name: 'bards')
+beasts = Tag.create(tag_name: 'beasts')
+blacksmithing = Tag.create(tag_name: 'blacksmithing')
+blood_magic = Tag.create(tag_name: 'blood magic')
+blood_oath = Tag.create(tag_name: 'blood oath')
+books = Tag.create(tag_name: 'books')
+bows = Tag.create(tag_name: 'bows')
+bronze_rank = Tag.create(tag_name: 'bronze rank')
+caravans = Tag.create(tag_name: 'caravans')
+cave = Tag.create(tag_name: 'cave')
+chaotic = Tag.create(tag_name: 'chaotic')
+clerics = Tag.create(tag_name: 'clerics')
+common = Tag.create(tag_name: 'common')
+commoners = Tag.create(tag_name: 'commoners')
+conjuration = Tag.create(tag_name: 'conjuration')
+contracts = Tag.create(tag_name: 'contracts')
+creatures = Tag.create(tag_name: 'creatures')
+creler = Tag.create(tag_name: 'creler')
+cultists = Tag.create(tag_name: 'cultists')
+daggers = Tag.create(tag_name: 'daggers')
+dark_lord = Tag.create(tag_name: 'darklord')
+demon_army = Tag.create(tag_name: 'demon_army')
+demons = Tag.create(tag_name: 'demons')
+devils = Tag.create(tag_name: 'devils')
+diamond_rank = Tag.create(tag_name: 'diamond rank')
+dire_wolves = Tag.create(tag_name: 'dire wolves')
+divination = Tag.create(tag_name: 'divination')
+djinn = Tag.create(tag_name: 'djinn')
+dragonborn = Tag.create(tag_name: 'dragonborn')
+dragons = Tag.create(tag_name: 'dragons')
+drakes = Tag.create(tag_name: 'drakes')
+druids = Tag.create(tag_name: 'druids')
+dungeons = Tag.create(tag_name: 'dungeons')
+dwarves = Tag.create(tag_name: 'dwarves')
+dynamos = Tag.create(tag_name: 'dynamos')
+earth = Tag.create(tag_name: 'earth')
+elves = Tag.create(tag_name: 'elves')
+enchantment = Tag.create(tag_name: 'enchantment')
+ents = Tag.create(tag_name: 'ents')
+escort_quest = Tag.create(tag_name: 'escort quest')
+evil = Tag.create(tag_name: 'evil')
+evil_overlords = Tag.create(tag_name: 'evil overlords')
+evocation = Tag.create(tag_name: 'evocation')
+exploration = Tag.create(tag_name: 'exploration')
+explosives = Tag.create(tag_name: 'explosives')
+fetch = Tag.create(tag_name: 'fetch')
+fallen_kingdom = Tag.create(tag_name: 'fallen kingdom')
+familiars = Tag.create(tag_name: 'familiars')
+fey = Tag.create(tag_name: 'fey')
+fighters = Tag.create(tag_name: 'fighters')
+fire = Tag.create(tag_name: 'fire')
+fireball = Tag.create(tag_name: 'fireball')
+food = Tag.create(tag_name: 'food')
+forests = Tag.create(tag_name: 'forests')
+goblins = Tag.create(tag_name: 'goblins')
+goblin_champions = Tag.create(tag_name: 'goblin champions')
+goblin_lords = Tag.create(tag_name: 'goblin lords')
+goblin_kings = Tag.create(tag_name: 'goblin kings')
+gods = Tag.create(tag_name: 'gods')
+goddesses = Tag.create(tag_name: 'goddesses')
+gold = Tag.create(tag_name: 'gold')
+gold_rank = Tag.create(tag_name: 'gold rank')
+goliaths = Tag.create(tag_name: 'goliaths')
+good = Tag.create(tag_name: 'good')
+grimoires = Tag.create(tag_name: 'grimoires')
+guilds = Tag.create(tag_name: 'guilds')
+hammers = Tag.create(tag_name: 'hammers')
+hero_tag = Tag.create(tag_name: 'hero')
+humans = Tag.create(tag_name: 'humans')
+hunt = Tag.create(tag_name: 'hunt')
+ice = Tag.create(tag_name: 'ice')
+illusion = Tag.create(tag_name: 'illusion')
+king = Tag.create(tag_name: 'king')
+kingdom = Tag.create(tag_name: 'kingdom')
+lawful = Tag.create(tag_name: 'lawful')
+legendary = Tag.create(tag_name: 'legendary')
+lich = Tag.create(tag_name: 'lich')
+lightning = Tag.create(tag_name: 'lightning')
+magic = Tag.create(tag_name: 'magic')
+magic_items = Tag.create(tag_name: 'magic items')
+magical_creatures = Tag.create(tag_name: 'magical creatures')
+merchants = Tag.create(tag_name: 'merchants')
+monks = Tag.create(tag_name: 'monks')
+monster_extermination = Tag.create(tag_name: 'monster_extermination')
+monster_nest = Tag.create(tag_name: 'monster nest')
+mountains = Tag.create(tag_name: 'mountains')
+murder = Tag.create(tag_name: 'murder')
+mystery = Tag.create(tag_name: 'mystery')
+mythic = Tag.create(tag_name: 'mythic')
+mythril = Tag.create(tag_name: 'mythril')
+necromancy = Tag.create(tag_name: 'necromancy')
+neutral = Tag.create(tag_name: 'neutral')
+nobles = Tag.create(tag_name: 'nobles')
+obsidian_rank = Tag.create(tag_name: 'obsidian rank')
+orcs = Tag.create(tag_name: 'orcs')
+outer_planes = Tag.create(tag_name: 'outer planes')
+outsider = Tag.create(tag_name: 'outsider')
+paladins = Tag.create(tag_name: 'paladins')
+platinum = Tag.create(tag_name: 'platinum')
+platinum_rank = Tag.create(tag_name: 'platinum rank')
+plot = Tag.create(tag_name: 'plot')
+polearms = Tag.create(tag_name: 'polearms')
+political_intrigue = Tag.create(tag_name: 'political intrigue')
+porcelain_rank = Tag.create(tag_name: 'porcelain rank')
+power = Tag.create(tag_name: 'power')
+princess = Tag.create(tag_name: 'princess')
+protection = Tag.create(tag_name: 'protection')
+pseudodragons = Tag.create(tag_name: 'pseudodragons')
+queen = Tag.create(tag_name: 'queen')
+rangers = Tag.create(tag_name: 'rangers')
+rare = Tag.create(tag_name: 'rare')
+rescue_mission = Tag.create(tag_name: 'rescue_mission')
+rogues = Tag.create(tag_name: 'rogues')
+satyr = Tag.create(tag_name: 'satyr')
+scholars = Tag.create(tag_name: 'scholars')
+silver = Tag.create(tag_name: 'silver')
+silver_rank = Tag.create(tag_name: 'silverrank')
+slimes = Tag.create(tag_name: 'slimes')
+sorcerers = Tag.create(tag_name: 'sorcerers')
+sorcery = Tag.create(tag_name: 'sorcery')
+spell_components = Tag.create(tag_name: 'spell components')
+spellbooks = Tag.create(tag_name: 'spellbooks')
+spellcasting = Tag.create(tag_name: 'spellcasting')
+spies = Tag.create(tag_name: 'spies')
+squire = Tag.create(tag_name: 'squire')
+staffs = Tag.create(tag_name: 'staffs')
+steel_rank = Tag.create(tag_name: 'steel rank')
+swords = Tag.create(tag_name: 'swords')
+the_watch = Tag.create(tag_name: 'the_watch')
+tomes = Tag.create(tag_name: 'tomes')
+transmutation = Tag.create(tag_name: 'transmutation')
+trolls = Tag.create(tag_name: 'trolls')
+undead = Tag.create(tag_name: 'undead')
+unseelie_court = Tag.create(tag_name: 'unseelie court')
+vampires = Tag.create(tag_name: 'vampires')
+warlocks = Tag.create(tag_name: 'warlocks')
+warriors = Tag.create(tag_name: 'warriors')
+wilderness = Tag.create(tag_name: 'wilderness')
+wind = Tag.create(tag_name: 'wind')
+wizards = Tag.create(tag_name: 'wizards')
+wurms = Tag.create(tag_name: 'wurms')
 #---------------------------Tag Creation Ends------------------------------
 
 # Tag Search
-abjuration = Tag.find_by(tag_name: 'abjuration')
-academy = Tag.find_by(tag_name: 'academy')
-acid = Tag.find_by(tag_name: 'acid')
-adamantine = Tag.find_by(tag_name: 'adamantine')
-adventure = Tag.find_by(tag_name: 'adventure')
-ai = Tag.find_by(tag_name: 'ai')
-alchemists = Tag.find_by(tag_name: 'alchemists')
-alchemy = Tag.find_by(tag_name: 'alchemy')
-anarchy = Tag.find_by(tag_name: 'anarchy')
-ancients = Tag.find_by(tag_name: 'ancients')
-angels = Tag.find_by(tag_name: 'angels')
-arcane_focus = Tag.find_by(tag_name: 'arcane focus')
-aristocrats = Tag.find_by(tag_name: 'aristocrats')
-army = Tag.find_by(tag_name: 'army')
-artifacts = Tag.find_by(tag_name: 'artifacts')
-artificers = Tag.find_by(tag_name: 'artificers')
-assassins = Tag.find_by(tag_name: 'assassins')
-axes = Tag.find_by(tag_name: 'axes')
-bandits = Tag.find_by(tag_name: 'bandits')
-barbarians = Tag.find_by(tag_name: 'barbarians')
-bards = Tag.find_by(tag_name: 'bards')
-beasts = Tag.find_by(tag_name: 'beasts')
-blacksmithing = Tag.find_by(tag_name: 'blacksmithing')
-blood_magic = Tag.find_by(tag_name: 'blood magic')
-blood_oath = Tag.find_by(tag_name: 'blood oath')
-books = Tag.find_by(tag_name: 'books')
-bows = Tag.find_by(tag_name: 'bows')
-bronze_rank = Tag.find_by(tag_name: 'bronze rank')
-caravans = Tag.find_by(tag_name: 'caravans')
-cave = Tag.find_by(tag_name: 'cave')
-chaotic = Tag.find_by(tag_name: 'chaotic')
-clerics = Tag.find_by(tag_name: 'clerics')
-common = Tag.find_by(tag_name: 'common')
-commoners = Tag.find_by(tag_name: 'commoners')
-conjuration = Tag.find_by(tag_name: 'conjuration')
-contracts = Tag.find_by(tag_name: 'contracts')
-creatures = Tag.find_by(tag_name: 'creatures')
-creler = Tag.find_by(tag_name: 'creler')
-cultists = Tag.find_by(tag_name: 'cultists')
-daggers = Tag.find_by(tag_name: 'daggers')
-dark_lord = Tag.find_by(tag_name: 'darklord')
-demon_army = Tag.find_by(tag_name: 'demon_army')
-demons = Tag.find_by(tag_name: 'demons')
-devils = Tag.find_by(tag_name: 'devils')
-diamond_rank = Tag.find_by(tag_name: 'diamond rank')
-dire_wolves = Tag.find_by(tag_name: 'dire wolves')
-divination = Tag.find_by(tag_name: 'divination')
-djinn = Tag.find_by(tag_name: 'djinn')
-dragonborn = Tag.find_by(tag_name: 'dragonborn')
-dragons = Tag.find_by(tag_name: 'dragons')
-drakes = Tag.find_by(tag_name: 'drakes')
-druids = Tag.find_by(tag_name: 'druids')
-dungeons = Tag.find_by(tag_name: 'dungeons')
-dwarves = Tag.find_by(tag_name: 'dwarves')
-dynamos = Tag.find_by(tag_name: 'dynamos')
-earth = Tag.find_by(tag_name: 'earth')
-elves = Tag.find_by(tag_name: 'elves')
-enchantment = Tag.find_by(tag_name: 'enchantment')
-ents = Tag.find_by(tag_name: 'ents')
-escort_quest = Tag.find_by(tag_name: 'escort quest')
-evil = Tag.find_by(tag_name: 'evil')
-evil_overlords = Tag.find_by(tag_name: 'evil overlords')
-evocation = Tag.find_by(tag_name: 'evocation')
-exploration = Tag.find_by(tag_name: 'exploration')
-explosives = Tag.find_by(tag_name: 'explosives')
-fetch = Tag.find_by(tag_name: 'fetch')
-fallen_kingdom = Tag.find_by(tag_name: 'fallen kingdom')
-familiars = Tag.find_by(tag_name: 'familiars')
-fey = Tag.find_by(tag_name: 'fey')
-fighters = Tag.find_by(tag_name: 'fighters')
-fire = Tag.find_by(tag_name: 'fire')
-fireball = Tag.find_by(tag_name: 'fireball')
-food = Tag.find_by(tag_name: 'food')
-forests = Tag.find_by(tag_name: 'forests')
-goblins = Tag.find_by(tag_name: 'goblins')
-goblin_champions = Tag.find_by(tag_name: 'goblin champions')
-goblin_lords = Tag.find_by(tag_name: 'goblin lords')
-goblin_kings = Tag.find_by(tag_name: 'goblin kings')
-gods = Tag.find_by(tag_name: 'gods')
-goddesses = Tag.find_by(tag_name: 'goddesses')
-gold = Tag.find_by(tag_name: 'gold')
-gold_rank = Tag.find_by(tag_name: 'gold rank')
-goliaths = Tag.find_by(tag_name: 'goliaths')
-good = Tag.find_by(tag_name: 'good')
-grimoires = Tag.find_by(tag_name: 'grimoires')
-guilds = Tag.find_by(tag_name: 'guilds')
-hammers = Tag.find_by(tag_name: 'hammers')
-hero_tag = Tag.find_by(tag_name: 'hero')
-humans = Tag.find_by(tag_name: 'humans')
-hunt = Tag.find_by(tag_name: 'hunt')
-ice = Tag.find_by(tag_name: 'ice')
-illusion = Tag.find_by(tag_name: 'illusion')
-king = Tag.find_by(tag_name: 'king')
-kingdom = Tag.find_by(tag_name: 'kingdom')
-lawful = Tag.find_by(tag_name: 'lawful')
-legendary = Tag.find_by(tag_name: 'legendary')
-lich = Tag.find_by(tag_name: 'lich')
-lightning = Tag.find_by(tag_name: 'lightning')
-magic = Tag.find_by(tag_name: 'magic')
-magic_items = Tag.find_by(tag_name: 'magic items')
-magical_creatures = Tag.find_by(tag_name: 'magical creatures')
-merchants = Tag.find_by(tag_name: 'merchants')
-monks = Tag.find_by(tag_name: 'monks')
-monster_extermination = Tag.find_by(tag_name: 'monster_extermination')
-monster_nest = Tag.find_by(tag_name: 'monster nest')
-mountains = Tag.find_by(tag_name: 'mountains')
-murder = Tag.find_by(tag_name: 'murder')
-mystery = Tag.find_by(tag_name: 'mystery')
-mythic = Tag.find_by(tag_name: 'mythic')
-mythril = Tag.find_by(tag_name: 'mythril')
-necromancy = Tag.find_by(tag_name: 'necromancy')
-neutral = Tag.find_by(tag_name: 'neutral')
-nobles = Tag.find_by(tag_name: 'nobles')
-obsidian_rank = Tag.find_by(tag_name: 'obsidian rank')
-orcs = Tag.find_by(tag_name: 'orcs')
-outer_planes = Tag.find_by(tag_name: 'outer planes')
-outsider = Tag.find_by(tag_name: 'outsider')
-paladins = Tag.find_by(tag_name: 'paladins')
-platinum = Tag.find_by(tag_name: 'platinum')
-platinum_rank = Tag.find_by(tag_name: 'platinum rank')
-plot = Tag.find_by(tag_name: 'plot')
-polearms = Tag.find_by(tag_name: 'polearms')
-political_intrigue = Tag.find_by(tag_name: 'political intrigue')
-porcelain_rank = Tag.find_by(tag_name: 'porcelain rank')
-power = Tag.find_by(tag_name: 'power')
-princess = Tag.find_by(tag_name: 'princess')
-protection = Tag.find_by(tag_name: 'protection')
-pseudodragons = Tag.find_by(tag_name: 'pseudodragons')
-queen = Tag.find_by(tag_name: 'queen')
-rangers = Tag.find_by(tag_name: 'rangers')
-rare = Tag.find_by(tag_name: 'rare')
-rescue_mission = Tag.find_by(tag_name: 'rescue_mission')
-rogues = Tag.find_by(tag_name: 'rogues')
-satyr = Tag.find_by(tag_name: 'satyr')
-scholars = Tag.find_by(tag_name: 'scholars')
-silver = Tag.find_by(tag_name: 'silver')
-silver_rank = Tag.find_by(tag_name: 'silverrank')
-slimes = Tag.find_by(tag_name: 'slimes')
-sorcerers = Tag.find_by(tag_name: 'sorcerers')
-sorcery = Tag.find_by(tag_name: 'sorcery')
-spell_components = Tag.find_by(tag_name: 'spell components')
-spellbooks = Tag.find_by(tag_name: 'spellbooks')
-spellcasting = Tag.find_by(tag_name: 'spellcasting')
-spies = Tag.find_by(tag_name: 'spies')
-squire = Tag.find_by(tag_name: 'squire')
-staffs = Tag.find_by(tag_name: 'staffs')
-steel_rank = Tag.find_by(tag_name: 'steel rank')
-swords = Tag.find_by(tag_name: 'swords')
-the_watch = Tag.find_by(tag_name: 'the_watch')
-tomes = Tag.find_by(tag_name: 'tomes')
-transmutation = Tag.find_by(tag_name: 'transmutation')
-trolls = Tag.find_by(tag_name: 'trolls')
-undead = Tag.find_by(tag_name: 'undead')
-unseelie_court = Tag.find_by(tag_name: 'unseelie court')
-vampires = Tag.find_by(tag_name: 'vampires')
-warlocks = Tag.find_by(tag_name: 'warlocks')
-warriors = Tag.find_by(tag_name: 'warriors')
-wilderness = Tag.find_by(tag_name: 'wilderness')
-wind = Tag.find_by(tag_name: 'wind')
-wizards = Tag.find_by(tag_name: 'wizards')
-wurms = Tag.find_by(tag_name: 'wurms')
+# abjuration = Tag.find_by(tag_name: 'abjuration')
+# academy = Tag.find_by(tag_name: 'academy')
+# acid = Tag.find_by(tag_name: 'acid')
+# adamantine = Tag.find_by(tag_name: 'adamantine')
+# adventure = Tag.find_by(tag_name: 'adventure')
+# ai = Tag.find_by(tag_name: 'ai')
+# alchemists = Tag.find_by(tag_name: 'alchemists')
+# alchemy = Tag.find_by(tag_name: 'alchemy')
+# anarchy = Tag.find_by(tag_name: 'anarchy')
+# ancients = Tag.find_by(tag_name: 'ancients')
+# angels = Tag.find_by(tag_name: 'angels')
+# arcane_focus = Tag.find_by(tag_name: 'arcane focus')
+# aristocrats = Tag.find_by(tag_name: 'aristocrats')
+# army = Tag.find_by(tag_name: 'army')
+# artifacts = Tag.find_by(tag_name: 'artifacts')
+# artificers = Tag.find_by(tag_name: 'artificers')
+# assassins = Tag.find_by(tag_name: 'assassins')
+# axes = Tag.find_by(tag_name: 'axes')
+# bandits = Tag.find_by(tag_name: 'bandits')
+# barbarians = Tag.find_by(tag_name: 'barbarians')
+# bards = Tag.find_by(tag_name: 'bards')
+# beasts = Tag.find_by(tag_name: 'beasts')
+# blacksmithing = Tag.find_by(tag_name: 'blacksmithing')
+# blood_magic = Tag.find_by(tag_name: 'blood magic')
+# blood_oath = Tag.find_by(tag_name: 'blood oath')
+# books = Tag.find_by(tag_name: 'books')
+# bows = Tag.find_by(tag_name: 'bows')
+# bronze_rank = Tag.find_by(tag_name: 'bronze rank')
+# caravans = Tag.find_by(tag_name: 'caravans')
+# cave = Tag.find_by(tag_name: 'cave')
+# chaotic = Tag.find_by(tag_name: 'chaotic')
+# clerics = Tag.find_by(tag_name: 'clerics')
+# common = Tag.find_by(tag_name: 'common')
+# commoners = Tag.find_by(tag_name: 'commoners')
+# conjuration = Tag.find_by(tag_name: 'conjuration')
+# contracts = Tag.find_by(tag_name: 'contracts')
+# creatures = Tag.find_by(tag_name: 'creatures')
+# creler = Tag.find_by(tag_name: 'creler')
+# cultists = Tag.find_by(tag_name: 'cultists')
+# daggers = Tag.find_by(tag_name: 'daggers')
+# dark_lord = Tag.find_by(tag_name: 'darklord')
+# demon_army = Tag.find_by(tag_name: 'demon_army')
+# demons = Tag.find_by(tag_name: 'demons')
+# devils = Tag.find_by(tag_name: 'devils')
+# diamond_rank = Tag.find_by(tag_name: 'diamond rank')
+# dire_wolves = Tag.find_by(tag_name: 'dire wolves')
+# divination = Tag.find_by(tag_name: 'divination')
+# djinn = Tag.find_by(tag_name: 'djinn')
+# dragonborn = Tag.find_by(tag_name: 'dragonborn')
+# dragons = Tag.find_by(tag_name: 'dragons')
+# drakes = Tag.find_by(tag_name: 'drakes')
+# druids = Tag.find_by(tag_name: 'druids')
+# dungeons = Tag.find_by(tag_name: 'dungeons')
+# dwarves = Tag.find_by(tag_name: 'dwarves')
+# dynamos = Tag.find_by(tag_name: 'dynamos')
+# earth = Tag.find_by(tag_name: 'earth')
+# elves = Tag.find_by(tag_name: 'elves')
+# enchantment = Tag.find_by(tag_name: 'enchantment')
+# ents = Tag.find_by(tag_name: 'ents')
+# escort_quest = Tag.find_by(tag_name: 'escort quest')
+# evil = Tag.find_by(tag_name: 'evil')
+# evil_overlords = Tag.find_by(tag_name: 'evil overlords')
+# evocation = Tag.find_by(tag_name: 'evocation')
+# exploration = Tag.find_by(tag_name: 'exploration')
+# explosives = Tag.find_by(tag_name: 'explosives')
+# fetch = Tag.find_by(tag_name: 'fetch')
+# fallen_kingdom = Tag.find_by(tag_name: 'fallen kingdom')
+# familiars = Tag.find_by(tag_name: 'familiars')
+# fey = Tag.find_by(tag_name: 'fey')
+# fighters = Tag.find_by(tag_name: 'fighters')
+# fire = Tag.find_by(tag_name: 'fire')
+# fireball = Tag.find_by(tag_name: 'fireball')
+# food = Tag.find_by(tag_name: 'food')
+# forests = Tag.find_by(tag_name: 'forests')
+# goblins = Tag.find_by(tag_name: 'goblins')
+# goblin_champions = Tag.find_by(tag_name: 'goblin champions')
+# goblin_lords = Tag.find_by(tag_name: 'goblin lords')
+# goblin_kings = Tag.find_by(tag_name: 'goblin kings')
+# gods = Tag.find_by(tag_name: 'gods')
+# goddesses = Tag.find_by(tag_name: 'goddesses')
+# gold = Tag.find_by(tag_name: 'gold')
+# gold_rank = Tag.find_by(tag_name: 'gold rank')
+# goliaths = Tag.find_by(tag_name: 'goliaths')
+# good = Tag.find_by(tag_name: 'good')
+# grimoires = Tag.find_by(tag_name: 'grimoires')
+# guilds = Tag.find_by(tag_name: 'guilds')
+# hammers = Tag.find_by(tag_name: 'hammers')
+# hero_tag = Tag.find_by(tag_name: 'hero')
+# humans = Tag.find_by(tag_name: 'humans')
+# hunt = Tag.find_by(tag_name: 'hunt')
+# ice = Tag.find_by(tag_name: 'ice')
+# illusion = Tag.find_by(tag_name: 'illusion')
+# king = Tag.find_by(tag_name: 'king')
+# kingdom = Tag.find_by(tag_name: 'kingdom')
+# lawful = Tag.find_by(tag_name: 'lawful')
+# legendary = Tag.find_by(tag_name: 'legendary')
+# lich = Tag.find_by(tag_name: 'lich')
+# lightning = Tag.find_by(tag_name: 'lightning')
+# magic = Tag.find_by(tag_name: 'magic')
+# magic_items = Tag.find_by(tag_name: 'magic items')
+# magical_creatures = Tag.find_by(tag_name: 'magical creatures')
+# merchants = Tag.find_by(tag_name: 'merchants')
+# monks = Tag.find_by(tag_name: 'monks')
+# monster_extermination = Tag.find_by(tag_name: 'monster_extermination')
+# monster_nest = Tag.find_by(tag_name: 'monster nest')
+# mountains = Tag.find_by(tag_name: 'mountains')
+# murder = Tag.find_by(tag_name: 'murder')
+# mystery = Tag.find_by(tag_name: 'mystery')
+# mythic = Tag.find_by(tag_name: 'mythic')
+# mythril = Tag.find_by(tag_name: 'mythril')
+# necromancy = Tag.find_by(tag_name: 'necromancy')
+# neutral = Tag.find_by(tag_name: 'neutral')
+# nobles = Tag.find_by(tag_name: 'nobles')
+# obsidian_rank = Tag.find_by(tag_name: 'obsidian rank')
+# orcs = Tag.find_by(tag_name: 'orcs')
+# outer_planes = Tag.find_by(tag_name: 'outer planes')
+# outsider = Tag.find_by(tag_name: 'outsider')
+# paladins = Tag.find_by(tag_name: 'paladins')
+# platinum = Tag.find_by(tag_name: 'platinum')
+# platinum_rank = Tag.find_by(tag_name: 'platinum rank')
+# plot = Tag.find_by(tag_name: 'plot')
+# polearms = Tag.find_by(tag_name: 'polearms')
+# political_intrigue = Tag.find_by(tag_name: 'political intrigue')
+# porcelain_rank = Tag.find_by(tag_name: 'porcelain rank')
+# power = Tag.find_by(tag_name: 'power')
+# princess = Tag.find_by(tag_name: 'princess')
+# protection = Tag.find_by(tag_name: 'protection')
+# pseudodragons = Tag.find_by(tag_name: 'pseudodragons')
+# queen = Tag.find_by(tag_name: 'queen')
+# rangers = Tag.find_by(tag_name: 'rangers')
+# rare = Tag.find_by(tag_name: 'rare')
+# rescue_mission = Tag.find_by(tag_name: 'rescue_mission')
+# rogues = Tag.find_by(tag_name: 'rogues')
+# satyr = Tag.find_by(tag_name: 'satyr')
+# scholars = Tag.find_by(tag_name: 'scholars')
+# silver = Tag.find_by(tag_name: 'silver')
+# silver_rank = Tag.find_by(tag_name: 'silverrank')
+# slimes = Tag.find_by(tag_name: 'slimes')
+# sorcerers = Tag.find_by(tag_name: 'sorcerers')
+# sorcery = Tag.find_by(tag_name: 'sorcery')
+# spell_components = Tag.find_by(tag_name: 'spell components')
+# spellbooks = Tag.find_by(tag_name: 'spellbooks')
+# spellcasting = Tag.find_by(tag_name: 'spellcasting')
+# spies = Tag.find_by(tag_name: 'spies')
+# squire = Tag.find_by(tag_name: 'squire')
+# staffs = Tag.find_by(tag_name: 'staffs')
+# steel_rank = Tag.find_by(tag_name: 'steel rank')
+# swords = Tag.find_by(tag_name: 'swords')
+# the_watch = Tag.find_by(tag_name: 'the_watch')
+# tomes = Tag.find_by(tag_name: 'tomes')
+# transmutation = Tag.find_by(tag_name: 'transmutation')
+# trolls = Tag.find_by(tag_name: 'trolls')
+# undead = Tag.find_by(tag_name: 'undead')
+# unseelie_court = Tag.find_by(tag_name: 'unseelie court')
+# vampires = Tag.find_by(tag_name: 'vampires')
+# warlocks = Tag.find_by(tag_name: 'warlocks')
+# warriors = Tag.find_by(tag_name: 'warriors')
+# wilderness = Tag.find_by(tag_name: 'wilderness')
+# wind = Tag.find_by(tag_name: 'wind')
+# wizards = Tag.find_by(tag_name: 'wizards')
+# wurms = Tag.find_by(tag_name: 'wurms')
 #---------------------------Tag Search Ends------------------------------------
 
+# Dead Code
 # tags = ["warriors","water","wilderness","wind","wizards","wurms"]
 # for tag in tags
 #   Tag.create(tag_name: tag)
 # end
 
-# # New users
-# # User 1
-# hero = User.create(username: "Generic_Hero", password: "hunter12", email: "generic_hero@fake.com", guild_name: "Demo-lition Crew", guild_description: "The Hero's party. We will vanquish the demon lord!");
-# hero_avatar = File.open('app/assets/adventr_seeder_images/avatars/generic_hero.jpg')
-# hero.avatar_image.attach(io: hero_avatar, filename: 'hero.jpg')
+# New users
+# User 1
+hero = User.create(username: "Generic_Hero", password: "hunter12", email: "generic_hero@fake.com", guild_name: "Demo-lition Crew", guild_description: "The Hero's party. We will vanquish the demon lord!");
+hero_avatar = File.open('app/assets/adventr_seeder_images/avatars/generic_hero.jpg')
+hero.avatar_image.attach(io: hero_avatar, filename: 'hero.jpg')
 
-# # User 2
-# terriblis = User.create(username: "terriblis", password: "hunter12", email: "terriblis@fake.com", guild_name: "Mage College", guild_description: "Stop killing my skeletons");
-# terriblis_avatar = File.open('app/assets/adventr_seeder_images/avatars/terriblis.jpg')
-# terriblis.avatar_image.attach(io: terriblis_avatar, filename: 'terriblis.jpg')
+# User 2
+terriblis = User.create(username: "terriblis", password: "hunter12", email: "terriblis@fake.com", guild_name: "Mage College", guild_description: "Stop killing my skeletons");
+terriblis_avatar = File.open('app/assets/adventr_seeder_images/avatars/terriblis.jpg')
+terriblis.avatar_image.attach(io: terriblis_avatar, filename: 'terriblis.jpg')
 
-# # User 3
-# matt = User.create(username: "Matt", password: "hunter12", email: "matt@fake.com", guild_name: "Spellcaster Apprentices", guild_description: "Our alchemists can raise your charisma stat!");
-# matt_avatar = File.open('app/assets/adventr_seeder_images/avatars/matt.jpg')
-# matt.avatar_image.attach(io: matt_avatar, filename: 'matt.jpg')
+# User 3
+matt = User.create(username: "Matt", password: "hunter12", email: "matt@fake.com", guild_name: "Spellcaster Apprentices", guild_description: "Our alchemists can raise your charisma stat!");
+matt_avatar = File.open('app/assets/adventr_seeder_images/avatars/matt.jpg')
+matt.avatar_image.attach(io: matt_avatar, filename: 'matt.jpg')
 
-# # User 4
-# jess = User.create(username: "jess", password: "hunter12", email: "jess@fake.com", guild_name: "Hunter's Guild", guild_description: "We'll hunt anything! Maybe even you!");
-# jess_avatar = File.open('app/assets/adventr_seeder_images/avatars/jess.png')
-# jess.avatar_image.attach(io: jess_avatar, filename: 'jess.png')
+# User 4
+jess = User.create(username: "jess", password: "hunter12", email: "jess@fake.com", guild_name: "Hunter's Guild", guild_description: "We'll hunt anything! Maybe even you!");
+jess_avatar = File.open('app/assets/adventr_seeder_images/avatars/jess.png')
+jess.avatar_image.attach(io: jess_avatar, filename: 'jess.png')
 
-# # User 5
-# ingrid = User.create(username: "Ingrid-the-Indomitable", password: "hunter12", email: "ingrid@fake.com", guild_name: "The Court of Winter", guild_description: "Nothing will stand in our way");
-# ingrid_avatar = File.open('app/assets/adventr_seeder_images/avatars/ingrid.jpg')
-# ingrid.avatar_image.attach(io: ingrid_avatar, filename: 'ingrid.jpg')
+# User 5
+ingrid = User.create(username: "Ingrid-the-Indomitable", password: "hunter12", email: "ingrid@fake.com", guild_name: "The Court of Winter", guild_description: "Nothing will stand in our way");
+ingrid_avatar = File.open('app/assets/adventr_seeder_images/avatars/ingrid.jpg')
+ingrid.avatar_image.attach(io: ingrid_avatar, filename: 'ingrid.jpg')
 
-# # User 6
-# kmsvr = User.create(username: "Kmsvr", password: "hunter12", email: "kmsvr@horns.org", guild_name: "Horns of Hammerad", guild_description: "Inspired by the former Horns of Hammerad, we rose from the ashes of old teams or affiliations.");
-# kmsvr_avatar = File.open('app/assets/adventr_seeder_images/avatars/kmsvr.png')
-# kmsvr.avatar_image.attach(io: kmsvr_avatar, filename: 'kmsvr.png')
+# User 6
+kmsvr = User.create(username: "Kmsvr", password: "hunter12", email: "kmsvr@horns.org", guild_name: "Horns of Hammerad", guild_description: "Inspired by the former Horns of Hammerad, we rose from the ashes of old teams or affiliations.");
+kmsvr_avatar = File.open('app/assets/adventr_seeder_images/avatars/kmsvr.png')
+kmsvr.avatar_image.attach(io: kmsvr_avatar, filename: 'kmsvr.png')
 
-# # User 7
-# goblin_slayer = User.create(username: "Goblin Slayer", password: "hunter12", email: "beardcutter@exterminate.com", guild_name: "The Guild", guild_description: "We kill goblins. Are you a goblin?");
-# goblin_slayer_avatar = File.open('app/assets/adventr_seeder_images/avatars/goblin_slayer.png')
-# goblin_slayer.avatar_image.attach(io: goblin_slayer_avatar, filename: 'goblin_slayer.png')
+# User 7
+goblin_slayer = User.create(username: "Goblin Slayer", password: "hunter12", email: "beardcutter@exterminate.com", guild_name: "The Guild", guild_description: "We kill goblins. Are you a goblin?");
+goblin_slayer_avatar = File.open('app/assets/adventr_seeder_images/avatars/goblin_slayer.png')
+goblin_slayer.avatar_image.attach(io: goblin_slayer_avatar, filename: 'goblin_slayer.png')
 
-# # User 8
-# rain = User.create(username: "Rain", password: "hunter12", email: "rain@fake.com", guild_name: "Ascension", guild_description: "Ascension, allied with both The Adventurer's Guild and The Watch, is a growing guild meant to support equal opportunity for all its members through otherworldly math and paperwork.")
-# rain_avatar = File.open('app/assets/adventr_seeder_images/avatars/rain.jpg')
-# rain.avatar_image.attach(io: rain_avatar, filename: 'rain.jpg')
+# User 8
+rain = User.create(username: "Rain", password: "hunter12", email: "rain@fake.com", guild_name: "Ascension", guild_description: "Ascension, allied with both The Adventurer's Guild and The Watch, is a growing guild meant to support equal opportunity for all its members through otherworldly math and paperwork.")
+rain_avatar = File.open('app/assets/adventr_seeder_images/avatars/rain.jpg')
+rain.avatar_image.attach(io: rain_avatar, filename: 'rain.jpg')
 
-# # User 9
-# carl = User.create(username: "Dungeon_Crawler_Carl", password: "hunter12", email: "carl@princessdonutsociety.com", guild_name: "The Royal Court of Princess Donut", guild_description: "The Royal Court of Princess Donut will soon reach the Sixth Floor. Don't mind Carl and all his explosive nonsense, this is a proper party.")
-# carl_avatar = File.open('app/assets/adventr_seeder_images/avatars/carl.jpg')
-# carl.avatar_image.attach(io: carl_avatar, filename: 'carl.jpg')
+# User 9
+carl = User.create(username: "Dungeon_Crawler_Carl", password: "hunter12", email: "carl@princessdonutsociety.com", guild_name: "The Royal Court of Princess Donut", guild_description: "The Royal Court of Princess Donut will soon reach the Sixth Floor. Don't mind Carl and all his explosive nonsense, this is a proper party.")
+carl_avatar = File.open('app/assets/adventr_seeder_images/avatars/carl.jpg')
+carl.avatar_image.attach(io: carl_avatar, filename: 'carl.jpg')
 
-# # User 10
-# catherine = User.create(username: "Catherine_Foundling", password: "hunter12", email: "queen-catherine@evil.org", guild_name: "Army of Callow", guild_description: "The army under Queen Catherine, formerly the Squire, First Under the Night. Set against the Undead Horror.")
-# catherine_avatar = File.open('app/assets/adventr_seeder_images/avatars/catherine.jpg')
-# catherine.avatar_image.attach(io: catherine_avatar, filename: 'catherine.jpg')
+# User 10
+catherine = User.create(username: "Catherine_Foundling", password: "hunter12", email: "queen-catherine@evil.org", guild_name: "Army of Callow", guild_description: "The army under Queen Catherine, formerly the Squire, First Under the Night. Set against the Undead Horror.")
+catherine_avatar = File.open('app/assets/adventr_seeder_images/avatars/catherine.jpg')
+catherine.avatar_image.attach(io: catherine_avatar, filename: 'catherine.jpg')
 
 # User Finds Start
-hero = User.find_by(username: 'Generic_Hero')
-terriblis = User.find_by(username: "terriblis")
-matt = User.find_by(username: "Matt")
-jess = User.find_by(username: "jess")
-ingrid = User.find_by(username: "Ingrid-the-Indomitable")
-kmsvr = User.find_by(username: "Kmsvr")
-goblin_slayer = User.find_by(username: "Goblin Slayer")
-rain = User.find_by(username: "Rain")
-carl = User.find_by(username: "Dungeon_Crawler_Carl")
-catherine = User.find_by(username: "Catherine_Foundling")
+# hero = User.find_by(username: 'Generic_Hero')
+# terriblis = User.find_by(username: "terriblis")
+# matt = User.find_by(username: "Matt")
+# jess = User.find_by(username: "jess")
+# ingrid = User.find_by(username: "Ingrid-the-Indomitable")
+# kmsvr = User.find_by(username: "Kmsvr")
+# goblin_slayer = User.find_by(username: "Goblin Slayer")
+# rain = User.find_by(username: "Rain")
+# carl = User.find_by(username: "Dungeon_Crawler_Carl")
+# catherine = User.find_by(username: "Catherine_Foundling")
 
+# Dead Code
 # user array in case you lose it
 # [hero, terriblis, matt, jess, ingrid, kmsvr, goblin_slayer, rain, carl, catherine]
 
-# # Adding tags to users
-# hero_tags = [gold_rank, goblins, magic_items, dungeons, fighters, warriors, paladins, dragons, exploration, monster_extermination]
-# for tag in hero_tags
-#   hero.tags << tag
-# end
+# Adding tags to users
+hero_tags = [gold_rank, goblins, magic_items, dungeons, fighters, warriors, paladins, dragons, exploration, monster_extermination]
+for tag in hero_tags
+  hero.tags << tag
+end
 
-# terriblis_tags = [silver_rank, necromancy, divination, sorcerers, magic, magic_items, spellcasting, evil_overlords, lich, undead]
-# for tag in terriblis_tags
-#   terriblis.tags << tag
-# end
+terriblis_tags = [silver_rank, necromancy, divination, sorcerers, magic, magic_items, spellcasting, evil_overlords, lich, undead]
+for tag in terriblis_tags
+  terriblis.tags << tag
+end
 
-# matt_tags = [bronze_rank, magic, magic_items, spellcasting, wizards, sorcerers, necromancy, clerics, artificers, druids]
-# for tag in matt_tags
-#   matt.tags << tag
-# end
+matt_tags = [bronze_rank, magic, magic_items, spellcasting, wizards, sorcerers, necromancy, clerics, artificers, druids]
+for tag in matt_tags
+  matt.tags << tag
+end
 
-# jess_tags = [rangers, hunt, monster_extermination, dungeons, fetch, food, wilderness, bows]
-# for tag in jess_tags
-#   jess.tags << tag
-# end
+jess_tags = [rangers, hunt, monster_extermination, dungeons, fetch, food, wilderness, bows]
+for tag in jess_tags
+  jess.tags << tag
+end
 
-# ingrid_tags = [warriors, barbarians, monster_extermination, dungeons, dragons, mountains, exploration]
-# for tag in ingrid_tags
-#   ingrid.tags << tag
-# end
+ingrid_tags = [warriors, barbarians, monster_extermination, dungeons, dragons, mountains, exploration]
+for tag in ingrid_tags
+  ingrid.tags << tag
+end
 
-# kmsvr_tags = [gold_rank, magic_items, creler, ice, magic, warriors, rangers, sorcerers, wizards, necromancy, silver, bandits, dungeons]
-# for tag in kmsvr_tags
-#   kmsvr.tags << tag
-# end
+kmsvr_tags = [gold_rank, magic_items, creler, ice, magic, warriors, rangers, sorcerers, wizards, necromancy, silver, bandits, dungeons]
+for tag in kmsvr_tags
+  kmsvr.tags << tag
+end
 
-# goblin_slayer_tags = [goblins, silver_rank, monster_extermination, monster_nest, demon_army, magic_items, dungeons, goblin_champions, goblin_kings, goblin_lords, rescue_mission, protection, escort_quest]
-# for tag in goblin_slayer_tags
-#   goblin_slayer.tags << tag
-# end
+goblin_slayer_tags = [goblins, silver_rank, monster_extermination, monster_nest, demon_army, magic_items, dungeons, goblin_champions, goblin_kings, goblin_lords, rescue_mission, protection, escort_quest]
+for tag in goblin_slayer_tags
+  goblin_slayer.tags << tag
+end
 
-# rain_tags = [dungeons, magic_items, artificers, alchemists, barbarians, bards, clerics, druids, dynamos, fighters, monks, paladins, rangers, rogues, sorcerers, warlocks, wizards, the_watch, slimes, silver_rank]
-# for tag in rain_tags
-#   rain.tags << tag
-# end
+rain_tags = [dungeons, magic_items, artificers, alchemists, barbarians, bards, clerics, druids, dynamos, fighters, monks, paladins, rangers, rogues, sorcerers, warlocks, wizards, the_watch, slimes, silver_rank]
+for tag in rain_tags
+  rain.tags << tag
+end
 
-# carl_tags = [magic, explosives, dungeons, monster_extermination, anarchy, ai, familiars]
-# for tag in carl_tags
-#   carl.tags << tag
-# end
+carl_tags = [magic, explosives, dungeons, monster_extermination, anarchy, ai, familiars]
+for tag in carl_tags
+  carl.tags << tag
+end
 
-# catherine_tags = [undead, angels, army, orcs, goblins, kingdom, magic, gods, evil, fallen_kingdom, squire, staffs, queen, unseelie_court]
-# for tag in catherine_tags
-#   catherine.tags << tag
-# end
+catherine_tags = [undead, angels, army, orcs, goblins, kingdom, magic, gods, evil, fallen_kingdom, squire, staffs, queen, unseelie_court]
+for tag in catherine_tags
+  catherine.tags << tag
+end
 #--------------------------User TagJoins End------------------------------------
 
 
@@ -482,6 +484,11 @@ end
 def addLikesToQuest(users, quest)
   users.each do |user|
     user.liked_quests << quest
+  end
+end
+def addLikesToReblog(users, reblog)
+  users.each do |user|
+    user.liked_reblogs << reblog
   end
 end
 
@@ -978,7 +985,7 @@ addLikesToQuest(quest_36_likes, kmsvr_quest_36)
 
 # Kmsvr quest 37 - Image
 
-kmsvr_quest_37 = Quest.new(title: "Here is a picture of our team.", text: "Someone drew a picture of our team. It is great and my team let's me hold on to it. Notice how powerful each of us is. I am asserting dominance over whoever reads this.", quest_type: "image", user_id: kmsvr.id)
+kmsvr_quest_37 = Quest.new(title: "Here is a picture of our team.", text: "Someone drew a picture of our team. It is great and my team lets me hold on to it. Notice how powerful each of us is. I am asserting dominance over whoever reads this.", quest_type: "image", user_id: kmsvr.id)
 
 quest_37_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_37/horns_of_hammerad_by_mg.jpg')
 kmsvr_quest_37.images.attach(io: quest_37_image_1, filename: 'horns_of_hammerad_by_mg.jpg')
@@ -1484,7 +1491,7 @@ hero_reblog_1_tags = [assassins, bandits, blood_oath, contracts, murder, politic
 addTagsToQuest(hero_reblog_1_tags, hero_reblog_1)
 
 hero_reblog_1_likes = [catherine]
-addLikesToQuest(hero_reblog_1_likes, hero_reblog_1)
+addLikesToReblog(hero_reblog_1_likes, hero_reblog_1)
 
 # Hero Reblog 2
 hero_reblog_2 = Reblog.new(user_id: hero.id, quest_id: catherine_quest_67.id, text: "I'm told you accept heroes alongside villains? I'm not sure how much help I can be of, but I'll lend my sword.")
@@ -1494,7 +1501,7 @@ hero_reblog_2_tags = [ancients, army, blood_magic, dark_lord, demon_army, demons
 addTagsToQuest(hero_reblog_2_tags, hero_reblog_2)
 
 hero_reblog_2_likes = [terriblis, rain, carl]
-addLikesToQuest(hero_reblog_2_likes, hero_reblog_2)
+addLikesToReblog(hero_reblog_2_likes, hero_reblog_2)
 
 # Hero Reblog 3
 hero_reblog_3 = Reblog.new(user_id: hero.id, quest_id: rain_quest_55.id, text: "Absolutely classic. How did you get a copy over here? Wait, are you even from... y'know... The other place?")
@@ -1503,7 +1510,7 @@ hero_reblog_3_tags = [adventure, army, bards, books, commoners, creatures, demon
 addTagsToQuest(hero_reblog_3_tags, hero_reblog_3)
 
 hero_reblog_3_likes = [matt, goblin_slayer, carl]
-addLikesToQuest(hero_reblog_3_likes, hero_reblog_3)
+addLikesToReblog(hero_reblog_3_likes, hero_reblog_3)
 
 # Terriblis Reblog 4
 terriblis_reblog_4 = Reblog.new(user_id: terriblis.id, quest_id: goblin_slayer_quest_46.id, text: "No. No, that is not a goblin. Is this a real question?")
@@ -1514,7 +1521,7 @@ terriblis_reblog_4_tags = [alchemists, beasts, creatures, demons, devils, goliat
 addTagsToQuest(terriblis_reblog_4_tags, terriblis_reblog_4)
 
 terriblis_reblog_4_likes = [jess, ingrid, kmsvr, rain, carl]
-addLikesToQuest(terriblis_reblog_4_likes, terriblis_reblog_4)
+addLikesToReblog(terriblis_reblog_4_likes, terriblis_reblog_4)
 
 
 # Terriblis Reblog 5
@@ -1526,7 +1533,7 @@ terriblis_reblog_5_tags = [army, chaotic, fighters, gold_rank, hunt, kingdom, th
 addTagsToQuest(terriblis_reblog_5_tags, terriblis_reblog_5)
 
 terriblis_reblog_5_likes = [rain, carl, catherine]
-addLikesToQuest(terriblis_reblog_5_likes, terriblis_reblog_5)
+addLikesToReblog(terriblis_reblog_5_likes, terriblis_reblog_5)
 
 
 # Terriblis Reblog 6
@@ -1537,7 +1544,7 @@ terriblis_reblog_6_tags = [academy, arcane_focus, artifacts, artificers, bards, 
 addTagsToQuest(terriblis_reblog_6_tags, terriblis_reblog_6)
 
 terriblis_reblog_6_likes = [terriblis, rain, catherine]
-addLikesToQuest(terriblis_reblog_6_likes, terriblis_reblog_6)
+addLikesToReblog(terriblis_reblog_6_likes, terriblis_reblog_6)
 
 # Matt Reblog 7
 matt_reblog_7 = Reblog.new(user_id: matt.id, quest_id: hero_quest_1.id, text: "Have you any interest in magic? Stories say that Heroes level quite a bit more quickly than your average adventurer. Our team of coaches can ensure that you achieve the most powerful spellcasting build possible in the most efficient way possible. Please don't hesitate to stop by one of our offices for a consultation!")
@@ -1547,7 +1554,7 @@ matt_reblog_7_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermi
 addTagsToQuest(matt_reblog_7_tags, matt_reblog_7)
 
 matt_reblog_7_likes = [jess, kmsvr]
-addLikesToQuest(matt_reblog_7_likes, matt_reblog_7)
+addLikesToReblog(matt_reblog_7_likes, matt_reblog_7)
 
 # Matt Reblog 8
 matt_reblog_8 = Reblog.new(user_id: matt.id, quest_id: terriblis_quest_8.id, text: "Having trouble with security? Our expert team of [Inscribers] can set up runic defense arrays in any environment. Stop by one of our offices for a consultation and preliminary quote!")
@@ -1557,7 +1564,7 @@ matt_reblog_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlor
 addTagsToQuest(matt_reblog_8_tags, matt_reblog_8)
 
 matt_reblog_8_likes = [ingrid, kmsvr, rain]
-addLikesToQuest(matt_reblog_8_likes, matt_reblog_8)
+addLikesToReblog(matt_reblog_8_likes, matt_reblog_8)
 
 # Matt Reblog 9
 matt_reblog_9 = Reblog.new(user_id: matt.id, quest_id: goblin_slayer_quest_45.id, text: "Looking for the latest and/or greatest in spellcasting scrolls for any occasion? Look no further! We have scrolls you've never dreamed of! Offensive spells, defensive arrays, utility magic, we've got it all! Grab one of our catalogues from the front desk of any Adventurer's Guild and you won't be disappointed!")
@@ -1567,18 +1574,18 @@ matt_reblog_9_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, abj
 addTagsToQuest(matt_reblog_9_tags, matt_reblog_9)
 
 matt_reblog_9_likes = [terriblis, kmsvr, rain, carl, catherine]
-addLikesToQuest(matt_reblog_9_likes, matt_reblog_9)
+addLikesToReblog(matt_reblog_9_likes, matt_reblog_9)
 
 
 # Jess Reblog 10
 jess_reblog_10 = Reblog.new(user_id: jess.id, quest_id: matt_quest_16.id, text: "I would like to schedule an appointment. Will give more details about the loot in person, but it consists of mostly silver-grade weaponry and a gold-rank helm.")
 
-jess_reblog_10_tags = [artifacts, axes, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, silve_rank, gold, gold_rank, staffs, swords].shuffle
+jess_reblog_10_tags = [artifacts, axes, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, silver_rank, gold, gold_rank, staffs, swords].shuffle
 
 addTagsToQuest(jess_reblog_10_tags, jess_reblog_10)
 
 jess_reblog_10_likes = [hero, ingrid, goblin_slayer, carl]
-addLikesToQuest(jess_reblog_10_likes, jess_reblog_10)
+addLikesToReblog(jess_reblog_10_likes, jess_reblog_10)
 
 # Jess Reblog 11
 jess_reblog_11 = Reblog.new(user_id: jess.id, quest_id: carl_quest_63.id, text: "We are interested in these traps you make. I have heard tell that there is little magic to them. We have an alchemist who would love to discuss things with you, to the benefit of both.")
@@ -1588,7 +1595,7 @@ jess_reblog_11_tags = [acid, alchemy, anarchy, chaotic, bards, creatures, dungeo
 addTagsToQuest(jess_reblog_11_tags, jess_reblog_11)
 
 jess_reblog_11_likes = [hero, kmsvr, goblin_slayer, rain, catherine]
-addLikesToQuest(jess_reblog_11_likes, jess_reblog_11)
+addLikesToReblog(jess_reblog_11_likes, jess_reblog_11)
 
 # Jess Reblog 12
 jess_reblog_12 = Reblog.new(user_id: jess.id, quest_id: ingrid_quest_33.id, text: "Spoken like a true leader. Best of luck in your adventures.")
@@ -1598,7 +1605,7 @@ jess_reblog_12_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaoti
 addTagsToQuest(jess_reblog_12_tags, jess_reblog_12)
 
 jess_reblog_12_likes = [hero, kmsvr, goblin_slayer, rain]
-addLikesToQuest(jess_reblog_12_likes, jess_reblog_12)
+addLikesToReblog(jess_reblog_12_likes, jess_reblog_12)
 
 # Ingrid Reblog 13
 ingrid_reblog_13 = Reblog.new(user_id: ingrid.id, quest_id: catherine_quest_68.id, text: "My team will answer your call, Queen Catherine, as our ancestors have done for yours.")
@@ -1608,7 +1615,7 @@ ingrid_reblog_13_tags = [books, dark_lord, evil, evil_overlords, fallen_kingdom,
 addTagsToQuest(ingrid_reblog_13_tags, ingrid_reblog_13)
 
 ingrid_reblog_13_likes = [hero, matt, jess, kmsvr, goblin_slayer, rain, carl]
-addLikesToQuest(ingrid_reblog_13_likes, ingrid_reblog_13)
+addLikesToReblog(ingrid_reblog_13_likes, ingrid_reblog_13)
 
 # Ingrid Reblog 14
 ingrid_reblog_14 = Reblog.new(user_id: ingrid.id, quest_id: carl_quest_60.id, text: "Where might this \"Iron Tangle\" be located? It looks to be a challenge, and The Court of Winter seeks to sharpen our skills.")
@@ -1618,7 +1625,7 @@ ingrid_reblog_14_tags = [anarchy, books, conjuration, creatures, dungeons, explo
 addTagsToQuest(ingrid_reblog_14_tags, ingrid_reblog_14)
 
 ingrid_reblog_14_likes = [kmsvr, goblin_slayer, rain, catherine]
-addLikesToQuest(ingrid_reblog_14_likes, ingrid_reblog_14)
+addLikesToReblog(ingrid_reblog_14_likes, ingrid_reblog_14)
 
 # Ingrid Reblog 15
 ingrid_reblog_15 = Reblog.new(user_id: ingrid.id, quest_id: goblin_slayer_quest_44.id, text: "Water Town is but a day's ride from our location. We shall aide you in this.")
@@ -1628,7 +1635,7 @@ ingrid_reblog_15_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, 
 addTagsToQuest(ingrid_reblog_15_tags, ingrid_reblog_15)
 
 ingrid_reblog_15_likes = [hero, rain, carl]
-addLikesToQuest(ingrid_reblog_15_likes, ingrid_reblog_15)
+addLikesToReblog(ingrid_reblog_15_likes, ingrid_reblog_15)
 
 # Kmsvr Reblog 16
 kmsvr_reblog_16 = Reblog.new(user_id: kmsvr.id, quest_id: catherine_quest_66.id, text: "I think you may be underestimating the evil incarnate in water, Your Grace.")
@@ -1638,7 +1645,7 @@ kmsvr_reblog_16_tags = [ancients, elves, fey, fire, hunt, illusion, lawful, magi
 addTagsToQuest(kmsvr_reblog_16_tags, kmsvr_reblog_16)
 
 kmsvr_reblog_16_likes = [hero, matt, jess, ingrid, rain, carl]
-addLikesToQuest(kmsvr_reblog_16_likes, kmsvr_reblog_16)
+addLikesToReblog(kmsvr_reblog_16_likes, kmsvr_reblog_16)
 
 # Kmsvr Reblog 17
 kmsvr_reblog_17 = Reblog.new(user_id: kmsvr.id, quest_id: carl_quest_59.id, text: "Goblins are our friends, except when they are not. When they are not, are they succeptible to ambushing tactics? Asking for a friend also named Kmsvr. Please don't tell Erin.")
@@ -1648,7 +1655,7 @@ kmsvr_reblog_17_tags = [ai, alchemy, chaotic, creatures, bards, dungeons, evil, 
 addTagsToQuest(kmsvr_reblog_17_tags, kmsvr_reblog_17)
 
 kmsvr_reblog_17_likes = [jess, ingrid, goblin_slayer, rain]
-addLikesToQuest(kmsvr_reblog_17_likes, kmsvr_reblog_17)
+addLikesToReblog(kmsvr_reblog_17_likes, kmsvr_reblog_17)
 
 # Kmsvr Reblog 18
 kmsvr_reblog_18 = Reblog.new(user_id: kmsvr.id, quest_id: rain_quest_56.id, text: "Are these song crystals for sale? I think this would be good music to play during ambushes. It would frighten bandits and maybe animals. Maybe not animals. We will need to test.")
@@ -1658,7 +1665,7 @@ kmsvr_reblog_18_tags = [adventure, army, bards, books, dark_lord, dwarves, elves
 addTagsToQuest(kmsvr_reblog_18_tags, kmsvr_reblog_18)
 
 kmsvr_reblog_18_likes = [hero, matt, jess, ingrid, goblin_slayer, carl, catherine]
-addLikesToQuest(kmsvr_reblog_18_likes, kmsvr_reblog_18)
+addLikesToReblog(kmsvr_reblog_18_likes, kmsvr_reblog_18)
 
 # Goblin Slayer Reblog 19
 goblin_slayer_reblog_19 = Reblog.new(user_id: goblin_slayer.id, quest_id: jess_quest_22.id, text: "I will not join your team, as I have a team. You mentioned goblins. Tell me about the goblins.")
@@ -1668,7 +1675,7 @@ goblin_slayer_reblog_19_tags = [adventure, commoners, goblins, goblin_champions,
 addTagsToQuest(goblin_slayer_reblog_19_tags, goblin_slayer_reblog_19)
 
 goblin_slayer_reblog_19_likes = [hero]
-addLikesToQuest(goblin_slayer_reblog_19_likes, goblin_slayer_reblog_19)
+addLikesToReblog(goblin_slayer_reblog_19_likes, goblin_slayer_reblog_19)
 
 # Goblin Slayer Reblog 20
 goblin_slayer_reblog_20 = Reblog.new(user_id: goblin_slayer.id, quest_id: jess_quest_23.id, text: "I will go there immediately.")
@@ -1678,7 +1685,7 @@ goblin_slayer_reblog_20_tags = [creatures, diamond_rank, evil, goblins, goblin_c
 addTagsToQuest(goblin_slayer_reblog_20_tags, goblin_slayer_reblog_20)
 
 goblin_slayer_reblog_20_likes = [hero]
-addLikesToQuest(goblin_slayer_reblog_20_likes, goblin_slayer_reblog_20)
+addLikesToReblog(goblin_slayer_reblog_20_likes, goblin_slayer_reblog_20)
 
 # Goblin Slayer Reblog 21
 goblin_slayer_reblog_21 = Reblog.new(user_id: goblin_slayer.id, quest_id: kmsvr_quest_36.id, text: "This is pro-goblin propaganda. They told me it didn't exist but I was right.")
@@ -1688,7 +1695,7 @@ goblin_slayer_reblog_21_tags = [academy, adventure, ai, alchemists, ancients, ar
 addTagsToQuest(goblin_slayer_reblog_21_tags, goblin_slayer_reblog_21)
 
 goblin_slayer_reblog_21_likes = [terriblis, matt, jess, ingrid, rain]
-addLikesToQuest(goblin_slayer_reblog_21_likes, goblin_slayer_reblog_21)
+addLikesToReblog(goblin_slayer_reblog_21_likes, goblin_slayer_reblog_21)
 
 # Rain Reblog 22
 rain_reblog_22 = Reblog.new(user_id: rain.id, quest_id: carl_quest_57.id, text: "I've had some really weird interactions, though I'm not sure we're talking about the same system, which is quite interesting in itself. Do you think we're in alternate timelines. Maybe dimensions? There's a difference. Let's start with simularities. Have you ever met someone with an injured soul? How does leveling work for you? Is there a cap? Do you know what \"blues\" are? I have more questions, but I'll hold onto them for now.")
@@ -1698,7 +1705,7 @@ rain_reblog_22_tags = [ai, chaotic, dungeons, evil, gods, murder].shuffle
 addTagsToQuest(rain_reblog_22_tags, rain_reblog_22)
 
 rain_reblog_22_likes = [hero, kmsvr]
-addLikesToQuest(rain_reblog_22_likes, rain_reblog_22)
+addLikesToReblog(rain_reblog_22_likes, rain_reblog_22)
 
 
 # Rain Reblog 23
@@ -1709,7 +1716,7 @@ rain_reblog_23_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, ad
 addTagsToQuest(rain_reblog_23_tags, rain_reblog_23)
 
 rain_reblog_23_likes = [hero, matt, catherine]
-addLikesToQuest(rain_reblog_23_likes, rain_reblog_23)
+addLikesToReblog(rain_reblog_23_likes, rain_reblog_23)
 
 # Rain Reblog 24
 rain_reblog_24 = Reblog.new(user_id: rain.id, quest_id: carl_quest_62.id, text: "I have no idea why someone would want to do a catshow of all things but now I can't get the idea out of my head. This is hilarious, I have to try it.")
@@ -1719,7 +1726,7 @@ rain_reblog_24_tags = [ai, beasts,gods, goddesses, gold, gold_rank, lawful, prin
 addTagsToQuest(rain_reblog_24_tags, rain_reblog_24)
 
 rain_reblog_24_likes = [kmsvr, catherine]
-addLikesToQuest(rain_reblog_24_likes, rain_reblog_24)
+addLikesToReblog(rain_reblog_24_likes, rain_reblog_24)
 
 # Carl Reblog 25
 carl_reblog_25 = Reblog.new(user_id: carl.id, quest_id: hero_quest_2.id, text: "The AI likes to mess with us sometimes, especially if nobody's paying to push you into the quest. I once found a letter inside of the corpse of a ogre waiter. Apparently someone asked him to 'pass a note' and he took it to mean... well you get it. The logical leaps that NPCs make is a goddamn mystery in itself.")
@@ -1729,7 +1736,7 @@ carl_reblog_25_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, co
 addTagsToQuest(carl_reblog_25_tags, carl_reblog_25)
 
 carl_reblog_25_likes = [kmsvr, rain]
-addLikesToQuest(carl_reblog_25_likes, carl_reblog_25)
+addLikesToReblog(carl_reblog_25_likes, carl_reblog_25)
 
 # Carl Reblog 26
 carl_reblog_26 = Reblog.new(user_id: carl.id, quest_id: jess_quest_25.id, text: "I'd like to purchase some for testing purposes. I'd also like samples of any other aberrant materials you have.")
@@ -1739,8 +1746,7 @@ carl_reblog_26_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatur
 addTagsToQuest(carl_reblog_26_tags, carl_reblog_26)
 
 carl_reblog_26_likes = [terriblis, matt, goblin_slayer, rain]
-addLikesToQuest(carl_reblog_26_likes, carl_reblog_26)
-# We're here now
+addLikesToReblog(carl_reblog_26_likes, carl_reblog_26)
 
 # Carl Reblog 27
 carl_reblog_27 = Reblog.new(user_id: carl.id, quest_id: terriblis_quest_9.id, text: "Carl: My teammate Donut would be interested in that training. Let's meet up on the next floor and hash out a deal.\nDonut: WHAT'S CRYSTAL WASH? THAT SOUNDS LOVELY CARL, I WANT THAT.")
@@ -1750,15 +1756,40 @@ carl_reblog_27_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuratio
 addTagsToQuest(carl_reblog_27_tags, carl_reblog_27)
 
 carl_reblog_27_likes = [matt, kmsvr, goblin_slayer, rain, catherine]
-addLikesToQuest(carl_reblog_27_likes, carl_reblog_27)
+addLikesToReblog(carl_reblog_27_likes, carl_reblog_27)
 
 # Catherine Reblog 28
-catherine_reblog_28 = Reblog.new(user_id: catherine.id, quest_id: null, text: "")
-# Catherine Reblog 29
-catherine_reblog_29 = Reblog.new(user_id: catherine.id, quest_id: null, text: "")
-# Catherine Reblog 30
-catherine_reblog_30 = Reblog.new(user_id: catherine.id, quest_id: null, text: "")
+catherine_reblog_28 = Reblog.new(user_id: catherine.id, quest_id: kmsvr_quest_37.id, text: "I'm afraid at first glance I cannot tell whether this is a team of Heroes or Villains, though it matters not. I call upon your aid against the Ancient Evil. If we must use a necromancer to defeat a necromancer... well, we've been party to worse.")
 
+catherine_reblog_28_tags = [academy, adventure, artifacts, commoners, contracts, creler, dungeons, elves, fighters, gold_rank, good, guilds, humans, ice, lawful, magic_items, monster_extermination, necromancy, nobles, sorcerers, swords, undead].shuffle
+
+addTagsToQuest(catherine_reblog_28_tags, catherine_reblog_28)
+
+catherine_reblog_28_likes = [hero, matt, jess, ingrid, rain]
+addLikesToReblog(catherine_reblog_28_likes, catherine_reblog_28)
+
+# Catherine Reblog 29
+catherine_reblog_29 = Reblog.new(user_id: catherine.id, quest_id: goblin_slayer_quest_47.id, text: "Lovely words, though a bit frail should those actions not be supported by power.")
+
+catherine_reblog_29_tags = [adventure, ancients, barbarians, blood_oath, fighters, gods, goblins, goblin_champions, goblin_lords, goblin_kings, hunt, monster_extermination, monster_nest].shuffle
+
+addTagsToQuest(catherine_reblog_29_tags, catherine_reblog_29)
+
+catherine_reblog_29_likes = [kmsvr, rain, carl]
+addLikesToReblog(catherine_reblog_29_likes, catherine_reblog_29)
+
+# Catherine Reblog 30
+catherine_reblog_30 = Reblog.new(user_id: catherine.id, quest_id: ingrid_quest_33.id, text: "Could not have said it better myself, though I could add a bit more color to the language.")
+
+catherine_reblog_30_tags = [adventure, anarchy, army, barbarians, bronze_rank, chaotic, demon_army, diamond_rank, fighters, gold_rank, hero_tag, monks, paladins, platinum_rank, porcelain_rank, silver_rank, steel_rank, the_watch, warriors, obsidian_rank].shuffle
+
+addTagsToQuest(catherine_reblog_30_tags, catherine_reblog_30)
+
+catherine_reblog_30_likes = [hero, kmsvr, goblin_slayer, rain]
+addLikesToReblog(catherine_reblog_30_likes, catherine_reblog_30)
+
+
+# Shuffling the reblogs
 reblog_list = [hero_reblog_1, hero_reblog_2, hero_reblog_3, terriblis_reblog_4, terriblis_reblog_5, terriblis_reblog_6, matt_reblog_7, matt_reblog_8, matt_reblog_9, jess_reblog_10, jess_reblog_11, jess_reblog_12, ingrid_reblog_13, ingrid_reblog_14, ingrid_reblog_15, kmsvr_reblog_16, kmsvr_reblog_17, kmsvr_reblog_18, goblin_slayer_reblog_19, goblin_slayer_reblog_20, goblin_slayer_reblog_21, rain_reblog_22, rain_reblog_23, rain_reblog_24, carl_reblog_25, carl_reblog_26, carl_reblog_27, catherine_reblog_28, catherine_reblog_29, catherine_reblog_30].shuffle
 
 # Saving just the reblogs
