@@ -14,7 +14,7 @@ Quest.destroy_all
 User.destroy_all
 Tag.destroy_all
 
-# # New tags
+# New tags
 abjuration = Tag.create(tag_name: 'abjuration')
 academy = Tag.create(tag_name: 'academy')
 acid = Tag.create(tag_name: 'acid')
@@ -411,9 +411,6 @@ catherine.avatar_image.attach(io: catherine_avatar, filename: 'catherine.jpg')
 # carl = User.find_by(username: "Dungeon_Crawler_Carl")
 # catherine = User.find_by(username: "Catherine_Foundling")
 
-# Dead Code
-# user array in case you lose it
-# [hero, terriblis, matt, jess, ingrid, kmsvr, goblin_slayer, rain, carl, catherine]
 
 # Adding tags to users
 hero_tags = [gold_rank, goblins, magic_items, dungeons, fighters, warriors, paladins, dragons, exploration, monster_extermination]
@@ -474,34 +471,10 @@ end
 #   TagJoin.create(taggable: catherine, tag: tag, order: idx + 1)
 # end
 
-# Method for adding an array of tags to a quest
-def addTagsToQuest(tags, quest)
-  tags.each_with_index do |tag, idx|
-    TagJoin.create(taggable: quest, tag: tag, order: idx + 1)
-  end
-end
-
-def addLikesToQuest(users, quest)
-  users.each do |user|
-    user.liked_quests << quest
-  end
-end
-def addLikesToReblog(users, reblog)
-  users.each do |user|
-    user.liked_reblogs << reblog
-  end
-end
-
 # New quests for hero
 # Hero quest 1 - Text
 hero_quest_1 = Quest.new(title: "So I've got this [Hero] class...", text: "I'm not sure what I'm supposed to be doing. I level really quickly but since my Guild apparently doesn't make exceptions, I'm stuck killing rats in sewers like the other Porcelains. Does anybody know of any loopholes to rise through the ranks quickly? I'm worried that I'll be fetching mushrooms from Kantai forest when the Demon Lord razes the capital.", quest_type: 'text', user_id: hero.id)
 
-hero_quest_1_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot].shuffle
-
-addTagsToQuest(hero_quest_1_tags, hero_quest_1)
-
-quest_1_likes = [matt, jess, kmsvr]
-addLikesToQuest(quest_1_likes, hero_quest_1)
 
 # Hero quest 2 - Image
 hero_quest_2 = Quest.new(title: "Has anyone seen a macguffin lying around?", text: "I think I'm supposed to be tracking down a low-level general in the demon army, but I'm struggling to figure out what I need to do to trigger the quest. I'm pretty sure I'm supposed to find a letter, but it's not in any of the lore/readable items I make my wizard cart around. Attached are pictures of other suspicious letters I've found that are probably somewhat similar.", quest_type: 'image', user_id: hero.id)
@@ -511,25 +484,11 @@ hero_quest_2.images.attach(io: quest_2_image_1, filename: 'mysterious_letter_1.p
 quest_2_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_2/mysterious_letter_2.png')
 hero_quest_2.images.attach(io: quest_2_image_2, filename: 'mysterious_letter_2.png')
 
-hero_quest_2_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, contracts, mystery].shuffle
-
-addTagsToQuest(hero_quest_2_tags, hero_quest_2)
-
-quest_2_likes = [kmsvr, rain, carl]
-addLikesToQuest(quest_2_likes, hero_quest_2)
-
 # Hero quest 3 - Image
 hero_quest_3 = Quest.new(title: "Found this grimoire. Anyone know how to destroy it?", text: "Apparently it's known as The Necronomicon. At first I planned on keeping or selling it, but I'm 95% sure it's bound in human skin. Also, it whispers things to me at night. Horrible things.\nSide note: If you're known as 'Old Man Henderson', there are some unimaginable horrors out to get you.", quest_type: 'image', user_id: hero.id)
 
 quest_3_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_3/necronomicon.jpeg')
 hero_quest_3.images.attach(io: quest_3_image_1, filename: 'necronomicon.jpeg')
-
-hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood_magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes].shuffle
-
-addTagsToQuest(hero_quest_3_tags, hero_quest_3)
-
-quest_3_likes = [terriblis, matt, rain, catherine]
-addLikesToQuest(quest_3_likes, hero_quest_3)
 
 # Hero quest 4 - Image
 hero_quest_4 = Quest.new(title: "Looking for a smith to make me better pauldrons.", text: "I learned in my old world that bigger pauldrons make for a stronger, more intimidating warrior. For some reason, the only ones I've found so far in this land have been reasonably sized. Willing to spend about 10 gold on each, 15 if they can have different but complementary designs.", quest_type: "image", user_id: hero.id)
@@ -540,22 +499,8 @@ hero_quest_4.images.attach(io: quest_4_image_1, filename: 'pauldron_1.jpg')
 quest_4_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_4/pauldron_2.jpg')
 hero_quest_4.images.attach(io: quest_4_image_2, filename: 'pauldron_2.jpg')
 
-hero_quest_4_tags = [adamantine, artificers, blacksmithing, dwarves, gold, magic_items, merchants, mythic, mythril, platinum, power, protection].shuffle
-
-addTagsToQuest(hero_quest_4_tags, hero_quest_4)
-
-quest_4_likes = [ingrid, kmsvr, rain]
-addLikesToQuest(quest_4_likes, hero_quest_4)
-
 # Hero quest 5 - Quote
 hero_quest_5 = Quest.new(title: "It's really exciting to get to be the main character of something.", text: "Noah Schnapp", quest_type: "quote", user_id: hero.id)
-
-hero_quest_5_tags = [hero_tag, adventure, chaotic, good, guilds, legendary, paladins, plot].shuffle
-
-addTagsToQuest(hero_quest_5_tags, hero_quest_5)
-
-quest_5_likes = [matt, kmsvr, goblin_slayer, rain, carl, catherine]
-addLikesToQuest(quest_5_likes, hero_quest_5)
 
 # Hero quest 6 - Video
 hero_quest_6 = Quest.new(title: "Sometimes it really feels like this.", text: "", quest_type: "video", user_id: hero.id)
@@ -563,36 +508,15 @@ hero_quest_6 = Quest.new(title: "Sometimes it really feels like this.", text: ""
 quest_6_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/everything_goes_wrong.mp4')
 hero_quest_6.images.attach(io: quest_6_video_1, filename: 'everything_goes_wrong.mp4')
 
-hero_quest_6_tags = [hero_tag, bandits, beasts, cave, commoners, contracts, divination, escort_quest, exploration, fetch, forests, humans, hunt, chaotic, magical_creatures, murder, mystery, neutral, outsider, plot, rescue_mission, the_watch, trolls, warriors, wilderness].shuffle
-
-addTagsToQuest(hero_quest_6_tags, hero_quest_6)
-
-quest_6_likes = [rain, carl, catherine]
-addLikesToQuest(quest_6_likes, hero_quest_6)
-
 # Hero quest 7 - Audio
 hero_quest_7 = Quest.new(title: "Does anyone else hear this?", text: "Whenever I start fighting, I hear a song start playing. My teammates swear they don't hear it, and I'm not sure if I believe them. I had a bard recreate it as best as he could. Please let me know if you recognize it.", quest_type: 'audio', user_id: hero.id)
 
 quest_7_audio = File.open('app/assets/adventr_seeder_images/quest_audio/final_fantasy_battle.mp3')
 hero_quest_7.images.attach(io: quest_7_audio, filename: 'final_fantasy_battle.mp3')
 
-hero_quest_7_tags = [bards, magic, monster_extermination, enchantment, fey].shuffle
-
-addTagsToQuest(hero_quest_7_tags, hero_quest_7)
-
-quest_7_likes = [matt, kmsvr, rain]
-addLikesToQuest(quest_7_likes, hero_quest_7)
-
 # Terriblis quests
 # Terriblis quest 1 - Text
 terriblis_quest_8 = Quest.new(title: "Please stop killing my skeletons.", text: "I know they're easy experience. I know the sound of their bones jumbling around is annoying. But please stop killing them. \n You would not believe how long it takes to raise 10 skeletons. Don't even get me started on the material cost, since I go through legal channels. \n \n And to the person that seems to target my [Awakened Skeleton Knight] exclusively, there will be no mercy for you. You have sunk entire fortunes with your murder hobo antics. I know for a fact it never initiated a fight, because I only taught it to love. Your days are numbered.", quest_type: "text", user_id: terriblis.id)
-
-terriblis_quest_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlords, fallen_kingdom, lawful, lich, murder, necromancy, paladins, scholars, spell_components, spellcasting, undead, warlocks].shuffle
-
-addTagsToQuest(terriblis_quest_8_tags, terriblis_quest_8)
-
-quest_8_likes = [matt, ingrid, kmsvr, rain]
-addLikesToQuest(quest_8_likes, terriblis_quest_8)
 
 # Terriblis quest 2 - Image
 terriblis_quest_9 = Quest.new(title: "Looking for spellcasters to test my new offal dragon golem", text: "I have finally achieved my dream of creating a dragon golem from offal. It is glory incarnate. I am looking for a variety of mages to test their spells against my creation. It should be a rewarding experience for everyone involved, though you will also be compensated with gold and enough crystal wash to eliminate the smell of being in the same room as an offal dragon for several hours.", quest_type: "image", user_id: terriblis.id)
@@ -600,12 +524,7 @@ terriblis_quest_9 = Quest.new(title: "Looking for spellcasters to test my new of
 quest_9_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_9/meat_dragon.png')
 terriblis_quest_9.images.attach(io: quest_9_image_1, filename: 'meat_dragon.png')
 
-terriblis_quest_9_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuration, dragons, familiars, fire, ice, lightning, magical_creatures, necromancy, sorcerers, sorcery, transmutation, undead, warlocks, wizards, wurms].shuffle
 
-addTagsToQuest(terriblis_quest_9_tags, terriblis_quest_9)
-
-quest_9_likes = [hero, matt, kmsvr, goblin_slayer, rain, catherine]
-addLikesToQuest(quest_9_likes, terriblis_quest_9)
 
 
 # Terriblis quest 10 - Image
@@ -618,36 +537,15 @@ terriblis_quest_10.images.attach(io: quest_10_image_2, filename: 'shoggoth_2.jpg
 quest_10_image_3 = File.open('app/assets/adventr_seeder_images/quest_images/quest_10/shoggoth_3.png')
 terriblis_quest_10.images.attach(io: quest_10_image_3, filename: 'shoggoth_3.png')
 
-terriblis_quest_10_tags = [ancients, beasts, chaotic, creatures, evil, magical_creatures, monster_extermination, monster_nest, outer_planes].shuffle
-
-addTagsToQuest(terriblis_quest_10_tags, terriblis_quest_10)
-
-quest_10_likes = [ingrid, kmsvr, goblin_slayer, rain, catherine]
-addLikesToQuest(quest_10_likes, terriblis_quest_10)
-
 # Terriblis quest 11 - Image
-
 terriblis_quest_11 = Quest.new(title: "Looking to hire an assassin. Must be Platinum Rank or higher", text: "As a disclaimer, your target is still low level. This is a real request. Payment and dossier on the victim will be provided upon acceptance of the quest. I cannot say their name here, but their title rhymes with [Zero].", quest_type: "image", user_id: terriblis.id)
 
 quest_11_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_11/assassination_target.jpg')
 terriblis_quest_11.images.attach(io: quest_11_image_1, filename: 'assassination_target.jpg')
 
-terriblis_quest_11_tags = [assassins, bandits, blood_oath, contracts, hero_tag, murder, political_intrigue, rogues, spies].shuffle
-
-addTagsToQuest(terriblis_quest_11_tags, terriblis_quest_11)
-
-quest_11_likes = [hero, catherine]
-addLikesToQuest(quest_11_likes, terriblis_quest_11)
-
 # Terriblis quest 12 - Quote
 terriblis_quest_12 = Quest.new(title: "Oh, I get it. The real treasure was the people I had executed along the way!", text: "Dread Emperor Irritant I, the Oddly Successful", quest_type: "quote", user_id: terriblis.id)
 
-terriblis_quest_12_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies].shuffle
-
-addTagsToQuest(terriblis_quest_12_tags, terriblis_quest_12)
-
-quest_12_likes = [jess, ingrid, kmsvr, catherine]
-addLikesToQuest(quest_12_likes, terriblis_quest_12)
 
 # Terriblis quest 13 - Video
 terriblis_quest_13 = Quest.new(title: "There may be similarities...", text: "", quest_type: "video", user_id: terriblis.id)
@@ -655,37 +553,15 @@ terriblis_quest_13 = Quest.new(title: "There may be similarities...", text: "", 
 quest_13_video = File.open('app/assets/adventr_seeder_images/quest_videos/prozd_villain.mp4')
 terriblis_quest_11.images.attach(io: quest_13_video, filename: 'prozd_villain.mp4')
 
-terriblis_quest_13_tags = [aristocrats, bards, dark_lord, evil, evil_overlords, hero_tag, mystery, nobles, plot].shuffle
-
-addTagsToQuest(terriblis_quest_13_tags, terriblis_quest_13)
-
-quest_13_likes = [rain, carl, catherine]
-addLikesToQuest(quest_13_likes, terriblis_quest_13)
-
 # Terriblis quest 14 - Audio
 terriblis_quest_14 = Quest.new(title: "An excellent song by a rather odd bard.", text: "I have not had the pleasure of meeting this bard in person, mind you. I was sold this song crystal and thought it a scam due to the price. Only after slaughtering the merchant caravan in its entirety did I test the product and find its music most agreeable. I hope to \"recruit\" the bard himself one day.", quest_type: "audio", user_id: terriblis.id)
 
 quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/witch_drums.mp3')
 terriblis_quest_14.images.attach(io: quest_14_audio, filename: 'witch_drums.mp3')
 
-terriblis_quest_14_tags = [bards, caravans, magic_items, merchants, sorcery, wizards].shuffle
-
-addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
-
-quest_14_likes = [hero, ingrid, catherine]
-addLikesToQuest(quest_14_likes, terriblis_quest_14)
-
 # Matt quests
 # Matt quest 15 - Text
-
 matt_quest_15 = Quest.new(title: "Hello from Spellcaster Apprentices!", text: "Guilds are sprouting up every single day to help adventurers live happier, wealthier lives. Out with the old, in with the new. Innovation is all around us, and new teams are formed to help us maximize treasure haul and increase leveling speed.\n\nBut in a world where one wrong step can result in a lightningbolt to the face and literal dragons are breathing fire down our necks, there's too little accountability. Guilds incentivize adventurers to make false promises, pay town cries and bards to tell fake stories about them, all while not backing up their teams with support they can rely on. It's bulette shite.\n\nSpellcaster Apprentices was born to bring transparency to the our heroes' journeys - or the heroes themselves - specifically around spell matrices that help you maximize your power and potential rewards. We'll also help you weed through the BS quests, and highlight the ones worth the attention.", quest_type: "text", user_id: matt.id)
-
-matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromancy, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards].shuffle
-
-addTagsToQuest(matt_quest_15_tags, matt_quest_15)
-
-quest_15_likes = [terriblis, rain]
-addLikesToQuest(quest_15_likes, matt_quest_15)
 
 # Matt quest 16 - Image
 matt_quest_16 = Quest.new(title: "Having trouble with a \"Loot Dispute\"?", text: "Divying up the spoils of a successful quest can be tough, especially when your party members have... conflicting personalities. There's no reason to take on all of that stress yourself, though! Our mediators have experience in coming to agreements that are beneficial for everyone, or making the tough decisions for the sake of party integrity. Schedule an appointment at one of our branch offices and have your Loot Dispute settled amicably - or at least bloodlessly - today!", quest_type: "image", user_id: matt.id)
@@ -693,15 +569,7 @@ matt_quest_16 = Quest.new(title: "Having trouble with a \"Loot Dispute\"?", text
 quest_16_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_16/magic_item_tug_of_war.png')
 matt_quest_16.images.attach(io: quest_16_image_1, filename: 'magic_item_tug_of_war.png')
 
-matt_quest_16_tags = [adamantine, arcane_focus, artifacts, axes, books, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, gold, spell_components, spellbooks, staffs, swords, tomes].shuffle
-
-addTagsToQuest(matt_quest_16_tags, matt_quest_16)
-
-quest_16_likes = [hero, jess, ingrid, goblin_slayer, carl]
-addLikesToQuest(quest_16_likes, matt_quest_16)
-
 # Matt quest 17 - Image
-
 matt_quest_17 = Quest.new(title: "Are you having issues preparing for battle?", text: "As time goes on and true battle is seen, many warriors begin to find donning their armor and dashing into the fray more difficult. Whether it be mental, emotional, or physical, it is no fault of their own. The lifestyle of  an adventurer can wear on you. Luckily, our guild has discovered a solution. A team of Alchemists from Soleil have developed a potion from the liver of certain species of non-sentient fey that can be used to give you back that warrior's spirit! Our own members of different ranks have thoroughly tested the effects and found them safe - though not for our foes! Inquire with any of our adventurers or staff for a 1-part-in-10 discount!", quest_type: "image", user_id: matt.id)
 
 quest_17_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_17/potion.png')
@@ -709,13 +577,6 @@ matt_quest_17.images.attach(io: quest_17_image_1, filename: 'potion.png')
 
 quest_17_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_17/berserker.png')
 matt_quest_17.images.attach(io: quest_17_image_2, filename: 'berserker.png')
-
-matt_quest_17_tags = [alchemists, alchemy, army, barbarians, blood_magic, chaotic, explosives, fighters, lawful, magic, merchants, power, transmutation, warriors].shuffle
-
-addTagsToQuest(matt_quest_17_tags, matt_quest_17)
-
-quest_17_likes = [hero, terriblis, ingrid, goblin_slayer]
-addLikesToQuest(quest_17_likes, matt_quest_17)
 
 # Matt quest 18 - Image
 
@@ -727,26 +588,10 @@ matt_quest_18.images.attach(io: quest_18_image_1, filename: 'staffs.png')
 quest_18_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_18/wands.png')
 matt_quest_18.images.attach(io: quest_18_image_2, filename: 'wands.png')
 
-matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlocks, wizards, druids].shuffle
-
-addTagsToQuest(matt_quest_18_tags, matt_quest_18)
-
-quest_18_likes = [terriblis, rain, catherine]
-addLikesToQuest(quest_18_likes, matt_quest_18)
-
 # Matt quest 19 - Quote
-
 matt_quest_19 = Quest.new(title: "You have power over your mind - not outside events. Unless someone has mind magic; then you have power over nothing.", text: "Marcus the Aeromancer", quest_type: "quote", user_id: matt.id)
 
-matt_quest_19_tags = [academy, books, divination, magic, magic_items, magical_creatures, merchants, nobles, power, protection, sorcery, spellcasting, unseelie_court, fey, vampires].shuffle
-
-addTagsToQuest(matt_quest_19_tags, matt_quest_19)
-
-quest_19_likes = [terriblis, kmsvr, goblin_slayer, rain]
-addLikesToQuest(quest_19_likes, matt_quest_19)
-
 # Matt quest 20 - Video
-
 matt_quest_20 = Quest.new(title: "Some of our members show off their magic.", text: "", quest_type: "video", user_id: matt.id)
 
 quest_20_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/lightning_bolt.mp4')
@@ -755,38 +600,15 @@ matt_quest_20.images.attach(io: quest_20_video_1, filename: 'lightning_bolt.mp4'
 quest_20_video_2 = File.open('app/assets/adventr_seeder_images/quest_videos/bean_wizard.mp4')
 matt_quest_20.images.attach(io: quest_20_video_2, filename: 'bean_wizard.mp4')
 
-matt_quest_20_tags = [academy, anarchy, bronze_rank, chaotic, beasts, creatures, forests, lightning, magic, spellcasting, staffs, wizards].shuffle
-
-addTagsToQuest(matt_quest_20_tags, matt_quest_20)
-
-quest_20_likes = [hero, rain]
-addLikesToQuest(quest_20_likes, matt_quest_20)
-
 # Matt quest 21 - Audio
-
 matt_quest_21 = Quest.new(title: "A breakout hit by a band of bards", text: "Spellcaster Apprentices is a firm supporter of the arts, especially those related to spellcasting!", quest_type: "audio", user_id: matt.id)
 
 quest_21_audio = File.open('app/assets/adventr_seeder_images/quest_audio/do_you_believe_in_magic.mp3')
 matt_quest_21.images.attach(io: quest_21_audio, filename: 'do_you_believe_in_magic.mp3')
 
-matt_quest_21_tags = [abjuration, artificers, bards, blood_magic, clerics, conjuration, divination, druids, dynamos, enchantment, evocation, familiars, illusion, magic, necromancy, paladins, sorcerers, spellcasting, transmutation, wizards].shuffle
-
-addTagsToQuest(matt_quest_21_tags, matt_quest_21)
-
-quest_21_likes = [terriblis, kmsvr, carl]
-addLikesToQuest(quest_21_likes, matt_quest_21)
-
 # Jess quests
 # Jess quest 22 - Text
-
 jess_quest_22 = Quest.new(title: "Looking for a new member for our party.", text: "We're a group of mostly rogues, rangers, and druids, though we're open to most other classes. Our general choice in quest leans towards hunting for supplies for alchemists/smaller settlements, tracking down and potentially eliminating bandits, or maintenance of the natural balance of wild areas. You must have the following characterstics to apply:\nA love and respect of nature,\nA standard bronze ranking in the generalistic system\nExperience working with a team of any size above and including 3 three members\nA willingness to learn and share your own knowledge\n100+ years of senior developer experience\n\nWe look foward to hearing from all applicants!", quest_type: "text", user_id: jess.id)
-
-jess_quest_22_tags = [adventure, alchemy, bandits, beasts, creatures, bows, caravans, cave, commoners, dire_wolves, druids, dungeons, elves, earth, escort_quest, exploration, goblins, goblin_champions, good, hunt, lawful, magical_creatures, monster_extermination, monster_nest, neutral, mountains, pseudodragons, rangers, rescue_mission, rogues, spell_components, the_watch, undead, wilderness, wind].shuffle
-
-addTagsToQuest(jess_quest_22_tags, jess_quest_22)
-
-quest_22_likes = [hero]
-addLikesToQuest(quest_22_likes, jess_quest_22)
 
 # Jess quest 23 - Image
 
@@ -798,13 +620,6 @@ jess_quest_23.images.attach(io: quest_23_image_1, filename: 'goblin_king.jpg')
 quest_23_image_2 = File.open('app/assets/adventr_seeder_images/quest_images/quest_23/goblin_king_2.jpg')
 jess_quest_23.images.attach(io: quest_23_image_2, filename: 'goblin_king_2.jpg')
 
-jess_quest_23_tags = [creatures, diamond_rank, evil, goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, guilds, hunt, monster_extermination, obsidian_rank, platinum_rank, warriors, barbarians, monks, paladins, fighters].shuffle
-
-addTagsToQuest(jess_quest_23_tags, jess_quest_23)
-
-quest_23_likes = [hero, goblin_slayer]
-addLikesToQuest(quest_23_likes, jess_quest_23)
-
 # Jess quest 24 - Image
 
 jess_quest_24 = Quest.new(title: "Looking for an appraisal on a seemingly magical bow", text: "No known effects yet. Presumed to be free of curses as our idiot of a rogue seems fine after picking it up with his bare hands. Willing to negotiate prior to appraisal for costs of evaluation.", quest_type: "image", user_id: jess.id)
@@ -812,27 +627,14 @@ jess_quest_24 = Quest.new(title: "Looking for an appraisal on a seemingly magica
 quest_24_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_24/unknown_bow.jpg')
 jess_quest_24.images.attach(io: quest_24_image_1, filename: 'unknown_bow.jpg')
 
-jess_quest_24_tags = [artifacts, artificers, blacksmithing, bows, contracts, divination, enchantment, magic_items, rare, transmutation, wizards].shuffle
-
-addTagsToQuest(jess_quest_24_tags, jess_quest_24)
-
-quest_24_likes = [terriblis, matt, ingrid, kmsvr, catherine]
-addLikesToQuest(quest_24_likes, jess_quest_24)
-
 # Jess quest 25 - Image
-
 jess_quest_25 = Quest.new(title: "Mutated kuo-toa parts for sale", text: "Before anyone starts, it's not the sapient variety. Even if it was, these monsters were so mutated by some sick, unidentified strain of mana that they were damn near unrecognizable at first. The parts seem to be poison- and water-aligned to some extent like normal, but also carry a disturbing amount of acidic mana. That's the best layman guess, a good alchemist will tell you more. Also, I guess if anyone wants their daggers we'll sell them cheaply. Same alignments on the enchantments, low quality. Picture related: like that, but somewhat more inside-out.", quest_type: "image", user_id: jess.id)
 
 quest_25_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_25/kuo_toa.png')
 jess_quest_25.images.attach(io: quest_25_image_1, filename: 'kuo_toa.png')
 
-jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchantment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components].shuffle
 
-addTagsToQuest(jess_quest_25_tags, jess_quest_25)
-
-quest_25_likes = [terriblis, matt, goblin_slayer, rain, carl]
-addLikesToQuest(quest_25_likes, jess_quest_25)
-
+#Top Section
 # Jess quest 26 - Quote
 
 jess_quest_26 = Quest.new(title: "Nature, for me is raw and dangerous and difficult and beautiful and unnerving.", text: "Hollowseeker Goldsworthy", quest_type: "quote", user_id: jess.id)
@@ -1797,13 +1599,246 @@ reblog_list = [hero_reblog_1, hero_reblog_2, hero_reblog_3, terriblis_reblog_4, 
 #   reblog.save
 # end
 
-combined_list = quest_list.concat(reblog_list).shuffle
-
 combined_list.each do |inst|
   inst.save
 end
 
-# -------------------------------Reblogs End-----------------------------------
+#-------------------------------Reblogs End------------------------------------
+
+#-------------------------Add Tags to Quest/Reblog-----------------------------
+
+# Function for adding an array of tags to a quest/reblog
+def addTagsToQuest(tags, quest)
+  tags.each_with_index do |tag, idx|
+    TagJoin.create(taggable: quest, tag: tag, order: idx + 1)
+  end
+end
+
+# Quest 1
+hero_quest_1_tags = [hero_tag, dark_lord, demon_army, outsider, monster_extermination, monster_nest, plot].shuffle
+addTagsToQuest(hero_quest_1_tags, hero_quest_1)
+
+# Quest 2
+hero_quest_2_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, contracts, mystery].shuffle
+addTagsToQuest(hero_quest_2_tags, hero_quest_2)
+
+# Quest 3
+hero_quest_3_tags = [books, acid, alchemists, alchemy, artifacts, blood_magic, chaotic, cultists, demons, devils, evil, fire, grimoires, magic_items, necromancy, tomes].shuffle
+addTagsToQuest(hero_quest_3_tags, hero_quest_3)
+
+# Quest 4
+hero_quest_4_tags = [adamantine, artificers, blacksmithing, dwarves, gold, magic_items, merchants, mythic, mythril, platinum, power, protection].shuffle
+addTagsToQuest(hero_quest_4_tags, hero_quest_4)
+
+# Quest 5
+hero_quest_5_tags = [hero_tag, adventure, chaotic, good, guilds, legendary, paladins, plot].shuffle
+addTagsToQuest(hero_quest_5_tags, hero_quest_5)
+
+# Quest 6
+hero_quest_6_tags = [hero_tag, bandits, beasts, cave, commoners, contracts, divination, escort_quest, exploration, fetch, forests, humans, hunt, chaotic, magical_creatures, murder, mystery, neutral, outsider, plot, rescue_mission, the_watch, trolls, warriors, wilderness].shuffle
+addTagsToQuest(hero_quest_6_tags, hero_quest_6)
+
+# Quest 7
+hero_quest_7_tags = [bards, magic, monster_extermination, enchantment, fey].shuffle
+addTagsToQuest(hero_quest_7_tags, hero_quest_7)
+
+# Quest 8
+terriblis_quest_8_tags = [barbarians, blood_magic, blood_oath, clerics, evil_overlords, fallen_kingdom, lawful, lich, murder, necromancy, paladins, scholars, spell_components, spellcasting, undead, warlocks].shuffle
+addTagsToQuest(terriblis_quest_8_tags, terriblis_quest_8)
+
+# Quest 9
+terriblis_quest_9_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuration, dragons, familiars, fire, ice, lightning, magical_creatures, necromancy, sorcerers, sorcery, transmutation, undead, warlocks, wizards, wurms].shuffle
+addTagsToQuest(terriblis_quest_9_tags, terriblis_quest_9)
+
+# Quest 10
+terriblis_quest_10_tags = [ancients, beasts, chaotic, creatures, evil, magical_creatures, monster_extermination, monster_nest, outer_planes].shuffle
+addTagsToQuest(terriblis_quest_10_tags, terriblis_quest_10)
+
+# Quest 11
+terriblis_quest_11_tags = [assassins, bandits, blood_oath, contracts, hero_tag, murder, political_intrigue, rogues, spies].shuffle
+addTagsToQuest(terriblis_quest_11_tags, terriblis_quest_11)
+
+# Quest 12
+terriblis_quest_12_tags = [aristocrats, chaotic, dark_lord, evil, evil_overlords, lawful, murder, nobles, political_intrigue, power, spies].shuffle
+addTagsToQuest(terriblis_quest_12_tags, terriblis_quest_12)
+
+# Quest 13
+terriblis_quest_13_tags = [aristocrats, bards, dark_lord, evil, evil_overlords, hero_tag, mystery, nobles, plot].shuffle
+addTagsToQuest(terriblis_quest_13_tags, terriblis_quest_13)
+
+# Quest 14
+terriblis_quest_14_tags = [bards, caravans, magic_items, merchants, sorcery, wizards].shuffle
+addTagsToQuest(terriblis_quest_14_tags, terriblis_quest_14)
+
+# Quest 15
+matt_quest_15_tags = [abjuration, academy, adventure, artificers, bards, books, bronze_rank, clerics, commoners, contracts, conjuration, diamond_rank, divination, druids, dynamos, elves, enchantment, evocation, exploration, gold_rank, guilds, illusion, magic, magic_items, necromancy, neutral, obsidian_rank, paladins, platinum_rank, porcelain_rank, power, protection, scholars, silver_rank, sorcerers, steel_rank, tomes, transmutation, warlocks, wizards].shuffle
+addTagsToQuest(matt_quest_15_tags, matt_quest_15)
+
+# Quest 16
+matt_quest_16_tags = [adamantine, arcane_focus, artifacts, axes, books, bows, daggers, dungeons, enchantment, grimoires, hammers, legendary, magic_items, merchants, mythic, mythril, platinum, polearms, silver, gold, spell_components, spellbooks, staffs, swords, tomes].shuffle
+addTagsToQuest(matt_quest_16_tags, matt_quest_16)
+
+# Quest 17
+matt_quest_17_tags = [alchemists, alchemy, army, barbarians, blood_magic, chaotic, explosives, fighters, lawful, magic, merchants, power, transmutation, warriors].shuffle
+addTagsToQuest(matt_quest_17_tags, matt_quest_17)
+
+# Quest 18
+matt_quest_18_tags = [academy, arcane_focus, artifacts, artificers, bards, clerics, common, enchantment, magic_items, merchants, necromancy, power, rare, sorcerers, spellcasting, staffs, warlocks, wizards, druids].shuffle
+addTagsToQuest(matt_quest_18_tags, matt_quest_18)
+
+# Quest 19
+matt_quest_19_tags = [academy, books, divination, magic, magic_items, magical_creatures, merchants, nobles, power, protection, sorcery, spellcasting, unseelie_court, fey, vampires].shuffle
+addTagsToQuest(matt_quest_19_tags, matt_quest_19)
+
+# Quest 20
+matt_quest_20_tags = [academy, anarchy, bronze_rank, chaotic, beasts, creatures, forests, lightning, magic, spellcasting, staffs, wizards].shuffle
+addTagsToQuest(matt_quest_20_tags, matt_quest_20)
+
+# Quest 21
+matt_quest_21_tags = [abjuration, artificers, bards, blood_magic, clerics, conjuration, divination, druids, dynamos, enchantment, evocation, familiars, illusion, magic, necromancy, paladins, sorcerers, spellcasting, transmutation, wizards].shuffle
+addTagsToQuest(matt_quest_21_tags, matt_quest_21)
+
+# Quest 22
+jess_quest_22_tags = [adventure, alchemy, bandits, beasts, creatures, bows, caravans, cave, commoners, dire_wolves, druids, dungeons, elves, earth, escort_quest, exploration, goblins, goblin_champions, good, hunt, lawful, magical_creatures, monster_extermination, monster_nest, neutral, mountains, pseudodragons, rangers, rescue_mission, rogues, spell_components, the_watch, undead, wilderness, wind].shuffle
+addTagsToQuest(jess_quest_22_tags, jess_quest_22)
+
+# Quest 23
+jess_quest_23_tags = [creatures, diamond_rank, evil, goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, guilds, hunt, monster_extermination, obsidian_rank, platinum_rank, warriors, barbarians, monks, paladins, fighters].shuffle
+addTagsToQuest(jess_quest_23_tags, jess_quest_23)
+
+# Quest 24
+jess_quest_24_tags = [artifacts, artificers, blacksmithing, bows, contracts, divination, enchantment, magic_items, rare, transmutation, wizards].shuffle
+addTagsToQuest(jess_quest_24_tags, jess_quest_24)
+
+# Quest 25
+jess_quest_25_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchantment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components].shuffle
+addTagsToQuest(jess_quest_25_tags, jess_quest_25)
+
+
+
+# We're here
+
+
+#-----------------------Add Tags to Quest/Reblog End---------------------------
+
+#------------------------Add Likes to Quest/Reblog-----------------------------
+
+# Function for adding an array of likes to a quest
+def addLikesToQuest(users, quest)
+  users.each do |user|
+    user.liked_quests << quest
+  end
+end
+# Function for adding an array of likes to a quest
+def addLikesToReblog(users, reblog)
+  users.each do |user|
+    user.liked_reblogs << reblog
+  end
+end
+
+# Quest 1
+quest_1_likes = [matt, jess, kmsvr]
+addLikesToQuest(quest_1_likes, hero_quest_1)
+
+# Quest 2
+quest_2_likes = [kmsvr, rain, carl]
+addLikesToQuest(quest_2_likes, hero_quest_2)
+
+# Quest 3
+quest_3_likes = [terriblis, matt, rain, catherine]
+addLikesToQuest(quest_3_likes, hero_quest_3)
+
+# Quest 4
+quest_4_likes = [ingrid, kmsvr, rain]
+addLikesToQuest(quest_4_likes, hero_quest_4)
+
+# Quest 5
+quest_5_likes = [matt, kmsvr, goblin_slayer, rain, carl, catherine]
+addLikesToQuest(quest_5_likes, hero_quest_5)
+
+# Quest 6
+quest_6_likes = [rain, carl, catherine]
+addLikesToQuest(quest_6_likes, hero_quest_6)
+
+# Quest 7
+quest_7_likes = [matt, kmsvr, rain]
+addLikesToQuest(quest_7_likes, hero_quest_7)
+
+# Quest 8
+quest_8_likes = [matt, ingrid, kmsvr, rain]
+addLikesToQuest(quest_8_likes, terriblis_quest_8)
+
+# Quest 9
+quest_9_likes = [hero, matt, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(quest_9_likes, terriblis_quest_9)
+
+# Quest 10
+quest_10_likes = [ingrid, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(quest_10_likes, terriblis_quest_10)
+
+# Quest 11
+quest_11_likes = [hero, catherine]
+addLikesToQuest(quest_11_likes, terriblis_quest_11)
+
+# Quest 12
+quest_12_likes = [jess, ingrid, kmsvr, catherine]
+addLikesToQuest(quest_12_likes, terriblis_quest_12)
+
+# Quest 13
+quest_13_likes = [rain, carl, catherine]
+addLikesToQuest(quest_13_likes, terriblis_quest_13)
+
+# Quest 14
+quest_14_likes = [hero, ingrid, catherine]
+addLikesToQuest(quest_14_likes, terriblis_quest_14)
+
+# Quest 15
+quest_15_likes = [terriblis, rain]
+addLikesToQuest(quest_15_likes, matt_quest_15)
+
+# Quest 16
+quest_16_likes = [hero, jess, ingrid, goblin_slayer, carl]
+addLikesToQuest(quest_16_likes, matt_quest_16)
+
+# Quest 17
+quest_17_likes = [hero, terriblis, ingrid, goblin_slayer]
+addLikesToQuest(quest_17_likes, matt_quest_17)
+
+# Quest 18
+quest_18_likes = [terriblis, rain, catherine]
+addLikesToQuest(quest_18_likes, matt_quest_18)
+
+# Quest 19
+quest_19_likes = [terriblis, kmsvr, goblin_slayer, rain]
+addLikesToQuest(quest_19_likes, matt_quest_19)
+
+# Quest 20
+quest_20_likes = [hero, rain]
+addLikesToQuest(quest_20_likes, matt_quest_20)
+
+# Quest 21
+quest_21_likes = [terriblis, kmsvr, carl]
+addLikesToQuest(quest_21_likes, matt_quest_21)
+
+# Quest 22
+quest_22_likes = [hero]
+addLikesToQuest(quest_22_likes, jess_quest_22)
+
+# Quest 23
+quest_23_likes = [hero, goblin_slayer]
+addLikesToQuest(quest_23_likes, jess_quest_23)
+
+# Quest 24
+quest_24_likes = [terriblis, matt, ingrid, kmsvr, catherine]
+addLikesToQuest(quest_24_likes, jess_quest_24)
+
+# Quest 25
+quest_25_likes = [terriblis, matt, goblin_slayer, rain, carl]
+addLikesToQuest(quest_25_likes, jess_quest_25)
+
+# Likes spot
+
+#----------------------Add Likes to Quest/Reblog End---------------------------
 
 # Follows Section
 def addFollowsToUser(follows, user)
