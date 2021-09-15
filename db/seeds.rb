@@ -1722,13 +1722,36 @@ rain_reblog_24_likes = [kmsvr, catherine]
 addLikesToQuest(rain_reblog_24_likes, rain_reblog_24)
 
 # Carl Reblog 25
-carl_reblog_25 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
-# We're here now
+carl_reblog_25 = Reblog.new(user_id: carl.id, quest_id: hero_quest_2.id, text: "The AI likes to mess with us sometimes, especially if nobody's paying to push you into the quest. I once found a letter inside of the corpse of a ogre waiter. Apparently someone asked him to 'pass a note' and he took it to mean... well you get it. The logical leaps that NPCs make is a goddamn mystery in itself.")
+
+carl_reblog_25_tags = [hero_tag, demon_army, plot, wizards, artifacts, books, contracts, mystery, ai].shuffle
+
+addTagsToQuest(carl_reblog_25_tags, carl_reblog_25)
+
+carl_reblog_25_likes = [kmsvr, rain]
+addLikesToQuest(carl_reblog_25_likes, carl_reblog_25)
 
 # Carl Reblog 26
-carl_reblog_26 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
+carl_reblog_26 = Reblog.new(user_id: carl.id, quest_id: jess_quest_25.id, text: "I'd like to purchase some for testing purposes. I'd also like samples of any other aberrant materials you have.")
+
+carl_reblog_26_tags = [academy, acid, alchemists, alchemy, beasts, cave, creatures, daggers, dungeons, enchantment, ice, magic_items, magical_creatures, merchants, monster_extermination, monster_nest, spell_components, explosives].shuffle
+
+addTagsToQuest(carl_reblog_26_tags, carl_reblog_26)
+
+carl_reblog_26_likes = [terriblis, matt, goblin_slayer, rain]
+addLikesToQuest(carl_reblog_26_likes, carl_reblog_26)
+# We're here now
+
 # Carl Reblog 27
-carl_reblog_27 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
+carl_reblog_27 = Reblog.new(user_id: carl.id, quest_id: terriblis_quest_9.id, text: "Carl: My teammate Donut would be interested in that training. Let's meet up on the next floor and hash out a deal.\nDonut: WHAT'S CRYSTAL WASH? THAT SOUNDS LOVELY CARL, I WANT THAT.")
+
+carl_reblog_27_tags = [abjuration, acid, alchemy, bards, blood_magic, conjuration, dragons, familiars, fire, ice, lightning, magical_creatures, necromancy, sorcerers, sorcery, transmutation, undead, warlocks, wizards, wurms].shuffle
+
+addTagsToQuest(carl_reblog_27_tags, carl_reblog_27)
+
+carl_reblog_27_likes = [matt, kmsvr, goblin_slayer, rain, catherine]
+addLikesToQuest(carl_reblog_27_likes, carl_reblog_27)
+
 # Catherine Reblog 28
 catherine_reblog_28 = Reblog.new(user_id: catherine.id, quest_id: null, text: "")
 # Catherine Reblog 29
