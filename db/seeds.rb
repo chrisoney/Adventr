@@ -1661,21 +1661,70 @@ kmsvr_reblog_18_likes = [hero, matt, jess, ingrid, goblin_slayer, carl, catherin
 addLikesToQuest(kmsvr_reblog_18_likes, kmsvr_reblog_18)
 
 # Goblin Slayer Reblog 19
-goblin_slayer_reblog_19 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
-# We're here now
+goblin_slayer_reblog_19 = Reblog.new(user_id: goblin_slayer.id, quest_id: jess_quest_22.id, text: "I will not join your team, as I have a team. You mentioned goblins. Tell me about the goblins.")
+
+goblin_slayer_reblog_19_tags = [adventure, commoners, goblins, goblin_champions, hunt, monster_extermination, monster_nest, wilderness].shuffle
+
+addTagsToQuest(goblin_slayer_reblog_19_tags, goblin_slayer_reblog_19)
+
+goblin_slayer_reblog_19_likes = [hero]
+addLikesToQuest(goblin_slayer_reblog_19_likes, goblin_slayer_reblog_19)
 
 # Goblin Slayer Reblog 20
-goblin_slayer_reblog_20 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
+goblin_slayer_reblog_20 = Reblog.new(user_id: goblin_slayer.id, quest_id: jess_quest_23.id, text: "I will go there immediately.")
+
+goblin_slayer_reblog_20_tags = [creatures, diamond_rank, evil, goblins, goblin_champions, goblin_lords, goblin_kings, gold_rank, guilds, hunt, monster_extermination, obsidian_rank, platinum_rank, warriors, barbarians, monks, paladins, fighters].shuffle
+
+addTagsToQuest(goblin_slayer_reblog_20_tags, goblin_slayer_reblog_20)
+
+goblin_slayer_reblog_20_likes = [hero]
+addLikesToQuest(goblin_slayer_reblog_20_likes, goblin_slayer_reblog_20)
+
 # Goblin Slayer Reblog 21
-goblin_slayer_reblog_21 = Reblog.new(user_id: goblin_slayer.id, quest_id: null, text: "")
+goblin_slayer_reblog_21 = Reblog.new(user_id: goblin_slayer.id, quest_id: kmsvr_quest_36.id, text: "This is pro-goblin propaganda. They told me it didn't exist but I was right.")
+
+goblin_slayer_reblog_21_tags = [academy, adventure, ai, alchemists, ancients, aristocrats, artifacts, assassins, blacksmithing, chaotic, commoners, creler, demons, djinn, dragons, dungeons, escort_quest, exploration, fey, goblins, good, humans, legendary, magical_creatures, necromancy, political_intrigue, rescue_mission, the_watch, evil].shuffle
+
+addTagsToQuest(goblin_slayer_reblog_21_tags, goblin_slayer_reblog_21)
+
+goblin_slayer_reblog_21_likes = [terriblis, matt, jess, ingrid, rain]
+addLikesToQuest(goblin_slayer_reblog_21_likes, goblin_slayer_reblog_21)
+
 # Rain Reblog 22
-rain_reblog_22 = Reblog.new(user_id: rain.id, quest_id: null, text: "")
+rain_reblog_22 = Reblog.new(user_id: rain.id, quest_id: carl_quest_57.id, text: "I've had some really weird interactions, though I'm not sure we're talking about the same system, which is quite interesting in itself. Do you think we're in alternate timelines. Maybe dimensions? There's a difference. Let's start with simularities. Have you ever met someone with an injured soul? How does leveling work for you? Is there a cap? Do you know what \"blues\" are? I have more questions, but I'll hold onto them for now.")
+
+rain_reblog_22_tags = [ai, chaotic, dungeons, evil, gods, murder].shuffle
+
+addTagsToQuest(rain_reblog_22_tags, rain_reblog_22)
+
+rain_reblog_22_likes = [hero, kmsvr]
+addLikesToQuest(rain_reblog_22_likes, rain_reblog_22)
+
+
 # Rain Reblog 23
-rain_reblog_23 = Reblog.new(user_id: rain.id, quest_id: null, text: "")
+rain_reblog_23 = Reblog.new(user_id: rain.id, quest_id: goblin_slayer_quest_48.id, text: "Is this a normal way to team up in real life? It seems very Dungeons and Dragons.")
+
+rain_reblog_23_tags = [goblins, goblin_champions, goblin_lords, goblin_kings, adventure, clerics, dragonborn, druids, elves, exploration, guilds, monks, monster_extermination, dwarves, humans, protection, rangers, silver_rank, warriors, outsider].shuffle
+
+addTagsToQuest(rain_reblog_23_tags, rain_reblog_23)
+
+rain_reblog_23_likes = [hero, matt, catherine]
+addLikesToQuest(rain_reblog_23_likes, rain_reblog_23)
+
 # Rain Reblog 24
-rain_reblog_24 = Reblog.new(user_id: rain.id, quest_id: null, text: "")
+rain_reblog_24 = Reblog.new(user_id: rain.id, quest_id: carl_quest_62.id, text: "I have no idea why someone would want to do a catshow of all things but now I can't get the idea out of my head. This is hilarious, I have to try it.")
+
+rain_reblog_24_tags = [ai, beasts,gods, goddesses, gold, gold_rank, lawful, princess, spies].shuffle
+
+addTagsToQuest(rain_reblog_24_tags, rain_reblog_24)
+
+rain_reblog_24_likes = [kmsvr, catherine]
+addLikesToQuest(rain_reblog_24_likes, rain_reblog_24)
+
 # Carl Reblog 25
 carl_reblog_25 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
+# We're here now
+
 # Carl Reblog 26
 carl_reblog_26 = Reblog.new(user_id: carl.id, quest_id: null, text: "")
 # Carl Reblog 27
