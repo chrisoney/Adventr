@@ -1003,13 +1003,13 @@ jess_quest_28.images.attach(io: quest_28_audio_1, filename: 'born_to_be_wild.mp3
 # Quest 34 - Video
 # quest_34_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/viking_battle.mp4')
 # ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4')
-
+# HERE HERE HERE 
 # # Quest 35 - Audio
-quest_35_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/immigrant_song.mp3')
-ingrid_quest_35.images.attach(io: quest_35_audio_1, filename: 'immigrant_song.mp3')
+# quest_35_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/immigrant_song.mp3')
+# ingrid_quest_35.images.attach(io: quest_35_audio_1, filename: 'immigrant_song.mp3')
 
-quest_35_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/ride_of_the_valkyries.mp3')
-ingrid_quest_35.images.attach(io: quest_35_audio_2, filename: 'ride_of_the_valkyries.mp3')
+# quest_35_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/ride_of_the_valkyries.mp3')
+# ingrid_quest_35.images.attach(io: quest_35_audio_2, filename: 'ride_of_the_valkyries.mp3')
 
 # # Quest 37 - Image
 # quest_37_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_37/horns_of_hammerad_by_mg.jpg')
@@ -1031,8 +1031,8 @@ ingrid_quest_35.images.attach(io: quest_35_audio_2, filename: 'ride_of_the_valky
 # kmsvr_quest_41.images.attach(io: quest_41_video_1, filename: 'wandering_inn_fan_video.mp4')
 
 # # Quest 42 - Audio
-quest_42_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/we_will_rock_you.mp3')
-kmsvr_quest_42.images.attach(io: quest_42_audio_1, filename: 'we_will_rock_you.mp3')
+# quest_42_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/we_will_rock_you.mp3')
+# kmsvr_quest_42.images.attach(io: quest_42_audio_1, filename: 'we_will_rock_you.mp3')
 
 # # Quest 44 - Image
 # quest_44_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_44/goblin_champion_1.jpg')
@@ -1060,8 +1060,8 @@ kmsvr_quest_42.images.attach(io: quest_42_audio_1, filename: 'we_will_rock_you.m
 # goblin_slayer_quest_48.images.attach(io: quest_48_video_1, filename: 'party_formation.mp4')
 
 # # Quest 49 - Audio
-quest_49_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/goblin_slayer_theme.mp3')
-goblin_slayer_quest_49.images.attach(io: quest_49_audio_1, filename: 'goblin_slayer_theme.mp3')
+# quest_49_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/goblin_slayer_theme.mp3')
+# goblin_slayer_quest_49.images.attach(io: quest_49_audio_1, filename: 'goblin_slayer_theme.mp3')
 
 # # Quest 51 - Image
 # quest_51_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_51/slime.jpg')
@@ -1082,17 +1082,17 @@ goblin_slayer_quest_49.images.attach(io: quest_49_audio_1, filename: 'goblin_sla
 # rain_quest_55.images.attach(io: quest_55_video_1, filename: 'you_shall_not_pass.mp4')
 
 # # Quest 56 - Audio
-quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/concerning_hobbits.mp3')
-rain_quest_56.images.attach(io: quest_56_audio_1, filename: 'concerning_hobbits.mp3')
+# quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/concerning_hobbits.mp3')
+# rain_quest_56.images.attach(io: quest_56_audio_1, filename: 'concerning_hobbits.mp3')
 
-quest_56_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/song_of_durin.mp3')
-rain_quest_56.images.attach(io: quest_56_audio_2, filename: 'song_of_durin.mp3')
+# quest_56_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/song_of_durin.mp3')
+# rain_quest_56.images.attach(io: quest_56_audio_2, filename: 'song_of_durin.mp3')
 
-quest_56_audio_3 = File.open('app/assets/adventr_seeder_images/quest_audio/use_well_the_days.mp3')
-rain_quest_56.images.attach(io: quest_56_audio_3, filename: 'use_well_the_days.mp3')
+# quest_56_audio_3 = File.open('app/assets/adventr_seeder_images/quest_audio/use_well_the_days.mp3')
+# rain_quest_56.images.attach(io: quest_56_audio_3, filename: 'use_well_the_days.mp3')
 
-quest_56_audio_4 = File.open('app/assets/adventr_seeder_images/quest_audio/the_bridge_of _khazad_dum.mp3')
-rain_quest_56.images.attach(io: quest_56_audio_4, filename: 'the_bridge_of _khazad_dum.mp3')
+# quest_56_audio_4 = File.open('app/assets/adventr_seeder_images/quest_audio/the_bridge_of _khazad_dum.mp3')
+# rain_quest_56.images.attach(io: quest_56_audio_4, filename: 'the_bridge_of _khazad_dum.mp3')
 
 # # Quest 58 - Image
 # quest_58_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_58/princess_donut.jpg')
@@ -1114,11 +1114,11 @@ rain_quest_56.images.attach(io: quest_56_audio_4, filename: 'the_bridge_of _khaz
 # carl_quest_62.images.attach(io: quest_62_video_1, filename: 'cat_show.mp4')
 
 # # Quest 63 - Audio
-quest_63_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/rainbow_in_the_dark.mp3')
-carl_quest_63.images.attach(io: quest_63_audio_1, filename: 'rainbow_in_the_dark.mp3')
+# quest_63_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/rainbow_in_the_dark.mp3')
+# carl_quest_63.images.attach(io: quest_63_audio_1, filename: 'rainbow_in_the_dark.mp3')
 
-quest_63_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/i_believe_in_a_thing_called_love.mp3')
-carl_quest_63.images.attach(io: quest_63_audio_2, filename: 'i_believe_in_a_thing_called_love.mp3')
+# quest_63_audio_2 = File.open('app/assets/adventr_seeder_images/quest_audio/i_believe_in_a_thing_called_love.mp3')
+# carl_quest_63.images.attach(io: quest_63_audio_2, filename: 'i_believe_in_a_thing_called_love.mp3')
 
 # # Quest 65 - Image
 # quest_65_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_65/scepter.png')
@@ -1144,8 +1144,8 @@ carl_quest_63.images.attach(io: quest_63_audio_2, filename: 'i_believe_in_a_thin
 # catherine_quest_69.images.attach(io: quest_69_video_1, filename: 'summoning_demons.mp4')
 
 # # Quest 70 - Audio
-quest_70_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/the_girl_who_climbed_the_tower.mp3')
-catherine_quest_70.images.attach(io: quest_70_audio_1, filename: 'the_girl_who_climbed_the_tower.mp3')
+# quest_70_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/the_girl_who_climbed_the_tower.mp3')
+# catherine_quest_70.images.attach(io: quest_70_audio_1, filename: 'the_girl_who_climbed_the_tower.mp3')
 
 #-------------------------Add Images to Quest End------------------------------
 
