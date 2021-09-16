@@ -150,6 +150,7 @@ class Explore extends React.Component {
       return <QuestContainer
         key={`quest-${quest.id}`}
         updated_at={quest.updated_at}
+        created_at={quest.created_at}
         noteCount={quest.likes}
         quest={quest}
         loc='explore'
@@ -160,6 +161,7 @@ class Explore extends React.Component {
       return <QuestContainer
         key={`reblog-${reblog.id}`}
         updated_at={reblog.updated_at}
+        created_at={reblog.created_at}
         noteCount={reblog.likes}
         reblog={reblog}
         loc='explore'
@@ -187,14 +189,15 @@ class Explore extends React.Component {
     }
     
     totalList = questList.concat(reblogList).reverse();
-    if (pageTab === 'Top') {
+    if (pageTab === 'Top' || pageTab === 'Trending') {
       totalList = totalList.sort((a, b) => {
         if (a.props.noteCount > b.props.noteCount) return -1;
         else return 1;
       })
     } else if (pageTab === 'Recent' || pageTab === 'For You') {
       totalList = totalList.sort((a, b) => {
-        if (a.props.updated_at > b.props.updated_at) return -1;
+        console.log(a.props.pageCount)
+        if (a.props.created_at > b.props.created_at) return -1;
         else return 1;
       })
     }
