@@ -258,10 +258,10 @@ class Explore extends React.Component {
       tag.users.includes(currentUser.id)
     );
     const newTagPictures = [
-      '/assets/river_world.jpg',
-      '/assets/circle_sample.jpg',
-      '/assets/dark_forest.jpg',
-      '/assets/tree_house.jpg',
+      window.riverWorldImage,
+      window.circleSampleImage,
+      window.darkForestImage,
+      window.treeHouseImage
     ];
     let newTagPictureIndex = 0;
     // style={{color: "red"}}
@@ -427,7 +427,7 @@ class Explore extends React.Component {
     
     const tagDetailGenerator = (pos) => {
       let userPageId = null;
-      let imageSource = '/assets/river_world.jpg';
+      let imageSource = window.riverWorldImage;
       if (tag.quest_data.user) {
         imageSource = tag.quest_data.quest_urls[0];
         userPageId = tag.quest_data.user.id;

@@ -4,8 +4,8 @@ class Icons extends React.Component {
   render() {
     return (
       <div className="icons">
-        <img src="/assets/fancy-a.png" className="logo" />
-        <img src="/assets/vector/sword.svg" className="filter sword" />
+        <img src={window.fancyAImage} className="logo" />
+        <img src={window.swordImage} className="filter sword" />
         {/*must test*/}
         <svg
           className="skull"

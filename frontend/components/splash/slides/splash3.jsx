@@ -16,7 +16,7 @@ class Splash3 extends React.Component {
             </div>
           </div>
           <div className="splash-3-image">
-            <img src="/assets/splash_3_image.png"  />
+            <img src={window.splashThreeImage}  />
           </div>
         </div>
       </>
