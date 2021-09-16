@@ -4,7 +4,7 @@ import React from 'react';
 const Loading = (props) => {
   return (
     <div className={props.background || 'black-container'}>
-      <img src="<%= image_url('dragon-logo.png') %>" className="dragon-loader" alt='dragon logo'/>
+      <img src={window.dragonLogoUrl} className="dragon-loader" alt='dragon logo'/>
     </div>
   );
 };
