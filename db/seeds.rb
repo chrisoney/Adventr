@@ -1078,8 +1078,8 @@ ingrid_quest_30 = Quest.find(70)
 # rain_quest_53.images.attach(io: quest_53_image_2, filename: 'grudges.jpg')
 
 # Quest 55 - Video
-quest_55_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/you_shall_not_pass.mp4')
-rain_quest_55.images.attach(io: quest_55_video_1, filename: 'you_shall_not_pass.mp4')
+# quest_55_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/you_shall_not_pass.mp4')
+# rain_quest_55.images.attach(io: quest_55_video_1, filename: 'you_shall_not_pass.mp4')
 
 # # Quest 56 - Audio
 # quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/concerning_hobbits.mp3')
