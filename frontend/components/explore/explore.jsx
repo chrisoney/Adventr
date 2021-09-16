@@ -196,7 +196,6 @@ class Explore extends React.Component {
       })
     } else if (pageTab === 'Recent' || pageTab === 'For You') {
       totalList = totalList.sort((a, b) => {
-        console.log(a.props.pageCount)
         if (a.props.created_at > b.props.created_at) return -1;
         else return 1;
       })
