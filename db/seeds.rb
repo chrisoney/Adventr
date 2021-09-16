@@ -1110,8 +1110,8 @@ ingrid_quest_30 = Quest.find(70)
 # carl_quest_60.images.attach(io: quest_60_image_1, filename: 'iron_tangle.jpg')
 
 # Quest 62 - Video
-quest_62_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/cat_show.mp4')
-carl_quest_62.images.attach(io: quest_62_video_1, filename: 'cat_show.mp4')
+# quest_62_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/cat_show.mp4')
+# carl_quest_62.images.attach(io: quest_62_video_1, filename: 'cat_show.mp4')
 
 # # Quest 63 - Audio
 # quest_63_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/rainbow_in_the_dark.mp3')
