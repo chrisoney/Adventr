@@ -903,8 +903,8 @@ ingrid_quest_30 = Quest.find(70)
 # hero_quest_4.images.attach(io: quest_4_image_2, filename: 'pauldron_2.jpg')
 
 # Quest 6 - Video
-quest_6_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/everything_goes_wrong.mp4')
-hero_quest_6.images.attach(io: quest_6_video_1, filename: 'everything_goes_wrong.mp4')
+# quest_6_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/everything_goes_wrong.mp4')
+# hero_quest_6.images.attach(io: quest_6_video_1, filename: 'everything_goes_wrong.mp4')
 
 # # Quest 7 - Audio
 # quest_7_audio = File.open('app/assets/adventr_seeder_images/quest_audio/final_fantasy_battle.mp3')
@@ -927,8 +927,8 @@ hero_quest_6.images.attach(io: quest_6_video_1, filename: 'everything_goes_wrong
 # terriblis_quest_11.images.attach(io: quest_11_image_1, filename: 'assassination_target.jpg')
 
 # Quest 13 - Video
-quest_13_video = File.open('app/assets/adventr_seeder_images/quest_videos/prozd_villain.mp4')
-terriblis_quest_11.images.attach(io: quest_13_video, filename: 'prozd_villain.mp4')
+# quest_13_video = File.open('app/assets/adventr_seeder_images/quest_videos/prozd_villain.mp4')
+# terriblis_quest_11.images.attach(io: quest_13_video, filename: 'prozd_villain.mp4')
 
 # # Quest 14 - Audio
 # quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/witch_drums.mp3')
@@ -953,8 +953,8 @@ terriblis_quest_11.images.attach(io: quest_13_video, filename: 'prozd_villain.mp
 # matt_quest_18.images.attach(io: quest_18_image_2, filename: 'wands.png')
 
 # Quest 20 - Video
-quest_20_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/lightning_bolt.mp4')
-matt_quest_20.images.attach(io: quest_20_video_1, filename: 'lightning_bolt.mp4')
+# quest_20_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/lightning_bolt.mp4')
+# matt_quest_20.images.attach(io: quest_20_video_1, filename: 'lightning_bolt.mp4')
 
 # quest_20_video_2 = File.open('app/assets/adventr_seeder_images/quest_videos/bean_wizard.mp4')
 # matt_quest_20.images.attach(io: quest_20_video_2, filename: 'bean_wizard.mp4')
@@ -979,9 +979,8 @@ matt_quest_20.images.attach(io: quest_20_video_1, filename: 'lightning_bolt.mp4'
 # jess_quest_25.images.attach(io: quest_25_image_1, filename: 'kuo_toa.png')
 
 # Quest 27 - Video
-quest_27_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/forest_parkour.mp4')
-jess_quest_27.images.attach(io: quest_27_video_1, filename: 'forest_parkour.mp4')
-
+# quest_27_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/forest_parkour.mp4')
+# jess_quest_27.images.attach(io: quest_27_video_1, filename: 'forest_parkour.mp4')
 # # Quest 28 - Audio
 # quest_28_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/born_to_be_wild.mp3')
 # jess_quest_28.images.attach(io: quest_28_audio_1, filename: 'born_to_be_wild.mp3')
@@ -1028,8 +1027,8 @@ ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4
 # kmsvr_quest_39.images.attach(io: quest_39_image_1, filename: 'lich.png')
 
 # Quest 41 - Video
-# quest_41_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/wandering_inn_fan_video.mp4')
-# kmsvr_quest_41.images.attach(io: quest_41_video_1, filename: 'wandering_inn_fan_video.mp4')
+quest_41_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/wandering_inn_fan_video.mp4')
+kmsvr_quest_41.images.attach(io: quest_41_video_1, filename: 'wandering_inn_fan_video.mp4')
 
 # # Quest 42 - Audio
 # quest_42_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/we_will_rock_you.mp3')
@@ -1057,8 +1056,8 @@ ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4
 # goblin_slayer_quest_46.images.attach(io: quest_46_image_1, filename: 'ogre.jpeg')
 
 # Quest 48 - Video
-# quest_48_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/party_formation.mp4')
-# goblin_slayer_quest_48.images.attach(io: quest_48_video_1, filename: 'party_formation.mp4')
+quest_48_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/party_formation.mp4')
+goblin_slayer_quest_48.images.attach(io: quest_48_video_1, filename: 'party_formation.mp4')
 
 # # Quest 49 - Audio
 # quest_49_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/goblin_slayer_theme.mp3')
@@ -1079,8 +1078,8 @@ ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4
 # rain_quest_53.images.attach(io: quest_53_image_2, filename: 'grudges.jpg')
 
 # Quest 55 - Video
-# quest_55_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/you_shall_not_pass.mp4')
-# rain_quest_55.images.attach(io: quest_55_video_1, filename: 'you_shall_not_pass.mp4')
+quest_55_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/you_shall_not_pass.mp4')
+rain_quest_55.images.attach(io: quest_55_video_1, filename: 'you_shall_not_pass.mp4')
 
 # # Quest 56 - Audio
 # quest_56_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/concerning_hobbits.mp3')
@@ -1111,8 +1110,8 @@ ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4
 # carl_quest_60.images.attach(io: quest_60_image_1, filename: 'iron_tangle.jpg')
 
 # Quest 62 - Video
-# quest_62_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/cat_show.mp4')
-# carl_quest_62.images.attach(io: quest_62_video_1, filename: 'cat_show.mp4')
+quest_62_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/cat_show.mp4')
+carl_quest_62.images.attach(io: quest_62_video_1, filename: 'cat_show.mp4')
 
 # # Quest 63 - Audio
 # quest_63_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/rainbow_in_the_dark.mp3')
@@ -1141,8 +1140,8 @@ ingrid_quest_34.images.attach(io: quest_34_video_1, filename: 'viking_battle.mp4
 # catherine_quest_67.images.attach(io: quest_67_image_3, filename: 'revenant.jpeg')
 
 # Quest 69 - Video
-# quest_69_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/summoning_demons.mp4')
-# catherine_quest_69.images.attach(io: quest_69_video_1, filename: 'summoning_demons.mp4')
+quest_69_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/summoning_demons.mp4')
+catherine_quest_69.images.attach(io: quest_69_video_1, filename: 'summoning_demons.mp4')
 
 # # Quest 70 - Audio
 # quest_70_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/the_girl_who_climbed_the_tower.mp3')
