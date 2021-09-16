@@ -931,8 +931,8 @@ hero_quest_7.images.attach(io: quest_7_audio, filename: 'final_fantasy_battle.mp
 # terriblis_quest_11.images.attach(io: quest_13_video, filename: 'prozd_villain.mp4')
 
 # # Quest 14 - Audio
-quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/witch_drums.mp3')
-terriblis_quest_14.images.attach(io: quest_14_audio, filename: 'witch_drums.mp3')
+# quest_14_audio = File.open('app/assets/adventr_seeder_images/quest_audio/witch_drums.mp3')
+# terriblis_quest_14.images.attach(io: quest_14_audio, filename: 'witch_drums.mp3')
 
 # # Quest 16 - Image
 # quest_16_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_16/magic_item_tug_of_war.png')
@@ -960,8 +960,8 @@ terriblis_quest_14.images.attach(io: quest_14_audio, filename: 'witch_drums.mp3'
 # matt_quest_20.images.attach(io: quest_20_video_2, filename: 'bean_wizard.mp4')
 
 # # Quest 21 - Audio
-quest_21_audio = File.open('app/assets/adventr_seeder_images/quest_audio/do_you_believe_in_magic.mp3')
-matt_quest_21.images.attach(io: quest_21_audio, filename: 'do_you_believe_in_magic.mp3')
+# quest_21_audio = File.open('app/assets/adventr_seeder_images/quest_audio/do_you_believe_in_magic.mp3')
+# matt_quest_21.images.attach(io: quest_21_audio, filename: 'do_you_believe_in_magic.mp3')
 
 # # Quest 23 - Image
 # quest_23_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_23/goblin_king.jpg')
@@ -982,8 +982,8 @@ matt_quest_21.images.attach(io: quest_21_audio, filename: 'do_you_believe_in_mag
 # quest_27_video_1 = File.open('app/assets/adventr_seeder_images/quest_videos/forest_parkour.mp4')
 # jess_quest_27.images.attach(io: quest_27_video_1, filename: 'forest_parkour.mp4')
 # # Quest 28 - Audio
-quest_28_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/born_to_be_wild.mp3')
-jess_quest_28.images.attach(io: quest_28_audio_1, filename: 'born_to_be_wild.mp3')
+# quest_28_audio_1 = File.open('app/assets/adventr_seeder_images/quest_audio/born_to_be_wild.mp3')
+# jess_quest_28.images.attach(io: quest_28_audio_1, filename: 'born_to_be_wild.mp3')
 
 # # Quest 30 - Image
 # quest_30_image_1 = File.open('app/assets/adventr_seeder_images/quest_images/quest_30/dire_wolves_1.jpeg')
