@@ -378,13 +378,13 @@ class Settings extends React.Component {
                   <div className='title'>Account</div>
                   <div className='description'>Adventurer's Gear</div>
                 </div>
-              <div
+              {/* <div
                 onClick={()=> this.switchOptions('dashboard')}
                 className='settings-right-panel'
               >
                 <div className='title'>Dashboard</div>
                 <div className='description'>Just for Testing</div>
-              </div>
+              </div> */}
             </div>
             <div className='settings-right-bottom'>
               <div className='settings-right-bottom-title'>Guilds</div>

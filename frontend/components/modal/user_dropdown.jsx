@@ -10,6 +10,7 @@ class UserDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.logoutActions = this.logoutActions.bind(this);
+    this.handleDeleteUser = this.handleDeleteUser.bind(this)
   }
 
   logoutActions(e) {
@@ -18,7 +19,16 @@ class UserDropdown extends React.Component {
     this.props.closeModal2();
   }
 
+  handleDeleteUser(e) {
+    e.preventDefault();
+    if (this.props.currentUser.id > 10) console.log(this.props.currentUser.id)
+    else console.log('goodbye')
+  }
+
   render() {
+    const { currentUser } = this.props;
+    let disabled = false;
+    if (currentUser.id <= 10) disabled = true;
     return (
       <>
         <div className="user-dropdown-header">
@@ -49,7 +59,13 @@ class UserDropdown extends React.Component {
         </div>
         <div className="user-dropdown-header">
           <div className="header-title">Guild</div>
-          <div className="header-button">Delete</div>
+          <div
+            className={`header-button delete-user ${currentUser.id <= 10 ? 'locked' : ''}`}
+            disabled={disabled}
+            onClick={this.handleDeleteUser}
+          >
+            Delete
+          </div>
         </div>
         <div className="user-dropdown-bottom-section"></div>
         <div className="user-dropdown-footer"></div>

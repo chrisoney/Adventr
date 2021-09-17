@@ -146,6 +146,9 @@
 				.header-button:hover {
 					cursor: pointer;
 				}
+				.delete-user.locked:hover {
+					cursor: not-allowed;
+				}
 			}
 			.user-dropdown-top-section {
 				display: flex;
