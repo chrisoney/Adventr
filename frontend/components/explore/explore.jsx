@@ -289,11 +289,11 @@ class Explore extends React.Component {
           if (newTagContent.quest_data.quest_urls) {
             const badEndings = ['wav', 'mp4', 'mp3']
             pictures = newTagContent.quest_data.quest_urls.slice(0, 2);
-            if (badEndings.includes(pictures[0].slice(pictures[0].length - 3))) {
+            if (pictures[0] && badEndings.includes(pictures[0].slice(pictures[0].length - 3))) {
               pictures[0] = newTagPictures[newTagPictureIndex % newTagPictures.length]
               newTagPictureIndex += 1;
             }
-            if (badEndings.includes(pictures[1].slice(pictures[1].length - 3))) {
+            if (pictures[1] && badEndings.includes(pictures[1].slice(pictures[1].length - 3))) {
               pictures[1] = newTagPictures[newTagPictureIndex % newTagPictures.length]
               newTagPictureIndex += 1;
             }
