@@ -287,7 +287,16 @@ class Explore extends React.Component {
           let newTagContent = newTags[y];
           const pictures = []
           if (newTagContent.quest_data.quest_urls) {
+            const badEndings = ['wav', 'mp4', 'mp3']
             pictures = newTagContent.quest_data.quest_urls.slice(0, 2);
+            if (badEndings.includes(picture[0].slice(picture[0].length - 3))) {
+              pictures[0] = newTagPictures[newTagPictureIndex % newTagPictures.length]
+              newTagPictureIndex += 1;
+            }
+            if (badEndings.includes(picture[1].slice(picture[1].length - 3))) {
+              pictures[1] = newTagPictures[newTagPictureIndex % newTagPictures.length]
+              newTagPictureIndex += 1;
+            }
           }
           while (pictures.length < 2) {
             pictures.push(newTagPictures[newTagPictureIndex % newTagPictures.length])
