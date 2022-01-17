@@ -201,39 +201,11 @@ class Explore extends React.Component {
       })
     }
 
-    let questDisplay;
-    if (this.state.windowSize > 1310) {
-      questDisplay = (
-        <div className="quest-columns-2-3">
-          <div className="quest-column-3">
-            {totalList.filter((quest, idx) => idx % 3 === 0)}
-          </div>
-          <div className="quest-column-3">
-            {totalList.filter((quest, idx) => idx % 3 === 1)}
-          </div>
-          <div className="quest-column-3">
-            {totalList.filter((quest, idx) => idx % 3 === 2)}
-          </div>
-        </div>
-      );
-    } else if (this.state.windowSize > 990) {
-      questDisplay = (
-        <div className="quest-columns-2-3">
-          <div className="quest-column-2">
-            {totalList.filter((quest, idx) => idx % 2 === 0)}
-          </div>
-          <div className="quest-column-2">
-            {totalList.filter((quest, idx) => idx % 2 === 1)}
-          </div>
-        </div>
-      );
-    } else {
-      questDisplay = (
-        <div className="quest-columns-1">
-          <div className="quest-column-1">{totalList}</div>
-        </div>
-      );
-    }
+    let questDisplay = (
+      <div className="quest-columns">
+          {totalList}
+      </div>
+    );
 
     if (totalList.length === 0) {
       let questMessage;
