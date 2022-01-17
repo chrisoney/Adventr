@@ -196,44 +196,12 @@
         }
       }
     }
-    .quest-columns-1 {
+    .quest-columns {
       width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      .quest-column-1 {
-        width: 540px;
-        align-self: center;
-      }
+      display: grid;
+      grid-template-columns: 1fr;
       .quest-container-explore {
-        margin-bottom: 20px;
-      }
-    }
-    .quest-columns-2-3 {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      .quest-column-2, .quest-column-3 {
-        width: 300px;
-        .author-reblog-major-container {
-          display: flex;
-          flex-direction: column;
-          .reblog-header-section-container {
-            display: flex;
-          }
-        }
-      }
-
-      .quest-container-explore {
-        margin-bottom: 20px;
-        .quest {
-          .quest-footer {
-            padding-left: 10px;
-            padding-right: 10px;
-          }
-        }
+        margin: 0 auto 20px auto;
       }
     }
     .empty-quests-container {
@@ -527,14 +495,6 @@
   }
 
 }
-
-// .loading-background {
-//   position: absolute;
-//   height: 100vh;
-//   width: 100vw;
-//   background-color: black;
-
-// }
 .dragon-loader {
   display:block;
   position: absolute;
@@ -580,6 +540,22 @@
       padding-right: 14px;
       border-right: 1px solid #595959;
 
+      .quest-columns {
+        grid-template-columns: 1fr 1fr;
+        .quest-container-explore {
+          width: 300px;
+          .author-reblog-major-container {
+            display: flex;
+            flex-direction: column;
+            .reblog-header-section-container {
+              display: flex;
+            }
+          }
+          &:nth-child(2n) {
+            margin-left: 10px;
+          }
+        }
+      }
       .explore-tag-container {
         .explore-new-tag-container {
           margin-right: 20px;
@@ -593,6 +569,9 @@
     max-width: 1290px;
     .explore-left{
       max-width: 940px;
+      .quest-columns {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
   }
 }
